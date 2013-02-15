@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Dictionaries">
+        <Items Id="Items">
+          <Item Id="@4c1cc675-0457-4918-aedd-d6234ff01f0b" ViewId="DictionaryMoistureSensititvity_ListView" />
+          <Item Id="@1dce2882-99e2-4892-bf96-854dd411ca25" ViewId="DictionaryLithologyQualifiers_ListView" />
+          <Item Id="@8ffbb20a-6672-4717-991e-6ca222a2bd90" ViewId="DictionaryAssayUnit_ListView" />
+        </Items>
+      </Item>
+      <Item Id="@48f3c81d-8c1e-4e84-8916-d16aceb63521">
+        <Items Id="Items">
+          <Item Id="@c42e95d6-3c22-4903-b8e5-6cc96741665d">
+            <Items Id="Items">
+              <Item Id="@b816fe53-5cc5-4498-b35f-d34c6d01848f" ViewId="GeophysicalLoggingCompany_ListView" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

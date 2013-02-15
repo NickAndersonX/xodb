@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XODB.Module</RootNamespace>
+    <AssemblyName>XODB.Module</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EasyTest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v12.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v12.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v12.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v12.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v12.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Address.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Address.Designer.cs">
+      <DependentUpon>Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroup.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroup.Designer.cs">
+      <DependentUpon>AssayGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupStandardTestResult.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupStandardTestResult.Designer.cs">
+      <DependentUpon>AssayGroupStandardTestResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTest.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTest.Designer.cs">
+      <DependentUpon>AssayGroupTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestResult.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestResult.Designer.cs">
+      <DependentUpon>AssayGroupTestResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestResultComment.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestResultComment.Designer.cs">
+      <DependentUpon>AssayGroupTestResultComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestResultDuplicate.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestResultDuplicate.Designer.cs">
+      <DependentUpon>AssayGroupTestResultDuplicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestSample.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestSample.Designer.cs">
+      <DependentUpon>AssayGroupTestSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\BlockModel.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\BlockModel.Designer.cs">
+      <DependentUpon>BlockModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\BlockModelBlock.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\BlockModelBlock.Designer.cs">
+      <DependentUpon>BlockModelBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\BlockModelBlockData.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\BlockModelBlockData.Designer.cs">
+      <DependentUpon>BlockModelBlockData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\BlockModelMetadata.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\BlockModelMetadata.Designer.cs">
+      <DependentUpon>BlockModelMetadata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Casing.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Casing.Designer.cs">
+      <DependentUpon>Casing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Cementing.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Cementing.Designer.cs">
+      <DependentUpon>Cementing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Company.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Company.Designer.cs">
+      <DependentUpon>Company.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\CompanyAddress.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\CompanyAddress.Designer.cs">
+      <DependentUpon>CompanyAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\CompanyRelation.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\CompanyRelation.Designer.cs">
+      <DependentUpon>CompanyRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Composite.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Composite.Designer.cs">
+      <DependentUpon>Composite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\CompositeData.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\CompositeData.Designer.cs">
+      <DependentUpon>CompositeData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ConnectionHelper.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Contact.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Contact.Designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ContactAddress.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ContactAddress.Designer.cs">
+      <DependentUpon>ContactAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ContactCompany.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ContactCompany.Designer.cs">
+      <DependentUpon>ContactCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Defect.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Defect.Designer.cs">
+      <DependentUpon>Defect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Desurvey.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Desurvey.Designer.cs">
+      <DependentUpon>Desurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Dictionary.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Dictionary.Designer.cs">
+      <DependentUpon>Dictionary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAdjective.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAdjective.Designer.cs">
+      <DependentUpon>DictionaryAdjective.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAlteration.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAlteration.Designer.cs">
+      <DependentUpon>DictionaryAlteration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAssayMethod.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAssayMethod.Designer.cs">
+      <DependentUpon>DictionaryAssayMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAssayStandard.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAssayStandard.Designer.cs">
+      <DependentUpon>DictionaryAssayStandard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAssayTest.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAssayTest.Designer.cs">
+      <DependentUpon>DictionaryAssayTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAssayType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryAssayType.Designer.cs">
+      <DependentUpon>DictionaryAssayType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryBasalContact.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryBasalContact.Designer.cs">
+      <DependentUpon>DictionaryBasalContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryBedSpacing.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryBedSpacing.Designer.cs">
+      <DependentUpon>DictionaryBedSpacing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryColour.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryColour.Designer.cs">
+      <DependentUpon>DictionaryColour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryCommodity.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryCommodity.Designer.cs">
+      <DependentUpon>DictionaryCommodity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryCoreState.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryCoreState.Designer.cs">
+      <DependentUpon>DictionaryCoreState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryCountry.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryCountry.Designer.cs">
+      <DependentUpon>DictionaryCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryCountryState.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryCountryState.Designer.cs">
+      <DependentUpon>DictionaryCountryState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDataStatus.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDataStatus.Designer.cs">
+      <DependentUpon>DictionaryDataStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectCompleteness.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectCompleteness.Designer.cs">
+      <DependentUpon>DictionaryDefectCompleteness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectContinuity.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectContinuity.Designer.cs">
+      <DependentUpon>DictionaryDefectContinuity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectSpacing.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectSpacing.Designer.cs">
+      <DependentUpon>DictionaryDefectSpacing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectType.Designer.cs">
+      <DependentUpon>DictionaryDefectType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDesurveyAlgorithmType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDesurveyAlgorithmType.Designer.cs">
+      <DependentUpon>DictionaryDesurveyAlgorithmType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDimension.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDimension.Designer.cs">
+      <DependentUpon>DictionaryDimension.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDipOrientationMethod.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDipOrientationMethod.Designer.cs">
+      <DependentUpon>DictionaryDipOrientationMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDomain.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDomain.Designer.cs">
+      <DependentUpon>DictionaryDomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDomainAlias.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDomainAlias.Designer.cs">
+      <DependentUpon>DictionaryDomainAlias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillBitType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillBitType.Designer.cs">
+      <DependentUpon>DictionaryDrillBitType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillCasingType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillCasingType.Designer.cs">
+      <DependentUpon>DictionaryDrillCasingType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillFluid.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillFluid.Designer.cs">
+      <DependentUpon>DictionaryDrillFluid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillRigType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillRigType.Designer.cs">
+      <DependentUpon>DictionaryDrillRigType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillSize.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDrillSize.Designer.cs">
+      <DependentUpon>DictionaryDrillSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryEstimatedStrength.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryEstimatedStrength.Designer.cs">
+      <DependentUpon>DictionaryEstimatedStrength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryFailureMode.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryFailureMode.Designer.cs">
+      <DependentUpon>DictionaryFailureMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryFlowTestType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryFlowTestType.Designer.cs">
+      <DependentUpon>DictionaryFlowTestType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGasDetected.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGasDetected.Designer.cs">
+      <DependentUpon>DictionaryGasDetected.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGeodeticDatum.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGeodeticDatum.Designer.cs">
+      <DependentUpon>DictionaryGeodeticDatum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGeophysicalLogType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGeophysicalLogType.Designer.cs">
+      <DependentUpon>DictionaryGeophysicalLogType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGroup.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGroup.Designer.cs">
+      <DependentUpon>DictionaryGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGroupMembership.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryGroupMembership.Designer.cs">
+      <DependentUpon>DictionaryGroupMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHeightDatum.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHeightDatum.Designer.cs">
+      <DependentUpon>DictionaryHeightDatum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHolePurpose.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHolePurpose.Designer.cs">
+      <DependentUpon>DictionaryHolePurpose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHoleStatus.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHoleStatus.Designer.cs">
+      <DependentUpon>DictionaryHoleStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHoleType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHoleType.Designer.cs">
+      <DependentUpon>DictionaryHoleType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHorizon.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHorizon.Designer.cs">
+      <DependentUpon>DictionaryHorizon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHue.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryHue.Designer.cs">
+      <DependentUpon>DictionaryHue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryInfillMode.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryInfillMode.Designer.cs">
+      <DependentUpon>DictionaryInfillMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryInfillType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryInfillType.Designer.cs">
+      <DependentUpon>DictionaryInfillType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryIntervalStatus.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryIntervalStatus.Designer.cs">
+      <DependentUpon>DictionaryIntervalStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLeaseApplicationType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLeaseApplicationType.Designer.cs">
+      <DependentUpon>DictionaryLeaseApplicationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLithologyInterrelation.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLithologyInterrelation.Designer.cs">
+      <DependentUpon>DictionaryLithologyInterrelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLithologyQualifier.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLithologyQualifier.Designer.cs">
+      <DependentUpon>DictionaryLithologyQualifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLithologyType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLithologyType.Designer.cs">
+      <DependentUpon>DictionaryLithologyType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLocationType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryLocationType.Designer.cs">
+      <DependentUpon>DictionaryLocationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMechanicalState.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMechanicalState.Designer.cs">
+      <DependentUpon>DictionaryMechanicalState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralAbundance.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralAbundance.Designer.cs">
+      <DependentUpon>DictionaryMineralAbundance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralAndFossilAbundance.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralAndFossilAbundance.Designer.cs">
+      <DependentUpon>DictionaryMineralAndFossilAbundance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralAndFossilAssociation.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralAndFossilAssociation.Designer.cs">
+      <DependentUpon>DictionaryMineralAndFossilAssociation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralAndFossilType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralAndFossilType.Designer.cs">
+      <DependentUpon>DictionaryMineralAndFossilType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralForm.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralForm.Designer.cs">
+      <DependentUpon>DictionaryMineralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralStyle.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralStyle.Designer.cs">
+      <DependentUpon>DictionaryMineralStyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMineralType.Designer.cs">
+      <DependentUpon>DictionaryMineralType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMoistureSensitivity.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMoistureSensitivity.Designer.cs">
+      <DependentUpon>DictionaryMoistureSensitivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPlasticity.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPlasticity.Designer.cs">
+      <DependentUpon>DictionaryPlasticity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPly.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPly.Designer.cs">
+      <DependentUpon>DictionaryPly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPlyAlias.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPlyAlias.Designer.cs">
+      <DependentUpon>DictionaryPlyAlias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPointLoadTestType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPointLoadTestType.Designer.cs">
+      <DependentUpon>DictionaryPointLoadTestType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProfession.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProfession.Designer.cs">
+      <DependentUpon>DictionaryProfession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProvinceGroup.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProvinceGroup.Designer.cs">
+      <DependentUpon>DictionaryProvinceGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProvinceType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProvinceType.Designer.cs">
+      <DependentUpon>DictionaryProvinceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryRelationType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryRelationType.Designer.cs">
+      <DependentUpon>DictionaryRelationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryRockMassUnitType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryRockMassUnitType.Designer.cs">
+      <DependentUpon>DictionaryRockMassUnitType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySampleCategory.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySampleCategory.Designer.cs">
+      <DependentUpon>DictionarySampleCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySampleState.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySampleState.Designer.cs">
+      <DependentUpon>DictionarySampleState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySampleType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySampleType.Designer.cs">
+      <DependentUpon>DictionarySampleType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySeam.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySeam.Designer.cs">
+      <DependentUpon>DictionarySeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySeamAlias.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySeamAlias.Designer.cs">
+      <DependentUpon>DictionarySeamAlias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySedimentaryFeature.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySedimentaryFeature.Designer.cs">
+      <DependentUpon>DictionarySedimentaryFeature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryShade.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryShade.Designer.cs">
+      <DependentUpon>DictionaryShade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryShape.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryShape.Designer.cs">
+      <DependentUpon>DictionaryShape.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryStratigraphy.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryStratigraphy.Designer.cs">
+      <DependentUpon>DictionaryStratigraphy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySurfaceRoughness.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySurfaceRoughness.Designer.cs">
+      <DependentUpon>DictionarySurfaceRoughness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySurveyAccuracy.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySurveyAccuracy.Designer.cs">
+      <DependentUpon>DictionarySurveyAccuracy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryTexture.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryTexture.Designer.cs">
+      <DependentUpon>DictionaryTexture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryUnit.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryUnit.Designer.cs">
+      <DependentUpon>DictionaryUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryUsageAuditType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryUsageAuditType.Designer.cs">
+      <DependentUpon>DictionaryUsageAuditType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWeathering.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWeathering.Designer.cs">
+      <DependentUpon>DictionaryWeathering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWorkType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWorkType.Designer.cs">
+      <DependentUpon>DictionaryWorkType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWorkTypeRelation.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWorkTypeRelation.Designer.cs">
+      <DependentUpon>DictionaryWorkTypeRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DrillCompanyContract.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DrillCompanyContract.Designer.cs">
+      <DependentUpon>DrillCompanyContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Drilling.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Drilling.Designer.cs">
+      <DependentUpon>Drilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DrillingCompany.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DrillingCompany.Designer.cs">
+      <DependentUpon>DrillingCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Experience.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Experience.Designer.cs">
+      <DependentUpon>Experience.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\FileData.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\FileData.Designer.cs">
+      <DependentUpon>FileData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Geology.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Geology.Designer.cs">
+      <DependentUpon>Geology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeologyCompany.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeologyCompany.Designer.cs">
+      <DependentUpon>GeologyCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeophyicsData.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeophyicsData.Designer.cs">
+      <DependentUpon>GeophyicsData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Geophysics.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Geophysics.Designer.cs">
+      <DependentUpon>Geophysics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeophysicsCompany.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeophysicsCompany.Designer.cs">
+      <DependentUpon>GeophysicsCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeophysicsMetadata.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeophysicsMetadata.Designer.cs">
+      <DependentUpon>GeophysicsMetadata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Header.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Header.Designer.cs">
+      <DependentUpon>Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\HeaderRelation.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\HeaderRelation.Designer.cs">
+      <DependentUpon>HeaderRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\LabCompany.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\LabCompany.Designer.cs">
+      <DependentUpon>LabCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Lease.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Lease.Designer.cs">
+      <DependentUpon>Lease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\LeaseApplication.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\LeaseApplication.Designer.cs">
+      <DependentUpon>LeaseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Lithology.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Lithology.Designer.cs">
+      <DependentUpon>Lithology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Location.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Location.Designer.cs">
+      <DependentUpon>Location.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\LocationAlias.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\LocationAlias.Designer.cs">
+      <DependentUpon>LocationAlias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\MetaData.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\MetaData.Designer.cs">
+      <DependentUpon>MetaData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\MetaDataRelation.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\MetaDataRelation.Designer.cs">
+      <DependentUpon>MetaDataRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Mineralogy.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Mineralogy.Designer.cs">
+      <DependentUpon>Mineralogy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Parameter.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Parameter.Designer.cs">
+      <DependentUpon>Parameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ParameterDuplicate.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ParameterDuplicate.Designer.cs">
+      <DependentUpon>ParameterDuplicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ParameterGroup.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ParameterGroup.Designer.cs">
+      <DependentUpon>ParameterGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\PointLoad.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\PointLoad.Designer.cs">
+      <DependentUpon>PointLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\PrivateData.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\PrivateData.Designer.cs">
+      <DependentUpon>PrivateData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Project.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Project.Designer.cs">
+      <DependentUpon>Project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlan.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlan.Designer.cs">
+      <DependentUpon>ProjectPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTask.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTask.Designer.cs">
+      <DependentUpon>ProjectPlanTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTaskResponse.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTaskResponse.Designer.cs">
+      <DependentUpon>ProjectPlanTaskResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTaskWorker.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTaskWorker.Designer.cs">
+      <DependentUpon>ProjectPlanTaskWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Prospectus.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Prospectus.Designer.cs">
+      <DependentUpon>Prospectus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProspectusProject.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProspectusProject.Designer.cs">
+      <DependentUpon>ProspectusProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProspectusProjectCommodity.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProspectusProjectCommodity.Designer.cs">
+      <DependentUpon>ProspectusProjectCommodity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProspectusProjectProvince.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProspectusProjectProvince.Designer.cs">
+      <DependentUpon>ProspectusProjectProvince.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Province.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Province.Designer.cs">
+      <DependentUpon>Province.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Recovery.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Recovery.Designer.cs">
+      <DependentUpon>Recovery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\SecurityBlacklist.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\SecurityBlacklist.Designer.cs">
+      <DependentUpon>SecurityBlacklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\SecurityWhitelist.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\SecurityWhitelist.Designer.cs">
+      <DependentUpon>SecurityWhitelist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Survey.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Survey.Designer.cs">
+      <DependentUpon>Survey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\SurveyCompany.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\SurveyCompany.Designer.cs">
+      <DependentUpon>SurveyCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Tenement.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Tenement.Designer.cs">
+      <DependentUpon>Tenement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\TenementCommodity.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\TenementCommodity.Designer.cs">
+      <DependentUpon>TenementCommodity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\TenementProvince.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\TenementProvince.Designer.cs">
+      <DependentUpon>TenementProvince.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\TenementRelation.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\TenementRelation.Designer.cs">
+      <DependentUpon>TenementRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\UsageAudit.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\UsageAudit.Designer.cs">
+      <DependentUpon>UsageAudit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\UserData.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\UserData.Designer.cs">
+      <DependentUpon>UserData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\WaterFlow.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\WaterFlow.Designer.cs">
+      <DependentUpon>WaterFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Worker.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Worker.Designer.cs">
+      <DependentUpon>Worker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Module.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Module.Designer.cs">
+      <DependentUpon>Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DatabaseUpdate\Updater.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Module.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BusinessObjects\XODB_ORM.xpo" />
+    <None Include="BusinessObjects\XODB_ORM.xpo.diagram">
+      <DependentUpon>XODB_ORM.xpo</DependentUpon>
+    </None>
+    <None Include="DatabaseUpdate\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BusinessObjects\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controllers\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\Sample.ets" />
+    <None Include="Images\ReadMe.txt" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FunctionalTests\Config.xml" />
+    <None Include="Resources\v3.sql" />
+    <None Include="Resources\v2.sql" />
+    <None Include="Resources\script_schema.sql" />
+    <None Include="Resources\script.sql" />
+    <EmbeddedResource Include="Images\LogoCMYK.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

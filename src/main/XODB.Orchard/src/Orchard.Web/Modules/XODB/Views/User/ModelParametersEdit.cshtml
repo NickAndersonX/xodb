@@ -1,0 +1,42 @@
+﻿@model XODB.ViewModels.BlockModelParameterViewModel
+@{
+    Html.EnableClientValidation(); 
+}
+
+@using XODB.Models;
+@Html.Partial("Header")
+@{
+    Style.Require("XODBAdmin");
+
+    Layout.Title = T("Update a Block Model Parameter").ToString();
+}
+
+@if (AuthorizedFor(XODB.Permissions.ManageProjects)) {
+    using (Html.BeginForm("ModelParametersEdit", "User", new { area = "XODB" }, FormMethod.Post))
+    {
+          <fieldset>
+              <legend>Upload Parameter</legend>
+              <div class="editor-label">
+                 @Html.LabelFor(x => x.BlockModelAlias)
+              </div>
+              <div class="editor-field">
+                  @Html.TextBoxFor(x => x.BlockModelAlias, new { @readonly = true })
+              </div>
+              <div class="editor-label">
+                 @Html.LabelFor(x => x.ParameterName)
+              </div>
+              <div class="editor-field">
+                  @Html.TextBoxFor(x => x.ParameterName, new { @readonly = true })
+              </div>
+              <div class="editor-label">
+                  @Html.LabelFor(x => x.UnitID)
+              </div>
+              <div class="editor-field">
+                  @Html.DropDownListFor(x => x.UnitID, Model.Units)
+              </div>
+              @Html.HiddenFor(x => x.BlockModelMetadataID)
+              @Html.HiddenFor(x => x.ParameterID)
+              <input type="submit" value="Update"/>
+          </fieldset>
+    }
+}

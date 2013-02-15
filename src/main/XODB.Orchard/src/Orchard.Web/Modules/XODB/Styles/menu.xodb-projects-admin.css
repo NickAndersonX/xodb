@@ -1,0 +1,6 @@
+﻿.navicon-xodb-projects {
+background-image:url('../Media/menu.xodb-projects.png') !important;
+}
+.navicon-xodb-projects:hover {
+background-position:0 -30px !important;
+}

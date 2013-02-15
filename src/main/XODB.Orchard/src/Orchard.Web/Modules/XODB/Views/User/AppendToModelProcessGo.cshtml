@@ -1,0 +1,26 @@
+﻿@model XODB.ViewModels.BlockModelAppendViewModel
+@using XODB.Models;
+@Html.Partial("Header")
+@{
+    Style.Require("XODBAdmin");
+
+    Layout.Title = T("Block Model appended").ToString();
+}
+@if (AuthorizedFor(XODB.Permissions.ManageProjects)) {
+    using (Html.BeginForm())
+    {
+         
+        <fieldset>
+              <legend>Append to a Block Model processed</legend><br />
+               <br /><br />
+               Model <b> @Html.DisplayTextFor(x => x.BlockModelAlias) </b> has been appended with data from <b> @Html.DisplayTextFor(x => x.FileName) </b>.
+              <div class="id-label">                  
+
+              </div>
+              
+
+            </fieldset>
+
+    } 
+
+}

@@ -1,0 +1,11 @@
+﻿
+@Html.Partial("Header")
+@{
+    Style.Require("XODBAdmin");
+
+    Layout.Title = T("Models Awaiting Authorisation").ToString();
+}
+@if (AuthorizedFor(XODB.Permissions.ManageProjects)) {
+    <h3>@Layout.Title</h3>
+    Html.RenderPartial("ModelsToAuthoriseListPartial");
+}

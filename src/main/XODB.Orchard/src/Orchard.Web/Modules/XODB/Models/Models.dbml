@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="XODB" Class="ModelsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=AU-BNE-SQ-007;Initial Catalog=XODB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="XODBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.X_BlockModelBlock" Member="BlockModelBlocks">
+    <Type Name="BlockModelBlock">
+      <Column Name="BlockModelBlockID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BlockModelID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Domain" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="I" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="J" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="K" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CentroidX" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="CentroidY" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="CentroidZ" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="LengthX" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="LengthY" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="LengthZ" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="MinimumSamples" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaximumSamples" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstimationTechnique" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KrigingEfficiency" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="KrigingError" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="KrigingVariance" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="SlopeOfRegression" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="ResourceCategory" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Numeric1" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric2" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric3" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric4" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric5" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric6" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric7" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric8" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric9" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric10" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric11" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric12" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric13" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric14" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric15" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric16" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric17" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric18" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric19" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric20" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric21" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric22" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric23" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric24" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric25" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric26" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric27" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric28" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric29" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric30" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Numeric31" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="String1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="String11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BlockModelBlock_BlockModelBlockData" Member="BlockModelBlockDatas" ThisKey="BlockModelBlockID" OtherKey="BlockModelBlockID" Type="BlockModelBlockData" />
+      <Association Name="BlockModel_BlockModelBlock" Member="BlockModel" Storage="_X_BlockModel" ThisKey="BlockModelID" OtherKey="BlockModelID" Type="BlockModel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_BlockModelBlockData" Member="BlockModelBlockDatas">
+    <Type Name="BlockModelBlockData">
+      <Column Name="BlockModelBlockDataID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ParameterID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BlockModelBlockID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BlockModelBlockDataText" Type="System.String" DbType="NVarChar(58)" CanBeNull="true" />
+      <Column Name="BlockModelBlockDataValue" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Association Name="BlockModelBlock_BlockModelBlockData" Member="BlockModelBlock" ThisKey="BlockModelBlockID" OtherKey="BlockModelBlockID" Type="BlockModelBlock" IsForeignKey="true" />
+      <Association Name="Parameter_BlockModelBlockData" Member="Parameter" ThisKey="ParameterID" OtherKey="ParameterID" Type="Parameter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_BlockModelMetadata" Member="BlockModelMetadatas">
+    <Type Name="BlockModelMetadata">
+      <Column Name="BlockModelMetadataID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BlockModelID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IsColumnData" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BlockModelMetadataText" Type="System.String" DbType="NVarChar(58)" CanBeNull="true" />
+      <Column Name="BlockModelMetadataValue" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Parameter_BlockModelMetadata" Member="Parameter" ThisKey="ParameterID" OtherKey="ParameterID" Type="Parameter" IsForeignKey="true" />
+      <Association Name="BlockModel_BlockModelMetadata" Member="BlockModel" Storage="_X_BlockModel" ThisKey="BlockModelID" OtherKey="BlockModelID" Type="BlockModel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_Parameter" Member="Parameters">
+    <Type Name="Parameter">
+      <Column Name="ParameterID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ParameterType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ParameterName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DefaultParameterValue" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="DefaultParameterText" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UnitID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Format" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Locale" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Parameter_BlockModelBlockData" Member="BlockModelBlockDatas" ThisKey="ParameterID" OtherKey="ParameterID" Type="BlockModelBlockData" />
+      <Association Name="Parameter_BlockModelMetadata" Member="BlockModelMetadatas" ThisKey="ParameterID" OtherKey="ParameterID" Type="BlockModelMetadata" />
+      <Association Name="Unit_Parameter" Member="Unit" ThisKey="UnitID" OtherKey="UnitID" Type="Unit" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_DictionaryUnit" Member="Units">
+    <Type Name="Unit">
+      <Column Name="UnitID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StandardUnitName" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CoalUnitName" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="GoldUnitName" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="CustomUnitName" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="Unit_Parameter" Member="Parameters" ThisKey="UnitID" OtherKey="UnitID" Type="Parameter" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_BlockModel" Member="BlockModels">
+    <Type Name="BlockModel">
+      <Column Name="BlockModelID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Alias" Type="System.String" DbType="NVarChar(58)" CanBeNull="true" />
+      <Column Name="OriginX" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="OriginY" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="OriginZ" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="IsIJKCalculated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OriginI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OriginJ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OriginK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaximumI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaximumJ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaximumK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinimumI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinimumJ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MinimumK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DimensionEasting" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="DimensionNorthing" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="DimensionElevation" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="IsOriginNorthPositive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsOriginEastPositive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsOriginElevationUpwardsPositive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CubeCentroid0OriginOffsetX" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="CubeCentroid0OriginOffsetY" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="CubeCentroid0OriginOffsetZ" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="UnitIJK" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="DefaultISize" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="DefaultJSize" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="DefaultKSize" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="AuthorContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ResponsibleContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ApproverContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ExternalReviewerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="BlockModel_BlockModelBlock" Member="BlockModelBlocks" ThisKey="BlockModelID" OtherKey="BlockModelID" Type="BlockModelBlock" />
+      <Association Name="BlockModel_BlockModelMetadata" Member="BlockModelMetadatas" ThisKey="BlockModelID" OtherKey="BlockModelID" Type="BlockModelMetadata" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_VW_ModelStatus" Member="ModelStatus">
+    <Type Name="ModelStatus">
+      <Column Name="ProjectID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectName" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="BlockModelID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Alias" Type="System.String" DbType="NVarChar(58)" CanBeNull="true" />
+      <Column Name="ModelStage" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="HasSubcells" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Uploaded" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Author" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AuthorName" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="Approver" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ApproverName" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="ExternalReviewer" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ExternalReviewerName" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.X_SP_GetUniqueDomains" Method="GetUniqueDomains">
+    <Parameter Name="model" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="X_SP_GetUniqueDomainsResult">
+      <Column Name="Domain" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.X_SP_DropOldModels" Method="DropOldModels">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

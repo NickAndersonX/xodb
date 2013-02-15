@@ -1,0 +1,11 @@
+﻿
+@Html.Partial("Header")
+@{
+    Style.Require("XODBAdmin");
+
+    Layout.Title = T("Projects").ToString();
+}
+@if (AuthorizedFor(XODB.Permissions.ManageProjects)) {
+    <h3>@Layout.Title</h3>
+    Html.RenderPartial("ProjectListPartial");
+}

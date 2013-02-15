@@ -1,0 +1,999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="XODBImportModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="XODBImportModelStoreContainer">
+          <EntitySet Name="X_BlockModel" EntityType="XODBImportModel.Store.X_BlockModel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_BlockModelBlock" EntityType="XODBImportModel.Store.X_BlockModelBlock" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_BlockModelBlockData" EntityType="XODBImportModel.Store.X_BlockModelBlockData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_BlockModelMetadata" EntityType="XODBImportModel.Store.X_BlockModelMetadata" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_DictionaryUnit" EntityType="XODBImportModel.Store.X_DictionaryUnit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_MetaData" EntityType="XODBImportModel.Store.X_MetaData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_MetaDataRelation" EntityType="XODBImportModel.Store.X_MetaDataRelation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_Parameter" EntityType="XODBImportModel.Store.X_Parameter" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_X_BlockModelBlock_X_BlockModel" Association="XODBImportModel.Store.FK_X_BlockModelBlock_X_BlockModel">
+            <End Role="X_BlockModel" EntitySet="X_BlockModel" />
+            <End Role="X_BlockModelBlock" EntitySet="X_BlockModelBlock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_BlockModelBlockData_X_BlockModelBlock" Association="XODBImportModel.Store.FK_X_BlockModelBlockData_X_BlockModelBlock">
+            <End Role="X_BlockModelBlock" EntitySet="X_BlockModelBlock" />
+            <End Role="X_BlockModelBlockData" EntitySet="X_BlockModelBlockData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_BlockModelBlockData_X_Parameter" Association="XODBImportModel.Store.FK_X_BlockModelBlockData_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+            <End Role="X_BlockModelBlockData" EntitySet="X_BlockModelBlockData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_BlockModelMetadata_X_BlockModel" Association="XODBImportModel.Store.FK_X_BlockModelMetadata_X_BlockModel">
+            <End Role="X_BlockModel" EntitySet="X_BlockModel" />
+            <End Role="X_BlockModelMetadata" EntitySet="X_BlockModelMetadata" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_BlockModelMetadata_X_Parameter" Association="XODBImportModel.Store.FK_X_BlockModelMetadata_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+            <End Role="X_BlockModelMetadata" EntitySet="X_BlockModelMetadata" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_CompositeData_X_DictionaryUnit" Association="XODBImportModel.Store.FK_X_CompositeData_X_DictionaryUnit">
+            <End Role="X_DictionaryUnit" EntitySet="X_DictionaryUnit" />
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_MetaDataRelation_X_MetaData" Association="XODBImportModel.Store.FK_X_MetaDataRelation_X_MetaData">
+            <End Role="X_MetaData" EntitySet="X_MetaData" />
+            <End Role="X_MetaDataRelation" EntitySet="X_MetaDataRelation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="X_BlockModel">
+          <Key>
+            <PropertyRef Name="BlockModelID" />
+          </Key>
+          <Property Name="BlockModelID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProjectID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Alias" Type="nvarchar" MaxLength="58" />
+          <Property Name="OriginX" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="OriginY" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="OriginZ" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="IsIJKCalculated" Type="bit" />
+          <Property Name="OriginI" Type="int" />
+          <Property Name="OriginJ" Type="int" />
+          <Property Name="OriginK" Type="int" />
+          <Property Name="MaximumI" Type="int" />
+          <Property Name="MaximumJ" Type="int" />
+          <Property Name="MaximumK" Type="int" />
+          <Property Name="MinimumI" Type="int" />
+          <Property Name="MinimumJ" Type="int" />
+          <Property Name="MinimumK" Type="int" />
+          <Property Name="DimensionEasting" Type="nvarchar" MaxLength="1" />
+          <Property Name="DimensionNorthing" Type="nvarchar" MaxLength="1" />
+          <Property Name="DimensionElevation" Type="nvarchar" MaxLength="1" />
+          <Property Name="IsOriginNorthPositive" Type="bit" />
+          <Property Name="IsOriginEastPositive" Type="bit" />
+          <Property Name="IsOriginElevationUpwardsPositive" Type="bit" />
+          <Property Name="CubeCentroid0OriginOffsetX" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="CubeCentroid0OriginOffsetY" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="CubeCentroid0OriginOffsetZ" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="UnitIJK" Type="nvarchar" MaxLength="8" />
+          <Property Name="DefaultISize" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="DefaultJSize" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="DefaultKSize" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="AuthorContactID" Type="uniqueidentifier" />
+          <Property Name="ResponsibleContactID" Type="uniqueidentifier" />
+          <Property Name="ApproverContactID" Type="uniqueidentifier" />
+          <Property Name="ExternalReviewerContactID" Type="uniqueidentifier" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_BlockModelBlock">
+          <Key>
+            <PropertyRef Name="BlockModelBlockID" />
+          </Key>
+          <Property Name="BlockModelBlockID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlockModelID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Domain" Type="nvarchar" MaxLength="50" />
+          <Property Name="I" Type="int" />
+          <Property Name="J" Type="int" />
+          <Property Name="K" Type="int" />
+          <Property Name="CentroidX" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="CentroidY" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="CentroidZ" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="LengthX" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="LengthY" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="LengthZ" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="MinimumSamples" Type="int" />
+          <Property Name="MaximumSamples" Type="int" />
+          <Property Name="EstimationTechnique" Type="nvarchar" MaxLength="50" />
+          <Property Name="KrigingEfficiency" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="KrigingError" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="KrigingVariance" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="SlopeOfRegression" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="ResourceCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Numeric1" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric2" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric3" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric4" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric5" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric6" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric7" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric8" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric9" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric10" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric11" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric12" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric13" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric14" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric15" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric16" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric17" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric18" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric19" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric20" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric21" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric22" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric23" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric24" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric25" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric26" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric27" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric28" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric29" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric30" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Numeric31" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="String1" Type="nvarchar" MaxLength="50" />
+          <Property Name="String2" Type="nvarchar" MaxLength="50" />
+          <Property Name="String3" Type="nvarchar" MaxLength="50" />
+          <Property Name="String4" Type="nvarchar" MaxLength="50" />
+          <Property Name="String5" Type="nvarchar" MaxLength="50" />
+          <Property Name="String6" Type="nvarchar" MaxLength="50" />
+          <Property Name="String7" Type="nvarchar" MaxLength="50" />
+          <Property Name="String8" Type="nvarchar" MaxLength="50" />
+          <Property Name="String9" Type="nvarchar" MaxLength="50" />
+          <Property Name="String10" Type="nvarchar" MaxLength="50" />
+          <Property Name="String11" Type="nvarchar" MaxLength="50" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_BlockModelBlockData">
+          <Key>
+            <PropertyRef Name="BlockModelBlockDataID" />
+          </Key>
+          <Property Name="BlockModelBlockDataID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParameterID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlockModelBlockID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlockModelBlockDataText" Type="nvarchar" MaxLength="58" />
+          <Property Name="BlockModelBlockDataValue" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_BlockModelMetadata">
+          <Key>
+            <PropertyRef Name="BlockModelMetadataID" />
+          </Key>
+          <Property Name="BlockModelMetadataID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BlockModelID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParameterID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsColumnData" Type="bit" Nullable="false" />
+          <Property Name="BlockModelMetadataText" Type="nvarchar" MaxLength="255" />
+          <Property Name="BlockModelMetadataValue" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_DictionaryUnit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StandardUnitName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="CoalUnitName" Type="nvarchar" MaxLength="16" />
+          <Property Name="GoldUnitName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustomUnitName" Type="nvarchar" MaxLength="16" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="X_MetaData">
+          <Key>
+            <PropertyRef Name="MetaDataID" />
+          </Key>
+          <Property Name="MetaDataID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MetaDataType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContentToIndex" Type="nvarchar(max)" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_MetaDataRelation">
+          <Key>
+            <PropertyRef Name="MetaDataRelationID" />
+          </Key>
+          <Property Name="MetaDataRelationID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MetaDataID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TableType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReferenceID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_Parameter">
+          <Key>
+            <PropertyRef Name="ParameterID" />
+          </Key>
+          <Property Name="ParameterID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParameterType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParameterName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DefaultParameterValue" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="DefaultParameterText" Type="nvarchar" MaxLength="255" />
+          <Property Name="UnitID" Type="uniqueidentifier" />
+          <Property Name="Format" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Locale" Type="nvarchar" MaxLength="16" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_X_BlockModelBlock_X_BlockModel">
+          <End Role="X_BlockModel" Type="XODBImportModel.Store.X_BlockModel" Multiplicity="1" />
+          <End Role="X_BlockModelBlock" Type="XODBImportModel.Store.X_BlockModelBlock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_BlockModel">
+              <PropertyRef Name="BlockModelID" />
+            </Principal>
+            <Dependent Role="X_BlockModelBlock">
+              <PropertyRef Name="BlockModelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_BlockModelBlockData_X_BlockModelBlock">
+          <End Role="X_BlockModelBlock" Type="XODBImportModel.Store.X_BlockModelBlock" Multiplicity="1" />
+          <End Role="X_BlockModelBlockData" Type="XODBImportModel.Store.X_BlockModelBlockData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_BlockModelBlock">
+              <PropertyRef Name="BlockModelBlockID" />
+            </Principal>
+            <Dependent Role="X_BlockModelBlockData">
+              <PropertyRef Name="BlockModelBlockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_BlockModelBlockData_X_Parameter">
+          <End Role="X_Parameter" Type="XODBImportModel.Store.X_Parameter" Multiplicity="1" />
+          <End Role="X_BlockModelBlockData" Type="XODBImportModel.Store.X_BlockModelBlockData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_BlockModelBlockData">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_BlockModelMetadata_X_BlockModel">
+          <End Role="X_BlockModel" Type="XODBImportModel.Store.X_BlockModel" Multiplicity="1" />
+          <End Role="X_BlockModelMetadata" Type="XODBImportModel.Store.X_BlockModelMetadata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_BlockModel">
+              <PropertyRef Name="BlockModelID" />
+            </Principal>
+            <Dependent Role="X_BlockModelMetadata">
+              <PropertyRef Name="BlockModelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_BlockModelMetadata_X_Parameter">
+          <End Role="X_Parameter" Type="XODBImportModel.Store.X_Parameter" Multiplicity="1" />
+          <End Role="X_BlockModelMetadata" Type="XODBImportModel.Store.X_BlockModelMetadata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_BlockModelMetadata">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_CompositeData_X_DictionaryUnit">
+          <End Role="X_DictionaryUnit" Type="XODBImportModel.Store.X_DictionaryUnit" Multiplicity="0..1" />
+          <End Role="X_Parameter" Type="XODBImportModel.Store.X_Parameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="X_Parameter">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_MetaDataRelation_X_MetaData">
+          <End Role="X_MetaData" Type="XODBImportModel.Store.X_MetaData" Multiplicity="1" />
+          <End Role="X_MetaDataRelation" Type="XODBImportModel.Store.X_MetaDataRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_MetaData">
+              <PropertyRef Name="MetaDataID" />
+            </Principal>
+            <Dependent Role="X_MetaDataRelation">
+              <PropertyRef Name="MetaDataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XODBImportModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="XODBImportEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="X_BlockModel" EntityType="XODBImportModel.X_BlockModel" />
+          <EntitySet Name="X_BlockModelBlockData" EntityType="XODBImportModel.X_BlockModelBlockData" />
+          <EntitySet Name="X_BlockModelMetadata" EntityType="XODBImportModel.X_BlockModelMetadata" />
+          <EntitySet Name="X_DictionaryUnit" EntityType="XODBImportModel.X_DictionaryUnit" />
+          <EntitySet Name="X_Parameter" EntityType="XODBImportModel.X_Parameter" />
+          <AssociationSet Name="FK_X_BlockModelMetadata_X_BlockModel" Association="XODBImportModel.FK_X_BlockModelMetadata_X_BlockModel">
+            <End Role="X_BlockModel" EntitySet="X_BlockModel" />
+            <End Role="X_BlockModelMetadata" EntitySet="X_BlockModelMetadata" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_BlockModelBlockData_X_Parameter" Association="XODBImportModel.FK_X_BlockModelBlockData_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+            <End Role="X_BlockModelBlockData" EntitySet="X_BlockModelBlockData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_BlockModelMetadata_X_Parameter" Association="XODBImportModel.FK_X_BlockModelMetadata_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+            <End Role="X_BlockModelMetadata" EntitySet="X_BlockModelMetadata" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_CompositeData_X_DictionaryUnit" Association="XODBImportModel.FK_X_CompositeData_X_DictionaryUnit">
+            <End Role="X_DictionaryUnit" EntitySet="X_DictionaryUnit" />
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+          </AssociationSet>
+          <EntitySet Name="X_BlockModelBlock" EntityType="XODBImportModel.X_BlockModelBlock" />
+          <AssociationSet Name="FK_X_BlockModelBlock_X_BlockModel" Association="XODBImportModel.FK_X_BlockModelBlock_X_BlockModel">
+            <End Role="X_BlockModel" EntitySet="X_BlockModel" />
+            <End Role="X_BlockModelBlock" EntitySet="X_BlockModelBlock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_BlockModelBlockData_X_BlockModelBlock" Association="XODBImportModel.FK_X_BlockModelBlockData_X_BlockModelBlock">
+            <End Role="X_BlockModelBlock" EntitySet="X_BlockModelBlock" />
+            <End Role="X_BlockModelBlockData" EntitySet="X_BlockModelBlockData" />
+          </AssociationSet>
+          <EntitySet Name="X_MetaData" EntityType="XODBImportModel.X_MetaData" />
+          <EntitySet Name="X_MetaDataRelation" EntityType="XODBImportModel.X_MetaDataRelation" />
+          <AssociationSet Name="FK_X_MetaDataRelation_X_MetaData" Association="XODBImportModel.FK_X_MetaDataRelation_X_MetaData">
+            <End Role="X_MetaData" EntitySet="X_MetaData" />
+            <End Role="X_MetaDataRelation" EntitySet="X_MetaDataRelation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="X_BlockModel">
+          <Key>
+            <PropertyRef Name="BlockModelID" />
+          </Key>
+          <Property Name="BlockModelID" Type="Guid" Nullable="false" />
+          <Property Name="ProjectID" Type="Guid" Nullable="false" />
+          <Property Name="Alias" Type="String" MaxLength="58" Unicode="true" FixedLength="false" />
+          <Property Name="OriginX" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="OriginY" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="OriginZ" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="IsIJKCalculated" Type="Boolean" />
+          <Property Name="OriginI" Type="Int32" />
+          <Property Name="OriginJ" Type="Int32" />
+          <Property Name="OriginK" Type="Int32" />
+          <Property Name="MaximumI" Type="Int32" />
+          <Property Name="MaximumJ" Type="Int32" />
+          <Property Name="MaximumK" Type="Int32" />
+          <Property Name="MinimumI" Type="Int32" />
+          <Property Name="MinimumJ" Type="Int32" />
+          <Property Name="MinimumK" Type="Int32" />
+          <Property Name="DimensionEasting" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="DimensionNorthing" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="DimensionElevation" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="IsOriginNorthPositive" Type="Boolean" />
+          <Property Name="IsOriginEastPositive" Type="Boolean" />
+          <Property Name="IsOriginElevationUpwardsPositive" Type="Boolean" />
+          <Property Name="CubeCentroid0OriginOffsetX" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="CubeCentroid0OriginOffsetY" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="CubeCentroid0OriginOffsetZ" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="UnitIJK" Type="String" MaxLength="8" Unicode="true" FixedLength="false" />
+          <Property Name="DefaultISize" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="DefaultJSize" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="DefaultKSize" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="AuthorContactID" Type="Guid" />
+          <Property Name="ResponsibleContactID" Type="Guid" />
+          <Property Name="ApproverContactID" Type="Guid" />
+          <Property Name="ExternalReviewerContactID" Type="Guid" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_BlockModelMetadata" Relationship="XODBImportModel.FK_X_BlockModelMetadata_X_BlockModel" FromRole="X_BlockModel" ToRole="X_BlockModelMetadata" />
+          <NavigationProperty Name="X_BlockModelBlock" Relationship="XODBImportModel.FK_X_BlockModelBlock_X_BlockModel" FromRole="X_BlockModel" ToRole="X_BlockModelBlock" />
+        </EntityType>
+        <EntityType Name="X_BlockModelBlockData">
+          <Key>
+            <PropertyRef Name="BlockModelBlockDataID" />
+          </Key>
+          <Property Name="BlockModelBlockDataID" Type="Guid" Nullable="false" />
+          <Property Name="ParameterID" Type="Guid" Nullable="false" />
+          <Property Name="BlockModelBlockID" Type="Guid" Nullable="false" />
+          <Property Name="BlockModelBlockDataText" Type="String" MaxLength="58" Unicode="true" FixedLength="false" />
+          <Property Name="BlockModelBlockDataValue" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODBImportModel.FK_X_BlockModelBlockData_X_Parameter" FromRole="X_BlockModelBlockData" ToRole="X_Parameter" />
+          <NavigationProperty Name="X_BlockModelBlock" Relationship="XODBImportModel.FK_X_BlockModelBlockData_X_BlockModelBlock" FromRole="X_BlockModelBlockData" ToRole="X_BlockModelBlock" />
+        </EntityType>
+        <EntityType Name="X_BlockModelMetadata">
+          <Key>
+            <PropertyRef Name="BlockModelMetadataID" />
+          </Key>
+          <Property Name="BlockModelMetadataID" Type="Guid" Nullable="false" />
+          <Property Name="BlockModelID" Type="Guid" Nullable="false" />
+          <Property Name="ParameterID" Type="Guid" Nullable="false" />
+          <Property Name="IsColumnData" Type="Boolean" Nullable="false" />
+          <Property Name="BlockModelMetadataText" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BlockModelMetadataValue" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_BlockModel" Relationship="XODBImportModel.FK_X_BlockModelMetadata_X_BlockModel" FromRole="X_BlockModelMetadata" ToRole="X_BlockModel" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODBImportModel.FK_X_BlockModelMetadata_X_Parameter" FromRole="X_BlockModelMetadata" ToRole="X_Parameter" />
+        </EntityType>
+        <EntityType Name="X_DictionaryUnit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="Guid" Nullable="false" />
+          <Property Name="StandardUnitName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CoalUnitName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="GoldUnitName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CustomUnitName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODBImportModel.FK_X_CompositeData_X_DictionaryUnit" FromRole="X_DictionaryUnit" ToRole="X_Parameter" />
+        </EntityType>
+        <EntityType Name="X_Parameter">
+          <Key>
+            <PropertyRef Name="ParameterID" />
+          </Key>
+          <Property Name="ParameterID" Type="Guid" Nullable="false" />
+          <Property Name="ParameterType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ParameterName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DefaultParameterValue" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="DefaultParameterText" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="UnitID" Type="Guid" />
+          <Property Name="Format" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Locale" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_BlockModelBlockData" Relationship="XODBImportModel.FK_X_BlockModelBlockData_X_Parameter" FromRole="X_Parameter" ToRole="X_BlockModelBlockData" />
+          <NavigationProperty Name="X_BlockModelMetadata" Relationship="XODBImportModel.FK_X_BlockModelMetadata_X_Parameter" FromRole="X_Parameter" ToRole="X_BlockModelMetadata" />
+          <NavigationProperty Name="X_DictionaryUnit" Relationship="XODBImportModel.FK_X_CompositeData_X_DictionaryUnit" FromRole="X_Parameter" ToRole="X_DictionaryUnit" />
+        </EntityType>
+        <Association Name="FK_X_BlockModelMetadata_X_BlockModel">
+          <End Role="X_BlockModel" Type="XODBImportModel.X_BlockModel" Multiplicity="1" />
+          <End Role="X_BlockModelMetadata" Type="XODBImportModel.X_BlockModelMetadata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_BlockModel">
+              <PropertyRef Name="BlockModelID" />
+            </Principal>
+            <Dependent Role="X_BlockModelMetadata">
+              <PropertyRef Name="BlockModelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_BlockModelBlockData_X_Parameter">
+          <End Role="X_Parameter" Type="XODBImportModel.X_Parameter" Multiplicity="1" />
+          <End Role="X_BlockModelBlockData" Type="XODBImportModel.X_BlockModelBlockData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_BlockModelBlockData">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_BlockModelMetadata_X_Parameter">
+          <End Role="X_Parameter" Type="XODBImportModel.X_Parameter" Multiplicity="1" />
+          <End Role="X_BlockModelMetadata" Type="XODBImportModel.X_BlockModelMetadata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_BlockModelMetadata">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_CompositeData_X_DictionaryUnit">
+          <End Role="X_DictionaryUnit" Type="XODBImportModel.X_DictionaryUnit" Multiplicity="0..1" />
+          <End Role="X_Parameter" Type="XODBImportModel.X_Parameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="X_Parameter">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="X_BlockModelBlock">
+          <Key>
+            <PropertyRef Name="BlockModelBlockID" />
+          </Key>
+          <Property Type="Guid" Name="BlockModelBlockID" Nullable="false" />
+          <Property Type="Guid" Name="BlockModelID" Nullable="false" />
+          <Property Type="String" Name="Domain" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="I" />
+          <Property Type="Int32" Name="J" />
+          <Property Type="Int32" Name="K" />
+          <Property Type="Decimal" Name="CentroidX" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="CentroidY" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="CentroidZ" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="LengthX" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="LengthY" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="LengthZ" Precision="38" Scale="20" />
+          <Property Type="Int32" Name="MinimumSamples" />
+          <Property Type="Int32" Name="MaximumSamples" />
+          <Property Type="String" Name="EstimationTechnique" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="KrigingEfficiency" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="KrigingError" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="KrigingVariance" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="SlopeOfRegression" Precision="38" Scale="20" />
+          <Property Type="String" Name="ResourceCategory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Numeric1" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric2" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric3" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric4" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric5" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric6" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric7" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric8" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric9" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric10" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric11" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric12" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric13" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric14" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric15" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric16" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric17" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric18" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric19" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric20" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric21" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric22" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric23" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric24" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric25" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric26" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric27" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric28" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric29" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric30" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="Numeric31" Precision="38" Scale="20" />
+          <Property Type="String" Name="String1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String3" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String4" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String5" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String6" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String7" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String8" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String9" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String10" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="String11" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_BlockModel" Relationship="XODBImportModel.FK_X_BlockModelBlock_X_BlockModel" FromRole="X_BlockModelBlock" ToRole="X_BlockModel" />
+          <NavigationProperty Name="X_BlockModelBlockData" Relationship="XODBImportModel.FK_X_BlockModelBlockData_X_BlockModelBlock" FromRole="X_BlockModelBlock" ToRole="X_BlockModelBlockData" />
+        </EntityType>
+        <Association Name="FK_X_BlockModelBlock_X_BlockModel">
+          <End Type="XODBImportModel.X_BlockModel" Role="X_BlockModel" Multiplicity="1" />
+          <End Type="XODBImportModel.X_BlockModelBlock" Role="X_BlockModelBlock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_BlockModel">
+              <PropertyRef Name="BlockModelID" />
+            </Principal>
+            <Dependent Role="X_BlockModelBlock">
+              <PropertyRef Name="BlockModelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_BlockModelBlockData_X_BlockModelBlock">
+          <End Type="XODBImportModel.X_BlockModelBlock" Role="X_BlockModelBlock" Multiplicity="1" />
+          <End Type="XODBImportModel.X_BlockModelBlockData" Role="X_BlockModelBlockData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_BlockModelBlock">
+              <PropertyRef Name="BlockModelBlockID" />
+            </Principal>
+            <Dependent Role="X_BlockModelBlockData">
+              <PropertyRef Name="BlockModelBlockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="X_MetaData">
+          <Key>
+            <PropertyRef Name="MetaDataID" />
+          </Key>
+          <Property Type="Guid" Name="MetaDataID" Nullable="false" />
+          <Property Type="String" Name="MetaDataType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContentToIndex" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_MetaDataRelation" Relationship="XODBImportModel.FK_X_MetaDataRelation_X_MetaData" FromRole="X_MetaData" ToRole="X_MetaDataRelation" />
+        </EntityType>
+        <EntityType Name="X_MetaDataRelation">
+          <Key>
+            <PropertyRef Name="MetaDataRelationID" />
+          </Key>
+          <Property Type="Guid" Name="MetaDataRelationID" Nullable="false" />
+          <Property Type="Guid" Name="MetaDataID" Nullable="false" />
+          <Property Type="String" Name="TableType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="ReferenceID" Nullable="false" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_MetaData" Relationship="XODBImportModel.FK_X_MetaDataRelation_X_MetaData" FromRole="X_MetaDataRelation" ToRole="X_MetaData" />
+        </EntityType>
+        <Association Name="FK_X_MetaDataRelation_X_MetaData">
+          <End Type="XODBImportModel.X_MetaData" Role="X_MetaData" Multiplicity="1" />
+          <End Type="XODBImportModel.X_MetaDataRelation" Role="X_MetaDataRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_MetaData">
+              <PropertyRef Name="MetaDataID" />
+            </Principal>
+            <Dependent Role="X_MetaDataRelation">
+              <PropertyRef Name="MetaDataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XODBImportModelStoreContainer" CdmEntityContainer="XODBImportEntities">
+          <EntitySetMapping Name="X_BlockModel">
+            <EntityTypeMapping TypeName="XODBImportModel.X_BlockModel">
+              <MappingFragment StoreEntitySet="X_BlockModel">
+                <ScalarProperty Name="BlockModelID" ColumnName="BlockModelID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+                <ScalarProperty Name="OriginX" ColumnName="OriginX" />
+                <ScalarProperty Name="OriginY" ColumnName="OriginY" />
+                <ScalarProperty Name="OriginZ" ColumnName="OriginZ" />
+                <ScalarProperty Name="IsIJKCalculated" ColumnName="IsIJKCalculated" />
+                <ScalarProperty Name="OriginI" ColumnName="OriginI" />
+                <ScalarProperty Name="OriginJ" ColumnName="OriginJ" />
+                <ScalarProperty Name="OriginK" ColumnName="OriginK" />
+                <ScalarProperty Name="MaximumI" ColumnName="MaximumI" />
+                <ScalarProperty Name="MaximumJ" ColumnName="MaximumJ" />
+                <ScalarProperty Name="MaximumK" ColumnName="MaximumK" />
+                <ScalarProperty Name="MinimumI" ColumnName="MinimumI" />
+                <ScalarProperty Name="MinimumJ" ColumnName="MinimumJ" />
+                <ScalarProperty Name="MinimumK" ColumnName="MinimumK" />
+                <ScalarProperty Name="DimensionEasting" ColumnName="DimensionEasting" />
+                <ScalarProperty Name="DimensionNorthing" ColumnName="DimensionNorthing" />
+                <ScalarProperty Name="DimensionElevation" ColumnName="DimensionElevation" />
+                <ScalarProperty Name="IsOriginNorthPositive" ColumnName="IsOriginNorthPositive" />
+                <ScalarProperty Name="IsOriginEastPositive" ColumnName="IsOriginEastPositive" />
+                <ScalarProperty Name="IsOriginElevationUpwardsPositive" ColumnName="IsOriginElevationUpwardsPositive" />
+                <ScalarProperty Name="CubeCentroid0OriginOffsetX" ColumnName="CubeCentroid0OriginOffsetX" />
+                <ScalarProperty Name="CubeCentroid0OriginOffsetY" ColumnName="CubeCentroid0OriginOffsetY" />
+                <ScalarProperty Name="CubeCentroid0OriginOffsetZ" ColumnName="CubeCentroid0OriginOffsetZ" />
+                <ScalarProperty Name="UnitIJK" ColumnName="UnitIJK" />
+                <ScalarProperty Name="DefaultISize" ColumnName="DefaultISize" />
+                <ScalarProperty Name="DefaultJSize" ColumnName="DefaultJSize" />
+                <ScalarProperty Name="DefaultKSize" ColumnName="DefaultKSize" />
+                <ScalarProperty Name="AuthorContactID" ColumnName="AuthorContactID" />
+                <ScalarProperty Name="ResponsibleContactID" ColumnName="ResponsibleContactID" />
+                <ScalarProperty Name="ApproverContactID" ColumnName="ApproverContactID" />
+                <ScalarProperty Name="ExternalReviewerContactID" ColumnName="ExternalReviewerContactID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_BlockModelBlockData">
+            <EntityTypeMapping TypeName="XODBImportModel.X_BlockModelBlockData">
+              <MappingFragment StoreEntitySet="X_BlockModelBlockData">
+                <ScalarProperty Name="BlockModelBlockDataID" ColumnName="BlockModelBlockDataID" />
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+                <ScalarProperty Name="BlockModelBlockID" ColumnName="BlockModelBlockID" />
+                <ScalarProperty Name="BlockModelBlockDataText" ColumnName="BlockModelBlockDataText" />
+                <ScalarProperty Name="BlockModelBlockDataValue" ColumnName="BlockModelBlockDataValue" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_BlockModelMetadata">
+            <EntityTypeMapping TypeName="XODBImportModel.X_BlockModelMetadata">
+              <MappingFragment StoreEntitySet="X_BlockModelMetadata">
+                <ScalarProperty Name="BlockModelMetadataID" ColumnName="BlockModelMetadataID" />
+                <ScalarProperty Name="BlockModelID" ColumnName="BlockModelID" />
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+                <ScalarProperty Name="IsColumnData" ColumnName="IsColumnData" />
+                <ScalarProperty Name="BlockModelMetadataText" ColumnName="BlockModelMetadataText" />
+                <ScalarProperty Name="BlockModelMetadataValue" ColumnName="BlockModelMetadataValue" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_DictionaryUnit">
+            <EntityTypeMapping TypeName="XODBImportModel.X_DictionaryUnit">
+              <MappingFragment StoreEntitySet="X_DictionaryUnit">
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="StandardUnitName" ColumnName="StandardUnitName" />
+                <ScalarProperty Name="CoalUnitName" ColumnName="CoalUnitName" />
+                <ScalarProperty Name="GoldUnitName" ColumnName="GoldUnitName" />
+                <ScalarProperty Name="CustomUnitName" ColumnName="CustomUnitName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_Parameter">
+            <EntityTypeMapping TypeName="XODBImportModel.X_Parameter">
+              <MappingFragment StoreEntitySet="X_Parameter">
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+                <ScalarProperty Name="ParameterType" ColumnName="ParameterType" />
+                <ScalarProperty Name="ParameterName" ColumnName="ParameterName" />
+                <ScalarProperty Name="DefaultParameterValue" ColumnName="DefaultParameterValue" />
+                <ScalarProperty Name="DefaultParameterText" ColumnName="DefaultParameterText" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="Format" ColumnName="Format" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Locale" ColumnName="Locale" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_BlockModelBlock">
+            <EntityTypeMapping TypeName="XODBImportModel.X_BlockModelBlock">
+              <MappingFragment StoreEntitySet="X_BlockModelBlock">
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="String11" ColumnName="String11" />
+                <ScalarProperty Name="String10" ColumnName="String10" />
+                <ScalarProperty Name="String9" ColumnName="String9" />
+                <ScalarProperty Name="String8" ColumnName="String8" />
+                <ScalarProperty Name="String7" ColumnName="String7" />
+                <ScalarProperty Name="String6" ColumnName="String6" />
+                <ScalarProperty Name="String5" ColumnName="String5" />
+                <ScalarProperty Name="String4" ColumnName="String4" />
+                <ScalarProperty Name="String3" ColumnName="String3" />
+                <ScalarProperty Name="String2" ColumnName="String2" />
+                <ScalarProperty Name="String1" ColumnName="String1" />
+                <ScalarProperty Name="Numeric31" ColumnName="Numeric31" />
+                <ScalarProperty Name="Numeric30" ColumnName="Numeric30" />
+                <ScalarProperty Name="Numeric29" ColumnName="Numeric29" />
+                <ScalarProperty Name="Numeric28" ColumnName="Numeric28" />
+                <ScalarProperty Name="Numeric27" ColumnName="Numeric27" />
+                <ScalarProperty Name="Numeric26" ColumnName="Numeric26" />
+                <ScalarProperty Name="Numeric25" ColumnName="Numeric25" />
+                <ScalarProperty Name="Numeric24" ColumnName="Numeric24" />
+                <ScalarProperty Name="Numeric23" ColumnName="Numeric23" />
+                <ScalarProperty Name="Numeric22" ColumnName="Numeric22" />
+                <ScalarProperty Name="Numeric21" ColumnName="Numeric21" />
+                <ScalarProperty Name="Numeric20" ColumnName="Numeric20" />
+                <ScalarProperty Name="Numeric19" ColumnName="Numeric19" />
+                <ScalarProperty Name="Numeric18" ColumnName="Numeric18" />
+                <ScalarProperty Name="Numeric17" ColumnName="Numeric17" />
+                <ScalarProperty Name="Numeric16" ColumnName="Numeric16" />
+                <ScalarProperty Name="Numeric15" ColumnName="Numeric15" />
+                <ScalarProperty Name="Numeric14" ColumnName="Numeric14" />
+                <ScalarProperty Name="Numeric13" ColumnName="Numeric13" />
+                <ScalarProperty Name="Numeric12" ColumnName="Numeric12" />
+                <ScalarProperty Name="Numeric11" ColumnName="Numeric11" />
+                <ScalarProperty Name="Numeric10" ColumnName="Numeric10" />
+                <ScalarProperty Name="Numeric9" ColumnName="Numeric9" />
+                <ScalarProperty Name="Numeric8" ColumnName="Numeric8" />
+                <ScalarProperty Name="Numeric7" ColumnName="Numeric7" />
+                <ScalarProperty Name="Numeric6" ColumnName="Numeric6" />
+                <ScalarProperty Name="Numeric5" ColumnName="Numeric5" />
+                <ScalarProperty Name="Numeric4" ColumnName="Numeric4" />
+                <ScalarProperty Name="Numeric3" ColumnName="Numeric3" />
+                <ScalarProperty Name="Numeric2" ColumnName="Numeric2" />
+                <ScalarProperty Name="Numeric1" ColumnName="Numeric1" />
+                <ScalarProperty Name="ResourceCategory" ColumnName="ResourceCategory" />
+                <ScalarProperty Name="SlopeOfRegression" ColumnName="SlopeOfRegression" />
+                <ScalarProperty Name="KrigingVariance" ColumnName="KrigingVariance" />
+                <ScalarProperty Name="KrigingError" ColumnName="KrigingError" />
+                <ScalarProperty Name="KrigingEfficiency" ColumnName="KrigingEfficiency" />
+                <ScalarProperty Name="EstimationTechnique" ColumnName="EstimationTechnique" />
+                <ScalarProperty Name="MaximumSamples" ColumnName="MaximumSamples" />
+                <ScalarProperty Name="MinimumSamples" ColumnName="MinimumSamples" />
+                <ScalarProperty Name="LengthZ" ColumnName="LengthZ" />
+                <ScalarProperty Name="LengthY" ColumnName="LengthY" />
+                <ScalarProperty Name="LengthX" ColumnName="LengthX" />
+                <ScalarProperty Name="CentroidZ" ColumnName="CentroidZ" />
+                <ScalarProperty Name="CentroidY" ColumnName="CentroidY" />
+                <ScalarProperty Name="CentroidX" ColumnName="CentroidX" />
+                <ScalarProperty Name="K" ColumnName="K" />
+                <ScalarProperty Name="J" ColumnName="J" />
+                <ScalarProperty Name="I" ColumnName="I" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="BlockModelID" ColumnName="BlockModelID" />
+                <ScalarProperty Name="BlockModelBlockID" ColumnName="BlockModelBlockID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_MetaData">
+            <EntityTypeMapping TypeName="XODBImportModel.X_MetaData">
+              <MappingFragment StoreEntitySet="X_MetaData">
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="ContentToIndex" ColumnName="ContentToIndex" />
+                <ScalarProperty Name="MetaDataType" ColumnName="MetaDataType" />
+                <ScalarProperty Name="MetaDataID" ColumnName="MetaDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_MetaDataRelation">
+            <EntityTypeMapping TypeName="XODBImportModel.X_MetaDataRelation">
+              <MappingFragment StoreEntitySet="X_MetaDataRelation">
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+                <ScalarProperty Name="TableType" ColumnName="TableType" />
+                <ScalarProperty Name="MetaDataID" ColumnName="MetaDataID" />
+                <ScalarProperty Name="MetaDataRelationID" ColumnName="MetaDataRelationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

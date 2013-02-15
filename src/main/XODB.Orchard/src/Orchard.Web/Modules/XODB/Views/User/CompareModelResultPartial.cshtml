@@ -1,0 +1,44 @@
+﻿@model XODB.ViewModels.BlockModelCompareViewModel
+@{
+ReportViewerSettings settings = new ReportViewerSettings();
+settings.Name = "ReportViewer1";
+settings.Report = Model.Report;
+settings.CallbackRouteValues = new { area = "XODB", Controller = "User", Action = "CompareModelResultPartial",
+    ReportID = (uint)XODB.Reports.AllReports.ReportType.CompareModel, 
+    Model1 = Model.Model1,
+    Model2 = Model.Model2,
+    SelectedDomainsModel1 = Model.SelectedDomainsModel1,
+    SelectedDomainsModel1Compact = Model.SelectedDomainsModel1Compact,
+    SelectedDomainsModel2 = Model.SelectedDomainsModel2,
+    SelectedDomainsModel2Compact = Model.SelectedDomainsModel2Compact,
+    ReportName = "Compare Models",
+    GradeTonnageIncrement = Model.GradeTonnageIncrement,
+    GradeTonnageFieldID = Model.GradeTonnageFieldID,
+    SliceFieldID = Model.SliceFieldID,
+    SliceFilterFieldID = Model.SliceFilterFieldID,
+    SliceWidthX = Model.SliceWidthX,
+    SliceWidthY = Model.SliceWidthY,
+    SliceWidthZ = Model.SliceWidthZ,
+    FilterString = Model.FilterString  
+};
+settings.ExportRouteValues = new { area = "XODB", Controller = "User", Action = "ReportViewerExportTo", 
+    ReportID = (uint)XODB.Reports.AllReports.ReportType.CompareModel,
+    Model1 = Model.Model1,
+    Model2 = Model.Model2,
+    SelectedDomainsModel1 = Model.SelectedDomainsModel1,
+    SelectedDomainsModel1Compact = Model.SelectedDomainsModel1Compact,
+    SelectedDomainsModel2 = Model.SelectedDomainsModel2,
+    SelectedDomainsModel2Compact = Model.SelectedDomainsModel2Compact,
+    ReportName = "Compare Models",
+    GradeTonnageIncrement = Model.GradeTonnageIncrement,
+    GradeTonnageFieldID = Model.GradeTonnageFieldID,
+    SliceFieldID = Model.SliceFieldID,
+    SliceFilterFieldID = Model.SliceFilterFieldID,
+    SliceWidthX = Model.SliceWidthX,
+    SliceWidthY = Model.SliceWidthY,
+    SliceWidthZ = Model.SliceWidthZ,
+    FilterString = Model.FilterString  
+};
+Html.DevExpress().ReportViewer(settings).GetHtml();
+
+}

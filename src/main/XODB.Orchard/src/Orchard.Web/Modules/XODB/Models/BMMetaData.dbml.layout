@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.25" name="BMMetaData">
+  <DataContextMoniker Name="/BMMetaDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="467f1ebb-f330-48e5-bfca-ad3bbcef937c" absoluteBounds="0.75, 1.125, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/BMMetaDataDataContext/X_MetaData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ebc5c67-29e8-4ea9-b48e-f00b0a79c995" absoluteBounds="0.765, 1.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95acc9bd-b164-4b42-8f19-ca375f9b6b01" absoluteBounds="3.5, 1, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/BMMetaDataDataContext/X_MetaDataRelation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a5b3044-19cc-4e81-9fa6-c1a551370f3d" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.68350341796875); (3.5 : 2.68350341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BMMetaDataDataContext/X_MetaData/X_MetaData_X_MetaDataRelation" />
+      <nodes>
+        <classShapeMoniker Id="467f1ebb-f330-48e5-bfca-ad3bbcef937c" />
+        <classShapeMoniker Id="95acc9bd-b164-4b42-8f19-ca375f9b6b01" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c1cf90e1-e532-483a-8af9-c9c01db730e5" absoluteBounds="1.375, 5.75, 2, 4.2708154296875">
+      <DataClassMoniker Name="/BMMetaDataDataContext/X_Parameter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2304ddfa-ceab-4604-b13e-0d5e477a3818" absoluteBounds="1.3900000000000001, 6.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="436f3fcb-07e0-4897-9ef9-ba8019ebed7c" absoluteBounds="5.125, 5.75, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/BMMetaDataDataContext/X_BlockModelMetadata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81114b0a-7e6f-46b0-9ce7-1f1a975065a0" absoluteBounds="5.14, 6.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 7.59695556640625); (5.125 : 7.59695556640625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BMMetaDataDataContext/X_Parameter/X_Parameter_X_BlockModelMetadata" />
+      <nodes>
+        <classShapeMoniker Id="c1cf90e1-e532-483a-8af9-c9c01db730e5" />
+        <classShapeMoniker Id="436f3fcb-07e0-4897-9ef9-ba8019ebed7c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

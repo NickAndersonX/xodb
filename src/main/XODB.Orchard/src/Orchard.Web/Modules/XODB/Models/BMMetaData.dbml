@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="XODB" Class="BMMetaDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=AU-BNE-SQ-007;Initial Catalog=XODB;Persist Security Info=True;User ID=xodb_user1;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="XODBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.X_MetaData" Member="X_MetaDatas">
+    <Type Name="X_MetaData">
+      <Column Name="MetaDataID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetaDataType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ContentToIndex" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_MetaData_X_MetaDataRelation" Member="X_MetaDataRelations" ThisKey="MetaDataID" OtherKey="MetaDataID" Type="X_MetaDataRelation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_MetaDataRelation" Member="X_MetaDataRelations">
+    <Type Name="X_MetaDataRelation">
+      <Column Name="MetaDataRelationID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetaDataID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TableType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ReferenceID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_MetaData_X_MetaDataRelation" Member="X_MetaData" ThisKey="MetaDataID" OtherKey="MetaDataID" Type="X_MetaData" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_Parameter" Member="X_Parameters">
+    <Type Name="X_Parameter">
+      <Column Name="ParameterID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ParameterType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ParameterName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DefaultParameterValue" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="DefaultParameterText" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UnitID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Format" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Locale" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_Parameter_X_BlockModelMetadata" Member="X_BlockModelMetadatas" ThisKey="ParameterID" OtherKey="ParameterID" Type="X_BlockModelMetadata" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_BlockModelMetadata" Member="X_BlockModelMetadatas">
+    <Type Name="X_BlockModelMetadata">
+      <Column Name="BlockModelMetadataID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BlockModelID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ParameterID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IsColumnData" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BlockModelMetadataText" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BlockModelMetadataValue" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_Parameter_X_BlockModelMetadata" Member="X_Parameter" ThisKey="ParameterID" OtherKey="ParameterID" Type="X_Parameter" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

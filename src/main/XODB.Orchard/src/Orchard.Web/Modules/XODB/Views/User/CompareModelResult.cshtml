@@ -1,0 +1,40 @@
+﻿@model XODB.ViewModels.BlockModelCompareViewModel
+@using XODB.Models;
+@Html.Partial("Header")
+@{
+    Style.Require("XODBAdmin");
+
+    Layout.Title = T("Result - Compare Block Models").ToString();
+}
+
+@if (AuthorizedFor(XODB.Permissions.ManageProjects)) {
+    using(Html.BeginForm())
+    {
+          <fieldset>
+              <legend>Result - Compare Block Models</legend>
+               <div class="editor-label">
+                  Model 1 @Html.TextBoxFor(x => x.Model1Name, new { @readonly = true } ) <br /> Model 2 @Html.TextBoxFor(x => x.Model2Name, new { @readonly = true } ) 
+              </div>
+          </fieldset>
+    }
+}
+</script>
+
+  
+
+      
+ @Html.DevExpress().ReportToolbar(
+            settings =>
+            {
+                settings.Name = "ReportToolbar";
+                settings.ReportViewerName = "ReportViewer1";
+            }
+        ).GetHtml()
+ <table cellspacing="0" cellpadding="0" class="reportBorder" style="margin-top:20px;">
+            <tr>
+                <td>
+                    @Html.Partial("CompareModelResultPartial", Model)
+                </td>
+            </tr>
+        </table>
+      

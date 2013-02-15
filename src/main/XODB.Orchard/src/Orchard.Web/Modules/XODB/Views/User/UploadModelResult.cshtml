@@ -1,0 +1,25 @@
+﻿@model XODB.ViewModels.BlockModelUploadViewModel
+@using XODB.Models;
+@Html.Partial("Header")
+@{
+    Style.Require("XODBAdmin");
+
+    Layout.Title = T("Result - Upload Block Models").ToString();
+}
+
+@if (AuthorizedFor(XODB.Permissions.ManageProjects)) {
+    @Html.BeginForm()
+    {
+          <fieldset>
+              <legend>Result - Upload Block Models</legend>
+               <div class="editor-label">
+                  Models: @Html.TextBoxFor(x => x.Model1, new { @readonly = true } ) &nbsp; <br />
+                    @Html.TextBoxFor(x => x.Model2, new { @readonly = true } )  <br />
+                   @Html.TextBoxFor(x => x.Test, new { @readonly = true } ) &nbsp;
+              </div>
+          </fieldset>
+    }
+}
+</script>
+    
+      

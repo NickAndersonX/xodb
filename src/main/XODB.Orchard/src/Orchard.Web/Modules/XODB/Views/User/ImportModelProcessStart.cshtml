@@ -1,0 +1,26 @@
+﻿@model XODB.ViewModels.BlockModelViewModel
+@using XODB.Models;
+@Html.Partial("Header")
+@{
+    Style.Require("XODBAdmin");
+
+    Layout.Title = T("Result - Import block model process start").ToString();
+}
+
+@if (AuthorizedFor(XODB.Permissions.ManageProjects)) {
+    using (Html.BeginForm())
+    {
+          <fieldset>
+              <legend>Result -  Import block model process start</legend>
+              <br /><br />
+               Import of model <b>@Html.DisplayTextFor(x => x.Alias) </b>has begun using the file <b>@Html.DisplayTextFor(x => x.FileName)</b>. 
+               <br />
+              You will recieve an email on completion. Please note that large models may take some time to import.<br />
+              
+
+          </fieldset>
+    }
+}
+</script>
+    
+      

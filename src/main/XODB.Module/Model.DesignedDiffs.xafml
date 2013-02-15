@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="XODB" Logo="ExpressAppLogo">
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="12.1.8.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>
