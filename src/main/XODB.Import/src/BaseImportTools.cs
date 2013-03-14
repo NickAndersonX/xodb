@@ -18,9 +18,10 @@ namespace XODBImportLib
 
         public BaseImportTools() { }
 
-        public string TestConnection() {
+        public string TestConnection(string connString) {
 
             XODBImportEntities resourceModels = new XODBImportEntities();
+            resourceModels.Database.Connection.ConnectionString = connString;
             // talk to the import lib to do the import
             DbSet<X_BlockModel> models = resourceModels.X_BlockModel;
             var query = from X_BlockModel in models select new { X_BlockModel.BlockModelID, X_BlockModel.OriginX, X_BlockModel.OriginY, X_BlockModel.OriginZ, X_BlockModel.ProjectID };
@@ -55,11 +56,12 @@ namespace XODBImportLib
         }
 
 
-        public string PerformBMImport(string bmDataFile, string selectedFormatBMFile, ImportDataMap importMap, double xOrigin, double yOrigin, double zOrigin, System.ComponentModel.BackgroundWorker worker, int approxNumLines, string XODBProjectID, string units)
+        public string PerformBMImport(string bmDataFile, string selectedFormatBMFile, ImportDataMap importMap, double xOrigin, double yOrigin, double zOrigin, System.ComponentModel.BackgroundWorker worker, int approxNumLines, string XODBProjectID, string units, string connString)
         {
             this.currentWorker = worker;
             UpdateStatus("Connecting to XODB", 10.0);
             XODBImportEntities resourceModels = new XODBImportEntities();
+            resourceModels.Database.Connection.ConnectionString = connString;
             // talk to the import lib to do the import
             DbSet<X_BlockModel> models = resourceModels.X_BlockModel;
             var query = from X_BlockModel in models select new { X_BlockModel.BlockModelID, X_BlockModel.OriginX, X_BlockModel.OriginY, X_BlockModel.OriginZ, X_BlockModel.ProjectID };
@@ -97,13 +99,13 @@ namespace XODBImportLib
            resourceModels.SaveChanges();
            UpdateStatus( "Setting model meta data", 25.0);
            // add the meta data to identify all of the oclumns etc.
-           List<X_BlockModelMetadata> blockColumnMetaData = dbIm.SetBlockModelMetaData(blockModelGUID, importMap);
+           List<X_BlockModelMetadata> blockColumnMetaData = dbIm.SetBlockModelMetaData(blockModelGUID, importMap, connString);
 
            // add the new BM guid to the column map as a default so that it is always entered
            importMap.columnMap.Add(new ColumnMap("", -1, "X_BlockModelBlock", "BlockModelID", ImportDataMap.TEXTDATATYPE, blockModelGUID.ToString(), units));
             
            // add the individual blocks
-           dbIm.AddBlockData(bmDataFile, importMap, blockModelGUID, batchSize, UpdateStatus, approxNumLines);
+           dbIm.AddBlockData(bmDataFile, importMap, blockModelGUID, batchSize, UpdateStatus, approxNumLines, connString);
            //dbIm.AddBlockDataNorm(bmDataFile, importMap, blockModelGUID, batchSize, UpdateStatus, approxNumLines, blockColumnMetaData);
 
            DateTime endTime = DateTime.Now;
@@ -120,6 +122,7 @@ namespace XODBImportLib
         {
             this.currentWorker = null;
             XODBImportEntities resourceModels = new XODBImportEntities();
+            resourceModels.Database.Connection.ConnectionString = connString;
             // talk to the import lib to do the import
             
             DateTime startTime = DateTime.Now;
@@ -128,7 +131,7 @@ namespace XODBImportLib
             BlockImportUtils.BlockImport dbIm = null;
             try
             {
-               dbIm = new BlockImportUtils.BlockImport();
+                dbIm = new BlockImportUtils.BlockImport();
                 //ImportDataMap importMapLoaded = FormatSpecificationIO.ImportMapIO.LoadImportMap(ffFileStream);
                 X_BlockModel xAdd = new X_BlockModel();
                 xAdd.OriginX = (Decimal)xOrigin;                                   // TO-DO
@@ -154,7 +157,7 @@ namespace XODBImportLib
             {
                 try
                 {
-                    List<X_BlockModelMetadata> blockColumnMetaData = dbIm.SetBlockModelMetaData(blockModelGUID, importMap);
+                    List<X_BlockModelMetadata> blockColumnMetaData = dbIm.SetBlockModelMetaData(blockModelGUID, importMap, connString);
                 }
                 catch (Exception ex) {
                     mos.AddErrorMessage("Error setting block model meta data:\n" + ex.ToString());
@@ -308,14 +311,15 @@ namespace XODBImportLib
             return idx;
         }
 
-        public void PerformBMAppend(System.IO.Stream bmStream, Guid guid, string alias, string columnNameToImport, int columnIndexToImport, string cs)
+        public void PerformBMAppend(System.IO.Stream bmStream, Guid guid, string alias, string columnNameToImport, int columnIndexToImport, string connString)
         {
             // TODO: read stream and write updates to database
 
             // get the next column to write to - search meta data to get the list of occupied columns
-            XODBImportEntities r = new XODBImportEntities();
+            XODBImportEntities resourceModels = new XODBImportEntities();
+            resourceModels.Database.Connection.ConnectionString = connString;
             List<X_BlockModelMetadata> d = new List<X_BlockModelMetadata>();
-            var o = r.X_BlockModelMetadata.Where(f => f.BlockModelID == guid && f.IsColumnData == true).Select(f => (string)f.BlockModelMetadataText).ToArray();
+            var o = resourceModels.X_BlockModelMetadata.Where(f => f.BlockModelID == guid && f.IsColumnData == true).Select(f => (string)f.BlockModelMetadataText).ToArray();
             // yuk, ugly hack to get the next column to update into.  In the long run, use normalised data as it will be much easier
             int lastIndex = 0;
             foreach (string s in o) {
@@ -337,9 +341,9 @@ namespace XODBImportLib
             ImportDataMap idm = new ImportDataMap();
             idm.columnMap = new List<ColumnMap>();
             idm.columnMap.Add(new ColumnMap(columnNameToImport, columnIndexToImport, "X_BlockModelBlock", colToInsertTo,ImportDataMap.NUMERICDATATYPE, null, null));
-            dbIm.SetBlockModelMetaData(guid, idm);
+            dbIm.SetBlockModelMetaData(guid, idm, connString);
 
-            dbIm.UpdateBlockData(bmStream, guid, colToInsertTo, cs);
+            dbIm.UpdateBlockData(bmStream, guid, colToInsertTo, connString);
             
 
         }

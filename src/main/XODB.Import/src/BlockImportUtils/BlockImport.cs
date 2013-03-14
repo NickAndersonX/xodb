@@ -24,7 +24,7 @@ namespace XODBImportLib.BlockImportUtils
         /// <param name="batchSize"></param>
         /// <param name="UpdateStatus"></param>
         /// <param name="numLines"></param>
-        internal void AddBlockData(string textInputDataFile, ImportDataMap testMap, Guid blockModelGUID, int batchSize, Action<string, double> UpdateStatus, int numLines)
+        internal void AddBlockData(string textInputDataFile, ImportDataMap testMap, Guid blockModelGUID, int batchSize, Action<string, double> UpdateStatus, int numLines, string connString)
         {
 
             // iterate through the data lines
@@ -33,11 +33,7 @@ namespace XODBImportLib.BlockImportUtils
             // get a connection to the database
             try
             {
-
-                string connectionString = ConfigurationManager.ConnectionStrings["SimpleXODBResourceModelEntities"].ConnectionString;
-                connectionString = "Data Source=AU-BNE-SQ-007;Initial Catalog=XODB;Integrated Security=True";
-                    
-                connection = new SqlConnection(connectionString);
+                connection = new SqlConnection(connString);
                 connection.Open();
                 int numCommits = 0;
                 SqlTransaction trans;
@@ -183,7 +179,7 @@ namespace XODBImportLib.BlockImportUtils
         /// <param name="batchSize"></param>
         /// <param name="UpdateStatus"></param>
         /// <param name="approxNumLines"></param>
-        internal List<string> AddBlockData(ModelImportStatus mos, Stream bmFileStream, ImportDataMap importMap, Guid blockModelGUID, int batchSize, Action<string, double> UpdateStatus, int numLines, string connectionString)
+        internal List<string> AddBlockData(ModelImportStatus mos, Stream bmFileStream, ImportDataMap importMap, Guid blockModelGUID, int batchSize, Action<string, double> UpdateStatus, int numLines, string connString)
         {
             // iterate through the data lines
             int ct = 1;
@@ -202,12 +198,7 @@ namespace XODBImportLib.BlockImportUtils
                 }
 
 
-                string cs = "Data Source=AU-BNE-SQ-007;Initial Catalog=XODB;Integrated Security=True;Connection Timeout=120;Async=true";
-
-                // ConfigurationManager.ConnectionStrings["SimpleXODBResourceModelEntities"].ConnectionString;
-                // connectionString =
-
-                connection = new SqlConnection(connectionString);
+                connection = new SqlConnection(connString);
                 connection.Open();
                 
                 int numCommits = 0;
@@ -374,10 +365,10 @@ namespace XODBImportLib.BlockImportUtils
 
         }
 
-        internal List<X_BlockModelMetadata> SetBlockModelMetaData(Guid blockModelGUID, ImportDataMap testMap)
+        internal List<X_BlockModelMetadata> SetBlockModelMetaData(Guid blockModelGUID, ImportDataMap testMap, string connString)
         {
             XODBImportEntities resourceModels = new XODBImportEntities();
-
+            resourceModels.Database.Connection.ConnectionString = connString;
             List<X_BlockModelMetadata> metaDataItems = new List<X_BlockModelMetadata>(); 
 
             foreach (ColumnMap cmap in testMap.columnMap)
@@ -410,7 +401,7 @@ namespace XODBImportLib.BlockImportUtils
 
 
 
-        internal ModelImportStatus UpdateBlockData(Stream bmStream, Guid guid, string colToInsertTo, string cs)
+        internal ModelImportStatus UpdateBlockData(Stream bmStream, Guid guid, string colToInsertTo, string connString)
         {
             ModelImportStatus mos = new ModelImportStatus();
             // iterate through the data lines
@@ -422,7 +413,7 @@ namespace XODBImportLib.BlockImportUtils
             try
             {
                 
-                connection = new SqlConnection(cs);
+                connection = new SqlConnection(connString);
                 connection.Open();
 
                 int numCommits = 0;
