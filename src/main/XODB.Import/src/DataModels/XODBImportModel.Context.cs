@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace XODBImportLib.DataModels
+namespace XODB.Import.DataModels
 {
     using System;
     using System.Data.Entity;

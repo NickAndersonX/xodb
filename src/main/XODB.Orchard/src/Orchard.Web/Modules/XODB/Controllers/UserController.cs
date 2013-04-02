@@ -20,7 +20,6 @@ using XODB.Reports;
 using System.Threading.Tasks;
 using ImpromptuInterface;
 
-//TODO: Get all the transaction scopes out and put them in services
 namespace XODB.Controllers {
 
     [Themed]
@@ -34,6 +33,9 @@ namespace XODB.Controllers {
         public ILogger Logger { get; set; }
         public Localizer T { get; set; }
         public IPrivateDataService PrivateService { get; set; }
+        
+        public const string OLAP_XSTRING = @"provider=MSOLAP;data source=au-bne-sq-007;initial catalog=XODB Cube;cube name=Resource Models";
+
         public UserController(
             IOrchardServices services, 
             IBlockModelService blockModelService, 
@@ -64,11 +66,11 @@ namespace XODB.Controllers {
         {
             var model = new BlockModelCompareViewModel
             {
-                Models = BlockModelService.GetModelList(),
+                Models = BlockModelService.GetModelListCurrent(),
                 Report = AllReports.GetReport(AllReports.ReportType.CompareModel)
             };
-            model.ParametersModel1 = model.Models.Any() ? BlockModelService.GetModelParameterList(new Guid(model.Models.First().Value)) : null;
-            model.DomainsModel1 = model.Models.Any() ? BlockModelService.GetModelDomainsList(new Guid(model.Models.First().Value)) : null;
+            model.ParametersModel1 = model.Models.Any() ? BlockModelService.GetModelParameterList(new Guid(model.Models.First().Value)) : new SelectList(new SelectListItem[] { });
+            model.DomainsModel1 = model.Models.Any() ? BlockModelService.GetModelDomainsList(new Guid(model.Models.First().Value)) : new SelectList(new SelectListItem[] { });
             model.DomainsModel2 = model.DomainsModel1;
             model.ParametersModel2 = model.ParametersModel1;
             model.ParametersIntersectionBothModels = model.ParametersModel1;
@@ -93,14 +95,15 @@ namespace XODB.Controllers {
         public ActionResult GetModelIntersectionParameters(string modelID1, string modelID2)
         {
             
-            return Json(
+            var j = Json(
                 ((new SelectListItem[] { new SelectListItem { Text = "", Value = "" } })
-                .Union(from o in BlockModelService.GetModelParameterList(new Guid(modelID1))
+                .Union((from o in BlockModelService.GetModelParameterList(new Guid(modelID1))
                     join m in BlockModelService.GetModelParameterList(new Guid(modelID2))
-                    on o.Text equals m.Text
-                    select o)).OrderBy(f=>f.Text)
-                    
+                    on o.Text equals m.Text where o.Text != "" && o.Text != null
+                        select o))
+                        .OrderBy(f => f.Text))                    
                 , JsonRequestBehavior.AllowGet);
+            return j;
         }
 
         [HttpPost]
@@ -111,6 +114,7 @@ namespace XODB.Controllers {
             m.SelectedDomainsModel2Compact = m.SelectedDomainsModel2 != null ? string.Join(";", m.SelectedDomainsModel2.ToArray()) : null;
             m.Model1Name = BlockModelService.GetModelAlias(m.Model1);
             m.Model2Name = BlockModelService.GetModelAlias(m.Model2);
+            m.ReportExecutedByUserName = Services.WorkContext.CurrentUser.UserName;
             return View(m);
         }
 
@@ -126,10 +130,13 @@ namespace XODB.Controllers {
             IReport r = BlockModelService.CompareModels(m);
             return PartialView(new BlockModelCompareViewModel { 
                 Model1 = m.Model1,
+                Model1Name = m.Model1Name,
                 Model2 = m.Model2,
+                Model2Name = m.Model2Name,
                 DomainsModel1 = m.DomainsModel1,
                 DomainsModel2 = m.DomainsModel2,
                 GradeTonnageFieldID = m.GradeTonnageFieldID,
+                GradeTonnageFieldName = m.GradeTonnageFieldName,
                 GradeTonnageIncrement = m.GradeTonnageIncrement,
                 ParametersIntersectionBothModels = m.ParametersIntersectionBothModels,
                 ParametersModel1 = m.ParametersModel1,
@@ -146,7 +153,8 @@ namespace XODB.Controllers {
                 SliceWidthX = m.SliceWidthX,
                 SliceWidthY = m.SliceWidthY,
                 SliceWidthZ = m.SliceWidthZ,
-                FilterString = m.FilterString
+                FilterString = m.FilterString,
+                ReportExecutedByUserName = Services.WorkContext.CurrentUser.UserName
             });
         }
 
@@ -190,7 +198,7 @@ namespace XODB.Controllers {
             string notes = m.Notes;
             string stage = m.Stage;
             Guid gg = PrivateService.XODB_BM_STAGE;
-            Task<string> val = BlockModelService.PerformBMImport(bmFile, formatSpecFile, projID, alias, UserService, this.getCurrentUserID(), notes, stage, gg);
+            BlockModelService.ProcessModelAsync(bmFile, formatSpecFile, projID, alias, this.getCurrentUserID(), notes, stage, gg, 60);
             return View(m);
         }
 
@@ -208,14 +216,39 @@ namespace XODB.Controllers {
         }
 
         [HttpGet]
+        public ActionResult DeleteModel(string id)
+        {
+            if (!Services.Authorizer.Authorize(Permissions.ManageProjects, T("Couldn't update the model.")))
+                return new HttpUnauthorizedResult();
+            if (string.IsNullOrEmpty(id))
+                throw new NotImplementedException();
+            var guid = new Guid(id);
+            BlockModelService.DeleteModel(guid, getCurrentUserID());
+            return RedirectToAction("ModelList");
+        }
+
+        [HttpGet]
+        public ActionResult Unauthorized()
+        {
+            return new HttpUnauthorizedResult();
+        }
+
+        [HttpGet]
+        public ActionResult UnauthorizedRedirect()
+        {
+            Response.Redirect("~/Users/Account/AccessDenied?ReturnUrl=" + Url.Encode(Request.Path));
+            return null;
+        }
+
+        [HttpGet]
         public ActionResult ImportModel() {
             var model = new BlockModelViewModel
             {
                 FileNames = BlockModelService.GetFileNameList(),
                 FormatFileNames = BlockModelService.GetFormatFileNameList(),
-                Projects = ProjectService.GetProjectList()
+                Projects = ProjectService.GetProjectListCurrent()
             };
-            model.Stages = model.Projects.Any() ? ProjectService.GetStagesList(new Guid(model.Projects.First().Value)) : null;
+            model.Stages = model.Projects.Any() ? ProjectService.GetStagesList(new Guid(model.Projects.First().Value)) : new SelectList(new SelectListItem[] { });
             return View(model);
         }
 
@@ -278,53 +311,7 @@ namespace XODB.Controllers {
 
                     if (ModelState.IsValid)
                     {
-                        using (new TransactionScope(TransactionScopeOption.Suppress))
-                        {
-                            var now = DateTime.Now;
-                            var d = new ProjectsDataContext();
-                            var p = new Project();
-                            p.ProjectName = (m.ProjectName == "null") ? null : m.ProjectName;
-                            p.Comment = (m.Comment == "null") ? null : m.Comment;
-                            p.ProjectID = Guid.NewGuid();
-                            p.VersionOwnerContactID = m.Creator;
-                            p.VersionUpdated = now;
-                            p.VersionUpdatedBy = m.User;
-                            d.Projects.InsertOnSubmit(p);
-                            var n = new ProjectPlan();
-                            n.ProjectPlanID = Guid.NewGuid();
-                            n.ProjectID = p.ProjectID;
-                            n.ProjectPlanName = "Resource Modelling";
-                            n.ResponsibleContactID = m.Creator;
-                            n.VersionOwnerContactID = m.User;
-                            n.VersionUpdated = now;
-                            n.VersionUpdatedBy = m.User;
-                            d.ProjectPlans.InsertOnSubmit(n);
-                            var t = new ProjectPlanTask();
-                            t.ProjectPlanTaskID = Guid.NewGuid();
-                            t.ProjectPlanID = n.ProjectPlanID;
-                            t.ProjectTaskName = m.StageName;
-                            t.VersionOwnerContactID = m.Creator;
-                            t.VersionUpdated = now;
-                            t.VersionUpdatedBy = m.User;
-                            d.ProjectPlanTasks.InsertOnSubmit(t);
-                            var tr = new ProjectPlanTask();
-                            tr.ProjectPlanTaskID = Guid.NewGuid();
-                            tr.ProjectPlanID = n.ProjectPlanID;
-                            tr.ProjectTaskName = "Review";
-                            tr.VersionOwnerContactID = m.Reviewer;
-                            tr.VersionUpdated = now.AddSeconds(-1); //This is not the current task
-                            tr.VersionUpdatedBy = m.User;
-                            d.ProjectPlanTasks.InsertOnSubmit(tr);
-                            var tc = new ProjectPlanTask();
-                            tc.ProjectPlanTaskID = Guid.NewGuid();
-                            tc.ProjectPlanID = n.ProjectPlanID;
-                            tc.ProjectTaskName = "Complete";
-                            tc.VersionOwnerContactID = m.User;
-                            tc.VersionUpdated = now.AddSeconds(-1); //This is not the current task
-                            tc.VersionUpdatedBy = m.User;
-                            d.ProjectPlanTasks.InsertOnSubmit(tr);
-                            d.SubmitChanges();
-                        }
+                        ProjectService.UpdateProject(m);
                         return RedirectToAction("ProjectList");
                     }
 
@@ -355,23 +342,8 @@ namespace XODB.Controllers {
         {
             if (string.IsNullOrEmpty(id))
                 throw new NotImplementedException();
-            var guid = new Guid(id);
-            //SelectList fileList = BlockModelService.GetFileNameList();
-            SelectList fileList = BlockModelService.GetUpdatedModelList();
-            using (new TransactionScope(TransactionScopeOption.Suppress))
-            {
-                var d = new Models.ModelsDataContext();
-                var b = (d.BlockModels.OrderByDescending(x => x.Version).FirstOrDefault(x => x.BlockModelID == guid));
-                var m = new BlockModelAppendViewModel
-                {
-                    BlockModelAlias = b.Alias,
-                    Version = (b.Version + 1),
-                    BlockModelID = guid,
-                    FileNames = fileList
-                };
-
-                return View(m);
-            }
+            var guid = new Guid(id);        
+            return View(BlockModelService.GetBlockModelToAppend(guid));
         }
 
         [HttpPost, ValidateInput(false)]
@@ -392,9 +364,9 @@ namespace XODB.Controllers {
             // Call into the block model library to append the given column using the column map provided.
             // this will attempt to match the BlockModelID of target model, and XC, YC and ZC  coordinates of every record and insert the value
             List<string> columnNames = BlockModelService.GetImportFileColumnsAsList(m.BlockModelID, m.FileName, m.BlockModelAlias);            
-            string columnToAdd = m.ColumnName;
+            string columnToAdd = columnNames[3];
             int columnIndexToAdd = 3;
-            BlockModelService.PerformBMImportAppend(m.BlockModelID, m.FileName, m.BlockModelAlias, columnToAdd, columnIndexToAdd);
+            BlockModelService.AppendModelAsync(m.BlockModelID, m.FileName, m.BlockModelAlias, columnToAdd, columnIndexToAdd, getCurrentUserID(), 60);
             return View(m);
         }
 
@@ -455,17 +427,7 @@ namespace XODB.Controllers {
 
                     if (ModelState.IsValid)
                     {
-                        using (new TransactionScope(TransactionScopeOption.Suppress))
-                        {
-                            var p = new ProjectsDataContext();
-                            o.ProjectName = (o.ProjectName == "null") ? null : o.ProjectName.Substring(1, o.ProjectName.Length - 2);
-                            o.Comment = (o.Comment == "null") ? null : o.Comment.Substring(1, o.Comment.Length - 2);
-                            o.ProjectID = Guid.NewGuid();
-                            p.Projects.InsertOnSubmit(o);
-                            p.SubmitChanges();
-
-                            //projects.SaveChanges();
-                        }
+                        ProjectService.CreateProject(o);
                         return PartialView("ProjectListPartial");
                     }
 
@@ -518,14 +480,7 @@ namespace XODB.Controllers {
 
                     if (ModelState.IsValid)
                     {
-                        using (new TransactionScope(TransactionScopeOption.Suppress))
-                        {
-                            var d = new ModelsDataContext();
-                            var x = from p in d.Parameters where p.ParameterID==m.ParameterID select p;
-                            var o = x.First();
-                            o.UnitID = m.UnitID;
-                            d.SubmitChanges();                            
-                        }
+                        BlockModelService.UpdateModelParameter(m);
                         return RedirectToAction("ModelParameters");
                     }
 
@@ -564,56 +519,16 @@ namespace XODB.Controllers {
 
                         if (ModelState.IsValid)
                         {
-                            using (new TransactionScope(TransactionScopeOption.Suppress))
-                            {
-                                var note = string.Format("Model [Name: {0} ID: ({1})] was approved by ({2}).", m.BlockModelAlias, m.BlockModelID, Services.WorkContext.CurrentUser.UserName);
-                                Logger.Information(note);
-                                using (new TransactionScope(TransactionScopeOption.Suppress))
-                                {
-                                    var d = new ModelsDataContext();
-                                    var o = d.BlockModels.Where(f => f.BlockModelID == m.BlockModelID).Single();
-                                    o.ApproverContactID = getCurrentUserID();
-                                    if (o.AuthorContactID.HasValue)
-                                        UserService.EmailUsers(new Guid[] { o.AuthorContactID.Value } , "Model approved", note);
-                                    var n = new BlockModelMetadata();
-                                    n.BlockModelMetadataID = Guid.NewGuid();
-                                    n.BlockModelID = m.BlockModelID.Value;
-                                    n.ParameterID = PrivateService.XODB_GUID_LOG;
-                                    var oc = new Occurrence();
-                                    oc.ID = Guid.NewGuid();
-                                    oc.ContactID = o.ApproverContactID.Value;
-                                    oc.Occurred = DateTime.Now;
-                                    oc.Status = (uint)Occurrence.StatusCode.OK;
-                                    n.BlockModelMetadataText = oc.ToJson();
-                                    d.BlockModelMetadatas.InsertOnSubmit(n);
-                                    d.SubmitChanges();
-                                }
-                            }
+                            var note = string.Format("Model [Name: {0} ID: ({1})] was approved by ({2}).", m.BlockModelAlias, m.BlockModelID, Services.WorkContext.CurrentUser.UserName);
+                            BlockModelService.ApproveModel(m.BlockModelID.Value, getCurrentUserID(), note);
+                            Logger.Information(note);                            
                         }
                     }
                     else if (submit == "Notify")
                     {
                         var error = string.Format("Model [Name: {0} ID: ({1})] was not approved by ({2}).", m.BlockModelAlias, m.BlockModelID, Services.WorkContext.CurrentUser.UserName);
+                        BlockModelService.DenyModel(m.BlockModelID.Value, getCurrentUserID(), error);
                         Logger.Information(error);
-                        using (new TransactionScope(TransactionScopeOption.Suppress))
-                        {
-                            var d = new ModelsDataContext();
-                            var o = d.BlockModels.Where(f => f.BlockModelID == m.BlockModelID && f.AuthorContactID != null).Select(f => (Guid)f.AuthorContactID).ToArray();
-                            UserService.EmailUsers(o, "Model not accepted", error);
-                            var n = new BlockModelMetadata();
-                            n.BlockModelMetadataID = Guid.NewGuid();
-                            n.BlockModelID = m.BlockModelID.Value;
-                            n.ParameterID = PrivateService.XODB_GUID_LOG;
-                            var oc = new Occurrence();
-                            oc.ID = Guid.NewGuid();
-                            oc.ContactID = getCurrentUserID();
-                            oc.Occurred = DateTime.Now;
-                            oc.Status = (uint)Occurrence.StatusCode.Notified;
-                            n.BlockModelMetadataText = oc.ToJson();
-                            d.BlockModelMetadatas.InsertOnSubmit(n);
-                            d.SubmitChanges();
-                        }
-
                     }
                     return RedirectToAction("ModelsToAuthoriseList");
                 }
@@ -649,6 +564,104 @@ namespace XODB.Controllers {
             return View();            
         }
 
+        public ActionResult ModelPivot()
+        {
+            return View("ModelPivot");
+        }
+        public ActionResult ModelPivotPartial()
+        {
+            return PartialView("ModelPivotPartial");
+        }
+        public ActionResult ModelPivotChartPartial()
+        {
+            return PartialView("ModelPivotChartPartial", PivotGridExtension.GetDataObject(ModelPivotSettings(), OLAP_XSTRING));
+        }
        
+        public static PivotGridSettings ModelPivotSettings() {
+            PivotGridSettings pivotGridSettings = new PivotGridSettings();
+            pivotGridSettings.Name = "pivotGrid";
+            pivotGridSettings.CallbackRouteValues = new { Area = "XODB", Controller = "User", Action = "ModelPivotPartial" };
+            pivotGridSettings.OptionsChartDataSource.DataProvideMode = DevExpress.XtraPivotGrid.PivotChartDataProvideMode.UseCustomSettings;
+            pivotGridSettings.OptionsChartDataSource.ProvideDataByColumns = true;
+            pivotGridSettings.OptionsView.ShowFilterHeaders = false;
+            pivotGridSettings.OptionsView.ShowHorizontalScrollBar = true;
+            pivotGridSettings.OptionsView.ShowHorizontalScrollBar = true;
+            pivotGridSettings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+            pivotGridSettings.CustomizationFieldsLeft = 600;
+            pivotGridSettings.CustomizationFieldsTop = 400;
+            pivotGridSettings.OLAPDataProvider = DevExpress.XtraPivotGrid.OLAPDataProvider.Adomd;
+            pivotGridSettings.OptionsCustomization.CustomizationFormStyle = DevExpress.XtraPivotGrid.Customization.CustomizationFormStyle.Excel2007;
+
+
+            pivotGridSettings.CustomCallback = (sender, e) =>
+            {
+                //DevExpress.Web.ASPxPivotGrid.PivotGridField field = ((MVCxPivotGrid)sender).Fields["[Product].[Product Categories].[Product]"];
+                //if (field != null)
+                //    ((MVCxPivotGrid)sender).Fields.Remove(field);
+            };
+
+             pivotGridSettings.PreRender = (sender, e) =>
+             {
+                 MVCxPivotGrid pivot = ((MVCxPivotGrid)sender);
+                 pivot.RetrieveFields( DevExpress.XtraPivotGrid.PivotArea.FilterArea, false);
+                 //pivot.BeginUpdate();
+
+                 //pivot.Fields["[Product].[Product Categories].[Category]"].Area = PivotArea.RowArea;
+                 //pivot.Fields["[Product].[Product Categories].[Category]"].Visible = true;
+                 //pivot.Fields["[Date].[Calendar].[Calendar Year]"].Area = PivotArea.ColumnArea;
+                 //pivot.Fields["[Date].[Calendar].[Calendar Year]"].Visible = true;
+                 //pivot.Fields["[Date].[Calendar].[Calendar Year]"].ExpandedInFieldsGroup = false;
+                 //pivot.Fields["[Measures].[Sales Amount]"].Visible = true;
+
+                 //pivot.EndUpdate();
+             };
+            //pivotGridSettings.Fields.Add(field => {
+            //    field.FieldName = "Extended_Price";
+            //    field.Caption = "Extended Price";
+            //    field.Area = PivotArea.DataArea;
+            //    field.AreaIndex = 0;
+            //});
+            //pivotGridSettings.Fields.Add(field => {
+            //    field.FieldName = "CategoryName";
+            //    field.Caption = "Category Name";
+            //    field.Area = PivotArea.RowArea;
+            //    field.AreaIndex = 0;
+            //});
+            //pivotGridSettings.Fields.Add(field => {
+            //    field.FieldName = "OrderDate";
+            //    field.Caption = "Order Month";
+            //    field.Area = PivotArea.ColumnArea;
+            //    field.AreaIndex = 0;
+            //    field.UnboundFieldName = "fieldOrderDate";
+            //    field.GroupInterval = PivotGroupInterval.DateMonth;
+            //});
+            //pivotGridSettings.PreRender = (sender, e) => {
+            //    int selectNumber = 4;
+            //    var field = ((MVCxPivotGrid)sender).Fields["Category Name"];
+            //    object[] values = field.GetUniqueValues();
+            //    List<object> includedValues = new List<object>(values.Length / selectNumber);
+            //    for (int i = 0; i < values.Length; i++) {
+            //        if (i % selectNumber == 0)
+            //            includedValues.Add(values[i]);
+            //    }
+            //    field.FilterValues.ValuesIncluded = includedValues.ToArray();
+            //};
+            pivotGridSettings.ClientSideEvents.BeginCallback = "OnBeforePivotGridCallback";
+            pivotGridSettings.ClientSideEvents.EndCallback = "UpdateChart";
+
+            return pivotGridSettings;
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+    
+

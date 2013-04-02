@@ -3,7 +3,8 @@
 @Html.Partial("Header")
 @{
     Style.Require("XODBAdmin");
-
+    HtmlHelper.ClientValidationEnabled = true;
+    HtmlHelper.UnobtrusiveJavaScriptEnabled = true;
     Layout.Title = T("Import a Block Model").ToString();
 }
 
@@ -48,9 +49,14 @@
               <div class="editor-field">
                   @Html.TextAreaFor(x => x.Notes)
               </div>
-              <input type="submit" value="Upload"/>
+              @Html.ValidationSummary()
+              <input type="submit" value="Upload" class="submitButtonLeft"/>
           </fieldset>
     }
+}
+else
+{
+    Html.RenderAction("UnauthorizedRedirect");
 }
 
 @*<script type="text/javascript">

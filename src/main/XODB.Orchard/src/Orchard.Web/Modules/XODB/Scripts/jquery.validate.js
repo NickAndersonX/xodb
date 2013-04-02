@@ -27,8 +27,10 @@ $.extend($.fn, {
 			return validator;
 		}
 
-		// Add novalidate tag if HTML5.
-		this.attr('novalidate', 'novalidate');
+	    // Add novalidate tag if HTML5.
+		if (!(navigator.userAgent.toLowerCase().indexOf('msie') != -1 && document.documentMode <= 7)) {
+		    this.attr('novalidate', 'novalidate');
+		}
 
 		validator = new $.validator( options, this[0] );
 		$.data(this[0], 'validator', validator);

@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
-using XODBImportLib.FormatSpecification;
+using XODB.Import.FormatSpecification;
 
-namespace XODBImportLib.FormatSpecificationIO
+namespace XODB.Import.FormatSpecificationIO
 {
     public class ImportMapIO
     {

@@ -34,14 +34,18 @@ using DevExpress.XtraReports.UI;
         public XtraReport Report { get; set; }
         [DisplayName("Parameters:")]
         public string ParametersView { get; set; }
-        [DisplayName("Grade Field:")]
+        [Required, DisplayName("Grade Field:")]
         public Guid GradeTonnageFieldID { get; set; }
-        [DisplayName("Increment:"),DefaultValue(0.1)]
+        [DisplayName("Grade Field Name:")]
+        public string GradeTonnageFieldName { get; set; }
+        [Required, DisplayName("Increment:"), DefaultValue(0.1)]
         public double GradeTonnageIncrement { get; set; }
         [DisplayName("Slice Field:")]
         public Guid SliceFieldID { get; set; }
         [DisplayName("Slice Group By:")]
         public Guid SliceFilterFieldID { get; set; }
+        [DisplayName("Slice Group By Field Name:")]
+        public string SliceFilterFieldName { get; set; }
         [DisplayName("Width X:")]
         public double SliceWidthX { get; set; }
         [DisplayName("Width Y:")]
@@ -52,6 +56,11 @@ using DevExpress.XtraReports.UI;
         public string SerializedChild { get; set; }
         [DisplayName("Filter String:")]
         public string FilterString { get; set; }
+        [DisplayName("Report Executed By Username:")]
+        public string ReportExecutedByUserName { get; set; }
+        [DisplayName("Report Executed By User:")]
+        public Guid ReportExecutedByUserID { get; set; }
+
 
         public SelectList Models { get; set; }
         public SelectList ParametersModel1 { get; set; }

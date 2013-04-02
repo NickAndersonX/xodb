@@ -12,13 +12,11 @@
     {
           <fieldset>
               <legend>Result - Compare Block Models</legend>
-               <div class="editor-label">
+               <div class="editor-label" style="display:none;">
                   Model 1 @Html.TextBoxFor(x => x.Model1Name, new { @readonly = true } ) <br /> Model 2 @Html.TextBoxFor(x => x.Model2Name, new { @readonly = true } ) 
               </div>
           </fieldset>
     }
-}
-</script>
 
   
 
@@ -28,6 +26,8 @@
             {
                 settings.Name = "ReportToolbar";
                 settings.ReportViewerName = "ReportViewer1";
+                settings.Width = new System.Web.UI.WebControls.Unit("100%");
+                
             }
         ).GetHtml()
  <table cellspacing="0" cellpadding="0" class="reportBorder" style="margin-top:20px;">
@@ -37,4 +37,8 @@
                 </td>
             </tr>
         </table>
-      
+     
+}
+else {
+    Html.RenderAction("UnauthorizedRedirect");
+}

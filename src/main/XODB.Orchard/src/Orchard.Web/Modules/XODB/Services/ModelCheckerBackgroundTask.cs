@@ -72,7 +72,7 @@ namespace XODB.Services {
                     _signals.Trigger(MODEL_FILES_HASH_CACHE_KEY);
                     _projectService.EmailAllProjectOwners("New Model Uploaded", "A new model has been uploaded, and is ready for import into a project into XODB.");
                 }
-                Logger.Information(string.Format("Successfully updated old models (synchronisation completed).", DateTime.Now.ToLongDateString()));
+                Logger.Information(string.Format("Successfully updated old models (synchronisation completed).", DateTime.UtcNow.ToLongDateString()));
             }
         }
     }

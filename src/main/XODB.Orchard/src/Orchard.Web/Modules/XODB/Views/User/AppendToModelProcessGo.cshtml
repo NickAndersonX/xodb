@@ -13,7 +13,7 @@
         <fieldset>
               <legend>Append to a Block Model processed</legend><br />
                <br /><br />
-               Model <b> @Html.DisplayTextFor(x => x.BlockModelAlias) </b> has been appended with data from <b> @Html.DisplayTextFor(x => x.FileName) </b>.
+               Model <b> @Html.DisplayTextFor(x => x.BlockModelAlias) </b> is being appended with data from <b> @Html.DisplayTextFor(x => x.FileName) </b> you will receive an email notification shortly on the progress.
               <div class="id-label">                  
 
               </div>
@@ -23,4 +23,7 @@
 
     } 
 
+}
+else {
+    Html.RenderAction("UnauthorizedRedirect");
 }

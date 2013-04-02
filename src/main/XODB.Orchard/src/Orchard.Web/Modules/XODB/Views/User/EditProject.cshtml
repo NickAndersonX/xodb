@@ -26,7 +26,7 @@
               @if (isNew)
               {
               <div class="editor-field">
-                  @Html.TextBoxFor(x => x.ProjectName)
+                  @Html.TextBoxFor(x => x.ProjectName)                  
               </div>
               } else {
               <div class="editor-field">
@@ -59,9 +59,13 @@
                   @Html.TextAreaFor(x => x.Comment)
               </div>
               @Html.HiddenFor(x => x.User)
-              <input type="submit" value="Update"/>
+              @Html.ValidationSummary()
+              <input type="submit" value="Update" class="submitButtonLeft"/>
           </fieldset>
     }
+}
+else {
+    Html.RenderAction("UnauthorizedRedirect");
 }
 
 <script type="text/javascript">

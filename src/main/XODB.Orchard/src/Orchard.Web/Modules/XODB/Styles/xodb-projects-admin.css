@@ -2,12 +2,28 @@
     float:left;
     margin:0 0 16px 0;
 }
+.generalButton {
+    float: none;
+    padding: 5px;
+}
 .submitButton {
     float: right;
+    padding: 5px;
+}
+.submitButtonLeft {
+    text-wrap:none;
+    float:left;
+    padding: 12px;
+}
+.editor-label {
+    clear:both;
+    display:block;
+    float:none;
 }
 .dynamicInput {
     float:none;
     text-wrap: normal;
+    width:150px;
 }
 .folderProperties {
     float:right;
@@ -55,5 +71,5 @@
 
 .rightButton {
     float:left;
-    margin:0px 0px 0px 300px;
+    margin:0px 0px 0px 0px;
 }

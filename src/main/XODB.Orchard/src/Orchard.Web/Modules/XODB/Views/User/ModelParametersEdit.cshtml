@@ -29,6 +29,12 @@
                   @Html.TextBoxFor(x => x.ParameterName, new { @readonly = true })
               </div>
               <div class="editor-label">
+                 @Html.LabelFor(x => x.ParameterDescription)
+              </div>
+              <div class="editor-field">
+                  @Html.TextBoxFor(x => x.ParameterDescription, new { @readonly = true })
+              </div>
+              <div class="editor-label">
                   @Html.LabelFor(x => x.UnitID)
               </div>
               <div class="editor-field">
@@ -39,4 +45,7 @@
               <input type="submit" value="Update"/>
           </fieldset>
     }
+}
+else {
+    Html.RenderAction("UnauthorizedRedirect");
 }

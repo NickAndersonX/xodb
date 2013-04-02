@@ -46,11 +46,13 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
@@ -63,6 +65,7 @@
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Routing" />
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
@@ -77,9 +80,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Metro\Filters\LayoutFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Metro\Content\Images\arrow-submenu.png" />
+    <Content Include="Metro\Content\Images\cart.png" />
+    <Content Include="Metro\Content\Images\dummy.gif" />
+    <Content Include="Metro\Content\Images\flags\en-US.gif" />
+    <Content Include="Metro\Content\Images\flags\pt-PT.gif" />
+    <Content Include="Metro\Content\Images\logo.png" />
+    <Content Include="Metro\Content\Images\menu-arrow.png" />
+    <Content Include="Metro\Content\Images\search.go.png" />
+    <Content Include="Metro\Instructions.txt" />
+    <Content Include="Metro\js\BindMENU.js" />
+    <Content Include="Metro\js\bootstrap-affix.js" />
+    <Content Include="Metro\js\bootstrap-alert.js" />
+    <Content Include="Metro\js\bootstrap-button.js" />
+    <Content Include="Metro\js\bootstrap-carousel.js" />
+    <Content Include="Metro\js\bootstrap-collapse.js" />
+    <Content Include="Metro\js\bootstrap-dropdown.js" />
+    <Content Include="Metro\js\bootstrap-modal.js" />
+    <Content Include="Metro\js\bootstrap-popover.js" />
+    <Content Include="Metro\js\bootstrap-scrollspy.js" />
+    <Content Include="Metro\js\bootstrap-tab.js" />
+    <Content Include="Metro\js\bootstrap-tooltip.js" />
+    <Content Include="Metro\js\bootstrap-transition.js" />
+    <Content Include="Metro\js\bootstrap-typeahead.js" />
+    <Content Include="Metro\js\jquery.min.js" />
+    <Content Include="Metro\js\populateSelectNav.js" />
+    <Content Include="Metro\js\prefixfree.js" />
+    <Content Include="Metro\Metro.csproj" />
+    <Content Include="Metro\Styles\css\ie7.css" />
+    <Content Include="Metro\Styles\fonts\fontawesome-webfont.svg" />
+    <Content Include="Metro\Styles\site.css" />
+    <Content Include="Metro\Styles\site.uncompressed.css" />
+    <Content Include="Metro\Theme.png" />
+    <Content Include="Metro\Theme.txt" />
+    <Content Include="Metro\ThemeZonePreview.png" />
     <Content Include="TheAdmin\Scripts\admin.js" />
     <Content Include="TheAdmin\Styles\ie.css" />
     <Content Include="TheAdmin\Styles\ie7.css" />
@@ -186,6 +224,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Metro\Content\Web.config" />
+    <Content Include="Metro\js\Web.config" />
+    <Content Include="Metro\Placement.info" />
+    <Content Include="Metro\Styles\fonts\fontawesome-webfont.eot" />
+    <Content Include="Metro\Styles\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Metro\Styles\fonts\fontawesome-webfont.woff" />
+    <Content Include="Metro\Styles\fonts\FontAwesome.otf" />
+    <Content Include="Metro\Styles\Web.config" />
+    <Content Include="Metro\Views\Layout-HomePage.cshtml" />
+    <Content Include="Metro\Views\Layout.cshtml" />
+    <Content Include="Metro\Views\LogOn2.cshtml" />
+    <Content Include="Metro\Views\Parts\Product.cshtml" />
+    <Content Include="Metro\Views\Widget.Wrapper.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

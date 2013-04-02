@@ -9,3 +9,7 @@
     <h3>@Layout.Title</h3>
     Html.RenderPartial("ModelsToAuthoriseListPartial");
 }
+else {
+    
+    Html.RenderAction("UnauthorizedRedirect");
+}

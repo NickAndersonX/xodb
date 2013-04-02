@@ -1,2 +1,12 @@
-﻿@using Orchard.ContentManagement; 
-@Display(Model.Content.Items[0])
+﻿@*@using Orchard.ContentManagement; 
+@Display(Model.Content.Items[0])*@
+@Html.Partial("User/Header")
+@{
+    Style.Require("XODBAdmin");
+
+    Layout.Title = T("Projects").ToString();
+}
+@if (AuthorizedFor(XODB.Permissions.ManageProjects)) {
+    <h3>@Layout.Title</h3>
+    Html.RenderPartial("User/ProjectListPartial");
+}

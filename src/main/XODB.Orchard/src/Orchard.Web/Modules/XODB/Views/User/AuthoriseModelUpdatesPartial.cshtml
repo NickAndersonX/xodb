@@ -1,4 +1,5 @@
-﻿@Html.DevExpress().GridView(
+﻿@if (!AuthorizedFor(XODB.Permissions.ManageProjects)) {Html.RenderAction("UnauthorizedRedirect");}
+@Html.DevExpress().GridView(
 settings =>
 {
     settings.Name = "gvUpdates";

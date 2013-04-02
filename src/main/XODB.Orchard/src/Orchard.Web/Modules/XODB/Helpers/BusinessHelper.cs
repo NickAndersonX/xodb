@@ -29,12 +29,17 @@ namespace XODB.Helpers
 
         public static SelectList GetModelList(this IBlockModelService o)
         {
-            return new SelectList(o.GetModels().Select(x => new { Value = x.BlockModelID, Text = x.Alias }), "Value", "Text");
+            return new SelectList(o.GetModels().OrderBy(f=>f.Alias).Select(x => new { Value = x.BlockModelID, Text = x.Alias }), "Value", "Text");
+        }
+
+        public static SelectList GetModelListCurrent(this IBlockModelService o)
+        {
+            return new SelectList(o.GetModelsCurrent().OrderBy(f => f.Alias).Select(x => new { Value = x.BlockModelID, Text = x.Alias }), "Value", "Text");
         }
 
         public static SelectList GetModelParameterList(this IBlockModelService o, Guid modelID)
         {
-            return new SelectList(o.GetModelParameters(modelID).Select(x => new { Value = x.Item2.BlockModelMetadataID, Text = x.Item1.DefaultParameterText }), "Value", "Text");
+            return new SelectList(o.GetModelParameters(modelID).Select(x => new { Value = x.Item2.BlockModelMetadataID, Text = x.Item1.Description }), "Value", "Text");
         }
 
         public static SelectList GetModelDomainsList(this IBlockModelService o, Guid modelID)
@@ -48,6 +53,11 @@ namespace XODB.Helpers
         public static SelectList GetProjectList(this IProjectsService o)
         {
             return new SelectList(o.GetProjects().Select(x => new { Value = x.ProjectID, Text = string.Format("{0} {1}", x.ProjectCode, x.ProjectName) }).OrderBy(x=>x.Text).ToArray(), "Value", "Text");
+        }
+
+        public static SelectList GetProjectListCurrent(this IProjectsService o)
+        {
+            return new SelectList(o.GetProjects().Where(f=>f.VersionDeletedBy == null).Select(x => new { Value = x.ProjectID, Text = string.Format("{0} {1}", x.ProjectCode, x.ProjectName) }).OrderBy(x => x.Text).ToArray(), "Value", "Text");
         }
 
         public static SelectList GetStagesList(this IProjectsService o, Guid id)

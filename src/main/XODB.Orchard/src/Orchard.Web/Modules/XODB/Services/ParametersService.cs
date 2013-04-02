@@ -54,10 +54,10 @@ namespace XODB.Services {
                              from a in d.BlockModels.Where(a => a.BlockModelID == mod.BlockModelID)
                              from p in d.Parameters.Where(p => mod.ParameterID == p.ParameterID)
                              from u in d.Units.Where(u => u.UnitID == p.UnitID).DefaultIfEmpty()
-                             select new { mod.BlockModelMetadataID, p.ParameterName, p.ParameterID, u.StandardUnitName, u.UnitID, BlockModelName = a.Alias})
+                             select new { mod.BlockModelMetadataID, p.ParameterName, p.Description, p.ParameterID, u.StandardUnitName, u.UnitID, BlockModelName = a.Alias})
                            .GroupBy(x => x.BlockModelMetadataID, (x, y) => new { Key = x, Value = y.FirstOrDefault() })
                            //May be able to remove group by later as alias is now fixed to single model
-                        select new BlockModelParameterViewModel { BlockModelMetadataID=g.Value.BlockModelMetadataID, ParameterName=g.Value.ParameterName, ParameterID = g.Value.ParameterID, BlockModelAlias = g.Value.BlockModelName, UnitID=g.Value.UnitID}).FirstOrDefault();
+                        select new BlockModelParameterViewModel { BlockModelMetadataID=g.Value.BlockModelMetadataID, ParameterName=g.Value.ParameterName, ParameterDescription=g.Value.Description, ParameterID = g.Value.ParameterID, BlockModelAlias = g.Value.BlockModelName, UnitID=g.Value.UnitID}).FirstOrDefault();
             }
         }
 

@@ -16,16 +16,18 @@ using Orchard;
 using Orchard.Media.Models;
 using Orchard.Media.Services;
 using System.Transactions;
-
-using XODBImportLib;
+using Orchard.Logging;
+using XODB.Import;
 using XODB.ViewModels;
 using System.Threading.Tasks;
 using XODB.Reports;
-using XODBImportLib.FormatSpecification;
+using XODB.Import.FormatSpecification;
 using System.Data;
 using System.Data.Common;
 using System.Data.Entity;
 using XODB.Helpers;
+using Orchard.Tasks.Scheduling;
+using Orchard.Data;
 
 namespace XODB.Services {
 
@@ -35,16 +37,27 @@ namespace XODB.Services {
         private readonly IOrchardServices _orchardServices;
         private readonly IMediaService _mediaServices;
         private readonly IPrivateDataService _privateServices;
+        private readonly IUsersService _userService;
+        private readonly IWorkContextAccessor _workContextAccessor;
+        private readonly IScheduledTaskManager _taskManager;
+        private readonly IContentManager _contentManager;
 
-        public BlockModelService(IStorageProvider storageProvider, IOrchardServices orchardServices, IMediaService mediaServices, IPrivateDataService privateService) {
+        public BlockModelService(IStorageProvider storageProvider, IOrchardServices orchardServices, IMediaService mediaServices, IPrivateDataService privateService, IUsersService userService, IWorkContextAccessor workContextAccessor, IScheduledTaskManager taskManager, IContentManager contentManager)
+        {
+            _taskManager = taskManager;
+            _contentManager = contentManager;
             _storageProvider = storageProvider;
             _orchardServices = orchardServices;
             _mediaServices = mediaServices;
             _privateServices = privateService;
+            _userService = userService;
+            _workContextAccessor = workContextAccessor;
             T = NullLocalizer.Instance;
+            Logger = NullLogger.Instance;
         }
 
         public Localizer T { get; set; }
+        public ILogger Logger { get; set; }
 
         public IEnumerable<MediaFile> GetNewBlockModelFiles()
         {
@@ -61,11 +74,6 @@ namespace XODB.Services {
         }
 
 
-        public async Task<string> PerformBMImportAppend(Guid guid, string bmFileName, string alias, string columnNameToImport, int columnIndexToImport)
-        {
-            return await Task<string>.Run(() => ImportBMFromFileAppend(guid, bmFileName, alias, columnNameToImport, columnIndexToImport)).ConfigureAwait(false);
-        }
-
         public List<string> GetImportFileColumnsAsList(Guid guid, string bmFileName, string modelAlias)
         {
 
@@ -77,10 +85,10 @@ namespace XODB.Services {
             string targetFolder;
             bool attmemptModelLoad;
             string originalName = bmFileName;
-            bmFileName = ExtractBMFromZip(bmFileName, out targetFolder, out attmemptModelLoad);
+            bmFileName = ExtractBlockModelFromZip(bmFileName, out targetFolder, out attmemptModelLoad);
             IStorageFile bmFile = _storageProvider.GetFile(bmFileName);
             Stream bmFileStream = bmFile.OpenRead();
-            XODBImportLib.FormatSpecification.ImportDataMap idm = null;
+            XODB.Import.FormatSpecification.ImportDataMap idm = null;
             double _originX = -1;
             double _originY = -1;
             double _originZ = -1;
@@ -118,70 +126,132 @@ namespace XODB.Services {
             }
             return columnNames;
         }
-       
 
-        private string ImportBMFromFileAppend(Guid guid, string bmFileName, string alias, string columnNameToImport, int columnIndexToImport)
+
+        public void AppendModelAsync(Guid bmGuid, string bmFileName, string alias, string columnNameToImport, int columnIndexToImport, Guid userGuid, int allowImportAfterMinutes = 0)
+        {
+            var emails = _userService.GetUserEmails(new Guid[] { userGuid }).ToArray();
+            var repeats = _contentManager.Query<BlockModelPart, BlockModelPartRecord>("BlockModel").Where(f => f.BmGuid == bmGuid && f.BmFileName == bmFileName && f.ColumnIndexToAdd == columnIndexToImport && f.ColumnNameToAdd == columnNameToImport && f.Processed > DateTime.UtcNow.AddMinutes(-allowImportAfterMinutes)).Count();
+            if (repeats == 0)
+            {
+                var m = _contentManager.New<BlockModelPart>("BlockModel");
+                m.BmGuid = bmGuid;
+                m.Emails = emails;
+                m.BmFileName = bmFileName;
+                m.Alias = alias;
+                m.UserID = userGuid;
+                m.ColumnNameToAdd = columnNameToImport;
+                m.ColumnIndexToAdd = columnIndexToImport;
+                m.Processed = DateTime.UtcNow;
+                _contentManager.Create(m, VersionOptions.Published);
+                _taskManager.AppendModelAsync(m.ContentItem);
+            }
+            else
+            {
+                Logger.Information(string.Format("Can't re-append file:{0} with the same settings within the currently selected time-frame",bmFileName));
+            }
+        }
+
+        public void AppendModel(Guid bmGuid, string bmFileName, string alias, string columnNameToImport, int columnIndexToImport, string[] emails)
         {
 
             string statusMessage = "";
             string scs = global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBConnectionString"].ConnectionString;
             string connString = scs;
+            bool completed = false;
             BaseImportTools bit = new BaseImportTools();
             string targetFolder;
             bool attmemptModelLoad;
             string originalName = bmFileName;
-            bmFileName = ExtractBMFromZip(bmFileName, out targetFolder, out attmemptModelLoad);
+            bmFileName = ExtractBlockModelFromZip(bmFileName, out targetFolder, out attmemptModelLoad);
             IStorageFile bmFile = _storageProvider.GetFile(bmFileName);
             Stream bmFileStream = bmFile.OpenRead();
+            ModelImportStatus mos = new ModelImportStatus();
             try
             {
-                bool skip = true;
+                bool skip = false;
                 if (!skip)
                 {
                     // Special append method for Goldfields requirements - contains X, Y, Z, and value to append.
                     // target model must have matching X, Y and Z centroids.
-                    // auto generate a format defintion based on Goldfields typical input column data                  
-                    bit.PerformBMAppend(bmFileStream, guid, alias, columnNameToImport, columnIndexToImport, scs);
+                    // auto generate a format defintion based on Goldfields typical input column data            
+                    using (new TransactionScope(TransactionScopeOption.Suppress))
+                    {
+                        mos = bit.PerformBMAppend(bmFileStream, bmGuid, alias, columnNameToImport, columnIndexToImport, scs);
+                    }
+                    statusMessage += string.Format("Successfully appended data to block model:{0} - {1}\n\nFrom file:{2}\n\n", alias, bmGuid, bmFileName);
+                    completed = true;
                 }
 
             }
             catch (Exception ex)
             {
-                statusMessage += "Error appending data to block model:\n" + ex.ToString();
+                statusMessage += string.Format("Error appending data to block model:{0} - {1}\n\nFrom file:{2}\n\nError:\n{3}\n\n", alias, bmGuid, bmFileName, ex.ToString());
             }
             finally {
+                statusMessage += mos.GenerateStringMessage();
                 bmFileStream.Close();
                 _storageProvider.DeleteFile(bmFileName);
                 _storageProvider.DeleteFolder(targetFolder);
             }
-
-            return "";
+            Logger.Information(statusMessage);
+            _userService.EmailUsersAsync(emails, completed ? "Model Append Succeeded" : "Model Append Failed", statusMessage);
 
         }
 
-        public async Task<string> PerformBMImport(string bmFileName, string formatFileName, string projectID, string alias, IUsersService UserService, Guid currentUser, string notes, string stage, Guid stageMetaID)
-        {
 
-            return await Task<string>.Run(() => ImportBMFromFile(bmFileName, formatFileName, projectID, alias, UserService, currentUser, notes, stage, stageMetaID)).ConfigureAwait(false);
+        /// <summary>
+        /// Could maybe use ProcessModelScheduledTaskHandler if break any dependencies
+        /// </summary>
+        /// <param name="bmFileName"></param>
+        /// <param name="formatFileName"></param>
+        /// <param name="projectID"></param>
+        /// <param name="alias"></param>
+        /// <param name="userGuid"></param>
+        /// <param name="notes"></param>
+        /// <param name="stage"></param>
+        /// <param name="stageMetaID"></param>
+        /// <returns></returns>
+        public void ProcessModelAsync(string bmFileName, string formatFileName, string projectName, string alias, Guid userGuid, string notes, string stage, Guid stageMetaID, int allowImportAfterMinutes = 0)
+        {
+            var repeats = _contentManager.Query<BlockModelPart, BlockModelPartRecord>("BlockModel").Where(f => f.BmFileName == bmFileName && f.FormatFileName == formatFileName && f.ProjectName==projectName && f.Processed > DateTime.UtcNow.AddMinutes(-allowImportAfterMinutes)).Count();
+            if (repeats == 0)
+            {
+                var emails = _userService.GetUserEmails(new Guid[] { userGuid }).ToArray();
+                var m = _contentManager.New<BlockModelPart>("BlockModel");
+                m.Emails = emails;
+                m.BmFileName = bmFileName;
+                m.FormatFileName = formatFileName;
+                m.ProjectName = projectName;
+                m.Alias = alias;
+                m.UserID = userGuid;
+                m.Notes = notes;
+                m.Stage = stage;
+                m.StageMetaID = stageMetaID;
+                m.Processed = DateTime.UtcNow;
+                _contentManager.Create(m, VersionOptions.Published);
+                _taskManager.ProcessModelAsync(m.ContentItem);
+            }
+            else
+            {
+                Logger.Information(string.Format("Can't re-import file:{0} with the same settings within the currently selected time-frame", bmFileName));
+            }
         }
 
-        public string ImportBMFromFile(string bmFileName, string formatFileName, string projectID, string alias, IUsersService UserService, Guid authorGuid, string notes, string stage, Guid stageMetaID)
+        public void ProcessModel(string bmFileName, string formatFileName, string projectID, string alias, Guid userGuid, string notes, string stage, Guid stageMetaID, string[] emails)
         {
-            
+
             List<string> domains = null;
 
             string targetFolder;
             bool attmemptModelLoad;
             string originalName = bmFileName;
-            bmFileName = ExtractBMFromZip(bmFileName, out targetFolder, out attmemptModelLoad);
+            bmFileName = ExtractBlockModelFromZip(bmFileName, out targetFolder, out attmemptModelLoad);
 
-            ModelImportStatus mos = DoNewModelImport(bmFileName, formatFileName, projectID, alias, authorGuid, ref domains, targetFolder, attmemptModelLoad, notes, stage, stageMetaID);
+            ModelImportStatus mos = DoNewModelImport(bmFileName, formatFileName, projectID, alias, userGuid, ref domains, targetFolder, attmemptModelLoad, notes, stage, stageMetaID);
             mos.importTextFileName = bmFileName +"(from "+originalName+")";
             mos.targetModelName = alias;
-            Guid userGuid = UserService.GetUserID("XSTRACT\\nanderson");
-            List<Guid> recipients = new List<Guid>();
-            recipients.Add(authorGuid);
-            recipients.Add(userGuid);
+
             
             string msg = mos.GenerateStringMessage();
             string subjectLine = "Model import complete for " + mos.importTextFileName;
@@ -189,9 +259,9 @@ namespace XODB.Services {
                 subjectLine = "Model load failure for " + mos.importTextFileName;
             }
 
-            UserService.EmailUsers(recipients.ToArray(), subjectLine, msg);
+            Logger.Information(msg);
+            _userService.EmailUsersAsync(emails, subjectLine, msg);
 
-            return msg;
         }
 
         /// <summary>
@@ -218,8 +288,7 @@ namespace XODB.Services {
             double _originY = -1;
             double _originZ = -1;
 
-            string scs = global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBConnectionString"].ConnectionString;
-            string connString = scs;
+            string connString = global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBConnectionString"].ConnectionString;
             BaseImportTools bit = new BaseImportTools();
             if (attmemptModelLoad)
             {
@@ -230,7 +299,7 @@ namespace XODB.Services {
                 // try and automatically detect the origin coordinates from the file itself - a datamine file 
                 // always carries the origin coords in XMORIG, YMORIG, ZMORIG
                 
-                XODBImportLib.FormatSpecification.ImportDataMap idm = null;
+                XODB.Import.FormatSpecification.ImportDataMap idm = null;
                 try
                 {                   
                     StreamReader sr = new StreamReader(bmTempFileStream);
@@ -297,7 +366,7 @@ namespace XODB.Services {
         /// <param name="targetFolder"></param>
         /// <param name="attmemptModelLoad"></param>
         /// <returns></returns>
-        private string ExtractBMFromZip(string bmFileName, out string targetFolder, out bool attmemptModelLoad)
+        private string ExtractBlockModelFromZip(string bmFileName, out string targetFolder, out bool attmemptModelLoad)
         {
             IStorageFile bmZipFile = _storageProvider.GetFile(bmFileName);
             targetFolder = bmFileName + "extracted";
@@ -365,6 +434,16 @@ namespace XODB.Services {
             }
         }
 
+        public IEnumerable<BlockModel> GetModelsCurrent()
+        {
+            using (new TransactionScope(TransactionScopeOption.Suppress))
+            {
+                var d = new ModelsDataContext();
+                var b = from m in d.BlockModels join p in d.ModelStatus on m.BlockModelID equals p.BlockModelID select m;
+                return b.ToArray();
+            }
+        }
+
 
         public string GetBlockModelInfo(Guid bm) {
             string res = "";
@@ -374,8 +453,9 @@ namespace XODB.Services {
                 {
 
                     BaseImportTools bit = new BaseImportTools();
-                    string ss1 = bit.TestConnection();
+                    string ss1 = bit.TestConnection(global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBConnectionString"].ConnectionString);
                     var d = new ModelsDataContext();
+                    d.Connection.ConnectionString = global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBConnectionString"].ConnectionString;
                     List<BlockModel> bl = d.BlockModels.ToList();
                     foreach (BlockModel aModel in bl)
                     {
@@ -389,12 +469,41 @@ namespace XODB.Services {
             return res;
         }
 
+        public void UpdateModelParameter(BlockModelParameterViewModel m)
+        {
+            using (new TransactionScope(TransactionScopeOption.Suppress))
+            {
+                var d = new ModelsDataContext();
+                var x = from p in d.Parameters where p.ParameterID == m.ParameterID select p;
+                var o = x.First();
+                o.UnitID = m.UnitID;
+                d.SubmitChanges();
+            }
+        }
+
         public string GetModelAlias(Guid modelID)
         {
             using (new TransactionScope(TransactionScopeOption.Suppress))
             {
                 var d = new ModelsDataContext();
                 return (from o in d.BlockModels where o.BlockModelID == modelID select o.Alias).FirstOrDefault();
+            }
+        }
+
+        public BlockModelAppendViewModel GetBlockModelToAppend(Guid modelID)
+        {
+            using (new TransactionScope(TransactionScopeOption.Suppress))
+            {
+                var d = new Models.ModelsDataContext();
+                var b = (d.BlockModels.OrderByDescending(x => x.Version).FirstOrDefault(x => x.BlockModelID == modelID));
+                var m = new BlockModelAppendViewModel
+                {
+                    BlockModelAlias = b.Alias,
+                    Version = (b.Version + 1),
+                    BlockModelID = modelID,
+                    FileNames = this.GetUpdatedModelList()
+                };
+                return m;
             }
         }
 
@@ -407,7 +516,7 @@ namespace XODB.Services {
                         join p in d.Parameters on m.ParameterID equals p.ParameterID
                         select new { m, p }
                         ; 
-                return o.OrderBy(f=>f.p.DefaultParameterText).ToArray().Select(f=>new Tuple<Parameter,BlockModelMetadata>(f.p, f.m)); 
+                return o.OrderBy(f=>f.p.Description).ToArray().Select(f=>new Tuple<Parameter,BlockModelMetadata>(f.p, f.m)); 
             }
         }
 
@@ -435,6 +544,19 @@ namespace XODB.Services {
             }
         }
 
+        public void DeleteModel(Guid modelID, Guid deletedByGuid)
+        {
+            using (new TransactionScope(TransactionScopeOption.Suppress))
+            {
+                var d = new Models.ModelsDataContext();
+                var b = (d.BlockModels.OrderBy(x => x.Version).FirstOrDefault(x => x.BlockModelID == modelID));
+                b.VersionUpdated = DateTime.UtcNow;
+                b.VersionDeletedBy = deletedByGuid;
+                d.SubmitChanges();
+            }
+
+        }
+
         public async Task<IReport> CompareModelsAsync(BlockModelCompareViewModel models)
         {
             return await Task<IReport>.Run(() => CompareModels(models));
@@ -444,6 +566,57 @@ namespace XODB.Services {
         {
             return AllReports.CreateModel(models);
         }
+
+        public static decimal GetMultiplierForField(Guid convertFromFieldGuid, string targetStandardUnitName)
+        {
+            using (new TransactionScope(TransactionScopeOption.Suppress))
+            {
+                var d = new ModelsDataContext();
+
+                //////Get Curves
+                var cmd = d.Connection.CreateCommand();
+                cmd.CommandText = "[dbo].[X_SP_GetConversionFactorForField]";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                var parm1 = cmd.CreateParameter();
+                parm1.ParameterName = "@field_guid";
+                parm1.DbType = DbType.Guid;
+                parm1.Value = convertFromFieldGuid;
+                cmd.Parameters.Add(parm1);
+
+                var parm2 = cmd.CreateParameter();
+                parm2.ParameterName = "@target";
+                parm2.DbType = DbType.String;
+                parm2.Value = targetStandardUnitName;
+                cmd.Parameters.Add(parm2);
+
+                var output = new System.Data.SqlClient.SqlParameter();
+                output.ParameterName = "@multiplier";
+                output.DbType = DbType.Decimal;
+                output.Direction = ParameterDirection.Output;
+                output.Precision = 38;
+                output.Scale = 20;
+                cmd.Parameters.Add(output);
+
+                try
+                {
+                    //Let's actually run the queries
+                    d.Connection.Open();
+                    var reader = cmd.ExecuteReader();
+                    return (decimal)output.Value;
+                }
+                catch
+                {
+                    return 0;
+                }
+                finally
+                {
+                    d.Connection.Close();
+                }
+            }
+        }
+
+
 
         //Static Methods
         public static DataSet CompareModelsResult(BlockModelCompareViewModel m)
@@ -569,64 +742,119 @@ namespace XODB.Services {
                 cmdc.CommandText = "[dbo].[X_SP_GradeTonnageComparison]";
                 cmdc.CommandType = CommandType.StoredProcedure;
 
-                var parmc1 = cmd.CreateParameter();
+                var parmc1 = cmdc.CreateParameter();
                 parmc1.ParameterName = "@gt_guid";
                 parmc1.DbType = DbType.Guid;
                 parmc1.Value = m.GradeTonnageFieldID;
                 cmdc.Parameters.Add(parmc1);
 
-                var parmc2 = cmd.CreateParameter();
+                var parmc2 = cmdc.CreateParameter();
                 parmc2.ParameterName = "@bm1_guid";
                 parmc2.DbType = DbType.Guid;
                 parmc2.Value = m.Model1;
                 cmdc.Parameters.Add(parmc2);
 
-                var parmc3 = cmd.CreateParameter();
+                var parmc3 = cmdc.CreateParameter();
                 parmc3.ParameterName = "@bm2_guid";
                 parmc3.DbType = DbType.Guid;
                 parmc3.Value = m.Model2;
                 cmdc.Parameters.Add(parmc3);
 
-                var parmc5 = cmd.CreateParameter();
+                var parmc5 = cmdc.CreateParameter();
                 parmc5.ParameterName = "@filter1";
                 parmc5.DbType = DbType.String;
                 parmc5.Value = filter1;
                 cmdc.Parameters.Add(parmc5);
 
-                var parmc6 = cmd.CreateParameter();
+                var parmc6 = cmdc.CreateParameter();
                 parmc6.ParameterName = "@filter2";
                 parmc6.DbType = DbType.String;
                 parmc6.Value = filter2;
                 cmdc.Parameters.Add(parmc6);
 
-                var parmc7 = cmd.CreateParameter();
+                var parmc7 = cmdc.CreateParameter();
                 parmc7.ParameterName = "@domains1";
                 parmc7.DbType = DbType.String;
                 parmc7.Value = domains1;
                 cmdc.Parameters.Add(parmc7);
 
-                var parmc8 = cmd.CreateParameter();
+                var parmc8 = cmdc.CreateParameter();
                 parmc8.ParameterName = "@domains2";
                 parmc8.DbType = DbType.String;
                 parmc8.Value = domains2;
                 cmdc.Parameters.Add(parmc8);
 
-                var outputc = cmd.CreateParameter();
+                var outputc = cmdc.CreateParameter();
                 outputc.ParameterName = "@filterString";
                 outputc.DbType = DbType.String;
                 outputc.Size = 4000;
                 outputc.Direction = ParameterDirection.Output;
                 cmdc.Parameters.Add(outputc);
 
+                //Slicer
+                var cmds = d.Connection.CreateCommand();
+                cmds.CommandText = "[dbo].[X_SP_SlicingTool]";
+                cmds.CommandType = CommandType.StoredProcedure;
+
+                var parms1 = cmds.CreateParameter();
+                parms1.ParameterName = "@st_guid";
+                parms1.DbType = DbType.Guid;
+                parms1.Value = m.GradeTonnageFieldID; //TODO: might need to separate this out in the UI one day (we are assuming XYZ values are xmax, ymax, zmax respectively now)
+                cmds.Parameters.Add(parms1);
+
+                var parms2 = cmds.CreateParameter();
+                parms2.ParameterName = "@bm1_guid";
+                parms2.DbType = DbType.Guid;
+                parms2.Value = m.Model1;
+                cmds.Parameters.Add(parms2);
+
+                var parms3 = cmds.CreateParameter();
+                parms3.ParameterName = "@bm2_guid";
+                parms3.DbType = DbType.Guid;
+                parms3.Value = m.Model2;
+                cmds.Parameters.Add(parms3);
+
+                var parms5 = cmds.CreateParameter();
+                parms5.ParameterName = "@filter1";
+                parms5.DbType = DbType.String;
+                parms5.Value = filter1;
+                cmds.Parameters.Add(parms5);
+
+                var parms6 = cmds.CreateParameter();
+                parms6.ParameterName = "@filter2";
+                parms6.DbType = DbType.String;
+                parms6.Value = filter2;
+                cmds.Parameters.Add(parms6);
+
+                var parms7 = cmds.CreateParameter();
+                parms7.ParameterName = "@domains1";
+                parms7.DbType = DbType.String;
+                parms7.Value = domains1;
+                cmds.Parameters.Add(parms7);
+
+                var parms8 = cmds.CreateParameter();
+                parms8.ParameterName = "@domains2";
+                parms8.DbType = DbType.String;
+                parms8.Value = domains2;
+                cmds.Parameters.Add(parms8);
+
+                var outputs = cmds.CreateParameter();
+                outputs.ParameterName = "@filterString";
+                outputs.DbType = DbType.String;
+                outputs.Size = 4000;
+                outputs.Direction = ParameterDirection.Output;
+                cmds.Parameters.Add(outputs);
+
                 try
                 {
                     var gt = new DataTable("gt");
-                    gt.Columns.Add("m", typeof(string));
-                    gt.Columns.Add("grade", typeof(decimal));
-                    gt.Columns.Add("tonnage", typeof(decimal));
+                    var gtm = gt.Columns.Add("m", typeof(string));
+                    var gtg = gt.Columns.Add("grade", typeof(decimal));
+                    var gtt = gt.Columns.Add("tonnes", typeof(decimal));
+                    var gttg = gt.Columns.Add("tonnage", typeof(decimal));
 
-                    var gft = new DataTable("gfs");
-                    gft.Columns.Add("FilterString", typeof(string));
+                    var gfs = new DataTable("gfs");
+                    gfs.Columns.Add("FilterString", typeof(string));
 
                     var gfc = new DataTable("gfc");
                     gfc.Columns.Add("Resource Category", typeof(string));
@@ -636,6 +864,12 @@ namespace XODB.Services {
                     gfc.Columns.Add("Model 2 Grade", typeof(decimal));
                     gfc.Columns.Add("Absolute Difference", typeof(decimal));
 
+                    var st = new DataTable("st");
+                    st.Columns.Add("xyz", typeof(decimal));
+                    st.Columns.Add("m", typeof(decimal));
+                    st.Columns.Add("slice", typeof(decimal));
+                    st.Columns.Add("samples", typeof(decimal));
+                    st.Columns.Add("grade", typeof(decimal));
 
                     //Let's actually run the queries
                     d.Connection.Open();
@@ -644,6 +878,24 @@ namespace XODB.Services {
                     {
                         var reader = cmd.ExecuteReader();
                         gt.Load(reader, LoadOption.OverwriteChanges);
+                        decimal cumulative1 = 0, cumulative2 = 0;
+                        decimal gtFieldMultiplier = GetMultiplierForField(m.GradeTonnageFieldID, "%");
+                        foreach (DataRow r in gt.Rows)
+                        {
+                            //Cumulative needs to be in grade ascending order
+                            if ((string)r[gtm] == "1")
+                            {
+                                cumulative1 += ((decimal)r[gtg] * (decimal)r[gtt] * gtFieldMultiplier);
+                                r[gttg] = cumulative1;
+                            }
+                            else
+                            {
+                                cumulative2 += ((decimal)r[gtg] * (decimal)r[gtt] * gtFieldMultiplier);
+                                r[gttg] = cumulative2;
+                            }
+
+                            r[gtg] = (decimal)r[gtg] * gtFieldMultiplier;
+                        }
 
                         //reader.NextResult(); // Only 1 Resultset
                         //var gt2 = new DataTable("gt2");
@@ -651,13 +903,21 @@ namespace XODB.Services {
                         //ds.Tables.Add(gt2);
                     }
 
-                    var readerc = cmdc.ExecuteReader();
-                    gfc.Load(readerc, LoadOption.OverwriteChanges);
-                    
-                    gft.Rows.Add(outputc.Value as string); //filterString                    
+                    {
+                        var reader = cmds.ExecuteReader();
+                        st.Load(reader, LoadOption.OverwriteChanges);
+                    }
 
+                    {
+                        var reader = cmdc.ExecuteReader();
+                        gfc.Load(reader, LoadOption.OverwriteChanges);
+                    }
+
+                    gfs.Rows.Add(outputc.Value as string); //filterString                    
+
+                    ds.Tables.Add(st);
                     ds.Tables.Add(gt);
-                    ds.Tables.Add(gft);
+                    ds.Tables.Add(gfs);
                     ds.Tables.Add(gfc);
                 }
                 finally
@@ -667,6 +927,53 @@ namespace XODB.Services {
                 return ds;
             }
         }
-        
+
+
+        public void ApproveModel(Guid modelID, Guid approverID, string note)
+        {
+            using (new TransactionScope(TransactionScopeOption.Suppress))
+            {
+                var d = new ModelsDataContext();
+                var o = d.BlockModels.Where(f => f.BlockModelID == modelID).Single();
+                o.ApproverContactID = approverID;
+                if (o.AuthorContactID.HasValue)
+                    _userService.EmailUsers(_userService.GetUserEmails(new Guid[] { o.AuthorContactID.Value }), "Model approved", note);
+                var n = new BlockModelMetadata();
+                n.BlockModelMetadataID = Guid.NewGuid();
+                n.BlockModelID = modelID;
+                n.ParameterID = _privateServices.XODB_GUID_LOG;
+                var oc = new Occurrence();
+                oc.ID = Guid.NewGuid();
+                oc.ContactID = o.ApproverContactID.Value;
+                oc.Occurred = DateTime.UtcNow;
+                oc.Status = (uint)Occurrence.StatusCode.OK;
+                n.BlockModelMetadataText = oc.ToJson();
+                d.BlockModelMetadatas.InsertOnSubmit(n);
+                d.SubmitChanges();
+            }
+
+        }
+
+        public void DenyModel(Guid modelID, Guid denierID, string error)
+        {
+            using (new TransactionScope(TransactionScopeOption.Suppress))
+            {
+                var d = new ModelsDataContext();
+                var o = d.BlockModels.Where(f => f.BlockModelID == modelID && f.AuthorContactID != null).Select(f => (Guid)f.AuthorContactID).ToArray();
+                _userService.EmailUsers(_userService.GetUserEmails(o), "Model not accepted", error);
+                var n = new BlockModelMetadata();
+                n.BlockModelMetadataID = Guid.NewGuid();
+                n.BlockModelID = modelID;
+                n.ParameterID = _privateServices.XODB_GUID_LOG;
+                var oc = new Occurrence();
+                oc.ID = Guid.NewGuid();
+                oc.ContactID = denierID;
+                oc.Occurred = DateTime.UtcNow;
+                oc.Status = (uint)Occurrence.StatusCode.Notified;
+                n.BlockModelMetadataText = oc.ToJson();
+                d.BlockModelMetadatas.InsertOnSubmit(n);
+                d.SubmitChanges();
+            }
+        }
     }
 }

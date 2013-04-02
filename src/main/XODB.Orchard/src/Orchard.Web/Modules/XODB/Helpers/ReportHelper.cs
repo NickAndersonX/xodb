@@ -186,14 +186,15 @@ namespace XODB.Helpers
             public TableReport() : this(new TableAdapterDataFiller()) { }
             public TableReport(ITableReportDataFiller dataFiller)
             {
-                this.dataFiller = dataFiller;
-                BeforePrint += Report_BeforePrint;
+                this.dataFiller = dataFiller;                
             }
 
-            void Report_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+            protected override void BeforeReportPrint()
             {
                 dataFiller.Fill(this);
+                base.BeforeReportPrint();
             }
+
         }
 
     }

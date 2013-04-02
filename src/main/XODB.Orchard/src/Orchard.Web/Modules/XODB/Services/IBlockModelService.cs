@@ -23,27 +23,38 @@ namespace XODB.Services
          [OperationContract]
          IEnumerable<MediaFile> GetNewFormatFiles();
 
+         [OperationContract]
+         BlockModelAppendViewModel GetBlockModelToAppend(Guid modelID);
 
          [OperationContract]
          IEnumerable<BlockModel> GetModels();
+
+         [OperationContract]
+         IEnumerable<BlockModel> GetModelsCurrent();
 
          [OperationContract]
          string GetModelAlias(Guid modelID);
 
          [OperationContract]
          IEnumerable<Tuple<Parameter, BlockModelMetadata>> GetModelParameters(Guid modelID);
-
          
          [OperationContract]
          string GetBlockModelInfo(Guid guid);
 
          [OperationContract]
-         Task<string> PerformBMImport(string bmFileName, string formatFileName, string projectID, string alias, IUsersService UserService, Guid userID, string notes, string stage, Guid stageMetaID);
+         void ProcessModelAsync(string bmFileName, string formatFileName, string projectID, string alias, Guid userID, string notes, string stage, Guid stageMetaID, int allowImportAfterMinutes = 0);
 
          [OperationContract]
-         Task<string> PerformBMImportAppend(Guid guid, string modelFileName, string alias, string columnNameToAdd, int columnIndexToAdd);
+         void ProcessModel(string bmFileName, string formatFileName, string projectName, string alias, Guid userID, string notes, string stage, Guid stageMetaID, string[] emails);
 
-       
+         [OperationContract]
+         void AppendModelAsync(Guid bmGuid, string bmFileName, string alias, string columnNameToImport, int columnIndexToImport, Guid userGuid, int allowImportAfterMinutes = 0);
+
+         [OperationContract]
+         void AppendModel(Guid bmGuid, string bmFileName, string alias, string columnNameToImport, int columnIndexToImport, string[] emails);
+
+         [OperationContract]
+         void DeleteModel(Guid modelID, Guid deletedByGuid);
 
          [OperationContract]
          List<string> GetImportFileColumnsAsList(Guid guid, string modelFileName, string modelAlias);
@@ -64,5 +75,13 @@ namespace XODB.Services
          [OperationContract]
          IReport CompareModels(BlockModelCompareViewModel models);
 
+         [OperationContract]
+         void UpdateModelParameter(BlockModelParameterViewModel m);
+
+         [OperationContract]
+         void ApproveModel(Guid modelID, Guid approverID, string note);
+
+         [OperationContract]
+         void DenyModel(Guid modelID, Guid denierID, string error);
     }
 }

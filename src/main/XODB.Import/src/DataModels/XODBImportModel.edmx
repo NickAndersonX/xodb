@@ -361,41 +361,41 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="XODBImportModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <Schema Namespace="XODB.Import" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="XODBImportEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="X_BlockModel" EntityType="XODBImportModel.X_BlockModel" />
-          <EntitySet Name="X_BlockModelBlockData" EntityType="XODBImportModel.X_BlockModelBlockData" />
-          <EntitySet Name="X_BlockModelMetadata" EntityType="XODBImportModel.X_BlockModelMetadata" />
-          <EntitySet Name="X_DictionaryUnit" EntityType="XODBImportModel.X_DictionaryUnit" />
-          <EntitySet Name="X_Parameter" EntityType="XODBImportModel.X_Parameter" />
-          <AssociationSet Name="FK_X_BlockModelMetadata_X_BlockModel" Association="XODBImportModel.FK_X_BlockModelMetadata_X_BlockModel">
+          <EntitySet Name="X_BlockModel" EntityType="XODB.Import.X_BlockModel" />
+          <EntitySet Name="X_BlockModelBlockData" EntityType="XODB.Import.X_BlockModelBlockData" />
+          <EntitySet Name="X_BlockModelMetadata" EntityType="XODB.Import.X_BlockModelMetadata" />
+          <EntitySet Name="X_DictionaryUnit" EntityType="XODB.Import.X_DictionaryUnit" />
+          <EntitySet Name="X_Parameter" EntityType="XODB.Import.X_Parameter" />
+          <AssociationSet Name="FK_X_BlockModelMetadata_X_BlockModel" Association="XODB.Import.FK_X_BlockModelMetadata_X_BlockModel">
             <End Role="X_BlockModel" EntitySet="X_BlockModel" />
             <End Role="X_BlockModelMetadata" EntitySet="X_BlockModelMetadata" />
           </AssociationSet>
-          <AssociationSet Name="FK_X_BlockModelBlockData_X_Parameter" Association="XODBImportModel.FK_X_BlockModelBlockData_X_Parameter">
+          <AssociationSet Name="FK_X_BlockModelBlockData_X_Parameter" Association="XODB.Import.FK_X_BlockModelBlockData_X_Parameter">
             <End Role="X_Parameter" EntitySet="X_Parameter" />
             <End Role="X_BlockModelBlockData" EntitySet="X_BlockModelBlockData" />
           </AssociationSet>
-          <AssociationSet Name="FK_X_BlockModelMetadata_X_Parameter" Association="XODBImportModel.FK_X_BlockModelMetadata_X_Parameter">
+          <AssociationSet Name="FK_X_BlockModelMetadata_X_Parameter" Association="XODB.Import.FK_X_BlockModelMetadata_X_Parameter">
             <End Role="X_Parameter" EntitySet="X_Parameter" />
             <End Role="X_BlockModelMetadata" EntitySet="X_BlockModelMetadata" />
           </AssociationSet>
-          <AssociationSet Name="FK_X_CompositeData_X_DictionaryUnit" Association="XODBImportModel.FK_X_CompositeData_X_DictionaryUnit">
+          <AssociationSet Name="FK_X_CompositeData_X_DictionaryUnit" Association="XODB.Import.FK_X_CompositeData_X_DictionaryUnit">
             <End Role="X_DictionaryUnit" EntitySet="X_DictionaryUnit" />
             <End Role="X_Parameter" EntitySet="X_Parameter" />
           </AssociationSet>
-          <EntitySet Name="X_BlockModelBlock" EntityType="XODBImportModel.X_BlockModelBlock" />
-          <AssociationSet Name="FK_X_BlockModelBlock_X_BlockModel" Association="XODBImportModel.FK_X_BlockModelBlock_X_BlockModel">
+          <EntitySet Name="X_BlockModelBlock" EntityType="XODB.Import.X_BlockModelBlock" />
+          <AssociationSet Name="FK_X_BlockModelBlock_X_BlockModel" Association="XODB.Import.FK_X_BlockModelBlock_X_BlockModel">
             <End Role="X_BlockModel" EntitySet="X_BlockModel" />
             <End Role="X_BlockModelBlock" EntitySet="X_BlockModelBlock" />
           </AssociationSet>
-          <AssociationSet Name="FK_X_BlockModelBlockData_X_BlockModelBlock" Association="XODBImportModel.FK_X_BlockModelBlockData_X_BlockModelBlock">
+          <AssociationSet Name="FK_X_BlockModelBlockData_X_BlockModelBlock" Association="XODB.Import.FK_X_BlockModelBlockData_X_BlockModelBlock">
             <End Role="X_BlockModelBlock" EntitySet="X_BlockModelBlock" />
             <End Role="X_BlockModelBlockData" EntitySet="X_BlockModelBlockData" />
           </AssociationSet>
-          <EntitySet Name="X_MetaData" EntityType="XODBImportModel.X_MetaData" />
-          <EntitySet Name="X_MetaDataRelation" EntityType="XODBImportModel.X_MetaDataRelation" />
-          <AssociationSet Name="FK_X_MetaDataRelation_X_MetaData" Association="XODBImportModel.FK_X_MetaDataRelation_X_MetaData">
+          <EntitySet Name="X_MetaData" EntityType="XODB.Import.X_MetaData" />
+          <EntitySet Name="X_MetaDataRelation" EntityType="XODB.Import.X_MetaDataRelation" />
+          <AssociationSet Name="FK_X_MetaDataRelation_X_MetaData" Association="XODB.Import.FK_X_MetaDataRelation_X_MetaData">
             <End Role="X_MetaData" EntitySet="X_MetaData" />
             <End Role="X_MetaDataRelation" EntitySet="X_MetaDataRelation" />
           </AssociationSet>
@@ -446,8 +446,8 @@
           <Property Name="VersionOwnerContactID" Type="Guid" />
           <Property Name="VersionOwnerCompanyID" Type="Guid" />
           <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="X_BlockModelMetadata" Relationship="XODBImportModel.FK_X_BlockModelMetadata_X_BlockModel" FromRole="X_BlockModel" ToRole="X_BlockModelMetadata" />
-          <NavigationProperty Name="X_BlockModelBlock" Relationship="XODBImportModel.FK_X_BlockModelBlock_X_BlockModel" FromRole="X_BlockModel" ToRole="X_BlockModelBlock" />
+          <NavigationProperty Name="X_BlockModelMetadata" Relationship="XODB.Import.FK_X_BlockModelMetadata_X_BlockModel" FromRole="X_BlockModel" ToRole="X_BlockModelMetadata" />
+          <NavigationProperty Name="X_BlockModelBlock" Relationship="XODB.Import.FK_X_BlockModelBlock_X_BlockModel" FromRole="X_BlockModel" ToRole="X_BlockModelBlock" />
         </EntityType>
         <EntityType Name="X_BlockModelBlockData">
           <Key>
@@ -467,8 +467,8 @@
           <Property Name="VersionOwnerContactID" Type="Guid" />
           <Property Name="VersionOwnerCompanyID" Type="Guid" />
           <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="X_Parameter" Relationship="XODBImportModel.FK_X_BlockModelBlockData_X_Parameter" FromRole="X_BlockModelBlockData" ToRole="X_Parameter" />
-          <NavigationProperty Name="X_BlockModelBlock" Relationship="XODBImportModel.FK_X_BlockModelBlockData_X_BlockModelBlock" FromRole="X_BlockModelBlockData" ToRole="X_BlockModelBlock" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODB.Import.FK_X_BlockModelBlockData_X_Parameter" FromRole="X_BlockModelBlockData" ToRole="X_Parameter" />
+          <NavigationProperty Name="X_BlockModelBlock" Relationship="XODB.Import.FK_X_BlockModelBlockData_X_BlockModelBlock" FromRole="X_BlockModelBlockData" ToRole="X_BlockModelBlock" />
         </EntityType>
         <EntityType Name="X_BlockModelMetadata">
           <Key>
@@ -489,8 +489,8 @@
           <Property Name="VersionOwnerContactID" Type="Guid" />
           <Property Name="VersionOwnerCompanyID" Type="Guid" />
           <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="X_BlockModel" Relationship="XODBImportModel.FK_X_BlockModelMetadata_X_BlockModel" FromRole="X_BlockModelMetadata" ToRole="X_BlockModel" />
-          <NavigationProperty Name="X_Parameter" Relationship="XODBImportModel.FK_X_BlockModelMetadata_X_Parameter" FromRole="X_BlockModelMetadata" ToRole="X_Parameter" />
+          <NavigationProperty Name="X_BlockModel" Relationship="XODB.Import.FK_X_BlockModelMetadata_X_BlockModel" FromRole="X_BlockModelMetadata" ToRole="X_BlockModel" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODB.Import.FK_X_BlockModelMetadata_X_Parameter" FromRole="X_BlockModelMetadata" ToRole="X_Parameter" />
         </EntityType>
         <EntityType Name="X_DictionaryUnit">
           <Key>
@@ -502,7 +502,7 @@
           <Property Name="GoldUnitName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
           <Property Name="CustomUnitName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="X_Parameter" Relationship="XODBImportModel.FK_X_CompositeData_X_DictionaryUnit" FromRole="X_DictionaryUnit" ToRole="X_Parameter" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODB.Import.FK_X_CompositeData_X_DictionaryUnit" FromRole="X_DictionaryUnit" ToRole="X_Parameter" />
         </EntityType>
         <EntityType Name="X_Parameter">
           <Key>
@@ -526,13 +526,13 @@
           <Property Name="VersionOwnerContactID" Type="Guid" />
           <Property Name="VersionOwnerCompanyID" Type="Guid" />
           <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="X_BlockModelBlockData" Relationship="XODBImportModel.FK_X_BlockModelBlockData_X_Parameter" FromRole="X_Parameter" ToRole="X_BlockModelBlockData" />
-          <NavigationProperty Name="X_BlockModelMetadata" Relationship="XODBImportModel.FK_X_BlockModelMetadata_X_Parameter" FromRole="X_Parameter" ToRole="X_BlockModelMetadata" />
-          <NavigationProperty Name="X_DictionaryUnit" Relationship="XODBImportModel.FK_X_CompositeData_X_DictionaryUnit" FromRole="X_Parameter" ToRole="X_DictionaryUnit" />
+          <NavigationProperty Name="X_BlockModelBlockData" Relationship="XODB.Import.FK_X_BlockModelBlockData_X_Parameter" FromRole="X_Parameter" ToRole="X_BlockModelBlockData" />
+          <NavigationProperty Name="X_BlockModelMetadata" Relationship="XODB.Import.FK_X_BlockModelMetadata_X_Parameter" FromRole="X_Parameter" ToRole="X_BlockModelMetadata" />
+          <NavigationProperty Name="X_DictionaryUnit" Relationship="XODB.Import.FK_X_CompositeData_X_DictionaryUnit" FromRole="X_Parameter" ToRole="X_DictionaryUnit" />
         </EntityType>
         <Association Name="FK_X_BlockModelMetadata_X_BlockModel">
-          <End Role="X_BlockModel" Type="XODBImportModel.X_BlockModel" Multiplicity="1" />
-          <End Role="X_BlockModelMetadata" Type="XODBImportModel.X_BlockModelMetadata" Multiplicity="*" />
+          <End Role="X_BlockModel" Type="XODB.Import.X_BlockModel" Multiplicity="1" />
+          <End Role="X_BlockModelMetadata" Type="XODB.Import.X_BlockModelMetadata" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="X_BlockModel">
               <PropertyRef Name="BlockModelID" />
@@ -543,8 +543,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_X_BlockModelBlockData_X_Parameter">
-          <End Role="X_Parameter" Type="XODBImportModel.X_Parameter" Multiplicity="1" />
-          <End Role="X_BlockModelBlockData" Type="XODBImportModel.X_BlockModelBlockData" Multiplicity="*" />
+          <End Role="X_Parameter" Type="XODB.Import.X_Parameter" Multiplicity="1" />
+          <End Role="X_BlockModelBlockData" Type="XODB.Import.X_BlockModelBlockData" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="X_Parameter">
               <PropertyRef Name="ParameterID" />
@@ -555,8 +555,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_X_BlockModelMetadata_X_Parameter">
-          <End Role="X_Parameter" Type="XODBImportModel.X_Parameter" Multiplicity="1" />
-          <End Role="X_BlockModelMetadata" Type="XODBImportModel.X_BlockModelMetadata" Multiplicity="*" />
+          <End Role="X_Parameter" Type="XODB.Import.X_Parameter" Multiplicity="1" />
+          <End Role="X_BlockModelMetadata" Type="XODB.Import.X_BlockModelMetadata" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="X_Parameter">
               <PropertyRef Name="ParameterID" />
@@ -567,8 +567,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_X_CompositeData_X_DictionaryUnit">
-          <End Role="X_DictionaryUnit" Type="XODBImportModel.X_DictionaryUnit" Multiplicity="0..1" />
-          <End Role="X_Parameter" Type="XODBImportModel.X_Parameter" Multiplicity="*" />
+          <End Role="X_DictionaryUnit" Type="XODB.Import.X_DictionaryUnit" Multiplicity="0..1" />
+          <End Role="X_Parameter" Type="XODB.Import.X_Parameter" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="X_DictionaryUnit">
               <PropertyRef Name="UnitID" />
@@ -653,12 +653,12 @@
           <Property Type="Guid" Name="VersionOwnerContactID" />
           <Property Type="Guid" Name="VersionOwnerCompanyID" />
           <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
-          <NavigationProperty Name="X_BlockModel" Relationship="XODBImportModel.FK_X_BlockModelBlock_X_BlockModel" FromRole="X_BlockModelBlock" ToRole="X_BlockModel" />
-          <NavigationProperty Name="X_BlockModelBlockData" Relationship="XODBImportModel.FK_X_BlockModelBlockData_X_BlockModelBlock" FromRole="X_BlockModelBlock" ToRole="X_BlockModelBlockData" />
+          <NavigationProperty Name="X_BlockModel" Relationship="XODB.Import.FK_X_BlockModelBlock_X_BlockModel" FromRole="X_BlockModelBlock" ToRole="X_BlockModel" />
+          <NavigationProperty Name="X_BlockModelBlockData" Relationship="XODB.Import.FK_X_BlockModelBlockData_X_BlockModelBlock" FromRole="X_BlockModelBlock" ToRole="X_BlockModelBlockData" />
         </EntityType>
         <Association Name="FK_X_BlockModelBlock_X_BlockModel">
-          <End Type="XODBImportModel.X_BlockModel" Role="X_BlockModel" Multiplicity="1" />
-          <End Type="XODBImportModel.X_BlockModelBlock" Role="X_BlockModelBlock" Multiplicity="*" />
+          <End Type="XODB.Import.X_BlockModel" Role="X_BlockModel" Multiplicity="1" />
+          <End Type="XODB.Import.X_BlockModelBlock" Role="X_BlockModelBlock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="X_BlockModel">
               <PropertyRef Name="BlockModelID" />
@@ -669,8 +669,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_X_BlockModelBlockData_X_BlockModelBlock">
-          <End Type="XODBImportModel.X_BlockModelBlock" Role="X_BlockModelBlock" Multiplicity="1" />
-          <End Type="XODBImportModel.X_BlockModelBlockData" Role="X_BlockModelBlockData" Multiplicity="*" />
+          <End Type="XODB.Import.X_BlockModelBlock" Role="X_BlockModelBlock" Multiplicity="1" />
+          <End Type="XODB.Import.X_BlockModelBlockData" Role="X_BlockModelBlockData" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="X_BlockModelBlock">
               <PropertyRef Name="BlockModelBlockID" />
@@ -696,7 +696,7 @@
           <Property Type="Guid" Name="VersionOwnerContactID" />
           <Property Type="Guid" Name="VersionOwnerCompanyID" />
           <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
-          <NavigationProperty Name="X_MetaDataRelation" Relationship="XODBImportModel.FK_X_MetaDataRelation_X_MetaData" FromRole="X_MetaData" ToRole="X_MetaDataRelation" />
+          <NavigationProperty Name="X_MetaDataRelation" Relationship="XODB.Import.FK_X_MetaDataRelation_X_MetaData" FromRole="X_MetaData" ToRole="X_MetaDataRelation" />
         </EntityType>
         <EntityType Name="X_MetaDataRelation">
           <Key>
@@ -715,11 +715,11 @@
           <Property Type="Guid" Name="VersionOwnerContactID" />
           <Property Type="Guid" Name="VersionOwnerCompanyID" />
           <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
-          <NavigationProperty Name="X_MetaData" Relationship="XODBImportModel.FK_X_MetaDataRelation_X_MetaData" FromRole="X_MetaDataRelation" ToRole="X_MetaData" />
+          <NavigationProperty Name="X_MetaData" Relationship="XODB.Import.FK_X_MetaDataRelation_X_MetaData" FromRole="X_MetaDataRelation" ToRole="X_MetaData" />
         </EntityType>
         <Association Name="FK_X_MetaDataRelation_X_MetaData">
-          <End Type="XODBImportModel.X_MetaData" Role="X_MetaData" Multiplicity="1" />
-          <End Type="XODBImportModel.X_MetaDataRelation" Role="X_MetaDataRelation" Multiplicity="*" />
+          <End Type="XODB.Import.X_MetaData" Role="X_MetaData" Multiplicity="1" />
+          <End Type="XODB.Import.X_MetaDataRelation" Role="X_MetaDataRelation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="X_MetaData">
               <PropertyRef Name="MetaDataID" />
@@ -736,7 +736,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="XODBImportModelStoreContainer" CdmEntityContainer="XODBImportEntities">
           <EntitySetMapping Name="X_BlockModel">
-            <EntityTypeMapping TypeName="XODBImportModel.X_BlockModel">
+            <EntityTypeMapping TypeName="XODB.Import.X_BlockModel">
               <MappingFragment StoreEntitySet="X_BlockModel">
                 <ScalarProperty Name="BlockModelID" ColumnName="BlockModelID" />
                 <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
@@ -784,7 +784,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="X_BlockModelBlockData">
-            <EntityTypeMapping TypeName="XODBImportModel.X_BlockModelBlockData">
+            <EntityTypeMapping TypeName="XODB.Import.X_BlockModelBlockData">
               <MappingFragment StoreEntitySet="X_BlockModelBlockData">
                 <ScalarProperty Name="BlockModelBlockDataID" ColumnName="BlockModelBlockDataID" />
                 <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
@@ -804,7 +804,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="X_BlockModelMetadata">
-            <EntityTypeMapping TypeName="XODBImportModel.X_BlockModelMetadata">
+            <EntityTypeMapping TypeName="XODB.Import.X_BlockModelMetadata">
               <MappingFragment StoreEntitySet="X_BlockModelMetadata">
                 <ScalarProperty Name="BlockModelMetadataID" ColumnName="BlockModelMetadataID" />
                 <ScalarProperty Name="BlockModelID" ColumnName="BlockModelID" />
@@ -825,7 +825,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="X_DictionaryUnit">
-            <EntityTypeMapping TypeName="XODBImportModel.X_DictionaryUnit">
+            <EntityTypeMapping TypeName="XODB.Import.X_DictionaryUnit">
               <MappingFragment StoreEntitySet="X_DictionaryUnit">
                 <ScalarProperty Name="UnitID" ColumnName="UnitID" />
                 <ScalarProperty Name="StandardUnitName" ColumnName="StandardUnitName" />
@@ -837,7 +837,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="X_Parameter">
-            <EntityTypeMapping TypeName="XODBImportModel.X_Parameter">
+            <EntityTypeMapping TypeName="XODB.Import.X_Parameter">
               <MappingFragment StoreEntitySet="X_Parameter">
                 <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
                 <ScalarProperty Name="ParameterType" ColumnName="ParameterType" />
@@ -861,7 +861,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="X_BlockModelBlock">
-            <EntityTypeMapping TypeName="XODBImportModel.X_BlockModelBlock">
+            <EntityTypeMapping TypeName="XODB.Import.X_BlockModelBlock">
               <MappingFragment StoreEntitySet="X_BlockModelBlock">
                 <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
                 <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
@@ -938,7 +938,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="X_MetaData">
-            <EntityTypeMapping TypeName="XODBImportModel.X_MetaData">
+            <EntityTypeMapping TypeName="XODB.Import.X_MetaData">
               <MappingFragment StoreEntitySet="X_MetaData">
                 <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
                 <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
@@ -956,7 +956,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="X_MetaDataRelation">
-            <EntityTypeMapping TypeName="XODBImportModel.X_MetaDataRelation">
+            <EntityTypeMapping TypeName="XODB.Import.X_MetaDataRelation">
               <MappingFragment StoreEntitySet="X_MetaDataRelation">
                 <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
                 <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />

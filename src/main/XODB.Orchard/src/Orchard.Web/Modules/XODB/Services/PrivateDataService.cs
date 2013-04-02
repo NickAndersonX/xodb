@@ -94,7 +94,7 @@ namespace XODB.Services
                 var o = d.PrivateDatas.Where(x => x.UniqueID == lookup).FirstOrDefault();
                 if (o == null)
                 {
-                    o = new PrivateData { PrivateDataID= Guid.NewGuid(), UniqueID = lookup, Value = value, TableType = tabletype, UserDataType = usertype, SystemDataType = systemdatatype, VersionUpdated = DateTime.Now };
+                    o = new PrivateData { PrivateDataID= Guid.NewGuid(), UniqueID = lookup, Value = value, TableType = tabletype, UserDataType = usertype, SystemDataType = systemdatatype, VersionUpdated = DateTime.UtcNow };
                     d.PrivateDatas.InsertOnSubmit(o);
                     d.SubmitChanges();
 

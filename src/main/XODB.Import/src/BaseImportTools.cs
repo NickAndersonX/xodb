@@ -5,11 +5,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using XODBImportLib;
-using XODBImportLib.DataModels;
-using XODBImportLib.FormatSpecification;
+using XODB.Import;
+using XODB.Import.DataModels;
+using XODB.Import.FormatSpecification;
 
-namespace XODBImportLib
+namespace XODB.Import
 {
     public class BaseImportTools
     {
@@ -33,7 +33,7 @@ namespace XODBImportLib
                 int proj = bm.Version;
             }
 
-            return "In XODBImportLib";
+            return "In XODB.Import";
         }
 
         public List<string> GetBMColumns()
@@ -102,7 +102,7 @@ namespace XODBImportLib
            List<X_BlockModelMetadata> blockColumnMetaData = dbIm.SetBlockModelMetaData(blockModelGUID, importMap, connString);
 
            // add the new BM guid to the column map as a default so that it is always entered
-           importMap.columnMap.Add(new ColumnMap("", -1, "X_BlockModelBlock", "BlockModelID", ImportDataMap.TEXTDATATYPE, blockModelGUID.ToString(), units));
+           importMap.columnMap.Add(new ColumnMap("", -1, "X_BlockModelBlock", "BlockModelID", ImportDataMap.TEXTDATATYPE, blockModelGUID.ToString(), null, units));
             
            // add the individual blocks
            dbIm.AddBlockData(bmDataFile, importMap, blockModelGUID, batchSize, UpdateStatus, approxNumLines, connString);
@@ -148,6 +148,7 @@ namespace XODBImportLib
                 resourceModels.SaveChanges();
                 UpdateStatus("Setting model meta data", 25.0);
                 // add the meta data to identify all of the oclumns etc.
+                //mos.RecordsImported++;
             }
             catch (Exception ex) {
                 mos.AddErrorMessage("Error setting block model defintion data. "+ex.ToString());
@@ -158,6 +159,7 @@ namespace XODBImportLib
                 try
                 {
                     List<X_BlockModelMetadata> blockColumnMetaData = dbIm.SetBlockModelMetaData(blockModelGUID, importMap, connString);
+                    //mos.RecordsImported += blockColumnMetaData.Count;
                 }
                 catch (Exception ex) {
                     mos.AddErrorMessage("Error setting block model meta data:\n" + ex.ToString());
@@ -165,7 +167,7 @@ namespace XODBImportLib
                 try
                 {
                     // add the new BM guid to the column map as a default so that it is always entered
-                    importMap.columnMap.Add(new ColumnMap("", -1, "X_BlockModelBlock", "BlockModelID", ImportDataMap.TEXTDATATYPE, blockModelGUID.ToString(), ImportDataMap.UNIT_NONE));
+                    importMap.columnMap.Add(new ColumnMap("", -1, "X_BlockModelBlock", "BlockModelID", ImportDataMap.TEXTDATATYPE, blockModelGUID.ToString(), null, ImportDataMap.UNIT_NONE));
                     // add the individual blocks
                     domains = dbIm.AddBlockData(mos, bmFileStream, importMap, blockModelGUID, batchSize, UpdateStatus, approxNumLines, connString);
                 }
@@ -283,6 +285,7 @@ namespace XODBImportLib
             idx = AutoGenColMap(headerItems, idm, "XINC", "LengthX", dbArea, autoMap);
             idx = AutoGenColMap(headerItems, idm, "YINC", "LengthY", dbArea, autoMap);
             idx = AutoGenColMap(headerItems, idm, "ZINC", "LengthZ", dbArea, autoMap);
+            idx = AutoGenColMap(headerItems, idm, "DENSITY", "Density", dbArea, autoMap);
             idx = AutoGenColMap(headerItems, idm, "RESCAT", "ResourceCategory", dbArea, autoMap);
             int num = 1;
             // auto map all ofther fields into numeric 1 to n
@@ -305,13 +308,13 @@ namespace XODBImportLib
             int idx = FindItemInLine(headerItems, sourceName);
             if(idx > -1){
                 
-                idm.columnMap.Add(new ColumnMap(sourceName, idx, dbArea, targetName, ImportDataMap.NUMERICDATATYPE, null, null));
+                idm.columnMap.Add(new ColumnMap(sourceName, idx, dbArea, targetName, ImportDataMap.NUMERICDATATYPE, null, null, null));
                 if (autoMap != null) { autoMap[sourceName] = true; }
             }
             return idx;
         }
 
-        public void PerformBMAppend(System.IO.Stream bmStream, Guid guid, string alias, string columnNameToImport, int columnIndexToImport, string connString)
+        public ModelImportStatus PerformBMAppend(System.IO.Stream bmStream, Guid bmGuid, string alias, string columnNameToImport, int columnIndexToImport, string connString)
         {
             // TODO: read stream and write updates to database
 
@@ -319,7 +322,7 @@ namespace XODBImportLib
             XODBImportEntities resourceModels = new XODBImportEntities();
             resourceModels.Database.Connection.ConnectionString = connString;
             List<X_BlockModelMetadata> d = new List<X_BlockModelMetadata>();
-            var o = resourceModels.X_BlockModelMetadata.Where(f => f.BlockModelID == guid && f.IsColumnData == true).Select(f => (string)f.BlockModelMetadataText).ToArray();
+            var o = resourceModels.X_BlockModelMetadata.Where(f => f.BlockModelID == bmGuid && f.IsColumnData == true).Select(f => (string)f.BlockModelMetadataText).ToArray();
             // yuk, ugly hack to get the next column to update into.  In the long run, use normalised data as it will be much easier
             int lastIndex = 0;
             foreach (string s in o) {
@@ -340,10 +343,10 @@ namespace XODBImportLib
             BlockImportUtils.BlockImport dbIm = new BlockImportUtils.BlockImport();
             ImportDataMap idm = new ImportDataMap();
             idm.columnMap = new List<ColumnMap>();
-            idm.columnMap.Add(new ColumnMap(columnNameToImport, columnIndexToImport, "X_BlockModelBlock", colToInsertTo,ImportDataMap.NUMERICDATATYPE, null, null));
-            dbIm.SetBlockModelMetaData(guid, idm, connString);
+            idm.columnMap.Add(new ColumnMap(columnNameToImport, columnIndexToImport, "X_BlockModelBlock", colToInsertTo,ImportDataMap.NUMERICDATATYPE, null, null, null));
+            dbIm.SetBlockModelMetaData(bmGuid, idm, connString);
 
-            dbIm.UpdateBlockData(bmStream, guid, colToInsertTo, connString);
+            return dbIm.UpdateBlockData(bmStream, bmGuid, colToInsertTo, connString);
             
 
         }

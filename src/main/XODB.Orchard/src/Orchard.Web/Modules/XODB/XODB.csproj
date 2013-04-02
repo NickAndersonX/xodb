@@ -47,6 +47,13 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=2.6.3.862, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\autofac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\..\..\..\lib\autofac\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -317,11 +324,15 @@
     <Content Include="Views\User\ImportModel.cshtml" />
     <Content Include="Views\User\AppendToModelProcessStart.cshtml" />
     <Content Include="Views\User\AppendToModelProcessGo.cshtml" />
+    <Content Include="Views\User\Unauthorized.cshtml" />
+    <Content Include="Views\User\ModelPivot.cshtml" />
+    <Content Include="Views\User\ModelPivotPartial.cshtml" />
+    <Content Include="Views\User\ModelPivotChartPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\xodbimport\src\XODBImportLib.Andrew.csproj">
+    <ProjectReference Include="..\..\..\..\..\xodbimport\src\XODB.Import.csproj">
       <Project>{4814c95d-0008-495a-b627-e3feda2fb1a4}</Project>
-      <Name>XODBImportLib.Andrew</Name>
+      <Name>XODB.Import</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
       <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
@@ -350,6 +361,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminMenu.cs" />
+    <Compile Include="Handlers\BlockModelHandler.cs" />
+    <Compile Include="Handlers\EmailHandler.cs" />
+    <Compile Include="Helpers\TaskHelper.cs" />
+    <Compile Include="Models\BlockModelPart.cs" />
+    <Compile Include="Models\EmailPart.cs" />
+    <Compile Include="Services\AppendModelScheduledTaskHandler.cs" />
+    <Compile Include="Services\EmailScheduledTaskHandler.cs" />
+    <Compile Include="Services\ProcessModelScheduledTaskHandler.cs" />
+    <Compile Include="XODBModule.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Drivers\ProjectPartDriver.cs" />

@@ -28,10 +28,10 @@
                     <div class="editorArea">
                         @Html.HiddenFor(x => x.BlockModelID)
                         <p>&nbsp;</p>
-                        <input name="submit" type="submit" id="authorise" value="Approve"/>
+                        <input name="submit" type="submit" id="authorise" value="Approve" class="submitButtonLeft"/>
                     </div>
                     <div class="editorArea">
-                        <input name="submit" type="submit" id="notify" value="Notify"/>
+                        <input name="submit" type="submit" id="notify" value="Notify" class="submitButtonLeft"/>
                     </div>
                     <div class="editor-label">
                         @Html.LabelFor(x => x.Updates)
@@ -43,4 +43,7 @@
 
     } 
 
+}
+else {
+    Html.RenderAction("UnauthorizedRedirect");
 }

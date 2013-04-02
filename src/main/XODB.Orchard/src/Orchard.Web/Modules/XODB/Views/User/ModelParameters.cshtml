@@ -9,3 +9,6 @@
     <h3>@Layout.Title</h3>
     Html.RenderPartial("ModelParametersPartial");
 }
+else {
+    Html.RenderAction("UnauthorizedRedirect");
+}

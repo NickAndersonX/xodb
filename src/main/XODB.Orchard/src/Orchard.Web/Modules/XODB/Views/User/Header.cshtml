@@ -1,6 +1,8 @@
-﻿<script src="@Url.Content("~/Modules/XODB/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
-<script type="text/javascript" src="@Url.Content("~/Modules/XODB/Scripts/MicrosoftAjax.js")" ></script>
-<script type="text/javascript" src="@Url.Content("~/Modules/XODB/Scripts/MicrosoftMvcValidation.js")" ></script>
+﻿@*<script src="@Url.Content("~/Modules/XODB/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>*@
+<script src="@Url.Content("~/Modules/XODB/Scripts/jquery.validate.js")"></script>
+<script src="@Url.Content("~/Modules/XODB/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+<script src="@Url.Content("~/Modules/XODB/Scripts/MicrosoftAjax.js")" ></script>
+<script src="@Url.Content("~/Modules/XODB/Scripts/MicrosoftMvcValidation.js")" ></script>
 
 <script type="text/javascript">
 //<![CDATA[
@@ -21,13 +23,12 @@
         $.fn.cascade = function (options) {
             var defaults = {};
             var opts = $.extend(defaults, options);
-
             return this.each(function () {
                 $(this).change(function () {
                     var selectedValue = $(this).val();
                     var params = {};
                     params[opts.paramName] = selectedValue;
-                    params[opts.customParamName] = opts.customValue;
+                    params[opts.customParamName] = $(opts.customValue).val();
                     $.getJSON(opts.url, params, function (items) {
                         opts.childSelect.empty();
                         $.each(items, function (index, item) {
@@ -68,6 +69,17 @@
         new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler }
 )
 
+<STYLE type="text/css">
+    .dxeButtonEdit .dxeEditArea,.dxeButtonEdit, .dxeEditArea, .dxeButtonEdit, .dxeEditAreaNotStrechSys {
+        width: 65%;
+    }
+    IMG {
+        max-width: 200%;
+    }
+    input {
+        padding-right: 10px !important;
+    }
+</STYLE> 
 
 <div class="performace_test_result" style="display:none;">
     <table border="0" cellspacing="0" cellpadding="0">

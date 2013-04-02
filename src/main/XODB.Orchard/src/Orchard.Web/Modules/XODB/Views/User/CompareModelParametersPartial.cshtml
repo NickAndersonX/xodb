@@ -1,4 +1,5 @@
-﻿<script type="text/javascript">
+﻿@if (!AuthorizedFor(XODB.Permissions.ManageProjects)) {Html.RenderAction("UnauthorizedRedirect");}
+<script type="text/javascript">
     $().ready(function () {
         $(window.document.forms[0]).submit(function () {
             var parameterOrderIdParameter = $("#parameterOrderIdParameter");

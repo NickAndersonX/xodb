@@ -7,8 +7,8 @@
     <ProjectGuid>{4814C95D-0008-495A-B627-E3FEDA2FB1A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XODBImportLib</RootNamespace>
-    <AssemblyName>XODBImportLib</AssemblyName>
+    <RootNamespace>XODB.Import</RootNamespace>
+    <AssemblyName>XODB.Import</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="BaseImportTools.cs" />
     <Compile Include="BlockImportUtils\BlockImport.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DataModels\XODBImportModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

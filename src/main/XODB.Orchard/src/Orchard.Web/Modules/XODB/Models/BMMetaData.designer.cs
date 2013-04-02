@@ -45,7 +45,7 @@ namespace XODB.Models
     #endregion
 		
 		public BMMetaDataDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

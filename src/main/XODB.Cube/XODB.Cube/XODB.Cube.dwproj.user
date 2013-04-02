@@ -1,0 +1,29 @@
+<AnalysisServicesUserConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>XODB</Id>
+            <Name>XODB</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIWeX2rby9UOAXOdNEX4eFgAAAAAKAAAAWABPAEQAQgAAAANmAADAAAAAEAAAAAWyhM/inKyEIySWV1UhjyEAAAAABIAAAKAAAAAQAAAAPfmGsQAcqYP2iCUWr5vXeRgAAAAgmWy6HoXYsVFv0PwA7/KGstX133Or+oAUAAAAuycTOx+ykpKAEmaf6YJlEN9omQs=</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>XODB</Id>
+            <Name>XODB</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIWeX2rby9UOAXOdNEX4eFgAAAAAKAAAAWABPAEQAQgAAAANmAADAAAAAEAAAAPANPaXssPfXbZ2etved198AAAAABIAAAKAAAAAQAAAADC5SniISEUrPwFkaTTjaphgAAACBgpKt9WkZJ4i3cKtE03TERqWHU0wWRoEUAAAAo/r3qt+vA6S5TxaIiCn34kaa31k=</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>localhost</TargetServer>
+        <TargetDatabase>XODB Cube</TargetDatabase>
+        <StartObject>
+          <ObjectId></ObjectId>
+          <ObjectType>Current</ObjectType>
+        </StartObject>
+      </Options>
+    </Configuration>
+  </Configurations>
+</AnalysisServicesUserConfiguration>

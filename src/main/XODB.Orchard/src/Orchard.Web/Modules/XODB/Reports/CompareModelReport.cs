@@ -33,6 +33,25 @@ namespace XODB.Reports
             //DisplayName = ReportNames.TableReport;
         }
 
+        protected override void BeforeReportPrint()
+        {
+            base.BeforeReportPrint();
+            chartX.Series["Model 1"].Name = string.Format("{0} (*)", this.Parameters["ParameterModel1Name"].Value);
+            chartX.Series["Model 2"].Name = string.Format("{0} (**)", this.Parameters["ParameterModel2Name"].Value);
+            chartX.Series["Samples 1"].Name = string.Format("{0} Samples (*)", this.Parameters["ParameterModel1Name"].Value);
+            chartX.Series["Samples 2"].Name = string.Format("{0} Samples (**)", this.Parameters["ParameterModel2Name"].Value);
+            chartY.Series["Model 1"].Name = string.Format("{0} (*)", this.Parameters["ParameterModel1Name"].Value);
+            chartY.Series["Model 2"].Name = string.Format("{0} (**)", this.Parameters["ParameterModel2Name"].Value);
+            chartY.Series["Samples 1"].Name = string.Format("{0} Samples (*)", this.Parameters["ParameterModel1Name"].Value);
+            chartY.Series["Samples 2"].Name = string.Format("{0} Samples (**)", this.Parameters["ParameterModel2Name"].Value);
+            chartZ.Series["Model 1"].Name = string.Format("{0} (*)", this.Parameters["ParameterModel1Name"].Value);
+            chartZ.Series["Model 2"].Name = string.Format("{0} (**)", this.Parameters["ParameterModel2Name"].Value);
+            chartZ.Series["Samples 1"].Name = string.Format("{0} Samples (*)", this.Parameters["ParameterModel1Name"].Value);
+            chartZ.Series["Samples 2"].Name = string.Format("{0} Samples (**)", this.Parameters["ParameterModel2Name"].Value);
+            chartGT.Series["Model 1"].Name = string.Format("{0} (*)", this.Parameters["ParameterModel1Name"].Value);
+            chartGT.Series["Model 2"].Name = string.Format("{0} (**)", this.Parameters["ParameterModel2Name"].Value);
+        }
+        
         public class DataProvider : ReportHelper.ITableReportDataFiller
         {
 
@@ -51,8 +70,12 @@ namespace XODB.Reports
             public void Fill(ReportHelper.TableReport report)
             {
                 var o = (BlockModelCompareViewModel)_r;
-                string filterString;
                 report.DataSource = BlockModelService.CompareModelsResult(o);
+                report.Parameters["ParameterModel1Name"].Value = o.Model1Name;
+                report.Parameters["ParameterModel2Name"].Value = o.Model2Name;
+                report.Parameters["ParameterGradeTonnageFieldName"].Value = o.GradeTonnageFieldName;
+                report.Parameters["ParameterUserName"].Value = o.ReportExecutedByUserName;
+              
             }
         }
     }

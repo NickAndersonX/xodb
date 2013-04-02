@@ -1,4 +1,5 @@
-﻿@using (new TransactionScope(TransactionScopeOption.Suppress))
+﻿@if (!AuthorizedFor(XODB.Permissions.ManageProjects)) {Html.RenderAction("UnauthorizedRedirect");}
+@using (new TransactionScope(TransactionScopeOption.Suppress))
 {
 
     Html.DevExpress().GridView(
@@ -38,11 +39,9 @@
                 column.SetDataItemTemplateContent(c =>
                 {
                     ViewContext.Writer.Write(                         
-                        Html.ActionLink("Append", "AppendToModel", new { id = DataBinder.Eval(c.DataItem, "BlockModelID") })
-                        + "&nbsp;" + Html.ActionLink("Delete", "EditModel", new { id = DataBinder.Eval(c.DataItem, "BlockModelID"), verb = "delete" }, new { onclick = "return confirm('Do you really want to delete this record?')" })                        
+                        (DataBinder.Eval(c.DataItem, "ApproverName") == null ? Html.ActionLink("Append", "AppendToModel", new { id = DataBinder.Eval(c.DataItem, "BlockModelID") }) + "&nbsp;" + Html.ActionLink("Delete", "DeleteModel", new { id = DataBinder.Eval(c.DataItem, "BlockModelID"), verb = "delete" }, new { onclick = "return confirm('Do you really want to delete this record?')" }) : null)                       
                         //TODO: + "&nbsp;CSV&nbsp;RPT" 
                         //+ "&nbsp;" + Html.ActionLink("Edit", "EditModel", new { id = DataBinder.Eval(c.DataItem, "BlockModelID")})
-
                     );
                 });
                 column.SetHeaderTemplateContent(c =>

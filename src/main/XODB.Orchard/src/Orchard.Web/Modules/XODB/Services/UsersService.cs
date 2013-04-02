@@ -23,6 +23,9 @@ using System.Text.RegularExpressions;
 using System.Transactions;
 using Orchard.Messaging.Services;
 using Orchard.Logging;
+using XODB.Helpers;
+using Orchard.Tasks.Scheduling;
+using Orchard.Data;
 
 namespace XODB.Services {
     
@@ -33,15 +36,21 @@ namespace XODB.Services {
         private readonly IRoleService _roleService;
         private readonly IUserService _userService;
         private readonly IMessageManager _messageManager;
+        private readonly IScheduledTaskManager _taskManager;
         private readonly PrincipalContext _securityContext = new PrincipalContext(ContextType.Domain); //TODO: May look at others one day
+        private readonly IRepository<EmailPartRecord> _repository;
         public ILogger Logger { get; set; }
 
-        public UsersService(IContentManager contentManager, IOrchardServices orchardServices, IRoleService roleService, IUserService userService, IMessageManager messageManager) {
+
+        public UsersService(IContentManager contentManager, IOrchardServices orchardServices, IRoleService roleService, IUserService userService, IMessageManager messageManager, IScheduledTaskManager taskManager, IRepository<EmailPartRecord> repository)
+        {
+            _repository = repository;
             _orchardServices = orchardServices;
             _contentManager = contentManager;
             _roleService = roleService;
             _userService = userService;
             _messageManager = messageManager;
+            _taskManager = taskManager;
             T = NullLocalizer.Instance;
             Logger = NullLogger.Instance;
         }
@@ -156,14 +165,16 @@ namespace XODB.Services {
             }
         }
 
-        public IEnumerable<string> GetUserEmails(Guid[] users)
+        public string[] GetUserEmails(Guid[] users)
         {
+            if (users == null || users.Length == 0)
+                return new string[] { };
             using (new TransactionScope(TransactionScopeOption.Suppress))
             {
                 var d = new ContactsDataContext();
-                var o = from c in d.Contacts where users.Contains(c.ContactID)
+                var o = from c in d.Contacts where users.Contains(c.ContactID) && c.DefaultEmail != null
                         select c.DefaultEmail;
-                return o;
+                return o.ToArray();
             }
         }
 
@@ -193,21 +204,40 @@ namespace XODB.Services {
             return temp;
         }
 
-        public void EmailUsers(Guid[] recipients, string subject, string body)
+        public void EmailUsers(string[] emails, string subject, string body, bool retry = false)
         {
             var data = new Dictionary<string,string>();
             data.Add("Subject", subject); 
             data.Add("Body", body);
-            var smtpSettings = _orchardServices.WorkContext.CurrentSite.As<Orchard.Email.Models.SmtpSettingsPart>();
+            Orchard.Email.Models.SmtpSettingsPart smtpSettings = null;
+            if (_orchardServices.WorkContext != null) smtpSettings = _orchardServices.WorkContext.CurrentSite.As<Orchard.Email.Models.SmtpSettingsPart>();
             try
             {
-                IEnumerable<string> emailAddresses = GetUserEmails(recipients).Union(new string[] { smtpSettings.Address }).Where(f => !string.IsNullOrEmpty(f));
-                _messageManager.Send(GetUserEmails(recipients), XODB.Events.EmailMessageHandler.DEFAULT_XODB_EMAIL_TYPE, "email", data);
+                if (emails == null)
+                    emails = new string[] { };
+                var recipients = emails.Union(new string[] { smtpSettings.Address }).Where(f => !string.IsNullOrEmpty(f)).ToArray();
+                _messageManager.Send(recipients, XODB.Events.EmailMessageHandler.DEFAULT_XODB_EMAIL_TYPE, "email", data);
             }
             catch(Exception ex)
             {
-                Logger.Information(ex, string.Format("Failed sending notification for: {0}.\r\n\r\n Regarding: \r\n\r\n {1}", subject, body));
+                Logger.Information(ex, string.Format("Failed sending notification for: {0}.\r\n\r\n Regarding: \r\n\r\n {1}...Retrying:{2}", subject, body,retry));
+                if (retry)
+                {
+                    EmailUsersAsync(emails, subject, body);
+                }
             }
         }
+
+        public void EmailUsersAsync(string[] emails, string subject, string body)
+        {
+            var em = _contentManager.New<EmailPart>("Email");
+            em.Emails = emails;
+            em.Subject = subject;
+            em.Body = body;
+            em.Retry = false;
+            _contentManager.Create(em, VersionOptions.Published);
+            _taskManager.EmailAsync(em.ContentItem);
+        }
+
     }
 }

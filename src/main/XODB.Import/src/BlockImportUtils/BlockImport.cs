@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-using XODBImportLib.DataModels;
-using XODBImportLib.FormatSpecification;
+using XODB.Import.DataModels;
+using XODB.Import.FormatSpecification;
 
-namespace XODBImportLib.BlockImportUtils
+namespace XODB.Import.BlockImportUtils
 {
     public class BlockImport
     {
@@ -184,6 +184,7 @@ namespace XODBImportLib.BlockImportUtils
             // iterate through the data lines
             int ct = 1;
             int linesRead = 0;
+            int total = 0;
             SqlConnection connection = null;
             List<string> uniqueDomains = new List<string>();
             // get a connection to the database
@@ -308,6 +309,7 @@ namespace XODBImportLib.BlockImportUtils
                                 // commit batch, then renew the transaction
                                 if (commitToDB)
                                 {
+                                    total += tb;
                                     trans.Commit();
                                     numCommits++;
                                     //   trans = null;
@@ -324,6 +326,7 @@ namespace XODBImportLib.BlockImportUtils
                 {
                     if (commitToDB)
                     {
+                        total += tb;
                         trans.Commit();
                     }
                     numCommits++;
@@ -345,7 +348,7 @@ namespace XODBImportLib.BlockImportUtils
                 }
             }
 
-            
+            mos.RecordsImported = total;
             mos.linesReadFromSource = linesRead;
 
             return uniqueDomains;   
@@ -369,7 +372,8 @@ namespace XODBImportLib.BlockImportUtils
         {
             XODBImportEntities resourceModels = new XODBImportEntities();
             resourceModels.Database.Connection.ConnectionString = connString;
-            List<X_BlockModelMetadata> metaDataItems = new List<X_BlockModelMetadata>(); 
+            List<X_BlockModelMetadata> metaDataItems = new List<X_BlockModelMetadata>();
+
 
             foreach (ColumnMap cmap in testMap.columnMap)
             {
@@ -377,14 +381,24 @@ namespace XODBImportLib.BlockImportUtils
                 metaData.BlockModelID = blockModelGUID;
                 metaData.BlockModelMetadataID = Guid.NewGuid();
                 metaData.IsColumnData = true;
-                string colName = cmap.sourceColumnName;
-                string columnValue = cmap.defaultValue;
                 X_Parameter param1 = new X_Parameter();
                 param1.ParameterName = cmap.targetColumnName;                   // source column
-                param1.ParameterType = "FieldName";                             // target column
-                param1.DefaultParameterText = colName;
+                param1.ParameterType = "FieldName";
+                if (resourceModels.X_BlockModelMetadata.Where(f => f.BlockModelID == blockModelGUID && f.X_Parameter.Description == cmap.sourceColumnName).Any())
+                    param1.Description = cmap.sourceColumnName = string.Format("{0}_{1}", cmap.sourceColumnName, Guid.NewGuid());
+                else
+                    param1.Description = cmap.sourceColumnName;                                   // target column
                 param1.ParameterID = Guid.NewGuid();
-                param1.UnitID = new Guid("AEDBBE0A-6A94-419F-8B43-A98CE942669A");// HACK - get the proper guid for the current unit type
+              
+                if (cmap.sourceColumnName != null && cmap.sourceColumnName.ToLower().Contains("ppm"))
+                {
+                    param1.UnitID = new Guid("E91773A4-2762-4EDE-8510-38F78FAF981D");// TODO: HACK - get the proper guid for the current unit type by querying database
+                }
+                else if (cmap.sourceColumnName != null && cmap.sourceColumnName.ToLower().Contains("pct"))
+                {
+                    param1.UnitID = new Guid("AEDBBE0A-6A94-419F-8B43-A98CE942669A");// TODO: HACK - get the proper guid for the current unit type by querying database
+                }
+
                 metaData.BlockModelMetadataText = cmap.targetColumnName;
                 metaData.ParameterID = param1.ParameterID;
                 resourceModels.X_Parameter.Add(param1);
@@ -407,6 +421,7 @@ namespace XODBImportLib.BlockImportUtils
             // iterate through the data lines
             int ct = 1;
             int linesRead = 0;
+            int total = 0;
             SqlConnection connection = null;
             List<string> uniqueDomains = new List<string>();
             // get a connection to the database
@@ -415,7 +430,6 @@ namespace XODBImportLib.BlockImportUtils
                 
                 connection = new SqlConnection(connString);
                 connection.Open();
-
                 int numCommits = 0;
                 SqlTransaction trans;
                 trans = connection.BeginTransaction();
@@ -467,6 +481,7 @@ namespace XODBImportLib.BlockImportUtils
                                 {
                                     trans.Commit();
                                     numCommits++;
+                                    total += tb;
                                     //   trans = null;
                                     trans = connection.BeginTransaction();
                                 }
@@ -482,6 +497,7 @@ namespace XODBImportLib.BlockImportUtils
                     if (commitToDB)
                     {
                         trans.Commit();
+                        total += tb;
                     }
                     numCommits++;
                 }
@@ -495,6 +511,7 @@ namespace XODBImportLib.BlockImportUtils
             }
             finally
             {
+                mos.RecordsImported = total;
                 try { connection.Close(); }
                 catch (Exception ex)
                 {

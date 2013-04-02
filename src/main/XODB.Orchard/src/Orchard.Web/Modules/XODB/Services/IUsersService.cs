@@ -21,6 +21,12 @@ namespace XODB.Services
          Guid GetUserID(string username);
 
          [OperationContract]
-         void EmailUsers(Guid[] recipients, string subject, string body);
+         string[] GetUserEmails(Guid[] users);
+
+         [OperationContract]
+         void EmailUsers(string[] recipients, string subject, string body, bool retry=false);
+
+         [OperationContract]
+         void EmailUsersAsync(string[] recipients, string subject, string body);
     }
 }

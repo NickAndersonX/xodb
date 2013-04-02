@@ -53,9 +53,13 @@
               <div class="editor-field">
                   @Html.TextAreaFor(x => x.Notes)
               </div>
-              <input type="submit" value="Upload"/>
+              <input type="submit" value="Upload" class="submitButtonLeft"/>
           </fieldset>
     }
+}
+else
+{
+    Html.RenderAction("UnauthorizedRedirect");
 }
 
 @*<script type="text/javascript">

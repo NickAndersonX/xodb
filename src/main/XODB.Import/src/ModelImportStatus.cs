@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XODBImportLib
+namespace XODB.Import
 {
     /// <summary>
     /// Class to store data about the import progress
@@ -20,6 +20,9 @@ namespace XODBImportLib
         public static int ERROR_LOADING_DEFINITION_FILE = 2;
         public static int ERROR_CONNECTING_TO_DB = 3;
         public static int ERROR_WRITING_TO_DB = 4;
+
+        private int _recordsImported = 0;
+        public int RecordsImported { get { return _recordsImported; } set { _recordsImported = value; } }
 
         public ModelImportStatus()
         {
@@ -97,6 +100,8 @@ namespace XODBImportLib
                     ct++;
                 }
             }
+
+            res += string.Format("\n\n Rows Imported:{0}", _recordsImported);
             return res;
 
 

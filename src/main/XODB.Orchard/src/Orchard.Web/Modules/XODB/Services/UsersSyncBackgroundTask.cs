@@ -52,7 +52,7 @@ namespace XODB.Services {
             {
                 _signals.Trigger(NEXT_UPDATE_CACHE_KEY);
                 _userService.SyncUsers();
-                Logger.Information(string.Format("Successfully updated users (synchronisation completed).", DateTime.Now.ToLongDateString()));
+                Logger.Information(string.Format("Successfully updated users (synchronisation completed).", DateTime.UtcNow.ToLongDateString()));
 
             }
         }

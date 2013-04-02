@@ -1,5 +1,4 @@
-﻿
-@using System.Linq;
+﻿@if (!AuthorizedFor(XODB.Permissions.ManageProjects)) {Html.RenderAction("UnauthorizedRedirect");}
 @using (new TransactionScope(TransactionScopeOption.Suppress))
 {
     //var modelid = string.Format("{0}",Url.RequestContext.RouteData.Values["id"]);
@@ -30,6 +29,7 @@
             settings.Columns.Add("BlockModelMetadataID").Visible = false;
             settings.Columns.Add("BlockModelName").Visible = true;
             settings.Columns.Add("ParameterName").Visible = true;
+            settings.Columns.Add("ParameterDescription").Visible = true;
             settings.Columns.Add(column =>
             {
                 column.FieldName = "StandardUnitName";
@@ -120,12 +120,13 @@
             
             e.QueryableSource = (from g in
                                      (from mod in d.BlockModelMetadatas.Where(mod => mod.IsColumnData == true)
-                                      from a in d.BlockModels.Where(a => a.BlockModelID == mod.BlockModelID)
+                                      from a in d.BlockModels.Where(a => a.BlockModelID == mod.BlockModelID && a.VersionDeletedBy == null)
+                                      from ms in d.ModelStatus.Where(ms => ms.BlockModelID == a.BlockModelID)
                                         from p in d.Parameters.Where(p=> mod.ParameterID == p.ParameterID)
                                         from u in d.Units.Where(u => u.UnitID == p.UnitID).DefaultIfEmpty()
-                                        select new { mod.BlockModelMetadataID, p.ParameterName, u.StandardUnitName, BlockModelName = a.Alias })
+                                        select new { mod.BlockModelMetadataID, p.ParameterName, ParameterDescription = p.Description, u.StandardUnitName, BlockModelName = a.Alias })
                                     .GroupBy(x => x.BlockModelMetadataID, (x, y) => new { Key = x, Value = y.FirstOrDefault() })
-                                select new { g.Value.BlockModelMetadataID , g.Value.ParameterName, g.Value.StandardUnitName, g.Value.BlockModelName});
+                                select new { g.Value.BlockModelMetadataID , g.Value.ParameterName, g.Value.ParameterDescription, g.Value.StandardUnitName, g.Value.BlockModelName});
             e.KeyExpression = "BlockModelMetadataID";
             
         })

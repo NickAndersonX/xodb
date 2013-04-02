@@ -13,6 +13,8 @@ namespace XODB.ViewModels
         public string BlockModelAlias { get; set; }
         [DisplayName("Parameter Name:")]
         public string ParameterName { get; set; }
+        [DisplayName("Parameter Description:")]
+        public string ParameterDescription { get; set; }
         [HiddenInput, Required, DisplayName("Parameter ID:")]
         public Guid? ParameterID { get; set; }
         [Required, DisplayName("Unit:")]
