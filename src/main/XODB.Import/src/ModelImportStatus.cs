@@ -47,6 +47,9 @@ namespace XODB.Import
 
         public int linesReadFromSource { get; set; }
 
+        //All possible lines //TODO: read all lines from source 
+        public int TotalLines { get; set; }
+
         public string importTextFileName { get; set; }
 
         public string targetModelName { get; set; }
@@ -101,7 +104,13 @@ namespace XODB.Import
                 }
             }
 
-            res += string.Format("\n\n Rows Imported:{0}", _recordsImported);
+            res += string.Format("\n\n For File: {0}", importTextFileName);
+
+            res += string.Format("\n\n For Model: {0}", targetModelName);
+
+            res += string.Format("\n\n Lines Read (including headers): {0}", linesReadFromSource);
+
+            res += string.Format("\n\n Rows Imported: {0}", _recordsImported);
             return res;
 
 

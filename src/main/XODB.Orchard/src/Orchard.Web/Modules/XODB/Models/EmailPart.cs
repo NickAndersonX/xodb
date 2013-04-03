@@ -15,6 +15,7 @@ namespace XODB.Models {
         public virtual string Body { get; set; }
         public virtual bool Retry { get; set; }
         public virtual System.DateTime? Processed { get; set; }
+        public virtual System.DateTime? Completed { get; set; }
     }
 
     public class EmailPart : ContentPart<EmailPartRecord> 
@@ -23,8 +24,9 @@ namespace XODB.Models {
         private System.Guid[] _recipients { get; set; }
         private string _subject { get; set; }
         private string _body { get; set; }
-        public virtual bool _retry { get; set; }
-        public virtual System.DateTime? _processed { get; set; }
+        private bool _retry { get; set; }
+        private System.DateTime? _processed { get; set; }
+        private System.DateTime? _completed { get; set; }
 
         public bool Retry
         {
@@ -39,6 +41,22 @@ namespace XODB.Models {
                 if (Record != null)
                     Record.Retry = value;
                 _retry = value;
+            }
+        }
+
+        public System.DateTime? Completed
+        {
+            get
+            {
+                if (Record != null)
+                    return Record.Completed;
+                return _completed;
+            }
+            set
+            {
+                if (Record != null)
+                    Record.Completed = value;
+                _completed = value;
             }
         }
 

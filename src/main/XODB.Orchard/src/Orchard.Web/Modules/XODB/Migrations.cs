@@ -47,11 +47,12 @@ namespace XODB {
         {
             SchemaBuilder.CreateTable(typeof(EmailPartRecord).Name, table => table
                 .ContentPartRecord()
-                .Column("Recipients", DbType.String)
+                .Column("Recipients", DbType.String, c => c.WithLength(4000))
                 .Column("Subject", DbType.String)
-                .Column("Body", DbType.String)
+                .Column("Body", DbType.String, c => c.WithLength(4000))
                 .Column("Retry", DbType.Boolean)
                 .Column("Processed", DbType.DateTime)
+                .Column("Completed", DbType.DateTime)
                 );
 
 
@@ -74,14 +75,15 @@ namespace XODB {
                 .Column("ProjectName", DbType.String)
                 .Column("Alias", DbType.String)
                 .Column("UserID", DbType.Guid)
-                .Column("Notes", DbType.String)
+                .Column("Notes", DbType.String, c => c.WithLength(4000))
                 .Column("Stage", DbType.String)
                 .Column("StageMetaID", DbType.Guid)
                 .Column("BmGuid", DbType.Guid)
                 .Column("ColumnNameToAdd", DbType.String)
                 .Column("ColumnIndexToAdd", DbType.Int32)
-                .Column("Emails", DbType.String)
+                .Column("Emails", DbType.String, c => c.WithLength(4000))
                 .Column("Processed", DbType.DateTime)
+                .Column("Completed", DbType.DateTime)
                 );
 
 

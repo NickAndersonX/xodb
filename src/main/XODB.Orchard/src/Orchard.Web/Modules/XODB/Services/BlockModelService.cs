@@ -169,24 +169,22 @@ namespace XODB.Services {
             ModelImportStatus mos = new ModelImportStatus();
             try
             {
-                bool skip = false;
-                if (!skip)
+
+                // Special append method for GF requirements - contains X, Y, Z, and value to append.
+                // target model must have matching X, Y and Z centroids.
+                // auto generate a format defintion based on Goldfields typical input column data            
+                using (new TransactionScope(TransactionScopeOption.Suppress))
                 {
-                    // Special append method for Goldfields requirements - contains X, Y, Z, and value to append.
-                    // target model must have matching X, Y and Z centroids.
-                    // auto generate a format defintion based on Goldfields typical input column data            
-                    using (new TransactionScope(TransactionScopeOption.Suppress))
-                    {
-                        mos = bit.PerformBMAppend(bmFileStream, bmGuid, alias, columnNameToImport, columnIndexToImport, scs);
-                    }
-                    statusMessage += string.Format("Successfully appended data to block model:{0} - {1}\n\nFrom file:{2}\n\n", alias, bmGuid, bmFileName);
-                    completed = true;
+                    mos = bit.PerformBMAppend(bmFileStream, bmGuid, alias, columnNameToImport, columnIndexToImport, scs);
                 }
+                statusMessage += string.Format("Successfully appended data to block model:\n{0} - {1}\n\nFrom file:{2}\n\n", alias, bmGuid, bmFileName);
+                completed = true;
+
 
             }
             catch (Exception ex)
             {
-                statusMessage += string.Format("Error appending data to block model:{0} - {1}\n\nFrom file:{2}\n\nError:\n{3}\n\n", alias, bmGuid, bmFileName, ex.ToString());
+                statusMessage += string.Format("Error appending data to block model:\n{0} - {1}\n\nFrom file:{2}\n\nError:\n{3}\n\n", alias, bmGuid, bmFileName, ex.ToString());
             }
             finally {
                 statusMessage += mos.GenerateStringMessage();
@@ -249,18 +247,24 @@ namespace XODB.Services {
             bmFileName = ExtractBlockModelFromZip(bmFileName, out targetFolder, out attmemptModelLoad);
 
             ModelImportStatus mos = DoNewModelImport(bmFileName, formatFileName, projectID, alias, userGuid, ref domains, targetFolder, attmemptModelLoad, notes, stage, stageMetaID);
-            mos.importTextFileName = bmFileName +"(from "+originalName+")";
+            mos.importTextFileName = bmFileName +" (from "+originalName+")";
             mos.targetModelName = alias;
 
-            
-            string msg = mos.GenerateStringMessage();
-            string subjectLine = "Model import complete for " + mos.importTextFileName;
+            string msg = "";
+            string subject = "";
             if (mos.finalErrorCode > 0) {
-                subjectLine = "Model load failure for " + mos.importTextFileName;
+                subject = "Model Import Failed";
+                msg += string.Format("Error importing block model:\n{0}\n\n", alias, bmFileName);
+                 
             }
+            else {
+                subject = "Model Import Succeeded";
+                msg += string.Format("Successfully imported block model:\n{0}\n\n", alias, bmFileName);
+            }
+            msg += mos.GenerateStringMessage();               
 
             Logger.Information(msg);
-            _userService.EmailUsersAsync(emails, subjectLine, msg);
+            _userService.EmailUsersAsync(emails, subject, msg);
 
         }
 
@@ -319,36 +323,31 @@ namespace XODB.Services {
                 catch (Exception ex) {
                     mos.AddWarningMessage("Unable to auto detect origin and other format information from the file");
                 }
-                //Stream ffFileStream = formatFile.OpenRead();
-                bool skipLoad = false;  // for debugging purposes to skip the actual laod
-                if (!skipLoad)
+
+                using (new TransactionScope(TransactionScopeOption.Suppress))
                 {
-                    using (new TransactionScope(TransactionScopeOption.Suppress))
+                    try
                     {
-                        try
-                        {                            
-                            Guid blockModelGUID = Guid.NewGuid();
-                            mos.modelID = blockModelGUID;
-                            domains = bit.PerformBMImport(mos, blockModelGUID, bmFileStream, null, idm, _originX, _originY, _originZ, null, 1000, projectID, alias, authorGuid, connString);
-                            List<Tuple<string, string>> doms = new List<Tuple<string, string>>();
-                            string domainColumnName = "Domain";
-                            foreach (string ss in domains) {
-                                doms.Add(new Tuple<string, string>(domainColumnName, ss));
-                            }
-                            XODB.Helpers.BMImportHelper.UpdateDomains(doms, blockModelGUID);
-                            XODB.Helpers.BMImportHelper.AddModelNotes(notes, blockModelGUID);
-                            XODB.Helpers.BMImportHelper.UpdateStage(blockModelGUID, stageMetaID, stage);
-                        }
-                        catch (Exception ex)
+                        Guid blockModelGUID = Guid.NewGuid();
+                        mos.modelID = blockModelGUID;
+                        domains = bit.PerformBMImport(mos, blockModelGUID, bmFileStream, null, idm, _originX, _originY, _originZ, null, 1000, projectID, alias, authorGuid, connString);
+                        List<Tuple<string, string>> doms = new List<Tuple<string, string>>();
+                        string domainColumnName = "Domain";
+                        foreach (string ss in domains)
                         {
-                            mos.finalErrorCode = ModelImportStatus.ERROR_WRITING_TO_DB;
-                            mos.AddErrorMessage("Error importing block model:\n"+ex.ToString());
+                            doms.Add(new Tuple<string, string>(domainColumnName, ss));
                         }
-
-
-
+                        XODB.Helpers.BMImportHelper.UpdateDomains(doms, blockModelGUID);
+                        XODB.Helpers.BMImportHelper.AddModelNotes(notes, blockModelGUID);
+                        XODB.Helpers.BMImportHelper.UpdateStage(blockModelGUID, stageMetaID, stage);
+                    }
+                    catch (Exception ex)
+                    {
+                        mos.finalErrorCode = ModelImportStatus.ERROR_WRITING_TO_DB;
+                        mos.AddErrorMessage("Error importing block model:\n" + ex.ToString());
                     }
                 }
+                
                 //TODO call into import library with the stream object for the import
 
                 bmFileStream.Close();

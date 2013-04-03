@@ -26,6 +26,7 @@ namespace XODB.Models {
         [StringLengthMax]
         public virtual string Emails { get; set; }
         public virtual DateTime? Processed { get; set; }
+        public virtual DateTime? Completed { get; set; }
     }
 
     public class BlockModelPart : ContentPart<BlockModelPartRecord> 
@@ -44,6 +45,7 @@ namespace XODB.Models {
         public int ColumnIndexToAdd { get { return Record.ColumnIndexToAdd; } set { Record.ColumnIndexToAdd = value; } }
         public string[] Emails { get { return Record.Emails.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries); } set { Record.Emails = string.Join(";", value); } }
         public DateTime? Processed { get { return Record.Processed; } set { Record.Processed = value; } }
+        public DateTime? Completed { get { return Record.Completed; } set { Record.Completed = value; } }
 
         public BlockModelPart()
         { }

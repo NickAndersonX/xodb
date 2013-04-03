@@ -235,6 +235,7 @@ namespace XODB.Services {
             em.Subject = subject;
             em.Body = body;
             em.Retry = false;
+            em.Processed = DateTime.UtcNow;
             _contentManager.Create(em, VersionOptions.Published);
             _taskManager.EmailAsync(em.ContentItem);
         }
