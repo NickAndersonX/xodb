@@ -230,14 +230,21 @@ namespace XODB.Services {
 
         public void EmailUsersAsync(string[] emails, string subject, string body)
         {
-            var em = _contentManager.New<EmailPart>("Email");
-            em.Emails = emails;
-            em.Subject = subject;
-            em.Body = body;
-            em.Retry = false;
-            em.Processed = DateTime.UtcNow;
-            _contentManager.Create(em, VersionOptions.Published);
-            _taskManager.EmailAsync(em.ContentItem);
+            try
+            {
+                var em = _contentManager.New<EmailPart>("Email");
+                em.Emails = emails;
+                em.Subject = subject;
+                em.Body = body;
+                em.Retry = false;
+                em.Processed = DateTime.UtcNow;
+                _contentManager.Create(em, VersionOptions.Published);
+                _taskManager.EmailAsync(em.ContentItem);
+            }
+            catch (Exception ex)
+            {
+                Logger.Debug(ex, string.Format("Failed Sending Notification - Couldn't assemble message.\n\nSubject:\n{0}\n\nBody:\n{1}\n\nRecipients:\n{2}\n\n", subject, body, emails == null ? "Unknown Recipients" : string.Join(";", emails)));
+            }
         }
 
     }
