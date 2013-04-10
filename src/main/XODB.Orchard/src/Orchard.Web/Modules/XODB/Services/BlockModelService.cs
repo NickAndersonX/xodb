@@ -905,12 +905,13 @@ namespace XODB.Services {
                             //Cumulative needs to be in grade ascending order
                             if ((string)r[gtm] == "1")
                             {
-                                cumulative1 += ((decimal)r[gtg] * (decimal)r[gtt] * gtFieldMultiplier);
+                                //cumulative1 += ((decimal)r[gtg] * (decimal)r[gtt] * gtFieldMultiplier);
+                                cumulative1 += ((decimal)r[gtt]);
                                 r[gttg] = cumulative1;
                             }
                             else
                             {
-                                cumulative2 += ((decimal)r[gtg] * (decimal)r[gtt] * gtFieldMultiplier);
+                                cumulative2 += ((decimal)r[gtt]);
                                 r[gttg] = cumulative2;
                             }
 

@@ -126,7 +126,7 @@
                         </div>
                         <div class="col s2of2">
                             <div class="editor-label">@Html.LabelFor(x=>x.GradeTonnageIncrement)</div>
-                             <div class="editor-field">@Html.TextBoxFor(x => x.GradeTonnageIncrement)</div>
+                             <div class="editor-field">@Html.TextBoxFor(x => x.GradeTonnageIncrement, new { @Value = "0.1" })</div>
                           </div>
                       </div>
                   </div>

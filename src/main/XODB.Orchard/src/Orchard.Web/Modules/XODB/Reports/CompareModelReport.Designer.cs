@@ -464,8 +464,8 @@
             this.chartGT.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.chartGT.DataMember = "gt";
             xyDiagram3.AxisX.NumericOptions.Format = DevExpress.XtraCharts.NumericFormat.Number;
+            xyDiagram3.AxisX.NumericOptions.Precision = 0;
             xyDiagram3.AxisX.Range.SideMarginsEnabled = true;
-            xyDiagram3.AxisX.Reverse = true;
             xyDiagram3.AxisX.Title.Text = "Tonnage";
             xyDiagram3.AxisX.Title.Visible = true;
             xyDiagram3.AxisX.VisibleInPanesSerializable = "-1";
