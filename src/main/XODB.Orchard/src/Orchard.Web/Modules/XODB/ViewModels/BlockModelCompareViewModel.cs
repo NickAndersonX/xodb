@@ -61,7 +61,6 @@ using DevExpress.XtraReports.UI;
         [DisplayName("Report Executed By User:")]
         public Guid ReportExecutedByUserID { get; set; }
 
-
         public SelectList Models { get; set; }
         public SelectList ParametersModel1 { get; set; }
         public MultiSelectList DomainsModel1 { get; set; }

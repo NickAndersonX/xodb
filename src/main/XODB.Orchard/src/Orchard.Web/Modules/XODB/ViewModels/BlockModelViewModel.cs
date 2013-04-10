@@ -16,7 +16,7 @@ namespace XODB.ViewModels
         [Required, DisplayName("Available File Names:")]
         public string FileName { get; set; }
 
-        [Required, DisplayName("Model format")]
+        [DisplayName("Model Format:")]
         public string FormatFileName { get; set; }
 
         [DisplayName("Notes:")]
@@ -25,11 +25,11 @@ namespace XODB.ViewModels
         public string ExtraNotes { get; set; }
 
         
-        [Required, DisplayName("X origin:")]
+        [DisplayName("X origin:")]
         public double XOrigin { get; set; }
-        [Required, DisplayName("Y origin:")]
+        [DisplayName("Y origin:")]
         public double YOrigin { get; set; }
-        [Required, DisplayName("Z origin:")]
+        [DisplayName("Z origin:")]
         public double ZOrigin { get; set; }
 
 

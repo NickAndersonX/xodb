@@ -37,7 +37,7 @@ namespace XODB.Import.BlockImportUtils
                 connection.Open();
                 int numCommits = 0;
                 SqlTransaction trans;
-                trans = connection.BeginTransaction();
+                trans = connection.BeginTransaction(System.Data.IsolationLevel.ReadUncommitted);
                 List<SqlCommand> commands = new List<SqlCommand>();
                 int tb = 0;
                 int transactionBatchLimit = batchSize;
@@ -137,7 +137,7 @@ namespace XODB.Import.BlockImportUtils
                                 trans.Commit();
                                 numCommits++;
                                 //   trans = null;
-                                trans = connection.BeginTransaction();
+                                trans = connection.BeginTransaction(System.Data.IsolationLevel.ReadUncommitted);
                                 // reset counter
                                 tb = 0;
                             }
@@ -204,7 +204,7 @@ namespace XODB.Import.BlockImportUtils
                 
                 int numCommits = 0;
                 SqlTransaction trans;
-                trans = connection.BeginTransaction();
+                trans = connection.BeginTransaction(System.Data.IsolationLevel.ReadUncommitted);
                 List<SqlCommand> commands = new List<SqlCommand>();
                 int tb = 0;
                 int transactionBatchLimit = batchSize;
@@ -313,7 +313,7 @@ namespace XODB.Import.BlockImportUtils
                                     trans.Commit();
                                     numCommits++;
                                     //   trans = null;
-                                    trans = connection.BeginTransaction();
+                                    trans = connection.BeginTransaction(System.Data.IsolationLevel.ReadUncommitted);
                                 }
                                 // reset counter
                                 tb = 0;
@@ -432,7 +432,7 @@ namespace XODB.Import.BlockImportUtils
                 connection.Open();
                 int numCommits = 0;
                 SqlTransaction trans;
-                trans = connection.BeginTransaction();
+                trans = connection.BeginTransaction(System.Data.IsolationLevel.ReadUncommitted);
                 List<SqlCommand> commands = new List<SqlCommand>();
                 int tb = 0;
                 int transactionBatchLimit = 500; ;
@@ -483,7 +483,7 @@ namespace XODB.Import.BlockImportUtils
                                     numCommits++;
                                     total += tb;
                                     //   trans = null;
-                                    trans = connection.BeginTransaction();
+                                    trans = connection.BeginTransaction(System.Data.IsolationLevel.ReadUncommitted);
                                 }
                                 // reset counter
                                 tb = 0;

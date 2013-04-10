@@ -111,6 +111,9 @@ namespace XODB.Import
             res += string.Format("\n\n Lines Read (including headers): {0}", linesReadFromSource);
 
             res += string.Format("\n\n Rows Imported: {0}", _recordsImported);
+
+            res += "\n\n";
+
             return res;
 
 

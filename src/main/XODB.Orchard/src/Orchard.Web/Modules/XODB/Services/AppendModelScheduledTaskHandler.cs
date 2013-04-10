@@ -7,7 +7,7 @@ using Orchard.Tasks.Scheduling;
 using Orchard.Logging;
 using Orchard.ContentManagement;
 using XODB.Models;
-
+using XODB.Helpers;
 namespace XODB.Services
 {
     public class AppendModelScheduledTaskHandler : IScheduledTaskHandler
@@ -29,8 +29,7 @@ namespace XODB.Services
             {
                 try
                 {
-                    var m = context.Task.ContentItem.As<BlockModelPart>();
-                    _blockModelService.AppendModel(m.BmGuid, m.BmFileName, m.Alias, m.ColumnNameToAdd, m.ColumnIndexToAdd, m.Emails);
+                    _blockModelService.AppendModel(context.Task.ContentItem);
                 }
                 catch (Exception e)
                 {

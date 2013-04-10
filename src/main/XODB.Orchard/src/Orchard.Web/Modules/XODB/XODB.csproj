@@ -363,10 +363,17 @@
     <Compile Include="AdminMenu.cs" />
     <Compile Include="Handlers\BlockModelHandler.cs" />
     <Compile Include="Handlers\EmailHandler.cs" />
+    <Compile Include="Helpers\CacheHelper.cs" />
+    <Compile Include="Helpers\InterfaceHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Helpers\TaskHelper.cs" />
     <Compile Include="Models\BlockModelPart.cs" />
     <Compile Include="Models\EmailPart.cs" />
+    <Compile Include="Models\IMessage.cs" />
+    <Compile Include="Models\ShellTask.cs" />
     <Compile Include="Services\AppendModelScheduledTaskHandler.cs" />
+    <Compile Include="Services\ConcurrentTaskService.cs" />
+    <Compile Include="Services\IConcurrentTaskService.cs" />
     <Compile Include="Services\EmailScheduledTaskHandler.cs" />
     <Compile Include="Services\ProcessModelScheduledTaskHandler.cs" />
     <Compile Include="XODBModule.cs" />

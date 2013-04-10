@@ -81,7 +81,7 @@ namespace XODB {
                 .Column("BmGuid", DbType.Guid)
                 .Column("ColumnNameToAdd", DbType.String)
                 .Column("ColumnIndexToAdd", DbType.Int32)
-                .Column("Emails", DbType.String, c => c.WithLength(4000))
+                .Column("Recipients", DbType.String, c => c.WithLength(4000))
                 .Column("Processed", DbType.DateTime)
                 .Column("Completed", DbType.DateTime)
                 );

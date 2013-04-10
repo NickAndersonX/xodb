@@ -24,7 +24,7 @@ namespace XODB.Models {
         public virtual string ColumnNameToAdd { get; set; }
         public virtual int ColumnIndexToAdd { get; set; }
         [StringLengthMax]
-        public virtual string Emails { get; set; }
+        public virtual string Recipients { get; set; }
         public virtual DateTime? Processed { get; set; }
         public virtual DateTime? Completed { get; set; }
     }
@@ -43,7 +43,7 @@ namespace XODB.Models {
         public Guid BmGuid { get { return Record.BmGuid; } set { Record.BmGuid = value; } }
         public string ColumnNameToAdd { get { return Record.ColumnNameToAdd; } set { Record.ColumnNameToAdd = value; } }
         public int ColumnIndexToAdd { get { return Record.ColumnIndexToAdd; } set { Record.ColumnIndexToAdd = value; } }
-        public string[] Emails { get { return Record.Emails.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries); } set { Record.Emails = string.Join(";", value); } }
+        public string Recipients { get { return Record.Recipients; } set { Record.Recipients = value; } }
         public DateTime? Processed { get { return Record.Processed; } set { Record.Processed = value; } }
         public DateTime? Completed { get { return Record.Completed; } set { Record.Completed = value; } }
 

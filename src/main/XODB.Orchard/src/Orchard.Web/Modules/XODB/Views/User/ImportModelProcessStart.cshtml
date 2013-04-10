@@ -4,14 +4,14 @@
 @{
     Style.Require("XODBAdmin");
 
-    Layout.Title = T("Result - Import block model process start").ToString();
+    Layout.Title = T("Block Model Importing").ToString();
 }
 
 @if (AuthorizedFor(XODB.Permissions.ManageProjects)) {
     using (Html.BeginForm())
     {
           <fieldset>
-              <legend>Result -  Import block model process start</legend>
+              <legend>Import a Block Model Processing</legend>
               <br /><br />
                Import of model <b>@Html.DisplayTextFor(x => x.Alias) </b>has begun using the file <b>@Html.DisplayTextFor(x => x.FileName)</b>. 
                <br />

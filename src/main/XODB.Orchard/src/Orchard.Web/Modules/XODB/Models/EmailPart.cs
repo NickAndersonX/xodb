@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace XODB.Models {
 
-    public class EmailPartRecord : ContentPartRecord
+    public class EmailPartRecord : ContentPartRecord, IMessage
     {
         [StringLengthMax]
         public virtual string Recipients { get; set; }
@@ -18,10 +18,9 @@ namespace XODB.Models {
         public virtual System.DateTime? Completed { get; set; }
     }
 
-    public class EmailPart : ContentPart<EmailPartRecord> 
+    public class EmailPart : ContentPart<EmailPartRecord>, IMessage
     {
-        private string[] _emails { get; set; }
-        private System.Guid[] _recipients { get; set; }
+        private string _recipients { get; set; }
         private string _subject { get; set; }
         private string _body { get; set; }
         private bool _retry { get; set; }
@@ -76,34 +75,18 @@ namespace XODB.Models {
             }
         }
 
-        public string[] Emails
+        public string Recipients
         {
             get
             {
                 if (Record != null)
-                    return Record.Recipients.Split(new string[] { ";" }, System.StringSplitOptions.RemoveEmptyEntries);
-                return _emails;
-            }
-            set
-            {
-                if (Record != null)
-                    Record.Recipients = string.Join(";", value);
-                _emails = value;
-            }
-        }
-
-        public System.Guid[] Recipients
-        {
-            get
-            {
-                if (Record != null)
-                    return (from o in Record.Recipients.Split(new string[] { ";" }, System.StringSplitOptions.RemoveEmptyEntries) select new System.Guid(o)).ToArray();
+                    return Record.Recipients;
                 return _recipients;
             }
             set
             {
                 if (Record != null)
-                    Record.Recipients = string.Join(";", value);
+                    Record.Recipients = value;
                 _recipients = value;
             }
         }
@@ -140,38 +123,11 @@ namespace XODB.Models {
             }
         }
 
-        public EmailPart(System.Guid[] recipients, string subject, string body)
-        {
-            Recipients = recipients;
-            Subject = subject;
-            Body = body;
-        }
-
-        public EmailPart(string[] recipients, string subject, string body)
-        {
-            _emails = recipients;
-            Subject = subject;
-            Body = body;
-        }
 
         public EmailPart()
         { }
 
     }
 
-    public class EmailContentItem : ContentItem
-    {
-        public EmailContentItem(System.Guid[] recipients, string subject, string body) : base()
-        {
-            var em = new EmailPart(recipients, subject, body);
-            this.Weld(em);            
-        }
 
-        public EmailContentItem(string[] recipients, string subject, string body)
-            : base()
-        {
-            var em = new EmailPart(recipients, subject, body);
-            this.Weld(em);
-        }
-    }
 }

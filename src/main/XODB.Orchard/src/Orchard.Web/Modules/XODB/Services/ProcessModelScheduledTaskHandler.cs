@@ -28,9 +28,8 @@ namespace XODB.Services
             if (context.Task.TaskType == TASK_TYPE_PROCESS_MODEL && context.Task.ContentItem != null)
             {
                 try
-                {
-                    var m = context.Task.ContentItem.As<BlockModelPart>();
-                    _blockModelService.ProcessModel(m.BmFileName, m.FormatFileName, m.ProjectName, m.Alias, m.UserID, m.Notes, m.Stage, m.StageMetaID, m.Emails);
+                {                    
+                    _blockModelService.ProcessModel(context.Task.ContentItem);
                 }
                 catch (Exception e)
                 {

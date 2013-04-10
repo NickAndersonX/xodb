@@ -33,8 +33,8 @@ namespace XODB.Controllers {
         public ILogger Logger { get; set; }
         public Localizer T { get; set; }
         public IPrivateDataService PrivateService { get; set; }
-        
-        public const string OLAP_XSTRING = @"provider=MSOLAP;data source=au-bne-sq-007;initial catalog=XODB Cube;cube name=Resource Models";
+
+        public static readonly string OLAP_XSTRING = global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBOLAP_RM"].ConnectionString;
 
         public UserController(
             IOrchardServices services, 
@@ -74,7 +74,7 @@ namespace XODB.Controllers {
             model.DomainsModel2 = model.DomainsModel1;
             model.ParametersModel2 = model.ParametersModel1;
             model.ParametersIntersectionBothModels = model.ParametersModel1;
-            return View(model);
+            return View("CompareModel", model);
         }
 
         [HttpGet]
@@ -109,6 +109,9 @@ namespace XODB.Controllers {
         [HttpPost]
         public ActionResult CompareModelResult(BlockModelCompareViewModel m)
         {
+            if (!ModelState.IsValid)
+                return CompareModel();
+            
             m.ReportID = (uint)AllReports.ReportType.CompareModel;
             m.SelectedDomainsModel1Compact = m.SelectedDomainsModel1 != null ? string.Join(";", m.SelectedDomainsModel1.ToArray()) : null;
             m.SelectedDomainsModel2Compact = m.SelectedDomainsModel2 != null ? string.Join(";", m.SelectedDomainsModel2.ToArray()) : null;
@@ -186,6 +189,10 @@ namespace XODB.Controllers {
 
         [HttpPost,  ValidateInput(true)]
         public ActionResult ImportModelProcessStart(BlockModelViewModel m) {
+
+            if (!ModelState.IsValid)
+                return ImportModel();
+
             // TODO do some processing here
             string bmFile = m.FileName;
 
@@ -249,7 +256,7 @@ namespace XODB.Controllers {
                 Projects = ProjectService.GetProjectListCurrent()
             };
             model.Stages = model.Projects.Any() ? ProjectService.GetStagesList(new Guid(model.Projects.First().Value)) : new SelectList(new SelectListItem[] { });
-            return View(model);
+            return View("ImportModel", model);
         }
 
         [HttpGet]
@@ -465,34 +472,31 @@ namespace XODB.Controllers {
         [HttpPost, ValidateInput(false)]
         public ActionResult ModelParametersEdit(BlockModelParameterViewModel m)
         {
+            if (!ModelState.IsValid)
+                return ModelParametersEdit(string.Format("{0}", m.BlockModelMetadataID));
 
-            if (ModelState.IsValid)
+
+            try
             {
-                try
-                {
-                    if (!Services.Authorizer.Authorize(Permissions.ManageProjects, T("Couldn't update parameter.")))
-                        return new HttpUnauthorizedResult();
-                    
-                   
-                    //Validate
-                    if (!m.UnitID.HasValue)
-                        ModelState.AddModelError("UnitID", T("Unit is required.").ToString());
+                if (!Services.Authorizer.Authorize(Permissions.ManageProjects, T("Couldn't update parameter.")))
+                    return new HttpUnauthorizedResult();
 
-                    if (ModelState.IsValid)
-                    {
-                        BlockModelService.UpdateModelParameter(m);
-                        return RedirectToAction("ModelParameters");
-                    }
 
-                    return View(m);
-                }
-                catch (Exception e)
+                //Validate
+                if (!m.UnitID.HasValue)
+                    ModelState.AddModelError("UnitID", T("Unit is required.").ToString());
+
+                if (ModelState.IsValid)
                 {
-                    ViewData["EditError"] = e.Message;
+                    BlockModelService.UpdateModelParameter(m);
+                    return RedirectToAction("ModelParameters");
                 }
+
             }
-            else
-                ViewData["EditError"] = "Please, correct all errors.";
+            catch (Exception e)
+            {
+                ViewData["EditError"] = e.Message;
+            }        
             return View(m);
         }
 

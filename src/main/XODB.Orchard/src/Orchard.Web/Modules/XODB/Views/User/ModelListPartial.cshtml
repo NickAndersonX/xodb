@@ -47,7 +47,7 @@
                 column.SetHeaderTemplateContent(c =>
                 {
                     ViewContext.Writer.Write(
-                        Html.ActionLink("New", "EditModel", new { id = "" }).ToHtmlString()
+                        Html.ActionLink("New", "ImportModel", new { id = "" }).ToHtmlString()
                     );
                 });
                 column.Settings.AllowDragDrop = DefaultBoolean.False;

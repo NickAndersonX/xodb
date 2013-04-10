@@ -8,6 +8,7 @@ using System.ServiceModel;
 using Orchard.Media.Models;
 using XODB.ViewModels;
 using System.Threading.Tasks;
+using Orchard.ContentManagement;
 
 namespace XODB.Services
 {
@@ -45,13 +46,13 @@ namespace XODB.Services
          void ProcessModelAsync(string bmFileName, string formatFileName, string projectID, string alias, Guid userID, string notes, string stage, Guid stageMetaID, int allowImportAfterMinutes = 0);
 
          [OperationContract]
-         void ProcessModel(string bmFileName, string formatFileName, string projectName, string alias, Guid userID, string notes, string stage, Guid stageMetaID, string[] emails);
+         void ProcessModel(ContentItem m);
 
          [OperationContract]
          void AppendModelAsync(Guid bmGuid, string bmFileName, string alias, string columnNameToImport, int columnIndexToImport, Guid userGuid, int allowImportAfterMinutes = 0);
 
          [OperationContract]
-         void AppendModel(Guid bmGuid, string bmFileName, string alias, string columnNameToImport, int columnIndexToImport, string[] emails);
+         void AppendModel(ContentItem m);
 
          [OperationContract]
          void DeleteModel(Guid modelID, Guid deletedByGuid);

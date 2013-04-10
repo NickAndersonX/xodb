@@ -228,6 +228,8 @@ else {
     $('#form1').submit(function (e) {
         $('#FilterString').val(SerializeWidgets());
         $('#GradeTonnageFieldName').val($('#GradeTonnageFieldID option:selected').text());
+        $('#SliceFieldID').val($('#GradeTonnageFieldID option:selected').val());
+        //TODO:Fix client side validation - had to enforce server side - o well
         ////e.preventDefault(); // don't submit multiple times
         //$('#form1').valid();
         ////return (false);

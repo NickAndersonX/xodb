@@ -38,10 +38,11 @@
                   @Html.LabelFor(x => x.UnitID)
               </div>
               <div class="editor-field">
-                  @Html.DropDownListFor(x => x.UnitID, Model.Units)
+                  @Html.DropDownListFor(x => x.UnitID, Model.Units, "")
               </div>
               @Html.HiddenFor(x => x.BlockModelMetadataID)
               @Html.HiddenFor(x => x.ParameterID)
+              @Html.ValidationSummary()
               <input type="submit" value="Update"/>
           </fieldset>
     }

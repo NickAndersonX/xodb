@@ -8,6 +8,7 @@ using Orchard.Logging;
 using JetBrains.Annotations;
 using Orchard.ContentManagement;
 using XODB.Models;
+using XODB.Helpers;
 
 namespace XODB.Services
 {
@@ -32,7 +33,7 @@ namespace XODB.Services
                 try
                 {
                     var em = context.Task.ContentItem.As<EmailPart>();
-                    _userService.EmailUsers(em.Emails, em.Subject, em.Body, false);
+                    _userService.EmailUsers(em.Recipients.SplitStringArray(), em.Subject, em.Body, false);
                 }
                 catch (Exception e)
                 {

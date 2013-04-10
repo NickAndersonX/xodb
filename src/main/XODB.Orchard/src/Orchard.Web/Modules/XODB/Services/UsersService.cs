@@ -218,13 +218,16 @@ namespace XODB.Services {
                 var recipients = emails.Union(new string[] { smtpSettings.Address }).Where(f => !string.IsNullOrEmpty(f)).ToArray();
                 _messageManager.Send(recipients, XODB.Events.EmailMessageHandler.DEFAULT_XODB_EMAIL_TYPE, "email", data);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Logger.Information(ex, string.Format("Failed sending notification for: {0}.\r\n\r\n Regarding: \r\n\r\n {1}...Retrying:{2}", subject, body,retry));
                 if (retry)
                 {
                     EmailUsersAsync(emails, subject, body);
                 }
+            }
+            finally
+            {
+                Logger.Information(string.Format("Attempted sending notification for: {0}.\r\n\r\n Regarding: \r\n\r\n {1}\n\nRetry:{2}", subject, body, retry));
             }
         }
 
@@ -233,7 +236,7 @@ namespace XODB.Services {
             try
             {
                 var em = _contentManager.New<EmailPart>("Email");
-                em.Emails = emails;
+                em.Recipients = emails.FlattenStringArray();
                 em.Subject = subject;
                 em.Body = body;
                 em.Retry = false;

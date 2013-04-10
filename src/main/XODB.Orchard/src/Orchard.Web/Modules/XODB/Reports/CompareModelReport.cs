@@ -69,8 +69,10 @@ namespace XODB.Reports
 
             public void Fill(ReportHelper.TableReport report)
             {
+                DataSet ds;
                 var o = (BlockModelCompareViewModel)_r;
-                report.DataSource = BlockModelService.CompareModelsResult(o);
+                var cacheKey = o.ToJson().ComputeHash();
+                report.DataSource = CacheHelper.AddToCache<DataSet>(() => { return BlockModelService.CompareModelsResult(o); }, cacheKey);
                 report.Parameters["ParameterModel1Name"].Value = o.Model1Name;
                 report.Parameters["ParameterModel2Name"].Value = o.Model2Name;
                 report.Parameters["ParameterGradeTonnageFieldName"].Value = o.GradeTonnageFieldName;

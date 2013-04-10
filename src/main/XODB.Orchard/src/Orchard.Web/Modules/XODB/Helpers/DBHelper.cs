@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Reflection;
 using System.Data.Linq.Mapping;
+using System.Threading;
 
 namespace XODB.Helpers
 {
@@ -25,6 +26,35 @@ namespace XODB.Helpers
                 }
             }
             return null;
+        }
+
+        private static int? _defaultTimeout = null;
+        public static int DefaultTimeout
+        {
+            get
+            {
+                if (_defaultTimeout == null)
+                {
+                    try
+                    {
+                        Monitor.Enter(typeof(DBHelper));
+                        int timeout;
+                        if (!int.TryParse(System.Configuration.ConfigurationManager.AppSettings["SqlCommandTimeOut"], out timeout))
+                            timeout = 600;   //10 Minutes 
+                        _defaultTimeout = timeout;
+                    }
+                    catch
+                    {
+                        _defaultTimeout = 600;
+                    }
+                    finally
+                    {
+                        Monitor.Exit(typeof(DBHelper));
+                    }
+                   
+                }
+                return _defaultTimeout.Value;
+            }
         }
     }
 }

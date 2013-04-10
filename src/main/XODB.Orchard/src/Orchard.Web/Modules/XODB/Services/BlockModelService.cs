@@ -27,7 +27,7 @@ using System.Data.Common;
 using System.Data.Entity;
 using XODB.Helpers;
 using Orchard.Tasks.Scheduling;
-using Orchard.Data;
+
 
 namespace XODB.Services {
 
@@ -38,20 +38,26 @@ namespace XODB.Services {
         private readonly IMediaService _mediaServices;
         private readonly IPrivateDataService _privateServices;
         private readonly IUsersService _userService;
-        private readonly IWorkContextAccessor _workContextAccessor;
-        private readonly IScheduledTaskManager _taskManager;
         private readonly IContentManager _contentManager;
+        private readonly IConcurrentTaskService _concurrentTasks;
 
-        public BlockModelService(IStorageProvider storageProvider, IOrchardServices orchardServices, IMediaService mediaServices, IPrivateDataService privateService, IUsersService userService, IWorkContextAccessor workContextAccessor, IScheduledTaskManager taskManager, IContentManager contentManager)
+        public BlockModelService(
+            IStorageProvider storageProvider, 
+            IOrchardServices orchardServices, 
+            IMediaService mediaServices, 
+            IPrivateDataService privateService, 
+            IUsersService userService, 
+            IContentManager contentManager,
+            IConcurrentTaskService concurrentTasks
+          )
         {
-            _taskManager = taskManager;
             _contentManager = contentManager;
             _storageProvider = storageProvider;
             _orchardServices = orchardServices;
             _mediaServices = mediaServices;
             _privateServices = privateService;
             _userService = userService;
-            _workContextAccessor = workContextAccessor;
+            _concurrentTasks = concurrentTasks;
             T = NullLocalizer.Instance;
             Logger = NullLogger.Instance;
         }
@@ -136,7 +142,7 @@ namespace XODB.Services {
             {
                 var m = _contentManager.New<BlockModelPart>("BlockModel");
                 m.BmGuid = bmGuid;
-                m.Emails = emails;
+                m.Recipients = emails.FlattenStringArray();
                 m.BmFileName = bmFileName;
                 m.Alias = alias;
                 m.UserID = userGuid;
@@ -144,7 +150,8 @@ namespace XODB.Services {
                 m.ColumnIndexToAdd = columnIndexToImport;
                 m.Processed = DateTime.UtcNow;
                 _contentManager.Create(m, VersionOptions.Published);
-                _taskManager.AppendModelAsync(m.ContentItem);
+                _concurrentTasks.ExecuteAsyncTask(AppendModel, m.ContentItem);
+                //_taskManager.AppendModelAsync(m.ContentItem);
             }
             else
             {
@@ -152,18 +159,17 @@ namespace XODB.Services {
             }
         }
 
-        public void AppendModel(Guid bmGuid, string bmFileName, string alias, string columnNameToImport, int columnIndexToImport, string[] emails)
+        public void AppendModel(ContentItem c)
         {
+            var m = c.As<BlockModelPart>();
 
             string statusMessage = "";
-            string scs = global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBConnectionString"].ConnectionString;
-            string connString = scs;
+            string connString = global::System.Configuration.ConfigurationManager.ConnectionStrings["XODBConnectionString"].ConnectionString;
             bool completed = false;
             BaseImportTools bit = new BaseImportTools();
             string targetFolder;
             bool attmemptModelLoad;
-            string originalName = bmFileName;
-            bmFileName = ExtractBlockModelFromZip(bmFileName, out targetFolder, out attmemptModelLoad);
+            var bmFileName = ExtractBlockModelFromZip(m.BmFileName, out targetFolder, out attmemptModelLoad);
             IStorageFile bmFile = _storageProvider.GetFile(bmFileName);
             Stream bmFileStream = bmFile.OpenRead();
             ModelImportStatus mos = new ModelImportStatus();
@@ -172,19 +178,23 @@ namespace XODB.Services {
 
                 // Special append method for GF requirements - contains X, Y, Z, and value to append.
                 // target model must have matching X, Y and Z centroids.
-                // auto generate a format defintion based on Goldfields typical input column data            
-                using (new TransactionScope(TransactionScopeOption.Suppress))
+                // auto generate a format defintion based on Goldfields typical input column data 
+                var opts = new TransactionOptions();
+                opts.IsolationLevel = System.Transactions.IsolationLevel.ReadUncommitted;
+                using (new TransactionScope(TransactionScopeOption.Suppress, opts))
                 {
-                    mos = bit.PerformBMAppend(bmFileStream, bmGuid, alias, columnNameToImport, columnIndexToImport, scs);
+                    mos = bit.PerformBMAppend(bmFileStream, m.BmGuid, m.Alias, m.ColumnNameToAdd, m.ColumnIndexToAdd, connString);
+                    mos.importTextFileName = m.BmFileName;
+                    mos.targetModelName = m.Alias;
                 }
-                statusMessage += string.Format("Successfully appended data to block model:\n{0} - {1}\n\nFrom file:{2}\n\n", alias, bmGuid, bmFileName);
+                statusMessage += string.Format("Successfully appended data to block model:\n{0} - {1}\n\nFrom file:{2}\n\n", m.Alias, m.BmGuid, m.BmFileName);
                 completed = true;
 
 
             }
             catch (Exception ex)
             {
-                statusMessage += string.Format("Error appending data to block model:\n{0} - {1}\n\nFrom file:{2}\n\nError:\n{3}\n\n", alias, bmGuid, bmFileName, ex.ToString());
+                statusMessage += string.Format("Error appending data to block model:\n{0} - {1}\n\nFrom file:{2}\n\nError:\n{3}\n\n", m.Alias, m.BmGuid, m.BmFileName, ex.ToString());
             }
             finally {
                 statusMessage += mos.GenerateStringMessage();
@@ -192,8 +202,11 @@ namespace XODB.Services {
                 _storageProvider.DeleteFile(bmFileName);
                 _storageProvider.DeleteFolder(targetFolder);
             }
+            statusMessage += string.Format("Time Elapsed: {0}\n\n", m.Processed.HasValue ? (DateTime.UtcNow - m.Processed.Value).ToString(@"hh\h\:mm\m\:ss\s\:fff\m\s") : "Unknown");
+            
             Logger.Information(statusMessage);
-            _userService.EmailUsersAsync(emails, completed ? "Model Append Succeeded" : "Model Append Failed", statusMessage);
+
+            _userService.EmailUsers(m.Recipients.SplitStringArray(), completed ? "Model Append Succeeded" : "Model Append Failed", statusMessage);
 
         }
 
@@ -217,7 +230,7 @@ namespace XODB.Services {
             {
                 var emails = _userService.GetUserEmails(new Guid[] { userGuid }).ToArray();
                 var m = _contentManager.New<BlockModelPart>("BlockModel");
-                m.Emails = emails;
+                m.Recipients = emails.FlattenStringArray();
                 m.BmFileName = bmFileName;
                 m.FormatFileName = formatFileName;
                 m.ProjectName = projectName;
@@ -228,7 +241,8 @@ namespace XODB.Services {
                 m.StageMetaID = stageMetaID;
                 m.Processed = DateTime.UtcNow;
                 _contentManager.Create(m, VersionOptions.Published);
-                _taskManager.ProcessModelAsync(m.ContentItem);
+                //_taskManager.ProcessModelAsync(m.ContentItem);
+                _concurrentTasks.ExecuteAsyncTask(ProcessModel, m.ContentItem);                
             }
             else
             {
@@ -236,35 +250,38 @@ namespace XODB.Services {
             }
         }
 
-        public void ProcessModel(string bmFileName, string formatFileName, string projectID, string alias, Guid userGuid, string notes, string stage, Guid stageMetaID, string[] emails)
+        public void ProcessModel(ContentItem c)
         {
-
+            var m = c.As<BlockModelPart>();
             List<string> domains = null;
 
             string targetFolder;
             bool attmemptModelLoad;
-            string originalName = bmFileName;
-            bmFileName = ExtractBlockModelFromZip(bmFileName, out targetFolder, out attmemptModelLoad);
 
-            ModelImportStatus mos = DoNewModelImport(bmFileName, formatFileName, projectID, alias, userGuid, ref domains, targetFolder, attmemptModelLoad, notes, stage, stageMetaID);
-            mos.importTextFileName = bmFileName +" (from "+originalName+")";
-            mos.targetModelName = alias;
+            var bmFileName = ExtractBlockModelFromZip(m.BmFileName, out targetFolder, out attmemptModelLoad);
+
+            ModelImportStatus mos = DoNewModelImport(bmFileName, m.FormatFileName, m.ProjectName, m.Alias, m.UserID, ref domains, targetFolder, attmemptModelLoad, m.Notes, m.Stage, m.StageMetaID);
+            mos.importTextFileName = bmFileName +" (from "+ m.BmFileName +")";
+            mos.targetModelName = m.Alias;
 
             string msg = "";
             string subject = "";
             if (mos.finalErrorCode > 0) {
                 subject = "Model Import Failed";
-                msg += string.Format("Error importing block model:\n{0}\n\n", alias, bmFileName);
+                msg += string.Format("Error importing block model:\n{0}\n\n", m.Alias, m.BmFileName);
                  
             }
             else {
                 subject = "Model Import Succeeded";
-                msg += string.Format("Successfully imported block model:\n{0}\n\n", alias, bmFileName);
+                msg += string.Format("Successfully imported block model:\n{0}\n\n", m.Alias, m.BmFileName);
             }
-            msg += mos.GenerateStringMessage();               
+            msg += mos.GenerateStringMessage();
 
+            msg += string.Format("Time Elapsed: {0}\n\n", m.Processed.HasValue ? (DateTime.UtcNow - m.Processed.Value).ToString(@"hh\h\:mm\m\:ss\s\:fff\m\s") : "Unknown");
+            
             Logger.Information(msg);
-            _userService.EmailUsersAsync(emails, subject, msg);
+
+            _userService.EmailUsers(m.Recipients.SplitStringArray(), subject, msg);
 
         }
 
@@ -323,8 +340,9 @@ namespace XODB.Services {
                 catch (Exception ex) {
                     mos.AddWarningMessage("Unable to auto detect origin and other format information from the file");
                 }
-
-                using (new TransactionScope(TransactionScopeOption.Suppress))
+                var opts = new TransactionOptions();
+                opts.IsolationLevel = System.Transactions.IsolationLevel.ReadUncommitted;
+                using (new TransactionScope(TransactionScopeOption.Suppress, opts))
                 {
                     try
                     {
@@ -620,6 +638,7 @@ namespace XODB.Services {
         //Static Methods
         public static DataSet CompareModelsResult(BlockModelCompareViewModel m)
         {
+
             DataSet ds = new DataSet("CompareModelsResult");
 
             var y = m.FilterString.Deserialize<dynamic>();
@@ -872,9 +891,11 @@ namespace XODB.Services {
 
                     //Let's actually run the queries
                     d.Connection.Open();
+                                     
 
                     if (m.GradeTonnageIncrement != 0)
                     {
+                        cmd.CommandTimeout = DBHelper.DefaultTimeout;
                         var reader = cmd.ExecuteReader();
                         gt.Load(reader, LoadOption.OverwriteChanges);
                         decimal cumulative1 = 0, cumulative2 = 0;
@@ -903,11 +924,13 @@ namespace XODB.Services {
                     }
 
                     {
+                        cmds.CommandTimeout = DBHelper.DefaultTimeout;
                         var reader = cmds.ExecuteReader();
                         st.Load(reader, LoadOption.OverwriteChanges);
                     }
 
                     {
+                        cmdc.CommandTimeout = DBHelper.DefaultTimeout;
                         var reader = cmdc.ExecuteReader();
                         gfc.Load(reader, LoadOption.OverwriteChanges);
                     }
