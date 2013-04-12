@@ -113,9 +113,9 @@
     <Compile Include="Stubs\StubRequest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Orchard.Web\Orchard.Web.Andrew.csproj">
+    <ProjectReference Include="..\Orchard.Web\Orchard.Web.csproj">
       <Project>{50B779EA-EC00-4699-84C0-03B395C365D2}</Project>
-      <Name>Orchard.Web.Andrew</Name>
+      <Name>Orchard.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\Orchard\Orchard.Framework.csproj">
       <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
@@ -140,7 +140,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

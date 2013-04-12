@@ -8,5 +8,5 @@ Description: Shows and Manages Project Information within XODB
 Features:
     XODB:
         Description: Shows and Manages Project Information within XODB.
-		Category: Mining
+		Category: Business
 		Dependencies: Orchard.Email, Orchard.Media, Laughlin.ErrorLog

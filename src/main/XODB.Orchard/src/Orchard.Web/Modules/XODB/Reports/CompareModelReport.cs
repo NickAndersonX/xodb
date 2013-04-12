@@ -69,7 +69,6 @@ namespace XODB.Reports
 
             public void Fill(ReportHelper.TableReport report)
             {
-                DataSet ds;
                 var o = (BlockModelCompareViewModel)_r;
                 var cacheKey = o.ToJson().ComputeHash();
                 report.DataSource = CacheHelper.AddToCache<DataSet>(() => { return BlockModelService.CompareModelsResult(o); }, cacheKey);

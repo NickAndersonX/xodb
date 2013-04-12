@@ -261,14 +261,14 @@
       <LastGenOutput>BMMetaData.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -482,30 +482,30 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\Projects.dbml.layout">
+    <Content Include="Models\Projects.dbml.layout">
       <DependentUpon>Projects.dbml</DependentUpon>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\Models.dbml.layout">
+    <Content Include="Models\Models.dbml.layout">
       <DependentUpon>Models.dbml</DependentUpon>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\Contacts.dbml.layout">
+    <Content Include="Models\Contacts.dbml.layout">
       <DependentUpon>Contacts.dbml</DependentUpon>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reports\CompareModelReport.resx">
       <DependentUpon>CompareModelReport.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Models\Internals.dbml.layout">
+    <Content Include="Models\Internals.dbml.layout">
       <DependentUpon>Internals.dbml</DependentUpon>
-    </None>
-    <None Include="Models\BMMetaData.dbml.layout">
+    </Content>
+    <Content Include="Models\BMMetaData.dbml.layout">
       <DependentUpon>BMMetaData.dbml</DependentUpon>
-    </None>
+    </Content>
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>

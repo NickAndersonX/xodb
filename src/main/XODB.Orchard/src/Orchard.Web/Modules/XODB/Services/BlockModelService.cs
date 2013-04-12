@@ -116,7 +116,7 @@ namespace XODB.Services {
                 sr.Close();
 
             }
-            catch (Exception ex)
+            catch
             {
 
             }
@@ -338,7 +338,7 @@ namespace XODB.Services {
 
                 }
                 catch (Exception ex) {
-                    mos.AddWarningMessage("Unable to auto detect origin and other format information from the file");
+                    mos.AddWarningMessage("Unable to auto detect origin and other format information from the file\n\n" + ex.ToString());
                 }
                 var opts = new TransactionOptions();
                 opts.IsolationLevel = System.Transactions.IsolationLevel.ReadUncommitted;

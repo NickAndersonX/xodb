@@ -1,3 +1,6 @@
 obj/
 bin/
 *.suo
+build/
+buildtasks/
+artifacts/

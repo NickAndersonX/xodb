@@ -83,7 +83,7 @@ namespace XODB.Helpers
                 d.X_MetaDataRelations.InsertOnSubmit(rel);
                 d.SubmitChanges();
             }
-            catch (Exception ex) { }
+            catch { }
 
         }
 
@@ -126,7 +126,7 @@ namespace XODB.Helpers
                     d.X_BlockModelMetadatas.InsertOnSubmit(rel);
                     d.SubmitChanges();
                 }
-                catch (Exception ex) { 
+                catch { 
                 }
             }
 

@@ -34,7 +34,7 @@ namespace XODB.Helpers
                     type = typeBuilder.CreateType();
                     return _interfaceTypeCache.GetOrAdd(interfaceType.FullName, type); 
                 }
-                catch (Exception e)
+                catch
                 {
                     return null;
                 }

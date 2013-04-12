@@ -218,7 +218,7 @@ namespace XODB.Services {
                 var recipients = emails.Union(new string[] { smtpSettings.Address }).Where(f => !string.IsNullOrEmpty(f)).ToArray();
                 _messageManager.Send(recipients, XODB.Events.EmailMessageHandler.DEFAULT_XODB_EMAIL_TYPE, "email", data);
             }
-            catch (Exception ex)
+            catch
             {
                 if (retry)
                 {
