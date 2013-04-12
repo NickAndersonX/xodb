@@ -1,0 +1,30 @@
+﻿@model dynamic
+@using Orchard.ContentManagement;
+
+<section>
+    <header>
+        <h2>@Html.TitleForPage(T("Thanks for joining!").ToString())</h2>
+    </header>
+    @{
+        bool moderationOn = WorkContext.CurrentSite.As<Orchard.Users.Models.RegistrationSettingsPart>().UsersAreModerated;
+        var welcomeMessage = moderationOn ?
+            T("Once an administrator approves your account, you will be able to contribute modules and themes to the gallery.") :
+            T("As a member of Orchard Gallery, you are now able to contribute modules and themes to the gallery.");
+    }
+    <h4>@welcomeMessage</h4>
+    <div style="width: 300px;float:left;margin-right:20px;">
+        <h3>Get Involved</h3>
+        <p>Stay in touch with the Orchard community by subscribing to our <a href="http://orchard.codeplex.com/discussions">discussions and issues list</a>.
+        Join our <a href="http://orchardproject.net/discussions">email mailing list</a> for more conversations and announcements.
+        </p>
+    </div>
+    <div style="width: 300px;float:left;margin-right:20px;">
+        <h3>Submit Your Work</h3>
+        <p>The source code is available from our <a href="http://orchard.codeplex.com">CodePlex.com site</a>. There are instructions for <a href="http://orchardproject.net/docs/Setting-up-a-source-enlistment.ashx">enlisting in the source code</a> and building Orchard (from the command-line, 
+        Visual Studio, or using dynamic compilation) on our <a href="http://orchardproject.net/docs/">docs wiki</a>.  We also accept patches to the Orchard core as pull requests in <a href="http://tortoisehg.bitbucket.org/">TortoiseHg and Mercurial</a>.</p>
+    </div>
+    <div style="width: 300px;float:left;">
+        <h3>Learn More</h3>
+        <p>Orchard makes it easy to extend the CMS with new modules and themes, and package and share those extension packages with others. <a href="http://orchardproject.net">Learn more...</a></p>
+    </div>
+</section>
