@@ -115,7 +115,9 @@
     <Content Include="Metro\js\bootstrap-tooltip.js" />
     <Content Include="Metro\js\bootstrap-transition.js" />
     <Content Include="Metro\js\bootstrap-typeahead.js" />
+    <Content Include="Metro\js\html5shim.googlecode.com.svn.trunk.html5.js" />
     <Content Include="Metro\js\jquery.min.js" />
+    <Content Include="Metro\js\platform.twitter.com.widgets.js" />
     <Content Include="Metro\js\populateSelectNav.js" />
     <Content Include="Metro\js\prefixfree.js" />
     <Content Include="Metro\Metro.csproj" />

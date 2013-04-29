@@ -17,13 +17,19 @@ namespace XODB.Reports
     {
         public enum ReportType : uint
         {
-             CompareModel = 0
+             CompareModel = 0,
+             AssayReport = 1
         }
 
         static readonly Dictionary<ReportType, ReportHelper.ReportRegistrationItem> reports = new Dictionary<ReportType, ReportHelper.ReportRegistrationItem> {
             {ReportType.CompareModel, new ReportHelper.ReportRegistrationItem() {
                 ReportBuilder = (r) => new CompareModelReport(new CompareModelReport.DataProvider(r)) { DataAdapter = null },
                 ParametersView = "CompareModelParametersPartial"
+                }
+            },
+            {ReportType.AssayReport, new ReportHelper.ReportRegistrationItem() {
+                ReportBuilder = (r) => new AssaysReport(new AssaysReport.DataProvider(r)) { DataAdapter = null },
+                ParametersView = "AssayReportParametersPartial"
                 }
             }
         };
@@ -35,7 +41,9 @@ namespace XODB.Reports
                 ReportID = (uint)r,
                 ReportName = System.Enum.GetName(typeof(ReportType), r),
                 Report = GetReport(r),
-                ParametersView = GetParametersViewName(r)
+                ParametersView = GetParametersViewName(r),
+                SerializedChild = String.Empty,
+                FilterString = String.Empty
             }.ActLike<IReport>();
         }
 
@@ -46,7 +54,9 @@ namespace XODB.Reports
                 ReportID = (uint)r.ReportID,
                 ReportName = System.Enum.GetName(typeof(ReportType), r.ReportID),
                 Report = GetReport(r),
-                ParametersView = GetParametersViewName((ReportType)r.ReportID)
+                ParametersView = GetParametersViewName((ReportType)r.ReportID),
+                SerializedChild = r.SerializedChild,
+                FilterString = r.FilterString
             }.ActLike<IReport>();
         }
 

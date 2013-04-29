@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 22.875" name="Assays">
+  <DataContextMoniker Name="/AssaysDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2de89f0b-fc63-4503-8177-2f981b059704" absoluteBounds="1, 18, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/AssaysDataContext/X_AssayGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f772d5e7-d32c-4d68-82e9-438fe53017c4" absoluteBounds="1.0150000000000001, 18.46, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00ea6ebc-321b-48e8-b56a-0d60a6bf5675" absoluteBounds="6.25, 12.25, 2, 4.0785139973958309">
+      <DataClassMoniker Name="/AssaysDataContext/X_AssayGroupTestResultDuplicate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e0da157-b60d-4225-a70e-0e7c221ca98e" absoluteBounds="6.265, 12.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25aa3dfd-b576-4034-944c-a5d68937f7b1" absoluteBounds="6.5, 5.875, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/AssaysDataContext/X_AssayGroupStandardTestResult" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2003a5cb-f4c9-4215-b990-6aa79c9ca4f0" absoluteBounds="6.515, 6.335, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70f88531-366d-406b-8402-256a3d9b8450" absoluteBounds="3.75, 18.375, 2, 4.0785139973958309">
+      <DataClassMoniker Name="/AssaysDataContext/X_AssayGroupTest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0260c6c6-073c-44c1-bdea-d1515bef4e1e" absoluteBounds="3.765, 18.835, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="75c38ffb-2fe0-427b-b839-8a6f2fb2e5b6" absoluteBounds="3.5, 6.25, 2, 4.2708154296874987">
+      <DataClassMoniker Name="/AssaysDataContext/X_AssayGroupTestResult" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fae1207d-06c8-451d-9477-d93c33930abe" absoluteBounds="3.515, 6.71, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b19848cd-6c11-4d17-be1d-93f9c574be26" absoluteBounds="6.25, 1.375, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/AssaysDataContext/X_AssayGroupTestResultComment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ca2d393-af5a-4eb2-851d-e9c378a8c002" absoluteBounds="6.265, 1.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="625144c9-9055-48ba-99b6-49fc5c6bacca" absoluteBounds="0.75, 6, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/AssaysDataContext/X_Sample" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af4b08de-ed83-422e-8023-a68bd59f8e87" absoluteBounds="0.765, 6.46, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.65625 : 18.375); (5.65625 : 10.7491682942708); (6.5 : 10.7491682942708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AssaysDataContext/X_AssayGroupTest/X_AssayGroupTest_X_AssayGroupStandardTestResult" />
+      <nodes>
+        <classShapeMoniker Id="70f88531-366d-406b-8402-256a3d9b8450" />
+        <classShapeMoniker Id="25aa3dfd-b576-4034-944c-a5d68937f7b1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 20.4142569986979); (3.75 : 20.4142569986979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AssaysDataContext/X_AssayGroup/X_AssayGroup_X_AssayGroupTest" />
+      <nodes>
+        <classShapeMoniker Id="2de89f0b-fc63-4503-8177-2f981b059704" />
+        <classShapeMoniker Id="70f88531-366d-406b-8402-256a3d9b8450" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 10.5208154296875); (4.5 : 14.2892569986979); (4.97916666666667 : 14.2892569986979 : JumpStart); (5.14583333333333 : 14.2892569986979 : JumpEnd); (5.57291666666667 : 14.2892569986979 : JumpStart); (5.73958333333333 : 14.2892569986979 : JumpEnd); (6.25 : 14.2892569986979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AssaysDataContext/X_AssayGroupTestResult/X_AssayGroupTestResult_X_AssayGroupTestResultDuplicate" />
+      <nodes>
+        <classShapeMoniker Id="75c38ffb-2fe0-427b-b839-8a6f2fb2e5b6" />
+        <classShapeMoniker Id="00ea6ebc-321b-48e8-b56a-0d60a6bf5675" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0625 : 18.375); (5.0625 : 10.5208154296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AssaysDataContext/X_AssayGroupTest/X_AssayGroupTest_X_AssayGroupTestResult" />
+      <nodes>
+        <classShapeMoniker Id="70f88531-366d-406b-8402-256a3d9b8450" />
+        <classShapeMoniker Id="75c38ffb-2fe0-427b-b839-8a6f2fb2e5b6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 6.25); (4.5 : 2.93350341796875); (6.25 : 2.93350341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AssaysDataContext/X_AssayGroupTestResult/X_AssayGroupTestResult_X_AssayGroupTestResultComment" />
+      <nodes>
+        <classShapeMoniker Id="75c38ffb-2fe0-427b-b839-8a6f2fb2e5b6" />
+        <classShapeMoniker Id="b19848cd-6c11-4d17-be1d-93f9c574be26" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.09375); (6.5 : 6.09375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AssaysDataContext/X_Sample/X_Sample_X_AssayGroupStandardTestResult" />
+      <nodes>
+        <classShapeMoniker Id="625144c9-9055-48ba-99b6-49fc5c6bacca" />
+        <classShapeMoniker Id="25aa3dfd-b576-4034-944c-a5d68937f7b1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.38540771484375); (3.5 : 8.38540771484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AssaysDataContext/X_Sample/X_Sample_X_AssayGroupTestResult" />
+      <nodes>
+        <classShapeMoniker Id="625144c9-9055-48ba-99b6-49fc5c6bacca" />
+        <classShapeMoniker Id="75c38ffb-2fe0-427b-b839-8a6f2fb2e5b6" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

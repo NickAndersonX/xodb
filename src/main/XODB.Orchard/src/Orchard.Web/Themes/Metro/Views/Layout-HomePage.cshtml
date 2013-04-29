@@ -11,7 +11,7 @@
     ***************************************************************/
 
     Style.Include("site.css");
-    
+    //Response.AddHeader("X-UA-Compatible", "IE=edge,chrome=1");
 
     /* Some useful shortcuts or settings
     ***************************************************************/
@@ -27,7 +27,7 @@
 }	<!-- BindTuning head elements-->
 	<script type="text/javascript">
 	    if (typeof jQuery == 'undefined') {
-	       if (window.location.protocol != "https:") {
+	       if (false && (window.location.protocol != "https:")) {
 	           document.write("<script type='text/javascript' src='//code.jquery.com/jquery.min.js'><" + "/script>");
 	           document.write("<script type='text/javascript'>window.jQuery || document.write(\"<script type='text/javascript' src='@Href("~/Themes/Metro/js/jquery.min.js")'><\" + \"/script>\");<" + "/script>");
 	       } else { document.write("<script type='text/javascript' src='@Href("~/Themes/Metro/js/jquery.min.js")'><" + "/script>"); }
@@ -38,9 +38,9 @@
 	</script>
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="@Href("html5shim.googlecode.com.svn.trunk.html5.js")"></script>
 	<![endif]-->
-    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="@Href("~/Themes/Metro/js/platform.twitter.com.widgets.js")"></script>
 	<script type="text/javascript" src="@Href("~/Themes/Metro/js/bootstrap-transition.js")"></script>
 <script type="text/javascript" src="@Href("~/Themes/Metro/js/bootstrap-alert.js")"></script>
 <script type="text/javascript" src="@Href("~/Themes/Metro/js/bootstrap-modal.js")"></script>

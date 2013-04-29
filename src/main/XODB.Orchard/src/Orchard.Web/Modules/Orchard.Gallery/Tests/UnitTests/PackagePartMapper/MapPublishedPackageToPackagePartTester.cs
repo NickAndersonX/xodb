@@ -2,7 +2,8 @@ using Gallery.Core.Interfaces;
 using Moq;
 using NUnit.Framework;
 using Orchard.ContentManagement;
-using Orchard.Core.Routable.Models;
+
+using Orchard.Autoroute.Models;
 using Orchard.Gallery.GalleryServer;
 using Orchard.Gallery.Interfaces;
 using Orchard.Gallery.Models;
@@ -17,7 +18,7 @@ namespace Orchard.Gallery.UnitTests.PackagePartMapper
 
         private void SetupRoutePart(PackagePart packagePartToMapTo) {
             var contentItem = new ContentItem { ContentType = "Package" };
-            var routePart = new RoutePart {Record = new RoutePartRecord()};
+            var routePart = new AutoroutePart {Record = new AutoroutePartRecord()};
             contentItem.Weld(routePart);
             contentItem.Weld(packagePartToMapTo);
 

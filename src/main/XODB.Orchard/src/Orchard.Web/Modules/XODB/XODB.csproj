@@ -54,14 +54,30 @@
     <Reference Include="Autofac.Integration.Mvc">
       <HintPath>..\..\..\..\lib\autofac\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Data.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Office.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v12.1.Core, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Utils.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -122,7 +138,9 @@
     <Reference Include="DevExpress.XtraCharts.v12.1.Web, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -363,19 +381,35 @@
     <Compile Include="AdminMenu.cs" />
     <Compile Include="Handlers\BlockModelHandler.cs" />
     <Compile Include="Handlers\EmailHandler.cs" />
+    <Compile Include="Handlers\FileGeneratingResult.cs" />
     <Compile Include="Helpers\CacheHelper.cs" />
+    <Compile Include="Helpers\DateHelper.cs" />
     <Compile Include="Helpers\InterfaceHelper.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="Helpers\TaskHelper.cs" />
+    <Compile Include="Models\Assays.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Assays.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Models\BlockModelPart.cs" />
     <Compile Include="Models\EmailPart.cs" />
     <Compile Include="Models\IMessage.cs" />
     <Compile Include="Models\ShellTask.cs" />
+    <Compile Include="Reports\AssaysReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\AssaysReport.Designer.cs">
+      <DependentUpon>AssaysReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\AppendModelScheduledTaskHandler.cs" />
     <Compile Include="Services\ConcurrentTaskService.cs" />
+    <Compile Include="Services\AssayService.cs" />
+    <Compile Include="Services\IAssayService.cs" />
     <Compile Include="Services\IConcurrentTaskService.cs" />
     <Compile Include="Services\EmailScheduledTaskHandler.cs" />
     <Compile Include="Services\ProcessModelScheduledTaskHandler.cs" />
+    <Compile Include="ViewModels\AssayReportViewModel.cs" />
     <Compile Include="XODBModule.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -497,6 +531,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Models\Assays.dbml.layout">
+      <DependentUpon>Assays.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Reports\CompareModelReport.resx">
       <DependentUpon>CompareModelReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -507,6 +544,19 @@
       <DependentUpon>BMMetaData.dbml</DependentUpon>
     </Content>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\AssaysReport.resx">
+      <DependentUpon>AssaysReport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\ReportAssays.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\Assays.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Assays.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

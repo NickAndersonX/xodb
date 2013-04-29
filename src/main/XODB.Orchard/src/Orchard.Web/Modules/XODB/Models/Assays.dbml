@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="XODB" Class="AssaysDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=xodbdb;Initial Catalog=XODB;Persist Security Info=True;User ID=xodb_user1;MultipleActiveResultSets=True;Connect Timeout=60;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="XODBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.X_AssayGroup" Member="X_AssayGroups">
+    <Type Name="X_AssayGroup">
+      <Column Name="AssayGroupID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AssayGroupName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LabCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Submitted" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SubmittedContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Received" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ReceivedContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Entered" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EnteredContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_AssayGroup_X_AssayGroupTest" Member="X_AssayGroupTests" ThisKey="AssayGroupID" OtherKey="AssayGroupID" Type="X_AssayGroupTest" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_AssayGroupTestResultDuplicate" Member="X_AssayGroupTestResultDuplicates">
+    <Type Name="X_AssayGroupTestResultDuplicate">
+      <Column Name="AssayGroupTestResultDuplicateID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AssayGroupTestResultID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LabResultText" Type="System.String" DbType="NVarChar(58)" CanBeNull="true" />
+      <Column Name="LabResult" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="LabSampleNumber" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="LabBatchNumber" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Sampled" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SampledBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_AssayGroupTestResult_X_AssayGroupTestResultDuplicate" Member="X_AssayGroupTestResult" ThisKey="AssayGroupTestResultID" OtherKey="AssayGroupTestResultID" Type="X_AssayGroupTestResult" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_AssayGroupStandardTestResult" Member="X_AssayGroupStandardTestResults">
+    <Type Name="X_AssayGroupStandardTestResult">
+      <Column Name="AssayGroupStandardTestResultID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AssayGroupTestSampleID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AssayGroupTestID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AssayStandardID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SampleCategoryID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SampleStateID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SampleTypeID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LabResultText" Type="System.String" DbType="NVarChar(58)" CanBeNull="true" />
+      <Column Name="LabResult" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="LabSampleNumber" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="LabBatchNumber" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Sampled" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SampledBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_AssayGroupTest_X_AssayGroupStandardTestResult" Member="X_AssayGroupTest" ThisKey="AssayGroupTestID" OtherKey="AssayGroupTestID" Type="X_AssayGroupTest" IsForeignKey="true" />
+      <Association Name="X_Sample_X_AssayGroupStandardTestResult" Member="X_Sample" ThisKey="AssayGroupTestSampleID" OtherKey="SampleID" Type="X_Sample" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_AssayGroupTest" Member="X_AssayGroupTests">
+    <Type Name="X_AssayGroupTest">
+      <Column Name="AssayGroupTestID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AssayGroupID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AssayTypeName" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="AssayTestName" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="ParameterID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AssayTestPriority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AssayMethodID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AssayTypeID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_AssayGroupTest_X_AssayGroupStandardTestResult" Member="X_AssayGroupStandardTestResults" ThisKey="AssayGroupTestID" OtherKey="AssayGroupTestID" Type="X_AssayGroupStandardTestResult" />
+      <Association Name="X_AssayGroupTest_X_AssayGroupTestResult" Member="X_AssayGroupTestResults" ThisKey="AssayGroupTestID" OtherKey="AssayGroupTestID" Type="X_AssayGroupTestResult" />
+      <Association Name="X_AssayGroup_X_AssayGroupTest" Member="X_AssayGroup" ThisKey="AssayGroupID" OtherKey="AssayGroupID" Type="X_AssayGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_AssayGroupTestResult" Member="X_AssayGroupTestResults">
+    <Type Name="X_AssayGroupTestResult">
+      <Column Name="AssayGroupTestResultID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SampleID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AssayGroupTestID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LabResultText" Type="System.String" DbType="NVarChar(58)" CanBeNull="true" />
+      <Column Name="LabResult" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="LabSampleNumber" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="LabBatchNumber" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Sampled" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SampledBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_AssayGroupTestResult_X_AssayGroupTestResultDuplicate" Member="X_AssayGroupTestResultDuplicates" ThisKey="AssayGroupTestResultID" OtherKey="AssayGroupTestResultID" Type="X_AssayGroupTestResultDuplicate" />
+      <Association Name="X_AssayGroupTestResult_X_AssayGroupTestResultComment" Member="X_AssayGroupTestResultComments" ThisKey="AssayGroupTestResultID" OtherKey="AssayGroupTestResultID" Type="X_AssayGroupTestResultComment" />
+      <Association Name="X_AssayGroupTest_X_AssayGroupTestResult" Member="X_AssayGroupTest" ThisKey="AssayGroupTestID" OtherKey="AssayGroupTestID" Type="X_AssayGroupTest" IsForeignKey="true" />
+      <Association Name="X_Sample_X_AssayGroupTestResult" Member="X_Sample" ThisKey="SampleID" OtherKey="SampleID" Type="X_Sample" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_AssayGroupTestResultComment" Member="X_AssayGroupTestResultComments">
+    <Type Name="X_AssayGroupTestResultComment">
+      <Column Name="AssayGroupTestResultCommentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AssayGroupTestResultID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_AssayGroupTestResult_X_AssayGroupTestResultComment" Member="X_AssayGroupTestResult" ThisKey="AssayGroupTestResultID" OtherKey="AssayGroupTestResultID" Type="X_AssayGroupTestResult" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_Sample" Member="X_Samples">
+    <Type Name="X_Sample">
+      <Column Name="SampleID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HeaderID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SampleCategoryID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SampleStateID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SampleTypeID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SampleName" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="SampleNumber" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="SampleTaken" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FromDepth" Type="System.Decimal" DbType="Decimal(7,3)" CanBeNull="true" />
+      <Column Name="ToDepth" Type="System.Decimal" DbType="Decimal(7,3)" CanBeNull="true" />
+      <Column Name="SampleMassKg" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="DryMassKg" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_Sample_X_AssayGroupStandardTestResult" Member="X_AssayGroupStandardTestResults" ThisKey="SampleID" OtherKey="AssayGroupTestSampleID" Type="X_AssayGroupStandardTestResult" />
+      <Association Name="X_Sample_X_AssayGroupTestResult" Member="X_AssayGroupTestResults" ThisKey="SampleID" OtherKey="SampleID" Type="X_AssayGroupTestResult" />
+    </Type>
+  </Table>
+</Database>

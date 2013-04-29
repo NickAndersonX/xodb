@@ -20,13 +20,16 @@ namespace XODB.Helpers
             }
         }
 
-        public static T AddToCache<T>(this Func<object> toRun, string cacheKey)
+        public static T AddToCache<T>(this Func<object> toRun, string cacheKey, TimeSpan? expires = null)
         {
             object c = CacheHelper.Cache[cacheKey];
             if (c == null)
             {
                 c = toRun.Invoke();
-                CacheHelper.Cache.Insert(cacheKey, c, null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.High, null);
+                if (!expires.HasValue)
+                    CacheHelper.Cache.Insert(cacheKey, c, null, System.Web.Caching.Cache.NoAbsoluteExpiration, System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.High, null);
+                else
+                    CacheHelper.Cache.Insert(cacheKey, c, null, System.Web.Caching.Cache.NoAbsoluteExpiration, expires.Value, System.Web.Caching.CacheItemPriority.Normal, null);
             }
             return (T)c;
         }
@@ -49,6 +52,35 @@ namespace XODB.Helpers
                 {
                     Monitor.Exit(typeof(CacheHelper));
                 }
+            }
+        }
+
+        private static TimeSpan? _defaultTimeout = null;
+        public static TimeSpan DefaultTimeout
+        {
+            get
+            {
+                if (!_defaultTimeout.HasValue)
+                {
+                    try
+                    {
+                        Monitor.Enter(typeof(CacheHelper));
+                        int timeout;
+                        if (!int.TryParse(System.Configuration.ConfigurationManager.AppSettings["CacheTimeOut"], out timeout))
+                            timeout = 0;   //No Cache 
+                        _defaultTimeout = new TimeSpan(0,0,timeout);
+                    }
+                    catch
+                    {
+                        _defaultTimeout = new TimeSpan(0,0,0);
+                    }
+                    finally
+                    {
+                        Monitor.Exit(typeof(CacheHelper));
+                    }
+
+                }
+                return _defaultTimeout.Value;
             }
         }
     }

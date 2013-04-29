@@ -27,6 +27,7 @@ namespace XODB.Controllers {
         public string Name { get { return "User"; } }
         public IOrchardServices Services { get; set; }
         public IBlockModelService BlockModelService { get; set; }
+        public IAssayService AssayService { get; set; }
         public IProjectsService ProjectService { get; set; }
         public IParametersService ParameterService { get; set; }
         public IUsersService UserService { get; set; }
@@ -39,6 +40,7 @@ namespace XODB.Controllers {
         public UserController(
             IOrchardServices services, 
             IBlockModelService blockModelService, 
+            IAssayService assayService,
             IProjectsService projectService, 
             IParametersService parameterService,
             IUsersService userService,
@@ -48,6 +50,7 @@ namespace XODB.Controllers {
             Services = services;
             UserService = userService;
             BlockModelService = blockModelService;
+            AssayService = assayService;
             ParameterService = parameterService;
             ProjectService = projectService;
             PrivateService = privateService;
@@ -221,6 +224,35 @@ namespace XODB.Controllers {
             model.Stages = ProjectService.GetStagesList(new Guid(model.Projects.First().Value));
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult ReportAssays()
+        {
+            var model = new AssayReportViewModel
+            {
+                Report = AllReports.GetReport(AllReports.ReportType.AssayReport),
+                Projects = ProjectService.GetProjectList()
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult ReportAssays(AssayReportViewModel m)
+        {
+            if (!ModelState.IsValid)
+                return ReportAssays();
+            m.ReportID = (uint)AllReports.ReportType.AssayReport;
+            m.ReportExecutedByUserName = Services.WorkContext.CurrentUser.UserName;
+            IReport r = AssayService.ReportAssays(m);
+            m.Report = r.Report;
+            //m.ReportID = r.ReportID;
+            m.ParametersView  = r.ParametersView;
+            m.ReportName = r.ReportName;
+            m.SerializedChild = r.SerializedChild;
+            m.FilterString = r.FilterString;
+            return new XODB.Handlers.FileGeneratingResult(string.Format("{0}-{1}-{2}.csv", m.Project, m.ProjectID, DateHelper.NowInOnlineFormat).Trim(), "text/csv", stream => m.Report.ExportToCsv(stream));
+        }
+
 
         [HttpGet]
         public ActionResult DeleteModel(string id)
