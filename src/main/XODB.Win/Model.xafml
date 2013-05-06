@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Company="Xstract" Copyright="This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA." Logo="" WebSite="http://xodb.xstractgroup.com" Description="Contact Andrew Grosser at enquiries@xstractgroup.com for support enquiries." Subtitle="Xstract Open Database" AboutInfoString="&lt;br&gt;{0:ProductName}&lt;br&gt;&lt;br&gt;{0:Version}&lt;br&gt;{0:Copyright}&lt;br&gt;&lt;br&gt;{0:Description}">
+<Application Company="Xstract" Copyright="This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA." Logo="" WebSite="http://xodb.xstractgroup.com" Description="Contact Andrew Grosser at enquiries@xstractgroup.com for support enquiries." Subtitle="Xstract Open Database" AboutInfoString="&lt;br&gt;{0:ProductName}&lt;br&gt;&lt;br&gt;{0:Version}&lt;br&gt;{0:Copyright}&lt;br&gt;&lt;br&gt;{0:Description}" VersionFormat="Version {0}.{1}.{2}">
   <BOModel>
     <Class Name="XODB.Module.BusinessObjects.XODB.AssayGroup">
       <OwnMembers>
@@ -106,6 +106,7 @@
           <Item Id="@7ab3762f-fead-4c40-bd39-4be788970693" ViewId="DictionaryDesurveyAlgorithmType_ListView" Caption="Desurvey Algorithm Types" Index="18" ImageName="Action_EditModel" IsNewNode="True" />
           <Item Id="Dimensions" Caption="Dimensions" ViewId="DictionaryDimension_ListView" Index="19" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@aa475d50-a9d8-47c1-a18d-b516165cd9d5" ViewId="DictionaryDipOrientationMethod_ListView" Caption="Dip Orientation Methods" Index="20" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
+          <Item Id="@b2f07615-a431-4c18-9b2a-f1bcdd69b7c5" ViewId="DictionaryDomain_ListView" Caption="Domains" Index="21" ImageName="Action_EditModel" IsNewNode="True" />
           <Item Id="@bbde4e26-681e-4598-83f5-c0fce18d779c" ViewId="DictionaryDrillBitType_ListView" Caption="Drill Bit Types" Index="21" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@960b9723-578e-41db-ad5f-1c88cbb58ebe" ViewId="DictionaryDrillCasingType_ListView" Caption="Drill Casing Types" Index="22" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@56153131-20fe-4432-9255-3f7034e1c928" ViewId="DictionaryDrillFluid_ListView" Caption="Drill Fluid Types" Index="23" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
@@ -117,6 +118,7 @@
           <Item Id="@19973294-0ab7-4a34-a3ed-f047dabe4b83" ViewId="DictionaryGasDetected_ListView" Caption="Gas Detection Types" Index="29" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@27bffa84-dfce-43dc-86c0-2181b0ffce15" ViewId="DictionaryGeodeticDatum_ListView" Caption="Geodetic Datums" Index="30" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@9ebeef27-6403-4fd0-9cc8-968c66d42169" ViewId="DictionaryGeophysicalLogType_ListView" Caption="Geophysical Log Types" Index="31" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
+          <Item Id="@c810abb0-36bc-4986-9e77-412318e57b07" ViewId="DictionaryGroup_ListView" Caption="Groups" Index="31" ImageName="Action_EditModel" IsNewNode="True" />
           <Item Id="@bb77848d-b341-41c4-9b8b-197cdd7ef00a" ViewId="DictionaryHeightDatum_ListView" Caption="Height Datums" Index="32" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@79f37d75-bcc6-423d-a87d-54db12217481" ViewId="DictionaryHolePurpose_ListView" Caption="Hole Purposes" Index="33" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@20bcdc33-d3a7-4fa6-8e8b-473bd9993394" ViewId="DictionaryHoleStatus_ListView" Caption="Hole Statuses" Index="34" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
@@ -127,6 +129,7 @@
           <Item Id="@eb1593a3-e1a3-46ab-980a-14ffbab6e482" ViewId="DictionaryInfillType_ListView" Caption="Infill Types" Index="39" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@91a557bd-3aa9-4542-9945-de309b079baa" ViewId="DictionaryIntervalStatus_ListView" Caption="Interval Status Types" Index="40" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@681d1a65-3baf-45a3-841a-4774ae09c2de" ViewId="DictionaryLithologyInterrelation_ListView" Caption="Lithology Interrelations" Index="41" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
+          <Item Id="@b08f384b-38ea-43ed-b7d4-2b49402bc17f" ViewId="DictionaryLeaseApplicationType_ListView" Caption="Lease Application Types" Index="41" ImageName="Action_EditModel" IsNewNode="True" />
           <Item Id="@1dce2882-99e2-4892-bf96-854dd411ca25" Caption="Lithology Qualifiers" Index="42" ImageName="BO_Security_Permission_Model" ViewId="DictionaryLithologyQualifier_ListView" IsNewNode="True" />
           <Item Id="@c7157ef0-aab8-4fda-9155-39aa4e0e5973" ViewId="DictionaryLithologyType_ListView" Caption="Lithology Types" Index="43" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@870259db-e279-4d9e-ae42-25844b4c8dee" ViewId="LocationAlias_ListView" Caption="Location Aliases" Index="44" ImageName="BO_Localization" IsNewNode="True" />
@@ -142,7 +145,7 @@
           <Item Id="@b3a7de22-fc29-4554-a9bc-ca6b40fdaa68" ViewId="DictionaryMineralType_ListView" Caption="Mineral Types" Index="54" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@4c1cc675-0457-4918-aedd-d6234ff01f0b" Caption="Moisture Sensititvity Types" Index="55" ImageName="BO_Security_Permission_Model" ViewId="DictionaryMoistureSensitivity_ListView" IsNewNode="True" />
           <Item Id="@08345603-94d9-4e69-ba02-c919500deba7" ViewId="DictionaryPlasticity_ListView" Caption="Plasticity Types" Index="56" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
-          <Item Id="@8cdaf5a6-1b1b-479d-80d5-a73cf87f006e" ViewId="Parameter_ListView" Caption="Parameters" Index="56" IsNewNode="True" />
+          <Item Id="@8cdaf5a6-1b1b-479d-80d5-a73cf87f006e" ViewId="Parameter_ListView" Caption="Parameters" Index="56" Visible="False" IsNewNode="True" />
           <Item Id="@e40182a3-b0ee-429d-9cd2-603f56c71ea2" ViewId="DictionaryPly_ListView" Caption="Plies" Index="57" ImageName="Action_EditModel" IsNewNode="True" />
           <Item Id="@1a009268-be6a-440e-8e6d-0e06b2a3c5e8" ViewId="DictionaryPointLoadTestType_ListView" ObjectKey="" Caption="Point Load Test Types" Index="58" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@7fd6539c-5669-4d95-a0f1-f11da424b6a4" ViewId="DictionaryProfession_ListView" Caption="Professions" Index="59" ImageName="Action_EditModel" IsNewNode="True" />
@@ -161,10 +164,13 @@
           <Item Id="@fadfbe87-7d94-4667-b6c8-6d37950c0840" ViewId="DictionaryStratigraphy_ListView" Caption="Stratigraphy Types" Index="72" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@b0c17ccb-4e14-4498-881b-4d2961c628bf" Caption="Surface Roughness Types" ViewId="DictionarySurfaceRoughness_ListView" Index="73" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@9f127855-c99d-4e22-817f-ac6652097c08" ViewId="DictionarySurveyAccuracy_ListView" Caption="Survey Accuracy Types" Index="74" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
+          <Item Id="@04320ac3-ade9-45c1-af66-1874f47ca194" ViewId="DictionaryUnit_ListView" Caption="Unit Types" Index="75" Visible="False" IsNewNode="True" />
           <Item Id="@82813f14-eaca-4451-865e-a7117431ac9e" ViewId="DictionaryTexture_ListView" Caption="Texture Types" Index="75" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
+          <Item Id="@b2dce818-57bc-437a-949c-e07359fc6c8b" ViewId="DictionaryUsageAuditType_ListView" Caption="Usage Audit Types" Index="75" Visible="False" IsNewNode="True" />
           <Item Id="@a9fcc16a-867c-4585-bad7-cc82b273441d" ViewId="DictionaryUsageAuditType_ListView" Caption="User Actions" Index="76" ImageName="Action_EditModel" IsNewNode="True" />
           <Item Id="@31aba7c5-f8a0-4a8c-a232-fcb5b6c1d678" Caption="Weathering Type" ViewId="DictionaryWeathering_ListView" Index="77" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@0dab6a6a-3a72-4be4-bc70-929442525c32" Caption="Work Type" ImageName="Action_EditModel" ViewId="DictionaryWorkType_ListView" Index="78" IsNewNode="True" />
+          <Item Id="@80b04ae1-7724-4c4f-896e-4dae5fffb408" ViewId="DictionaryWorkTypeClass_ListView" Caption="Work Type Classes" Index="78" ImageName="Action_EditModel" IsNewNode="True" />
           <Item Id="@b585bcf4-3d62-47a1-bf20-0b0bb4e7aaba" ImageName="Action_EditModel" ViewId="DictionaryWorkTypeRelation_ListView" Caption="Work Type Hierarchy" Index="79" IsNewNode="True" />
         </Items>
       </Item>
