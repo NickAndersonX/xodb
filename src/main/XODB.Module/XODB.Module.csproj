@@ -746,10 +746,6 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\WaterFlow.Designer.cs">
       <DependentUpon>WaterFlow.cs</DependentUpon>
     </Compile>
-    <Compile Include="BusinessObjects\XODB_ORMCode\Worker.cs" />
-    <Compile Include="BusinessObjects\XODB_ORMCode\Worker.Designer.cs">
-      <DependentUpon>Worker.cs</DependentUpon>
-    </Compile>
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>

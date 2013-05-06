@@ -83,8 +83,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<ContactCompany> ContactCompanys { get { return GetCollection<ContactCompany>("ContactCompanys"); } }
         [Association(@"DictionaryWorkTypeReferencesDictionaryProfession", typeof(DictionaryWorkType))]
         public XPCollection<DictionaryWorkType> DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("DictionaryWorkTypes"); } }
-        [Association(@"WorkerReferencesDictionaryProfession", typeof(Worker))]
-        public XPCollection<Worker> Workers { get { return GetCollection<Worker>("Workers"); } }
         [Association(@"ExperienceReferencesDictionaryProfession", typeof(Experience))]
         public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
     }

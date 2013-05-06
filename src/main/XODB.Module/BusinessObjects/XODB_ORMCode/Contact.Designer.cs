@@ -243,8 +243,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
         [Association(@"TenementReferencesContact", typeof(Tenement))]
         public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
-        [Association(@"WorkerReferencesContact", typeof(Worker))]
-        public XPCollection<Worker> Workers { get { return GetCollection<Worker>("Workers"); } }
         [Association(@"ProjectPlanTaskResponseReferencesContact1", typeof(ProjectPlanTaskResponse))]
         public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses1 { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses1"); } }
         [Association(@"X_ComplianceReferencesContact", typeof(Compliance))]

@@ -138,8 +138,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<SecurityWhitelist> SecurityWhitelists1 { get { return GetCollection<SecurityWhitelist>("SecurityWhitelists1"); } }
         [Association(@"TenementReferencesCompany", typeof(Tenement))]
         public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
-        [Association(@"WorkerReferencesCompany", typeof(Worker))]
-        public XPCollection<Worker> Workers { get { return GetCollection<Worker>("Workers"); } }
         [Association(@"X_ComplianceReferencesCompany", typeof(Compliance))]
         public XPCollection<Compliance> X_Compliances { get { return GetCollection<Compliance>("X_Compliances"); } }
         [Association(@"X_DictionaryModelReferencesCompany", typeof(DictionaryModel))]

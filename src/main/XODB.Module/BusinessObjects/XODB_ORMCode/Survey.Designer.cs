@@ -23,7 +23,6 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SurveyID", ref fSurveyID, value); }
         }
         Header fHeaderID;
-        [Indexed(@"Surveyed", Name = @"IX_X_Survey", Unique = true)]
         [Association(@"SurveyReferencesHeader")]
         public Header HeaderID
         {
