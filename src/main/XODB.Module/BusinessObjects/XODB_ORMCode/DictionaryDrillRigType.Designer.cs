@@ -65,12 +65,13 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fFullDescription; }
             set { SetPropertyValue<string>("FullDescription", ref fFullDescription, value); }
         }
-        byte[] fThumbnail;
+        System.Drawing.Image fThumbnail;
         [Size(SizeAttribute.Unlimited)]
-        public byte[] Thumbnail
+        [ValueConverter(typeof(DevExpress.Xpo.Metadata.ImageValueConverter))]
+        public System.Drawing.Image Thumbnail
         {
             get { return fThumbnail; }
-            set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
+            set { SetPropertyValue<System.Drawing.Image>("Thumbnail", ref fThumbnail, value); }
         }
         FileData fOriginalFileDataID;
         [Association(@"DictionaryDrillRigTypeReferencesFileData")]

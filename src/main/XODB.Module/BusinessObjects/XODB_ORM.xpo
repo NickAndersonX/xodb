@@ -3626,7 +3626,7 @@
             <field Id="9ec35c11-0f90-433e-a873-9f46c3ee230c" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="63c18ced-3d0f-45a6-819d-6f121430f235">
-            <field Id="65c0ff80-d8a7-4458-86df-2da79a449339" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="65c0ff80-d8a7-4458-86df-2da79a449339" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="aa762ec1-c4b1-4aa2-be94-00684c8fbd9b">
             <field Id="f3946e53-10d9-4d5c-8632-e830c22fdcaa" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -3684,7 +3684,7 @@
             <field Id="c1ea2395-a095-4b64-8d04-22a488daee01" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a4ec22b8-deb2-41bf-9965-cdc25df3f164">
-            <field Id="5fe2c5af-fb1d-46cb-8186-51b4cdbc649a" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="5fe2c5af-fb1d-46cb-8186-51b4cdbc649a" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="57921237-d1e8-4244-8243-3f7e188ec35e">
             <field Id="deb02e68-c412-4093-ad94-f113de4741b2" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -3733,7 +3733,7 @@
             <field Id="1062d852-04f5-44a1-a586-506d90bf3d86" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="547d836f-d578-4e93-b346-c4ec09577309">
-            <field Id="94cb15cf-a527-409a-b881-7838129c0d8b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="94cb15cf-a527-409a-b881-7838129c0d8b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="42078270-330e-441b-8cbe-d34da5a13523">
             <field Id="f70a296a-bfda-4a84-9b04-0befd2321e09" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -3782,7 +3782,7 @@
             <field Id="9a9fc098-c1dd-4285-a542-26407a7dcf67" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="cc16a2a9-d7ad-44f7-adfc-d37dc1cd512b">
-            <field Id="bf8a3674-a747-4bd5-899a-7838c37e633b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="bf8a3674-a747-4bd5-899a-7838c37e633b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="df66c8ad-6dd0-4c31-855d-7516912008e1">
             <field Id="165a5c41-2f4a-410a-a931-30321252b3df" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -3831,7 +3831,7 @@
             <field Id="fe6039c1-a557-4e34-891c-a6db8766c0b4" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="77e01c62-090c-440f-adbc-3ff4a3605367">
-            <field Id="b43e3af4-dd0d-400d-8f5e-c070feb84f1e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="b43e3af4-dd0d-400d-8f5e-c070feb84f1e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="1043db8b-906d-4ce8-970c-54d7996e2f70">
             <field Id="8a0b452b-0cb0-42ac-8942-7280490b5924" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -3875,7 +3875,7 @@
             <field Id="21e37ae0-6f67-4caf-ad52-ccda1ad6d591" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a5437252-849b-49b4-9fe6-ae0a28f0d69f">
-            <field Id="c4785255-0535-4775-a9ce-c273ac25c0da" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="c4785255-0535-4775-a9ce-c273ac25c0da" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="39b76dde-ad65-443d-ba47-636635e1e98d">
             <field Id="d65c22dd-e3ce-4437-8357-ed3d539b892a" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -3924,7 +3924,7 @@
             <field Id="06bc10f1-32be-4935-902b-528d7f3bd3df" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="84c9d173-b232-4a03-a86c-81e8eade3041">
-            <field Id="d28c87a5-1c92-43ab-aaef-b4a2276391b4" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="d28c87a5-1c92-43ab-aaef-b4a2276391b4" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="1fc906e1-4de6-4203-bfbe-bddf564f542f">
             <field Id="bf5f4b69-763f-4cde-99ea-c1e29f8317eb" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -3973,7 +3973,7 @@
             <field Id="98cdac1b-09dc-4a93-b482-3a3add62af1f" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7f9f822d-35f0-403c-8657-b90724ab8f24">
-            <field Id="5f9843fa-f8c7-4428-9e5a-2f87c3b1e5bf" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="5f9843fa-f8c7-4428-9e5a-2f87c3b1e5bf" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3d7e3f32-7fe1-4122-a1b6-7629d10c5d48">
             <field Id="fc2b148f-a3b4-475f-9e18-78a4b36777b6" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4025,7 +4025,7 @@
             <field Id="ae26d96f-dd9b-4987-a80c-dc90a34bf65c" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="bed3d8d4-563d-46d5-a354-69711960761f">
-            <field Id="99f618ed-73a6-4ad9-8cb6-83a2fc699589" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="99f618ed-73a6-4ad9-8cb6-83a2fc699589" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d4859287-6327-4bc8-8e8f-a39e3f0dd087">
             <field Id="ee31c9df-08ad-4560-b7b8-c4ee8d18c390" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4074,7 +4074,7 @@
             <field Id="9c460ff6-0521-43cb-8e5f-86061c734dc5" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d777f8ea-78b5-4b9a-9f1e-4669c4bde125">
-            <field Id="ca6a75bc-6cd0-4270-80f5-d7fec2782e05" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="ca6a75bc-6cd0-4270-80f5-d7fec2782e05" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="53fffa69-79fc-426b-8662-a7ed74ed4a7e">
             <field Id="6297f485-8406-44fc-ac47-f4fd3f24e218" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4126,7 +4126,7 @@
             <field Id="49a98b7d-c00f-421b-9a57-58a037f99941" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="33c2e2cb-68b5-4c8c-83f2-d29148d9ec80">
-            <field Id="4a4d6ddd-21fb-492c-bdea-89db80a785da" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="4a4d6ddd-21fb-492c-bdea-89db80a785da" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="074154e6-9f49-4f89-8d43-2570bb306954">
             <field Id="7399d89c-0e4f-46be-b497-179377c5b428" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4175,7 +4175,7 @@
             <field Id="ea5c0922-ae8e-4c93-ba4e-01503c6c8238" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="29cb9f3c-b513-451f-aa06-50e5137bc2d7">
-            <field Id="afee9665-f2d8-47ca-ac05-4f8555216f93" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="afee9665-f2d8-47ca-ac05-4f8555216f93" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7ad0440a-78ab-451d-9655-99a480dbf5c7">
             <field Id="8a7e4e34-e656-4786-b8fe-526ba720b871" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4237,7 +4237,7 @@
             <field Id="cd6e2d02-5f2e-4af6-b7c8-bb1de6d9620d" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7674ecd7-0fb8-4548-9ff4-62f99c0ec199">
-            <field Id="1b8dfb5b-c03b-4250-8576-0a22976f5e3f" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="1b8dfb5b-c03b-4250-8576-0a22976f5e3f" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="02944292-4d08-4798-97cf-5f08bfa8619e">
             <field Id="d8012c10-fbe0-48fe-b6fa-a18380a74565" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4278,7 +4278,7 @@
             <field Id="67baaf54-5001-4969-9f24-26786f39df81" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c288af5b-a0b9-4438-8701-744ef710149b">
-            <field Id="fbec8a53-75b0-4b62-bc83-bda481467560" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="fbec8a53-75b0-4b62-bc83-bda481467560" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="39deeb61-fce3-43ee-82b1-7b9db317ac25">
             <field Id="3f1bb06d-2dee-4799-8ea2-654016d742bc" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4327,7 +4327,7 @@
             <field Id="03fd0feb-4a2a-4844-a422-cf2c098ce8d9" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f440521d-6981-4bda-9180-8467512b75c6">
-            <field Id="c038c710-738a-42c5-bccf-90f5adfa76cc" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="c038c710-738a-42c5-bccf-90f5adfa76cc" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="951456ae-ae24-4444-9fa8-66b1eadf77cd">
             <field Id="54d95947-d7df-45c5-9d66-e17ffcea83c0" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4379,7 +4379,7 @@
             <field Id="bf11be42-92ed-4c71-8f57-4f8b6a86d663" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="e6b963cc-3cc1-48c0-bab3-0372a6aef5d9">
-            <field Id="d7f22770-f7bb-4986-860c-0a485ccf752d" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="d7f22770-f7bb-4986-860c-0a485ccf752d" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="979e797c-74b2-4798-937d-61a80dd73d5f">
             <field Id="cdb195b6-3a52-4f8a-b28f-617bb05f8532" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4428,7 +4428,7 @@
             <field Id="b5e06311-bd09-4837-810e-e28a6e6cb574" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="266d98b3-51fe-4e59-98cc-82443eb3ab13">
-            <field Id="ced2a965-ba4d-4ee3-b9ce-a0a509c64cc1" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="ced2a965-ba4d-4ee3-b9ce-a0a509c64cc1" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="30924d78-4215-45e0-b4e8-89e0f1594412">
             <field Id="f87857a0-7c00-421b-baa1-d5acd5f8df0b" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4477,7 +4477,7 @@
             <field Id="3d014fc0-5c3f-4544-9a20-ab840b8d0734" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="e02cde60-17e1-48e4-94d4-98f73183a3bb">
-            <field Id="8502ed3a-0da5-4d78-8d76-492fadcd21d4" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="8502ed3a-0da5-4d78-8d76-492fadcd21d4" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d825d075-9311-4ddb-9858-3eee18a01014">
             <field Id="15dc95b9-3c05-4e79-b7f3-38b5275f9f19" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4529,7 +4529,7 @@
             <field Id="c7ae8f4c-66f3-4853-a351-97401d12d57e" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="071e61ef-05c0-43ab-a4de-0afade0ab3d0">
-            <field Id="fae9358e-cc3f-4f58-9082-8bf43732f90c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="fae9358e-cc3f-4f58-9082-8bf43732f90c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c1209eb8-78d7-41b7-be69-abfd9ca6e3b3">
             <field Id="00ea283b-81b1-43c7-8b3b-8b104fff86cf" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4578,7 +4578,7 @@
             <field Id="cc80bb9d-81cd-479d-b1b5-e404dbaaf5f4" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a8a0be19-bac2-4281-8f02-5cfa96464184">
-            <field Id="30fec8c3-8ca4-467b-875e-45aa985e7ddc" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="30fec8c3-8ca4-467b-875e-45aa985e7ddc" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="425b82e7-4689-4e42-876f-90b065941895">
             <field Id="833ba954-f48b-4538-ada0-e067c4e539ad" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4622,7 +4622,7 @@
             <field Id="880d1e9c-a77a-4f9c-80d4-431d99a56ea1" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="e99b2b3b-8b11-466a-9ca9-c78643abeeb5">
-            <field Id="d06474bb-efcd-4634-b163-718ad1390775" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="d06474bb-efcd-4634-b163-718ad1390775" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7c737154-d3e2-486d-8fd5-4c53ffadc566">
             <field Id="e46f1f3d-3de7-475b-8135-fe8796463061" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4662,7 +4662,7 @@
             <field Id="92ba140e-5aab-4c69-b5a3-27befd07ea3b" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b0542d3d-fdc7-4a48-be21-b07e48c0e177">
-            <field Id="b2b2dd17-362e-4ae6-ad05-6f6c493ca77b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="b2b2dd17-362e-4ae6-ad05-6f6c493ca77b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="811a3f5d-33de-4aa7-b0e3-c660e8dda22f">
             <field Id="828c497a-5357-4f7f-bfd7-cb5890967f33" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4705,7 +4705,7 @@
             <field Id="0a9b982d-7891-48f4-b8db-a80ecc5d504e" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7a9f57ae-d054-4dfd-9251-4339a24acc53">
-            <field Id="1faf3eca-9b0d-4dbc-af85-711e07ed1f19" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="1faf3eca-9b0d-4dbc-af85-711e07ed1f19" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b21127b4-1811-409f-bf5a-34ac7b0cc1ea">
             <field Id="c4cc6669-d1f0-4070-83d5-7213b0f8b235" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4738,7 +4738,7 @@
             <field Id="6ed37afc-d2c0-4c8b-a47b-3663c90f4503" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c684808e-629a-4e7b-b411-2fa0cab4990f">
-            <field Id="541dfb0b-150a-44c0-b1b7-d8853fe527ba" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="541dfb0b-150a-44c0-b1b7-d8853fe527ba" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7e48217d-dcc5-42b9-91fc-c6c578ad6b7c">
             <field Id="096edd04-2ff1-41fa-a2c3-1a1618194007" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4787,7 +4787,7 @@
             <field Id="5bf06b82-28b5-451d-8f3d-ec769d34fee7" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="944f2325-38d3-491e-a321-6ec3d0bf2e69">
-            <field Id="a6d8c4a7-6d85-4820-9fc0-abe721c1ce0e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="a6d8c4a7-6d85-4820-9fc0-abe721c1ce0e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d8f9b569-4068-461c-bd77-61fc31236341">
             <field Id="f13791b1-8f56-4e9b-8e17-558db927bf8b" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4836,7 +4836,7 @@
             <field Id="e1ba9b1f-c7f5-4242-80d8-b74a91ca7ecb" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="9c10a17d-1877-42e1-af94-1c0f2167ae8e">
-            <field Id="763ca8e4-880b-4a40-8bd3-3ea6efc8bc7a" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="763ca8e4-880b-4a40-8bd3-3ea6efc8bc7a" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="8a5f1a21-1eb8-44bb-8b49-ca669b3bfce5">
             <field Id="e8b5b196-0973-4e77-a2f9-2feb7826a770" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4885,7 +4885,7 @@
             <field Id="a9fbe3e5-f563-4c94-87a7-299ec0fe1be5" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="4dd432ce-ad33-48e3-b942-4306e776f9d9">
-            <field Id="7f75d033-eb3b-4d80-989d-4a58b620405a" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="7f75d033-eb3b-4d80-989d-4a58b620405a" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a6998d1b-688b-4ac3-8e06-24a510aeeff7">
             <field Id="3891ef15-238e-4400-aee1-d4e6cc16dfda" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4934,7 +4934,7 @@
             <field Id="99e6ca2c-472f-445e-8c2c-88c42b7d4114" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2cfa218b-7009-4164-a51e-bdae4c1e9165">
-            <field Id="f2d0c412-f922-46a6-982c-215a2a3fb486" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="f2d0c412-f922-46a6-982c-215a2a3fb486" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="47099e1c-e1ab-487e-8a4e-1617bada39c7">
             <field Id="e80fdef9-00ab-4b0d-9cd4-f09839753fb4" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -4986,7 +4986,7 @@
             <field Id="3a71c5d9-eb55-495e-a594-2f4daf60867e" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a3021b9b-4352-4c67-8719-d1e4b9982b7e">
-            <field Id="19e1f54a-adec-4438-a054-d75cc2942c4b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="19e1f54a-adec-4438-a054-d75cc2942c4b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f414de89-64fc-4874-9fcb-911c36f3c8dc">
             <field Id="9da3c822-faa6-4755-a671-00c3abb98420" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5041,7 +5041,7 @@
             <field Id="b3d56155-c816-4268-b0d4-52b8d731973e" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f530d060-0f29-4d49-a348-94fe6d6d38ec">
-            <field Id="cf778344-f1f0-446b-a2c4-013b27dd6fc3" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="cf778344-f1f0-446b-a2c4-013b27dd6fc3" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c34b5f33-b775-45fc-9a31-f851552d627a">
             <field Id="eeb64914-aece-4a2f-817d-9e40a257dd85" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5090,7 +5090,7 @@
             <field Id="64a0f1e1-c38d-4087-8188-922dc15bb731" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7e9705a9-fa6f-4619-8137-a3f62cc9ea7c">
-            <field Id="47267516-8e6b-4cd5-922a-4bb89e5b2e19" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="47267516-8e6b-4cd5-922a-4bb89e5b2e19" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="199e136f-7507-48e4-90c2-5db8503296ea">
             <field Id="99161a9b-30ec-4728-8258-070125399f81" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5139,7 +5139,7 @@
             <field Id="b0992aff-0271-4c1a-b816-5a49ddfbf31c" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d0b67954-346a-475a-8e32-9c49224b770f">
-            <field Id="c1bccf54-6bc8-471d-8816-5b5403757e78" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="c1bccf54-6bc8-471d-8816-5b5403757e78" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="31554630-d57c-4320-9d2e-83404a242e07">
             <field Id="6e4586d8-c2f8-42a3-ba8b-db2a94f6bbc5" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5188,7 +5188,7 @@
             <field Id="e735d5a4-ce6b-4822-a967-c8f2c9628b8d" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6de2bed4-324b-401e-9642-c10158a9b4ec">
-            <field Id="5704af0a-0008-44d8-a892-a9286bccc89e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="5704af0a-0008-44d8-a892-a9286bccc89e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d411e71f-e660-460e-b6d5-d6ef505291c0">
             <field Id="cbaf2683-1abc-4a4e-acf2-4e19aa32bdcb" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5237,7 +5237,7 @@
             <field Id="7b6c66e7-e254-40ef-937e-803fe31b8a25" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d915a9db-bd41-47f5-ac0a-76d5b1b52f07">
-            <field Id="93d0d0b9-90ee-46b7-b869-da5821e9205c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="93d0d0b9-90ee-46b7-b869-da5821e9205c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="ed70ac41-410d-4b1f-9e4f-3643b283d8e0">
             <field Id="bbd407a4-b291-4ac6-a1d5-d3a0df303283" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5319,7 +5319,7 @@
             <field Id="3a5a69f1-1ff5-4edc-9deb-35419fcbb0f1" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="281e2b2a-f649-4aba-9b3f-7e873a370e04">
-            <field Id="f78bc174-4790-49fc-927f-b7a9cd56d115" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="f78bc174-4790-49fc-927f-b7a9cd56d115" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="ab856018-cccd-4558-8eb8-03baa2092f2b">
             <field Id="a3560d98-7ac8-4ecb-be82-73162bd939a1" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5365,7 +5365,7 @@
             <field Id="35f4e3c5-de33-4548-b3c4-64633a229635" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6b301db5-91c7-44a4-8610-6edf595e0e24">
-            <field Id="69dc3521-6911-49f0-ad8e-44d84af96629" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="69dc3521-6911-49f0-ad8e-44d84af96629" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c17f0e51-a869-4ed4-aaa5-930d99efb6c1">
             <field Id="633b1fbd-047c-4a3f-ae96-4e27e2bb81dc" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5398,7 +5398,7 @@
             <field Id="9336e780-7620-4ba6-87b0-040733bb2c76" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2b60463e-b2cc-4726-b434-560c367da74a">
-            <field Id="9f6d9209-d536-476f-9a9a-d5b43eac650c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="9f6d9209-d536-476f-9a9a-d5b43eac650c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a01c5fe2-ef17-41d3-9762-5096d1c6e84b">
             <field Id="b4c9da2a-bab1-4ce1-8e38-a3bfd8b3e2f0" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5447,7 +5447,7 @@
             <field Id="8b018c1d-3459-494a-9e00-743b81e28f3b" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3eb0c400-0e6d-44b2-b08e-050cb20c5fe6">
-            <field Id="efead2d4-7c90-463a-9f0e-032048b597ad" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="efead2d4-7c90-463a-9f0e-032048b597ad" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="65b29cd0-fa45-401e-a91c-63b2ba7c704a">
             <field Id="93245f32-a399-4e54-8304-4ba4ae21eb34" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5499,7 +5499,7 @@
             <field Id="8536ad15-e43e-4797-8dcb-42a978c6661f" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="aff20627-ef17-41e6-83d7-d2cb04c81aca">
-            <field Id="3da55909-4b6e-41cb-ac3a-23f88e74352e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="3da55909-4b6e-41cb-ac3a-23f88e74352e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a1f6ceac-700f-4aa2-878c-0dbec7984ee7">
             <field Id="a78e24c9-101a-450f-a53a-36a6a3a04059" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5548,7 +5548,7 @@
             <field Id="4afb6eda-432e-4f41-bca4-acd3929b5722" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="8b2104db-20de-4d4b-b39b-0069b23745de">
-            <field Id="75d744a3-6f56-4f6b-b11d-bb4d72c48243" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="75d744a3-6f56-4f6b-b11d-bb4d72c48243" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3ec48f61-784d-42cf-83c4-063079090a8a">
             <field Id="aceb8c07-d8ff-4fad-8c77-e92901e17cec" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5597,7 +5597,7 @@
             <field Id="166cb627-6fb3-425c-b75b-20e90a91f557" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="5d898456-76c9-4227-801f-2d4d533d64a5">
-            <field Id="7ac03070-f83f-4c92-aa12-67261d4a08f2" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="7ac03070-f83f-4c92-aa12-67261d4a08f2" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3c834422-8f9c-46b2-9ea8-cf00d392ca64">
             <field Id="e6e28c11-2b6c-4abe-b920-92536e04163f" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5646,7 +5646,7 @@
             <field Id="c5fb8c7b-4b6f-4dac-a7d9-10c2604143b4" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="af35558d-6e55-4a3a-ae0d-4749e59f5c50">
-            <field Id="5d2eee9e-79e6-41bd-b49b-e8b6638b8113" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="5d2eee9e-79e6-41bd-b49b-e8b6638b8113" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="e2bb914c-2a34-41bc-a30a-25e608e73a07">
             <field Id="69551439-414a-4baa-8da3-1315813bb0ad" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5695,7 +5695,7 @@
             <field Id="7fea7845-1a5e-457f-8d92-b72552434ad8" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="0895604f-155b-45ca-a9ab-cce3643f5984">
-            <field Id="2099ac1e-6f62-49b8-994a-c2d4a08d619d" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="2099ac1e-6f62-49b8-994a-c2d4a08d619d" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f86f3025-0842-4306-a3e9-55350bfa06df">
             <field Id="251af588-a894-4473-bf2e-1c931fd5b61b" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5744,7 +5744,7 @@
             <field Id="54147cfe-6bba-49fc-8a84-b4a37637fb29" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c24f0c15-95ca-448e-88e4-aef75d3b8dd6">
-            <field Id="6cfc3ead-29bb-4b97-8994-5ea9508f7837" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="6cfc3ead-29bb-4b97-8994-5ea9508f7837" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="02b8e255-1509-4424-8aed-14b8ff9cf8c0">
             <field Id="94980b2f-d5c2-4d1b-9b21-93349f09f1b8" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5796,7 +5796,7 @@
             <field Id="92726590-8295-4c2d-acde-194fa90016c7" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2d7125ac-508b-4a36-bc5e-a5b27e592e17">
-            <field Id="037793a5-4f5d-4407-8765-4ef2e2d76018" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="037793a5-4f5d-4407-8765-4ef2e2d76018" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="bca675dc-4f24-49e1-a8a8-e95bb4ce1e02">
             <field Id="7c733d2f-49e3-41f4-bee7-5be0b1f27629" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5845,7 +5845,7 @@
             <field Id="0eaea850-48f2-4aca-a445-1eb8d237b9a4" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="17af50b7-5275-4269-a7cc-d88b3b64fd28">
-            <field Id="f04f918f-11c4-41af-8a03-b0ebc088a735" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="f04f918f-11c4-41af-8a03-b0ebc088a735" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b72227d6-0f17-482f-9d82-792c2284a71f">
             <field Id="b7137f36-a40b-469d-8b49-61514acd0476" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5894,7 +5894,7 @@
             <field Id="d676f47e-91ca-4146-af34-a3fb5b7538fc" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="31e7fbba-1d4f-4746-b1dd-eaa676eb1e27">
-            <field Id="271ea2b2-f619-49d4-addb-b7f14fca36ff" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="271ea2b2-f619-49d4-addb-b7f14fca36ff" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3d038705-9396-44fc-9a3a-e1505704a70e">
             <field Id="e1f3ef07-fe00-464c-b86a-3964740ac280" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5943,7 +5943,7 @@
             <field Id="54985c65-1591-4d97-9e08-16fa5a7c5302" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="8dd38e88-b1df-4d61-9342-5a23d9d3802d">
-            <field Id="c759c1a5-918d-4b3a-b48d-44e2688b2841" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="c759c1a5-918d-4b3a-b48d-44e2688b2841" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3d6cc4fd-5d42-44f9-ab37-ba3e4c783d2c">
             <field Id="6a2e418d-750d-4bee-8a83-b57ca472cd5a" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -5992,7 +5992,7 @@
             <field Id="06cfb2f1-5634-4493-8c39-386311c06cff" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="becca3ac-b6a0-41ee-93be-eba06cab98a5">
-            <field Id="64cd7048-6f63-4267-b1d4-f3d349e44814" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="64cd7048-6f63-4267-b1d4-f3d349e44814" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="9b38ec03-aa2c-44d6-b67d-0eaf1c144268">
             <field Id="4475bda2-6016-4aa9-b118-e0767e5ba06b" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6041,7 +6041,7 @@
             <field Id="5de549d3-9684-4cb1-843c-210cac34f368" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="4acb5b82-465f-45d9-942f-1e3359afc1cd">
-            <field Id="d9caa35f-605b-47f1-a32a-6dc4a90de438" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="d9caa35f-605b-47f1-a32a-6dc4a90de438" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7934057d-9e0c-4e35-9bd0-83bd7a545f48">
             <field Id="a55c6a9b-c276-4423-8dd2-4b6042f6461e" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6093,7 +6093,7 @@
             <field Id="acea0307-3489-4158-a970-6ac3bab1042a" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2eda797d-30a7-42df-af81-f78add98b4ac">
-            <field Id="52714bf0-f1b3-453e-a3c3-563256f0cba4" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="52714bf0-f1b3-453e-a3c3-563256f0cba4" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="bfe83f82-2e58-4e69-8fac-48e4df33ae03">
             <field Id="2947adb1-4fe5-4c96-9dea-c43d8f81eb17" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6142,7 +6142,7 @@
             <field Id="db88c5db-c68c-4b58-90f3-347e6ac25590" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3292d095-ba1d-4cf0-a34c-ed1523e6cb0a">
-            <field Id="af4d7daf-d361-4de3-a97a-b343b8e18503" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="af4d7daf-d361-4de3-a97a-b343b8e18503" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d924838a-73be-41cb-9ce6-5a2f840108fa">
             <field Id="444dd2e9-aba7-45f9-944a-b87bc75d8808" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6191,7 +6191,7 @@
             <field Id="ef57c49b-424d-4344-9f40-dc94e283cf5c" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2a19651e-1f35-4760-8eea-413f4adab95e">
-            <field Id="50bebdfb-548f-4a8d-b27c-5ac6fc67ff3f" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="50bebdfb-548f-4a8d-b27c-5ac6fc67ff3f" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="e84455fb-5b59-4e6f-9966-9fafafedd536">
             <field Id="48978b2c-01e1-4fde-b2d6-02956400659f" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6240,7 +6240,7 @@
             <field Id="a230b6a6-03b2-4d1c-9f45-01f36e6f0b91" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="deea68e9-5fc5-476c-b7b2-83b7fde02b84">
-            <field Id="8479674f-ab83-4acd-b32b-598ba8262761" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="8479674f-ab83-4acd-b32b-598ba8262761" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="9bd8d3b3-bef5-41a8-94a6-c5ac06f9ae15">
             <field Id="ad6ad6b7-a24b-4d4a-893e-8ef3c704ebe3" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6289,7 +6289,7 @@
             <field Id="3a4329bf-10c1-4270-b998-6cde5c339065" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="61383a49-fe8e-4ecc-a241-fe203e927aa0">
-            <field Id="cc59ed43-244e-41dc-ba8e-593b161a8a5e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="cc59ed43-244e-41dc-ba8e-593b161a8a5e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="88cc8969-23ce-45f2-8802-341d8f2e05ab">
             <field Id="f6fbae05-fe91-458b-ac9c-38955386e919" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6338,7 +6338,7 @@
             <field Id="0739bddc-b4c2-4fdc-8a2a-8b9d628aee6f" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b6218313-f39d-4532-8b1c-59e7a89838f8">
-            <field Id="b31ad24f-7f55-45c3-9552-42e61d98498c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="b31ad24f-7f55-45c3-9552-42e61d98498c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="fcb8b2b1-c38b-40a4-887a-3b7d0c57b714">
             <field Id="bf1828c5-1479-4faa-81b2-e4341e5618b4" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6387,7 +6387,7 @@
             <field Id="f2d16a86-e500-4c1d-a56a-bb1f0e63dc46" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="fdce66e7-e84b-4d2a-a6c7-dd644cd9e9f7">
-            <field Id="d8ae92f7-f4de-457b-a8e2-827ec5dbe326" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="d8ae92f7-f4de-457b-a8e2-827ec5dbe326" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6b831394-ff73-4eb1-8109-1273c1fa0fb4">
             <field Id="b2f94c27-bc6f-4a8a-b19f-215410c83476" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6436,7 +6436,7 @@
             <field Id="526de3e8-da06-42db-ab1d-fd3124593406" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b0a33a93-778e-4a92-a196-b76bec1d234e">
-            <field Id="4a84bb5e-cd86-4ac1-90df-119ee6472212" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="4a84bb5e-cd86-4ac1-90df-119ee6472212" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2dfa1d24-a327-49c8-9dda-688a665f4d94">
             <field Id="4dc7b971-d054-4a76-8de0-a351884ffd57" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6485,7 +6485,7 @@
             <field Id="e5718bc0-0d47-401b-a8ff-591e755a879f" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="0a95b93b-a1d1-4944-b91e-aa2a15439584">
-            <field Id="66022ff4-a199-412b-bf9e-65cc10b589bf" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="66022ff4-a199-412b-bf9e-65cc10b589bf" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="9afbba7c-5b05-4101-ac57-c10d48da9896">
             <field Id="d3d519a1-5799-46af-9f00-7637cf520fb1" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6534,7 +6534,7 @@
             <field Id="84e48e88-598c-42ff-b46d-714c69e46118" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2dcdbcd6-4418-404c-a49f-4e810bf9953f">
-            <field Id="86c93a9e-7184-49a0-b604-37c9ee3d90d9" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="86c93a9e-7184-49a0-b604-37c9ee3d90d9" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="753ace49-3ca2-4193-8fe1-461320527125">
             <field Id="f71021f4-5497-4904-a172-5c4aeadb88f3" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6577,7 +6577,7 @@
             <field Id="5709b030-794d-452f-b8fe-cc72bbc89584" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c3ec0a1a-f464-4203-a226-a53ad57b4977">
-            <field Id="e3d70015-dd81-40c7-8d49-a31db6630f4e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="e3d70015-dd81-40c7-8d49-a31db6630f4e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6eccc246-149a-4a20-af1c-d7f14ee85097">
             <field Id="ee666f71-4335-485c-9412-39f829ac651f" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6620,7 +6620,7 @@
             <field Id="66843af1-1c17-47f6-858b-77801c262c13" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2445108c-8844-4f96-8b8c-07e87cdceb8a">
-            <field Id="2aba8739-375e-4a3e-99fc-aef56e11b537" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="2aba8739-375e-4a3e-99fc-aef56e11b537" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d464e3b1-6b35-4512-bf13-083c577f81ce">
             <field Id="85db2482-4e37-4a05-a415-b930c5a82bb4" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6653,7 +6653,7 @@
             <field Id="503aa0f1-c00b-4e81-b593-b894c3d0da32" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a4921095-255b-4e7d-94c3-917fd7c252ee">
-            <field Id="36d353de-b63a-44c6-b4fc-870165f9da00" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="36d353de-b63a-44c6-b4fc-870165f9da00" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a1ec6977-cf04-409d-bdf1-296f32ea5b06">
             <field Id="6a0f89fc-0864-4324-8ee3-9c62774eb8d3" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6702,7 +6702,7 @@
             <field Id="b9309de4-7c2b-4c61-b7a4-9343d5584c53" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c5eba938-92a8-49c5-8d24-9524cc5da7ad">
-            <field Id="d8fb4b7c-0463-4bf1-be2a-0e1f1da54466" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="d8fb4b7c-0463-4bf1-be2a-0e1f1da54466" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="4d5bbda6-12aa-4957-a0b0-02ce01a533f9">
             <field Id="f234fa9b-38f9-43fd-8fd9-c4c9837c100a" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6760,7 +6760,7 @@
             <field Id="bfa4b071-da69-4e76-be31-d8d34f2d21e1" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a546b20f-2f39-4dbb-b8c3-baead9eae737">
-            <field Id="c5ccdfdb-52aa-4d2a-81ef-97614ddddd5f" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="c5ccdfdb-52aa-4d2a-81ef-97614ddddd5f" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b4276094-a16e-4b5a-ae98-038f779d17a9">
             <field Id="5e3dc578-ea4b-4e40-a495-b5e1c7c9653c" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6809,7 +6809,7 @@
             <field Id="af0ed488-5381-4860-b87c-1f231157d0ee" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="9f08d50b-7717-40b1-b106-128225ca1928">
-            <field Id="a937ce0c-41b2-4be1-8077-707232753024" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="a937ce0c-41b2-4be1-8077-707232753024" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c6071dfc-b69c-4ad4-8e0e-d8ff01e4ee3f">
             <field Id="bafb48cc-d8df-42b4-89bd-c6a51b9ed28a" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6861,7 +6861,7 @@
             <field Id="a7a9b63a-4537-442b-b2c2-f330bbc8910a" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f0105ba3-a6f1-40ab-aa1d-94946ec9f647">
-            <field Id="552e1776-b1b0-4684-a3e0-1afc2a853ebf" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="552e1776-b1b0-4684-a3e0-1afc2a853ebf" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="9ad09070-d259-4eef-8f86-4dba8874315e">
             <field Id="23e71c60-d5de-4d7e-bd72-6921db2cd815" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6913,7 +6913,7 @@
             <field Id="d6d080ad-bb0a-4620-bdd1-040af609bfe0" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="adc23d9c-a609-4456-ab58-daee922b27e4">
-            <field Id="51591fa8-6a1a-41ff-9b0a-bc19d27306d1" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="51591fa8-6a1a-41ff-9b0a-bc19d27306d1" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="af09babf-ddf5-4cfc-b928-57c49d0c9b29">
             <field Id="8fad536b-b297-4634-a412-1121ee33d7d5" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -6962,7 +6962,7 @@
             <field Id="f8d92fc8-d187-4e7a-bef8-9d9db176762f" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b0d9b466-7373-49f7-abba-4abdf766b23a">
-            <field Id="df27aebe-d86b-4818-9233-c5de3bf076fb" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="df27aebe-d86b-4818-9233-c5de3bf076fb" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="963cee76-27fd-4653-a24b-ec1fef17a1ea">
             <field Id="bc74ddbb-a9f9-4d00-9e8a-f1635463e45b" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7017,7 +7017,7 @@
             <field Id="f5c02cf5-fc1d-4a90-89ab-9fb8394e8f44" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a16acd6b-0c69-4604-ba39-263fc923752f">
-            <field Id="8afe6040-4c28-4526-b690-f72f776786fb" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="8afe6040-4c28-4526-b690-f72f776786fb" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f1077abc-0539-475d-a9bb-eb8873fb98f1">
             <field Id="d6d2702e-2894-48c5-bfec-ff70b12b64fc" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7075,7 +7075,7 @@
             <field Id="a3976f8f-cf9a-4f1e-8446-72bf9dd5cdbf" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d0398eb9-147a-46b9-aa26-bce5b2592a9d">
-            <field Id="b5b43478-464e-4024-b493-c3e120e803af" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="b5b43478-464e-4024-b493-c3e120e803af" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="f2f74e53-3360-4fa2-a1ef-45a6913fc1b3">
             <field Id="f0b5a6b1-1a17-4cae-b53c-d86c02dffeda" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7130,7 +7130,7 @@
             <field Id="1d5bb5aa-85e0-4419-ad78-b9f8c939b081" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d8b2377d-4be3-4c54-9254-3c4fe5acf792">
-            <field Id="e9e869e5-6e18-41b7-bb4c-23f1c498522d" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="e9e869e5-6e18-41b7-bb4c-23f1c498522d" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b567045c-97d2-4e13-a86c-162c532ad851">
             <field Id="886db8d1-3f4c-4e8f-9c89-14fff811c6ef" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7173,7 +7173,7 @@
             <field Id="8bda8ab7-72e7-412f-8648-8d780a856979" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="35d9deec-350c-4758-ba2c-91e89529e954">
-            <field Id="a984359d-ce13-45e7-a459-a3f7c4da96a1" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="a984359d-ce13-45e7-a459-a3f7c4da96a1" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="9dd9609d-2cbd-45a1-a46b-27957e8ccbd7">
             <field Id="6ef5489c-5a40-46f1-bbc5-99cfb39c8eb7" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7206,7 +7206,7 @@
             <field Id="cfc43ba2-3f35-4587-bb73-030455537d11" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7564ee69-cf14-40d6-a068-702d0e91e0f9">
-            <field Id="036279a7-6c08-40fa-9af3-6c1e136b2ec3" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="036279a7-6c08-40fa-9af3-6c1e136b2ec3" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="baa1734a-2c9f-465d-9793-1fab2fb56fba">
             <field Id="7aed3e2b-4bec-4401-a515-040ba227ef58" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7258,7 +7258,7 @@
             <field Id="442aa9eb-a5db-4e71-8930-5961c86c084c" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6cdc3ffb-9f6d-4beb-b9cf-aad0200e9234">
-            <field Id="244e503c-eb2d-41c2-a543-c7ab6a6a615b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="244e503c-eb2d-41c2-a543-c7ab6a6a615b" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="46a8cd40-62cb-4cfb-b05a-de949a9e90eb">
             <field Id="aa4a43a0-d505-49c7-b530-98e9101f4ed1" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7307,7 +7307,7 @@
             <field Id="af111c1b-0bb7-48ba-b519-87cad90a0c4d" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="5567687b-363d-4142-819a-4837d7bc15a1">
-            <field Id="2f105ae4-a511-4829-aed3-c379accf3108" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="2f105ae4-a511-4829-aed3-c379accf3108" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="3395de59-d824-490f-a73f-7839921fcdee">
             <field Id="23ba442c-a4e7-4d90-919a-b9f9a62e0dac" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7356,7 +7356,7 @@
             <field Id="8e84da22-e758-4492-9b1e-d5cde3110ae7" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="38e8f388-913c-4586-842c-7abf6ac504b2">
-            <field Id="c8da4cbd-3ac3-46c2-a831-b5e185f771a9" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="c8da4cbd-3ac3-46c2-a831-b5e185f771a9" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="0befb459-4b09-4cd2-b436-21169d528b1c">
             <field Id="8c3a0db3-a592-4505-b406-3c4c626a837b" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7405,7 +7405,7 @@
             <field Id="eea151b3-1718-48ec-b6d4-e00ed6f4b013" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="a85b0372-9f35-4614-99f6-bc6f52e75b1f">
-            <field Id="3c67f1fc-6a9d-42d3-8490-b1496dc94896" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="3c67f1fc-6a9d-42d3-8490-b1496dc94896" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="c8ca4817-9c71-48f4-8210-06f3e81769fa">
             <field Id="1e4f73a7-f47a-49e6-bc94-ba2cc716bb93" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7454,7 +7454,7 @@
             <field Id="98b26b22-6276-4178-93f8-f0bafb10af8c" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6fe43d01-c788-461e-be89-a5bd3bae6d07">
-            <field Id="4646cd31-3b48-46e8-a51f-1ce760f8507c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="4646cd31-3b48-46e8-a51f-1ce760f8507c" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="2e9267a5-dd23-4e5f-a179-56f48d4ba5ae">
             <field Id="2ab3b665-0610-4f73-ba0c-f6d03cbd1bf2" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7503,7 +7503,7 @@
             <field Id="3c33350e-cf7d-410a-864d-d26a09dda711" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="6e7a43c0-88f0-47de-8646-50ed17bafbce">
-            <field Id="492d3ac2-d2f4-4bb4-8d76-65a2edf44c2e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="492d3ac2-d2f4-4bb4-8d76-65a2edf44c2e" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="46a92cb0-206f-492f-9254-b17ec237eacc">
             <field Id="487d12bb-c8f9-4762-99f3-315c7a916db0" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7561,7 +7561,7 @@
             <field Id="93a49c7f-c986-4bd1-a210-0485a51eda00" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="fe830e2e-54d6-4f5c-a51b-abbe61705d78">
-            <field Id="1c6287a0-a828-4f1a-a3bf-990116fa2897" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="1c6287a0-a828-4f1a-a3bf-990116fa2897" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d615ae19-210d-4e60-b865-f649180bc873">
             <field Id="21c99b31-a6cb-4fdd-8983-f8cd9d69025e" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7604,7 +7604,7 @@
             <field Id="1340ba81-ca98-4645-9a23-ed10dc191bc2" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="5e992acf-b64b-4d86-a06b-1638ed80b2b2">
-            <field Id="1d1b8cf2-95f6-47c6-bee2-a13d50fda0cf" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="1d1b8cf2-95f6-47c6-bee2-a13d50fda0cf" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="0ef4eb9b-7bcb-45cf-884f-d36d1c508569">
             <field Id="62a3fae8-9108-4247-9ba3-9a4fda0b9ec3" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7642,7 +7642,7 @@
             <field Id="cb049acd-c339-40c6-b29c-fd0c2b9b2686" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="8d550f76-18bb-419f-8f02-9dfa6983d8d8">
-            <field Id="469fe174-4c24-4223-a8b1-fac69c663348" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="469fe174-4c24-4223-a8b1-fac69c663348" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="40f7e287-31f6-4b86-9c8a-2f4a8a795f09">
             <field Id="a7194212-cae8-4ac2-8720-e76109312135" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -7697,7 +7697,7 @@
             <field Id="982f01bb-eec0-49ad-8c1a-add3a03c6ab0" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="75f06892-1cc2-4759-b44e-16b5343c5bf1">
-            <field Id="26680b5c-aa6f-4725-a8a1-3cb580696f52" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="26680b5c-aa6f-4725-a8a1-3cb580696f52" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="0b36bdd3-0cc5-4909-8114-2e1fed4197dd">
             <field Id="0a93e7f8-66ff-4dbd-b85d-43140d3e4345" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -11256,7 +11256,7 @@
             <field Id="78c8814b-3243-473a-bf01-48c20ec76770" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="7b64b8fc-2ed8-4474-8092-a784438a1084">
-            <field Id="75b33fb8-9f3e-4530-8cd0-7d354ba167d1" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="75b33fb8-9f3e-4530-8cd0-7d354ba167d1" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="40cf7ee5-1f78-4ee0-9ece-0c5146861ec8">
             <field Id="18725bac-6784-454a-9021-beb92310d031" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -11294,7 +11294,7 @@
             <field Id="4a2456ee-7f17-42a2-9fb1-6ceadfe41a03" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="91bdba2a-9680-45b4-b7ca-343d434ce2b5">
-            <field Id="f6d0ab46-280b-4ddc-b6c2-1642332dabfc" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="f6d0ab46-280b-4ddc-b6c2-1642332dabfc" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="d66b3df8-9d7b-4f77-8b63-1274f6f4a653">
             <field Id="11f7012d-d95a-4bcc-b6aa-6ac43b8d5007" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -11466,7 +11466,7 @@
             <field Id="770b3436-6e91-4fcf-b15f-68348077f5f8" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="aee2f824-60e1-469c-b5b3-54a7ddc6f4fc">
-            <field Id="345c6390-1d65-4b25-8832-d887e8219545" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="345c6390-1d65-4b25-8832-d887e8219545" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="0f275800-8c93-4bbc-b2a9-350325ca95d1">
             <field Id="aec56272-d6a6-4ab9-8b3d-0923d324347c" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
@@ -11528,7 +11528,7 @@
             <field Id="99460c3c-0ca5-443b-a928-f5422a9e5cb2" name="FullDescription" persistent="FullDescription" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="5a609775-19aa-4137-aee3-6875773aaacf">
-            <field Id="b1ddbd0b-19e6-47d5-9d70-c026a99ca3bc" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="b1ddbd0b-19e6-47d5-9d70-c026a99ca3bc" name="Thumbnail" columnType="ByteArray" persistent="Thumbnail" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="b8d4feec-d59f-44d9-9d16-7b5e5aae2f26">
             <field Id="17b9f40a-2946-4ea2-bb83-3fde871316c8" name="OriginalFileDataID" columnType="Guid" persistent="OriginalFileDataID" virtualColumnType="FileData" logicalType="FileData" delayedUpdateModifiedOnly="false" />
