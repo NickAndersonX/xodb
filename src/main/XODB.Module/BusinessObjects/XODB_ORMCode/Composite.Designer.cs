@@ -103,12 +103,11 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fHeaderID; }
             set { SetPropertyValue<Header>("HeaderID", ref fHeaderID, value); }
         }
-        AssayGroupTestSample fAssayGroupTestSampleID;
-        [Association(@"CompositeReferencesAssayGroupTestSample")]
-        public AssayGroupTestSample AssayGroupTestSampleID
+        Guid fAssayGroupTestSampleID;
+        public Guid AssayGroupTestSampleID
         {
             get { return fAssayGroupTestSampleID; }
-            set { SetPropertyValue<AssayGroupTestSample>("AssayGroupTestSampleID", ref fAssayGroupTestSampleID, value); }
+            set { SetPropertyValue<Guid>("AssayGroupTestSampleID", ref fAssayGroupTestSampleID, value); }
         }
         Casing fCasingID;
         [Association(@"CompositeReferencesCasing")]

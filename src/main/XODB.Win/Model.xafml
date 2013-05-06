@@ -32,23 +32,12 @@
     <Items>
       <Item Id="@48f3c81d-8c1e-4e84-8916-d16aceb63521" Caption="Business" Index="0" ImageName="BO_Customer" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="@75da2b05-894a-4d32-9e76-3c97b6c8e11c" Caption="Contacts" ViewId="Contact_ListView" Shortcut="" Index="0" ImageName="BO_Category" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="@7a014773-d505-47e2-949a-9719cbe0fd4f" ViewId="Worker_ListView" IsNewNode="True" />
-            </Items>
-          </Item>
-          <Item Id="@c42e95d6-3c22-4903-b8e5-6cc96741665d" Caption="Companies" ViewId="Company_ListView" ImageName="BO_Category" Shortcut="" Index="1" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="@4a466fac-3f3f-4aee-b58b-c1a2106f32e7" ViewId="SurveyCompany_ListView" Caption="Survey Companies" IsNewNode="True" />
-              <Item Id="@a2853527-b7d0-40ec-b647-21915b0d2fea" ViewId="DrillingCompany_ListView" Caption="Drilling Companies" IsNewNode="True" />
-              <Item Id="@b1ed3299-a79a-4fb4-971d-938743c8fec9" ViewId="GeologyCompany_ListView" Caption="Geology Companies" IsNewNode="True" />
-              <Item Id="@b816fe53-5cc5-4498-b35f-d34c6d01848f" ViewId="GeophysicsCompany_ListView" IsNewNode="True" />
-              <Item Id="@b97b73bf-46ef-4423-909f-185d2d563cb8" ViewId="LabCompany_ListView" Caption="Lab Companies" IsNewNode="True" />
-            </Items>
-          </Item>
+          <Item Id="@75da2b05-894a-4d32-9e76-3c97b6c8e11c" Caption="Contacts" ViewId="Contact_ListView" Shortcut="" Index="0" ImageName="ModelEditor_Default" IsNewNode="True" />
+          <Item Id="@c42e95d6-3c22-4903-b8e5-6cc96741665d" Caption="Companies" ViewId="Company_ListView" ImageName="ModelEditor_Default" Shortcut="" Index="1" IsNewNode="True" />
           <Item Id="@b19acb3b-ef0c-4a2c-8376-4145f7236b3b" ViewId="Project_ListView" Caption="Projects" Index="2" ImageName="BO_Category" IsNewNode="True">
             <Items IsNewNode="True">
               <Item Id="@65f8d3b4-5f11-4f21-abe9-bf0babd47d85" ImageName="ModelEditor_Default" ViewId="ProjectPlan_ListView" Caption="Project Plans" Index="1" IsNewNode="True" />
+              <Item Id="@882760f5-a0da-4f53-9e4c-48a07d1d2272" ViewId="ProjectDeliverable_ListView" Caption="Project Deliverables" IsNewNode="True" />
               <Item Id="@b28cc8f6-4a90-4a50-803c-7250249d8598" ViewId="ProjectPlanTask_ListView" Caption="Project Tasks" IsNewNode="True" />
             </Items>
           </Item>
@@ -59,6 +48,9 @@
             </Items>
           </Item>
           <Item Id="@8f5edc7f-ddb3-485b-9c22-0317a4738298" ViewId="Experience_ListView" Shortcut="" Index="4" IsNewNode="True" />
+          <Item Id="@88160364-b350-4b24-a9c3-04f0aa0dbecf" ImageName="ModelEditor_Default" ViewId="Opportunity_ListView" Caption="Opportunities" Index="5" IsNewNode="True" />
+          <Item Id="@9f64d6fa-15fb-4ce9-aa61-185ebbb13048" ViewId="Compliance_ListView" Caption="Compliance" IsNewNode="True" />
+          <Item Id="@e5b0d736-0bc6-4430-a652-f0b426d4f87a" ViewId="Contract_ListView" Caption="Contracts" ImageName="ModelEditor_Default" IsNewNode="True" />
           <Item Id="@e97a1234-b609-4f49-a0a4-0d7a2081bb67" ViewId="Prospectus_ListView" Caption="Prospectus Data" IsNewNode="True" />
         </Items>
       </Item>
@@ -74,6 +66,7 @@
           <Item Id="@4138689f-ab3e-43e5-8164-02035b234e1a" Caption="Defects" ViewId="Defect_ListView" IsNewNode="True" />
           <Item Id="@4dd8d2b0-2c9a-4610-ad00-9b37d1cd7e26" Caption="Casing Data" ViewId="Casing_ListView" IsNewNode="True" />
           <Item Id="@5d363001-9547-487d-b35f-53b984d62994" ViewId="WaterFlow_ListView" IsNewNode="True" />
+          <Item Id="@5f1a9a56-3dfb-43c7-a51f-b456dc5d7dc3" ViewId="LocationHistory_ListView" IsNewNode="True" />
           <Item Id="@633e9f60-73ae-4147-bdaf-1d93a8fef8cf" ViewId="Geology_ListView" IsNewNode="True" />
           <Item Id="@6b03af4a-69dd-4391-a312-5657a9898ffb" ViewId="Survey_ListView" Caption="Surveys" IsNewNode="True" />
           <Item Id="@73261f2f-1efa-4fed-b773-ad2adf0e0552" ViewId="Drilling_ListView" IsNewNode="True" />
@@ -85,8 +78,10 @@
       </Item>
       <Item Id="@365427b7-3716-430f-a92f-08afa8b8b81b" Caption="Resource Analysis" Index="2" ImageName="Navigation_Item_PivotChart" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="@711bb833-88bf-4d02-8efd-83237a690337" Caption="Samples" ViewId="AssayGroupTestSample_ListView" IsNewNode="True" />
-          <Item Id="@fe66b27f-4588-4993-9202-7feeaaf6b9aa" Caption="Block Models" ViewId="BlockModel_ListView" ImageName="ModelEditor_Default" IsNewNode="True" />
+          <Item Id="@711bb833-88bf-4d02-8efd-83237a690337" Caption="Samples" ViewId="Sample_ListView" Index="1" IsNewNode="True" />
+          <Item Id="@fe66b27f-4588-4993-9202-7feeaaf6b9aa" Caption="Block Models" ViewId="BlockModel_ListView" ImageName="ModelEditor_Default" Index="2" IsNewNode="True" />
+          <Item Id="@6d6faadb-0cfd-42dd-aed7-ef9c60914d32" ViewId="AssayGroup_ListView" Caption="Lab Batches" Index="3" IsNewNode="True" />
+          <Item Id="@8c61686a-8d27-413d-8c39-7d1362131b5d" ViewId="Composite_ListView" Caption="Composites" IsNewNode="True" />
         </Items>
       </Item>
       <Item Id="Dictionaries" ImageName="Action_EditModel" Index="4" IsNewNode="True">
@@ -147,6 +142,7 @@
           <Item Id="@b3a7de22-fc29-4554-a9bc-ca6b40fdaa68" ViewId="DictionaryMineralType_ListView" Caption="Mineral Types" Index="54" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@4c1cc675-0457-4918-aedd-d6234ff01f0b" Caption="Moisture Sensititvity Types" Index="55" ImageName="BO_Security_Permission_Model" ViewId="DictionaryMoistureSensitivity_ListView" IsNewNode="True" />
           <Item Id="@08345603-94d9-4e69-ba02-c919500deba7" ViewId="DictionaryPlasticity_ListView" Caption="Plasticity Types" Index="56" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
+          <Item Id="@8cdaf5a6-1b1b-479d-80d5-a73cf87f006e" ViewId="Parameter_ListView" Caption="Parameters" Index="56" IsNewNode="True" />
           <Item Id="@e40182a3-b0ee-429d-9cd2-603f56c71ea2" ViewId="DictionaryPly_ListView" Caption="Plies" Index="57" ImageName="Action_EditModel" IsNewNode="True" />
           <Item Id="@1a009268-be6a-440e-8e6d-0e06b2a3c5e8" ViewId="DictionaryPointLoadTestType_ListView" ObjectKey="" Caption="Point Load Test Types" Index="58" ImageName="BO_Security_Permission_Model" IsNewNode="True" />
           <Item Id="@7fd6539c-5669-4d95-a0f1-f11da424b6a4" ViewId="DictionaryProfession_ListView" Caption="Professions" Index="59" ImageName="Action_EditModel" IsNewNode="True" />
@@ -590,10 +586,6 @@
         <LayoutGroup Id="Main">
           <TabbedGroup Id="Tabs">
             <LayoutGroup Id="Drillings" Caption="Drilling" />
-            <LayoutGroup Id="Geologys" Caption="Geology" />
-            <LayoutGroup Id="Lithologys" Caption="Lithology" />
-            <LayoutGroup Id="Mineralogys" Caption="Mineralogy" />
-            <LayoutGroup Id="Recoverys" Caption="Recovery" />
             <LayoutGroup Id="HeaderRelations1" Removed="True" />
           </TabbedGroup>
         </LayoutGroup>

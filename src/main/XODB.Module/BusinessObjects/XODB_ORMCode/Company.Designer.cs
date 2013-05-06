@@ -112,8 +112,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<CompanyRelation> CompanyRelations { get { return GetCollection<CompanyRelation>("CompanyRelations"); } }
         [Association(@"CompanyRelationReferencesCompany1", typeof(CompanyRelation))]
         public XPCollection<CompanyRelation> CompanyRelations1 { get { return GetCollection<CompanyRelation>("CompanyRelations1"); } }
-        [Association(@"ContactCompanyReferencesCompany", typeof(ContactCompany))]
-        public XPCollection<ContactCompany> ContactCompanies { get { return GetCollection<ContactCompany>("ContactCompanies"); } }
         [Association(@"DictionaryWorkTypeReferencesCompany", typeof(DictionaryWorkType))]
         public XPCollection<DictionaryWorkType> DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("DictionaryWorkTypes"); } }
         [Association(@"ExperienceReferencesCompany", typeof(Experience))]

@@ -106,10 +106,6 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestResultDuplicate.Designer.cs">
       <DependentUpon>AssayGroupTestResultDuplicate.cs</DependentUpon>
     </Compile>
-    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestSample.cs" />
-    <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestSample.Designer.cs">
-      <DependentUpon>AssayGroupTestSample.cs</DependentUpon>
-    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\BlockModel.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\BlockModel.Designer.cs">
       <DependentUpon>BlockModel.cs</DependentUpon>
@@ -170,10 +166,6 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\ContactAddress.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\ContactAddress.Designer.cs">
       <DependentUpon>ContactAddress.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BusinessObjects\XODB_ORMCode\ContactCompany.cs" />
-    <Compile Include="BusinessObjects\XODB_ORMCode\ContactCompany.Designer.cs">
-      <DependentUpon>ContactCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Contract.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Contract.Designer.cs">

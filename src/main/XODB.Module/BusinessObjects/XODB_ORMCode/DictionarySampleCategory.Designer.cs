@@ -82,8 +82,6 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"AssayGroupStandardTestResultReferencesDictionarySampleCategory", typeof(AssayGroupStandardTestResult))]
         public XPCollection<AssayGroupStandardTestResult> AssayGroupStandardTestResults { get { return GetCollection<AssayGroupStandardTestResult>("AssayGroupStandardTestResults"); } }
-        [Association(@"AssayGroupTestSampleReferencesDictionarySampleCategory", typeof(AssayGroupTestSample))]
-        public XPCollection<AssayGroupTestSample> AssayGroupTestSamples { get { return GetCollection<AssayGroupTestSample>("AssayGroupTestSamples"); } }
         [Association(@"SampleReferencesDictionarySampleCategory", typeof(Sample))]
         public XPCollection<Sample> Samples { get { return GetCollection<Sample>("Samples"); } }
     }

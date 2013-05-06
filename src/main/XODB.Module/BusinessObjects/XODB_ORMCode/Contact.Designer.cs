@@ -213,8 +213,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Company> Companies { get { return GetCollection<Company>("Companies"); } }
         [Association(@"ContactAddressReferencesContact", typeof(ContactAddress))]
         public XPCollection<ContactAddress> ContactAddressCollection { get { return GetCollection<ContactAddress>("ContactAddressCollection"); } }
-        [Association(@"ContactCompanyReferencesContact", typeof(ContactCompany))]
-        public XPCollection<ContactCompany> ContactCompanies { get { return GetCollection<ContactCompany>("ContactCompanies"); } }
         [Association(@"DrillingReferencesContact", typeof(Drilling))]
         public XPCollection<Drilling> Drillings { get { return GetCollection<Drilling>("Drillings"); } }
         [Association(@"ExperienceReferencesContact", typeof(Experience))]

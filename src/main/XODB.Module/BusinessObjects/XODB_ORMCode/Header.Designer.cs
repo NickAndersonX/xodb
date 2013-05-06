@@ -368,8 +368,6 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"AssayGroupTestSampleReferencesHeader", typeof(AssayGroupTestSample))]
-        public XPCollection<AssayGroupTestSample> AssayGroupTestSamples { get { return GetCollection<AssayGroupTestSample>("AssayGroupTestSamples"); } }
         [Association(@"CasingReferencesHeader", typeof(Casing))]
         public XPCollection<Casing> Casings { get { return GetCollection<Casing>("Casings"); } }
         [Association(@"CementingReferencesHeader", typeof(Cementing))]
