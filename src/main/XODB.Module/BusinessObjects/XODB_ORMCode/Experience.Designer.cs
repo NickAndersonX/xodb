@@ -135,7 +135,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryProfession>("ProfessionID", ref fProfessionID, value); }
         }
         DictionaryPosition fPositionID;
-        [Association(@"ExperienceReferencesX_DictionaryPosition")]
+        [Association(@"ExperienceReferencesDictionaryPosition")]
         public DictionaryPosition PositionID
         {
             get { return fPositionID; }
@@ -235,8 +235,8 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"FileDataReferencesExperience", typeof(FileData))]
         public XPCollection<FileData> FileDatas { get { return GetCollection<FileData>("FileDatas"); } }
-        [Association(@"X_OpportunityReferencesExperience", typeof(Opportunity))]
-        public XPCollection<Opportunity> X_Opportunitys { get { return GetCollection<Opportunity>("X_Opportunitys"); } }
+        [Association(@"OpportunityReferencesExperience", typeof(Opportunity))]
+        public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
     }
 
 }

@@ -99,8 +99,8 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"ParameterReferencesDictionaryUnit", typeof(Parameter))]
         public XPCollection<Parameter> Parameters { get { return GetCollection<Parameter>("Parameters"); } }
-        [Association(@"X_ProjectDeliverableReferencesDictionaryUnit", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
+        [Association(@"ProjectDeliverableReferencesDictionaryUnit", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
     }
 
 }

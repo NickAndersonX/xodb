@@ -29,14 +29,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("LocationTaken", ref fLocationTaken, value); }
         }
         Location fCorrectedLocationID;
-        [Association(@"X_LocationHistoryReferencesLocation")]
+        [Association(@"LocationHistoryReferencesLocation")]
         public Location CorrectedLocationID
         {
             get { return fCorrectedLocationID; }
             set { SetPropertyValue<Location>("CorrectedLocationID", ref fCorrectedLocationID, value); }
         }
         Contact fContactID;
-        [Association(@"X_LocationHistoryReferencesContact")]
+        [Association(@"LocationHistoryReferencesContact")]
         public Contact ContactID
         {
             get { return fContactID; }

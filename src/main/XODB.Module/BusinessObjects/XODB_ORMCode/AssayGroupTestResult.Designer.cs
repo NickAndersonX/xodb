@@ -77,7 +77,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("SampledBy", ref fSampledBy, value); }
         }
         Sample fSampleID;
-        [Association(@"AssayGroupTestResultReferencesX_Sample")]
+        [Association(@"AssayGroupTestResultReferencesSample")]
         public Sample SampleID
         {
             get { return fSampleID; }

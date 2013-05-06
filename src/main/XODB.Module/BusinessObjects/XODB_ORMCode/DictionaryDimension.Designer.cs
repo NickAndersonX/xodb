@@ -80,11 +80,11 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
         [Association(@"BlockModelReferencesDictionaryDimension", typeof(BlockModel))]
-        public XPCollection<BlockModel> BlockModels { get { return GetCollection<BlockModel>("BlockModels"); } }
+        public XPCollection<BlockModel> DimensionEastingBlockModels { get { return GetCollection<BlockModel>("DimensionEastingBlockModels"); } }
         [Association(@"BlockModelReferencesDictionaryDimension1", typeof(BlockModel))]
-        public XPCollection<BlockModel> BlockModels1 { get { return GetCollection<BlockModel>("BlockModels1"); } }
+        public XPCollection<BlockModel> DimensionElevationBlockModels { get { return GetCollection<BlockModel>("DimensionElevationBlockModels"); } }
         [Association(@"BlockModelReferencesDictionaryDimension2", typeof(BlockModel))]
-        public XPCollection<BlockModel> BlockModels2 { get { return GetCollection<BlockModel>("BlockModels2"); } }
+        public XPCollection<BlockModel> DimensionNorthingBlockModels { get { return GetCollection<BlockModel>("DimensionNorthingBlockModels"); } }
     }
 
 }

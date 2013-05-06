@@ -82,7 +82,7 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DrillingReferencesDictionaryDrillSize", typeof(Drilling))]
         public XPCollection<Drilling> Drillings { get { return GetCollection<Drilling>("Drillings"); } }
         [Association(@"RecoveryReferencesDictionaryDrillSize", typeof(Recovery))]
-        public XPCollection<Recovery> Recoverys { get { return GetCollection<Recovery>("Recoverys"); } }
+        public XPCollection<Recovery> Recoveries { get { return GetCollection<Recovery>("Recoveries"); } }
     }
 
 }

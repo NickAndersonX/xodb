@@ -1379,7 +1379,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="995cd62b-38ea-4dd6-833f-d503383e61ad">
-      <comment Id="cb351084-68ad-49fa-9353-f7ce8bf1871f" text="Association table X_DictionaryPosition and table X_Experience is not mapping, because the field PositionID is already used for another association;&#xD;&#xA;The 'PK_X_Position' index is ignored, because 'PositionID' is a key" name="X_DictionaryPositionComment">
+      <comment Id="cb351084-68ad-49fa-9353-f7ce8bf1871f" text="Association table DictionaryPosition and table Experience is not mapping, because the field PositionID is already used for another association;&#xD;&#xA;The 'PK_Position' index is ignored, because 'PositionID' is a key" name="DictionaryPositionComment">
         <subjects>
           <commentReferencesSubjects Id="f59cd04e-321c-478e-b3cc-1f1b00214368">
             <xpObjectMoniker Id="89f45952-723b-41e0-a8bd-a60898031501" />
@@ -1388,7 +1388,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="a1c615d8-3620-40ec-8438-4d839835751f">
-      <comment Id="263f0697-f07a-4668-ab0f-fc714eb2a6c9" text="The 'PK_DictionaryWorkTypeClass' index is ignored, because 'WorkTypeClassID' is a key" name="X_DictionaryWorkTypeClassComment">
+      <comment Id="263f0697-f07a-4668-ab0f-fc714eb2a6c9" text="The 'PK_DictionaryWorkTypeClass' index is ignored, because 'WorkTypeClassID' is a key" name="DictionaryWorkTypeClassComment">
         <subjects>
           <commentReferencesSubjects Id="e994f710-e565-431b-8d42-9c275c19a572">
             <xpObjectMoniker Id="481b8aa2-b163-4c58-99c8-d156c7315f6d" />
@@ -1397,7 +1397,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="daeb2394-ba7c-487c-bc3e-2e8f0b64f425">
-      <comment Id="7288adc9-bfa8-4458-9fd6-752af19722a0" text="Association table X_Sample and table X_AssayGroupStandardTestResult is not mapping, because the field AssayGroupTestSampleID is already used for another association;&#xD;&#xA;Association table X_Sample and table X_AssayGroupStandardTestResult is not mapping, because the field AssayGroupTestSampleID is already used for another association;&#xD;&#xA;Association table X_Sample and table X_AssayGroupTestResult is not mapping, because the field SampleID is already used for another association;&#xD;&#xA;Association table X_Sample and table X_Composite is not mapping, because the field AssayGroupTestSampleID is already used for another association;&#xD;&#xA;Association table X_Sample and table X_Composite is not mapping, because the field AssayGroupTestSampleID is already used for another association;&#xD;&#xA;The 'iHeaderID_X_AssayGroupTestSample' index is ignored, because 'HeaderID' is an association key;&#xD;&#xA;The 'iSampleCategoryID_X_AssayGroupTestSample' index is ignored, because 'SampleCategoryID' is an association key;&#xD;&#xA;The 'iSampleStateID_X_AssayGroupTestSample' index is ignored, because 'SampleStateID' is an association key;&#xD;&#xA;The 'iSampleTypeID_X_AssayGroupTestSample' index is ignored, because 'SampleTypeID' is an association key;&#xD;&#xA;The 'PK_X_AssayGroupTestSample' index is ignored, because 'SampleID' is a key" name="X_SampleComment">
+      <comment Id="7288adc9-bfa8-4458-9fd6-752af19722a0" text="Association table Sample and table AssayGroupStandardTestResult is not mapping, because the field AssayGroupTestSampleID is already used for another association;&#xD;&#xA;Association table Sample and table AssayGroupStandardTestResult is not mapping, because the field AssayGroupTestSampleID is already used for another association;&#xD;&#xA;Association table Sample and table AssayGroupTestResult is not mapping, because the field SampleID is already used for another association;&#xD;&#xA;Association table Sample and table Composite is not mapping, because the field AssayGroupTestSampleID is already used for another association;&#xD;&#xA;Association table Sample and table Composite is not mapping, because the field AssayGroupTestSampleID is already used for another association;&#xD;&#xA;The 'iHeaderID_AssayGroupTestSample' index is ignored, because 'HeaderID' is an association key;&#xD;&#xA;The 'iSampleCategoryID_AssayGroupTestSample' index is ignored, because 'SampleCategoryID' is an association key;&#xD;&#xA;The 'iSampleStateID_AssayGroupTestSample' index is ignored, because 'SampleStateID' is an association key;&#xD;&#xA;The 'iSampleTypeID_AssayGroupTestSample' index is ignored, because 'SampleTypeID' is an association key;&#xD;&#xA;The 'PK_AssayGroupTestSample' index is ignored, because 'SampleID' is a key" name="SampleComment">
         <subjects>
           <commentReferencesSubjects Id="afd4728f-1333-49e0-978a-66d4399c1115">
             <xpObjectMoniker Id="db8ffc7b-31ff-44c3-ad99-eb66f646a7e0" />
@@ -1406,7 +1406,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="0b666805-776a-46df-8dd4-f6fe1c4db665">
-      <comment Id="18600a28-c052-4d14-bd1e-2fde5464f17c" text="The 'PK_X_Compliance' index is ignored, because 'ComplianceID' is a key" name="X_ComplianceComment">
+      <comment Id="18600a28-c052-4d14-bd1e-2fde5464f17c" text="The 'PK_Compliance' index is ignored, because 'ComplianceID' is a key" name="ComplianceComment">
         <subjects>
           <commentReferencesSubjects Id="785d0f08-eee5-4d7b-8cce-a5fa5eb8373b">
             <xpObjectMoniker Id="6764b1a5-af77-42a0-8a9b-5bbec739709b" />
@@ -1415,7 +1415,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="a1bf80f8-ad1b-4d22-9174-310fabf5b698">
-      <comment Id="0e4a9eec-2811-4e81-8ab2-35c07c639235" text="The 'PK_X_DictionaryModelStatus' index is ignored, because 'ModelStatusID' is a key" name="X_DictionaryModelStatusComment">
+      <comment Id="0e4a9eec-2811-4e81-8ab2-35c07c639235" text="The 'PK_DictionaryModelStatus' index is ignored, because 'ModelStatusID' is a key" name="DictionaryModelStatusComment">
         <subjects>
           <commentReferencesSubjects Id="14c1b316-5c7a-4a9b-b6b4-3dc481d0722e">
             <xpObjectMoniker Id="3300037c-c1a8-4f20-8284-e32121d02e94" />
@@ -1424,7 +1424,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="08d3d339-4980-42dc-b730-c6a1f045ebd9">
-      <comment Id="78358a3a-494b-43d2-a496-441ab0733937" text="The 'PK_X_DictionaryModelRelation' index is ignored, because 'ModelRelationID' is a key" name="X_DictionaryModelRelationComment">
+      <comment Id="78358a3a-494b-43d2-a496-441ab0733937" text="The 'PK_DictionaryModelRelation' index is ignored, because 'ModelRelationID' is a key" name="DictionaryModelRelationComment">
         <subjects>
           <commentReferencesSubjects Id="e4ca3dc7-7727-402c-9e49-82454860dc51">
             <xpObjectMoniker Id="cf2079d9-c04d-420c-a0f8-5cedbc83291b" />
@@ -1433,7 +1433,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="21732570-6cd2-4ff4-a0fc-2385abf28450">
-      <comment Id="fa129640-b1c8-46ab-82ee-e0d198107d23" text="Association table X_DictionaryModel and table X_Survey is not mapping, because the field InstrumentModelID is already used for another association;&#xD;&#xA;The 'PK_X_DictionaryModel' index is ignored, because 'ModelID' is a key" name="X_DictionaryModelComment">
+      <comment Id="fa129640-b1c8-46ab-82ee-e0d198107d23" text="Association table DictionaryModel and table Survey is not mapping, because the field InstrumentModelID is already used for another association;&#xD;&#xA;The 'PK_DictionaryModel' index is ignored, because 'ModelID' is a key" name="DictionaryModelComment">
         <subjects>
           <commentReferencesSubjects Id="1738ece2-8f3b-4da4-8860-5c28c80e397a">
             <xpObjectMoniker Id="92edf76a-9af9-4a1e-837b-5093db08afdd" />
@@ -1442,7 +1442,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="f623c949-51ae-40db-bc1b-71acf70022c3">
-      <comment Id="66c53527-6696-4c4a-912a-ad7ea0a3c35d" text="The 'iProjectID_X_Drill_Company_Contract' index is ignored, because 'ProjectID' is an association key;&#xD;&#xA;The 'PK_X_Drill_Company_Contract' index is ignored, because 'ContractID' is a key" name="X_ContractComment">
+      <comment Id="66c53527-6696-4c4a-912a-ad7ea0a3c35d" text="The 'iProjectID_Drill_Company_Contract' index is ignored, because 'ProjectID' is an association key;&#xD;&#xA;The 'PK_Drill_Company_Contract' index is ignored, because 'ContractID' is a key" name="ContractComment">
         <subjects>
           <commentReferencesSubjects Id="687142ed-d287-4d12-af7a-a5c225588d65">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
@@ -1451,7 +1451,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="e96e31be-dc82-454f-8b48-bf08cbbe13fc">
-      <comment Id="7727e76b-b9ad-492d-9b7d-37bbed4bfcbb" text="The 'PK_X_ComplianceWorkType' index is ignored, because 'ComplianceWorkTypeID' is a key" name="X_ComplianceWorkTypeComment">
+      <comment Id="7727e76b-b9ad-492d-9b7d-37bbed4bfcbb" text="The 'PK_ComplianceWorkType' index is ignored, because 'ComplianceWorkTypeID' is a key" name="ComplianceWorkTypeComment">
         <subjects>
           <commentReferencesSubjects Id="0eb1c3d5-58e2-4ce6-ae93-02a990e4d652">
             <xpObjectMoniker Id="36ca189d-b735-417f-8b0e-6d6714e4037c" />
@@ -1460,7 +1460,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="17805fde-5c1b-48da-957c-5acef3761b77">
-      <comment Id="f4d059cb-7eed-4364-b3b3-8ed57cdd5bdb" text="The 'PK_X_ProjectPlanTaskComplianceResponse' index is ignored, because 'ProjectPlanTaskComplianceResponseID' is a key" name="X_ProjectPlanTaskComplianceResponseComment">
+      <comment Id="f4d059cb-7eed-4364-b3b3-8ed57cdd5bdb" text="The 'PK_ProjectPlanTaskComplianceResponse' index is ignored, because 'ProjectPlanTaskComplianceResponseID' is a key" name="ProjectPlanTaskComplianceResponseComment">
         <subjects>
           <commentReferencesSubjects Id="90e35e0e-fdf4-486a-b8de-5e81e44f23e0">
             <xpObjectMoniker Id="51864d98-cbb0-4739-b278-92c5eadcdc07" />
@@ -1469,7 +1469,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="ff340a69-4a25-45c4-98aa-7b718b5690b5">
-      <comment Id="588e030c-8e2e-43da-b422-7869a145446e" text="The 'LocationHistory' field is not mapped;&#xD;&#xA;The 'PK_X_LocationHistory' index is ignored, because 'LocationHistoryID' is a key" name="X_LocationHistoryComment">
+      <comment Id="588e030c-8e2e-43da-b422-7869a145446e" text="The 'LocationHistory' field is not mapped;&#xD;&#xA;The 'PK_LocationHistory' index is ignored, because 'LocationHistoryID' is a key" name="LocationHistoryComment">
         <subjects>
           <commentReferencesSubjects Id="c6e05ffe-aa4b-4d6b-8909-da12b29d5903">
             <xpObjectMoniker Id="55e78009-aae2-44f5-aca1-ef177078ecbd" />
@@ -1478,7 +1478,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="9a84ae97-0bab-4325-a6f8-ff53ba439a0d">
-      <comment Id="36805b5a-592e-45aa-a349-61aa345422db" text="Association table X_ProjectDeliverable and table X_Contract is not mapping, because the field LastDeliverableID is already used for another association;&#xD;&#xA;The 'PK_X_ProjectDeliverable' index is ignored, because 'DeliverableID' is a key" name="X_ProjectDeliverableComment">
+      <comment Id="36805b5a-592e-45aa-a349-61aa345422db" text="Association table ProjectDeliverable and table Contract is not mapping, because the field LastDeliverableID is already used for another association;&#xD;&#xA;The 'PK_ProjectDeliverable' index is ignored, because 'DeliverableID' is a key" name="ProjectDeliverableComment">
         <subjects>
           <commentReferencesSubjects Id="bcb3dafd-496b-4e7b-8e47-4bb3012adec9">
             <xpObjectMoniker Id="ebccd26c-8d63-485a-ac26-6ec0d7af9bcb" />
@@ -1487,7 +1487,7 @@
       </comment>
     </dataBaseObjectModelHasComments>
     <dataBaseObjectModelHasComments Id="6ea68246-0482-4a75-b0f4-32d7daebf5cf">
-      <comment Id="7b387a24-47e5-4e7c-be25-a6f113b75b46" text="The 'PK_X_Opportunity' index is ignored, because 'OpportunityID' is a key" name="X_OpportunityComment">
+      <comment Id="7b387a24-47e5-4e7c-be25-a6f113b75b46" text="The 'PK_Opportunity' index is ignored, because 'OpportunityID' is a key" name="OpportunityComment">
         <subjects>
           <commentReferencesSubjects Id="0d4dbd32-f276-4e80-a761-c6b1f5f44f8c">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
@@ -2714,7 +2714,7 @@
           <simpleAssociation Id="53c2cd51-89fb-4757-9f5a-c424e8ffa941" sourceCollectionName="CompanyRelations1" name="CompanyRelationReferencesCompany1" targetFieldName="ParentCompanyID">
             <xpObjectMoniker Id="c55ed6ff-87b9-45cb-8389-d5b653dad1a7" />
           </simpleAssociation>
-          <simpleAssociation Id="19b51c8d-af0b-4d4f-9b46-e6a441b3cdf7" sourceCollectionName="ContactCompanys" name="ContactCompanyReferencesCompany" targetFieldName="CompanyID">
+          <simpleAssociation Id="19b51c8d-af0b-4d4f-9b46-e6a441b3cdf7" sourceCollectionName="ContactCompanies" name="ContactCompanyReferencesCompany" targetFieldName="CompanyID">
             <xpObjectMoniker Id="b95d54c0-d6be-4ecd-9d93-d9437b21e18b" />
           </simpleAssociation>
           <simpleAssociation Id="e6c91437-c9cc-490d-ace3-8962d5b4abc3" sourceCollectionName="DictionaryWorkTypes" name="DictionaryWorkTypeReferencesCompany" targetFieldName="CompanyID">
@@ -2753,25 +2753,25 @@
           <simpleAssociation Id="c9d9e44c-86f9-458c-8270-9e9a9c9bbd6d" sourceCollectionName="Tenements" name="TenementReferencesCompany" targetFieldName="OwnerCompanyID">
             <xpObjectMoniker Id="f4a381a2-f5a3-4b23-b400-9cdbd0845fcd" />
           </simpleAssociation>
-          <simpleAssociation Id="c8073fae-5fcd-492d-ab4f-4cff5207adbf" sourceCollectionName="X_Compliances" name="X_ComplianceReferencesCompany" targetFieldName="AuthorityCompanyID">
+          <simpleAssociation Id="c8073fae-5fcd-492d-ab4f-4cff5207adbf" sourceCollectionName="Compliances" name="ComplianceReferencesCompany" targetFieldName="AuthorityCompanyID">
             <xpObjectMoniker Id="6764b1a5-af77-42a0-8a9b-5bbec739709b" />
           </simpleAssociation>
-          <simpleAssociation Id="be41f6c5-2532-4c26-ba24-a98053a98fd5" sourceCollectionName="X_DictionaryModels" name="X_DictionaryModelReferencesCompany" targetFieldName="CompanyID">
+          <simpleAssociation Id="be41f6c5-2532-4c26-ba24-a98053a98fd5" sourceCollectionName="DictionaryModels" name="DictionaryModelReferencesCompany" targetFieldName="CompanyID">
             <xpObjectMoniker Id="92edf76a-9af9-4a1e-837b-5093db08afdd" />
           </simpleAssociation>
-          <simpleAssociation Id="8154b795-de9c-42b8-97d3-ced16b7e468e" sourceCollectionName="X_Contracts" name="X_ContractReferencesCompany" targetFieldName="ObligeeCompanyID">
+          <simpleAssociation Id="8154b795-de9c-42b8-97d3-ced16b7e468e" sourceCollectionName="ContractsObligee" name="ContractReferencesCompany" targetFieldName="ObligeeCompanyID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="a52b8bbd-f85e-4f9c-875a-ce7c51bcecfd" sourceCollectionName="X_Contracts1" name="X_ContractReferencesCompany1" targetFieldName="ObligorCompanyID">
+          <simpleAssociation Id="a52b8bbd-f85e-4f9c-875a-ce7c51bcecfd" sourceCollectionName="ContractsObligor" name="ContractReferencesCompany1" targetFieldName="ObligorCompanyID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="65d2da33-2872-47a3-a33f-1efa8675d15c" sourceCollectionName="X_Contracts2" name="X_ContractReferencesCompany2" targetFieldName="AssigneeCompanyID">
+          <simpleAssociation Id="65d2da33-2872-47a3-a33f-1efa8675d15c" sourceCollectionName="ContractsAssignee" name="ContractReferencesCompany2" targetFieldName="AssigneeCompanyID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="ac5a00a5-d749-411f-a365-71edbb752844" sourceCollectionName="X_Contracts3" name="X_ContractReferencesCompany3" targetFieldName="SolicitorCompanyID">
+          <simpleAssociation Id="ac5a00a5-d749-411f-a365-71edbb752844" sourceCollectionName="ContractsSolicitor" name="ContractReferencesCompany3" targetFieldName="SolicitorCompanyID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="8d5dfd5c-77d6-4dda-a713-a34e3d6f1751" sourceCollectionName="X_Opportunitys" name="X_OpportunityReferencesCompany" targetFieldName="OpportunityCompanyID">
+          <simpleAssociation Id="8d5dfd5c-77d6-4dda-a713-a34e3d6f1751" sourceCollectionName="Opportunities" name="OpportunityReferencesCompany" targetFieldName="OpportunityCompanyID">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
         </saTargets>
@@ -3158,31 +3158,31 @@
           <simpleAssociation Id="a8d8c322-6793-4e89-89bd-1ee02adb4ef4" sourceCollectionName="AssayGroups" name="AssayGroupReferencesContact" targetFieldName="SubmittedContactID">
             <xpObjectMoniker Id="5c535165-4517-4174-8065-05a59e2d181f" />
           </simpleAssociation>
-          <simpleAssociation Id="d1eb9401-546c-42fc-aa01-a30b98707dfc" sourceCollectionName="AssayGroups1" name="AssayGroupReferencesContact1" targetFieldName="ReceivedContactID">
+          <simpleAssociation Id="d1eb9401-546c-42fc-aa01-a30b98707dfc" sourceCollectionName="AssayGroupsReceivedBy" name="AssayGroupReferencesContact1" targetFieldName="ReceivedContactID">
             <xpObjectMoniker Id="5c535165-4517-4174-8065-05a59e2d181f" />
           </simpleAssociation>
-          <simpleAssociation Id="c4088336-508a-4fb9-bd51-81472cbd159e" sourceCollectionName="AssayGroups2" name="AssayGroupReferencesContact2" targetFieldName="EnteredContactID">
+          <simpleAssociation Id="c4088336-508a-4fb9-bd51-81472cbd159e" sourceCollectionName="AssayGroupsEnteredBy" name="AssayGroupReferencesContact2" targetFieldName="EnteredContactID">
             <xpObjectMoniker Id="5c535165-4517-4174-8065-05a59e2d181f" />
           </simpleAssociation>
           <simpleAssociation Id="bacbb416-281a-47ec-88a5-da0b84a2d2ee" sourceCollectionName="BlockModels" name="BlockModelReferencesContact" targetFieldName="AuthorContactID">
             <xpObjectMoniker Id="6cb1f35c-db25-42c1-8457-15c8656afc1e" />
           </simpleAssociation>
-          <simpleAssociation Id="401f6527-333a-4e1a-90c4-1c02d0a25109" sourceCollectionName="BlockModels1" name="BlockModelReferencesContact1" targetFieldName="ResponsibleContactID">
+          <simpleAssociation Id="401f6527-333a-4e1a-90c4-1c02d0a25109" sourceCollectionName="BlockModelsResponsibleParties" name="BlockModelReferencesContact1" targetFieldName="ResponsibleContactID">
             <xpObjectMoniker Id="6cb1f35c-db25-42c1-8457-15c8656afc1e" />
           </simpleAssociation>
-          <simpleAssociation Id="80ed4151-2815-470d-abb7-ee3549e5fca7" sourceCollectionName="BlockModels2" name="BlockModelReferencesContact2" targetFieldName="ApproverContactID">
+          <simpleAssociation Id="80ed4151-2815-470d-abb7-ee3549e5fca7" sourceCollectionName="BlockModelsApprovers" name="BlockModelReferencesContact2" targetFieldName="ApproverContactID">
             <xpObjectMoniker Id="6cb1f35c-db25-42c1-8457-15c8656afc1e" />
           </simpleAssociation>
           <simpleAssociation Id="64c31d25-a5f7-4c81-b194-d8afc47e6029" sourceCollectionName="BlockModels3" name="BlockModelReferencesContact3" targetFieldName="ExternalReviewerContactID">
             <xpObjectMoniker Id="6cb1f35c-db25-42c1-8457-15c8656afc1e" />
           </simpleAssociation>
-          <simpleAssociation Id="9cf63c36-c649-4dfb-8551-4c4a0f50924f" sourceCollectionName="Companys" name="CompanyReferencesContact" targetFieldName="PrimaryContactID">
+          <simpleAssociation Id="9cf63c36-c649-4dfb-8551-4c4a0f50924f" sourceCollectionName="Companies" name="CompanyReferencesContact" targetFieldName="PrimaryContactID">
             <xpObjectMoniker Id="12a00f71-1a03-4624-892d-134cbe4c305b" />
           </simpleAssociation>
           <simpleAssociation Id="d3cdde6f-9f63-4a0b-a8bc-ff76f3c4794e" sourceCollectionName="ContactAddressCollection" name="ContactAddressReferencesContact" targetFieldName="ContactID">
             <xpObjectMoniker Id="09fe38de-4d6f-4dcf-b0be-d35b437459b9" />
           </simpleAssociation>
-          <simpleAssociation Id="02ca622b-dd0d-4f41-be99-d70bf58b821b" sourceCollectionName="ContactCompanys" name="ContactCompanyReferencesContact" targetFieldName="ContactID">
+          <simpleAssociation Id="02ca622b-dd0d-4f41-be99-d70bf58b821b" sourceCollectionName="ContactCompanies" name="ContactCompanyReferencesContact" targetFieldName="ContactID">
             <xpObjectMoniker Id="b95d54c0-d6be-4ecd-9d93-d9437b21e18b" />
           </simpleAssociation>
           <simpleAssociation Id="68afc833-8ad7-4dde-8f64-4b725ab8d484" sourceCollectionName="Drillings" name="DrillingReferencesContact" targetFieldName="DrillerID">
@@ -3191,7 +3191,7 @@
           <simpleAssociation Id="c6f4664b-01bd-49c8-a86b-ada0e5da3548" sourceCollectionName="Experiences" name="ExperienceReferencesContact" targetFieldName="ContactID">
             <xpObjectMoniker Id="6614de66-964c-4968-8377-63362fa9ca0e" />
           </simpleAssociation>
-          <simpleAssociation Id="0bc2ae07-bf17-43f7-98bb-afe32ba63778" sourceCollectionName="Geologys" name="GeologyReferencesContact" targetFieldName="GeologyContactID">
+          <simpleAssociation Id="0bc2ae07-bf17-43f7-98bb-afe32ba63778" sourceCollectionName="Geologies" name="GeologyReferencesContact" targetFieldName="GeologyContactID">
             <xpObjectMoniker Id="c5fabd2e-c8a7-4ecf-9ddb-1a9f435e5a22" />
           </simpleAssociation>
           <simpleAssociation Id="fc31a744-f74e-4326-9d44-28b2b18a575f" sourceCollectionName="Headers" name="HeaderReferencesContact" targetFieldName="GeophysicalLoggerID">
@@ -3221,7 +3221,7 @@
           <simpleAssociation Id="07347d9d-cd04-4718-bb3d-9d2ba375438b" sourceCollectionName="SecurityWhitelists" name="SecurityWhitelistReferencesContact" targetFieldName="AccessorContactID">
             <xpObjectMoniker Id="bab5275b-527e-49af-87a3-3098e4fa1bdb" />
           </simpleAssociation>
-          <simpleAssociation Id="83c5a5eb-c7d9-435c-93a6-71e2c81c80ef" sourceCollectionName="Surveys" name="SurveyReferencesContact" targetFieldName="SurveyContactID">
+          <simpleAssociation Id="83c5a5eb-c7d9-435c-93a6-71e2c81c80ef" sourceCollectionName="Surveies" name="SurveyReferencesContact" targetFieldName="SurveyContactID">
             <xpObjectMoniker Id="be7830b4-04d8-47cc-a097-adeddc48a125" />
           </simpleAssociation>
           <simpleAssociation Id="9dd817fa-c3cd-4623-b4e4-90c2e263926e" sourceCollectionName="Tenements" name="TenementReferencesContact" targetFieldName="ApprovedByContactID">
@@ -3230,52 +3230,52 @@
           <simpleAssociation Id="5b819532-6f15-447c-b33d-8252477efcd1" sourceCollectionName="ProjectPlanTaskResponses1" name="ProjectPlanTaskResponseReferencesContact1" targetFieldName="ApprovedBy">
             <xpObjectMoniker Id="f0b5684e-5fb4-4472-92d2-190ab4694da4" />
           </simpleAssociation>
-          <simpleAssociation Id="f8cf1e42-5c5f-42b4-80d6-7f864632483c" sourceCollectionName="X_Compliances" name="X_ComplianceReferencesContact" targetFieldName="MaintainedBy">
+          <simpleAssociation Id="f8cf1e42-5c5f-42b4-80d6-7f864632483c" sourceCollectionName="Compliances" name="ComplianceReferencesContact" targetFieldName="MaintainedBy">
             <xpObjectMoniker Id="6764b1a5-af77-42a0-8a9b-5bbec739709b" />
           </simpleAssociation>
-          <simpleAssociation Id="a15cebcb-f703-421b-b61b-bd6d98ea0aee" sourceCollectionName="X_Contracts" name="X_ContractReferencesContact" targetFieldName="ObligeeID">
+          <simpleAssociation Id="a15cebcb-f703-421b-b61b-bd6d98ea0aee" sourceCollectionName="Contracts" name="ContractReferencesContact" targetFieldName="ObligeeID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="3e2c114e-e5ef-416a-bc39-0e5fff06da77" sourceCollectionName="X_Contracts1" name="X_ContractReferencesContact1" targetFieldName="ObligorID">
+          <simpleAssociation Id="3e2c114e-e5ef-416a-bc39-0e5fff06da77" sourceCollectionName="Contracts1" name="ContractReferencesContact1" targetFieldName="ObligorID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="c2cd83d8-24da-494c-85c9-8756f8ef52c0" sourceCollectionName="X_Contracts2" name="X_ContractReferencesContact2" targetFieldName="AssigneeID">
+          <simpleAssociation Id="c2cd83d8-24da-494c-85c9-8756f8ef52c0" sourceCollectionName="ContractsAssignee" name="ContractReferencesContact2" targetFieldName="AssigneeID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="d0136ccb-500e-4227-889e-9e2cec29a711" sourceCollectionName="X_Contracts3" name="X_ContractReferencesContact3" targetFieldName="SolicitorID">
+          <simpleAssociation Id="d0136ccb-500e-4227-889e-9e2cec29a711" sourceCollectionName="ContractsSolisitor" name="ContractReferencesContact3" targetFieldName="SolicitorID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="540f4a35-8a0d-4365-8cba-5b2448efb444" sourceCollectionName="X_ProjectPlanTaskComplianceResponses" name="X_ProjectPlanTaskComplianceResponseReferencesContact" targetFieldName="CompletedBy">
+          <simpleAssociation Id="540f4a35-8a0d-4365-8cba-5b2448efb444" sourceCollectionName="ProjectPlanTaskComplianceResponses" name="ProjectPlanTaskComplianceResponseReferencesContact" targetFieldName="CompletedBy">
             <xpObjectMoniker Id="51864d98-cbb0-4739-b278-92c5eadcdc07" />
           </simpleAssociation>
-          <simpleAssociation Id="768eb04d-7204-4e4e-81f6-cd5fbd979155" sourceCollectionName="X_ProjectPlanTaskComplianceResponses1" name="X_ProjectPlanTaskComplianceResponseReferencesContact1" targetFieldName="ApprovedBy">
+          <simpleAssociation Id="768eb04d-7204-4e4e-81f6-cd5fbd979155" sourceCollectionName="ProjectPlanTaskComplianceResponses1" name="ProjectPlanTaskComplianceResponseReferencesContact1" targetFieldName="ApprovedBy">
             <xpObjectMoniker Id="51864d98-cbb0-4739-b278-92c5eadcdc07" />
           </simpleAssociation>
-          <simpleAssociation Id="0aa3414b-ced5-4d7f-b2dd-125d4caa5631" sourceCollectionName="X_LocationHistorys" name="X_LocationHistoryReferencesContact" targetFieldName="ContactID">
+          <simpleAssociation Id="0aa3414b-ced5-4d7f-b2dd-125d4caa5631" sourceCollectionName="LocationHistories" name="LocationHistoryReferencesContact" targetFieldName="ContactID">
             <xpObjectMoniker Id="55e78009-aae2-44f5-aca1-ef177078ecbd" />
           </simpleAssociation>
-          <simpleAssociation Id="86e55e34-86a2-4ab8-994f-59882e51f988" sourceCollectionName="X_ProjectDeliverables" name="X_ProjectDeliverableReferencesContact" targetFieldName="InitiatedBy">
+          <simpleAssociation Id="86e55e34-86a2-4ab8-994f-59882e51f988" sourceCollectionName="ProjectDeliverables" name="ProjectDeliverableReferencesContact" targetFieldName="InitiatedBy">
             <xpObjectMoniker Id="ebccd26c-8d63-485a-ac26-6ec0d7af9bcb" />
           </simpleAssociation>
-          <simpleAssociation Id="62f70800-9edb-4e34-a892-f0cce9557039" sourceCollectionName="X_ProjectDeliverables1" name="X_ProjectDeliverableReferencesContact1" targetFieldName="ApprovedBy">
+          <simpleAssociation Id="62f70800-9edb-4e34-a892-f0cce9557039" sourceCollectionName="ProjectDeliverablesApprovedBy" name="ProjectDeliverableReferencesContact1" targetFieldName="ApprovedBy">
             <xpObjectMoniker Id="ebccd26c-8d63-485a-ac26-6ec0d7af9bcb" />
           </simpleAssociation>
-          <simpleAssociation Id="84ebf4ce-5b5e-4e10-8334-e900142315c8" sourceCollectionName="X_ProjectDeliverables2" name="X_ProjectDeliverableReferencesContact2" targetFieldName="EvidenceContactID">
+          <simpleAssociation Id="84ebf4ce-5b5e-4e10-8334-e900142315c8" sourceCollectionName="ProjectDeliverablesEvidenceProvidedBy" name="ProjectDeliverableReferencesContact2" targetFieldName="EvidenceContactID">
             <xpObjectMoniker Id="ebccd26c-8d63-485a-ac26-6ec0d7af9bcb" />
           </simpleAssociation>
-          <simpleAssociation Id="73f2bfcb-7a08-4b57-b892-d05ed28355f2" sourceCollectionName="X_Opportunitys" name="X_OpportunityReferencesContact" targetFieldName="OpportunityContactID">
+          <simpleAssociation Id="73f2bfcb-7a08-4b57-b892-d05ed28355f2" sourceCollectionName="Opportunities" name="OpportunityReferencesContact" targetFieldName="OpportunityContactID">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
-          <simpleAssociation Id="5d268703-83af-4b02-b6ec-dd27bbc27301" sourceCollectionName="X_Opportunitys1" name="X_OpportunityReferencesContact1" targetFieldName="OpenedBy">
+          <simpleAssociation Id="5d268703-83af-4b02-b6ec-dd27bbc27301" sourceCollectionName="OpportunitiesOpenedBy" name="OpportunityReferencesContact1" targetFieldName="OpenedBy">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
-          <simpleAssociation Id="7b6a22d4-b00c-4147-b25a-df97eff4299e" sourceCollectionName="X_Opportunitys2" name="X_OpportunityReferencesContact2" targetFieldName="AssignedBy">
+          <simpleAssociation Id="7b6a22d4-b00c-4147-b25a-df97eff4299e" sourceCollectionName="OpportunitiesAssignedBy" name="OpportunityReferencesContact2" targetFieldName="AssignedBy">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
-          <simpleAssociation Id="1e5d4855-34e3-47aa-aff1-3292a34eb90b" sourceCollectionName="X_Opportunitys3" name="X_OpportunityReferencesContact3" targetFieldName="MaintainedBy">
+          <simpleAssociation Id="1e5d4855-34e3-47aa-aff1-3292a34eb90b" sourceCollectionName="OpportunitiesMaintainedBy" name="OpportunityReferencesContact3" targetFieldName="MaintainedBy">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
-          <simpleAssociation Id="a2ce9301-d0e4-4a84-8ada-7dc3a95b825a" sourceCollectionName="X_Opportunitys4" name="X_OpportunityReferencesContact4" targetFieldName="ConvertedBy">
+          <simpleAssociation Id="a2ce9301-d0e4-4a84-8ada-7dc3a95b825a" sourceCollectionName="OpportunitiesConvertedBy" name="OpportunityReferencesContact4" targetFieldName="ConvertedBy">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
         </saTargets>
@@ -3644,16 +3644,16 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="8f67f85b-1eee-405c-a9bf-d33e17810214" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryAdjective" targetFieldName="AdjectiveID1">
+          <simpleAssociation Id="8f67f85b-1eee-405c-a9bf-d33e17810214" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryAdjective" targetFieldName="AdjectiveID1">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
-          <simpleAssociation Id="9133867b-76bd-4e0a-990a-413ed6100ecd" sourceCollectionName="Lithologys1" name="LithologyReferencesDictionaryAdjective1" targetFieldName="AdjectiveID2">
+          <simpleAssociation Id="9133867b-76bd-4e0a-990a-413ed6100ecd" sourceCollectionName="LithologiesAdjective1" name="LithologyReferencesDictionaryAdjective1" targetFieldName="AdjectiveID2">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
-          <simpleAssociation Id="e434b995-bf9b-4487-ae80-d6f564f5184f" sourceCollectionName="Lithologys2" name="LithologyReferencesDictionaryAdjective2" targetFieldName="AdjectiveID3">
+          <simpleAssociation Id="e434b995-bf9b-4487-ae80-d6f564f5184f" sourceCollectionName="LithologiesAdjective2" name="LithologyReferencesDictionaryAdjective2" targetFieldName="AdjectiveID3">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
-          <simpleAssociation Id="25b5a0d4-903c-45fe-b25b-35484a497f3a" sourceCollectionName="Lithologys3" name="LithologyReferencesDictionaryAdjective3" targetFieldName="AdjectiveID4">
+          <simpleAssociation Id="25b5a0d4-903c-45fe-b25b-35484a497f3a" sourceCollectionName="LithologiesAdjective3" name="LithologyReferencesDictionaryAdjective3" targetFieldName="AdjectiveID4">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -3942,7 +3942,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="8999a2a8-2a89-4561-8782-935e7804f4a1" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryBasalContact" targetFieldName="BasalContactID">
+          <simpleAssociation Id="8999a2a8-2a89-4561-8782-935e7804f4a1" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryBasalContact" targetFieldName="BasalContactID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -3994,7 +3994,7 @@
           <simpleAssociation Id="6cca356d-6c30-4dbe-b7ad-223e03229367" sourceCollectionName="Defects" name="DefectReferencesDictionaryBedSpacing" targetFieldName="BedSpacingID">
             <xpObjectMoniker Id="cb059c9d-df4f-44e1-bf37-ab5679e572b7" />
           </simpleAssociation>
-          <simpleAssociation Id="cb821699-8867-437a-85d6-06228f6cf070" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryBedSpacing" targetFieldName="BedSpacingID">
+          <simpleAssociation Id="cb821699-8867-437a-85d6-06228f6cf070" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryBedSpacing" targetFieldName="BedSpacingID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -4043,7 +4043,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="facd0a4e-01fb-4c8b-974d-af3abe3e5654" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryColour" targetFieldName="ColourID">
+          <simpleAssociation Id="facd0a4e-01fb-4c8b-974d-af3abe3e5654" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryColour" targetFieldName="ColourID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -4092,10 +4092,10 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="a18d5f1e-6a19-44fb-82d1-aa1b7448450c" sourceCollectionName="ProspectusProjectCommoditys" name="ProspectusProjectCommodityReferencesDictionaryCommodity" targetFieldName="CommodityID">
+          <simpleAssociation Id="a18d5f1e-6a19-44fb-82d1-aa1b7448450c" sourceCollectionName="ProspectusProjectCommodities" name="ProspectusProjectCommodityReferencesDictionaryCommodity" targetFieldName="CommodityID">
             <xpObjectMoniker Id="4a7d9e1f-eec6-4e99-8721-4bf41d0c4dba" />
           </simpleAssociation>
-          <simpleAssociation Id="a4a56a4c-cf23-4d55-89b9-458e293687c4" sourceCollectionName="TenementCommoditys" name="TenementCommodityReferencesDictionaryCommodity" targetFieldName="CommodityID">
+          <simpleAssociation Id="a4a56a4c-cf23-4d55-89b9-458e293687c4" sourceCollectionName="TenementCommodities" name="TenementCommodityReferencesDictionaryCommodity" targetFieldName="CommodityID">
             <xpObjectMoniker Id="07c521a1-c67b-44c8-a6d8-5d23851db46c" />
           </simpleAssociation>
         </saTargets>
@@ -4144,7 +4144,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="eadf8793-b704-4a46-b180-51f98ebe5e4e" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryCoreState" targetFieldName="CoreStateID">
+          <simpleAssociation Id="eadf8793-b704-4a46-b180-51f98ebe5e4e" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryCoreState" targetFieldName="CoreStateID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -4182,7 +4182,7 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="f20a1cf0-823e-41f4-b8d9-686dd4fc06f7" sourceCollectionName="Companys" name="CompanyReferencesDictionaryCountry" targetFieldName="CountryID">
+          <simpleAssociation Id="f20a1cf0-823e-41f4-b8d9-686dd4fc06f7" sourceCollectionName="Companies" name="CompanyReferencesDictionaryCountry" targetFieldName="CountryID">
             <xpObjectMoniker Id="12a00f71-1a03-4624-892d-134cbe4c305b" />
           </simpleAssociation>
           <simpleAssociation Id="15e39b85-a940-4ce5-9d01-771d0f98478a" sourceCollectionName="Contacts" name="ContactReferencesDictionaryCountry" targetFieldName="BirthCountryID">
@@ -4203,7 +4203,7 @@
           <simpleAssociation Id="771a570b-0282-4c1f-96fe-8a25ead3019a" sourceCollectionName="Tenements" name="TenementReferencesDictionaryCountry" targetFieldName="CountryID">
             <xpObjectMoniker Id="f4a381a2-f5a3-4b23-b400-9cdbd0845fcd" />
           </simpleAssociation>
-          <simpleAssociation Id="f2abb16a-9090-4ac6-b7fb-3fe55fe8a52a" sourceCollectionName="X_Compliances" name="X_ComplianceReferencesDictionaryCountry" targetFieldName="CountryID">
+          <simpleAssociation Id="f2abb16a-9090-4ac6-b7fb-3fe55fe8a52a" sourceCollectionName="Compliances" name="ComplianceReferencesDictionaryCountry" targetFieldName="CountryID">
             <xpObjectMoniker Id="6764b1a5-af77-42a0-8a9b-5bbec739709b" />
           </simpleAssociation>
         </saTargets>
@@ -4348,7 +4348,7 @@
           <simpleAssociation Id="d669cfa4-026d-465d-98ad-bbb474572a49" sourceCollectionName="Defects" name="DefectReferencesDictionaryDefectCompleteness" targetFieldName="DefectCompletenessID">
             <xpObjectMoniker Id="cb059c9d-df4f-44e1-bf37-ab5679e572b7" />
           </simpleAssociation>
-          <simpleAssociation Id="e76da89c-052b-4879-8e9f-a47beb7d3257" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryDefectCompleteness" targetFieldName="DefectCompletenessID">
+          <simpleAssociation Id="e76da89c-052b-4879-8e9f-a47beb7d3257" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryDefectCompleteness" targetFieldName="DefectCompletenessID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -4446,7 +4446,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="62195598-5c71-4aa0-8f8d-86391ac43560" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryDefectSpacing" targetFieldName="DefectSpacingID">
+          <simpleAssociation Id="62195598-5c71-4aa0-8f8d-86391ac43560" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryDefectSpacing" targetFieldName="DefectSpacingID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -4498,7 +4498,7 @@
           <simpleAssociation Id="b219367b-44ba-4f8e-ad3d-c3e2d0a6d870" sourceCollectionName="Defects" name="DefectReferencesDictionaryDefectType" targetFieldName="DefectTypeID">
             <xpObjectMoniker Id="cb059c9d-df4f-44e1-bf37-ab5679e572b7" />
           </simpleAssociation>
-          <simpleAssociation Id="b3a807d5-8fd7-4462-8830-53c98edc96eb" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryDefectType" targetFieldName="DefectTypeID">
+          <simpleAssociation Id="b3a807d5-8fd7-4462-8830-53c98edc96eb" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryDefectType" targetFieldName="DefectTypeID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -4585,13 +4585,13 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="536cf16a-ddf1-4f68-919c-b03cbdab807a" sourceCollectionName="BlockModels" name="BlockModelReferencesDictionaryDimension" targetFieldName="DimensionEasting">
+          <simpleAssociation Id="536cf16a-ddf1-4f68-919c-b03cbdab807a" sourceCollectionName="DimensionEastingBlockModels" name="BlockModelReferencesDictionaryDimension" targetFieldName="DimensionEasting">
             <xpObjectMoniker Id="6cb1f35c-db25-42c1-8457-15c8656afc1e" />
           </simpleAssociation>
-          <simpleAssociation Id="cc2f889e-e152-4a01-a65c-2d0a1e03ab16" sourceCollectionName="BlockModels1" name="BlockModelReferencesDictionaryDimension1" targetFieldName="DimensionElevation">
+          <simpleAssociation Id="cc2f889e-e152-4a01-a65c-2d0a1e03ab16" sourceCollectionName="DimensionElevationBlockModels" name="BlockModelReferencesDictionaryDimension1" targetFieldName="DimensionElevation">
             <xpObjectMoniker Id="6cb1f35c-db25-42c1-8457-15c8656afc1e" />
           </simpleAssociation>
-          <simpleAssociation Id="a988dc7a-026e-421f-a964-24cb25d14146" sourceCollectionName="BlockModels2" name="BlockModelReferencesDictionaryDimension2" targetFieldName="DimensionNorthing">
+          <simpleAssociation Id="a988dc7a-026e-421f-a964-24cb25d14146" sourceCollectionName="DimensionNorthingBlockModels" name="BlockModelReferencesDictionaryDimension2" targetFieldName="DimensionNorthing">
             <xpObjectMoniker Id="6cb1f35c-db25-42c1-8457-15c8656afc1e" />
           </simpleAssociation>
         </saTargets>
@@ -4683,7 +4683,7 @@
           <simpleAssociation Id="be502fa7-ab86-4999-a789-a6d68aca7433" sourceCollectionName="DictionaryDomainAliasCollection" name="DictionaryDomainAliasReferencesDictionaryDomain" targetFieldName="DomainID">
             <xpObjectMoniker Id="e82e6f32-e315-4202-8b7d-4506f6f3b3fc" />
           </simpleAssociation>
-          <simpleAssociation Id="918ff519-adf1-45e4-8d4e-bb37b621fe48" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryDomain" targetFieldName="DomainID">
+          <simpleAssociation Id="918ff519-adf1-45e4-8d4e-bb37b621fe48" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryDomain" targetFieldName="DomainID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -4955,7 +4955,7 @@
           <simpleAssociation Id="741cffa3-fdd4-4dc6-9f5b-fdc4fd2990fc" sourceCollectionName="Drillings" name="DrillingReferencesDictionaryDrillSize" targetFieldName="DrillSizeID">
             <xpObjectMoniker Id="d9b6e3f1-0969-40c2-b3e4-969291b95c4e" />
           </simpleAssociation>
-          <simpleAssociation Id="8c5762a8-44fb-41d4-bebb-056a3cdc6a71" sourceCollectionName="Recoverys" name="RecoveryReferencesDictionaryDrillSize" targetFieldName="DrillSizeID">
+          <simpleAssociation Id="8c5762a8-44fb-41d4-bebb-056a3cdc6a71" sourceCollectionName="Recoveries" name="RecoveryReferencesDictionaryDrillSize" targetFieldName="DrillSizeID">
             <xpObjectMoniker Id="88044716-f156-45ce-b713-59959e1c9c01" />
           </simpleAssociation>
         </saTargets>
@@ -5010,7 +5010,7 @@
           <simpleAssociation Id="e261630a-3354-498d-a36b-d8d7ec34dfd8" sourceCollectionName="Defects1" name="DefectReferencesDictionaryEstimatedStrength1" targetFieldName="InfillEstimatedStrengthID">
             <xpObjectMoniker Id="cb059c9d-df4f-44e1-bf37-ab5679e572b7" />
           </simpleAssociation>
-          <simpleAssociation Id="4751ffcd-7e38-455f-8836-b7edacf431dc" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryEstimatedStrength" targetFieldName="EstimatedStrengthID">
+          <simpleAssociation Id="4751ffcd-7e38-455f-8836-b7edacf431dc" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryEstimatedStrength" targetFieldName="EstimatedStrengthID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -5157,7 +5157,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="21cca6f8-2abd-4b2c-8918-ed2bc3960e19" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryGasDetected" targetFieldName="GasDetectedID">
+          <simpleAssociation Id="21cca6f8-2abd-4b2c-8918-ed2bc3960e19" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryGasDetected" targetFieldName="GasDetectedID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -5258,37 +5258,37 @@
           <simpleAssociation Id="bf46312e-7c14-4d1b-8a24-83e189134fd8" sourceCollectionName="Headers" name="HeaderReferencesDictionaryGeophysicalLogType" targetFieldName="GeophysicalLogTypeID1">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="41b03c0c-13ae-4d5a-8ebd-8472cfbd30b6" sourceCollectionName="Headers1" name="HeaderReferencesDictionaryGeophysicalLogType1" targetFieldName="GeophysicalLogTypeID10">
+          <simpleAssociation Id="41b03c0c-13ae-4d5a-8ebd-8472cfbd30b6" sourceCollectionName="GeophysicalLogHeaders10" name="HeaderReferencesDictionaryGeophysicalLogType1" targetFieldName="GeophysicalLogTypeID10">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="56865ec1-cb40-4dac-b163-73b1fdacf745" sourceCollectionName="Headers2" name="HeaderReferencesDictionaryGeophysicalLogType2" targetFieldName="GeophysicalLogTypeID8">
+          <simpleAssociation Id="56865ec1-cb40-4dac-b163-73b1fdacf745" sourceCollectionName="GeophysicalLogHeaders8" name="HeaderReferencesDictionaryGeophysicalLogType2" targetFieldName="GeophysicalLogTypeID8">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="99e8d9a1-6315-4d5f-969c-a92b555a8959" sourceCollectionName="Headers3" name="HeaderReferencesDictionaryGeophysicalLogType3" targetFieldName="GeophysicalLogTypeID9">
+          <simpleAssociation Id="99e8d9a1-6315-4d5f-969c-a92b555a8959" sourceCollectionName="GeophysicalLogHeaders9" name="HeaderReferencesDictionaryGeophysicalLogType3" targetFieldName="GeophysicalLogTypeID9">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="21adf64f-adb0-4094-be65-b3d40e5bbcd2" sourceCollectionName="Headers4" name="HeaderReferencesDictionaryGeophysicalLogType4" targetFieldName="GeophysicalLogTypeID11">
+          <simpleAssociation Id="21adf64f-adb0-4094-be65-b3d40e5bbcd2" sourceCollectionName="GeophysicalLogHeaders11" name="HeaderReferencesDictionaryGeophysicalLogType4" targetFieldName="GeophysicalLogTypeID11">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="dac63aff-af3a-4f94-92da-7c8305d2127f" sourceCollectionName="Headers5" name="HeaderReferencesDictionaryGeophysicalLogType5" targetFieldName="GeophysicalLogTypeID12">
+          <simpleAssociation Id="dac63aff-af3a-4f94-92da-7c8305d2127f" sourceCollectionName="GeophysicalLogHeaders12" name="HeaderReferencesDictionaryGeophysicalLogType5" targetFieldName="GeophysicalLogTypeID12">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="acad640c-931b-4f5a-bead-92d64a9f6168" sourceCollectionName="Headers6" name="HeaderReferencesDictionaryGeophysicalLogType6" targetFieldName="GeophysicalLogTypeID2">
+          <simpleAssociation Id="acad640c-931b-4f5a-bead-92d64a9f6168" sourceCollectionName="GeophysicalLogHeaders2" name="HeaderReferencesDictionaryGeophysicalLogType6" targetFieldName="GeophysicalLogTypeID2">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="ae5213ab-825f-40e7-aaf8-2b3c67faf77a" sourceCollectionName="Headers7" name="HeaderReferencesDictionaryGeophysicalLogType7" targetFieldName="GeophysicalLogTypeID3">
+          <simpleAssociation Id="ae5213ab-825f-40e7-aaf8-2b3c67faf77a" sourceCollectionName="GeophysicalLogHeaders3" name="HeaderReferencesDictionaryGeophysicalLogType7" targetFieldName="GeophysicalLogTypeID3">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="95babeb5-f8fa-4122-8fa0-c3ceac38a411" sourceCollectionName="Headers8" name="HeaderReferencesDictionaryGeophysicalLogType8" targetFieldName="GeophysicalLogTypeID4">
+          <simpleAssociation Id="95babeb5-f8fa-4122-8fa0-c3ceac38a411" sourceCollectionName="GeophysicalLogHeaders4" name="HeaderReferencesDictionaryGeophysicalLogType8" targetFieldName="GeophysicalLogTypeID4">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="3a8f12f3-f9a2-4675-a3af-2dbdf12ea469" sourceCollectionName="Headers9" name="HeaderReferencesDictionaryGeophysicalLogType9" targetFieldName="GeophysicalLogTypeID5">
+          <simpleAssociation Id="3a8f12f3-f9a2-4675-a3af-2dbdf12ea469" sourceCollectionName="GeophysicalLogHeaders5" name="HeaderReferencesDictionaryGeophysicalLogType9" targetFieldName="GeophysicalLogTypeID5">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="0ba0c7fb-212c-45db-a5c0-f60127fbf6cd" sourceCollectionName="Headers10" name="HeaderReferencesDictionaryGeophysicalLogType10" targetFieldName="GeophysicalLogTypeID6">
+          <simpleAssociation Id="0ba0c7fb-212c-45db-a5c0-f60127fbf6cd" sourceCollectionName="GeophysicalLogHeaders6" name="HeaderReferencesDictionaryGeophysicalLogType10" targetFieldName="GeophysicalLogTypeID6">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="4cee5eb7-c478-460d-ac3e-9a1641043a1b" sourceCollectionName="Headers11" name="HeaderReferencesDictionaryGeophysicalLogType11" targetFieldName="GeophysicalLogTypeID7">
+          <simpleAssociation Id="4cee5eb7-c478-460d-ac3e-9a1641043a1b" sourceCollectionName="GeophysicalLogHeaders7" name="HeaderReferencesDictionaryGeophysicalLogType11" targetFieldName="GeophysicalLogTypeID7">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
         </saTargets>
@@ -5615,7 +5615,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="9c922a48-74bc-468f-824b-0a10530666d5" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryHorizon" targetFieldName="HorizonID">
+          <simpleAssociation Id="9c922a48-74bc-468f-824b-0a10530666d5" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryHorizon" targetFieldName="HorizonID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -5664,7 +5664,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="0ef9405b-c594-4e18-8bb5-e323150bb61d" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryHue" targetFieldName="HueID">
+          <simpleAssociation Id="0ef9405b-c594-4e18-8bb5-e323150bb61d" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryHue" targetFieldName="HueID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -5814,7 +5814,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="4260c250-2a6d-4dc3-8445-426e328bb3f6" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryIntervalStatus" targetFieldName="IntervalStatusID">
+          <simpleAssociation Id="4260c250-2a6d-4dc3-8445-426e328bb3f6" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryIntervalStatus" targetFieldName="IntervalStatusID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -5912,7 +5912,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="2dbf9c14-165d-4d70-89b3-d27c2f52f903" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryLithologyInterrelation" targetFieldName="LithologyInterrelationID">
+          <simpleAssociation Id="2dbf9c14-165d-4d70-89b3-d27c2f52f903" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryLithologyInterrelation" targetFieldName="LithologyInterrelationID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -5961,7 +5961,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="2024e9c8-75b5-4f45-beaa-85b624f30fd9" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryLithologyQualifier" targetFieldName="LithologyQualifierID">
+          <simpleAssociation Id="2024e9c8-75b5-4f45-beaa-85b624f30fd9" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryLithologyQualifier" targetFieldName="LithologyQualifierID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -6010,7 +6010,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="ed6b7ccc-cc52-48d3-b9b5-a88eb98d71bc" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryLithologyType" targetFieldName="LithologyTypeID">
+          <simpleAssociation Id="ed6b7ccc-cc52-48d3-b9b5-a88eb98d71bc" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryLithologyType" targetFieldName="LithologyTypeID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -6111,7 +6111,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="42432ceb-9b92-4e3d-8c51-838385310f9b" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryMechanicalState" targetFieldName="MechanicalStateID">
+          <simpleAssociation Id="42432ceb-9b92-4e3d-8c51-838385310f9b" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryMechanicalState" targetFieldName="MechanicalStateID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -6160,7 +6160,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="11b523ff-cd00-4171-9aaf-276302eb44c7" sourceCollectionName="Mineralogys" name="MineralogyReferencesDictionaryMineralAbundance" targetFieldName="MineralAbundanceID">
+          <simpleAssociation Id="11b523ff-cd00-4171-9aaf-276302eb44c7" sourceCollectionName="Mineralogies" name="MineralogyReferencesDictionaryMineralAbundance" targetFieldName="MineralAbundanceID">
             <xpObjectMoniker Id="6809c61a-c97f-4ba6-9cf7-b5234ce6f30e" />
           </simpleAssociation>
         </saTargets>
@@ -6209,7 +6209,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="07e1a3f3-bab8-4812-9e81-824055fd61b2" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryMineralAndFossilAbundance" targetFieldName="MineralAndFossilAbundanceID">
+          <simpleAssociation Id="07e1a3f3-bab8-4812-9e81-824055fd61b2" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryMineralAndFossilAbundance" targetFieldName="MineralAndFossilAbundanceID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -6258,7 +6258,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="c961c610-7ea9-4dc0-9b58-6228ce0b60f8" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryMineralAndFossilAssociation" targetFieldName="MineralAndFossilAssociationID">
+          <simpleAssociation Id="c961c610-7ea9-4dc0-9b58-6228ce0b60f8" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryMineralAndFossilAssociation" targetFieldName="MineralAndFossilAssociationID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -6307,7 +6307,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="09072432-82d1-4b1a-af39-f6b9037b69b6" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryMineralAndFossilType" targetFieldName="MineralAndFossilTypeID">
+          <simpleAssociation Id="09072432-82d1-4b1a-af39-f6b9037b69b6" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryMineralAndFossilType" targetFieldName="MineralAndFossilTypeID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -6356,7 +6356,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="900e1e84-0c1b-4ee3-9af9-108d48fa7b5a" sourceCollectionName="Mineralogys" name="MineralogyReferencesDictionaryMineralForm" targetFieldName="MineralFormID">
+          <simpleAssociation Id="900e1e84-0c1b-4ee3-9af9-108d48fa7b5a" sourceCollectionName="Mineralogies" name="MineralogyReferencesDictionaryMineralForm" targetFieldName="MineralFormID">
             <xpObjectMoniker Id="6809c61a-c97f-4ba6-9cf7-b5234ce6f30e" />
           </simpleAssociation>
         </saTargets>
@@ -6405,7 +6405,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="eec869f3-95a5-43fc-b796-b5464627a4bf" sourceCollectionName="Mineralogys" name="MineralogyReferencesDictionaryMineralStyle" targetFieldName="MineralStyleID">
+          <simpleAssociation Id="eec869f3-95a5-43fc-b796-b5464627a4bf" sourceCollectionName="Mineralogies" name="MineralogyReferencesDictionaryMineralStyle" targetFieldName="MineralStyleID">
             <xpObjectMoniker Id="6809c61a-c97f-4ba6-9cf7-b5234ce6f30e" />
           </simpleAssociation>
         </saTargets>
@@ -6454,7 +6454,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="d0bd9e98-dc9a-4b4e-94e5-9dd0b3c25921" sourceCollectionName="Mineralogys" name="MineralogyReferencesDictionaryMineralType" targetFieldName="MineralTypeID">
+          <simpleAssociation Id="d0bd9e98-dc9a-4b4e-94e5-9dd0b3c25921" sourceCollectionName="Mineralogies" name="MineralogyReferencesDictionaryMineralType" targetFieldName="MineralTypeID">
             <xpObjectMoniker Id="6809c61a-c97f-4ba6-9cf7-b5234ce6f30e" />
           </simpleAssociation>
         </saTargets>
@@ -6598,7 +6598,7 @@
           <simpleAssociation Id="686d345c-fce5-443b-8245-8ed6c6d97c5d" sourceCollectionName="DictionaryPlyAliasCollection" name="DictionaryPlyAliasReferencesDictionaryPly" targetFieldName="PlyID">
             <xpObjectMoniker Id="17c3bacb-5895-4c11-882a-cf4faa5ac75c" />
           </simpleAssociation>
-          <simpleAssociation Id="1f96c1ff-fe1c-42ad-a897-b27826e38ec2" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryPly" targetFieldName="PlyID">
+          <simpleAssociation Id="1f96c1ff-fe1c-42ad-a897-b27826e38ec2" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryPly" targetFieldName="PlyID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -6720,7 +6720,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="73cc2d18-e01c-40bb-b2eb-1f10012b5491" sourceCollectionName="ContactCompanys" name="ContactCompanyReferencesDictionaryProfession" targetFieldName="ProfessionID">
+          <simpleAssociation Id="73cc2d18-e01c-40bb-b2eb-1f10012b5491" sourceCollectionName="ContactCompanies" name="ContactCompanyReferencesDictionaryProfession" targetFieldName="ProfessionID">
             <xpObjectMoniker Id="b95d54c0-d6be-4ecd-9d93-d9437b21e18b" />
           </simpleAssociation>
           <simpleAssociation Id="7103c34e-6032-421d-87d0-2811ffb70cf4" sourceCollectionName="DictionaryWorkTypes" name="DictionaryWorkTypeReferencesDictionaryProfession" targetFieldName="ProfessionID">
@@ -6882,7 +6882,7 @@
           <simpleAssociation Id="70195609-083f-4998-a30f-7c5a32bdb7f7" sourceCollectionName="HeaderRelations" name="HeaderRelationReferencesDictionaryRelationType" targetFieldName="RelationTypeID">
             <xpObjectMoniker Id="ec359594-f494-4d85-88c2-d33e240b8992" />
           </simpleAssociation>
-          <simpleAssociation Id="00bbfcde-46e2-4387-af8f-d1da0f09eeae" sourceCollectionName="X_DictionaryModelRelations" name="X_DictionaryModelRelationReferencesDictionaryRelationType" targetFieldName="RelationTypeID">
+          <simpleAssociation Id="00bbfcde-46e2-4387-af8f-d1da0f09eeae" sourceCollectionName="DictionaryModelRelations" name="DictionaryModelRelationReferencesDictionaryRelationType" targetFieldName="RelationTypeID">
             <xpObjectMoniker Id="cf2079d9-c04d-420c-a0f8-5cedbc83291b" />
           </simpleAssociation>
         </saTargets>
@@ -6986,7 +6986,7 @@
           <simpleAssociation Id="d101c57d-b8b0-428b-9a86-c99b2b97ea3b" sourceCollectionName="AssayGroupTestSamples" name="AssayGroupTestSampleReferencesDictionarySampleCategory" targetFieldName="SampleCategoryID">
             <xpObjectMoniker Id="b3a19457-6fbe-428a-a1e3-e074d822c927" />
           </simpleAssociation>
-          <simpleAssociation Id="94447c24-b865-496a-bbdd-96d5cb405d65" sourceCollectionName="X_Samples" name="X_SampleReferencesDictionarySampleCategory" targetFieldName="SampleCategoryID">
+          <simpleAssociation Id="94447c24-b865-496a-bbdd-96d5cb405d65" sourceCollectionName="Samples" name="SampleReferencesDictionarySampleCategory" targetFieldName="SampleCategoryID">
             <xpObjectMoniker Id="db8ffc7b-31ff-44c3-ad99-eb66f646a7e0" />
           </simpleAssociation>
         </saTargets>
@@ -7044,7 +7044,7 @@
           <simpleAssociation Id="d2d926b9-3bd6-443c-8001-72e1625fd5a5" sourceCollectionName="PointLoads" name="PointLoadReferencesDictionarySampleState" targetFieldName="SampleStateID">
             <xpObjectMoniker Id="1ea2f9cd-2884-482d-a79e-56a16c54cab4" />
           </simpleAssociation>
-          <simpleAssociation Id="07ed3290-0fb0-4bfd-8de5-cff8ace59224" sourceCollectionName="X_Samples" name="X_SampleReferencesDictionarySampleState" targetFieldName="SampleStateID">
+          <simpleAssociation Id="07ed3290-0fb0-4bfd-8de5-cff8ace59224" sourceCollectionName="Samples" name="SampleReferencesDictionarySampleState" targetFieldName="SampleStateID">
             <xpObjectMoniker Id="db8ffc7b-31ff-44c3-ad99-eb66f646a7e0" />
           </simpleAssociation>
         </saTargets>
@@ -7099,7 +7099,7 @@
           <simpleAssociation Id="282090fc-0fc9-4811-ae85-3b4ff2c3eb67" sourceCollectionName="AssayGroupTestSamples" name="AssayGroupTestSampleReferencesDictionarySampleType" targetFieldName="SampleTypeID">
             <xpObjectMoniker Id="b3a19457-6fbe-428a-a1e3-e074d822c927" />
           </simpleAssociation>
-          <simpleAssociation Id="b25e810e-3f24-44d0-90b7-3e4f20a9bb31" sourceCollectionName="Lithologys" name="LithologyReferencesDictionarySampleType" targetFieldName="SampleTypeID">
+          <simpleAssociation Id="b25e810e-3f24-44d0-90b7-3e4f20a9bb31" sourceCollectionName="Lithologies" name="LithologyReferencesDictionarySampleType" targetFieldName="SampleTypeID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
           <simpleAssociation Id="a25f7013-9c6f-4421-bfc5-1ce157ee5543" sourceCollectionName="PointLoads" name="PointLoadReferencesDictionarySampleType" targetFieldName="SampleTypeID">
@@ -7108,7 +7108,7 @@
           <simpleAssociation Id="42e2ef61-5e60-4ea9-a35f-2db5bc5c7aed" sourceCollectionName="WaterFlows" name="WaterFlowReferencesDictionarySampleType" targetFieldName="SampleTypeID">
             <xpObjectMoniker Id="9a824408-0d00-4f25-9756-5bde282a55c0" />
           </simpleAssociation>
-          <simpleAssociation Id="c4e7f6c2-ed33-4e5e-990d-8667c82a59eb" sourceCollectionName="X_Samples" name="X_SampleReferencesDictionarySampleType" targetFieldName="SampleTypeID">
+          <simpleAssociation Id="c4e7f6c2-ed33-4e5e-990d-8667c82a59eb" sourceCollectionName="Samples" name="SampleReferencesDictionarySampleType" targetFieldName="SampleTypeID">
             <xpObjectMoniker Id="db8ffc7b-31ff-44c3-ad99-eb66f646a7e0" />
           </simpleAssociation>
         </saTargets>
@@ -7151,7 +7151,7 @@
           <simpleAssociation Id="79660097-9dea-49a2-9e9d-252cbcd429d0" sourceCollectionName="DictionarySeamAliasCollection" name="DictionarySeamAliasReferencesDictionarySeam" targetFieldName="SeamID">
             <xpObjectMoniker Id="67b5cd68-866e-4a02-89d2-e7384d3ca466" />
           </simpleAssociation>
-          <simpleAssociation Id="35c652a0-0551-4bfa-8027-fd27c06875ba" sourceCollectionName="Lithologys" name="LithologyReferencesDictionarySeam" targetFieldName="SeamID">
+          <simpleAssociation Id="35c652a0-0551-4bfa-8027-fd27c06875ba" sourceCollectionName="Lithologies" name="LithologyReferencesDictionarySeam" targetFieldName="SeamID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -7224,7 +7224,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="25b1e4d6-01e0-49cc-946a-ff7532db5875" sourceCollectionName="Lithologys" name="LithologyReferencesDictionarySedimentaryFeature" targetFieldName="SedimentaryFeature1ID">
+          <simpleAssociation Id="25b1e4d6-01e0-49cc-946a-ff7532db5875" sourceCollectionName="Lithologies" name="LithologyReferencesDictionarySedimentaryFeature" targetFieldName="SedimentaryFeature1ID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
           <simpleAssociation Id="4eac995a-3778-49a3-848c-84b912d9ed56" sourceCollectionName="Lithologys1" name="LithologyReferencesDictionarySedimentaryFeature1" targetFieldName="SedimentaryFeature2ID">
@@ -7276,7 +7276,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="ec7eda32-e165-46bb-acdc-aba31d679c12" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryShade" targetFieldName="ShadeID">
+          <simpleAssociation Id="ec7eda32-e165-46bb-acdc-aba31d679c12" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryShade" targetFieldName="ShadeID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -7374,7 +7374,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="2d9a4a10-e330-4e07-be89-1dbbdfea20e7" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryStratigraphy" targetFieldName="StratigraphyID">
+          <simpleAssociation Id="2d9a4a10-e330-4e07-be89-1dbbdfea20e7" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryStratigraphy" targetFieldName="StratigraphyID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -7521,7 +7521,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="a21985cd-8414-4a26-b8f6-d48abfbd96f5" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryTexture" targetFieldName="TextureID">
+          <simpleAssociation Id="a21985cd-8414-4a26-b8f6-d48abfbd96f5" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryTexture" targetFieldName="TextureID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -7582,7 +7582,7 @@
           <simpleAssociation Id="ba062dcb-7772-46bb-934f-bc88d55d0b37" sourceCollectionName="Parameters" name="ParameterReferencesDictionaryUnit" targetFieldName="UnitID">
             <xpObjectMoniker Id="f572692f-e230-4ce6-9b42-b4300d82b487" />
           </simpleAssociation>
-          <simpleAssociation Id="37a0e918-edec-4af1-ab50-11ff7f6c2058" sourceCollectionName="X_ProjectDeliverables" name="X_ProjectDeliverableReferencesDictionaryUnit" targetFieldName="ExpectedProRataPerUnitID">
+          <simpleAssociation Id="37a0e918-edec-4af1-ab50-11ff7f6c2058" sourceCollectionName="ProjectDeliverables" name="ProjectDeliverableReferencesDictionaryUnit" targetFieldName="ExpectedProRataPerUnitID">
             <xpObjectMoniker Id="ebccd26c-8d63-485a-ac26-6ec0d7af9bcb" />
           </simpleAssociation>
         </saTargets>
@@ -7663,7 +7663,7 @@
           <simpleAssociation Id="c13f86a4-2788-4270-b8ec-330220260f42" sourceCollectionName="Defects" name="DefectReferencesDictionaryWeathering" targetFieldName="WeatheringID">
             <xpObjectMoniker Id="cb059c9d-df4f-44e1-bf37-ab5679e572b7" />
           </simpleAssociation>
-          <simpleAssociation Id="bf387b06-6e26-4ea8-a3a8-687d92b35f15" sourceCollectionName="Lithologys" name="LithologyReferencesDictionaryWeathering" targetFieldName="WeatheringID">
+          <simpleAssociation Id="bf387b06-6e26-4ea8-a3a8-687d92b35f15" sourceCollectionName="Lithologies" name="LithologyReferencesDictionaryWeathering" targetFieldName="WeatheringID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
         </saTargets>
@@ -7746,16 +7746,16 @@
           <simpleAssociation Id="a4a701d5-aeda-40d5-b552-adb55a5bdb2b" sourceCollectionName="ProjectPlanTaskResponses" name="ProjectPlanTaskResponseReferencesDictionaryWorkType" targetFieldName="ActualWorkTypeID">
             <xpObjectMoniker Id="f0b5684e-5fb4-4472-92d2-190ab4694da4" />
           </simpleAssociation>
-          <simpleAssociation Id="fc886817-1512-41f3-9984-b2d266f94b32" sourceCollectionName="X_ComplianceWorkTypes" name="X_ComplianceWorkTypeReferencesDictionaryWorkType" targetFieldName="WorkTypeID">
+          <simpleAssociation Id="fc886817-1512-41f3-9984-b2d266f94b32" sourceCollectionName="ComplianceWorkTypes" name="ComplianceWorkTypeReferencesDictionaryWorkType" targetFieldName="WorkTypeID">
             <xpObjectMoniker Id="36ca189d-b735-417f-8b0e-6d6714e4037c" />
           </simpleAssociation>
-          <simpleAssociation Id="268ae87e-8a66-46ac-96c1-ed6624b85504" sourceCollectionName="X_ProjectDeliverables" name="X_ProjectDeliverableReferencesDictionaryWorkType" targetFieldName="WorkTypeID">
+          <simpleAssociation Id="268ae87e-8a66-46ac-96c1-ed6624b85504" sourceCollectionName="ProjectDeliverables" name="ProjectDeliverableReferencesDictionaryWorkType" targetFieldName="WorkTypeID">
             <xpObjectMoniker Id="ebccd26c-8d63-485a-ac26-6ec0d7af9bcb" />
           </simpleAssociation>
-          <simpleAssociation Id="11e21f69-ae7a-4e3c-a6b8-d82ba2194a94" sourceCollectionName="X_Opportunitys" name="X_OpportunityReferencesDictionaryWorkType" targetFieldName="StatusWorkTypeID">
+          <simpleAssociation Id="11e21f69-ae7a-4e3c-a6b8-d82ba2194a94" sourceCollectionName="Opportunities" name="OpportunityReferencesDictionaryWorkType" targetFieldName="StatusWorkTypeID">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
-          <simpleAssociation Id="546d8f63-0011-40e3-aa43-0e31d357ca1e" sourceCollectionName="X_Opportunitys1" name="X_OpportunityReferencesDictionaryWorkType1" targetFieldName="RegardingWorkTypeID">
+          <simpleAssociation Id="546d8f63-0011-40e3-aa43-0e31d357ca1e" sourceCollectionName="Opportunitys1" name="OpportunityReferencesDictionaryWorkType1" targetFieldName="RegardingWorkTypeID">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
         </saTargets>
@@ -8025,7 +8025,7 @@
           <simpleAssociation Id="be52897a-d35c-4481-84d6-b02a0b6b9da3" sourceCollectionName="FileDatas" name="FileDataReferencesExperience" targetFieldName="WorkerID">
             <xpObjectMoniker Id="98d698a1-4e2b-4f29-8b27-26deb02e1565" />
           </simpleAssociation>
-          <simpleAssociation Id="b3952086-cb23-4147-8b85-3985fc773725" sourceCollectionName="X_Opportunitys" name="X_OpportunityReferencesExperience" targetFieldName="ExperienceID">
+          <simpleAssociation Id="b3952086-cb23-4147-8b85-3985fc773725" sourceCollectionName="Opportunities" name="OpportunityReferencesExperience" targetFieldName="ExperienceID">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
         </saTargets>
@@ -8132,13 +8132,13 @@
           <simpleAssociation Id="b7834fae-71a0-4d4b-9348-849139f0d9bf" sourceCollectionName="DictionaryColours" name="DictionaryColourReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="c0b97743-e029-4fe5-8ff2-7000566affd3" />
           </simpleAssociation>
-          <simpleAssociation Id="76987412-ec89-424b-9172-2ee0b179b6fc" sourceCollectionName="DictionaryCommoditys" name="DictionaryCommodityReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="76987412-ec89-424b-9172-2ee0b179b6fc" sourceCollectionName="DictionaryCommodities" name="DictionaryCommodityReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="acfb21b4-18ba-43fd-82cc-06c8ed8caf68" />
           </simpleAssociation>
           <simpleAssociation Id="a7f405ef-c080-4c4b-ba70-a24dfe101683" sourceCollectionName="DictionaryCoreStates" name="DictionaryCoreStateReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="1498077a-dcf7-44fd-a5ca-abb8456a4d9b" />
           </simpleAssociation>
-          <simpleAssociation Id="bb6f0f8b-e7c5-4ad7-a2a7-4b127139b146" sourceCollectionName="DictionaryCountrys" name="DictionaryCountryReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="bb6f0f8b-e7c5-4ad7-a2a7-4b127139b146" sourceCollectionName="DictionaryCountries" name="DictionaryCountryReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="72a2ccd7-ea24-41bb-bcfa-4354bd918b69" />
           </simpleAssociation>
           <simpleAssociation Id="69de5328-d07d-4a2b-a58c-fe9e4dcf26fa" sourceCollectionName="DictionaryCountryStates" name="DictionaryCountryStateReferencesFileData" targetFieldName="OriginalFileDataID">
@@ -8150,7 +8150,7 @@
           <simpleAssociation Id="8770b48f-eb37-451c-999c-813dc8fe8df3" sourceCollectionName="DictionaryDefectCompletenessCollection" name="DictionaryDefectCompletenessReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="ccfa664d-079a-4c46-9853-7aba2453defa" />
           </simpleAssociation>
-          <simpleAssociation Id="79caecba-9841-48fe-a849-d7dc8bf6d5a1" sourceCollectionName="DictionaryDefectContinuitys" name="DictionaryDefectContinuityReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="79caecba-9841-48fe-a849-d7dc8bf6d5a1" sourceCollectionName="DictionaryDefectContinuities" name="DictionaryDefectContinuityReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="d9874062-9c01-4d64-9491-54ab5c4c0d5d" />
           </simpleAssociation>
           <simpleAssociation Id="1271768f-262e-4fe7-9614-0bbf3f5f8ede" sourceCollectionName="DictionaryDefectSpacings" name="DictionaryDefectSpacingReferencesFileData" targetFieldName="OriginalFileDataID">
@@ -8279,13 +8279,13 @@
           <simpleAssociation Id="7443b291-cdcf-4a9b-98cd-d2fff3974fb3" sourceCollectionName="DictionaryMineralTypes" name="DictionaryMineralTypeReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="5825308b-c46e-4ab5-8eec-c3950ea09f72" />
           </simpleAssociation>
-          <simpleAssociation Id="5ae14e1f-c638-447c-87fc-a4713f7b4621" sourceCollectionName="DictionaryMoistureSensitivitys" name="DictionaryMoistureSensitivityReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="5ae14e1f-c638-447c-87fc-a4713f7b4621" sourceCollectionName="DictionaryMoistureSensitivities" name="DictionaryMoistureSensitivityReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="af2c7010-822a-46e7-ba2f-79b0c73cd161" />
           </simpleAssociation>
-          <simpleAssociation Id="9c29ad61-9ec9-4e32-8d53-aaf12522a445" sourceCollectionName="DictionaryPlasticitys" name="DictionaryPlasticityReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="9c29ad61-9ec9-4e32-8d53-aaf12522a445" sourceCollectionName="DictionaryPlasticities" name="DictionaryPlasticityReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="72397f64-9410-42b4-a8eb-1552299ae410" />
           </simpleAssociation>
-          <simpleAssociation Id="d196ee3c-8c09-4e6f-bfd9-7a298cc92fe4" sourceCollectionName="DictionaryPlys" name="DictionaryPlyReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="d196ee3c-8c09-4e6f-bfd9-7a298cc92fe4" sourceCollectionName="DictionaryPlies" name="DictionaryPlyReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="bf772d9b-6a57-4189-b1f5-f4562795426a" />
           </simpleAssociation>
           <simpleAssociation Id="6f989876-100e-4272-b865-12963660230f" sourceCollectionName="DictionaryPlyAliasCollection" name="DictionaryPlyAliasReferencesFileData" targetFieldName="OriginalFileDataID">
@@ -8309,7 +8309,7 @@
           <simpleAssociation Id="15f8e45d-5da0-4c1b-ad37-fb66b243bdda" sourceCollectionName="DictionaryRockMassUnitTypes" name="DictionaryRockMassUnitTypeReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="c4fc3eeb-e0d4-409c-95dc-5fbad7456547" />
           </simpleAssociation>
-          <simpleAssociation Id="a11ff55e-0c5a-4a7f-9231-6bba1ab45d72" sourceCollectionName="DictionarySampleCategorys" name="DictionarySampleCategoryReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="a11ff55e-0c5a-4a7f-9231-6bba1ab45d72" sourceCollectionName="DictionarySampleCategories" name="DictionarySampleCategoryReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="aa412b32-d86b-408f-881e-581ba1b2cd3a" />
           </simpleAssociation>
           <simpleAssociation Id="598070c9-c21a-4fd0-b8b9-c65e9f679182" sourceCollectionName="DictionarySampleStates" name="DictionarySampleStateReferencesFileData" targetFieldName="OriginalFileDataID">
@@ -8333,13 +8333,13 @@
           <simpleAssociation Id="ce90f1d6-a5bb-43f9-aa8e-ac70c0b68c25" sourceCollectionName="DictionaryShapes" name="DictionaryShapeReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="c29b4327-9c14-4a5e-a926-ac6d576df200" />
           </simpleAssociation>
-          <simpleAssociation Id="fa3b0c0e-4d59-40fa-a591-5d5fd4a57ba7" sourceCollectionName="DictionaryStratigraphys" name="DictionaryStratigraphyReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="fa3b0c0e-4d59-40fa-a591-5d5fd4a57ba7" sourceCollectionName="DictionaryStratigraphies" name="DictionaryStratigraphyReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="9a3ae528-9125-491c-a9b4-d0977e706bf2" />
           </simpleAssociation>
           <simpleAssociation Id="912ce939-d49b-433a-976e-654a84be4c46" sourceCollectionName="DictionarySurfaceRoughnessCollection" name="DictionarySurfaceRoughnessReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="4b8c4080-3f8e-4a52-86fc-7015268f70be" />
           </simpleAssociation>
-          <simpleAssociation Id="8e1fa8ea-1126-450b-8fa8-9817aebba2d4" sourceCollectionName="DictionarySurveyAccuracys" name="DictionarySurveyAccuracyReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="8e1fa8ea-1126-450b-8fa8-9817aebba2d4" sourceCollectionName="DictionarySurveyAccuracies" name="DictionarySurveyAccuracyReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="580fcb92-e8a9-4a16-bc4b-e775f6d1dd75" />
           </simpleAssociation>
           <simpleAssociation Id="4b93f9fa-288a-45b4-ba11-2e19d6700224" sourceCollectionName="DictionaryTextures" name="DictionaryTextureReferencesFileData" targetFieldName="OriginalFileDataID">
@@ -8357,25 +8357,25 @@
           <simpleAssociation Id="787fa5af-1243-483c-b842-44eda454d36b" sourceCollectionName="DictionaryWorkTypes" name="DictionaryWorkTypeReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="0fd81c89-da15-4e26-a01c-673998d5e3a0" />
           </simpleAssociation>
-          <simpleAssociation Id="e4a9b20f-9260-4537-a336-259feb095034" sourceCollectionName="X_DictionaryPositions" name="X_DictionaryPositionReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="e4a9b20f-9260-4537-a336-259feb095034" sourceCollectionName="DictionaryPositions" name="DictionaryPositionReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="89f45952-723b-41e0-a8bd-a60898031501" />
           </simpleAssociation>
-          <simpleAssociation Id="0418689c-e1fd-4578-a654-05c78a8837b5" sourceCollectionName="X_DictionaryWorkTypeClassCollection" name="X_DictionaryWorkTypeClassReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="0418689c-e1fd-4578-a654-05c78a8837b5" sourceCollectionName="DictionaryWorkTypeClassCollection" name="DictionaryWorkTypeClassReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="481b8aa2-b163-4c58-99c8-d156c7315f6d" />
           </simpleAssociation>
-          <simpleAssociation Id="99609d9e-3daa-4c13-ac3b-9dced06006f4" sourceCollectionName="X_DictionaryModelStatusCollection" name="X_DictionaryModelStatusReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="99609d9e-3daa-4c13-ac3b-9dced06006f4" sourceCollectionName="DictionaryModelStatusCollection" name="DictionaryModelStatusReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="3300037c-c1a8-4f20-8284-e32121d02e94" />
           </simpleAssociation>
-          <simpleAssociation Id="27f1ee25-d0ba-403e-97af-ceb88db221fe" sourceCollectionName="X_DictionaryModels" name="X_DictionaryModelReferencesFileData" targetFieldName="OriginalFileDataID">
+          <simpleAssociation Id="27f1ee25-d0ba-403e-97af-ceb88db221fe" sourceCollectionName="DictionaryModels" name="DictionaryModelReferencesFileData" targetFieldName="OriginalFileDataID">
             <xpObjectMoniker Id="92edf76a-9af9-4a1e-837b-5093db08afdd" />
           </simpleAssociation>
-          <simpleAssociation Id="75b792be-9048-4bce-8957-065b283923d6" sourceCollectionName="X_Contracts" name="X_ContractReferencesFileData" targetFieldName="FileDataID">
+          <simpleAssociation Id="75b792be-9048-4bce-8957-065b283923d6" sourceCollectionName="Contracts" name="ContractReferencesFileData" targetFieldName="FileDataID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="f946612a-42c3-4a72-9ca5-f96d11decc59" sourceCollectionName="X_ProjectDeliverables" name="X_ProjectDeliverableReferencesFileData" targetFieldName="EvidenceFileDataID">
+          <simpleAssociation Id="f946612a-42c3-4a72-9ca5-f96d11decc59" sourceCollectionName="ProjectDeliverables" name="ProjectDeliverableReferencesFileData" targetFieldName="EvidenceFileDataID">
             <xpObjectMoniker Id="ebccd26c-8d63-485a-ac26-6ec0d7af9bcb" />
           </simpleAssociation>
-          <simpleAssociation Id="dbd67e8a-3a6b-460e-adc5-0bf3ea1f71b0" sourceCollectionName="X_Opportunitys" name="X_OpportunityReferencesFileData" targetFieldName="ProposalFileDataID">
+          <simpleAssociation Id="dbd67e8a-3a6b-460e-adc5-0bf3ea1f71b0" sourceCollectionName="Opportunities" name="OpportunityReferencesFileData" targetFieldName="ProposalFileDataID">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
         </saTargets>
@@ -8802,7 +8802,7 @@
           <simpleAssociation Id="37d0d7b9-8555-41d5-8c82-11275c156922" sourceCollectionName="Drillings" name="DrillingReferencesHeader" targetFieldName="HeaderID">
             <xpObjectMoniker Id="d9b6e3f1-0969-40c2-b3e4-969291b95c4e" />
           </simpleAssociation>
-          <simpleAssociation Id="3b3f9f83-40b9-4d7f-a656-c3c77c0c079f" sourceCollectionName="Geologys" name="GeologyReferencesHeader" targetFieldName="HeaderID">
+          <simpleAssociation Id="3b3f9f83-40b9-4d7f-a656-c3c77c0c079f" sourceCollectionName="Geologies" name="GeologyReferencesHeader" targetFieldName="HeaderID">
             <xpObjectMoniker Id="c5fabd2e-c8a7-4ecf-9ddb-1a9f435e5a22" />
           </simpleAssociation>
           <simpleAssociation Id="28bd361a-3b6a-41f2-8649-a4da9a5e1ae7" sourceCollectionName="GeophysicsCollection" name="GeophysicsReferencesHeader" targetFieldName="HeaderID">
@@ -8814,16 +8814,16 @@
           <simpleAssociation Id="18ae322e-b2d5-4d5d-b17f-d19b18bcde98" sourceCollectionName="HeaderRelations1" name="HeaderRelationReferencesHeader1" targetFieldName="RelatedHeaderID">
             <xpObjectMoniker Id="ec359594-f494-4d85-88c2-d33e240b8992" />
           </simpleAssociation>
-          <simpleAssociation Id="3da0fc55-0f2b-43fe-b6a1-6a3c7600bed0" sourceCollectionName="Lithologys" name="LithologyReferencesHeader" targetFieldName="HeaderID">
+          <simpleAssociation Id="3da0fc55-0f2b-43fe-b6a1-6a3c7600bed0" sourceCollectionName="Lithologies" name="LithologyReferencesHeader" targetFieldName="HeaderID">
             <xpObjectMoniker Id="7ee0d907-02f4-4a3b-93f4-1e355ef516ee" />
           </simpleAssociation>
-          <simpleAssociation Id="a33d9043-a590-48ec-aea3-e3c54f313a7d" sourceCollectionName="Mineralogys" name="MineralogyReferencesHeader" targetFieldName="HeaderID">
+          <simpleAssociation Id="a33d9043-a590-48ec-aea3-e3c54f313a7d" sourceCollectionName="Mineralogies" name="MineralogyReferencesHeader" targetFieldName="HeaderID">
             <xpObjectMoniker Id="6809c61a-c97f-4ba6-9cf7-b5234ce6f30e" />
           </simpleAssociation>
           <simpleAssociation Id="8a0eb40b-5fbf-4ded-9dcd-e14f631ec759" sourceCollectionName="PointLoads" name="PointLoadReferencesHeader" targetFieldName="HeaderID">
             <xpObjectMoniker Id="1ea2f9cd-2884-482d-a79e-56a16c54cab4" />
           </simpleAssociation>
-          <simpleAssociation Id="561a163e-0cff-4bda-82e9-f5ed2bebff37" sourceCollectionName="Recoverys" name="RecoveryReferencesHeader" targetFieldName="HeaderID">
+          <simpleAssociation Id="561a163e-0cff-4bda-82e9-f5ed2bebff37" sourceCollectionName="Recoveries" name="RecoveryReferencesHeader" targetFieldName="HeaderID">
             <xpObjectMoniker Id="88044716-f156-45ce-b713-59959e1c9c01" />
           </simpleAssociation>
           <simpleAssociation Id="f5ca3692-f17b-4a8f-b840-dc5803eeecbc" sourceCollectionName="Surveys" name="SurveyReferencesHeader" targetFieldName="HeaderID">
@@ -8832,7 +8832,7 @@
           <simpleAssociation Id="e60d6e9d-7103-4e28-ac66-f3e582ba046a" sourceCollectionName="WaterFlows" name="WaterFlowReferencesHeader" targetFieldName="HeaderID">
             <xpObjectMoniker Id="9a824408-0d00-4f25-9756-5bde282a55c0" />
           </simpleAssociation>
-          <simpleAssociation Id="c74a7b96-722e-4955-b50f-cab8cae0666e" sourceCollectionName="X_Samples" name="X_SampleReferencesHeader" targetFieldName="HeaderID">
+          <simpleAssociation Id="c74a7b96-722e-4955-b50f-cab8cae0666e" sourceCollectionName="Samples" name="SampleReferencesHeader" targetFieldName="HeaderID">
             <xpObjectMoniker Id="db8ffc7b-31ff-44c3-ad99-eb66f646a7e0" />
           </simpleAssociation>
         </saTargets>
@@ -9262,7 +9262,7 @@
           <simpleAssociation Id="d00b0ef3-6e3b-41a1-9a57-7c1d36fa647d" sourceCollectionName="Headers" name="HeaderReferencesLocation" targetFieldName="LocationID">
             <xpObjectMoniker Id="60701eb0-5a45-4bbd-9e04-e992b92c1535" />
           </simpleAssociation>
-          <simpleAssociation Id="0ebc7914-b079-4182-9d88-01e2a5647c0e" sourceCollectionName="X_LocationHistorys" name="X_LocationHistoryReferencesLocation" targetFieldName="CorrectedLocationID">
+          <simpleAssociation Id="0ebc7914-b079-4182-9d88-01e2a5647c0e" sourceCollectionName="LocationHistories" name="LocationHistoryReferencesLocation" targetFieldName="CorrectedLocationID">
             <xpObjectMoniker Id="55e78009-aae2-44f5-aca1-ef177078ecbd" />
           </simpleAssociation>
         </saTargets>
@@ -9878,13 +9878,13 @@
           <simpleAssociation Id="0cb9746c-e112-49eb-b724-4747ddfe07be" sourceCollectionName="ProjectPlans" name="ProjectPlanReferencesProject" targetFieldName="ProjectID">
             <xpObjectMoniker Id="871dd5e6-8bc7-4d74-8a6f-f2bdf65c466d" />
           </simpleAssociation>
-          <simpleAssociation Id="b6678b5b-8958-4345-b58d-f670612c1569" sourceCollectionName="X_Contracts" name="X_ContractReferencesProject" targetFieldName="ProjectID">
+          <simpleAssociation Id="b6678b5b-8958-4345-b58d-f670612c1569" sourceCollectionName="Contracts" name="ContractReferencesProject" targetFieldName="ProjectID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
-          <simpleAssociation Id="c437d82d-9841-4121-b74a-bedebff1c076" sourceCollectionName="X_ProjectDeliverables" name="X_ProjectDeliverableReferencesProject" targetFieldName="ProjectID">
+          <simpleAssociation Id="c437d82d-9841-4121-b74a-bedebff1c076" sourceCollectionName="ProjectDeliverables" name="ProjectDeliverableReferencesProject" targetFieldName="ProjectID">
             <xpObjectMoniker Id="ebccd26c-8d63-485a-ac26-6ec0d7af9bcb" />
           </simpleAssociation>
-          <simpleAssociation Id="1c5e01bc-7c5f-4db6-a3c0-8df02ddc6ebb" sourceCollectionName="X_Opportunitys" name="X_OpportunityReferencesProject" targetFieldName="ProjectID">
+          <simpleAssociation Id="1c5e01bc-7c5f-4db6-a3c0-8df02ddc6ebb" sourceCollectionName="Opportunities" name="OpportunityReferencesProject" targetFieldName="ProjectID">
             <xpObjectMoniker Id="f6e49724-87c9-40da-8e7c-0a514076e196" />
           </simpleAssociation>
         </saTargets>
@@ -10029,10 +10029,10 @@
           <simpleAssociation Id="6911c35f-b73c-4c9d-adf3-b94260c53f05" sourceCollectionName="ProjectPlanTaskWorkers" name="ProjectPlanTaskWorkerReferencesProjectPlanTask" targetFieldName="ProjectPlanTaskID">
             <xpObjectMoniker Id="da678b40-6972-4368-be16-0276de7ffe4a" />
           </simpleAssociation>
-          <simpleAssociation Id="438bfb33-22f0-4443-afd1-b98a583b6aba" sourceCollectionName="X_ProjectPlanTaskComplianceResponses" name="X_ProjectPlanTaskComplianceResponseReferencesProjectPlanTask" targetFieldName="ProjectPlanTaskID">
+          <simpleAssociation Id="438bfb33-22f0-4443-afd1-b98a583b6aba" sourceCollectionName="ProjectPlanTaskComplianceResponses" name="ProjectPlanTaskComplianceResponseReferencesProjectPlanTask" targetFieldName="ProjectPlanTaskID">
             <xpObjectMoniker Id="51864d98-cbb0-4739-b278-92c5eadcdc07" />
           </simpleAssociation>
-          <simpleAssociation Id="d8c5b077-b8bb-4da6-aafc-7a7c0bd34601" sourceCollectionName="X_ProjectDeliverables" name="X_ProjectDeliverableReferencesProjectPlanTask" targetFieldName="MilestoneTaskID">
+          <simpleAssociation Id="d8c5b077-b8bb-4da6-aafc-7a7c0bd34601" sourceCollectionName="ProjectDeliverables" name="ProjectDeliverableReferencesProjectPlanTask" targetFieldName="MilestoneTaskID">
             <xpObjectMoniker Id="ebccd26c-8d63-485a-ac26-6ec0d7af9bcb" />
           </simpleAssociation>
         </saTargets>
@@ -10115,7 +10115,7 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="a3ab2de8-d7ee-4819-950d-69a0b89f6ea6" sourceCollectionName="X_ProjectPlanTaskComplianceResponses" name="X_ProjectPlanTaskComplianceResponseReferencesProjectPlanTaskResponse" targetFieldName="ProjectPlanTaskResponseID">
+          <simpleAssociation Id="a3ab2de8-d7ee-4819-950d-69a0b89f6ea6" sourceCollectionName="ProjectPlanTaskComplianceResponses" name="ProjectPlanTaskComplianceResponseReferencesProjectPlanTaskResponse" targetFieldName="ProjectPlanTaskResponseID">
             <xpObjectMoniker Id="51864d98-cbb0-4739-b278-92c5eadcdc07" />
           </simpleAssociation>
         </saTargets>
@@ -10278,7 +10278,7 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="03f68426-bf5f-4a77-ad3b-9cfc598b43d7" sourceCollectionName="ProspectusProjectCommoditys" name="ProspectusProjectCommodityReferencesProspectusProject" targetFieldName="ProspectusProjectID">
+          <simpleAssociation Id="03f68426-bf5f-4a77-ad3b-9cfc598b43d7" sourceCollectionName="ProspectusProjectCommodities" name="ProspectusProjectCommodityReferencesProspectusProject" targetFieldName="ProspectusProjectID">
             <xpObjectMoniker Id="4a7d9e1f-eec6-4e99-8721-4bf41d0c4dba" />
           </simpleAssociation>
           <simpleAssociation Id="6b4f066d-a5a7-4dd7-96b1-7111dffa2804" sourceCollectionName="ProspectusProjectProvinces" name="ProspectusProjectProvinceReferencesProspectusProject" targetFieldName="ProspectusProjectID">
@@ -10447,7 +10447,7 @@
           <simpleAssociation Id="9cfe192b-81f4-49c7-bf18-36971df960ad" sourceCollectionName="Tenements" name="TenementReferencesProvince" targetFieldName="TenementBoundaryProvinceID">
             <xpObjectMoniker Id="f4a381a2-f5a3-4b23-b400-9cdbd0845fcd" />
           </simpleAssociation>
-          <simpleAssociation Id="e58f4cc1-480b-48b1-a25f-16c5fe7854b4" sourceCollectionName="X_Compliances" name="X_ComplianceReferencesProvince" targetFieldName="ProvinceID">
+          <simpleAssociation Id="e58f4cc1-480b-48b1-a25f-16c5fe7854b4" sourceCollectionName="Compliances" name="ComplianceReferencesProvince" targetFieldName="ProvinceID">
             <xpObjectMoniker Id="6764b1a5-af77-42a0-8a9b-5bbec739709b" />
           </simpleAssociation>
         </saTargets>
@@ -10907,7 +10907,7 @@
           <simpleAssociation Id="4cec6a95-fbd3-4a35-a322-9b917fd86bc4" sourceCollectionName="ProspectusCollection" name="ProspectusReferencesTenement" targetFieldName="TenementID">
             <xpObjectMoniker Id="56248a53-ba82-411d-92ca-8494539fa6ea" />
           </simpleAssociation>
-          <simpleAssociation Id="ddce4f43-ab38-4413-9e5b-a16f2f5540ba" sourceCollectionName="TenementCommoditys" name="TenementCommodityReferencesTenement" targetFieldName="TenementID">
+          <simpleAssociation Id="ddce4f43-ab38-4413-9e5b-a16f2f5540ba" sourceCollectionName="TenementCommodities" name="TenementCommodityReferencesTenement" targetFieldName="TenementID">
             <xpObjectMoniker Id="07c521a1-c67b-44c8-a6d8-5d23851db46c" />
           </simpleAssociation>
           <simpleAssociation Id="122df10e-ccfa-4dfc-a35a-f6570304d68d" sourceCollectionName="TenementProvinces" name="TenementProvinceReferencesTenement" targetFieldName="TenementID">
@@ -11263,7 +11263,7 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="e7c28b49-3bf9-415c-a72b-f22f79842f5a" sourceCollectionName="Experiences" name="ExperienceReferencesX_DictionaryPosition" targetFieldName="PositionID">
+          <simpleAssociation Id="e7c28b49-3bf9-415c-a72b-f22f79842f5a" sourceCollectionName="Experiences" name="ExperienceReferencesDictionaryPosition" targetFieldName="PositionID">
             <xpObjectMoniker Id="6614de66-964c-4968-8377-63362fa9ca0e" />
           </simpleAssociation>
         </saTargets>
@@ -11370,7 +11370,7 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="fe0bd50d-bca9-41aa-bc91-d9b6dc84ff5c" sourceCollectionName="AssayGroupTestResults" name="AssayGroupTestResultReferencesX_Sample" targetFieldName="SampleID">
+          <simpleAssociation Id="fe0bd50d-bca9-41aa-bc91-d9b6dc84ff5c" sourceCollectionName="AssayGroupTestResults" name="AssayGroupTestResultReferencesSample" targetFieldName="SampleID">
             <xpObjectMoniker Id="f206b00f-cea7-486e-bc11-94b81d497b77" />
           </simpleAssociation>
         </saTargets>
@@ -11441,7 +11441,7 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="94eee751-4817-4559-a129-268f869899db" sourceCollectionName="X_ComplianceWorkTypes" name="X_ComplianceWorkTypeReferencesX_Compliance" targetFieldName="ComplianceID">
+          <simpleAssociation Id="94eee751-4817-4559-a129-268f869899db" sourceCollectionName="ComplianceWorkTypes" name="ComplianceWorkTypeReferencesCompliance" targetFieldName="ComplianceID">
             <xpObjectMoniker Id="36ca189d-b735-417f-8b0e-6d6714e4037c" />
           </simpleAssociation>
         </saTargets>
@@ -11473,7 +11473,7 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="cc4cc631-1704-4ccd-97c2-c40713326d92" sourceCollectionName="X_DictionaryModels" name="X_DictionaryModelReferencesX_DictionaryModelStatus" targetFieldName="StatusID">
+          <simpleAssociation Id="cc4cc631-1704-4ccd-97c2-c40713326d92" sourceCollectionName="DictionaryModels" name="DictionaryModelReferencesDictionaryModelStatus" targetFieldName="StatusID">
             <xpObjectMoniker Id="92edf76a-9af9-4a1e-837b-5093db08afdd" />
           </simpleAssociation>
         </saTargets>
@@ -11535,7 +11535,7 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="33faad76-a8d8-470d-8896-522e961decaa" sourceCollectionName="Surveys" name="SurveyReferencesX_DictionaryModel" targetFieldName="InstrumentModelID">
+          <simpleAssociation Id="33faad76-a8d8-470d-8896-522e961decaa" sourceCollectionName="Surveys" name="SurveyReferencesDictionaryModel" targetFieldName="InstrumentModelID">
             <xpObjectMoniker Id="be7830b4-04d8-47cc-a097-adeddc48a125" />
           </simpleAssociation>
         </saTargets>
@@ -11673,7 +11673,7 @@
         </fields>
         <indexes>
           <xpObjectHasIndexes Id="d778c5bd-c78b-409a-b343-bc8406a829c0">
-            <index Id="ea5f3038-2b9b-4c0d-85f2-89f107ff30a6" name="IX_X_ComplianceWorkType" unique="true">
+            <index Id="ea5f3038-2b9b-4c0d-85f2-89f107ff30a6" name="IComplianceWorkType" unique="true">
               <fieldsInIndex>
                 <indexReferencesFields Id="d924c517-8b21-49ab-9549-1b06d080aff3">
                   <fieldMoniker Id="647f5ac9-d794-419a-9715-b356e9be2d47" />
@@ -11686,7 +11686,7 @@
           </xpObjectHasIndexes>
         </indexes>
         <saTargets>
-          <simpleAssociation Id="77e75bf4-2cea-400d-83f1-51e99ee2abfd" sourceCollectionName="X_ProjectPlanTaskComplianceResponses" name="X_ProjectPlanTaskComplianceResponseReferencesX_ComplianceWorkType" targetFieldName="ComplianceWorkTypeID">
+          <simpleAssociation Id="77e75bf4-2cea-400d-83f1-51e99ee2abfd" sourceCollectionName="ProjectPlanTaskComplianceResponses" name="ProjectPlanTaskComplianceResponseReferencesComplianceWorkType" targetFieldName="ComplianceWorkTypeID">
             <xpObjectMoniker Id="51864d98-cbb0-4739-b278-92c5eadcdc07" />
           </simpleAssociation>
         </saTargets>
@@ -11904,7 +11904,7 @@
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
-          <simpleAssociation Id="75f2ec26-7c92-4e27-812b-8f45241b5dca" sourceCollectionName="X_Contracts" name="X_ContractReferencesX_ProjectDeliverable" targetFieldName="LastDeliverableID">
+          <simpleAssociation Id="75f2ec26-7c92-4e27-812b-8f45241b5dca" sourceCollectionName="Contracts" name="ContractReferencesProjectDeliverable" targetFieldName="LastDeliverableID">
             <xpObjectMoniker Id="f3e4d488-33b6-4596-b7c5-c1a109e75573" />
           </simpleAssociation>
         </saTargets>

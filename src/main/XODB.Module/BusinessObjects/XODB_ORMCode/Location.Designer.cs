@@ -173,8 +173,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<LocationAlias> LocationAliasCollection { get { return GetCollection<LocationAlias>("LocationAliasCollection"); } }
         [Association(@"HeaderReferencesLocation", typeof(Header))]
         public XPCollection<Header> Headers { get { return GetCollection<Header>("Headers"); } }
-        [Association(@"X_LocationHistoryReferencesLocation", typeof(LocationHistory))]
-        public XPCollection<LocationHistory> X_LocationHistorys { get { return GetCollection<LocationHistory>("X_LocationHistorys"); } }
+        [Association(@"LocationHistoryReferencesLocation", typeof(LocationHistory))]
+        public XPCollection<LocationHistory> LocationHistories { get { return GetCollection<LocationHistory>("LocationHistories"); } }
     }
 
 }

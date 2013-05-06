@@ -98,7 +98,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SurveyCompanyID", ref fSurveyCompanyID, value); }
         }
         DictionaryModel fInstrumentModelID;
-        [Association(@"SurveyReferencesX_DictionaryModel")]
+        [Association(@"SurveyReferencesDictionaryModel")]
         public DictionaryModel InstrumentModelID
         {
             get { return fInstrumentModelID; }

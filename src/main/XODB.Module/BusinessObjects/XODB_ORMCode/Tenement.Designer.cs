@@ -161,7 +161,7 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"ProspectusReferencesTenement", typeof(Prospectus))]
         public XPCollection<Prospectus> ProspectusCollection { get { return GetCollection<Prospectus>("ProspectusCollection"); } }
         [Association(@"TenementCommodityReferencesTenement", typeof(TenementCommodity))]
-        public XPCollection<TenementCommodity> TenementCommoditys { get { return GetCollection<TenementCommodity>("TenementCommoditys"); } }
+        public XPCollection<TenementCommodity> TenementCommodities { get { return GetCollection<TenementCommodity>("TenementCommodities"); } }
         [Association(@"TenementProvinceReferencesTenement", typeof(TenementProvince))]
         public XPCollection<TenementProvince> TenementProvinces { get { return GetCollection<TenementProvince>("TenementProvinces"); } }
         [Association(@"TenementRelationReferencesTenement", typeof(TenementRelation))]

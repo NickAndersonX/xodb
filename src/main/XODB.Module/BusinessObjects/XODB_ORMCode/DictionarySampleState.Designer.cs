@@ -85,8 +85,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<AssayGroupTestSample> AssayGroupTestSamples { get { return GetCollection<AssayGroupTestSample>("AssayGroupTestSamples"); } }
         [Association(@"PointLoadReferencesDictionarySampleState", typeof(PointLoad))]
         public XPCollection<PointLoad> PointLoads { get { return GetCollection<PointLoad>("PointLoads"); } }
-        [Association(@"X_SampleReferencesDictionarySampleState", typeof(Sample))]
-        public XPCollection<Sample> X_Samples { get { return GetCollection<Sample>("X_Samples"); } }
+        [Association(@"SampleReferencesDictionarySampleState", typeof(Sample))]
+        public XPCollection<Sample> Samples { get { return GetCollection<Sample>("Samples"); } }
     }
 
 }

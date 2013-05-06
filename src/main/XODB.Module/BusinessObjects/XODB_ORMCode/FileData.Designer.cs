@@ -180,11 +180,11 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DictionaryColourReferencesFileData", typeof(DictionaryColour))]
         public XPCollection<DictionaryColour> DictionaryColours { get { return GetCollection<DictionaryColour>("DictionaryColours"); } }
         [Association(@"DictionaryCommodityReferencesFileData", typeof(DictionaryCommodity))]
-        public XPCollection<DictionaryCommodity> DictionaryCommoditys { get { return GetCollection<DictionaryCommodity>("DictionaryCommoditys"); } }
+        public XPCollection<DictionaryCommodity> DictionaryCommodities { get { return GetCollection<DictionaryCommodity>("DictionaryCommodities"); } }
         [Association(@"DictionaryCoreStateReferencesFileData", typeof(DictionaryCoreState))]
         public XPCollection<DictionaryCoreState> DictionaryCoreStates { get { return GetCollection<DictionaryCoreState>("DictionaryCoreStates"); } }
         [Association(@"DictionaryCountryReferencesFileData", typeof(DictionaryCountry))]
-        public XPCollection<DictionaryCountry> DictionaryCountrys { get { return GetCollection<DictionaryCountry>("DictionaryCountrys"); } }
+        public XPCollection<DictionaryCountry> DictionaryCountries { get { return GetCollection<DictionaryCountry>("DictionaryCountries"); } }
         [Association(@"DictionaryCountryStateReferencesFileData", typeof(DictionaryCountryState))]
         public XPCollection<DictionaryCountryState> DictionaryCountryStates { get { return GetCollection<DictionaryCountryState>("DictionaryCountryStates"); } }
         [Association(@"DictionaryDataStatusReferencesFileData", typeof(DictionaryDataStatus))]
@@ -192,7 +192,7 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DictionaryDefectCompletenessReferencesFileData", typeof(DictionaryDefectCompleteness))]
         public XPCollection<DictionaryDefectCompleteness> DictionaryDefectCompletenessCollection { get { return GetCollection<DictionaryDefectCompleteness>("DictionaryDefectCompletenessCollection"); } }
         [Association(@"DictionaryDefectContinuityReferencesFileData", typeof(DictionaryDefectContinuity))]
-        public XPCollection<DictionaryDefectContinuity> DictionaryDefectContinuitys { get { return GetCollection<DictionaryDefectContinuity>("DictionaryDefectContinuitys"); } }
+        public XPCollection<DictionaryDefectContinuity> DictionaryDefectContinuities { get { return GetCollection<DictionaryDefectContinuity>("DictionaryDefectContinuities"); } }
         [Association(@"DictionaryDefectSpacingReferencesFileData", typeof(DictionaryDefectSpacing))]
         public XPCollection<DictionaryDefectSpacing> DictionaryDefectSpacings { get { return GetCollection<DictionaryDefectSpacing>("DictionaryDefectSpacings"); } }
         [Association(@"DictionaryDefectTypeReferencesFileData", typeof(DictionaryDefectType))]
@@ -278,11 +278,11 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DictionaryMineralTypeReferencesFileData", typeof(DictionaryMineralType))]
         public XPCollection<DictionaryMineralType> DictionaryMineralTypes { get { return GetCollection<DictionaryMineralType>("DictionaryMineralTypes"); } }
         [Association(@"DictionaryMoistureSensitivityReferencesFileData", typeof(DictionaryMoistureSensitivity))]
-        public XPCollection<DictionaryMoistureSensitivity> DictionaryMoistureSensitivitys { get { return GetCollection<DictionaryMoistureSensitivity>("DictionaryMoistureSensitivitys"); } }
+        public XPCollection<DictionaryMoistureSensitivity> DictionaryMoistureSensitivities { get { return GetCollection<DictionaryMoistureSensitivity>("DictionaryMoistureSensitivities"); } }
         [Association(@"DictionaryPlasticityReferencesFileData", typeof(DictionaryPlasticity))]
-        public XPCollection<DictionaryPlasticity> DictionaryPlasticitys { get { return GetCollection<DictionaryPlasticity>("DictionaryPlasticitys"); } }
+        public XPCollection<DictionaryPlasticity> DictionaryPlasticities { get { return GetCollection<DictionaryPlasticity>("DictionaryPlasticities"); } }
         [Association(@"DictionaryPlyReferencesFileData", typeof(DictionaryPly))]
-        public XPCollection<DictionaryPly> DictionaryPlys { get { return GetCollection<DictionaryPly>("DictionaryPlys"); } }
+        public XPCollection<DictionaryPly> DictionaryPlies { get { return GetCollection<DictionaryPly>("DictionaryPlies"); } }
         [Association(@"DictionaryPlyAliasReferencesFileData", typeof(DictionaryPlyAlias))]
         public XPCollection<DictionaryPlyAlias> DictionaryPlyAliasCollection { get { return GetCollection<DictionaryPlyAlias>("DictionaryPlyAliasCollection"); } }
         [Association(@"DictionaryPointLoadTestTypeReferencesFileData", typeof(DictionaryPointLoadTestType))]
@@ -298,7 +298,7 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DictionaryRockMassUnitTypeReferencesFileData", typeof(DictionaryRockMassUnitType))]
         public XPCollection<DictionaryRockMassUnitType> DictionaryRockMassUnitTypes { get { return GetCollection<DictionaryRockMassUnitType>("DictionaryRockMassUnitTypes"); } }
         [Association(@"DictionarySampleCategoryReferencesFileData", typeof(DictionarySampleCategory))]
-        public XPCollection<DictionarySampleCategory> DictionarySampleCategorys { get { return GetCollection<DictionarySampleCategory>("DictionarySampleCategorys"); } }
+        public XPCollection<DictionarySampleCategory> DictionarySampleCategories { get { return GetCollection<DictionarySampleCategory>("DictionarySampleCategories"); } }
         [Association(@"DictionarySampleStateReferencesFileData", typeof(DictionarySampleState))]
         public XPCollection<DictionarySampleState> DictionarySampleStates { get { return GetCollection<DictionarySampleState>("DictionarySampleStates"); } }
         [Association(@"DictionarySampleTypeReferencesFileData", typeof(DictionarySampleType))]
@@ -314,11 +314,11 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DictionaryShapeReferencesFileData", typeof(DictionaryShape))]
         public XPCollection<DictionaryShape> DictionaryShapes { get { return GetCollection<DictionaryShape>("DictionaryShapes"); } }
         [Association(@"DictionaryStratigraphyReferencesFileData", typeof(DictionaryStratigraphy))]
-        public XPCollection<DictionaryStratigraphy> DictionaryStratigraphys { get { return GetCollection<DictionaryStratigraphy>("DictionaryStratigraphys"); } }
+        public XPCollection<DictionaryStratigraphy> DictionaryStratigraphies { get { return GetCollection<DictionaryStratigraphy>("DictionaryStratigraphies"); } }
         [Association(@"DictionarySurfaceRoughnessReferencesFileData", typeof(DictionarySurfaceRoughness))]
         public XPCollection<DictionarySurfaceRoughness> DictionarySurfaceRoughnessCollection { get { return GetCollection<DictionarySurfaceRoughness>("DictionarySurfaceRoughnessCollection"); } }
         [Association(@"DictionarySurveyAccuracyReferencesFileData", typeof(DictionarySurveyAccuracy))]
-        public XPCollection<DictionarySurveyAccuracy> DictionarySurveyAccuracys { get { return GetCollection<DictionarySurveyAccuracy>("DictionarySurveyAccuracys"); } }
+        public XPCollection<DictionarySurveyAccuracy> DictionarySurveyAccuracies { get { return GetCollection<DictionarySurveyAccuracy>("DictionarySurveyAccuracies"); } }
         [Association(@"DictionaryTextureReferencesFileData", typeof(DictionaryTexture))]
         public XPCollection<DictionaryTexture> DictionaryTextures { get { return GetCollection<DictionaryTexture>("DictionaryTextures"); } }
         [Association(@"DictionaryUnitReferencesFileData", typeof(DictionaryUnit))]
@@ -329,20 +329,20 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<DictionaryWeathering> DictionaryWeatherings { get { return GetCollection<DictionaryWeathering>("DictionaryWeatherings"); } }
         [Association(@"DictionaryWorkTypeReferencesFileData", typeof(DictionaryWorkType))]
         public XPCollection<DictionaryWorkType> DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("DictionaryWorkTypes"); } }
-        [Association(@"X_DictionaryPositionReferencesFileData", typeof(DictionaryPosition))]
-        public XPCollection<DictionaryPosition> X_DictionaryPositions { get { return GetCollection<DictionaryPosition>("X_DictionaryPositions"); } }
-        [Association(@"X_DictionaryWorkTypeClassReferencesFileData", typeof(DictionaryWorkTypeClass))]
-        public XPCollection<DictionaryWorkTypeClass> X_DictionaryWorkTypeClassCollection { get { return GetCollection<DictionaryWorkTypeClass>("X_DictionaryWorkTypeClassCollection"); } }
-        [Association(@"X_DictionaryModelStatusReferencesFileData", typeof(DictionaryModelStatus))]
-        public XPCollection<DictionaryModelStatus> X_DictionaryModelStatusCollection { get { return GetCollection<DictionaryModelStatus>("X_DictionaryModelStatusCollection"); } }
-        [Association(@"X_DictionaryModelReferencesFileData", typeof(DictionaryModel))]
-        public XPCollection<DictionaryModel> X_DictionaryModels { get { return GetCollection<DictionaryModel>("X_DictionaryModels"); } }
-        [Association(@"X_ContractReferencesFileData", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
-        [Association(@"X_ProjectDeliverableReferencesFileData", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
-        [Association(@"X_OpportunityReferencesFileData", typeof(Opportunity))]
-        public XPCollection<Opportunity> X_Opportunitys { get { return GetCollection<Opportunity>("X_Opportunitys"); } }
+        [Association(@"DictionaryPositionReferencesFileData", typeof(DictionaryPosition))]
+        public XPCollection<DictionaryPosition> DictionaryPositions { get { return GetCollection<DictionaryPosition>("DictionaryPositions"); } }
+        [Association(@"DictionaryWorkTypeClassReferencesFileData", typeof(DictionaryWorkTypeClass))]
+        public XPCollection<DictionaryWorkTypeClass> DictionaryWorkTypeClassCollection { get { return GetCollection<DictionaryWorkTypeClass>("DictionaryWorkTypeClassCollection"); } }
+        [Association(@"DictionaryModelStatusReferencesFileData", typeof(DictionaryModelStatus))]
+        public XPCollection<DictionaryModelStatus> DictionaryModelStatusCollection { get { return GetCollection<DictionaryModelStatus>("DictionaryModelStatusCollection"); } }
+        [Association(@"DictionaryModelReferencesFileData", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> DictionaryModels { get { return GetCollection<DictionaryModel>("DictionaryModels"); } }
+        [Association(@"ContractReferencesFileData", typeof(Contract))]
+        public XPCollection<Contract> Contracts { get { return GetCollection<Contract>("Contracts"); } }
+        [Association(@"ProjectDeliverableReferencesFileData", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
+        [Association(@"OpportunityReferencesFileData", typeof(Opportunity))]
+        public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
     }
 
 }

@@ -81,8 +81,8 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"HeaderRelationReferencesDictionaryRelationType", typeof(HeaderRelation))]
         public XPCollection<HeaderRelation> HeaderRelations { get { return GetCollection<HeaderRelation>("HeaderRelations"); } }
-        [Association(@"X_DictionaryModelRelationReferencesDictionaryRelationType", typeof(DictionaryModelRelation))]
-        public XPCollection<DictionaryModelRelation> X_DictionaryModelRelations { get { return GetCollection<DictionaryModelRelation>("X_DictionaryModelRelations"); } }
+        [Association(@"DictionaryModelRelationReferencesDictionaryRelationType", typeof(DictionaryModelRelation))]
+        public XPCollection<DictionaryModelRelation> DictionaryModelRelations { get { return GetCollection<DictionaryModelRelation>("DictionaryModelRelations"); } }
     }
 
 }

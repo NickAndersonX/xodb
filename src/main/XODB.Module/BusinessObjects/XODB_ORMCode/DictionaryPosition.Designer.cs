@@ -72,13 +72,13 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
         }
         FileData fOriginalFileDataID;
-        [Association(@"X_DictionaryPositionReferencesFileData")]
+        [Association(@"DictionaryPositionReferencesFileData")]
         public FileData OriginalFileDataID
         {
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"ExperienceReferencesX_DictionaryPosition", typeof(Experience))]
+        [Association(@"ExperienceReferencesDictionaryPosition", typeof(Experience))]
         public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
     }
 

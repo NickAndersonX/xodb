@@ -106,7 +106,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
         [Association(@"ProspectusProjectCommodityReferencesProspectusProject", typeof(ProspectusProjectCommodity))]
-        public XPCollection<ProspectusProjectCommodity> ProspectusProjectCommoditys { get { return GetCollection<ProspectusProjectCommodity>("ProspectusProjectCommoditys"); } }
+        public XPCollection<ProspectusProjectCommodity> ProspectusProjectCommodities { get { return GetCollection<ProspectusProjectCommodity>("ProspectusProjectCommodities"); } }
         [Association(@"ProspectusProjectProvinceReferencesProspectusProject", typeof(ProspectusProjectProvince))]
         public XPCollection<ProspectusProjectProvince> ProspectusProjectProvinces { get { return GetCollection<ProspectusProjectProvince>("ProspectusProjectProvinces"); } }
     }

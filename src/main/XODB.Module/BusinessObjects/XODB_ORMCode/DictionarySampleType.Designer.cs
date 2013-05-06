@@ -84,13 +84,13 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"AssayGroupTestSampleReferencesDictionarySampleType", typeof(AssayGroupTestSample))]
         public XPCollection<AssayGroupTestSample> AssayGroupTestSamples { get { return GetCollection<AssayGroupTestSample>("AssayGroupTestSamples"); } }
         [Association(@"LithologyReferencesDictionarySampleType", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys { get { return GetCollection<Lithology>("Lithologys"); } }
+        public XPCollection<Lithology> Lithologies { get { return GetCollection<Lithology>("Lithologies"); } }
         [Association(@"PointLoadReferencesDictionarySampleType", typeof(PointLoad))]
         public XPCollection<PointLoad> PointLoads { get { return GetCollection<PointLoad>("PointLoads"); } }
         [Association(@"WaterFlowReferencesDictionarySampleType", typeof(WaterFlow))]
         public XPCollection<WaterFlow> WaterFlows { get { return GetCollection<WaterFlow>("WaterFlows"); } }
-        [Association(@"X_SampleReferencesDictionarySampleType", typeof(Sample))]
-        public XPCollection<Sample> X_Samples { get { return GetCollection<Sample>("X_Samples"); } }
+        [Association(@"SampleReferencesDictionarySampleType", typeof(Sample))]
+        public XPCollection<Sample> Samples { get { return GetCollection<Sample>("Samples"); } }
     }
 
 }

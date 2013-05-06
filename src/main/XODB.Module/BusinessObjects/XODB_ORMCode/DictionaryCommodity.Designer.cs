@@ -80,9 +80,9 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
         [Association(@"ProspectusProjectCommodityReferencesDictionaryCommodity", typeof(ProspectusProjectCommodity))]
-        public XPCollection<ProspectusProjectCommodity> ProspectusProjectCommoditys { get { return GetCollection<ProspectusProjectCommodity>("ProspectusProjectCommoditys"); } }
+        public XPCollection<ProspectusProjectCommodity> ProspectusProjectCommodities { get { return GetCollection<ProspectusProjectCommodity>("ProspectusProjectCommodities"); } }
         [Association(@"TenementCommodityReferencesDictionaryCommodity", typeof(TenementCommodity))]
-        public XPCollection<TenementCommodity> TenementCommoditys { get { return GetCollection<TenementCommodity>("TenementCommoditys"); } }
+        public XPCollection<TenementCommodity> TenementCommodities { get { return GetCollection<TenementCommodity>("TenementCommodities"); } }
     }
 
 }

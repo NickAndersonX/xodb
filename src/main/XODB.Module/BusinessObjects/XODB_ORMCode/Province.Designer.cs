@@ -133,8 +133,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<TenementProvince> TenementProvinces { get { return GetCollection<TenementProvince>("TenementProvinces"); } }
         [Association(@"TenementReferencesProvince", typeof(Tenement))]
         public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
-        [Association(@"X_ComplianceReferencesProvince", typeof(Compliance))]
-        public XPCollection<Compliance> X_Compliances { get { return GetCollection<Compliance>("X_Compliances"); } }
+        [Association(@"ComplianceReferencesProvince", typeof(Compliance))]
+        public XPCollection<Compliance> Compliances { get { return GetCollection<Compliance>("Compliances"); } }
     }
 
 }

@@ -30,28 +30,28 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("OpportunityName", ref fOpportunityName, value); }
         }
         Contact fOpportunityContactID;
-        [Association(@"X_OpportunityReferencesContact")]
+        [Association(@"OpportunityReferencesContact")]
         public Contact OpportunityContactID
         {
             get { return fOpportunityContactID; }
             set { SetPropertyValue<Contact>("OpportunityContactID", ref fOpportunityContactID, value); }
         }
         Company fOpportunityCompanyID;
-        [Association(@"X_OpportunityReferencesCompany")]
+        [Association(@"OpportunityReferencesCompany")]
         public Company OpportunityCompanyID
         {
             get { return fOpportunityCompanyID; }
             set { SetPropertyValue<Company>("OpportunityCompanyID", ref fOpportunityCompanyID, value); }
         }
         DictionaryWorkType fStatusWorkTypeID;
-        [Association(@"X_OpportunityReferencesDictionaryWorkType")]
+        [Association(@"OpportunityReferencesDictionaryWorkType")]
         public DictionaryWorkType StatusWorkTypeID
         {
             get { return fStatusWorkTypeID; }
             set { SetPropertyValue<DictionaryWorkType>("StatusWorkTypeID", ref fStatusWorkTypeID, value); }
         }
         DictionaryWorkType fRegardingWorkTypeID;
-        [Association(@"X_OpportunityReferencesDictionaryWorkType1")]
+        [Association(@"OpportunityReferencesDictionaryWorkType1")]
         public DictionaryWorkType RegardingWorkTypeID
         {
             get { return fRegardingWorkTypeID; }
@@ -65,49 +65,49 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
         FileData fProposalFileDataID;
-        [Association(@"X_OpportunityReferencesFileData")]
+        [Association(@"OpportunityReferencesFileData")]
         public FileData ProposalFileDataID
         {
             get { return fProposalFileDataID; }
             set { SetPropertyValue<FileData>("ProposalFileDataID", ref fProposalFileDataID, value); }
         }
         Project fProjectID;
-        [Association(@"X_OpportunityReferencesProject")]
+        [Association(@"OpportunityReferencesProject")]
         public Project ProjectID
         {
             get { return fProjectID; }
             set { SetPropertyValue<Project>("ProjectID", ref fProjectID, value); }
         }
         Experience fExperienceID;
-        [Association(@"X_OpportunityReferencesExperience")]
+        [Association(@"OpportunityReferencesExperience")]
         public Experience ExperienceID
         {
             get { return fExperienceID; }
             set { SetPropertyValue<Experience>("ExperienceID", ref fExperienceID, value); }
         }
         Contact fOpenedBy;
-        [Association(@"X_OpportunityReferencesContact1")]
+        [Association(@"OpportunityReferencesContact1")]
         public Contact OpenedBy
         {
             get { return fOpenedBy; }
             set { SetPropertyValue<Contact>("OpenedBy", ref fOpenedBy, value); }
         }
         Contact fAssignedBy;
-        [Association(@"X_OpportunityReferencesContact2")]
+        [Association(@"OpportunityReferencesContact2")]
         public Contact AssignedBy
         {
             get { return fAssignedBy; }
             set { SetPropertyValue<Contact>("AssignedBy", ref fAssignedBy, value); }
         }
         Contact fMaintainedBy;
-        [Association(@"X_OpportunityReferencesContact3")]
+        [Association(@"OpportunityReferencesContact3")]
         public Contact MaintainedBy
         {
             get { return fMaintainedBy; }
             set { SetPropertyValue<Contact>("MaintainedBy", ref fMaintainedBy, value); }
         }
         Contact fConvertedBy;
-        [Association(@"X_OpportunityReferencesContact4")]
+        [Association(@"OpportunityReferencesContact4")]
         public Contact ConvertedBy
         {
             get { return fConvertedBy; }

@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("DeliverableID", ref fDeliverableID, value); }
         }
         Project fProjectID;
-        [Association(@"X_ProjectDeliverableReferencesProject")]
+        [Association(@"ProjectDeliverableReferencesProject")]
         public Project ProjectID
         {
             get { return fProjectID; }
@@ -43,14 +43,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("DeliverableName", ref fDeliverableName, value); }
         }
         DictionaryWorkType fWorkTypeID;
-        [Association(@"X_ProjectDeliverableReferencesDictionaryWorkType")]
+        [Association(@"ProjectDeliverableReferencesDictionaryWorkType")]
         public DictionaryWorkType WorkTypeID
         {
             get { return fWorkTypeID; }
             set { SetPropertyValue<DictionaryWorkType>("WorkTypeID", ref fWorkTypeID, value); }
         }
         ProjectPlanTask fMilestoneTaskID;
-        [Association(@"X_ProjectDeliverableReferencesProjectPlanTask")]
+        [Association(@"ProjectDeliverableReferencesProjectPlanTask")]
         public ProjectPlanTask MilestoneTaskID
         {
             get { return fMilestoneTaskID; }
@@ -64,7 +64,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
         Contact fInitiatedBy;
-        [Association(@"X_ProjectDeliverableReferencesContact")]
+        [Association(@"ProjectDeliverableReferencesContact")]
         public Contact InitiatedBy
         {
             get { return fInitiatedBy; }
@@ -77,7 +77,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("Initiated", ref fInitiated, value); }
         }
         Contact fApprovedBy;
-        [Association(@"X_ProjectDeliverableReferencesContact1")]
+        [Association(@"ProjectDeliverableReferencesContact1")]
         public Contact ApprovedBy
         {
             get { return fApprovedBy; }
@@ -97,14 +97,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("EvidenceDescription", ref fEvidenceDescription, value); }
         }
         FileData fEvidenceFileDataID;
-        [Association(@"X_ProjectDeliverableReferencesFileData")]
+        [Association(@"ProjectDeliverableReferencesFileData")]
         public FileData EvidenceFileDataID
         {
             get { return fEvidenceFileDataID; }
             set { SetPropertyValue<FileData>("EvidenceFileDataID", ref fEvidenceFileDataID, value); }
         }
         Contact fEvidenceContactID;
-        [Association(@"X_ProjectDeliverableReferencesContact2")]
+        [Association(@"ProjectDeliverableReferencesContact2")]
         public Contact EvidenceContactID
         {
             get { return fEvidenceContactID; }
@@ -123,7 +123,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("ExpectedProRataUnits", ref fExpectedProRataUnits, value); }
         }
         DictionaryUnit fExpectedProRataPerUnitID;
-        [Association(@"X_ProjectDeliverableReferencesDictionaryUnit")]
+        [Association(@"ProjectDeliverableReferencesDictionaryUnit")]
         public DictionaryUnit ExpectedProRataPerUnitID
         {
             get { return fExpectedProRataPerUnitID; }
@@ -232,8 +232,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_ContractReferencesX_ProjectDeliverable", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
+        [Association(@"ContractReferencesProjectDeliverable", typeof(Contract))]
+        public XPCollection<Contract> Contracts { get { return GetCollection<Contract>("Contracts"); } }
     }
 
 }

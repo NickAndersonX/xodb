@@ -61,7 +61,7 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DictionaryPlyAliasReferencesDictionaryPly", typeof(DictionaryPlyAlias))]
         public XPCollection<DictionaryPlyAlias> DictionaryPlyAliasCollection { get { return GetCollection<DictionaryPlyAlias>("DictionaryPlyAliasCollection"); } }
         [Association(@"LithologyReferencesDictionaryPly", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys { get { return GetCollection<Lithology>("Lithologys"); } }
+        public XPCollection<Lithology> Lithologies { get { return GetCollection<Lithology>("Lithologies"); } }
     }
 
 }

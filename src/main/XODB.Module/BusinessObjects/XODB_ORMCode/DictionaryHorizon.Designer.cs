@@ -80,7 +80,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
         [Association(@"LithologyReferencesDictionaryHorizon", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys { get { return GetCollection<Lithology>("Lithologys"); } }
+        public XPCollection<Lithology> Lithologies { get { return GetCollection<Lithology>("Lithologies"); } }
     }
 
 }

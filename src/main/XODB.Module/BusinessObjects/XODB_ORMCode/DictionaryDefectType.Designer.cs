@@ -82,7 +82,7 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DefectReferencesDictionaryDefectType", typeof(Defect))]
         public XPCollection<Defect> Defects { get { return GetCollection<Defect>("Defects"); } }
         [Association(@"LithologyReferencesDictionaryDefectType", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys { get { return GetCollection<Lithology>("Lithologys"); } }
+        public XPCollection<Lithology> Lithologies { get { return GetCollection<Lithology>("Lithologies"); } }
     }
 
 }

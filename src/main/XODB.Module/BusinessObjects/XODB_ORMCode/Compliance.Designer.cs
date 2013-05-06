@@ -38,14 +38,14 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         DictionaryCountry fCountryID;
         [Size(2)]
-        [Association(@"X_ComplianceReferencesDictionaryCountry")]
+        [Association(@"ComplianceReferencesDictionaryCountry")]
         public DictionaryCountry CountryID
         {
             get { return fCountryID; }
             set { SetPropertyValue<DictionaryCountry>("CountryID", ref fCountryID, value); }
         }
         Province fProvinceID;
-        [Association(@"X_ComplianceReferencesProvince")]
+        [Association(@"ComplianceReferencesProvince")]
         public Province ProvinceID
         {
             get { return fProvinceID; }
@@ -64,14 +64,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("Expiry", ref fExpiry, value); }
         }
         Company fAuthorityCompanyID;
-        [Association(@"X_ComplianceReferencesCompany")]
+        [Association(@"ComplianceReferencesCompany")]
         public Company AuthorityCompanyID
         {
             get { return fAuthorityCompanyID; }
             set { SetPropertyValue<Company>("AuthorityCompanyID", ref fAuthorityCompanyID, value); }
         }
         Contact fMaintainedBy;
-        [Association(@"X_ComplianceReferencesContact")]
+        [Association(@"ComplianceReferencesContact")]
         public Contact MaintainedBy
         {
             get { return fMaintainedBy; }
@@ -145,8 +145,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_ComplianceWorkTypeReferencesX_Compliance", typeof(ComplianceWorkType))]
-        public XPCollection<ComplianceWorkType> X_ComplianceWorkTypes { get { return GetCollection<ComplianceWorkType>("X_ComplianceWorkTypes"); } }
+        [Association(@"ComplianceWorkTypeReferencesCompliance", typeof(ComplianceWorkType))]
+        public XPCollection<ComplianceWorkType> ComplianceWorkTypes { get { return GetCollection<ComplianceWorkType>("ComplianceWorkTypes"); } }
     }
 
 }

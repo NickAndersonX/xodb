@@ -23,15 +23,15 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ComplianceWorkTypeID", ref fComplianceWorkTypeID, value); }
         }
         Compliance fComplianceID;
-        [Indexed(@"WorkTypeID", Name = @"IX_X_ComplianceWorkType", Unique = true)]
-        [Association(@"X_ComplianceWorkTypeReferencesX_Compliance")]
+        [Indexed(@"WorkTypeID", Name = @"IComplianceWorkType", Unique = true)]
+        [Association(@"ComplianceWorkTypeReferencesCompliance")]
         public Compliance ComplianceID
         {
             get { return fComplianceID; }
             set { SetPropertyValue<Compliance>("ComplianceID", ref fComplianceID, value); }
         }
         DictionaryWorkType fWorkTypeID;
-        [Association(@"X_ComplianceWorkTypeReferencesDictionaryWorkType")]
+        [Association(@"ComplianceWorkTypeReferencesDictionaryWorkType")]
         public DictionaryWorkType WorkTypeID
         {
             get { return fWorkTypeID; }
@@ -91,8 +91,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_ProjectPlanTaskComplianceResponseReferencesX_ComplianceWorkType", typeof(ProjectPlanTaskComplianceResponse))]
-        public XPCollection<ProjectPlanTaskComplianceResponse> X_ProjectPlanTaskComplianceResponses { get { return GetCollection<ProjectPlanTaskComplianceResponse>("X_ProjectPlanTaskComplianceResponses"); } }
+        [Association(@"ProjectPlanTaskComplianceResponseReferencesComplianceWorkType", typeof(ProjectPlanTaskComplianceResponse))]
+        public XPCollection<ProjectPlanTaskComplianceResponse> ProjectPlanTaskComplianceResponses { get { return GetCollection<ProjectPlanTaskComplianceResponse>("ProjectPlanTaskComplianceResponses"); } }
     }
 
 }

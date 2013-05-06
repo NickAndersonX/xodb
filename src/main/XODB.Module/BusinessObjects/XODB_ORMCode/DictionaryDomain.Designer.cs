@@ -61,7 +61,7 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DictionaryDomainAliasReferencesDictionaryDomain", typeof(DictionaryDomainAlias))]
         public XPCollection<DictionaryDomainAlias> DictionaryDomainAliasCollection { get { return GetCollection<DictionaryDomainAlias>("DictionaryDomainAliasCollection"); } }
         [Association(@"LithologyReferencesDictionaryDomain", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys { get { return GetCollection<Lithology>("Lithologys"); } }
+        public XPCollection<Lithology> Lithologies { get { return GetCollection<Lithology>("Lithologies"); } }
     }
 
 }

@@ -37,70 +37,70 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
         Project fProjectID;
-        [Association(@"X_ContractReferencesProject")]
+        [Association(@"ContractReferencesProject")]
         public Project ProjectID
         {
             get { return fProjectID; }
             set { SetPropertyValue<Project>("ProjectID", ref fProjectID, value); }
         }
         ProjectDeliverable fLastDeliverableID;
-        [Association(@"X_ContractReferencesX_ProjectDeliverable")]
+        [Association(@"ContractReferencesProjectDeliverable")]
         public ProjectDeliverable LastDeliverableID
         {
             get { return fLastDeliverableID; }
             set { SetPropertyValue<ProjectDeliverable>("LastDeliverableID", ref fLastDeliverableID, value); }
         }
         Contact fObligeeID;
-        [Association(@"X_ContractReferencesContact")]
+        [Association(@"ContractReferencesContact")]
         public Contact ObligeeID
         {
             get { return fObligeeID; }
             set { SetPropertyValue<Contact>("ObligeeID", ref fObligeeID, value); }
         }
         Company fObligeeCompanyID;
-        [Association(@"X_ContractReferencesCompany")]
+        [Association(@"ContractReferencesCompany")]
         public Company ObligeeCompanyID
         {
             get { return fObligeeCompanyID; }
             set { SetPropertyValue<Company>("ObligeeCompanyID", ref fObligeeCompanyID, value); }
         }
         Contact fObligorID;
-        [Association(@"X_ContractReferencesContact1")]
+        [Association(@"ContractReferencesContact1")]
         public Contact ObligorID
         {
             get { return fObligorID; }
             set { SetPropertyValue<Contact>("ObligorID", ref fObligorID, value); }
         }
         Company fObligorCompanyID;
-        [Association(@"X_ContractReferencesCompany1")]
+        [Association(@"ContractReferencesCompany1")]
         public Company ObligorCompanyID
         {
             get { return fObligorCompanyID; }
             set { SetPropertyValue<Company>("ObligorCompanyID", ref fObligorCompanyID, value); }
         }
         Contact fAssigneeID;
-        [Association(@"X_ContractReferencesContact2")]
+        [Association(@"ContractReferencesContact2")]
         public Contact AssigneeID
         {
             get { return fAssigneeID; }
             set { SetPropertyValue<Contact>("AssigneeID", ref fAssigneeID, value); }
         }
         Company fAssigneeCompanyID;
-        [Association(@"X_ContractReferencesCompany2")]
+        [Association(@"ContractReferencesCompany2")]
         public Company AssigneeCompanyID
         {
             get { return fAssigneeCompanyID; }
             set { SetPropertyValue<Company>("AssigneeCompanyID", ref fAssigneeCompanyID, value); }
         }
         Contact fSolicitorID;
-        [Association(@"X_ContractReferencesContact3")]
+        [Association(@"ContractReferencesContact3")]
         public Contact SolicitorID
         {
             get { return fSolicitorID; }
             set { SetPropertyValue<Contact>("SolicitorID", ref fSolicitorID, value); }
         }
         Company fSolicitorCompanyID;
-        [Association(@"X_ContractReferencesCompany3")]
+        [Association(@"ContractReferencesCompany3")]
         public Company SolicitorCompanyID
         {
             get { return fSolicitorCompanyID; }
@@ -132,7 +132,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("Comment", ref fComment, value); }
         }
         FileData fFileDataID;
-        [Association(@"X_ContractReferencesFileData")]
+        [Association(@"ContractReferencesFileData")]
         public FileData FileDataID
         {
             get { return fFileDataID; }

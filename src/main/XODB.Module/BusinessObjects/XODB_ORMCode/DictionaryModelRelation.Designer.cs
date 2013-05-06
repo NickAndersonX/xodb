@@ -35,7 +35,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("RelatedModelID", ref fRelatedModelID, value); }
         }
         DictionaryRelationType fRelationTypeID;
-        [Association(@"X_DictionaryModelRelationReferencesDictionaryRelationType")]
+        [Association(@"DictionaryModelRelationReferencesDictionaryRelationType")]
         public DictionaryRelationType RelationTypeID
         {
             get { return fRelationTypeID; }

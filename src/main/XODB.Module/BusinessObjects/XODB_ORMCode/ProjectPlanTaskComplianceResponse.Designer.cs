@@ -23,21 +23,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ProjectPlanTaskComplianceResponseID", ref fProjectPlanTaskComplianceResponseID, value); }
         }
         ProjectPlanTask fProjectPlanTaskID;
-        [Association(@"X_ProjectPlanTaskComplianceResponseReferencesProjectPlanTask")]
+        [Association(@"ProjectPlanTaskComplianceResponseReferencesProjectPlanTask")]
         public ProjectPlanTask ProjectPlanTaskID
         {
             get { return fProjectPlanTaskID; }
             set { SetPropertyValue<ProjectPlanTask>("ProjectPlanTaskID", ref fProjectPlanTaskID, value); }
         }
         ProjectPlanTaskResponse fProjectPlanTaskResponseID;
-        [Association(@"X_ProjectPlanTaskComplianceResponseReferencesProjectPlanTaskResponse")]
+        [Association(@"ProjectPlanTaskComplianceResponseReferencesProjectPlanTaskResponse")]
         public ProjectPlanTaskResponse ProjectPlanTaskResponseID
         {
             get { return fProjectPlanTaskResponseID; }
             set { SetPropertyValue<ProjectPlanTaskResponse>("ProjectPlanTaskResponseID", ref fProjectPlanTaskResponseID, value); }
         }
         ComplianceWorkType fComplianceWorkTypeID;
-        [Association(@"X_ProjectPlanTaskComplianceResponseReferencesX_ComplianceWorkType")]
+        [Association(@"ProjectPlanTaskComplianceResponseReferencesComplianceWorkType")]
         public ComplianceWorkType ComplianceWorkTypeID
         {
             get { return fComplianceWorkTypeID; }
@@ -51,7 +51,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("ComplianceFormResponse", ref fComplianceFormResponse, value); }
         }
         Contact fCompletedBy;
-        [Association(@"X_ProjectPlanTaskComplianceResponseReferencesContact")]
+        [Association(@"ProjectPlanTaskComplianceResponseReferencesContact")]
         public Contact CompletedBy
         {
             get { return fCompletedBy; }
@@ -64,7 +64,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("Completed", ref fCompleted, value); }
         }
         Contact fApprovedBy;
-        [Association(@"X_ProjectPlanTaskComplianceResponseReferencesContact1")]
+        [Association(@"ProjectPlanTaskComplianceResponseReferencesContact1")]
         public Contact ApprovedBy
         {
             get { return fApprovedBy; }

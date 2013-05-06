@@ -80,7 +80,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
         [Association(@"CompanyReferencesDictionaryCountry", typeof(Company))]
-        public XPCollection<Company> Companys { get { return GetCollection<Company>("Companys"); } }
+        public XPCollection<Company> Companies { get { return GetCollection<Company>("Companies"); } }
         [Association(@"ContactReferencesDictionaryCountry", typeof(Contact))]
         public XPCollection<Contact> Contacts { get { return GetCollection<Contact>("Contacts"); } }
         [Association(@"DictionaryCountryStateReferencesDictionaryCountry", typeof(DictionaryCountryState))]
@@ -93,8 +93,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Province> Provinces { get { return GetCollection<Province>("Provinces"); } }
         [Association(@"TenementReferencesDictionaryCountry", typeof(Tenement))]
         public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
-        [Association(@"X_ComplianceReferencesDictionaryCountry", typeof(Compliance))]
-        public XPCollection<Compliance> X_Compliances { get { return GetCollection<Compliance>("X_Compliances"); } }
+        [Association(@"ComplianceReferencesDictionaryCountry", typeof(Compliance))]
+        public XPCollection<Compliance> Compliances { get { return GetCollection<Compliance>("Compliances"); } }
     }
 
 }

@@ -72,7 +72,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
         }
         FileData fOriginalFileDataID;
-        [Association(@"X_DictionaryWorkTypeClassReferencesFileData")]
+        [Association(@"DictionaryWorkTypeClassReferencesFileData")]
         public FileData OriginalFileDataID
         {
             get { return fOriginalFileDataID; }

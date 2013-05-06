@@ -381,7 +381,7 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"DrillingReferencesHeader", typeof(Drilling))]
         public XPCollection<Drilling> Drillings { get { return GetCollection<Drilling>("Drillings"); } }
         [Association(@"GeologyReferencesHeader", typeof(Geology))]
-        public XPCollection<Geology> Geologys { get { return GetCollection<Geology>("Geologys"); } }
+        public XPCollection<Geology> Geologies { get { return GetCollection<Geology>("Geologies"); } }
         [Association(@"GeophysicsReferencesHeader", typeof(Geophysics))]
         public XPCollection<Geophysics> GeophysicsCollection { get { return GetCollection<Geophysics>("GeophysicsCollection"); } }
         [Association(@"HeaderRelationReferencesHeader", typeof(HeaderRelation))]
@@ -389,19 +389,19 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"HeaderRelationReferencesHeader1", typeof(HeaderRelation))]
         public XPCollection<HeaderRelation> HeaderRelations1 { get { return GetCollection<HeaderRelation>("HeaderRelations1"); } }
         [Association(@"LithologyReferencesHeader", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys { get { return GetCollection<Lithology>("Lithologys"); } }
+        public XPCollection<Lithology> Lithologies { get { return GetCollection<Lithology>("Lithologies"); } }
         [Association(@"MineralogyReferencesHeader", typeof(Mineralogy))]
-        public XPCollection<Mineralogy> Mineralogys { get { return GetCollection<Mineralogy>("Mineralogys"); } }
+        public XPCollection<Mineralogy> Mineralogies { get { return GetCollection<Mineralogy>("Mineralogies"); } }
         [Association(@"PointLoadReferencesHeader", typeof(PointLoad))]
         public XPCollection<PointLoad> PointLoads { get { return GetCollection<PointLoad>("PointLoads"); } }
         [Association(@"RecoveryReferencesHeader", typeof(Recovery))]
-        public XPCollection<Recovery> Recoverys { get { return GetCollection<Recovery>("Recoverys"); } }
+        public XPCollection<Recovery> Recoveries { get { return GetCollection<Recovery>("Recoveries"); } }
         [Association(@"SurveyReferencesHeader", typeof(Survey))]
         public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
         [Association(@"WaterFlowReferencesHeader", typeof(WaterFlow))]
         public XPCollection<WaterFlow> WaterFlows { get { return GetCollection<WaterFlow>("WaterFlows"); } }
-        [Association(@"X_SampleReferencesHeader", typeof(Sample))]
-        public XPCollection<Sample> X_Samples { get { return GetCollection<Sample>("X_Samples"); } }
+        [Association(@"SampleReferencesHeader", typeof(Sample))]
+        public XPCollection<Sample> Samples { get { return GetCollection<Sample>("Samples"); } }
     }
 
 }

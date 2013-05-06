@@ -37,7 +37,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("CustomModelName", ref fCustomModelName, value); }
         }
         Company fCompanyID;
-        [Association(@"X_DictionaryModelReferencesCompany")]
+        [Association(@"DictionaryModelReferencesCompany")]
         public Company CompanyID
         {
             get { return fCompanyID; }
@@ -51,7 +51,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("OriginalManufacturerName", ref fOriginalManufacturerName, value); }
         }
         DictionaryModelStatus fStatusID;
-        [Association(@"X_DictionaryModelReferencesX_DictionaryModelStatus")]
+        [Association(@"DictionaryModelReferencesDictionaryModelStatus")]
         public DictionaryModelStatus StatusID
         {
             get { return fStatusID; }
@@ -79,13 +79,13 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
         }
         FileData fOriginalFileDataID;
-        [Association(@"X_DictionaryModelReferencesFileData")]
+        [Association(@"DictionaryModelReferencesFileData")]
         public FileData OriginalFileDataID
         {
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"SurveyReferencesX_DictionaryModel", typeof(Survey))]
+        [Association(@"SurveyReferencesDictionaryModel", typeof(Survey))]
         public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
     }
 

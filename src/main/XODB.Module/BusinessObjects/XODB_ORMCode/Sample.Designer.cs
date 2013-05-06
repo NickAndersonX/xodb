@@ -23,28 +23,28 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SampleID", ref fSampleID, value); }
         }
         Header fHeaderID;
-        [Association(@"X_SampleReferencesHeader")]
+        [Association(@"SampleReferencesHeader")]
         public Header HeaderID
         {
             get { return fHeaderID; }
             set { SetPropertyValue<Header>("HeaderID", ref fHeaderID, value); }
         }
         DictionarySampleCategory fSampleCategoryID;
-        [Association(@"X_SampleReferencesDictionarySampleCategory")]
+        [Association(@"SampleReferencesDictionarySampleCategory")]
         public DictionarySampleCategory SampleCategoryID
         {
             get { return fSampleCategoryID; }
             set { SetPropertyValue<DictionarySampleCategory>("SampleCategoryID", ref fSampleCategoryID, value); }
         }
         DictionarySampleState fSampleStateID;
-        [Association(@"X_SampleReferencesDictionarySampleState")]
+        [Association(@"SampleReferencesDictionarySampleState")]
         public DictionarySampleState SampleStateID
         {
             get { return fSampleStateID; }
             set { SetPropertyValue<DictionarySampleState>("SampleStateID", ref fSampleStateID, value); }
         }
         DictionarySampleType fSampleTypeID;
-        [Association(@"X_SampleReferencesDictionarySampleType")]
+        [Association(@"SampleReferencesDictionarySampleType")]
         public DictionarySampleType SampleTypeID
         {
             get { return fSampleTypeID; }
@@ -148,7 +148,7 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"AssayGroupTestResultReferencesX_Sample", typeof(AssayGroupTestResult))]
+        [Association(@"AssayGroupTestResultReferencesSample", typeof(AssayGroupTestResult))]
         public XPCollection<AssayGroupTestResult> AssayGroupTestResults { get { return GetCollection<AssayGroupTestResult>("AssayGroupTestResults"); } }
     }
 

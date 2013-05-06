@@ -165,8 +165,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_ProjectPlanTaskComplianceResponseReferencesProjectPlanTaskResponse", typeof(ProjectPlanTaskComplianceResponse))]
-        public XPCollection<ProjectPlanTaskComplianceResponse> X_ProjectPlanTaskComplianceResponses { get { return GetCollection<ProjectPlanTaskComplianceResponse>("X_ProjectPlanTaskComplianceResponses"); } }
+        [Association(@"ProjectPlanTaskComplianceResponseReferencesProjectPlanTaskResponse", typeof(ProjectPlanTaskComplianceResponse))]
+        public XPCollection<ProjectPlanTaskComplianceResponse> ProjectPlanTaskComplianceResponses { get { return GetCollection<ProjectPlanTaskComplianceResponse>("ProjectPlanTaskComplianceResponses"); } }
     }
 
 }

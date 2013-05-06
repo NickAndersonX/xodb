@@ -82,27 +82,27 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType", typeof(Header))]
         public XPCollection<Header> Headers { get { return GetCollection<Header>("Headers"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType1", typeof(Header))]
-        public XPCollection<Header> Headers1 { get { return GetCollection<Header>("Headers1"); } }
+        public XPCollection<Header> GeophysicalLogHeaders10 { get { return GetCollection<Header>("GeophysicalLogHeaders10"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType2", typeof(Header))]
-        public XPCollection<Header> Headers2 { get { return GetCollection<Header>("Headers2"); } }
+        public XPCollection<Header> GeophysicalLogHeaders8 { get { return GetCollection<Header>("GeophysicalLogHeaders8"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType3", typeof(Header))]
-        public XPCollection<Header> Headers3 { get { return GetCollection<Header>("Headers3"); } }
+        public XPCollection<Header> GeophysicalLogHeaders9 { get { return GetCollection<Header>("GeophysicalLogHeaders9"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType4", typeof(Header))]
-        public XPCollection<Header> Headers4 { get { return GetCollection<Header>("Headers4"); } }
+        public XPCollection<Header> GeophysicalLogHeaders11 { get { return GetCollection<Header>("GeophysicalLogHeaders11"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType5", typeof(Header))]
-        public XPCollection<Header> Headers5 { get { return GetCollection<Header>("Headers5"); } }
+        public XPCollection<Header> GeophysicalLogHeaders12 { get { return GetCollection<Header>("GeophysicalLogHeaders12"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType6", typeof(Header))]
-        public XPCollection<Header> Headers6 { get { return GetCollection<Header>("Headers6"); } }
+        public XPCollection<Header> GeophysicalLogHeaders2 { get { return GetCollection<Header>("GeophysicalLogHeaders2"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType7", typeof(Header))]
-        public XPCollection<Header> Headers7 { get { return GetCollection<Header>("Headers7"); } }
+        public XPCollection<Header> GeophysicalLogHeaders3 { get { return GetCollection<Header>("GeophysicalLogHeaders3"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType8", typeof(Header))]
-        public XPCollection<Header> Headers8 { get { return GetCollection<Header>("Headers8"); } }
+        public XPCollection<Header> GeophysicalLogHeaders4 { get { return GetCollection<Header>("GeophysicalLogHeaders4"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType9", typeof(Header))]
-        public XPCollection<Header> Headers9 { get { return GetCollection<Header>("Headers9"); } }
+        public XPCollection<Header> GeophysicalLogHeaders5 { get { return GetCollection<Header>("GeophysicalLogHeaders5"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType10", typeof(Header))]
-        public XPCollection<Header> Headers10 { get { return GetCollection<Header>("Headers10"); } }
+        public XPCollection<Header> GeophysicalLogHeaders6 { get { return GetCollection<Header>("GeophysicalLogHeaders6"); } }
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType11", typeof(Header))]
-        public XPCollection<Header> Headers11 { get { return GetCollection<Header>("Headers11"); } }
+        public XPCollection<Header> GeophysicalLogHeaders7 { get { return GetCollection<Header>("GeophysicalLogHeaders7"); } }
     }
 
 }

@@ -148,14 +148,14 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<ProjectPlanTask> ProjectPlanTasks { get { return GetCollection<ProjectPlanTask>("ProjectPlanTasks"); } }
         [Association(@"ProjectPlanTaskResponseReferencesDictionaryWorkType", typeof(ProjectPlanTaskResponse))]
         public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses"); } }
-        [Association(@"X_ComplianceWorkTypeReferencesDictionaryWorkType", typeof(ComplianceWorkType))]
-        public XPCollection<ComplianceWorkType> X_ComplianceWorkTypes { get { return GetCollection<ComplianceWorkType>("X_ComplianceWorkTypes"); } }
-        [Association(@"X_ProjectDeliverableReferencesDictionaryWorkType", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
-        [Association(@"X_OpportunityReferencesDictionaryWorkType", typeof(Opportunity))]
-        public XPCollection<Opportunity> X_Opportunitys { get { return GetCollection<Opportunity>("X_Opportunitys"); } }
-        [Association(@"X_OpportunityReferencesDictionaryWorkType1", typeof(Opportunity))]
-        public XPCollection<Opportunity> X_Opportunitys1 { get { return GetCollection<Opportunity>("X_Opportunitys1"); } }
+        [Association(@"ComplianceWorkTypeReferencesDictionaryWorkType", typeof(ComplianceWorkType))]
+        public XPCollection<ComplianceWorkType> ComplianceWorkTypes { get { return GetCollection<ComplianceWorkType>("ComplianceWorkTypes"); } }
+        [Association(@"ProjectDeliverableReferencesDictionaryWorkType", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
+        [Association(@"OpportunityReferencesDictionaryWorkType", typeof(Opportunity))]
+        public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
+        [Association(@"OpportunityReferencesDictionaryWorkType1", typeof(Opportunity))]
+        public XPCollection<Opportunity> Opportunitys1 { get { return GetCollection<Opportunity>("Opportunitys1"); } }
     }
 
 }

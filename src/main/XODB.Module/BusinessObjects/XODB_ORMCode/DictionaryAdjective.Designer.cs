@@ -80,13 +80,13 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
         [Association(@"LithologyReferencesDictionaryAdjective", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys { get { return GetCollection<Lithology>("Lithologys"); } }
+        public XPCollection<Lithology> Lithologies { get { return GetCollection<Lithology>("Lithologies"); } }
         [Association(@"LithologyReferencesDictionaryAdjective1", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys1 { get { return GetCollection<Lithology>("Lithologys1"); } }
+        public XPCollection<Lithology> LithologiesAdjective1 { get { return GetCollection<Lithology>("LithologiesAdjective1"); } }
         [Association(@"LithologyReferencesDictionaryAdjective2", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys2 { get { return GetCollection<Lithology>("Lithologys2"); } }
+        public XPCollection<Lithology> LithologiesAdjective2 { get { return GetCollection<Lithology>("LithologiesAdjective2"); } }
         [Association(@"LithologyReferencesDictionaryAdjective3", typeof(Lithology))]
-        public XPCollection<Lithology> Lithologys3 { get { return GetCollection<Lithology>("Lithologys3"); } }
+        public XPCollection<Lithology> LithologiesAdjective3 { get { return GetCollection<Lithology>("LithologiesAdjective3"); } }
     }
 
 }
