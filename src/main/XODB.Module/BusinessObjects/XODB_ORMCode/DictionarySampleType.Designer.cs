@@ -58,6 +58,27 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
+        string fFullDescription;
+        [Size(SizeAttribute.Unlimited)]
+        public string FullDescription
+        {
+            get { return fFullDescription; }
+            set { SetPropertyValue<string>("FullDescription", ref fFullDescription, value); }
+        }
+        byte[] fThumbnail;
+        [Size(SizeAttribute.Unlimited)]
+        public byte[] Thumbnail
+        {
+            get { return fThumbnail; }
+            set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
+        }
+        FileData fOriginalFileDataID;
+        [Association(@"DictionarySampleTypeReferencesFileData")]
+        public FileData OriginalFileDataID
+        {
+            get { return fOriginalFileDataID; }
+            set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
+        }
         [Association(@"AssayGroupStandardTestResultReferencesDictionarySampleType", typeof(AssayGroupStandardTestResult))]
         public XPCollection<AssayGroupStandardTestResult> AssayGroupStandardTestResults { get { return GetCollection<AssayGroupStandardTestResult>("AssayGroupStandardTestResults"); } }
         [Association(@"AssayGroupTestSampleReferencesDictionarySampleType", typeof(AssayGroupTestSample))]
@@ -68,6 +89,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<PointLoad> PointLoads { get { return GetCollection<PointLoad>("PointLoads"); } }
         [Association(@"WaterFlowReferencesDictionarySampleType", typeof(WaterFlow))]
         public XPCollection<WaterFlow> WaterFlows { get { return GetCollection<WaterFlow>("WaterFlows"); } }
+        [Association(@"X_SampleReferencesDictionarySampleType", typeof(Sample))]
+        public XPCollection<Sample> X_Samples { get { return GetCollection<Sample>("X_Samples"); } }
     }
 
 }

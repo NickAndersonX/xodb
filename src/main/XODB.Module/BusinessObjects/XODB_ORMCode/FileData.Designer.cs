@@ -98,8 +98,251 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fComment; }
             set { SetPropertyValue<string>("Comment", ref fComment, value); }
         }
+        Experience fWorkerID;
+        [Association(@"FileDataReferencesExperience")]
+        public Experience WorkerID
+        {
+            get { return fWorkerID; }
+            set { SetPropertyValue<Experience>("WorkerID", ref fWorkerID, value); }
+        }
+        int fVersion;
+        public int Version
+        {
+            get { return fVersion; }
+            set { SetPropertyValue<int>("Version", ref fVersion, value); }
+        }
+        Guid fVersionAntecedentID;
+        public Guid VersionAntecedentID
+        {
+            get { return fVersionAntecedentID; }
+            set { SetPropertyValue<Guid>("VersionAntecedentID", ref fVersionAntecedentID, value); }
+        }
+        int fVersionCertainty;
+        public int VersionCertainty
+        {
+            get { return fVersionCertainty; }
+            set { SetPropertyValue<int>("VersionCertainty", ref fVersionCertainty, value); }
+        }
+        Guid fVersionWorkflowInstanceID;
+        public Guid VersionWorkflowInstanceID
+        {
+            get { return fVersionWorkflowInstanceID; }
+            set { SetPropertyValue<Guid>("VersionWorkflowInstanceID", ref fVersionWorkflowInstanceID, value); }
+        }
+        Guid fVersionUpdatedBy;
+        public Guid VersionUpdatedBy
+        {
+            get { return fVersionUpdatedBy; }
+            set { SetPropertyValue<Guid>("VersionUpdatedBy", ref fVersionUpdatedBy, value); }
+        }
+        Guid fVersionDeletedBy;
+        public Guid VersionDeletedBy
+        {
+            get { return fVersionDeletedBy; }
+            set { SetPropertyValue<Guid>("VersionDeletedBy", ref fVersionDeletedBy, value); }
+        }
+        Guid fVersionOwnerContactID;
+        public Guid VersionOwnerContactID
+        {
+            get { return fVersionOwnerContactID; }
+            set { SetPropertyValue<Guid>("VersionOwnerContactID", ref fVersionOwnerContactID, value); }
+        }
+        Guid fVersionOwnerCompanyID;
+        public Guid VersionOwnerCompanyID
+        {
+            get { return fVersionOwnerCompanyID; }
+            set { SetPropertyValue<Guid>("VersionOwnerCompanyID", ref fVersionOwnerCompanyID, value); }
+        }
+        DateTime fVersionUpdated;
+        public DateTime VersionUpdated
+        {
+            get { return fVersionUpdated; }
+            set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
+        }
         [Association(@"FileDataReferencesFileData", typeof(FileData))]
         public XPCollection<FileData> FileDataCollection { get { return GetCollection<FileData>("FileDataCollection"); } }
+        [Association(@"DictionaryAdjectiveReferencesFileData", typeof(DictionaryAdjective))]
+        public XPCollection<DictionaryAdjective> DictionaryAdjectives { get { return GetCollection<DictionaryAdjective>("DictionaryAdjectives"); } }
+        [Association(@"DictionaryAlterationReferencesFileData", typeof(DictionaryAlteration))]
+        public XPCollection<DictionaryAlteration> DictionaryAlterations { get { return GetCollection<DictionaryAlteration>("DictionaryAlterations"); } }
+        [Association(@"DictionaryAssayMethodReferencesFileData", typeof(DictionaryAssayMethod))]
+        public XPCollection<DictionaryAssayMethod> DictionaryAssayMethods { get { return GetCollection<DictionaryAssayMethod>("DictionaryAssayMethods"); } }
+        [Association(@"DictionaryAssayStandardReferencesFileData", typeof(DictionaryAssayStandard))]
+        public XPCollection<DictionaryAssayStandard> DictionaryAssayStandards { get { return GetCollection<DictionaryAssayStandard>("DictionaryAssayStandards"); } }
+        [Association(@"DictionaryAssayTestReferencesFileData", typeof(DictionaryAssayTest))]
+        public XPCollection<DictionaryAssayTest> DictionaryAssayTests { get { return GetCollection<DictionaryAssayTest>("DictionaryAssayTests"); } }
+        [Association(@"DictionaryAssayTypeReferencesFileData", typeof(DictionaryAssayType))]
+        public XPCollection<DictionaryAssayType> DictionaryAssayTypes { get { return GetCollection<DictionaryAssayType>("DictionaryAssayTypes"); } }
+        [Association(@"DictionaryBasalContactReferencesFileData", typeof(DictionaryBasalContact))]
+        public XPCollection<DictionaryBasalContact> DictionaryBasalContacts { get { return GetCollection<DictionaryBasalContact>("DictionaryBasalContacts"); } }
+        [Association(@"DictionaryBedSpacingReferencesFileData", typeof(DictionaryBedSpacing))]
+        public XPCollection<DictionaryBedSpacing> DictionaryBedSpacings { get { return GetCollection<DictionaryBedSpacing>("DictionaryBedSpacings"); } }
+        [Association(@"DictionaryColourReferencesFileData", typeof(DictionaryColour))]
+        public XPCollection<DictionaryColour> DictionaryColours { get { return GetCollection<DictionaryColour>("DictionaryColours"); } }
+        [Association(@"DictionaryCommodityReferencesFileData", typeof(DictionaryCommodity))]
+        public XPCollection<DictionaryCommodity> DictionaryCommoditys { get { return GetCollection<DictionaryCommodity>("DictionaryCommoditys"); } }
+        [Association(@"DictionaryCoreStateReferencesFileData", typeof(DictionaryCoreState))]
+        public XPCollection<DictionaryCoreState> DictionaryCoreStates { get { return GetCollection<DictionaryCoreState>("DictionaryCoreStates"); } }
+        [Association(@"DictionaryCountryReferencesFileData", typeof(DictionaryCountry))]
+        public XPCollection<DictionaryCountry> DictionaryCountrys { get { return GetCollection<DictionaryCountry>("DictionaryCountrys"); } }
+        [Association(@"DictionaryCountryStateReferencesFileData", typeof(DictionaryCountryState))]
+        public XPCollection<DictionaryCountryState> DictionaryCountryStates { get { return GetCollection<DictionaryCountryState>("DictionaryCountryStates"); } }
+        [Association(@"DictionaryDataStatusReferencesFileData", typeof(DictionaryDataStatus))]
+        public XPCollection<DictionaryDataStatus> DictionaryDataStatusCollection { get { return GetCollection<DictionaryDataStatus>("DictionaryDataStatusCollection"); } }
+        [Association(@"DictionaryDefectCompletenessReferencesFileData", typeof(DictionaryDefectCompleteness))]
+        public XPCollection<DictionaryDefectCompleteness> DictionaryDefectCompletenessCollection { get { return GetCollection<DictionaryDefectCompleteness>("DictionaryDefectCompletenessCollection"); } }
+        [Association(@"DictionaryDefectContinuityReferencesFileData", typeof(DictionaryDefectContinuity))]
+        public XPCollection<DictionaryDefectContinuity> DictionaryDefectContinuitys { get { return GetCollection<DictionaryDefectContinuity>("DictionaryDefectContinuitys"); } }
+        [Association(@"DictionaryDefectSpacingReferencesFileData", typeof(DictionaryDefectSpacing))]
+        public XPCollection<DictionaryDefectSpacing> DictionaryDefectSpacings { get { return GetCollection<DictionaryDefectSpacing>("DictionaryDefectSpacings"); } }
+        [Association(@"DictionaryDefectTypeReferencesFileData", typeof(DictionaryDefectType))]
+        public XPCollection<DictionaryDefectType> DictionaryDefectTypes { get { return GetCollection<DictionaryDefectType>("DictionaryDefectTypes"); } }
+        [Association(@"DictionaryDesurveyAlgorithmTypeReferencesFileData", typeof(DictionaryDesurveyAlgorithmType))]
+        public XPCollection<DictionaryDesurveyAlgorithmType> DictionaryDesurveyAlgorithmTypes { get { return GetCollection<DictionaryDesurveyAlgorithmType>("DictionaryDesurveyAlgorithmTypes"); } }
+        [Association(@"DictionaryDimensionReferencesFileData", typeof(DictionaryDimension))]
+        public XPCollection<DictionaryDimension> DictionaryDimensions { get { return GetCollection<DictionaryDimension>("DictionaryDimensions"); } }
+        [Association(@"DictionaryDipOrientationMethodReferencesFileData", typeof(DictionaryDipOrientationMethod))]
+        public XPCollection<DictionaryDipOrientationMethod> DictionaryDipOrientationMethods { get { return GetCollection<DictionaryDipOrientationMethod>("DictionaryDipOrientationMethods"); } }
+        [Association(@"DictionaryDomainReferencesFileData", typeof(DictionaryDomain))]
+        public XPCollection<DictionaryDomain> DictionaryDomains { get { return GetCollection<DictionaryDomain>("DictionaryDomains"); } }
+        [Association(@"DictionaryDomainAliasReferencesFileData", typeof(DictionaryDomainAlias))]
+        public XPCollection<DictionaryDomainAlias> DictionaryDomainAliasCollection { get { return GetCollection<DictionaryDomainAlias>("DictionaryDomainAliasCollection"); } }
+        [Association(@"DictionaryDrillBitTypeReferencesFileData", typeof(DictionaryDrillBitType))]
+        public XPCollection<DictionaryDrillBitType> DictionaryDrillBitTypes { get { return GetCollection<DictionaryDrillBitType>("DictionaryDrillBitTypes"); } }
+        [Association(@"DictionaryDrillCasingTypeReferencesFileData", typeof(DictionaryDrillCasingType))]
+        public XPCollection<DictionaryDrillCasingType> DictionaryDrillCasingTypes { get { return GetCollection<DictionaryDrillCasingType>("DictionaryDrillCasingTypes"); } }
+        [Association(@"DictionaryDrillFluidReferencesFileData", typeof(DictionaryDrillFluid))]
+        public XPCollection<DictionaryDrillFluid> DictionaryDrillFluids { get { return GetCollection<DictionaryDrillFluid>("DictionaryDrillFluids"); } }
+        [Association(@"DictionaryDrillRigTypeReferencesFileData", typeof(DictionaryDrillRigType))]
+        public XPCollection<DictionaryDrillRigType> DictionaryDrillRigTypes { get { return GetCollection<DictionaryDrillRigType>("DictionaryDrillRigTypes"); } }
+        [Association(@"DictionaryDrillSizeReferencesFileData", typeof(DictionaryDrillSize))]
+        public XPCollection<DictionaryDrillSize> DictionaryDrillSizes { get { return GetCollection<DictionaryDrillSize>("DictionaryDrillSizes"); } }
+        [Association(@"DictionaryEstimatedStrengthReferencesFileData", typeof(DictionaryEstimatedStrength))]
+        public XPCollection<DictionaryEstimatedStrength> DictionaryEstimatedStrengths { get { return GetCollection<DictionaryEstimatedStrength>("DictionaryEstimatedStrengths"); } }
+        [Association(@"DictionaryFailureModeReferencesFileData", typeof(DictionaryFailureMode))]
+        public XPCollection<DictionaryFailureMode> DictionaryFailureModes { get { return GetCollection<DictionaryFailureMode>("DictionaryFailureModes"); } }
+        [Association(@"DictionaryFlowTestTypeReferencesFileData", typeof(DictionaryFlowTestType))]
+        public XPCollection<DictionaryFlowTestType> DictionaryFlowTestTypes { get { return GetCollection<DictionaryFlowTestType>("DictionaryFlowTestTypes"); } }
+        [Association(@"DictionaryGasDetectedReferencesFileData", typeof(DictionaryGasDetected))]
+        public XPCollection<DictionaryGasDetected> DictionaryGasDetecteds { get { return GetCollection<DictionaryGasDetected>("DictionaryGasDetecteds"); } }
+        [Association(@"DictionaryGeodeticDatumReferencesFileData", typeof(DictionaryGeodeticDatum))]
+        public XPCollection<DictionaryGeodeticDatum> DictionaryGeodeticDatums { get { return GetCollection<DictionaryGeodeticDatum>("DictionaryGeodeticDatums"); } }
+        [Association(@"DictionaryGeophysicalLogTypeReferencesFileData", typeof(DictionaryGeophysicalLogType))]
+        public XPCollection<DictionaryGeophysicalLogType> DictionaryGeophysicalLogTypes { get { return GetCollection<DictionaryGeophysicalLogType>("DictionaryGeophysicalLogTypes"); } }
+        [Association(@"DictionaryGroupReferencesFileData", typeof(DictionaryGroup))]
+        public XPCollection<DictionaryGroup> DictionaryGroups { get { return GetCollection<DictionaryGroup>("DictionaryGroups"); } }
+        [Association(@"DictionaryGroupMembershipReferencesFileData", typeof(DictionaryGroupMembership))]
+        public XPCollection<DictionaryGroupMembership> DictionaryGroupMemberships { get { return GetCollection<DictionaryGroupMembership>("DictionaryGroupMemberships"); } }
+        [Association(@"DictionaryHeightDatumReferencesFileData", typeof(DictionaryHeightDatum))]
+        public XPCollection<DictionaryHeightDatum> DictionaryHeightDatums { get { return GetCollection<DictionaryHeightDatum>("DictionaryHeightDatums"); } }
+        [Association(@"DictionaryHolePurposeReferencesFileData", typeof(DictionaryHolePurpose))]
+        public XPCollection<DictionaryHolePurpose> DictionaryHolePurposes { get { return GetCollection<DictionaryHolePurpose>("DictionaryHolePurposes"); } }
+        [Association(@"DictionaryHoleStatusReferencesFileData", typeof(DictionaryHoleStatus))]
+        public XPCollection<DictionaryHoleStatus> DictionaryHoleStatusCollection { get { return GetCollection<DictionaryHoleStatus>("DictionaryHoleStatusCollection"); } }
+        [Association(@"DictionaryHoleTypeReferencesFileData", typeof(DictionaryHoleType))]
+        public XPCollection<DictionaryHoleType> DictionaryHoleTypes { get { return GetCollection<DictionaryHoleType>("DictionaryHoleTypes"); } }
+        [Association(@"DictionaryHorizonReferencesFileData", typeof(DictionaryHorizon))]
+        public XPCollection<DictionaryHorizon> DictionaryHorizons { get { return GetCollection<DictionaryHorizon>("DictionaryHorizons"); } }
+        [Association(@"DictionaryHueReferencesFileData", typeof(DictionaryHue))]
+        public XPCollection<DictionaryHue> DictionaryHues { get { return GetCollection<DictionaryHue>("DictionaryHues"); } }
+        [Association(@"DictionaryInfillModeReferencesFileData", typeof(DictionaryInfillMode))]
+        public XPCollection<DictionaryInfillMode> DictionaryInfillModes { get { return GetCollection<DictionaryInfillMode>("DictionaryInfillModes"); } }
+        [Association(@"DictionaryInfillTypeReferencesFileData", typeof(DictionaryInfillType))]
+        public XPCollection<DictionaryInfillType> DictionaryInfillTypes { get { return GetCollection<DictionaryInfillType>("DictionaryInfillTypes"); } }
+        [Association(@"DictionaryIntervalStatusReferencesFileData", typeof(DictionaryIntervalStatus))]
+        public XPCollection<DictionaryIntervalStatus> DictionaryIntervalStatusCollection { get { return GetCollection<DictionaryIntervalStatus>("DictionaryIntervalStatusCollection"); } }
+        [Association(@"DictionaryLeaseApplicationTypeReferencesFileData", typeof(DictionaryLeaseApplicationType))]
+        public XPCollection<DictionaryLeaseApplicationType> DictionaryLeaseApplicationTypes { get { return GetCollection<DictionaryLeaseApplicationType>("DictionaryLeaseApplicationTypes"); } }
+        [Association(@"DictionaryLithologyInterrelationReferencesFileData", typeof(DictionaryLithologyInterrelation))]
+        public XPCollection<DictionaryLithologyInterrelation> DictionaryLithologyInterrelations { get { return GetCollection<DictionaryLithologyInterrelation>("DictionaryLithologyInterrelations"); } }
+        [Association(@"DictionaryLithologyQualifierReferencesFileData", typeof(DictionaryLithologyQualifier))]
+        public XPCollection<DictionaryLithologyQualifier> DictionaryLithologyQualifiers { get { return GetCollection<DictionaryLithologyQualifier>("DictionaryLithologyQualifiers"); } }
+        [Association(@"DictionaryLithologyTypeReferencesFileData", typeof(DictionaryLithologyType))]
+        public XPCollection<DictionaryLithologyType> DictionaryLithologyTypes { get { return GetCollection<DictionaryLithologyType>("DictionaryLithologyTypes"); } }
+        [Association(@"DictionaryLocationTypeReferencesFileData", typeof(DictionaryLocationType))]
+        public XPCollection<DictionaryLocationType> DictionaryLocationTypes { get { return GetCollection<DictionaryLocationType>("DictionaryLocationTypes"); } }
+        [Association(@"DictionaryMechanicalStateReferencesFileData", typeof(DictionaryMechanicalState))]
+        public XPCollection<DictionaryMechanicalState> DictionaryMechanicalStates { get { return GetCollection<DictionaryMechanicalState>("DictionaryMechanicalStates"); } }
+        [Association(@"DictionaryMineralAbundanceReferencesFileData", typeof(DictionaryMineralAbundance))]
+        public XPCollection<DictionaryMineralAbundance> DictionaryMineralAbundances { get { return GetCollection<DictionaryMineralAbundance>("DictionaryMineralAbundances"); } }
+        [Association(@"DictionaryMineralAndFossilAbundanceReferencesFileData", typeof(DictionaryMineralAndFossilAbundance))]
+        public XPCollection<DictionaryMineralAndFossilAbundance> DictionaryMineralAndFossilAbundances { get { return GetCollection<DictionaryMineralAndFossilAbundance>("DictionaryMineralAndFossilAbundances"); } }
+        [Association(@"DictionaryMineralAndFossilAssociationReferencesFileData", typeof(DictionaryMineralAndFossilAssociation))]
+        public XPCollection<DictionaryMineralAndFossilAssociation> DictionaryMineralAndFossilAssociations { get { return GetCollection<DictionaryMineralAndFossilAssociation>("DictionaryMineralAndFossilAssociations"); } }
+        [Association(@"DictionaryMineralAndFossilTypeReferencesFileData", typeof(DictionaryMineralAndFossilType))]
+        public XPCollection<DictionaryMineralAndFossilType> DictionaryMineralAndFossilTypes { get { return GetCollection<DictionaryMineralAndFossilType>("DictionaryMineralAndFossilTypes"); } }
+        [Association(@"DictionaryMineralFormReferencesFileData", typeof(DictionaryMineralForm))]
+        public XPCollection<DictionaryMineralForm> DictionaryMineralForms { get { return GetCollection<DictionaryMineralForm>("DictionaryMineralForms"); } }
+        [Association(@"DictionaryMineralStyleReferencesFileData", typeof(DictionaryMineralStyle))]
+        public XPCollection<DictionaryMineralStyle> DictionaryMineralStyles { get { return GetCollection<DictionaryMineralStyle>("DictionaryMineralStyles"); } }
+        [Association(@"DictionaryMineralTypeReferencesFileData", typeof(DictionaryMineralType))]
+        public XPCollection<DictionaryMineralType> DictionaryMineralTypes { get { return GetCollection<DictionaryMineralType>("DictionaryMineralTypes"); } }
+        [Association(@"DictionaryMoistureSensitivityReferencesFileData", typeof(DictionaryMoistureSensitivity))]
+        public XPCollection<DictionaryMoistureSensitivity> DictionaryMoistureSensitivitys { get { return GetCollection<DictionaryMoistureSensitivity>("DictionaryMoistureSensitivitys"); } }
+        [Association(@"DictionaryPlasticityReferencesFileData", typeof(DictionaryPlasticity))]
+        public XPCollection<DictionaryPlasticity> DictionaryPlasticitys { get { return GetCollection<DictionaryPlasticity>("DictionaryPlasticitys"); } }
+        [Association(@"DictionaryPlyReferencesFileData", typeof(DictionaryPly))]
+        public XPCollection<DictionaryPly> DictionaryPlys { get { return GetCollection<DictionaryPly>("DictionaryPlys"); } }
+        [Association(@"DictionaryPlyAliasReferencesFileData", typeof(DictionaryPlyAlias))]
+        public XPCollection<DictionaryPlyAlias> DictionaryPlyAliasCollection { get { return GetCollection<DictionaryPlyAlias>("DictionaryPlyAliasCollection"); } }
+        [Association(@"DictionaryPointLoadTestTypeReferencesFileData", typeof(DictionaryPointLoadTestType))]
+        public XPCollection<DictionaryPointLoadTestType> DictionaryPointLoadTestTypes { get { return GetCollection<DictionaryPointLoadTestType>("DictionaryPointLoadTestTypes"); } }
+        [Association(@"DictionaryProfessionReferencesFileData", typeof(DictionaryProfession))]
+        public XPCollection<DictionaryProfession> DictionaryProfessions { get { return GetCollection<DictionaryProfession>("DictionaryProfessions"); } }
+        [Association(@"DictionaryProvinceGroupReferencesFileData", typeof(DictionaryProvinceGroup))]
+        public XPCollection<DictionaryProvinceGroup> DictionaryProvinceGroups { get { return GetCollection<DictionaryProvinceGroup>("DictionaryProvinceGroups"); } }
+        [Association(@"DictionaryProvinceTypeReferencesFileData", typeof(DictionaryProvinceType))]
+        public XPCollection<DictionaryProvinceType> DictionaryProvinceTypes { get { return GetCollection<DictionaryProvinceType>("DictionaryProvinceTypes"); } }
+        [Association(@"DictionaryRelationTypeReferencesFileData", typeof(DictionaryRelationType))]
+        public XPCollection<DictionaryRelationType> DictionaryRelationTypes { get { return GetCollection<DictionaryRelationType>("DictionaryRelationTypes"); } }
+        [Association(@"DictionaryRockMassUnitTypeReferencesFileData", typeof(DictionaryRockMassUnitType))]
+        public XPCollection<DictionaryRockMassUnitType> DictionaryRockMassUnitTypes { get { return GetCollection<DictionaryRockMassUnitType>("DictionaryRockMassUnitTypes"); } }
+        [Association(@"DictionarySampleCategoryReferencesFileData", typeof(DictionarySampleCategory))]
+        public XPCollection<DictionarySampleCategory> DictionarySampleCategorys { get { return GetCollection<DictionarySampleCategory>("DictionarySampleCategorys"); } }
+        [Association(@"DictionarySampleStateReferencesFileData", typeof(DictionarySampleState))]
+        public XPCollection<DictionarySampleState> DictionarySampleStates { get { return GetCollection<DictionarySampleState>("DictionarySampleStates"); } }
+        [Association(@"DictionarySampleTypeReferencesFileData", typeof(DictionarySampleType))]
+        public XPCollection<DictionarySampleType> DictionarySampleTypes { get { return GetCollection<DictionarySampleType>("DictionarySampleTypes"); } }
+        [Association(@"DictionarySeamReferencesFileData", typeof(DictionarySeam))]
+        public XPCollection<DictionarySeam> DictionarySeams { get { return GetCollection<DictionarySeam>("DictionarySeams"); } }
+        [Association(@"DictionarySeamAliasReferencesFileData", typeof(DictionarySeamAlias))]
+        public XPCollection<DictionarySeamAlias> DictionarySeamAliasCollection { get { return GetCollection<DictionarySeamAlias>("DictionarySeamAliasCollection"); } }
+        [Association(@"DictionarySedimentaryFeatureReferencesFileData", typeof(DictionarySedimentaryFeature))]
+        public XPCollection<DictionarySedimentaryFeature> DictionarySedimentaryFeatures { get { return GetCollection<DictionarySedimentaryFeature>("DictionarySedimentaryFeatures"); } }
+        [Association(@"DictionaryShadeReferencesFileData", typeof(DictionaryShade))]
+        public XPCollection<DictionaryShade> DictionaryShades { get { return GetCollection<DictionaryShade>("DictionaryShades"); } }
+        [Association(@"DictionaryShapeReferencesFileData", typeof(DictionaryShape))]
+        public XPCollection<DictionaryShape> DictionaryShapes { get { return GetCollection<DictionaryShape>("DictionaryShapes"); } }
+        [Association(@"DictionaryStratigraphyReferencesFileData", typeof(DictionaryStratigraphy))]
+        public XPCollection<DictionaryStratigraphy> DictionaryStratigraphys { get { return GetCollection<DictionaryStratigraphy>("DictionaryStratigraphys"); } }
+        [Association(@"DictionarySurfaceRoughnessReferencesFileData", typeof(DictionarySurfaceRoughness))]
+        public XPCollection<DictionarySurfaceRoughness> DictionarySurfaceRoughnessCollection { get { return GetCollection<DictionarySurfaceRoughness>("DictionarySurfaceRoughnessCollection"); } }
+        [Association(@"DictionarySurveyAccuracyReferencesFileData", typeof(DictionarySurveyAccuracy))]
+        public XPCollection<DictionarySurveyAccuracy> DictionarySurveyAccuracys { get { return GetCollection<DictionarySurveyAccuracy>("DictionarySurveyAccuracys"); } }
+        [Association(@"DictionaryTextureReferencesFileData", typeof(DictionaryTexture))]
+        public XPCollection<DictionaryTexture> DictionaryTextures { get { return GetCollection<DictionaryTexture>("DictionaryTextures"); } }
+        [Association(@"DictionaryUnitReferencesFileData", typeof(DictionaryUnit))]
+        public XPCollection<DictionaryUnit> DictionaryUnits { get { return GetCollection<DictionaryUnit>("DictionaryUnits"); } }
+        [Association(@"DictionaryUsageAuditTypeReferencesFileData", typeof(DictionaryUsageAuditType))]
+        public XPCollection<DictionaryUsageAuditType> DictionaryUsageAuditTypes { get { return GetCollection<DictionaryUsageAuditType>("DictionaryUsageAuditTypes"); } }
+        [Association(@"DictionaryWeatheringReferencesFileData", typeof(DictionaryWeathering))]
+        public XPCollection<DictionaryWeathering> DictionaryWeatherings { get { return GetCollection<DictionaryWeathering>("DictionaryWeatherings"); } }
+        [Association(@"DictionaryWorkTypeReferencesFileData", typeof(DictionaryWorkType))]
+        public XPCollection<DictionaryWorkType> DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("DictionaryWorkTypes"); } }
+        [Association(@"X_DictionaryPositionReferencesFileData", typeof(DictionaryPosition))]
+        public XPCollection<DictionaryPosition> X_DictionaryPositions { get { return GetCollection<DictionaryPosition>("X_DictionaryPositions"); } }
+        [Association(@"X_DictionaryWorkTypeClassReferencesFileData", typeof(DictionaryWorkTypeClass))]
+        public XPCollection<DictionaryWorkTypeClass> X_DictionaryWorkTypeClassCollection { get { return GetCollection<DictionaryWorkTypeClass>("X_DictionaryWorkTypeClassCollection"); } }
+        [Association(@"X_DictionaryModelStatusReferencesFileData", typeof(DictionaryModelStatus))]
+        public XPCollection<DictionaryModelStatus> X_DictionaryModelStatusCollection { get { return GetCollection<DictionaryModelStatus>("X_DictionaryModelStatusCollection"); } }
+        [Association(@"X_DictionaryModelReferencesFileData", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> X_DictionaryModels { get { return GetCollection<DictionaryModel>("X_DictionaryModels"); } }
+        [Association(@"X_ContractReferencesFileData", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
+        [Association(@"X_ProjectDeliverableReferencesFileData", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
+        [Association(@"X_OpportunityReferencesFileData", typeof(Opportunity))]
+        public XPCollection<Opportunity> X_Opportunitys { get { return GetCollection<Opportunity>("X_Opportunitys"); } }
     }
 
 }

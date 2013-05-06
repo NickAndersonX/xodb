@@ -58,8 +58,49 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
+        bool fStrictlySI;
+        public bool StrictlySI
+        {
+            get { return fStrictlySI; }
+            set { SetPropertyValue<bool>("StrictlySI", ref fStrictlySI, value); }
+        }
+        Guid fEquivalentUnit;
+        public Guid EquivalentUnit
+        {
+            get { return fEquivalentUnit; }
+            set { SetPropertyValue<Guid>("EquivalentUnit", ref fEquivalentUnit, value); }
+        }
+        decimal fEquivalentMultiplier;
+        public decimal EquivalentMultiplier
+        {
+            get { return fEquivalentMultiplier; }
+            set { SetPropertyValue<decimal>("EquivalentMultiplier", ref fEquivalentMultiplier, value); }
+        }
+        string fFullDescription;
+        [Size(SizeAttribute.Unlimited)]
+        public string FullDescription
+        {
+            get { return fFullDescription; }
+            set { SetPropertyValue<string>("FullDescription", ref fFullDescription, value); }
+        }
+        byte[] fThumbnail;
+        [Size(SizeAttribute.Unlimited)]
+        public byte[] Thumbnail
+        {
+            get { return fThumbnail; }
+            set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
+        }
+        FileData fOriginalFileDataID;
+        [Association(@"DictionaryUnitReferencesFileData")]
+        public FileData OriginalFileDataID
+        {
+            get { return fOriginalFileDataID; }
+            set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
+        }
         [Association(@"ParameterReferencesDictionaryUnit", typeof(Parameter))]
         public XPCollection<Parameter> Parameters { get { return GetCollection<Parameter>("Parameters"); } }
+        [Association(@"X_ProjectDeliverableReferencesDictionaryUnit", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
     }
 
 }

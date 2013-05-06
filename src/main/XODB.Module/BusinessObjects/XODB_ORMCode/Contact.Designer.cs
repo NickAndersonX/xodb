@@ -127,6 +127,74 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fShortBiography; }
             set { SetPropertyValue<string>("ShortBiography", ref fShortBiography, value); }
         }
+        string fHash;
+        [Size(255)]
+        public string Hash
+        {
+            get { return fHash; }
+            set { SetPropertyValue<string>("Hash", ref fHash, value); }
+        }
+        string fDefaultEmail;
+        [Size(255)]
+        public string DefaultEmail
+        {
+            get { return fDefaultEmail; }
+            set { SetPropertyValue<string>("DefaultEmail", ref fDefaultEmail, value); }
+        }
+        int fVersion;
+        public int Version
+        {
+            get { return fVersion; }
+            set { SetPropertyValue<int>("Version", ref fVersion, value); }
+        }
+        Guid fVersionAntecedentID;
+        public Guid VersionAntecedentID
+        {
+            get { return fVersionAntecedentID; }
+            set { SetPropertyValue<Guid>("VersionAntecedentID", ref fVersionAntecedentID, value); }
+        }
+        int fVersionCertainty;
+        public int VersionCertainty
+        {
+            get { return fVersionCertainty; }
+            set { SetPropertyValue<int>("VersionCertainty", ref fVersionCertainty, value); }
+        }
+        Guid fVersionWorkflowInstanceID;
+        public Guid VersionWorkflowInstanceID
+        {
+            get { return fVersionWorkflowInstanceID; }
+            set { SetPropertyValue<Guid>("VersionWorkflowInstanceID", ref fVersionWorkflowInstanceID, value); }
+        }
+        Guid fVersionUpdatedBy;
+        public Guid VersionUpdatedBy
+        {
+            get { return fVersionUpdatedBy; }
+            set { SetPropertyValue<Guid>("VersionUpdatedBy", ref fVersionUpdatedBy, value); }
+        }
+        Guid fVersionDeletedBy;
+        public Guid VersionDeletedBy
+        {
+            get { return fVersionDeletedBy; }
+            set { SetPropertyValue<Guid>("VersionDeletedBy", ref fVersionDeletedBy, value); }
+        }
+        Guid fVersionOwnerContactID;
+        public Guid VersionOwnerContactID
+        {
+            get { return fVersionOwnerContactID; }
+            set { SetPropertyValue<Guid>("VersionOwnerContactID", ref fVersionOwnerContactID, value); }
+        }
+        Guid fVersionOwnerCompanyID;
+        public Guid VersionOwnerCompanyID
+        {
+            get { return fVersionOwnerCompanyID; }
+            set { SetPropertyValue<Guid>("VersionOwnerCompanyID", ref fVersionOwnerCompanyID, value); }
+        }
+        DateTime fVersionUpdated;
+        public DateTime VersionUpdated
+        {
+            get { return fVersionUpdated; }
+            set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
+        }
         [Association(@"AssayGroupReferencesContact", typeof(AssayGroup))]
         public XPCollection<AssayGroup> AssayGroups { get { return GetCollection<AssayGroup>("AssayGroups"); } }
         [Association(@"AssayGroupReferencesContact1", typeof(AssayGroup))]
@@ -177,6 +245,40 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
         [Association(@"WorkerReferencesContact", typeof(Worker))]
         public XPCollection<Worker> Workers { get { return GetCollection<Worker>("Workers"); } }
+        [Association(@"ProjectPlanTaskResponseReferencesContact1", typeof(ProjectPlanTaskResponse))]
+        public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses1 { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses1"); } }
+        [Association(@"X_ComplianceReferencesContact", typeof(Compliance))]
+        public XPCollection<Compliance> X_Compliances { get { return GetCollection<Compliance>("X_Compliances"); } }
+        [Association(@"X_ContractReferencesContact", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
+        [Association(@"X_ContractReferencesContact1", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts1 { get { return GetCollection<Contract>("X_Contracts1"); } }
+        [Association(@"X_ContractReferencesContact2", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts2 { get { return GetCollection<Contract>("X_Contracts2"); } }
+        [Association(@"X_ContractReferencesContact3", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts3 { get { return GetCollection<Contract>("X_Contracts3"); } }
+        [Association(@"X_ProjectPlanTaskComplianceResponseReferencesContact", typeof(ProjectPlanTaskComplianceResponse))]
+        public XPCollection<ProjectPlanTaskComplianceResponse> X_ProjectPlanTaskComplianceResponses { get { return GetCollection<ProjectPlanTaskComplianceResponse>("X_ProjectPlanTaskComplianceResponses"); } }
+        [Association(@"X_ProjectPlanTaskComplianceResponseReferencesContact1", typeof(ProjectPlanTaskComplianceResponse))]
+        public XPCollection<ProjectPlanTaskComplianceResponse> X_ProjectPlanTaskComplianceResponses1 { get { return GetCollection<ProjectPlanTaskComplianceResponse>("X_ProjectPlanTaskComplianceResponses1"); } }
+        [Association(@"X_LocationHistoryReferencesContact", typeof(LocationHistory))]
+        public XPCollection<LocationHistory> X_LocationHistorys { get { return GetCollection<LocationHistory>("X_LocationHistorys"); } }
+        [Association(@"X_ProjectDeliverableReferencesContact", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
+        [Association(@"X_ProjectDeliverableReferencesContact1", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> X_ProjectDeliverables1 { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables1"); } }
+        [Association(@"X_ProjectDeliverableReferencesContact2", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> X_ProjectDeliverables2 { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables2"); } }
+        [Association(@"X_OpportunityReferencesContact", typeof(Opportunity))]
+        public XPCollection<Opportunity> X_Opportunitys { get { return GetCollection<Opportunity>("X_Opportunitys"); } }
+        [Association(@"X_OpportunityReferencesContact1", typeof(Opportunity))]
+        public XPCollection<Opportunity> X_Opportunitys1 { get { return GetCollection<Opportunity>("X_Opportunitys1"); } }
+        [Association(@"X_OpportunityReferencesContact2", typeof(Opportunity))]
+        public XPCollection<Opportunity> X_Opportunitys2 { get { return GetCollection<Opportunity>("X_Opportunitys2"); } }
+        [Association(@"X_OpportunityReferencesContact3", typeof(Opportunity))]
+        public XPCollection<Opportunity> X_Opportunitys3 { get { return GetCollection<Opportunity>("X_Opportunitys3"); } }
+        [Association(@"X_OpportunityReferencesContact4", typeof(Opportunity))]
+        public XPCollection<Opportunity> X_Opportunitys4 { get { return GetCollection<Opportunity>("X_Opportunitys4"); } }
     }
 
 }

@@ -22,12 +22,11 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDrillContractID; }
             set { SetPropertyValue<Guid>("DrillContractID", ref fDrillContractID, value); }
         }
-        DrillingCompany fDrillingCompanyID;
-        [Association(@"DrillCompanyContractReferencesDrillingCompany")]
-        public DrillingCompany DrillingCompanyID
+        Guid fDrillingCompanyID;
+        public Guid DrillingCompanyID
         {
             get { return fDrillingCompanyID; }
-            set { SetPropertyValue<DrillingCompany>("DrillingCompanyID", ref fDrillingCompanyID, value); }
+            set { SetPropertyValue<Guid>("DrillingCompanyID", ref fDrillingCompanyID, value); }
         }
         string fContractName;
         [Size(16)]

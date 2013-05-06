@@ -58,12 +58,35 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
+        string fFullDescription;
+        [Size(SizeAttribute.Unlimited)]
+        public string FullDescription
+        {
+            get { return fFullDescription; }
+            set { SetPropertyValue<string>("FullDescription", ref fFullDescription, value); }
+        }
+        byte[] fThumbnail;
+        [Size(SizeAttribute.Unlimited)]
+        public byte[] Thumbnail
+        {
+            get { return fThumbnail; }
+            set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
+        }
+        FileData fOriginalFileDataID;
+        [Association(@"DictionarySampleStateReferencesFileData")]
+        public FileData OriginalFileDataID
+        {
+            get { return fOriginalFileDataID; }
+            set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
+        }
         [Association(@"AssayGroupStandardTestResultReferencesDictionarySampleState", typeof(AssayGroupStandardTestResult))]
         public XPCollection<AssayGroupStandardTestResult> AssayGroupStandardTestResults { get { return GetCollection<AssayGroupStandardTestResult>("AssayGroupStandardTestResults"); } }
         [Association(@"AssayGroupTestSampleReferencesDictionarySampleState", typeof(AssayGroupTestSample))]
         public XPCollection<AssayGroupTestSample> AssayGroupTestSamples { get { return GetCollection<AssayGroupTestSample>("AssayGroupTestSamples"); } }
         [Association(@"PointLoadReferencesDictionarySampleState", typeof(PointLoad))]
         public XPCollection<PointLoad> PointLoads { get { return GetCollection<PointLoad>("PointLoads"); } }
+        [Association(@"X_SampleReferencesDictionarySampleState", typeof(Sample))]
+        public XPCollection<Sample> X_Samples { get { return GetCollection<Sample>("X_Samples"); } }
     }
 
 }

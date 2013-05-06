@@ -58,6 +58,27 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
+        string fFullDescription;
+        [Size(SizeAttribute.Unlimited)]
+        public string FullDescription
+        {
+            get { return fFullDescription; }
+            set { SetPropertyValue<string>("FullDescription", ref fFullDescription, value); }
+        }
+        byte[] fThumbnail;
+        [Size(SizeAttribute.Unlimited)]
+        public byte[] Thumbnail
+        {
+            get { return fThumbnail; }
+            set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
+        }
+        FileData fOriginalFileDataID;
+        [Association(@"DictionaryCountryReferencesFileData")]
+        public FileData OriginalFileDataID
+        {
+            get { return fOriginalFileDataID; }
+            set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
+        }
         [Association(@"CompanyReferencesDictionaryCountry", typeof(Company))]
         public XPCollection<Company> Companys { get { return GetCollection<Company>("Companys"); } }
         [Association(@"ContactReferencesDictionaryCountry", typeof(Contact))]
@@ -72,6 +93,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Province> Provinces { get { return GetCollection<Province>("Provinces"); } }
         [Association(@"TenementReferencesDictionaryCountry", typeof(Tenement))]
         public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
+        [Association(@"X_ComplianceReferencesDictionaryCountry", typeof(Compliance))]
+        public XPCollection<Compliance> X_Compliances { get { return GetCollection<Compliance>("X_Compliances"); } }
     }
 
 }

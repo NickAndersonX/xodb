@@ -160,12 +160,11 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fHoleRedrilled; }
             set { SetPropertyValue<string>("HoleRedrilled", ref fHoleRedrilled, value); }
         }
-        GeologyCompany fGeologyCompanyID;
-        [Association(@"HeaderReferencesGeologyCompany")]
-        public GeologyCompany GeologyCompanyID
+        Guid fGeologyCompanyID;
+        public Guid GeologyCompanyID
         {
             get { return fGeologyCompanyID; }
-            set { SetPropertyValue<GeologyCompany>("GeologyCompanyID", ref fGeologyCompanyID, value); }
+            set { SetPropertyValue<Guid>("GeologyCompanyID", ref fGeologyCompanyID, value); }
         }
         bool fHasHadGeotechLogs;
         public bool HasHadGeotechLogs
@@ -179,12 +178,11 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fHasHadCorePhotos; }
             set { SetPropertyValue<bool>("HasHadCorePhotos", ref fHasHadCorePhotos, value); }
         }
-        GeophysicsCompany fGeophysicalLoggingCompanyID;
-        [Association(@"HeaderReferencesGeophysicsCompany")]
-        public GeophysicsCompany GeophysicalLoggingCompanyID
+        Guid fGeophysicalLoggingCompanyID;
+        public Guid GeophysicalLoggingCompanyID
         {
             get { return fGeophysicalLoggingCompanyID; }
-            set { SetPropertyValue<GeophysicsCompany>("GeophysicalLoggingCompanyID", ref fGeophysicalLoggingCompanyID, value); }
+            set { SetPropertyValue<Guid>("GeophysicalLoggingCompanyID", ref fGeophysicalLoggingCompanyID, value); }
         }
         DictionaryGeophysicalLogType fGeophysicalLogTypeID1;
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType")]
@@ -309,6 +307,67 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fComment; }
             set { SetPropertyValue<string>("Comment", ref fComment, value); }
         }
+        Location fLocationID;
+        [Association(@"HeaderReferencesLocation")]
+        public Location LocationID
+        {
+            get { return fLocationID; }
+            set { SetPropertyValue<Location>("LocationID", ref fLocationID, value); }
+        }
+        int fVersion;
+        public int Version
+        {
+            get { return fVersion; }
+            set { SetPropertyValue<int>("Version", ref fVersion, value); }
+        }
+        Guid fVersionAntecedentID;
+        public Guid VersionAntecedentID
+        {
+            get { return fVersionAntecedentID; }
+            set { SetPropertyValue<Guid>("VersionAntecedentID", ref fVersionAntecedentID, value); }
+        }
+        int fVersionCertainty;
+        public int VersionCertainty
+        {
+            get { return fVersionCertainty; }
+            set { SetPropertyValue<int>("VersionCertainty", ref fVersionCertainty, value); }
+        }
+        Guid fVersionWorkflowInstanceID;
+        public Guid VersionWorkflowInstanceID
+        {
+            get { return fVersionWorkflowInstanceID; }
+            set { SetPropertyValue<Guid>("VersionWorkflowInstanceID", ref fVersionWorkflowInstanceID, value); }
+        }
+        Guid fVersionUpdatedBy;
+        public Guid VersionUpdatedBy
+        {
+            get { return fVersionUpdatedBy; }
+            set { SetPropertyValue<Guid>("VersionUpdatedBy", ref fVersionUpdatedBy, value); }
+        }
+        Guid fVersionDeletedBy;
+        public Guid VersionDeletedBy
+        {
+            get { return fVersionDeletedBy; }
+            set { SetPropertyValue<Guid>("VersionDeletedBy", ref fVersionDeletedBy, value); }
+        }
+        Guid fVersionOwnerContactID;
+        public Guid VersionOwnerContactID
+        {
+            get { return fVersionOwnerContactID; }
+            set { SetPropertyValue<Guid>("VersionOwnerContactID", ref fVersionOwnerContactID, value); }
+        }
+        Guid fVersionOwnerCompanyID;
+        public Guid VersionOwnerCompanyID
+        {
+            get { return fVersionOwnerCompanyID; }
+            set { SetPropertyValue<Guid>("VersionOwnerCompanyID", ref fVersionOwnerCompanyID, value); }
+        }
+        DateTime fVersionUpdated;
+        public DateTime VersionUpdated
+        {
+            get { return fVersionUpdated; }
+            set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
+        }
         [Association(@"AssayGroupTestSampleReferencesHeader", typeof(AssayGroupTestSample))]
         public XPCollection<AssayGroupTestSample> AssayGroupTestSamples { get { return GetCollection<AssayGroupTestSample>("AssayGroupTestSamples"); } }
         [Association(@"CasingReferencesHeader", typeof(Casing))]
@@ -341,6 +400,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
         [Association(@"WaterFlowReferencesHeader", typeof(WaterFlow))]
         public XPCollection<WaterFlow> WaterFlows { get { return GetCollection<WaterFlow>("WaterFlows"); } }
+        [Association(@"X_SampleReferencesHeader", typeof(Sample))]
+        public XPCollection<Sample> X_Samples { get { return GetCollection<Sample>("X_Samples"); } }
     }
 
 }

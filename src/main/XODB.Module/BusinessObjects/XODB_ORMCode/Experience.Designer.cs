@@ -120,6 +120,123 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fExpiry; }
             set { SetPropertyValue<DateTime>("Expiry", ref fExpiry, value); }
         }
+        string fExperienceName;
+        [Size(120)]
+        public string ExperienceName
+        {
+            get { return fExperienceName; }
+            set { SetPropertyValue<string>("ExperienceName", ref fExperienceName, value); }
+        }
+        DictionaryProfession fProfessionID;
+        [Association(@"ExperienceReferencesDictionaryProfession")]
+        public DictionaryProfession ProfessionID
+        {
+            get { return fProfessionID; }
+            set { SetPropertyValue<DictionaryProfession>("ProfessionID", ref fProfessionID, value); }
+        }
+        DictionaryPosition fPositionID;
+        [Association(@"ExperienceReferencesX_DictionaryPosition")]
+        public DictionaryPosition PositionID
+        {
+            get { return fPositionID; }
+            set { SetPropertyValue<DictionaryPosition>("PositionID", ref fPositionID, value); }
+        }
+        string fDivision;
+        [Size(50)]
+        public string Division
+        {
+            get { return fDivision; }
+            set { SetPropertyValue<string>("Division", ref fDivision, value); }
+        }
+        string fOfficeLocationAlias;
+        [Size(50)]
+        public string OfficeLocationAlias
+        {
+            get { return fOfficeLocationAlias; }
+            set { SetPropertyValue<string>("OfficeLocationAlias", ref fOfficeLocationAlias, value); }
+        }
+        decimal fHourlyRate;
+        public decimal HourlyRate
+        {
+            get { return fHourlyRate; }
+            set { SetPropertyValue<decimal>("HourlyRate", ref fHourlyRate, value); }
+        }
+        decimal fDailyRate;
+        public decimal DailyRate
+        {
+            get { return fDailyRate; }
+            set { SetPropertyValue<decimal>("DailyRate", ref fDailyRate, value); }
+        }
+        decimal fAnnualRate;
+        public decimal AnnualRate
+        {
+            get { return fAnnualRate; }
+            set { SetPropertyValue<decimal>("AnnualRate", ref fAnnualRate, value); }
+        }
+        decimal fBlendedHourlyRate;
+        public decimal BlendedHourlyRate
+        {
+            get { return fBlendedHourlyRate; }
+            set { SetPropertyValue<decimal>("BlendedHourlyRate", ref fBlendedHourlyRate, value); }
+        }
+        decimal fBlendedHourlyCost;
+        public decimal BlendedHourlyCost
+        {
+            get { return fBlendedHourlyCost; }
+            set { SetPropertyValue<decimal>("BlendedHourlyCost", ref fBlendedHourlyCost, value); }
+        }
+        int fVersion;
+        public int Version
+        {
+            get { return fVersion; }
+            set { SetPropertyValue<int>("Version", ref fVersion, value); }
+        }
+        Guid fVersionAntecedentID;
+        public Guid VersionAntecedentID
+        {
+            get { return fVersionAntecedentID; }
+            set { SetPropertyValue<Guid>("VersionAntecedentID", ref fVersionAntecedentID, value); }
+        }
+        int fVersionCertainty;
+        public int VersionCertainty
+        {
+            get { return fVersionCertainty; }
+            set { SetPropertyValue<int>("VersionCertainty", ref fVersionCertainty, value); }
+        }
+        Guid fVersionWorkflowInstanceID;
+        public Guid VersionWorkflowInstanceID
+        {
+            get { return fVersionWorkflowInstanceID; }
+            set { SetPropertyValue<Guid>("VersionWorkflowInstanceID", ref fVersionWorkflowInstanceID, value); }
+        }
+        Guid fVersionUpdatedBy;
+        public Guid VersionUpdatedBy
+        {
+            get { return fVersionUpdatedBy; }
+            set { SetPropertyValue<Guid>("VersionUpdatedBy", ref fVersionUpdatedBy, value); }
+        }
+        Guid fVersionDeletedBy;
+        public Guid VersionDeletedBy
+        {
+            get { return fVersionDeletedBy; }
+            set { SetPropertyValue<Guid>("VersionDeletedBy", ref fVersionDeletedBy, value); }
+        }
+        Guid fVersionOwnerContactID;
+        public Guid VersionOwnerContactID
+        {
+            get { return fVersionOwnerContactID; }
+            set { SetPropertyValue<Guid>("VersionOwnerContactID", ref fVersionOwnerContactID, value); }
+        }
+        Guid fVersionOwnerCompanyID;
+        public Guid VersionOwnerCompanyID
+        {
+            get { return fVersionOwnerCompanyID; }
+            set { SetPropertyValue<Guid>("VersionOwnerCompanyID", ref fVersionOwnerCompanyID, value); }
+        }
+        [Association(@"FileDataReferencesExperience", typeof(FileData))]
+        public XPCollection<FileData> FileDatas { get { return GetCollection<FileData>("FileDatas"); } }
+        [Association(@"X_OpportunityReferencesExperience", typeof(Opportunity))]
+        public XPCollection<Opportunity> X_Opportunitys { get { return GetCollection<Opportunity>("X_Opportunitys"); } }
     }
 
 }

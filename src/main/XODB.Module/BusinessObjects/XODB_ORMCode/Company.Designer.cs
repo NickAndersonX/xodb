@@ -52,6 +52,60 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fComment; }
             set { SetPropertyValue<string>("Comment", ref fComment, value); }
         }
+        int fVersion;
+        public int Version
+        {
+            get { return fVersion; }
+            set { SetPropertyValue<int>("Version", ref fVersion, value); }
+        }
+        Guid fVersionAntecedentID;
+        public Guid VersionAntecedentID
+        {
+            get { return fVersionAntecedentID; }
+            set { SetPropertyValue<Guid>("VersionAntecedentID", ref fVersionAntecedentID, value); }
+        }
+        int fVersionCertainty;
+        public int VersionCertainty
+        {
+            get { return fVersionCertainty; }
+            set { SetPropertyValue<int>("VersionCertainty", ref fVersionCertainty, value); }
+        }
+        Guid fVersionWorkflowInstanceID;
+        public Guid VersionWorkflowInstanceID
+        {
+            get { return fVersionWorkflowInstanceID; }
+            set { SetPropertyValue<Guid>("VersionWorkflowInstanceID", ref fVersionWorkflowInstanceID, value); }
+        }
+        Guid fVersionUpdatedBy;
+        public Guid VersionUpdatedBy
+        {
+            get { return fVersionUpdatedBy; }
+            set { SetPropertyValue<Guid>("VersionUpdatedBy", ref fVersionUpdatedBy, value); }
+        }
+        Guid fVersionDeletedBy;
+        public Guid VersionDeletedBy
+        {
+            get { return fVersionDeletedBy; }
+            set { SetPropertyValue<Guid>("VersionDeletedBy", ref fVersionDeletedBy, value); }
+        }
+        Guid fVersionOwnerContactID;
+        public Guid VersionOwnerContactID
+        {
+            get { return fVersionOwnerContactID; }
+            set { SetPropertyValue<Guid>("VersionOwnerContactID", ref fVersionOwnerContactID, value); }
+        }
+        Guid fVersionOwnerCompanyID;
+        public Guid VersionOwnerCompanyID
+        {
+            get { return fVersionOwnerCompanyID; }
+            set { SetPropertyValue<Guid>("VersionOwnerCompanyID", ref fVersionOwnerCompanyID, value); }
+        }
+        DateTime fVersionUpdated;
+        public DateTime VersionUpdated
+        {
+            get { return fVersionUpdated; }
+            set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
+        }
         [Association(@"CompanyAddressReferencesCompany", typeof(CompanyAddress))]
         public XPCollection<CompanyAddress> CompanyAddressCollection { get { return GetCollection<CompanyAddress>("CompanyAddressCollection"); } }
         [Association(@"CompanyRelationReferencesCompany", typeof(CompanyRelation))]
@@ -62,16 +116,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<ContactCompany> ContactCompanys { get { return GetCollection<ContactCompany>("ContactCompanys"); } }
         [Association(@"DictionaryWorkTypeReferencesCompany", typeof(DictionaryWorkType))]
         public XPCollection<DictionaryWorkType> DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("DictionaryWorkTypes"); } }
-        [Association(@"DrillingCompanyReferencesCompany", typeof(DrillingCompany))]
-        public XPCollection<DrillingCompany> DrillingCompanys { get { return GetCollection<DrillingCompany>("DrillingCompanys"); } }
         [Association(@"ExperienceReferencesCompany", typeof(Experience))]
         public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
-        [Association(@"GeologyCompanyReferencesCompany", typeof(GeologyCompany))]
-        public XPCollection<GeologyCompany> GeologyCompanys { get { return GetCollection<GeologyCompany>("GeologyCompanys"); } }
-        [Association(@"GeophysicsCompanyReferencesCompany", typeof(GeophysicsCompany))]
-        public XPCollection<GeophysicsCompany> GeophysicsCompanys { get { return GetCollection<GeophysicsCompany>("GeophysicsCompanys"); } }
-        [Association(@"LabCompanyReferencesCompany", typeof(LabCompany))]
-        public XPCollection<LabCompany> LabCompanys { get { return GetCollection<LabCompany>("LabCompanys"); } }
         [Association(@"LeaseReferencesCompany", typeof(Lease))]
         public XPCollection<Lease> Leases { get { return GetCollection<Lease>("Leases"); } }
         [Association(@"LeaseApplicationReferencesCompany", typeof(LeaseApplication))]
@@ -90,12 +136,24 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<SecurityWhitelist> SecurityWhitelists { get { return GetCollection<SecurityWhitelist>("SecurityWhitelists"); } }
         [Association(@"SecurityWhitelistReferencesCompany1", typeof(SecurityWhitelist))]
         public XPCollection<SecurityWhitelist> SecurityWhitelists1 { get { return GetCollection<SecurityWhitelist>("SecurityWhitelists1"); } }
-        [Association(@"SurveyCompanyReferencesCompany", typeof(SurveyCompany))]
-        public XPCollection<SurveyCompany> SurveyCompanys { get { return GetCollection<SurveyCompany>("SurveyCompanys"); } }
         [Association(@"TenementReferencesCompany", typeof(Tenement))]
         public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
         [Association(@"WorkerReferencesCompany", typeof(Worker))]
         public XPCollection<Worker> Workers { get { return GetCollection<Worker>("Workers"); } }
+        [Association(@"X_ComplianceReferencesCompany", typeof(Compliance))]
+        public XPCollection<Compliance> X_Compliances { get { return GetCollection<Compliance>("X_Compliances"); } }
+        [Association(@"X_DictionaryModelReferencesCompany", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> X_DictionaryModels { get { return GetCollection<DictionaryModel>("X_DictionaryModels"); } }
+        [Association(@"X_ContractReferencesCompany", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
+        [Association(@"X_ContractReferencesCompany1", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts1 { get { return GetCollection<Contract>("X_Contracts1"); } }
+        [Association(@"X_ContractReferencesCompany2", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts2 { get { return GetCollection<Contract>("X_Contracts2"); } }
+        [Association(@"X_ContractReferencesCompany3", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts3 { get { return GetCollection<Contract>("X_Contracts3"); } }
+        [Association(@"X_OpportunityReferencesCompany", typeof(Opportunity))]
+        public XPCollection<Opportunity> X_Opportunitys { get { return GetCollection<Opportunity>("X_Opportunitys"); } }
     }
 
 }

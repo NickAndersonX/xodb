@@ -58,6 +58,27 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
+        string fFullDescription;
+        [Size(SizeAttribute.Unlimited)]
+        public string FullDescription
+        {
+            get { return fFullDescription; }
+            set { SetPropertyValue<string>("FullDescription", ref fFullDescription, value); }
+        }
+        byte[] fThumbnail;
+        [Size(SizeAttribute.Unlimited)]
+        public byte[] Thumbnail
+        {
+            get { return fThumbnail; }
+            set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
+        }
+        FileData fOriginalFileDataID;
+        [Association(@"DictionaryGroupReferencesFileData")]
+        public FileData OriginalFileDataID
+        {
+            get { return fOriginalFileDataID; }
+            set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
+        }
         [Association(@"DictionaryGroupMembershipReferencesDictionaryGroup", typeof(DictionaryGroupMembership))]
         public XPCollection<DictionaryGroupMembership> DictionaryGroupMemberships { get { return GetCollection<DictionaryGroupMembership>("DictionaryGroupMemberships"); } }
         [Association(@"DictionaryGroupMembershipReferencesDictionaryGroup1", typeof(DictionaryGroupMembership))]

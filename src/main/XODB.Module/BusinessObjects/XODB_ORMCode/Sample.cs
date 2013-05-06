@@ -4,10 +4,10 @@ using DevExpress.Data.Filtering;
 namespace XODB.Module.BusinessObjects.XODB
 {
 
-    public partial class GeophysicsCompany
+    public partial class Sample
     {
-        public GeophysicsCompany(Session session) : base(session) { }
-        public GeophysicsCompany() : base(Session.DefaultSession) { }
+        public Sample(Session session) : base(session) { }
+        public Sample() : base(Session.DefaultSession) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
     }
 

@@ -4,10 +4,10 @@ using DevExpress.Data.Filtering;
 namespace XODB.Module.BusinessObjects.XODB
 {
 
-    public partial class SurveyCompany
+    public partial class DictionaryModelStatus
     {
-        public SurveyCompany(Session session) : base(session) { }
-        public SurveyCompany() : base(Session.DefaultSession) { }
+        public DictionaryModelStatus(Session session) : base(session) { }
+        public DictionaryModelStatus() : base(Session.DefaultSession) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
     }
 
