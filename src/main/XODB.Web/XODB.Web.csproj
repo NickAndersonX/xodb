@@ -50,6 +50,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.ExpressApp.Validation.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Xpo.v12.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -129,6 +130,7 @@
     <Content Include="Images\GridHeaderBkg.gif" />
     <Content Include="Images\HeaderBkg.gif" />
     <Content Include="Images\LayoutHeaderBkg.gif" />
+    <EmbeddedResource Include="Images\LogoCMYK.png" />
     <Content Include="Images\Progress.gif" />
     <Content Include="Images\SelectedCenter.gif" />
     <Content Include="Images\SelectedCenterWhite.gif" />
@@ -146,6 +148,10 @@
     <Content Include="MoveFooter.js" />
     <Content Include="NestedFrameControl.ascx" />
     <Content Include="SessionKeepAliveReconnect.aspx" />
+    <Content Include="UnusableNodes.xml">
+      <DependentUpon>Model.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +213,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="WebApplication.resx">
       <DependentUpon>WebApplication.cs</DependentUpon>
       <SubType>Designer</SubType>

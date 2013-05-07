@@ -1,3 +1,5 @@
 publish
 *.licx
 backup
+Thumbs.db
+UnusableNodes*.xml

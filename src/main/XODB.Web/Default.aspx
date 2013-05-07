@@ -43,7 +43,7 @@
                                 <tr>
                                     <td class="Logo">
                                         <asp:HyperLink runat="server" NavigateUrl="#" ID="LogoLink">
-                                            <cc4:ThemedImageControl ID="TIC" ImageName="Logo.png" DefaultThemeImageLocation="App_Themes/{0}/Xaf"
+                                            <cc4:ThemedImageControl ID="TIC" ImageName="LogoCMYK.png" DefaultThemeImageLocation="~/Images"
                                                 runat="server" BorderWidth="0px" />
                                         </asp:HyperLink>
                                     </td>
