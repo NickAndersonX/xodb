@@ -82,8 +82,7 @@
                                         </cc3:XafUpdatePanel>
                                     </div>
                                 </td>
-                                <td id="separatorCell" style="width: 6px; border-bottom-style: none; border-top-style: none;
-                                    display: none" class="dxsplVSeparator_<%= CurrentTheme %> dxsplPane_<%= CurrentTheme %>">
+                                <td id="separatorCell" style="width: 6px; border-bottom-style: none; border-top-style: none; display: none" class="dxsplVSeparator_<%= CurrentTheme %> dxsplPane_<%= CurrentTheme %>">
                                     <div id="separatorButton" class="dxsplVSeparatorButton_<%= CurrentTheme %>" onmouseover="OnMouseEnter('separatorButton')"
                                         onmouseout="OnMouseLeave('separatorButton')" onclick="OnClick('LPcell', 'separatorImage', true)">
                                         <div id="separatorImage" style="width: 6px;" class="dxWeb_splVCollapseBackwardButton_<%= CurrentTheme %>">

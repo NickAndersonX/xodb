@@ -34,21 +34,15 @@
         <Items IsNewNode="True">
           <Item Id="@75da2b05-894a-4d32-9e76-3c97b6c8e11c" Caption="Contacts" ViewId="Contact_ListView" Shortcut="" Index="0" ImageName="ModelEditor_Default" IsNewNode="True" />
           <Item Id="@c42e95d6-3c22-4903-b8e5-6cc96741665d" Caption="Companies" ViewId="Company_ListView" ImageName="ModelEditor_Default" Shortcut="" Index="1" IsNewNode="True" />
-          <Item Id="@b19acb3b-ef0c-4a2c-8376-4145f7236b3b" ViewId="Project_ListView" Caption="Projects" Index="2" ImageName="BO_Category" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="@65f8d3b4-5f11-4f21-abe9-bf0babd47d85" ImageName="ModelEditor_Default" ViewId="ProjectPlan_ListView" Caption="Project Plans" Index="1" IsNewNode="True" />
-              <Item Id="@882760f5-a0da-4f53-9e4c-48a07d1d2272" ViewId="ProjectDeliverable_ListView" Caption="Project Deliverables" IsNewNode="True" />
-              <Item Id="@b28cc8f6-4a90-4a50-803c-7250249d8598" ViewId="ProjectPlanTask_ListView" Caption="Project Tasks" IsNewNode="True" />
-            </Items>
-          </Item>
-          <Item Id="@0b9077fc-edc8-47b7-b998-b45db8bc5731" ViewId="Tenement_ListView" Caption="Tenements" ImageName="BO_Category" Index="3" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="@3d11e594-ba61-4c7e-8025-d20739180ee2" ViewId="Lease_ListView" Caption="Leases" IsNewNode="True" />
-              <Item Id="@8b52b071-ba46-47f2-9a62-3404402b27cb" ViewId="LeaseApplication_ListView" Caption="Lease Applications" IsNewNode="True" />
-            </Items>
-          </Item>
+          <Item Id="@b19acb3b-ef0c-4a2c-8376-4145f7236b3b" ViewId="Project_ListView" Caption="Projects" Index="2" ImageName="ModelEditor_Default" IsNewNode="True" />
+          <Item Id="@65f8d3b4-5f11-4f21-abe9-bf0babd47d85" ViewId="ProjectPlan_ListView" Caption="Project Plans" Index="3" IsNewNode="True" />
+          <Item Id="@882760f5-a0da-4f53-9e4c-48a07d1d2272" ViewId="ProjectDeliverable_ListView" Caption="Project Deliverables" Index="3" IsNewNode="True" />
+          <Item Id="@b28cc8f6-4a90-4a50-803c-7250249d8598" ViewId="ProjectPlanTask_ListView" Caption="Project Tasks" Index="3" IsNewNode="True" />
+          <Item Id="@0b9077fc-edc8-47b7-b998-b45db8bc5731" ViewId="Tenement_ListView" Caption="Tenements" ImageName="ModelEditor_Default" Index="4" IsNewNode="True" />
           <Item Id="@8f5edc7f-ddb3-485b-9c22-0317a4738298" ViewId="Experience_ListView" Shortcut="" Index="4" IsNewNode="True" />
           <Item Id="@88160364-b350-4b24-a9c3-04f0aa0dbecf" ImageName="ModelEditor_Default" ViewId="Opportunity_ListView" Caption="Opportunities" Index="5" IsNewNode="True" />
+          <Item Id="@3d11e594-ba61-4c7e-8025-d20739180ee2" ViewId="Lease_ListView" Caption="Leases" IsNewNode="True" />
+          <Item Id="@8b52b071-ba46-47f2-9a62-3404402b27cb" ViewId="LeaseApplication_ListView" Caption="Lease Applications" IsNewNode="True" />
           <Item Id="@9f64d6fa-15fb-4ce9-aa61-185ebbb13048" ViewId="Compliance_ListView" Caption="Compliance" IsNewNode="True" />
           <Item Id="@e5b0d736-0bc6-4430-a652-f0b426d4f87a" ViewId="Contract_ListView" Caption="Contracts" ImageName="ModelEditor_Default" IsNewNode="True" />
           <Item Id="@e97a1234-b609-4f49-a0a4-0d7a2081bb67" ViewId="Prospectus_ListView" Caption="Prospectus Data" IsNewNode="True" />
@@ -56,12 +50,9 @@
       </Item>
       <Item Id="@4b5186c3-38ee-4d44-a5ce-bd95051a0c13" Caption="Exploration" Index="1" ViewId="" ImageName="BO_Employee" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="@73a17b76-9212-47f3-91fd-a0042a75ff7e" ViewId="Header_ListView" Caption="Headers (Collars)" ImageName="BO_Category" Shortcut="" Index="1" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="@f1d64389-d1f1-4e8f-a7d5-d57d373b1d43" ViewId="HeaderRelation_ListView" Caption="Header Relations" IsNewNode="True" />
-            </Items>
-          </Item>
-          <Item Id="@72b06e5e-502f-405e-af13-8376049a650e" ViewId="Lithology_ListView" Shortcut="" Index="2" IsNewNode="True" />
+          <Item Id="@73a17b76-9212-47f3-91fd-a0042a75ff7e" ViewId="Header_ListView" Caption="Headers (Collars)" ImageName="ModelEditor_Default" Shortcut="" Index="1" IsNewNode="True" />
+          <Item Id="@f1d64389-d1f1-4e8f-a7d5-d57d373b1d43" ViewId="HeaderRelation_ListView" Caption="Header Relations" Index="2" IsNewNode="True" />
+          <Item Id="@72b06e5e-502f-405e-af13-8376049a650e" ViewId="Lithology_ListView" Shortcut="" Index="3" IsNewNode="True" />
           <Item Id="@0427b127-0083-47fd-8b1c-1e1585063cee" ViewId="Mineralogy_ListView" IsNewNode="True" />
           <Item Id="@4138689f-ab3e-43e5-8164-02035b234e1a" Caption="Defects" ViewId="Defect_ListView" IsNewNode="True" />
           <Item Id="@4dd8d2b0-2c9a-4610-ad00-9b37d1cd7e26" Caption="Casing Data" ViewId="Casing_ListView" IsNewNode="True" />
