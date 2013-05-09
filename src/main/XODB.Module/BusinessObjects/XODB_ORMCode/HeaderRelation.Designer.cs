@@ -79,11 +79,11 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdatedBy; }
             set { SetPropertyValue<Guid>("VersionUpdatedBy", ref fVersionUpdatedBy, value); }
         }
-        Guid? fVersionDeletedBy;
-        public Guid? VersionDeletedBy
+        Guid fVersionDeletedBy;
+        public Guid VersionDeletedBy
         {
             get { return fVersionDeletedBy; }
-            set { SetPropertyValue<Guid?>("VersionDeletedBy", ref fVersionDeletedBy, value); }
+            set { SetPropertyValue<Guid>("VersionDeletedBy", ref fVersionDeletedBy, value); }
         }
         Guid fVersionOwnerContactID;
         public Guid VersionOwnerContactID

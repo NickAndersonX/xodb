@@ -8487,7 +8487,7 @@
             <field Id="07e6c851-dd80-4bd2-be1b-75341fb465b3" name="VersionUpdatedBy" columnType="Guid" persistent="VersionUpdatedBy" virtualColumnType="Guid" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="720582f3-a84b-4204-a4d1-9248f0fd8a95">
-            <field Id="27363d16-c0a7-4bcf-9bf5-bc18c742bb0b" name="VersionDeletedBy" columnType="Guid" persistent="VersionDeletedBy" virtualColumnType="Guid" delayedUpdateModifiedOnly="false" isNullable="true" />
+            <field Id="27363d16-c0a7-4bcf-9bf5-bc18c742bb0b" name="VersionDeletedBy" columnType="Guid" persistent="VersionDeletedBy" virtualColumnType="Guid" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="1f02511e-73f4-4ed9-bc74-7b5084732aaf">
             <field Id="f3170b97-fd80-4ce7-a1ef-7f19adc8a305" name="VersionOwnerContactID" columnType="Guid" persistent="VersionOwnerContactID" virtualColumnType="Guid" delayedUpdateModifiedOnly="false" />
