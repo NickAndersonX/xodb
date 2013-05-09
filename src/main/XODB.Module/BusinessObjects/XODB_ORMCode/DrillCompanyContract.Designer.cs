@@ -23,6 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("DrillContractID", ref fDrillContractID, value); }
         }
         Guid fDrillingCompanyID;
+        [Indexed(Name = @"iDrill_Company_X_Drill_Company_Contract")]
         public Guid DrillingCompanyID
         {
             get { return fDrillingCompanyID; }

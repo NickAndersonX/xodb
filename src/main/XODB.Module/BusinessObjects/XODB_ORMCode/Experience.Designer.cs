@@ -237,6 +237,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<FileData> FileDatas { get { return GetCollection<FileData>("FileDatas"); } }
         [Association(@"OpportunityReferencesExperience", typeof(Opportunity))]
         public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
+        [Association(@"ProjectPlanTaskWorkerReferencesExperience", typeof(ProjectPlanTaskWorker))]
+        public XPCollection<ProjectPlanTaskWorker> ProjectPlanTaskWorkers { get { return GetCollection<ProjectPlanTaskWorker>("ProjectPlanTaskWorkers"); } }
     }
 
 }

@@ -24,7 +24,7 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         BlockModel fBlockModelID;
         [Indexed(@"CentroidX;CentroidY;CentroidZ", Name = @"NonClusteredIndex-20130213-121247")]
-        [Association(@"BlockModelBlockReferencesBlockModel")]
+        [Association(@"X_BlockModelBlockReferencesBlockModel")]
         public BlockModel BlockModelID
         {
             get { return fBlockModelID; }
@@ -133,6 +133,12 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fSlopeOfRegression; }
             set { SetPropertyValue<decimal>("SlopeOfRegression", ref fSlopeOfRegression, value); }
+        }
+        decimal fDensity;
+        public decimal Density
+        {
+            get { return fDensity; }
+            set { SetPropertyValue<decimal>("Density", ref fDensity, value); }
         }
         string fResourceCategory;
         [Size(50)]
@@ -404,12 +410,6 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fString11; }
             set { SetPropertyValue<string>("String11", ref fString11, value); }
         }
-        decimal fDensity;
-        public decimal Density
-        {
-            get { return fDensity; }
-            set { SetPropertyValue<decimal>("Density", ref fDensity, value); }
-        }
         int fVersion;
         public int Version
         {
@@ -464,9 +464,9 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"BlockModelBlockDataReferencesBlockModelBlock", typeof(BlockModelBlockData))]
+        [Association(@"BlockModelBlockDataReferencesX_BlockModelBlock", typeof(BlockModelBlockData))]
         public XPCollection<BlockModelBlockData> BlockModelBlockDatas { get { return GetCollection<BlockModelBlockData>("BlockModelBlockDatas"); } }
-        [Association(@"CompositeReferencesBlockModelBlock", typeof(Composite))]
+        [Association(@"CompositeReferencesX_BlockModelBlock", typeof(Composite))]
         public XPCollection<Composite> Composites { get { return GetCollection<Composite>("Composites"); } }
     }
 

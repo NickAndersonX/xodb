@@ -132,8 +132,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"GeophyicsDataReferencesGeophysicsMetadata", typeof(GeophyicsData))]
-        public XPCollection<GeophyicsData> GeophyicsDatas { get { return GetCollection<GeophyicsData>("GeophyicsDatas"); } }
+        [Association(@"X_GeophysicsDataReferencesGeophysicsMetadata", typeof(GeophysicsData))]
+        public XPCollection<GeophysicsData> X_GeophysicsDatas { get { return GetCollection<GeophysicsData>("X_GeophysicsDatas"); } }
     }
 
 }

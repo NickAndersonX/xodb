@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Parameter>("ParameterID", ref fParameterID, value); }
         }
         BlockModelBlock fBlockModelBlockID;
-        [Association(@"BlockModelBlockDataReferencesBlockModelBlock")]
+        [Association(@"BlockModelBlockDataReferencesX_BlockModelBlock")]
         public BlockModelBlock BlockModelBlockID
         {
             get { return fBlockModelBlockID; }

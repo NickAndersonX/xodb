@@ -281,12 +281,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"BlockModelBlockReferencesBlockModel", typeof(BlockModelBlock))]
-        public XPCollection<BlockModelBlock> BlockModelBlocks { get { return GetCollection<BlockModelBlock>("BlockModelBlocks"); } }
         [Association(@"BlockModelMetadataReferencesBlockModel", typeof(BlockModelMetadata))]
         public XPCollection<BlockModelMetadata> BlockModelMetadatas { get { return GetCollection<BlockModelMetadata>("BlockModelMetadatas"); } }
         [Association(@"BlockModelBlockDataReferencesBlockModel", typeof(BlockModelBlockData))]
         public XPCollection<BlockModelBlockData> BlockModelBlockDatas { get { return GetCollection<BlockModelBlockData>("BlockModelBlockDatas"); } }
+        [Association(@"X_BlockModelBlockReferencesBlockModel", typeof(BlockModelBlock))]
+        public XPCollection<BlockModelBlock> X_BlockModelBlocks { get { return GetCollection<BlockModelBlock>("X_BlockModelBlocks"); } }
     }
 
 }

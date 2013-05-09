@@ -563,13 +563,13 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\Geology.Designer.cs">
       <DependentUpon>Geology.cs</DependentUpon>
     </Compile>
-    <Compile Include="BusinessObjects\XODB_ORMCode\GeophyicsData.cs" />
-    <Compile Include="BusinessObjects\XODB_ORMCode\GeophyicsData.Designer.cs">
-      <DependentUpon>GeophyicsData.cs</DependentUpon>
-    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Geophysics.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Geophysics.Designer.cs">
       <DependentUpon>Geophysics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeophysicsData.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\GeophysicsData.Designer.cs">
+      <DependentUpon>GeophysicsData.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\GeophysicsMetadata.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\GeophysicsMetadata.Designer.cs">

@@ -29,11 +29,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fProjectPlanTaskID; }
             set { SetPropertyValue<ProjectPlanTask>("ProjectPlanTaskID", ref fProjectPlanTaskID, value); }
         }
-        Guid fWorkerID;
-        public Guid WorkerID
+        Experience fWorkerID;
+        [Association(@"ProjectPlanTaskWorkerReferencesExperience")]
+        public Experience WorkerID
         {
             get { return fWorkerID; }
-            set { SetPropertyValue<Guid>("WorkerID", ref fWorkerID, value); }
+            set { SetPropertyValue<Experience>("WorkerID", ref fWorkerID, value); }
         }
         DateTime fAvailableFromDate;
         public DateTime AvailableFromDate

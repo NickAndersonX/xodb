@@ -103,11 +103,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fHeaderID; }
             set { SetPropertyValue<Header>("HeaderID", ref fHeaderID, value); }
         }
-        Guid fAssayGroupTestSampleID;
-        public Guid AssayGroupTestSampleID
+        Sample fAssayGroupTestSampleID;
+        [Association(@"CompositeReferencesSample")]
+        public Sample AssayGroupTestSampleID
         {
             get { return fAssayGroupTestSampleID; }
-            set { SetPropertyValue<Guid>("AssayGroupTestSampleID", ref fAssayGroupTestSampleID, value); }
+            set { SetPropertyValue<Sample>("AssayGroupTestSampleID", ref fAssayGroupTestSampleID, value); }
         }
         Casing fCasingID;
         [Association(@"CompositeReferencesCasing")]
@@ -144,12 +145,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fGeologyID; }
             set { SetPropertyValue<Geology>("GeologyID", ref fGeologyID, value); }
         }
-        GeophyicsData fGeophysicsDataID;
-        [Association(@"CompositeReferencesGeophyicsData")]
-        public GeophyicsData GeophysicsDataID
+        GeophysicsData fGeophysicsDataID;
+        [Association(@"CompositeReferencesX_GeophysicsData")]
+        public GeophysicsData GeophysicsDataID
         {
             get { return fGeophysicsDataID; }
-            set { SetPropertyValue<GeophyicsData>("GeophysicsDataID", ref fGeophysicsDataID, value); }
+            set { SetPropertyValue<GeophysicsData>("GeophysicsDataID", ref fGeophysicsDataID, value); }
         }
         Lithology fLithologyID;
         [Association(@"CompositeReferencesLithology")]
@@ -180,7 +181,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Recovery>("RecoveryID", ref fRecoveryID, value); }
         }
         BlockModelBlock fBlockModelBlockID;
-        [Association(@"CompositeReferencesBlockModelBlock")]
+        [Association(@"CompositeReferencesX_BlockModelBlock")]
         public BlockModelBlock BlockModelBlockID
         {
             get { return fBlockModelBlockID; }

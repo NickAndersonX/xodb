@@ -22,11 +22,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fAssayGroupStandardTestResultID; }
             set { SetPropertyValue<Guid>("AssayGroupStandardTestResultID", ref fAssayGroupStandardTestResultID, value); }
         }
-        Guid fAssayGroupTestSampleID;
-        public Guid AssayGroupTestSampleID
+        Sample fAssayGroupTestSampleID;
+        [Association(@"AssayGroupStandardTestResultReferencesSample")]
+        public Sample AssayGroupTestSampleID
         {
             get { return fAssayGroupTestSampleID; }
-            set { SetPropertyValue<Guid>("AssayGroupTestSampleID", ref fAssayGroupTestSampleID, value); }
+            set { SetPropertyValue<Sample>("AssayGroupTestSampleID", ref fAssayGroupTestSampleID, value); }
         }
         AssayGroupTest fAssayGroupTestID;
         [Association(@"AssayGroupStandardTestResultReferencesAssayGroupTest")]

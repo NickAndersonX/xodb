@@ -191,6 +191,13 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        Contact fProposalContactID;
+        [Association(@"OpportunityReferencesContact5")]
+        public Contact ProposalContactID
+        {
+            get { return fProposalContactID; }
+            set { SetPropertyValue<Contact>("ProposalContactID", ref fProposalContactID, value); }
+        }
     }
 
 }

@@ -23,6 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("AssayGroupTestResultID", ref fAssayGroupTestResultID, value); }
         }
         Guid fAssayGroupTestSampleID;
+        [Indexed(Name = @"iAssayGroupTestSampleID_X_AssayGroupTestResult")]
         public Guid AssayGroupTestSampleID
         {
             get { return fAssayGroupTestSampleID; }

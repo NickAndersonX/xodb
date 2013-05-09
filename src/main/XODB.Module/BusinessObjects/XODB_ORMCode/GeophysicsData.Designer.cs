@@ -12,8 +12,8 @@ using DevExpress.Data.Filtering;
 namespace XODB.Module.BusinessObjects.XODB
 {
 
-    [Persistent(@"X_GeophyicsData")]
-    public partial class GeophyicsData : XPLiteObject
+    [Persistent(@"X_GeophysicsData")]
+    public partial class GeophysicsData : XPLiteObject
     {
         Guid fGeophysicsDataID;
         [Key(true)]
@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("GeophysicsDataID", ref fGeophysicsDataID, value); }
         }
         GeophysicsMetadata fGeophysicsMetadataID;
-        [Association(@"GeophyicsDataReferencesGeophysicsMetadata")]
+        [Association(@"X_GeophysicsDataReferencesGeophysicsMetadata")]
         public GeophysicsMetadata GeophysicsMetadataID
         {
             get { return fGeophysicsMetadataID; }
@@ -102,7 +102,7 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"CompositeReferencesGeophyicsData", typeof(Composite))]
+        [Association(@"CompositeReferencesX_GeophysicsData", typeof(Composite))]
         public XPCollection<Composite> Composites { get { return GetCollection<Composite>("Composites"); } }
     }
 

@@ -363,6 +363,13 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        string fDescription;
+        [Size(255)]
+        public string Description
+        {
+            get { return fDescription; }
+            set { SetPropertyValue<string>("Description", ref fDescription, value); }
+        }
         [Association(@"CompositeReferencesLithology", typeof(Composite))]
         public XPCollection<Composite> Composites { get { return GetCollection<Composite>("Composites"); } }
     }

@@ -160,11 +160,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fHoleRedrilled; }
             set { SetPropertyValue<string>("HoleRedrilled", ref fHoleRedrilled, value); }
         }
-        Guid fGeologyCompanyID;
-        public Guid GeologyCompanyID
+        Company fGeologyCompanyID;
+        [Association(@"HeaderReferencesCompany")]
+        public Company GeologyCompanyID
         {
             get { return fGeologyCompanyID; }
-            set { SetPropertyValue<Guid>("GeologyCompanyID", ref fGeologyCompanyID, value); }
+            set { SetPropertyValue<Company>("GeologyCompanyID", ref fGeologyCompanyID, value); }
         }
         bool fHasHadGeotechLogs;
         public bool HasHadGeotechLogs
@@ -178,11 +179,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fHasHadCorePhotos; }
             set { SetPropertyValue<bool>("HasHadCorePhotos", ref fHasHadCorePhotos, value); }
         }
-        Guid fGeophysicalLoggingCompanyID;
-        public Guid GeophysicalLoggingCompanyID
+        Company fGeophysicalLoggingCompanyID;
+        [Association(@"HeaderReferencesCompany1")]
+        public Company GeophysicalLoggingCompanyID
         {
             get { return fGeophysicalLoggingCompanyID; }
-            set { SetPropertyValue<Guid>("GeophysicalLoggingCompanyID", ref fGeophysicalLoggingCompanyID, value); }
+            set { SetPropertyValue<Company>("GeophysicalLoggingCompanyID", ref fGeophysicalLoggingCompanyID, value); }
         }
         DictionaryGeophysicalLogType fGeophysicalLogTypeID1;
         [Association(@"HeaderReferencesDictionaryGeophysicalLogType")]

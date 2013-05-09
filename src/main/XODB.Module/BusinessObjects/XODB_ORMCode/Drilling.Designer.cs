@@ -59,11 +59,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDrillingDate; }
             set { SetPropertyValue<DateTime>("DrillingDate", ref fDrillingDate, value); }
         }
-        Guid fDrillingCompanyID;
-        public Guid DrillingCompanyID
+        Company fDrillingCompanyID;
+        [Association(@"DrillingReferencesCompany")]
+        public Company DrillingCompanyID
         {
             get { return fDrillingCompanyID; }
-            set { SetPropertyValue<Guid>("DrillingCompanyID", ref fDrillingCompanyID, value); }
+            set { SetPropertyValue<Company>("DrillingCompanyID", ref fDrillingCompanyID, value); }
         }
         string fDrillRigNumber;
         [Size(16)]

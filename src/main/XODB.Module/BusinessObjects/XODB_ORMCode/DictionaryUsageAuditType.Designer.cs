@@ -58,8 +58,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"UsageAuditReferencesDictionaryUsageAuditType", typeof(UsageAudit))]
-        public XPCollection<UsageAudit> UsageAudits { get { return GetCollection<UsageAudit>("UsageAudits"); } }
+        [Association(@"X_UsageAuditReferencesDictionaryUsageAuditType", typeof(UsageAudit))]
+        public XPCollection<UsageAudit> X_UsageAudits { get { return GetCollection<UsageAudit>("X_UsageAudits"); } }
     }
 
 }

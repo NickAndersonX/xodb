@@ -29,11 +29,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fAssayGroupName; }
             set { SetPropertyValue<string>("AssayGroupName", ref fAssayGroupName, value); }
         }
-        Guid fLabCompanyID;
-        public Guid LabCompanyID
+        Company fLabCompanyID;
+        [Association(@"AssayGroupReferencesCompany")]
+        public Company LabCompanyID
         {
             get { return fLabCompanyID; }
-            set { SetPropertyValue<Guid>("LabCompanyID", ref fLabCompanyID, value); }
+            set { SetPropertyValue<Company>("LabCompanyID", ref fLabCompanyID, value); }
         }
         DateTime fSubmitted;
         public DateTime Submitted

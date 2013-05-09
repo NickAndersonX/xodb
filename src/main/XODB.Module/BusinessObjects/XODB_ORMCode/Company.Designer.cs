@@ -140,16 +140,26 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Compliance> Compliances { get { return GetCollection<Compliance>("Compliances"); } }
         [Association(@"DictionaryModelReferencesCompany", typeof(DictionaryModel))]
         public XPCollection<DictionaryModel> DictionaryModels { get { return GetCollection<DictionaryModel>("DictionaryModels"); } }
-        [Association(@"ContractReferencesCompany", typeof(Contract))]
-        public XPCollection<Contract> ContractsObligee { get { return GetCollection<Contract>("ContractsObligee"); } }
-        [Association(@"ContractReferencesCompany1", typeof(Contract))]
-        public XPCollection<Contract> ContractsObligor { get { return GetCollection<Contract>("ContractsObligor"); } }
-        [Association(@"ContractReferencesCompany2", typeof(Contract))]
-        public XPCollection<Contract> ContractsAssignee { get { return GetCollection<Contract>("ContractsAssignee"); } }
-        [Association(@"ContractReferencesCompany3", typeof(Contract))]
-        public XPCollection<Contract> ContractsSolicitor { get { return GetCollection<Contract>("ContractsSolicitor"); } }
         [Association(@"OpportunityReferencesCompany", typeof(Opportunity))]
         public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
+        [Association(@"AssayGroupReferencesCompany", typeof(AssayGroup))]
+        public XPCollection<AssayGroup> AssayGroups { get { return GetCollection<AssayGroup>("AssayGroups"); } }
+        [Association(@"DrillingReferencesCompany", typeof(Drilling))]
+        public XPCollection<Drilling> Drillings { get { return GetCollection<Drilling>("Drillings"); } }
+        [Association(@"HeaderReferencesCompany", typeof(Header))]
+        public XPCollection<Header> Headers { get { return GetCollection<Header>("Headers"); } }
+        [Association(@"HeaderReferencesCompany1", typeof(Header))]
+        public XPCollection<Header> Headers1 { get { return GetCollection<Header>("Headers1"); } }
+        [Association(@"SurveyReferencesCompany", typeof(Survey))]
+        public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
+        [Association(@"X_ContractReferencesCompany", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
+        [Association(@"X_ContractReferencesCompany1", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts1 { get { return GetCollection<Contract>("X_Contracts1"); } }
+        [Association(@"X_ContractReferencesCompany2", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts2 { get { return GetCollection<Contract>("X_Contracts2"); } }
+        [Association(@"X_ContractReferencesCompany3", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts3 { get { return GetCollection<Contract>("X_Contracts3"); } }
     }
 
 }

@@ -15,15 +15,15 @@ namespace XODB.Module.BusinessObjects.XODB
     [Persistent(@"X_UsageAudit")]
     public partial class UsageAudit : XPLiteObject
     {
-        Guid fAuditID;
+        Guid fUsageAuditID;
         [Key(true)]
-        public Guid AuditID
+        public Guid UsageAuditID
         {
-            get { return fAuditID; }
-            set { SetPropertyValue<Guid>("AuditID", ref fAuditID, value); }
+            get { return fUsageAuditID; }
+            set { SetPropertyValue<Guid>("UsageAuditID", ref fUsageAuditID, value); }
         }
         DictionaryUsageAuditType fUsageAuditTypeID;
-        [Association(@"UsageAuditReferencesDictionaryUsageAuditType")]
+        [Association(@"X_UsageAuditReferencesDictionaryUsageAuditType")]
         public DictionaryUsageAuditType UsageAuditTypeID
         {
             get { return fUsageAuditTypeID; }

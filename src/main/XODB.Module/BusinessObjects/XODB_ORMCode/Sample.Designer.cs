@@ -150,6 +150,10 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"AssayGroupTestResultReferencesSample", typeof(AssayGroupTestResult))]
         public XPCollection<AssayGroupTestResult> AssayGroupTestResults { get { return GetCollection<AssayGroupTestResult>("AssayGroupTestResults"); } }
+        [Association(@"AssayGroupStandardTestResultReferencesSample", typeof(AssayGroupStandardTestResult))]
+        public XPCollection<AssayGroupStandardTestResult> AssayGroupStandardTestResults { get { return GetCollection<AssayGroupStandardTestResult>("AssayGroupStandardTestResults"); } }
+        [Association(@"CompositeReferencesSample", typeof(Composite))]
+        public XPCollection<Composite> Composites { get { return GetCollection<Composite>("Composites"); } }
     }
 
 }

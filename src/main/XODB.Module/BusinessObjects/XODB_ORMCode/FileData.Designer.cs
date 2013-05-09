@@ -337,12 +337,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<DictionaryModelStatus> DictionaryModelStatusCollection { get { return GetCollection<DictionaryModelStatus>("DictionaryModelStatusCollection"); } }
         [Association(@"DictionaryModelReferencesFileData", typeof(DictionaryModel))]
         public XPCollection<DictionaryModel> DictionaryModels { get { return GetCollection<DictionaryModel>("DictionaryModels"); } }
-        [Association(@"ContractReferencesFileData", typeof(Contract))]
-        public XPCollection<Contract> Contracts { get { return GetCollection<Contract>("Contracts"); } }
-        [Association(@"ProjectDeliverableReferencesFileData", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
         [Association(@"OpportunityReferencesFileData", typeof(Opportunity))]
         public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
+        [Association(@"X_ProjectDeliverableReferencesFileData", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
+        [Association(@"X_ContractReferencesFileData", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
     }
 
 }

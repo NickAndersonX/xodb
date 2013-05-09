@@ -131,12 +131,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<AssayGroup> AssayGroups { get { return GetCollection<AssayGroup>("AssayGroups"); } }
         [Association(@"ProjectPlanReferencesProject", typeof(ProjectPlan))]
         public XPCollection<ProjectPlan> ProjectPlans { get { return GetCollection<ProjectPlan>("ProjectPlans"); } }
-        [Association(@"ContractReferencesProject", typeof(Contract))]
-        public XPCollection<Contract> Contracts { get { return GetCollection<Contract>("Contracts"); } }
-        [Association(@"ProjectDeliverableReferencesProject", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
         [Association(@"OpportunityReferencesProject", typeof(Opportunity))]
         public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
+        [Association(@"X_ProjectDeliverableReferencesProject", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
+        [Association(@"X_ContractReferencesProject", typeof(Contract))]
+        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
     }
 
 }

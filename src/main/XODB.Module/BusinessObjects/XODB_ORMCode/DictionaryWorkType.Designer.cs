@@ -151,12 +151,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses"); } }
         [Association(@"ComplianceWorkTypeReferencesDictionaryWorkType", typeof(ComplianceWorkType))]
         public XPCollection<ComplianceWorkType> ComplianceWorkTypes { get { return GetCollection<ComplianceWorkType>("ComplianceWorkTypes"); } }
-        [Association(@"ProjectDeliverableReferencesDictionaryWorkType", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
         [Association(@"OpportunityReferencesDictionaryWorkType", typeof(Opportunity))]
         public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
         [Association(@"OpportunityReferencesDictionaryWorkType1", typeof(Opportunity))]
         public XPCollection<Opportunity> Opportunitys1 { get { return GetCollection<Opportunity>("Opportunitys1"); } }
+        [Association(@"X_ProjectDeliverableReferencesDictionaryWorkType", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
     }
 
 }
