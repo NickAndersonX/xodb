@@ -165,6 +165,11 @@
           <Item Id="@b585bcf4-3d62-47a1-bf20-0b0bb4e7aaba" ImageName="Action_EditModel" ViewId="DictionaryWorkTypeRelation_ListView" Caption="Work Type Hierarchy" Index="79" IsNewNode="True" />
         </Items>
       </Item>
+      <Item Id="@78792874-16b3-4629-ab93-3293f96a54fe" ImageName="Navigation_Item_Report" Caption="Reports" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@f23eb851-9f45-43af-836a-1734eefc0dbb" ViewId="FileData_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
     </Items>
   </NavigationItems>
   <Options UseServerMode="True" UIType="TabbedMDI" Skin="Office 2010 Silver" />
