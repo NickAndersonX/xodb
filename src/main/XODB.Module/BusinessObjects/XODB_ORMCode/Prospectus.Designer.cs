@@ -61,7 +61,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("Pages", ref fPages, value); }
         }
         Tenement fTenementID;
-        [Association(@"ProspectusReferencesTenement")]
+        [Association(@"ProspectusReferencesX_Tenement")]
         public Tenement TenementID
         {
             get { return fTenementID; }

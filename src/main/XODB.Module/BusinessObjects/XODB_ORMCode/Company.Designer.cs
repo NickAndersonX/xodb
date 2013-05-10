@@ -112,16 +112,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<CompanyRelation> CompanyRelations { get { return GetCollection<CompanyRelation>("CompanyRelations"); } }
         [Association(@"CompanyRelationReferencesCompany1", typeof(CompanyRelation))]
         public XPCollection<CompanyRelation> CompanyRelations1 { get { return GetCollection<CompanyRelation>("CompanyRelations1"); } }
-        [Association(@"DictionaryWorkTypeReferencesCompany", typeof(DictionaryWorkType))]
-        public XPCollection<DictionaryWorkType> DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("DictionaryWorkTypes"); } }
         [Association(@"ExperienceReferencesCompany", typeof(Experience))]
         public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
         [Association(@"LeaseReferencesCompany", typeof(Lease))]
         public XPCollection<Lease> Leases { get { return GetCollection<Lease>("Leases"); } }
         [Association(@"LeaseApplicationReferencesCompany", typeof(LeaseApplication))]
         public XPCollection<LeaseApplication> LeaseApplications { get { return GetCollection<LeaseApplication>("LeaseApplications"); } }
-        [Association(@"LocationReferencesCompany", typeof(Location))]
-        public XPCollection<Location> Locations { get { return GetCollection<Location>("Locations"); } }
         [Association(@"ProjectReferencesCompany", typeof(Project))]
         public XPCollection<Project> Projects { get { return GetCollection<Project>("Projects"); } }
         [Association(@"ProvinceReferencesCompany", typeof(Province))]
@@ -134,8 +130,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<SecurityWhitelist> SecurityWhitelists { get { return GetCollection<SecurityWhitelist>("SecurityWhitelists"); } }
         [Association(@"SecurityWhitelistReferencesCompany1", typeof(SecurityWhitelist))]
         public XPCollection<SecurityWhitelist> SecurityWhitelists1 { get { return GetCollection<SecurityWhitelist>("SecurityWhitelists1"); } }
-        [Association(@"TenementReferencesCompany", typeof(Tenement))]
-        public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
         [Association(@"ComplianceReferencesCompany", typeof(Compliance))]
         public XPCollection<Compliance> Compliances { get { return GetCollection<Compliance>("Compliances"); } }
         [Association(@"DictionaryModelReferencesCompany", typeof(DictionaryModel))]
@@ -150,8 +144,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Header> Headers { get { return GetCollection<Header>("Headers"); } }
         [Association(@"HeaderReferencesCompany1", typeof(Header))]
         public XPCollection<Header> Headers1 { get { return GetCollection<Header>("Headers1"); } }
-        [Association(@"SurveyReferencesCompany", typeof(Survey))]
-        public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
         [Association(@"X_ContractReferencesCompany", typeof(Contract))]
         public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
         [Association(@"X_ContractReferencesCompany1", typeof(Contract))]
@@ -160,6 +152,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Contract> X_Contracts2 { get { return GetCollection<Contract>("X_Contracts2"); } }
         [Association(@"X_ContractReferencesCompany3", typeof(Contract))]
         public XPCollection<Contract> X_Contracts3 { get { return GetCollection<Contract>("X_Contracts3"); } }
+        [Association(@"X_LocationReferencesCompany", typeof(Location))]
+        public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
+        [Association(@"X_TenementReferencesCompany", typeof(Tenement))]
+        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
+        [Association(@"X_SurveyReferencesCompany", typeof(Survey))]
+        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
     }
 
 }

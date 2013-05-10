@@ -159,6 +159,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        [Association(@"X_DictionaryWorkTypeReferencesFileData", typeof(DictionaryWorkType))]
+        public XPCollection<DictionaryWorkType> X_DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("X_DictionaryWorkTypes"); } }
         [Association(@"FileDataReferencesFileData", typeof(FileData))]
         public XPCollection<FileData> FileDataCollection { get { return GetCollection<FileData>("FileDataCollection"); } }
         [Association(@"DictionaryAdjectiveReferencesFileData", typeof(DictionaryAdjective))]
@@ -327,8 +329,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<DictionaryUsageAuditType> DictionaryUsageAuditTypes { get { return GetCollection<DictionaryUsageAuditType>("DictionaryUsageAuditTypes"); } }
         [Association(@"DictionaryWeatheringReferencesFileData", typeof(DictionaryWeathering))]
         public XPCollection<DictionaryWeathering> DictionaryWeatherings { get { return GetCollection<DictionaryWeathering>("DictionaryWeatherings"); } }
-        [Association(@"DictionaryWorkTypeReferencesFileData", typeof(DictionaryWorkType))]
-        public XPCollection<DictionaryWorkType> DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("DictionaryWorkTypes"); } }
         [Association(@"DictionaryPositionReferencesFileData", typeof(DictionaryPosition))]
         public XPCollection<DictionaryPosition> DictionaryPositions { get { return GetCollection<DictionaryPosition>("DictionaryPositions"); } }
         [Association(@"DictionaryWorkTypeClassReferencesFileData", typeof(DictionaryWorkTypeClass))]

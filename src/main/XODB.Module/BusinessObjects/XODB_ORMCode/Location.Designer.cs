@@ -22,12 +22,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fLocationID; }
             set { SetPropertyValue<Guid>("LocationID", ref fLocationID, value); }
         }
-        DictionaryLocationType fLocationType;
-        [Association(@"LocationReferencesDictionaryLocationType")]
-        public DictionaryLocationType LocationType
+        DictionaryLocationType fLocationTypeID;
+        [Association(@"X_LocationReferencesDictionaryLocationType")]
+        public DictionaryLocationType LocationTypeID
         {
-            get { return fLocationType; }
-            set { SetPropertyValue<DictionaryLocationType>("LocationType", ref fLocationType, value); }
+            get { return fLocationTypeID; }
+            set { SetPropertyValue<DictionaryLocationType>("LocationTypeID", ref fLocationTypeID, value); }
         }
         string fDefaultLocationName;
         [Size(255)]
@@ -35,6 +35,13 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fDefaultLocationName; }
             set { SetPropertyValue<string>("DefaultLocationName", ref fDefaultLocationName, value); }
+        }
+        string fLocationCode;
+        [Size(120)]
+        public string LocationCode
+        {
+            get { return fLocationCode; }
+            set { SetPropertyValue<string>("LocationCode", ref fLocationCode, value); }
         }
         decimal fLatitudeWGS84;
         public decimal LatitudeWGS84
@@ -48,16 +55,22 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fLongitudeWGS84; }
             set { SetPropertyValue<decimal>("LongitudeWGS84", ref fLongitudeWGS84, value); }
         }
+        decimal fElevation;
+        public decimal Elevation
+        {
+            get { return fElevation; }
+            set { SetPropertyValue<decimal>("Elevation", ref fElevation, value); }
+        }
         DictionaryCountry fCountryID;
         [Size(2)]
-        [Association(@"LocationReferencesDictionaryCountry")]
+        [Association(@"X_LocationReferencesDictionaryCountry")]
         public DictionaryCountry CountryID
         {
             get { return fCountryID; }
             set { SetPropertyValue<DictionaryCountry>("CountryID", ref fCountryID, value); }
         }
         DictionaryCountryState fCountryStateID;
-        [Association(@"LocationReferencesDictionaryCountryState")]
+        [Association(@"X_LocationReferencesDictionaryCountryState")]
         public DictionaryCountryState CountryStateID
         {
             get { return fCountryStateID; }
@@ -71,14 +84,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("DefaultCulture", ref fDefaultCulture, value); }
         }
         Company fOwnerCompanyID;
-        [Association(@"LocationReferencesCompany")]
+        [Association(@"X_LocationReferencesCompany")]
         public Company OwnerCompanyID
         {
             get { return fOwnerCompanyID; }
             set { SetPropertyValue<Company>("OwnerCompanyID", ref fOwnerCompanyID, value); }
         }
         Contact fResponsibleContactID;
-        [Association(@"LocationReferencesContact")]
+        [Association(@"X_LocationReferencesContact")]
         public Contact ResponsibleContactID
         {
             get { return fResponsibleContactID; }
@@ -90,26 +103,6 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fComment; }
             set { SetPropertyValue<string>("Comment", ref fComment, value); }
-        }
-        DictionaryLocationType fLocationTypeID;
-        [Association(@"LocationReferencesDictionaryLocationType1")]
-        public DictionaryLocationType LocationTypeID
-        {
-            get { return fLocationTypeID; }
-            set { SetPropertyValue<DictionaryLocationType>("LocationTypeID", ref fLocationTypeID, value); }
-        }
-        string fLocationCode;
-        [Size(120)]
-        public string LocationCode
-        {
-            get { return fLocationCode; }
-            set { SetPropertyValue<string>("LocationCode", ref fLocationCode, value); }
-        }
-        decimal fElevation;
-        public decimal Elevation
-        {
-            get { return fElevation; }
-            set { SetPropertyValue<decimal>("Elevation", ref fElevation, value); }
         }
         int fVersion;
         public int Version
@@ -165,16 +158,16 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"AddressReferencesLocation", typeof(Address))]
-        public XPCollection<Address> AddressCollection { get { return GetCollection<Address>("AddressCollection"); } }
-        [Association(@"ExperienceReferencesLocation", typeof(Experience))]
-        public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
-        [Association(@"LocationAliasReferencesLocation", typeof(LocationAlias))]
+        [Association(@"LocationAliasReferencesX_Location", typeof(LocationAlias))]
         public XPCollection<LocationAlias> LocationAliasCollection { get { return GetCollection<LocationAlias>("LocationAliasCollection"); } }
-        [Association(@"HeaderReferencesLocation", typeof(Header))]
+        [Association(@"HeaderReferencesX_Location", typeof(Header))]
         public XPCollection<Header> Headers { get { return GetCollection<Header>("Headers"); } }
-        [Association(@"LocationHistoryReferencesLocation", typeof(LocationHistory))]
-        public XPCollection<LocationHistory> LocationHistories { get { return GetCollection<LocationHistory>("LocationHistories"); } }
+        [Association(@"ExperienceReferencesX_Location", typeof(Experience))]
+        public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
+        [Association(@"LocationHistoryReferencesX_Location", typeof(LocationHistory))]
+        public XPCollection<LocationHistory> LocationHistorys { get { return GetCollection<LocationHistory>("LocationHistorys"); } }
+        [Association(@"AddressReferencesX_Location", typeof(Address))]
+        public XPCollection<Address> AddressCollection { get { return GetCollection<Address>("AddressCollection"); } }
     }
 
 }

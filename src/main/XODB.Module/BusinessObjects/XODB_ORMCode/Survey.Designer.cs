@@ -23,8 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SurveyID", ref fSurveyID, value); }
         }
         Header fHeaderID;
-        [Indexed(@"Surveyed", Name = @"IX_X_Survey", Unique = true)]
-        [Association(@"SurveyReferencesHeader")]
+        [Association(@"X_SurveyReferencesHeader")]
         public Header HeaderID
         {
             get { return fHeaderID; }
@@ -72,35 +71,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fGravity; }
             set { SetPropertyValue<decimal>("Gravity", ref fGravity, value); }
         }
-        string fInstrument;
-        [Size(16)]
-        public string Instrument
-        {
-            get { return fInstrument; }
-            set { SetPropertyValue<string>("Instrument", ref fInstrument, value); }
-        }
-        DateTime fSurveyed;
-        public DateTime Surveyed
-        {
-            get { return fSurveyed; }
-            set { SetPropertyValue<DateTime>("Surveyed", ref fSurveyed, value); }
-        }
-        Contact fSurveyContactID;
-        [Association(@"SurveyReferencesContact")]
-        public Contact SurveyContactID
-        {
-            get { return fSurveyContactID; }
-            set { SetPropertyValue<Contact>("SurveyContactID", ref fSurveyContactID, value); }
-        }
-        Company fSurveyCompanyID;
-        [Association(@"SurveyReferencesCompany")]
-        public Company SurveyCompanyID
-        {
-            get { return fSurveyCompanyID; }
-            set { SetPropertyValue<Company>("SurveyCompanyID", ref fSurveyCompanyID, value); }
-        }
         DictionaryModel fInstrumentModelID;
-        [Association(@"SurveyReferencesDictionaryModel")]
+        [Association(@"X_SurveyReferencesDictionaryModel")]
         public DictionaryModel InstrumentModelID
         {
             get { return fInstrumentModelID; }
@@ -112,6 +84,26 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fInstrumentAssetID; }
             set { SetPropertyValue<string>("InstrumentAssetID", ref fInstrumentAssetID, value); }
+        }
+        DateTime fSurveyed;
+        public DateTime Surveyed
+        {
+            get { return fSurveyed; }
+            set { SetPropertyValue<DateTime>("Surveyed", ref fSurveyed, value); }
+        }
+        Contact fSurveyContactID;
+        [Association(@"X_SurveyReferencesContact")]
+        public Contact SurveyContactID
+        {
+            get { return fSurveyContactID; }
+            set { SetPropertyValue<Contact>("SurveyContactID", ref fSurveyContactID, value); }
+        }
+        Company fSurveyCompanyID;
+        [Association(@"X_SurveyReferencesCompany")]
+        public Company SurveyCompanyID
+        {
+            get { return fSurveyCompanyID; }
+            set { SetPropertyValue<Company>("SurveyCompanyID", ref fSurveyCompanyID, value); }
         }
         int fVersion;
         public int Version
@@ -167,7 +159,7 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"DesurveyReferencesSurvey", typeof(Desurvey))]
+        [Association(@"DesurveyReferencesX_Survey", typeof(Desurvey))]
         public XPCollection<Desurvey> Desurveys { get { return GetCollection<Desurvey>("Desurveys"); } }
     }
 

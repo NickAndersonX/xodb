@@ -80,10 +80,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"LocationReferencesDictionaryLocationType", typeof(Location))]
-        public XPCollection<Location> Locations { get { return GetCollection<Location>("Locations"); } }
-        [Association(@"LocationReferencesDictionaryLocationType1", typeof(Location))]
-        public XPCollection<Location> Locations1 { get { return GetCollection<Location>("Locations1"); } }
+        [Association(@"X_LocationReferencesDictionaryLocationType", typeof(Location))]
+        public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
     }
 
 }

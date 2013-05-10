@@ -128,8 +128,8 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"AssayGroupStandardTestResultReferencesAssayGroupTest", typeof(AssayGroupStandardTestResult))]
         public XPCollection<AssayGroupStandardTestResult> AssayGroupStandardTestResults { get { return GetCollection<AssayGroupStandardTestResult>("AssayGroupStandardTestResults"); } }
-        [Association(@"AssayGroupTestResultReferencesAssayGroupTest", typeof(AssayGroupTestResult))]
-        public XPCollection<AssayGroupTestResult> AssayGroupTestResults { get { return GetCollection<AssayGroupTestResult>("AssayGroupTestResults"); } }
+        [Association(@"X_AssayGroupTestResultReferencesAssayGroupTest", typeof(AssayGroupTestResult))]
+        public XPCollection<AssayGroupTestResult> X_AssayGroupTestResults { get { return GetCollection<AssayGroupTestResult>("X_AssayGroupTestResults"); } }
     }
 
 }

@@ -579,5 +579,68 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="Opportunity_DetailView">
+      <Items>
+        <PropertyEditor Id="OpportunityName" Index="0" />
+        <PropertyEditor Id="AssignedBy" Index="5" />
+        <PropertyEditor Id="ConvertedBy" Index="5" />
+        <PropertyEditor Id="Description" Index="5" />
+        <PropertyEditor Id="EstimatedConversion" Index="5" />
+        <PropertyEditor Id="EstimatedDurationHours" Index="5" />
+        <PropertyEditor Id="EstimatedRevenue" Index="5" />
+        <PropertyEditor Id="ExperienceID" Index="5" />
+        <PropertyEditor Id="MaintainedBy" Index="5" />
+        <PropertyEditor Id="OpenedBy" Index="5" />
+        <PropertyEditor Id="OpportunityCompanyID" Index="5" />
+        <PropertyEditor Id="OpportunityContactID" Index="5" />
+        <PropertyEditor Id="OpportunityID" Index="5" />
+        <PropertyEditor Id="Probability" Index="5" />
+        <PropertyEditor Id="ProposalContactID" Index="6" />
+        <PropertyEditor Id="ProposalFileDataID" Index="6" />
+        <PropertyEditor Id="ProjectID" Index="7" />
+        <PropertyEditor Id="RegardingWorkTypeID" Index="7" />
+        <PropertyEditor Id="StatusWorkTypeID" Index="7" />
+        <PropertyEditor Id="Version" AllowEdit="False" Index="10" />
+        <PropertyEditor Id="VersionAntecedentID" Index="10" />
+        <PropertyEditor Id="VersionCertainty" AllowEdit="False" Index="10" />
+        <PropertyEditor Id="VersionDeletedBy" Index="10" />
+        <PropertyEditor Id="VersionOwnerCompanyID" Index="10" />
+        <PropertyEditor Id="VersionOwnerContactID" Index="10" />
+        <PropertyEditor Id="VersionUpdated" AllowEdit="False" Index="10" />
+        <PropertyEditor Id="VersionUpdatedBy" Index="10" />
+        <PropertyEditor Id="VersionWorkflowInstanceID" Index="10" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Opportunity">
+              <LayoutGroup Id="Opportunity_col1">
+                <LayoutItem Id="ProposalContactID" ViewItem="ProposalContactID" ShowCaption="" Index="7" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Opportunity_col2">
+                <LayoutItem Id="ProposalContactID" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Opportunity_ListView">
+      <Columns>
+        <ColumnInfo Id="Version" Index="-1" />
+        <ColumnInfo Id="VersionAntecedentID" Index="-1" />
+        <ColumnInfo Id="VersionCertainty" Index="-1" />
+        <ColumnInfo Id="VersionDeletedBy" Index="-1" />
+        <ColumnInfo Id="VersionOwnerCompanyID" Index="-1" />
+        <ColumnInfo Id="VersionOwnerContactID" Index="-1" />
+        <ColumnInfo Id="VersionUpdated" Index="-1" />
+        <ColumnInfo Id="VersionUpdatedBy" Index="-1" />
+        <ColumnInfo Id="VersionWorkflowInstanceID" Index="-1" />
+        <ColumnInfo Id="ProposalContactID" Index="6" />
+      </Columns>
+      <Filters CurrentFilterId="@69ba0688-9546-41e3-9a6d-06eb1a2d8556">
+        <Filter Id="@69ba0688-9546-41e3-9a6d-06eb1a2d8556" Criteria="[Version] = 0 And [VersionDeletedBy] &lt;&gt; '''00000000-0000-0000-0000-000000000001'''" Caption="Current Items" IsNewNode="True" />
+      </Filters>
+    </ListView>
   </Views>
 </Application>

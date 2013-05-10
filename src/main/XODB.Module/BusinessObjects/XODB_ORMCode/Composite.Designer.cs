@@ -125,7 +125,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Cementing>("CementingID", ref fCementingID, value); }
         }
         Defect fDefectID;
-        [Association(@"CompositeReferencesDefect")]
+        [Association(@"CompositeReferencesX_Defect")]
         public Defect DefectID
         {
             get { return fDefectID; }

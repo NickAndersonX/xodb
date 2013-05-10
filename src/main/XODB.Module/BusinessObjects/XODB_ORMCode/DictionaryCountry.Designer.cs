@@ -80,22 +80,22 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
+        [Association(@"X_LocationReferencesDictionaryCountry", typeof(Location))]
+        public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
         [Association(@"CompanyReferencesDictionaryCountry", typeof(Company))]
         public XPCollection<Company> Companies { get { return GetCollection<Company>("Companies"); } }
         [Association(@"ContactReferencesDictionaryCountry", typeof(Contact))]
         public XPCollection<Contact> Contacts { get { return GetCollection<Contact>("Contacts"); } }
         [Association(@"DictionaryCountryStateReferencesDictionaryCountry", typeof(DictionaryCountryState))]
         public XPCollection<DictionaryCountryState> DictionaryCountryStates { get { return GetCollection<DictionaryCountryState>("DictionaryCountryStates"); } }
-        [Association(@"LocationReferencesDictionaryCountry", typeof(Location))]
-        public XPCollection<Location> Locations { get { return GetCollection<Location>("Locations"); } }
         [Association(@"ProspectusProjectReferencesDictionaryCountry", typeof(ProspectusProject))]
         public XPCollection<ProspectusProject> ProspectusProjects { get { return GetCollection<ProspectusProject>("ProspectusProjects"); } }
         [Association(@"ProvinceReferencesDictionaryCountry", typeof(Province))]
         public XPCollection<Province> Provinces { get { return GetCollection<Province>("Provinces"); } }
-        [Association(@"TenementReferencesDictionaryCountry", typeof(Tenement))]
-        public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
         [Association(@"ComplianceReferencesDictionaryCountry", typeof(Compliance))]
         public XPCollection<Compliance> Compliances { get { return GetCollection<Compliance>("Compliances"); } }
+        [Association(@"X_TenementReferencesDictionaryCountry", typeof(Tenement))]
+        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
     }
 
 }

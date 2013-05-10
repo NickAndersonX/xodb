@@ -22,12 +22,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDefectID; }
             set { SetPropertyValue<Guid>("DefectID", ref fDefectID, value); }
         }
-        Header fHeaderID;
-        [Association(@"DefectReferencesHeader")]
-        public Header HeaderID
+        Guid fHeaderID;
+        [Indexed(Name = @"iHeaderID_X_DefectData")]
+        public Guid HeaderID
         {
             get { return fHeaderID; }
-            set { SetPropertyValue<Header>("HeaderID", ref fHeaderID, value); }
+            set { SetPropertyValue<Guid>("HeaderID", ref fHeaderID, value); }
         }
         decimal fFromDepth;
         public decimal FromDepth
@@ -41,41 +41,40 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fToDepth; }
             set { SetPropertyValue<decimal>("ToDepth", ref fToDepth, value); }
         }
-        string fRmuTypeID;
-        [Indexed(Name = @"iRmu_Type_DefectData")]
-        [Size(16)]
-        public string RmuTypeID
-        {
-            get { return fRmuTypeID; }
-            set { SetPropertyValue<string>("RmuTypeID", ref fRmuTypeID, value); }
-        }
         DictionaryWeathering fWeatheringID;
-        [Association(@"DefectReferencesDictionaryWeathering")]
+        [Association(@"X_DefectReferencesDictionaryWeathering")]
         public DictionaryWeathering WeatheringID
         {
             get { return fWeatheringID; }
             set { SetPropertyValue<DictionaryWeathering>("WeatheringID", ref fWeatheringID, value); }
         }
+        DictionaryRockMassUnitType fRockMassUnitTypeID;
+        [Association(@"X_DefectReferencesDictionaryRockMassUnitType")]
+        public DictionaryRockMassUnitType RockMassUnitTypeID
+        {
+            get { return fRockMassUnitTypeID; }
+            set { SetPropertyValue<DictionaryRockMassUnitType>("RockMassUnitTypeID", ref fRockMassUnitTypeID, value); }
+        }
         DictionaryAlteration fAlterationID;
-        [Association(@"DefectReferencesDictionaryAlteration")]
+        [Association(@"X_DefectReferencesDictionaryAlteration")]
         public DictionaryAlteration AlterationID
         {
             get { return fAlterationID; }
             set { SetPropertyValue<DictionaryAlteration>("AlterationID", ref fAlterationID, value); }
         }
         DictionaryEstimatedStrength fEstimatedStrengthID;
-        [Association(@"DefectReferencesDictionaryEstimatedStrength")]
+        [Association(@"X_DefectReferencesDictionaryEstimatedStrength")]
         public DictionaryEstimatedStrength EstimatedStrengthID
         {
             get { return fEstimatedStrengthID; }
             set { SetPropertyValue<DictionaryEstimatedStrength>("EstimatedStrengthID", ref fEstimatedStrengthID, value); }
         }
-        DictionaryBedSpacing fBedSpacingID;
-        [Association(@"DefectReferencesDictionaryBedSpacing")]
-        public DictionaryBedSpacing BedSpacingID
+        Guid fBedSpacingID;
+        [Indexed(Name = @"iBed_Spacing_X_DefectData")]
+        public Guid BedSpacingID
         {
             get { return fBedSpacingID; }
-            set { SetPropertyValue<DictionaryBedSpacing>("BedSpacingID", ref fBedSpacingID, value); }
+            set { SetPropertyValue<Guid>("BedSpacingID", ref fBedSpacingID, value); }
         }
         int fBedDip;
         public int BedDip
@@ -84,14 +83,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("BedDip", ref fBedDip, value); }
         }
         DictionaryMoistureSensitivity fMoistureSensitivityID;
-        [Association(@"DefectReferencesDictionaryMoistureSensitivity")]
+        [Association(@"X_DefectReferencesDictionaryMoistureSensitivity")]
         public DictionaryMoistureSensitivity MoistureSensitivityID
         {
             get { return fMoistureSensitivityID; }
             set { SetPropertyValue<DictionaryMoistureSensitivity>("MoistureSensitivityID", ref fMoistureSensitivityID, value); }
         }
         DictionaryPlasticity fPlasticityID;
-        [Association(@"DefectReferencesDictionaryPlasticity")]
+        [Association(@"X_DefectReferencesDictionaryPlasticity")]
         public DictionaryPlasticity PlasticityID
         {
             get { return fPlasticityID; }
@@ -121,26 +120,26 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDefectsSpacing; }
             set { SetPropertyValue<int>("DefectsSpacing", ref fDefectsSpacing, value); }
         }
-        DictionaryDefectType fDefectTypeID;
-        [Association(@"DefectReferencesDictionaryDefectType")]
-        public DictionaryDefectType DefectTypeID
+        Guid fDefectTypeID;
+        [Indexed(Name = @"iDefect_Type_X_DefectData")]
+        public Guid DefectTypeID
         {
             get { return fDefectTypeID; }
-            set { SetPropertyValue<DictionaryDefectType>("DefectTypeID", ref fDefectTypeID, value); }
+            set { SetPropertyValue<Guid>("DefectTypeID", ref fDefectTypeID, value); }
         }
-        DictionaryDefectCompleteness fDefectCompletenessID;
-        [Association(@"DefectReferencesDictionaryDefectCompleteness")]
-        public DictionaryDefectCompleteness DefectCompletenessID
+        Guid fDefectCompletenessID;
+        [Indexed(Name = @"iDefect_Intact_X_DefectData")]
+        public Guid DefectCompletenessID
         {
             get { return fDefectCompletenessID; }
-            set { SetPropertyValue<DictionaryDefectCompleteness>("DefectCompletenessID", ref fDefectCompletenessID, value); }
+            set { SetPropertyValue<Guid>("DefectCompletenessID", ref fDefectCompletenessID, value); }
         }
-        DictionaryDefectContinuity fDefectContinuityID;
-        [Association(@"DefectReferencesDictionaryDefectContinuity")]
-        public DictionaryDefectContinuity DefectContinuityID
+        Guid fDefectContinuityID;
+        [Indexed(Name = @"iDefect_Contin_X_DefectData")]
+        public Guid DefectContinuityID
         {
             get { return fDefectContinuityID; }
-            set { SetPropertyValue<DictionaryDefectContinuity>("DefectContinuityID", ref fDefectContinuityID, value); }
+            set { SetPropertyValue<Guid>("DefectContinuityID", ref fDefectContinuityID, value); }
         }
         int fDefectDip;
         public int DefectDip
@@ -167,21 +166,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("DipOrientation", ref fDipOrientation, value); }
         }
         DictionaryDipOrientationMethod fDipOrientationMethodID;
-        [Association(@"DefectReferencesDictionaryDipOrientationMethod")]
+        [Association(@"X_DefectReferencesDictionaryDipOrientationMethod")]
         public DictionaryDipOrientationMethod DipOrientationMethodID
         {
             get { return fDipOrientationMethodID; }
             set { SetPropertyValue<DictionaryDipOrientationMethod>("DipOrientationMethodID", ref fDipOrientationMethodID, value); }
         }
         DictionaryShape fShapeID;
-        [Association(@"DefectReferencesDictionaryShape")]
+        [Association(@"X_DefectReferencesDictionaryShape")]
         public DictionaryShape ShapeID
         {
             get { return fShapeID; }
             set { SetPropertyValue<DictionaryShape>("ShapeID", ref fShapeID, value); }
         }
         DictionarySurfaceRoughness fRoughnessID;
-        [Association(@"DefectReferencesDictionarySurfaceRoughness")]
+        [Association(@"X_DefectReferencesDictionarySurfaceRoughness")]
         public DictionarySurfaceRoughness RoughnessID
         {
             get { return fRoughnessID; }
@@ -200,35 +199,35 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("PerpendicularWidth", ref fPerpendicularWidth, value); }
         }
         DictionaryInfillType fPrimaryInfillTypeID;
-        [Association(@"DefectReferencesDictionaryInfillType")]
+        [Association(@"X_DefectReferencesDictionaryInfillType")]
         public DictionaryInfillType PrimaryInfillTypeID
         {
             get { return fPrimaryInfillTypeID; }
             set { SetPropertyValue<DictionaryInfillType>("PrimaryInfillTypeID", ref fPrimaryInfillTypeID, value); }
         }
         DictionaryInfillType fSecondaryInfillTypeID;
-        [Association(@"DefectReferencesDictionaryInfillType1")]
+        [Association(@"X_DefectReferencesDictionaryInfillType1")]
         public DictionaryInfillType SecondaryInfillTypeID
         {
             get { return fSecondaryInfillTypeID; }
             set { SetPropertyValue<DictionaryInfillType>("SecondaryInfillTypeID", ref fSecondaryInfillTypeID, value); }
         }
         DictionaryInfillMode fInfillModeID;
-        [Association(@"DefectReferencesDictionaryInfillMode")]
+        [Association(@"X_DefectReferencesDictionaryInfillMode")]
         public DictionaryInfillMode InfillModeID
         {
             get { return fInfillModeID; }
             set { SetPropertyValue<DictionaryInfillMode>("InfillModeID", ref fInfillModeID, value); }
         }
         DictionaryEstimatedStrength fInfillEstimatedStrengthID;
-        [Association(@"DefectReferencesDictionaryEstimatedStrength1")]
+        [Association(@"X_DefectReferencesDictionaryEstimatedStrength1")]
         public DictionaryEstimatedStrength InfillEstimatedStrengthID
         {
             get { return fInfillEstimatedStrengthID; }
             set { SetPropertyValue<DictionaryEstimatedStrength>("InfillEstimatedStrengthID", ref fInfillEstimatedStrengthID, value); }
         }
         DictionaryPlasticity fInfillPlasticityID;
-        [Association(@"DefectReferencesDictionaryPlasticity1")]
+        [Association(@"X_DefectReferencesDictionaryPlasticity1")]
         public DictionaryPlasticity InfillPlasticityID
         {
             get { return fInfillPlasticityID; }
@@ -240,13 +239,6 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fComment; }
             set { SetPropertyValue<string>("Comment", ref fComment, value); }
-        }
-        DictionaryRockMassUnitType fRockMassUnitTypeID;
-        [Association(@"DefectReferencesDictionaryRockMassUnitType")]
-        public DictionaryRockMassUnitType RockMassUnitTypeID
-        {
-            get { return fRockMassUnitTypeID; }
-            set { SetPropertyValue<DictionaryRockMassUnitType>("RockMassUnitTypeID", ref fRockMassUnitTypeID, value); }
         }
         int fVersion;
         public int Version
@@ -302,7 +294,7 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"CompositeReferencesDefect", typeof(Composite))]
+        [Association(@"CompositeReferencesX_Defect", typeof(Composite))]
         public XPCollection<Composite> Composites { get { return GetCollection<Composite>("Composites"); } }
     }
 

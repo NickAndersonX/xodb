@@ -43,14 +43,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("DeliverableName", ref fDeliverableName, value); }
         }
         DictionaryWorkType fWorkTypeID;
-        [Association(@"X_ProjectDeliverableReferencesDictionaryWorkType")]
+        [Association(@"ProjectDeliverableReferencesX_DictionaryWorkType")]
         public DictionaryWorkType WorkTypeID
         {
             get { return fWorkTypeID; }
             set { SetPropertyValue<DictionaryWorkType>("WorkTypeID", ref fWorkTypeID, value); }
         }
         ProjectPlanTask fMilestoneTaskID;
-        [Association(@"X_ProjectDeliverableReferencesProjectPlanTask")]
+        [Association(@"ProjectDeliverableReferencesX_ProjectPlanTask")]
         public ProjectPlanTask MilestoneTaskID
         {
             get { return fMilestoneTaskID; }

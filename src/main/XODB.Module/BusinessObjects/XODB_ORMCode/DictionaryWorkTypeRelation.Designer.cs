@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("WorkTypeRelationID", ref fWorkTypeRelationID, value); }
         }
         DictionaryWorkType fWorkTypeID;
-        [Association(@"DictionaryWorkTypeRelationReferencesDictionaryWorkType")]
+        [Association(@"DictionaryWorkTypeRelationReferencesX_DictionaryWorkType")]
         public DictionaryWorkType WorkTypeID
         {
             get { return fWorkTypeID; }
@@ -31,7 +31,7 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         DictionaryWorkType fParentWorkTypeID;
         [Indexed(@"WorkTypeID", Name = @"IDictionaryWorkTypeRelation", Unique = true)]
-        [Association(@"DictionaryWorkTypeRelationReferencesDictionaryWorkType1")]
+        [Association(@"DictionaryWorkTypeRelationReferencesX_DictionaryWorkType1")]
         public DictionaryWorkType ParentWorkTypeID
         {
             get { return fParentWorkTypeID; }

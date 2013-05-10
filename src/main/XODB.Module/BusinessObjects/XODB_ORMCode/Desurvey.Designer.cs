@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("DesurveyID", ref fDesurveyID, value); }
         }
         Survey fSurveyID;
-        [Association(@"DesurveyReferencesSurvey")]
+        [Association(@"DesurveyReferencesX_Survey")]
         public Survey SurveyID
         {
             get { return fSurveyID; }

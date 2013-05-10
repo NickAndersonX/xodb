@@ -111,10 +111,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        [Association(@"X_ProjectPlanTaskReferencesProjectPlan", typeof(ProjectPlanTask))]
+        public XPCollection<ProjectPlanTask> X_ProjectPlanTasks { get { return GetCollection<ProjectPlanTask>("X_ProjectPlanTasks"); } }
         [Association(@"ProjectPlanReferencesProjectPlan", typeof(ProjectPlan))]
         public XPCollection<ProjectPlan> ProjectPlanCollection { get { return GetCollection<ProjectPlan>("ProjectPlanCollection"); } }
-        [Association(@"ProjectPlanTaskReferencesProjectPlan", typeof(ProjectPlanTask))]
-        public XPCollection<ProjectPlanTask> ProjectPlanTasks { get { return GetCollection<ProjectPlanTask>("ProjectPlanTasks"); } }
     }
 
 }

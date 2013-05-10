@@ -195,6 +195,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        [Association(@"X_TenementReferencesContact", typeof(Tenement))]
+        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
         [Association(@"AssayGroupReferencesContact", typeof(AssayGroup))]
         public XPCollection<AssayGroup> AssayGroups { get { return GetCollection<AssayGroup>("AssayGroups"); } }
         [Association(@"AssayGroupReferencesContact1", typeof(AssayGroup))]
@@ -225,8 +227,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Lease> Leases { get { return GetCollection<Lease>("Leases"); } }
         [Association(@"LeaseApplicationReferencesContact", typeof(LeaseApplication))]
         public XPCollection<LeaseApplication> LeaseApplications { get { return GetCollection<LeaseApplication>("LeaseApplications"); } }
-        [Association(@"LocationReferencesContact", typeof(Location))]
-        public XPCollection<Location> Locations { get { return GetCollection<Location>("Locations"); } }
         [Association(@"ProjectPlanReferencesContact", typeof(ProjectPlan))]
         public XPCollection<ProjectPlan> ProjectPlans { get { return GetCollection<ProjectPlan>("ProjectPlans"); } }
         [Association(@"ProjectPlanTaskResponseReferencesContact", typeof(ProjectPlanTaskResponse))]
@@ -237,10 +237,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<SecurityBlacklist> SecurityBlacklists { get { return GetCollection<SecurityBlacklist>("SecurityBlacklists"); } }
         [Association(@"SecurityWhitelistReferencesContact", typeof(SecurityWhitelist))]
         public XPCollection<SecurityWhitelist> SecurityWhitelists { get { return GetCollection<SecurityWhitelist>("SecurityWhitelists"); } }
-        [Association(@"SurveyReferencesContact", typeof(Survey))]
-        public XPCollection<Survey> Surveies { get { return GetCollection<Survey>("Surveies"); } }
-        [Association(@"TenementReferencesContact", typeof(Tenement))]
-        public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
         [Association(@"ProjectPlanTaskResponseReferencesContact1", typeof(ProjectPlanTaskResponse))]
         public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses1 { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses1"); } }
         [Association(@"ComplianceReferencesContact", typeof(Compliance))]
@@ -277,6 +273,10 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Contract> X_Contracts2 { get { return GetCollection<Contract>("X_Contracts2"); } }
         [Association(@"X_ContractReferencesContact3", typeof(Contract))]
         public XPCollection<Contract> X_Contracts3 { get { return GetCollection<Contract>("X_Contracts3"); } }
+        [Association(@"X_LocationReferencesContact", typeof(Location))]
+        public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
+        [Association(@"X_SurveyReferencesContact", typeof(Survey))]
+        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
     }
 
 }

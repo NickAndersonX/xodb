@@ -44,14 +44,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Contact>("ContactID", ref fContactID, value); }
         }
         Location fLocationID;
-        [Association(@"ExperienceReferencesLocation")]
+        [Association(@"ExperienceReferencesX_Location")]
         public Location LocationID
         {
             get { return fLocationID; }
             set { SetPropertyValue<Location>("LocationID", ref fLocationID, value); }
         }
         DictionaryWorkType fWorkTypeID;
-        [Association(@"ExperienceReferencesDictionaryWorkType")]
+        [Association(@"ExperienceReferencesX_DictionaryWorkType")]
         public DictionaryWorkType WorkTypeID
         {
             get { return fWorkTypeID; }

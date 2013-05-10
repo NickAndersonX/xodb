@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("AssayGroupTestResultDuplicateID", ref fAssayGroupTestResultDuplicateID, value); }
         }
         AssayGroupTestResult fAssayGroupTestResultID;
-        [Association(@"AssayGroupTestResultDuplicateReferencesAssayGroupTestResult")]
+        [Association(@"AssayGroupTestResultDuplicateReferencesX_AssayGroupTestResult")]
         public AssayGroupTestResult AssayGroupTestResultID
         {
             get { return fAssayGroupTestResultID; }

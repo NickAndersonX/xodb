@@ -543,10 +543,6 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWorkTypeRelation.Designer.cs">
       <DependentUpon>DictionaryWorkTypeRelation.cs</DependentUpon>
     </Compile>
-    <Compile Include="BusinessObjects\XODB_ORMCode\DrillCompanyContract.cs" />
-    <Compile Include="BusinessObjects\XODB_ORMCode\DrillCompanyContract.Designer.cs">
-      <DependentUpon>DrillCompanyContract.cs</DependentUpon>
-    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Drilling.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Drilling.Designer.cs">
       <DependentUpon>Drilling.cs</DependentUpon>

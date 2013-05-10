@@ -45,35 +45,28 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         DictionaryCountry fCountryID;
         [Size(2)]
-        [Association(@"TenementReferencesDictionaryCountry")]
+        [Association(@"X_TenementReferencesDictionaryCountry")]
         public DictionaryCountry CountryID
         {
             get { return fCountryID; }
             set { SetPropertyValue<DictionaryCountry>("CountryID", ref fCountryID, value); }
         }
-        string fState;
-        [Size(60)]
-        public string State
+        Province fTenementBoundaryProvinceID;
+        [Association(@"X_TenementReferencesProvince")]
+        public Province TenementBoundaryProvinceID
         {
-            get { return fState; }
-            set { SetPropertyValue<string>("State", ref fState, value); }
-        }
-        string fProvince;
-        [Size(60)]
-        public string Province
-        {
-            get { return fProvince; }
-            set { SetPropertyValue<string>("Province", ref fProvince, value); }
+            get { return fTenementBoundaryProvinceID; }
+            set { SetPropertyValue<Province>("TenementBoundaryProvinceID", ref fTenementBoundaryProvinceID, value); }
         }
         Company fOwnerCompanyID;
-        [Association(@"TenementReferencesCompany")]
+        [Association(@"X_TenementReferencesCompany")]
         public Company OwnerCompanyID
         {
             get { return fOwnerCompanyID; }
             set { SetPropertyValue<Company>("OwnerCompanyID", ref fOwnerCompanyID, value); }
         }
         Contact fApprovedByContactID;
-        [Association(@"TenementReferencesContact")]
+        [Association(@"X_TenementReferencesContact")]
         public Contact ApprovedByContactID
         {
             get { return fApprovedByContactID; }
@@ -90,13 +83,6 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fExpiry; }
             set { SetPropertyValue<DateTime>("Expiry", ref fExpiry, value); }
-        }
-        Province fTenementBoundaryProvinceID;
-        [Association(@"TenementReferencesProvince")]
-        public Province TenementBoundaryProvinceID
-        {
-            get { return fTenementBoundaryProvinceID; }
-            set { SetPropertyValue<Province>("TenementBoundaryProvinceID", ref fTenementBoundaryProvinceID, value); }
         }
         int fVersion;
         public int Version
@@ -152,22 +138,22 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"LeaseReferencesTenement", typeof(Lease))]
-        public XPCollection<Lease> Leases { get { return GetCollection<Lease>("Leases"); } }
-        [Association(@"LeaseApplicationReferencesTenement", typeof(LeaseApplication))]
+        [Association(@"LeaseApplicationReferencesX_Tenement", typeof(LeaseApplication))]
         public XPCollection<LeaseApplication> LeaseApplications { get { return GetCollection<LeaseApplication>("LeaseApplications"); } }
-        [Association(@"ProjectReferencesTenement", typeof(Project))]
+        [Association(@"LeaseReferencesX_Tenement", typeof(Lease))]
+        public XPCollection<Lease> Leases { get { return GetCollection<Lease>("Leases"); } }
+        [Association(@"ProjectReferencesX_Tenement", typeof(Project))]
         public XPCollection<Project> Projects { get { return GetCollection<Project>("Projects"); } }
-        [Association(@"ProspectusReferencesTenement", typeof(Prospectus))]
-        public XPCollection<Prospectus> ProspectusCollection { get { return GetCollection<Prospectus>("ProspectusCollection"); } }
-        [Association(@"TenementCommodityReferencesTenement", typeof(TenementCommodity))]
-        public XPCollection<TenementCommodity> TenementCommodities { get { return GetCollection<TenementCommodity>("TenementCommodities"); } }
-        [Association(@"TenementProvinceReferencesTenement", typeof(TenementProvince))]
-        public XPCollection<TenementProvince> TenementProvinces { get { return GetCollection<TenementProvince>("TenementProvinces"); } }
-        [Association(@"TenementRelationReferencesTenement", typeof(TenementRelation))]
-        public XPCollection<TenementRelation> TenementRelations { get { return GetCollection<TenementRelation>("TenementRelations"); } }
-        [Association(@"TenementRelationReferencesTenement1", typeof(TenementRelation))]
+        [Association(@"TenementRelationReferencesX_Tenement1", typeof(TenementRelation))]
         public XPCollection<TenementRelation> TenementRelations1 { get { return GetCollection<TenementRelation>("TenementRelations1"); } }
+        [Association(@"TenementRelationReferencesX_Tenement", typeof(TenementRelation))]
+        public XPCollection<TenementRelation> TenementRelations { get { return GetCollection<TenementRelation>("TenementRelations"); } }
+        [Association(@"TenementProvinceReferencesX_Tenement", typeof(TenementProvince))]
+        public XPCollection<TenementProvince> TenementProvinces { get { return GetCollection<TenementProvince>("TenementProvinces"); } }
+        [Association(@"TenementCommodityReferencesX_Tenement", typeof(TenementCommodity))]
+        public XPCollection<TenementCommodity> TenementCommoditys { get { return GetCollection<TenementCommodity>("TenementCommoditys"); } }
+        [Association(@"ProspectusReferencesX_Tenement", typeof(Prospectus))]
+        public XPCollection<Prospectus> ProspectusCollection { get { return GetCollection<Prospectus>("ProspectusCollection"); } }
     }
 
 }

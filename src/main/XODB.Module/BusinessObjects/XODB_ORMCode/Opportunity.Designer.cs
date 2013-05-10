@@ -44,14 +44,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Company>("OpportunityCompanyID", ref fOpportunityCompanyID, value); }
         }
         DictionaryWorkType fStatusWorkTypeID;
-        [Association(@"OpportunityReferencesDictionaryWorkType")]
+        [Association(@"OpportunityReferencesX_DictionaryWorkType")]
         public DictionaryWorkType StatusWorkTypeID
         {
             get { return fStatusWorkTypeID; }
             set { SetPropertyValue<DictionaryWorkType>("StatusWorkTypeID", ref fStatusWorkTypeID, value); }
         }
         DictionaryWorkType fRegardingWorkTypeID;
-        [Association(@"OpportunityReferencesDictionaryWorkType1")]
+        [Association(@"OpportunityReferencesX_DictionaryWorkType1")]
         public DictionaryWorkType RegardingWorkTypeID
         {
             get { return fRegardingWorkTypeID; }

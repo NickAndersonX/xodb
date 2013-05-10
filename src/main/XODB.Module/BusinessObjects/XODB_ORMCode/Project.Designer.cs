@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ProjectID", ref fProjectID, value); }
         }
         Tenement fTenementID;
-        [Association(@"ProjectReferencesTenement")]
+        [Association(@"ProjectReferencesX_Tenement")]
         public Tenement TenementID
         {
             get { return fTenementID; }
@@ -113,8 +113,6 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"BlockModelReferencesProject", typeof(BlockModel))]
         public XPCollection<BlockModel> BlockModels { get { return GetCollection<BlockModel>("BlockModels"); } }
-        [Association(@"DrillCompanyContractReferencesProject", typeof(DrillCompanyContract))]
-        public XPCollection<DrillCompanyContract> DrillCompanyContracts { get { return GetCollection<DrillCompanyContract>("DrillCompanyContracts"); } }
         [Association(@"ExperienceReferencesProject", typeof(Experience))]
         public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
         [Association(@"HeaderReferencesProject", typeof(Header))]

@@ -31,7 +31,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Compliance>("ComplianceID", ref fComplianceID, value); }
         }
         DictionaryWorkType fWorkTypeID;
-        [Association(@"ComplianceWorkTypeReferencesDictionaryWorkType")]
+        [Association(@"ComplianceWorkTypeReferencesX_DictionaryWorkType")]
         public DictionaryWorkType WorkTypeID
         {
             get { return fWorkTypeID; }

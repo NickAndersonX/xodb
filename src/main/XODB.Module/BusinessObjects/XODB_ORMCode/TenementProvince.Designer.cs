@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("TenementProvinceID", ref fTenementProvinceID, value); }
         }
         Tenement fTenementID;
-        [Association(@"TenementProvinceReferencesTenement")]
+        [Association(@"TenementProvinceReferencesX_Tenement")]
         public Tenement TenementID
         {
             get { return fTenementID; }

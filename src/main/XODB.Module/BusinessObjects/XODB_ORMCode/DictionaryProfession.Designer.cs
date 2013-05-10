@@ -80,8 +80,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"DictionaryWorkTypeReferencesDictionaryProfession", typeof(DictionaryWorkType))]
-        public XPCollection<DictionaryWorkType> DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("DictionaryWorkTypes"); } }
+        [Association(@"X_DictionaryWorkTypeReferencesDictionaryProfession", typeof(DictionaryWorkType))]
+        public XPCollection<DictionaryWorkType> X_DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("X_DictionaryWorkTypes"); } }
         [Association(@"ExperienceReferencesDictionaryProfession", typeof(Experience))]
         public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
     }

@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("LocationAliasID", ref fLocationAliasID, value); }
         }
         Location fLocationID;
-        [Association(@"LocationAliasReferencesLocation")]
+        [Association(@"LocationAliasReferencesX_Location")]
         public Location LocationID
         {
             get { return fLocationID; }

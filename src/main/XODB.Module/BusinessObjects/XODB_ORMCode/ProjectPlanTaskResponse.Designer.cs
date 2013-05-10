@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ProjectPlanTaskResponseID", ref fProjectPlanTaskResponseID, value); }
         }
         ProjectPlanTask fProjectPlanTaskID;
-        [Association(@"ProjectPlanTaskResponseReferencesProjectPlanTask")]
+        [Association(@"ProjectPlanTaskResponseReferencesX_ProjectPlanTask")]
         public ProjectPlanTask ProjectPlanTaskID
         {
             get { return fProjectPlanTaskID; }
@@ -50,7 +50,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("Comments", ref fComments, value); }
         }
         DictionaryWorkType fActualWorkTypeID;
-        [Association(@"ProjectPlanTaskResponseReferencesDictionaryWorkType")]
+        [Association(@"ProjectPlanTaskResponseReferencesX_DictionaryWorkType")]
         public DictionaryWorkType ActualWorkTypeID
         {
             get { return fActualWorkTypeID; }

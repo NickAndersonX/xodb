@@ -310,7 +310,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("Comment", ref fComment, value); }
         }
         Location fLocationID;
-        [Association(@"HeaderReferencesLocation")]
+        [Association(@"HeaderReferencesX_Location")]
         public Location LocationID
         {
             get { return fLocationID; }
@@ -376,8 +376,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Cementing> Cementings { get { return GetCollection<Cementing>("Cementings"); } }
         [Association(@"CompositeReferencesHeader", typeof(Composite))]
         public XPCollection<Composite> Composites { get { return GetCollection<Composite>("Composites"); } }
-        [Association(@"DefectReferencesHeader", typeof(Defect))]
-        public XPCollection<Defect> Defects { get { return GetCollection<Defect>("Defects"); } }
         [Association(@"DrillingReferencesHeader", typeof(Drilling))]
         public XPCollection<Drilling> Drillings { get { return GetCollection<Drilling>("Drillings"); } }
         [Association(@"GeologyReferencesHeader", typeof(Geology))]
@@ -396,12 +394,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<PointLoad> PointLoads { get { return GetCollection<PointLoad>("PointLoads"); } }
         [Association(@"RecoveryReferencesHeader", typeof(Recovery))]
         public XPCollection<Recovery> Recoveries { get { return GetCollection<Recovery>("Recoveries"); } }
-        [Association(@"SurveyReferencesHeader", typeof(Survey))]
-        public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
         [Association(@"WaterFlowReferencesHeader", typeof(WaterFlow))]
         public XPCollection<WaterFlow> WaterFlows { get { return GetCollection<WaterFlow>("WaterFlows"); } }
         [Association(@"SampleReferencesHeader", typeof(Sample))]
         public XPCollection<Sample> Samples { get { return GetCollection<Sample>("Samples"); } }
+        [Association(@"X_SurveyReferencesHeader", typeof(Survey))]
+        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
     }
 
 }

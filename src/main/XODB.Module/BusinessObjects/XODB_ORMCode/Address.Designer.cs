@@ -104,7 +104,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("Mobile", ref fMobile, value); }
         }
         Location fLocationID;
-        [Association(@"AddressReferencesLocation")]
+        [Association(@"AddressReferencesX_Location")]
         public Location LocationID
         {
             get { return fLocationID; }

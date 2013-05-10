@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ProjectPlanTaskWorkerID", ref fProjectPlanTaskWorkerID, value); }
         }
         ProjectPlanTask fProjectPlanTaskID;
-        [Association(@"ProjectPlanTaskWorkerReferencesProjectPlanTask")]
+        [Association(@"ProjectPlanTaskWorkerReferencesX_ProjectPlanTask")]
         public ProjectPlanTask ProjectPlanTaskID
         {
             get { return fProjectPlanTaskID; }

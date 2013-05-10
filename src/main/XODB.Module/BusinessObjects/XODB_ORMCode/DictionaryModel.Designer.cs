@@ -86,8 +86,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"SurveyReferencesDictionaryModel", typeof(Survey))]
-        public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
+        [Association(@"X_SurveyReferencesDictionaryModel", typeof(Survey))]
+        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
     }
 
 }

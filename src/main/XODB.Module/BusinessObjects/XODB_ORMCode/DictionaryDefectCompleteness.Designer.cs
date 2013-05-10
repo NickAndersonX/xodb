@@ -80,8 +80,6 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"DefectReferencesDictionaryDefectCompleteness", typeof(Defect))]
-        public XPCollection<Defect> Defects { get { return GetCollection<Defect>("Defects"); } }
         [Association(@"LithologyReferencesDictionaryDefectCompleteness", typeof(Lithology))]
         public XPCollection<Lithology> Lithologies { get { return GetCollection<Lithology>("Lithologies"); } }
     }

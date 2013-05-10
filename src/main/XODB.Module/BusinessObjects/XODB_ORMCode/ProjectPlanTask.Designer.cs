@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ProjectPlanTaskID", ref fProjectPlanTaskID, value); }
         }
         ProjectPlan fProjectPlanID;
-        [Association(@"ProjectPlanTaskReferencesProjectPlan")]
+        [Association(@"X_ProjectPlanTaskReferencesProjectPlan")]
         public ProjectPlan ProjectPlanID
         {
             get { return fProjectPlanID; }
             set { SetPropertyValue<ProjectPlan>("ProjectPlanID", ref fProjectPlanID, value); }
         }
         ProjectPlanTask fParentProjectTaskID;
-        [Association(@"ProjectPlanTaskReferencesProjectPlanTask")]
+        [Association(@"X_ProjectPlanTaskReferencesX_ProjectPlanTask")]
         public ProjectPlanTask ParentProjectTaskID
         {
             get { return fParentProjectTaskID; }
@@ -42,6 +42,13 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fProjectTaskName; }
             set { SetPropertyValue<string>("ProjectTaskName", ref fProjectTaskName, value); }
+        }
+        DictionaryWorkType fWorkTypeID;
+        [Association(@"X_ProjectPlanTaskReferencesX_DictionaryWorkType")]
+        public DictionaryWorkType WorkTypeID
+        {
+            get { return fWorkTypeID; }
+            set { SetPropertyValue<DictionaryWorkType>("WorkTypeID", ref fWorkTypeID, value); }
         }
         int fPriority;
         public int Priority
@@ -67,17 +74,11 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fStopDate; }
             set { SetPropertyValue<DateTime>("StopDate", ref fStopDate, value); }
         }
-        decimal fDurationManHours;
-        public decimal DurationManHours
+        decimal fAllocatedManHours;
+        public decimal AllocatedManHours
         {
-            get { return fDurationManHours; }
-            set { SetPropertyValue<decimal>("DurationManHours", ref fDurationManHours, value); }
-        }
-        bool fIsMilestone;
-        public bool IsMilestone
-        {
-            get { return fIsMilestone; }
-            set { SetPropertyValue<bool>("IsMilestone", ref fIsMilestone, value); }
+            get { return fAllocatedManHours; }
+            set { SetPropertyValue<decimal>("AllocatedManHours", ref fAllocatedManHours, value); }
         }
         string fComment;
         [Size(255)]
@@ -85,19 +86,6 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fComment; }
             set { SetPropertyValue<string>("Comment", ref fComment, value); }
-        }
-        DictionaryWorkType fWorkTypeID;
-        [Association(@"ProjectPlanTaskReferencesDictionaryWorkType")]
-        public DictionaryWorkType WorkTypeID
-        {
-            get { return fWorkTypeID; }
-            set { SetPropertyValue<DictionaryWorkType>("WorkTypeID", ref fWorkTypeID, value); }
-        }
-        decimal fAllocatedManHours;
-        public decimal AllocatedManHours
-        {
-            get { return fAllocatedManHours; }
-            set { SetPropertyValue<decimal>("AllocatedManHours", ref fAllocatedManHours, value); }
         }
         int fVersion;
         public int Version
@@ -153,16 +141,16 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"ProjectPlanTaskReferencesProjectPlanTask", typeof(ProjectPlanTask))]
-        public XPCollection<ProjectPlanTask> ProjectPlanTaskCollection { get { return GetCollection<ProjectPlanTask>("ProjectPlanTaskCollection"); } }
-        [Association(@"ProjectPlanTaskResponseReferencesProjectPlanTask", typeof(ProjectPlanTaskResponse))]
-        public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses"); } }
-        [Association(@"ProjectPlanTaskWorkerReferencesProjectPlanTask", typeof(ProjectPlanTaskWorker))]
+        [Association(@"ProjectPlanTaskWorkerReferencesX_ProjectPlanTask", typeof(ProjectPlanTaskWorker))]
         public XPCollection<ProjectPlanTaskWorker> ProjectPlanTaskWorkers { get { return GetCollection<ProjectPlanTaskWorker>("ProjectPlanTaskWorkers"); } }
-        [Association(@"ProjectPlanTaskComplianceResponseReferencesProjectPlanTask", typeof(ProjectPlanTaskComplianceResponse))]
+        [Association(@"ProjectDeliverableReferencesX_ProjectPlanTask", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
+        [Association(@"ProjectPlanTaskResponseReferencesX_ProjectPlanTask", typeof(ProjectPlanTaskResponse))]
+        public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses"); } }
+        [Association(@"X_ProjectPlanTaskReferencesX_ProjectPlanTask", typeof(ProjectPlanTask))]
+        public XPCollection<ProjectPlanTask> X_ProjectPlanTaskCollection { get { return GetCollection<ProjectPlanTask>("X_ProjectPlanTaskCollection"); } }
+        [Association(@"ProjectPlanTaskComplianceResponseReferencesX_ProjectPlanTask", typeof(ProjectPlanTaskComplianceResponse))]
         public XPCollection<ProjectPlanTaskComplianceResponse> ProjectPlanTaskComplianceResponses { get { return GetCollection<ProjectPlanTaskComplianceResponse>("ProjectPlanTaskComplianceResponses"); } }
-        [Association(@"X_ProjectDeliverableReferencesProjectPlanTask", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
     }
 
 }

@@ -22,15 +22,15 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fAssayGroupTestResultID; }
             set { SetPropertyValue<Guid>("AssayGroupTestResultID", ref fAssayGroupTestResultID, value); }
         }
-        Guid fAssayGroupTestSampleID;
-        [Indexed(Name = @"iAssayGroupTestSampleID_X_AssayGroupTestResult")]
-        public Guid AssayGroupTestSampleID
+        Sample fSampleID;
+        [Association(@"X_AssayGroupTestResultReferencesSample")]
+        public Sample SampleID
         {
-            get { return fAssayGroupTestSampleID; }
-            set { SetPropertyValue<Guid>("AssayGroupTestSampleID", ref fAssayGroupTestSampleID, value); }
+            get { return fSampleID; }
+            set { SetPropertyValue<Sample>("SampleID", ref fSampleID, value); }
         }
         AssayGroupTest fAssayGroupTestID;
-        [Association(@"AssayGroupTestResultReferencesAssayGroupTest")]
+        [Association(@"X_AssayGroupTestResultReferencesAssayGroupTest")]
         public AssayGroupTest AssayGroupTestID
         {
             get { return fAssayGroupTestID; }
@@ -75,13 +75,6 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fSampledBy; }
             set { SetPropertyValue<string>("SampledBy", ref fSampledBy, value); }
-        }
-        Sample fSampleID;
-        [Association(@"AssayGroupTestResultReferencesSample")]
-        public Sample SampleID
-        {
-            get { return fSampleID; }
-            set { SetPropertyValue<Sample>("SampleID", ref fSampleID, value); }
         }
         int fVersion;
         public int Version
@@ -137,10 +130,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"AssayGroupTestResultCommentReferencesAssayGroupTestResult", typeof(AssayGroupTestResultComment))]
-        public XPCollection<AssayGroupTestResultComment> AssayGroupTestResultComments { get { return GetCollection<AssayGroupTestResultComment>("AssayGroupTestResultComments"); } }
-        [Association(@"AssayGroupTestResultDuplicateReferencesAssayGroupTestResult", typeof(AssayGroupTestResultDuplicate))]
+        [Association(@"AssayGroupTestResultDuplicateReferencesX_AssayGroupTestResult", typeof(AssayGroupTestResultDuplicate))]
         public XPCollection<AssayGroupTestResultDuplicate> AssayGroupTestResultDuplicates { get { return GetCollection<AssayGroupTestResultDuplicate>("AssayGroupTestResultDuplicates"); } }
+        [Association(@"AssayGroupTestResultCommentReferencesX_AssayGroupTestResult", typeof(AssayGroupTestResultComment))]
+        public XPCollection<AssayGroupTestResultComment> AssayGroupTestResultComments { get { return GetCollection<AssayGroupTestResultComment>("AssayGroupTestResultComments"); } }
     }
 
 }
