@@ -8,14 +8,14 @@
         <elementListCompartment Id="f10cbb25-ff29-4b3f-b305-13bdd6a4cad6" absoluteBounds="3.39, 2.21, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="30e53516-0e97-4251-ac15-cd43cc4fde13" absoluteBounds="2.125, 1.25, 2, 6.3861311848958326">
+    <classShape Id="30e53516-0e97-4251-ac15-cd43cc4fde13" absoluteBounds="6.5, 1.125, 2, 6.3861311848958326">
       <DataClassMoniker Name="/ContactsDataContext/Experience" />
       <nestedChildShapes>
-        <elementListCompartment Id="477f599e-2615-4931-bd5f-9bdc6e4eabd8" absoluteBounds="2.14, 1.71, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="477f599e-2615-4931-bd5f-9bdc6e4eabd8" absoluteBounds="6.5150000000000006, 1.585, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.375 : 7.55922688802083); (4.375 : 7.88613118489583); (3.125 : 7.88613118489583); (3.125 : 7.63613118489583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/ContactsDataContext/Contact/Contact_X_Experience" />
+    <associationConnector edgePoints="[(5.375 : 4.63056559244792); (6.5 : 4.63056559244792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ContactsDataContext/Contact/Contact_Experience" />
       <nodes>
         <classShapeMoniker Id="fe7defea-f64f-4423-bd3a-4706a9103c5c" />
         <classShapeMoniker Id="30e53516-0e97-4251-ac15-cd43cc4fde13" />

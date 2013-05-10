@@ -516,19 +516,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Projects.dbml.layout">
+    <None Include="Models\Projects.dbml.layout">
       <DependentUpon>Projects.dbml</DependentUpon>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Models.dbml.layout">
+    <None Include="Models\Models.dbml.layout">
       <DependentUpon>Models.dbml</DependentUpon>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Contacts.dbml.layout">
+    <None Include="Models\Contacts.dbml.layout">
       <DependentUpon>Contacts.dbml</DependentUpon>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Models\Assays.dbml.layout">
@@ -537,12 +537,12 @@
     <EmbeddedResource Include="Reports\CompareModelReport.resx">
       <DependentUpon>CompareModelReport.cs</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Models\Internals.dbml.layout">
+    <None Include="Models\Internals.dbml.layout">
       <DependentUpon>Internals.dbml</DependentUpon>
-    </Content>
-    <Content Include="Models\BMMetaData.dbml.layout">
+    </None>
+    <None Include="Models\BMMetaData.dbml.layout">
       <DependentUpon>BMMetaData.dbml</DependentUpon>
-    </Content>
+    </None>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Reports\AssaysReport.resx">
       <DependentUpon>AssaysReport.cs</DependentUpon>

@@ -2,25 +2,25 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Contacts">
   <DataContextMoniker Name="/InternalsContext" />
   <nestedChildShapes>
-    <classShape Id="7b5430ac-14c8-484e-b391-6a1921ef7d84" absoluteBounds="3.875, 3, 2, 4.4631168619791666">
+    <classShape Id="7b5430ac-14c8-484e-b391-6a1921ef7d84" absoluteBounds="6.75, 2.75, 2, 4.4631168619791666">
       <DataClassMoniker Name="/InternalsContext/PrivateData" />
       <nestedChildShapes>
-        <elementListCompartment Id="518cae65-0fa4-492e-bdc0-732626d88483" absoluteBounds="3.89, 3.46, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="518cae65-0fa4-492e-bdc0-732626d88483" absoluteBounds="6.7650000000000006, 3.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6ce53d3c-48ec-43a9-93e9-21a89bcaa40b" absoluteBounds="2.125, 1.25, 2, 3.1170068359375">
+    <classShape Id="6ce53d3c-48ec-43a9-93e9-21a89bcaa40b" absoluteBounds="2.125, 0.75, 2, 3.1170068359375">
       <DataClassMoniker Name="/InternalsContext/MetaData" />
       <nestedChildShapes>
-        <elementListCompartment Id="286664b1-6282-4d89-bdc8-b35c6adcbab0" absoluteBounds="2.14, 1.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="286664b1-6282-4d89-bdc8-b35c6adcbab0" absoluteBounds="2.14, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4caaf064-b03d-43f9-8233-9447fae0dd7c" absoluteBounds="2.375, 0.625, 2, 3.3093082682291666">
+    <classShape Id="4caaf064-b03d-43f9-8233-9447fae0dd7c" absoluteBounds="1.125, 4.75, 2, 3.3093082682291666">
       <DataClassMoniker Name="/InternalsContext/MetaDataRelation" />
       <nestedChildShapes>
-        <elementListCompartment Id="da4d2f15-7d24-4d73-8784-a535f9582a93" absoluteBounds="2.39, 1.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="da4d2f15-7d24-4d73-8784-a535f9582a93" absoluteBounds="1.1400000000000001, 5.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.125 : 4.3670068359375); (3.125 : 4.6170068359375); (3.375 : 4.6170068359375); (3.375 : 3.93430826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.625 : 3.8670068359375); (2.625 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/InternalsContext/MetaData/MetaData_MetaDataRelation" />
       <nodes>
         <classShapeMoniker Id="6ce53d3c-48ec-43a9-93e9-21a89bcaa40b" />

@@ -902,20 +902,25 @@ namespace XODB.Services {
                         decimal gtFieldMultiplier = GetMultiplierForField(m.GradeTonnageFieldID, "%");
                         foreach (DataRow r in gt.Rows)
                         {
+                            decimal tonnes;
+                            decimal grade;
+                            if (!decimal.TryParse(string.Format("{0}", r[gtg]), out grade) && grade >= 0)
+                                continue;
+                            if (!decimal.TryParse(string.Format("{0}", r[gtt]), out tonnes) && tonnes >= 0)
+                                continue;
                             //Cumulative needs to be in grade ascending order
                             if ((string)r[gtm] == "1")
                             {
                                 //cumulative1 += ((decimal)r[gtg] * (decimal)r[gtt] * gtFieldMultiplier);
-                                cumulative1 += ((decimal)r[gtt]);
+                                cumulative1 += (tonnes);
                                 r[gttg] = cumulative1;
                             }
                             else
                             {
-                                cumulative2 += ((decimal)r[gtt]);
+                                cumulative2 += (tonnes);
                                 r[gttg] = cumulative2;
                             }
-
-                            r[gtg] = (decimal)r[gtg] * gtFieldMultiplier;
+                            r[gtg] =  grade * gtFieldMultiplier;
                         }
 
                         //reader.NextResult(); // Only 1 Resultset

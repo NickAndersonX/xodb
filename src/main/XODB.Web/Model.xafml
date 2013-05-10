@@ -6,11 +6,6 @@
         <Member Name="LabCompanyID" LookupProperty="CompanyID.CompanyName" />
       </OwnMembers>
     </Class>
-    <Class Name="XODB.Module.BusinessObjects.XODB.DrillCompanyContract">
-      <OwnMembers>
-        <Member Name="DrillingCompanyID" LookupProperty="CompanyID.CompanyName" />
-      </OwnMembers>
-    </Class>
     <Class Name="XODB.Module.BusinessObjects.XODB.Drilling">
       <OwnMembers>
         <Member Name="DrillingCompanyID" LookupProperty="CompanyID.CompanyName" />
@@ -178,6 +173,11 @@
     <SchemaModule Name="SystemWindowsFormsModule" Version="12.1.8.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <ListView Id="BlockModel_ListView">
+      <Columns>
+        <ColumnInfo Id="Alias" Index="0" />
+      </Columns>
+    </ListView>
     <ListView Id="DictionaryAdjective_LookupListView">
       <Columns>
         <ColumnInfo Id="Description" PropertyName="Description" IsNewNode="True" />
@@ -615,10 +615,10 @@
           <LayoutGroup Id="SimpleEditors">
             <LayoutGroup Id="Opportunity">
               <LayoutGroup Id="Opportunity_col1">
-                <LayoutItem Id="ProposalContactID" ViewItem="ProposalContactID" ShowCaption="" Index="7" IsNewNode="True" />
+                <LayoutItem Id="ProposalContactID" ViewItem="ProposalContactID" Index="7" IsNewNode="True" />
               </LayoutGroup>
               <LayoutGroup Id="Opportunity_col2">
-                <LayoutItem Id="ProposalContactID" Removed="True" />
+                <LayoutItem Id="ProposalContactID" ViewItem="ProposalContactID" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="XODB" Class="ProjectsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=xodbdb;Initial Catalog=XODB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="XODBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=xodbdb;Initial Catalog=XODB;Persist Security Info=True;User ID=xodb_user1;MultipleActiveResultSets=True;Connect Timeout=60;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="XODBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.X_Project" Member="Projects">
     <Type Name="Project">
       <Column Name="ProjectID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -20,25 +20,6 @@
       <Association Name="Project_ProjectPlan" Member="ProjectPlans" ThisKey="ProjectID" OtherKey="ProjectID" Type="ProjectPlan" />
     </Type>
   </Table>
-  <Table Name="dbo.X_ProjectPlanTaskResponse" Member="ProjectPlanTaskResponses">
-    <Type Name="ProjectPlanTaskResponse">
-      <Column Name="ProjectPlanTaskResponseID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ProjectPlanTaskID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="ResponsibleContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="Completed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Comments" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="ProjectPlanTask_ProjectPlanTaskResponse" Member="ProjectPlanTask" ThisKey="ProjectPlanTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTask" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.X_ProjectPlanTaskWorker" Member="ProjectPlanTaskWorkers">
     <Type Name="ProjectPlanTaskWorker">
       <Column Name="ProjectPlanTaskWorkerID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -55,7 +36,7 @@
       <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
       <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
       <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="ProjectPlanTask_ProjectPlanTaskWorker" Member="ProjectPlanTask" ThisKey="ProjectPlanTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTask" IsForeignKey="true" />
+      <Association Name="X_ProjectPlanTask_ProjectPlanTaskWorker" Member="ProjectPlanTask" ThisKey="ProjectPlanTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTask" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.X_ProjectPlan" Member="ProjectPlans">
@@ -76,38 +57,9 @@
       <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
       <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="ProjectPlan_ProjectPlan" Member="ProjectPlans" ThisKey="ProjectPlanID" OtherKey="ParentProjectPlanID" Type="ProjectPlan" />
-      <Association Name="ProjectPlan_ProjectPlanTask" Member="ProjectPlanTasks" ThisKey="ProjectPlanID" OtherKey="ProjectPlanID" Type="ProjectPlanTask" />
+      <Association Name="ProjectPlan_X_ProjectPlanTask" Member="ProjectPlanTasks" ThisKey="ProjectPlanID" OtherKey="ProjectPlanID" Type="ProjectPlanTask" />
       <Association Name="Project_ProjectPlan" Member="Project" ThisKey="ProjectID" OtherKey="ProjectID" Type="Project" IsForeignKey="true" />
       <Association Name="ProjectPlan_ProjectPlan" Member="X_ProjectPlan1" ThisKey="ParentProjectPlanID" OtherKey="ProjectPlanID" Type="ProjectPlan" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.X_ProjectPlanTask" Member="ProjectPlanTasks">
-    <Type Name="ProjectPlanTask">
-      <Column Name="ProjectPlanTaskID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ProjectPlanID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
-      <Column Name="ParentProjectTaskID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="ProjectTaskName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Progress" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
-      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="StopDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DurationManHours" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="IsMilestone" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
-      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="ProjectPlanTask_ProjectPlanTaskResponse" Member="ProjectPlanTaskResponses" ThisKey="ProjectPlanTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTaskResponse" />
-      <Association Name="ProjectPlanTask_ProjectPlanTaskWorker" Member="ProjectPlanTaskWorkers" ThisKey="ProjectPlanTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTaskWorker" />
-      <Association Name="ProjectPlanTask_ProjectPlanTask" Member="ProjectPlanTasks" ThisKey="ProjectPlanTaskID" OtherKey="ParentProjectTaskID" Type="ProjectPlanTask" />
-      <Association Name="ProjectPlan_ProjectPlanTask" Member="ProjectPlan" ThisKey="ProjectPlanID" OtherKey="ProjectPlanID" Type="ProjectPlan" IsForeignKey="true" />
-      <Association Name="ProjectPlanTask_ProjectPlanTask" Member="X_ProjectPlanTask1" ThisKey="ParentProjectTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTask" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.X_VW_ProjectStatus" Member="ProjectStatus">
@@ -121,6 +73,64 @@
       <Column Name="ReviewerName" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
       <Column Name="Comment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_ProjectPlanTaskResponse" Member="ProjectPlanTaskResponses">
+    <Type Name="ProjectPlanTaskResponse">
+      <Column Name="ProjectPlanTaskResponseID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProjectPlanTaskID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ResponsibleContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ActualWorkTypeID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Began" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Completed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Hours" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="EstimatedProRataUnits" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="EstimatedProRataCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EstimatedValue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ApprovedProRataUnits" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="ApprovedProRataCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Approved" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_ProjectPlanTask_ProjectPlanTaskResponse" Member="ProjectPlanTask" ThisKey="ProjectPlanTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTask" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.X_ProjectPlanTask" Member="ProjectPlanTasks">
+    <Type Name="ProjectPlanTask">
+      <Column Name="ProjectPlanTaskID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProjectPlanID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ParentProjectTaskID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ProjectTaskName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WorkTypeID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Progress" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="StopDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AllocatedManHours" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Version" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VersionAntecedentID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionCertainty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VersionWorkflowInstanceID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdatedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionDeletedBy" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionOwnerCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="VersionUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="X_ProjectPlanTask_ProjectPlanTaskWorker" Member="ProjectPlanTaskWorkers" ThisKey="ProjectPlanTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTaskWorker" />
+      <Association Name="X_ProjectPlanTask_ProjectPlanTaskResponse" Member="ProjectPlanTaskResponses" ThisKey="ProjectPlanTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTaskResponse" />
+      <Association Name="X_ProjectPlanTask_X_ProjectPlanTask" Member="ProjectPlanTasks" ThisKey="ProjectPlanTaskID" OtherKey="ParentProjectTaskID" Type="ProjectPlanTask" />
+      <Association Name="ProjectPlan_X_ProjectPlanTask" Member="ProjectPlan" ThisKey="ProjectPlanID" OtherKey="ProjectPlanID" Type="ProjectPlan" IsForeignKey="true" />
+      <Association Name="X_ProjectPlanTask_X_ProjectPlanTask" Member="X_ProjectPlanTask1" ThisKey="ParentProjectTaskID" OtherKey="ProjectPlanTaskID" Type="ProjectPlanTask" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -33,15 +33,15 @@ namespace XODB.Models
     partial void InsertProject(Project instance);
     partial void UpdateProject(Project instance);
     partial void DeleteProject(Project instance);
-    partial void InsertProjectPlanTaskResponse(ProjectPlanTaskResponse instance);
-    partial void UpdateProjectPlanTaskResponse(ProjectPlanTaskResponse instance);
-    partial void DeleteProjectPlanTaskResponse(ProjectPlanTaskResponse instance);
     partial void InsertProjectPlanTaskWorker(ProjectPlanTaskWorker instance);
     partial void UpdateProjectPlanTaskWorker(ProjectPlanTaskWorker instance);
     partial void DeleteProjectPlanTaskWorker(ProjectPlanTaskWorker instance);
     partial void InsertProjectPlan(ProjectPlan instance);
     partial void UpdateProjectPlan(ProjectPlan instance);
     partial void DeleteProjectPlan(ProjectPlan instance);
+    partial void InsertProjectPlanTaskResponse(ProjectPlanTaskResponse instance);
+    partial void UpdateProjectPlanTaskResponse(ProjectPlanTaskResponse instance);
+    partial void DeleteProjectPlanTaskResponse(ProjectPlanTaskResponse instance);
     partial void InsertProjectPlanTask(ProjectPlanTask instance);
     partial void UpdateProjectPlanTask(ProjectPlanTask instance);
     partial void DeleteProjectPlanTask(ProjectPlanTask instance);
@@ -85,14 +85,6 @@ namespace XODB.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<ProjectPlanTaskResponse> ProjectPlanTaskResponses
-		{
-			get
-			{
-				return this.GetTable<ProjectPlanTaskResponse>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ProjectPlanTaskWorker> ProjectPlanTaskWorkers
 		{
 			get
@@ -109,19 +101,27 @@ namespace XODB.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<ProjectPlanTask> ProjectPlanTasks
-		{
-			get
-			{
-				return this.GetTable<ProjectPlanTask>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ProjectStatus> ProjectStatus
 		{
 			get
 			{
 				return this.GetTable<ProjectStatus>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ProjectPlanTaskResponse> ProjectPlanTaskResponses
+		{
+			get
+			{
+				return this.GetTable<ProjectPlanTaskResponse>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ProjectPlanTask> ProjectPlanTasks
+		{
+			get
+			{
+				return this.GetTable<ProjectPlanTask>();
 			}
 		}
 	}
@@ -552,421 +552,6 @@ namespace XODB.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.X_ProjectPlanTaskResponse")]
-	public partial class ProjectPlanTaskResponse : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Guid _ProjectPlanTaskResponseID;
-		
-		private System.Nullable<System.Guid> _ProjectPlanTaskID;
-		
-		private System.Nullable<System.Guid> _ResponsibleContactID;
-		
-		private System.Nullable<System.DateTime> _Completed;
-		
-		private string _Comments;
-		
-		private int _Version;
-		
-		private System.Nullable<System.Guid> _VersionAntecedentID;
-		
-		private System.Nullable<int> _VersionCertainty;
-		
-		private System.Nullable<System.Guid> _VersionWorkflowInstanceID;
-		
-		private System.Nullable<System.Guid> _VersionUpdatedBy;
-		
-		private System.Nullable<System.Guid> _VersionDeletedBy;
-		
-		private System.Nullable<System.Guid> _VersionOwnerContactID;
-		
-		private System.Nullable<System.Guid> _VersionOwnerCompanyID;
-		
-		private System.Nullable<System.DateTime> _VersionUpdated;
-		
-		private EntityRef<ProjectPlanTask> _ProjectPlanTask;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnProjectPlanTaskResponseIDChanging(System.Guid value);
-    partial void OnProjectPlanTaskResponseIDChanged();
-    partial void OnProjectPlanTaskIDChanging(System.Nullable<System.Guid> value);
-    partial void OnProjectPlanTaskIDChanged();
-    partial void OnResponsibleContactIDChanging(System.Nullable<System.Guid> value);
-    partial void OnResponsibleContactIDChanged();
-    partial void OnCompletedChanging(System.Nullable<System.DateTime> value);
-    partial void OnCompletedChanged();
-    partial void OnCommentsChanging(string value);
-    partial void OnCommentsChanged();
-    partial void OnVersionChanging(int value);
-    partial void OnVersionChanged();
-    partial void OnVersionAntecedentIDChanging(System.Nullable<System.Guid> value);
-    partial void OnVersionAntecedentIDChanged();
-    partial void OnVersionCertaintyChanging(System.Nullable<int> value);
-    partial void OnVersionCertaintyChanged();
-    partial void OnVersionWorkflowInstanceIDChanging(System.Nullable<System.Guid> value);
-    partial void OnVersionWorkflowInstanceIDChanged();
-    partial void OnVersionUpdatedByChanging(System.Nullable<System.Guid> value);
-    partial void OnVersionUpdatedByChanged();
-    partial void OnVersionDeletedByChanging(System.Nullable<System.Guid> value);
-    partial void OnVersionDeletedByChanged();
-    partial void OnVersionOwnerContactIDChanging(System.Nullable<System.Guid> value);
-    partial void OnVersionOwnerContactIDChanged();
-    partial void OnVersionOwnerCompanyIDChanging(System.Nullable<System.Guid> value);
-    partial void OnVersionOwnerCompanyIDChanged();
-    partial void OnVersionUpdatedChanging(System.Nullable<System.DateTime> value);
-    partial void OnVersionUpdatedChanged();
-    #endregion
-		
-		public ProjectPlanTaskResponse()
-		{
-			this._ProjectPlanTask = default(EntityRef<ProjectPlanTask>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectPlanTaskResponseID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
-		public System.Guid ProjectPlanTaskResponseID
-		{
-			get
-			{
-				return this._ProjectPlanTaskResponseID;
-			}
-			set
-			{
-				if ((this._ProjectPlanTaskResponseID != value))
-				{
-					this.OnProjectPlanTaskResponseIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProjectPlanTaskResponseID = value;
-					this.SendPropertyChanged("ProjectPlanTaskResponseID");
-					this.OnProjectPlanTaskResponseIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectPlanTaskID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> ProjectPlanTaskID
-		{
-			get
-			{
-				return this._ProjectPlanTaskID;
-			}
-			set
-			{
-				if ((this._ProjectPlanTaskID != value))
-				{
-					if (this._ProjectPlanTask.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProjectPlanTaskIDChanging(value);
-					this.SendPropertyChanging();
-					this._ProjectPlanTaskID = value;
-					this.SendPropertyChanged("ProjectPlanTaskID");
-					this.OnProjectPlanTaskIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResponsibleContactID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> ResponsibleContactID
-		{
-			get
-			{
-				return this._ResponsibleContactID;
-			}
-			set
-			{
-				if ((this._ResponsibleContactID != value))
-				{
-					this.OnResponsibleContactIDChanging(value);
-					this.SendPropertyChanging();
-					this._ResponsibleContactID = value;
-					this.SendPropertyChanged("ResponsibleContactID");
-					this.OnResponsibleContactIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Completed", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Completed
-		{
-			get
-			{
-				return this._Completed;
-			}
-			set
-			{
-				if ((this._Completed != value))
-				{
-					this.OnCompletedChanging(value);
-					this.SendPropertyChanging();
-					this._Completed = value;
-					this.SendPropertyChanged("Completed");
-					this.OnCompletedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comments", DbType="NVarChar(255)")]
-		public string Comments
-		{
-			get
-			{
-				return this._Comments;
-			}
-			set
-			{
-				if ((this._Comments != value))
-				{
-					this.OnCommentsChanging(value);
-					this.SendPropertyChanging();
-					this._Comments = value;
-					this.SendPropertyChanged("Comments");
-					this.OnCommentsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", DbType="Int NOT NULL")]
-		public int Version
-		{
-			get
-			{
-				return this._Version;
-			}
-			set
-			{
-				if ((this._Version != value))
-				{
-					this.OnVersionChanging(value);
-					this.SendPropertyChanging();
-					this._Version = value;
-					this.SendPropertyChanged("Version");
-					this.OnVersionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionAntecedentID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> VersionAntecedentID
-		{
-			get
-			{
-				return this._VersionAntecedentID;
-			}
-			set
-			{
-				if ((this._VersionAntecedentID != value))
-				{
-					this.OnVersionAntecedentIDChanging(value);
-					this.SendPropertyChanging();
-					this._VersionAntecedentID = value;
-					this.SendPropertyChanged("VersionAntecedentID");
-					this.OnVersionAntecedentIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionCertainty", DbType="Int")]
-		public System.Nullable<int> VersionCertainty
-		{
-			get
-			{
-				return this._VersionCertainty;
-			}
-			set
-			{
-				if ((this._VersionCertainty != value))
-				{
-					this.OnVersionCertaintyChanging(value);
-					this.SendPropertyChanging();
-					this._VersionCertainty = value;
-					this.SendPropertyChanged("VersionCertainty");
-					this.OnVersionCertaintyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionWorkflowInstanceID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> VersionWorkflowInstanceID
-		{
-			get
-			{
-				return this._VersionWorkflowInstanceID;
-			}
-			set
-			{
-				if ((this._VersionWorkflowInstanceID != value))
-				{
-					this.OnVersionWorkflowInstanceIDChanging(value);
-					this.SendPropertyChanging();
-					this._VersionWorkflowInstanceID = value;
-					this.SendPropertyChanged("VersionWorkflowInstanceID");
-					this.OnVersionWorkflowInstanceIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionUpdatedBy", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> VersionUpdatedBy
-		{
-			get
-			{
-				return this._VersionUpdatedBy;
-			}
-			set
-			{
-				if ((this._VersionUpdatedBy != value))
-				{
-					this.OnVersionUpdatedByChanging(value);
-					this.SendPropertyChanging();
-					this._VersionUpdatedBy = value;
-					this.SendPropertyChanged("VersionUpdatedBy");
-					this.OnVersionUpdatedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionDeletedBy", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> VersionDeletedBy
-		{
-			get
-			{
-				return this._VersionDeletedBy;
-			}
-			set
-			{
-				if ((this._VersionDeletedBy != value))
-				{
-					this.OnVersionDeletedByChanging(value);
-					this.SendPropertyChanging();
-					this._VersionDeletedBy = value;
-					this.SendPropertyChanged("VersionDeletedBy");
-					this.OnVersionDeletedByChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionOwnerContactID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> VersionOwnerContactID
-		{
-			get
-			{
-				return this._VersionOwnerContactID;
-			}
-			set
-			{
-				if ((this._VersionOwnerContactID != value))
-				{
-					this.OnVersionOwnerContactIDChanging(value);
-					this.SendPropertyChanging();
-					this._VersionOwnerContactID = value;
-					this.SendPropertyChanged("VersionOwnerContactID");
-					this.OnVersionOwnerContactIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionOwnerCompanyID", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> VersionOwnerCompanyID
-		{
-			get
-			{
-				return this._VersionOwnerCompanyID;
-			}
-			set
-			{
-				if ((this._VersionOwnerCompanyID != value))
-				{
-					this.OnVersionOwnerCompanyIDChanging(value);
-					this.SendPropertyChanging();
-					this._VersionOwnerCompanyID = value;
-					this.SendPropertyChanged("VersionOwnerCompanyID");
-					this.OnVersionOwnerCompanyIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionUpdated", DbType="DateTime")]
-		public System.Nullable<System.DateTime> VersionUpdated
-		{
-			get
-			{
-				return this._VersionUpdated;
-			}
-			set
-			{
-				if ((this._VersionUpdated != value))
-				{
-					this.OnVersionUpdatedChanging(value);
-					this.SendPropertyChanging();
-					this._VersionUpdated = value;
-					this.SendPropertyChanged("VersionUpdated");
-					this.OnVersionUpdatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlanTask_ProjectPlanTaskResponse", Storage="_ProjectPlanTask", ThisKey="ProjectPlanTaskID", OtherKey="ProjectPlanTaskID", IsForeignKey=true)]
-		public ProjectPlanTask ProjectPlanTask
-		{
-			get
-			{
-				return this._ProjectPlanTask.Entity;
-			}
-			set
-			{
-				ProjectPlanTask previousValue = this._ProjectPlanTask.Entity;
-				if (((previousValue != value) 
-							|| (this._ProjectPlanTask.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ProjectPlanTask.Entity = null;
-						previousValue.ProjectPlanTaskResponses.Remove(this);
-					}
-					this._ProjectPlanTask.Entity = value;
-					if ((value != null))
-					{
-						value.ProjectPlanTaskResponses.Add(this);
-						this._ProjectPlanTaskID = value.ProjectPlanTaskID;
-					}
-					else
-					{
-						this._ProjectPlanTaskID = default(Nullable<System.Guid>);
-					}
-					this.SendPropertyChanged("ProjectPlanTask");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.X_ProjectPlanTaskWorker")]
 	public partial class ProjectPlanTaskWorker : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1327,7 +912,7 @@ namespace XODB.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlanTask_ProjectPlanTaskWorker", Storage="_ProjectPlanTask", ThisKey="ProjectPlanTaskID", OtherKey="ProjectPlanTaskID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="X_ProjectPlanTask_ProjectPlanTaskWorker", Storage="_ProjectPlanTask", ThisKey="ProjectPlanTaskID", OtherKey="ProjectPlanTaskID", IsForeignKey=true)]
 		public ProjectPlanTask ProjectPlanTask
 		{
 			get
@@ -1792,7 +1377,7 @@ namespace XODB.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlan_ProjectPlanTask", Storage="_ProjectPlanTasks", ThisKey="ProjectPlanID", OtherKey="ProjectPlanID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlan_X_ProjectPlanTask", Storage="_ProjectPlanTasks", ThisKey="ProjectPlanID", OtherKey="ProjectPlanID")]
 		public EntitySet<ProjectPlanTask> ProjectPlanTasks
 		{
 			get
@@ -1918,6 +1503,832 @@ namespace XODB.Models
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.X_VW_ProjectStatus")]
+	public partial class ProjectStatus
+	{
+		
+		private System.Guid _ProjectID;
+		
+		private string _ProjectName;
+		
+		private string _ProjectTaskName;
+		
+		private System.Nullable<System.Guid> _Creator;
+		
+		private string _CreatorName;
+		
+		private System.Nullable<System.Guid> _Reviewer;
+		
+		private string _ReviewerName;
+		
+		private string _Comment;
+		
+		private System.Nullable<System.DateTime> _VersionUpdated;
+		
+		public ProjectStatus()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid ProjectID
+		{
+			get
+			{
+				return this._ProjectID;
+			}
+			set
+			{
+				if ((this._ProjectID != value))
+				{
+					this._ProjectID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectName", DbType="NVarChar(16)")]
+		public string ProjectName
+		{
+			get
+			{
+				return this._ProjectName;
+			}
+			set
+			{
+				if ((this._ProjectName != value))
+				{
+					this._ProjectName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectTaskName", DbType="NVarChar(50)")]
+		public string ProjectTaskName
+		{
+			get
+			{
+				return this._ProjectTaskName;
+			}
+			set
+			{
+				if ((this._ProjectTaskName != value))
+				{
+					this._ProjectTaskName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Creator", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> Creator
+		{
+			get
+			{
+				return this._Creator;
+			}
+			set
+			{
+				if ((this._Creator != value))
+				{
+					this._Creator = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatorName", DbType="NVarChar(120)")]
+		public string CreatorName
+		{
+			get
+			{
+				return this._CreatorName;
+			}
+			set
+			{
+				if ((this._CreatorName != value))
+				{
+					this._CreatorName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reviewer", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> Reviewer
+		{
+			get
+			{
+				return this._Reviewer;
+			}
+			set
+			{
+				if ((this._Reviewer != value))
+				{
+					this._Reviewer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReviewerName", DbType="NVarChar(120)")]
+		public string ReviewerName
+		{
+			get
+			{
+				return this._ReviewerName;
+			}
+			set
+			{
+				if ((this._ReviewerName != value))
+				{
+					this._ReviewerName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comment", DbType="NVarChar(MAX)")]
+		public string Comment
+		{
+			get
+			{
+				return this._Comment;
+			}
+			set
+			{
+				if ((this._Comment != value))
+				{
+					this._Comment = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionUpdated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> VersionUpdated
+		{
+			get
+			{
+				return this._VersionUpdated;
+			}
+			set
+			{
+				if ((this._VersionUpdated != value))
+				{
+					this._VersionUpdated = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.X_ProjectPlanTaskResponse")]
+	public partial class ProjectPlanTaskResponse : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private System.Guid _ProjectPlanTaskResponseID;
+		
+		private System.Nullable<System.Guid> _ProjectPlanTaskID;
+		
+		private System.Nullable<System.Guid> _ResponsibleContactID;
+		
+		private System.Nullable<System.Guid> _ActualWorkTypeID;
+		
+		private System.Nullable<System.DateTime> _Began;
+		
+		private System.Nullable<System.DateTime> _Completed;
+		
+		private System.Nullable<decimal> _Hours;
+		
+		private System.Nullable<decimal> _EstimatedProRataUnits;
+		
+		private System.Nullable<decimal> _EstimatedProRataCost;
+		
+		private System.Nullable<decimal> _EstimatedValue;
+		
+		private System.Nullable<decimal> _ApprovedProRataUnits;
+		
+		private System.Nullable<decimal> _ApprovedProRataCost;
+		
+		private System.Nullable<System.DateTime> _Approved;
+		
+		private System.Nullable<System.Guid> _ApprovedBy;
+		
+		private string _Comments;
+		
+		private int _Version;
+		
+		private System.Nullable<System.Guid> _VersionAntecedentID;
+		
+		private System.Nullable<int> _VersionCertainty;
+		
+		private System.Nullable<System.Guid> _VersionWorkflowInstanceID;
+		
+		private System.Nullable<System.Guid> _VersionUpdatedBy;
+		
+		private System.Nullable<System.Guid> _VersionDeletedBy;
+		
+		private System.Nullable<System.Guid> _VersionOwnerContactID;
+		
+		private System.Nullable<System.Guid> _VersionOwnerCompanyID;
+		
+		private System.Nullable<System.DateTime> _VersionUpdated;
+		
+		private EntityRef<ProjectPlanTask> _ProjectPlanTask;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnProjectPlanTaskResponseIDChanging(System.Guid value);
+    partial void OnProjectPlanTaskResponseIDChanged();
+    partial void OnProjectPlanTaskIDChanging(System.Nullable<System.Guid> value);
+    partial void OnProjectPlanTaskIDChanged();
+    partial void OnResponsibleContactIDChanging(System.Nullable<System.Guid> value);
+    partial void OnResponsibleContactIDChanged();
+    partial void OnActualWorkTypeIDChanging(System.Nullable<System.Guid> value);
+    partial void OnActualWorkTypeIDChanged();
+    partial void OnBeganChanging(System.Nullable<System.DateTime> value);
+    partial void OnBeganChanged();
+    partial void OnCompletedChanging(System.Nullable<System.DateTime> value);
+    partial void OnCompletedChanged();
+    partial void OnHoursChanging(System.Nullable<decimal> value);
+    partial void OnHoursChanged();
+    partial void OnEstimatedProRataUnitsChanging(System.Nullable<decimal> value);
+    partial void OnEstimatedProRataUnitsChanged();
+    partial void OnEstimatedProRataCostChanging(System.Nullable<decimal> value);
+    partial void OnEstimatedProRataCostChanged();
+    partial void OnEstimatedValueChanging(System.Nullable<decimal> value);
+    partial void OnEstimatedValueChanged();
+    partial void OnApprovedProRataUnitsChanging(System.Nullable<decimal> value);
+    partial void OnApprovedProRataUnitsChanged();
+    partial void OnApprovedProRataCostChanging(System.Nullable<decimal> value);
+    partial void OnApprovedProRataCostChanged();
+    partial void OnApprovedChanging(System.Nullable<System.DateTime> value);
+    partial void OnApprovedChanged();
+    partial void OnApprovedByChanging(System.Nullable<System.Guid> value);
+    partial void OnApprovedByChanged();
+    partial void OnCommentsChanging(string value);
+    partial void OnCommentsChanged();
+    partial void OnVersionChanging(int value);
+    partial void OnVersionChanged();
+    partial void OnVersionAntecedentIDChanging(System.Nullable<System.Guid> value);
+    partial void OnVersionAntecedentIDChanged();
+    partial void OnVersionCertaintyChanging(System.Nullable<int> value);
+    partial void OnVersionCertaintyChanged();
+    partial void OnVersionWorkflowInstanceIDChanging(System.Nullable<System.Guid> value);
+    partial void OnVersionWorkflowInstanceIDChanged();
+    partial void OnVersionUpdatedByChanging(System.Nullable<System.Guid> value);
+    partial void OnVersionUpdatedByChanged();
+    partial void OnVersionDeletedByChanging(System.Nullable<System.Guid> value);
+    partial void OnVersionDeletedByChanged();
+    partial void OnVersionOwnerContactIDChanging(System.Nullable<System.Guid> value);
+    partial void OnVersionOwnerContactIDChanged();
+    partial void OnVersionOwnerCompanyIDChanging(System.Nullable<System.Guid> value);
+    partial void OnVersionOwnerCompanyIDChanged();
+    partial void OnVersionUpdatedChanging(System.Nullable<System.DateTime> value);
+    partial void OnVersionUpdatedChanged();
+    #endregion
+		
+		public ProjectPlanTaskResponse()
+		{
+			this._ProjectPlanTask = default(EntityRef<ProjectPlanTask>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectPlanTaskResponseID", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+		public System.Guid ProjectPlanTaskResponseID
+		{
+			get
+			{
+				return this._ProjectPlanTaskResponseID;
+			}
+			set
+			{
+				if ((this._ProjectPlanTaskResponseID != value))
+				{
+					this.OnProjectPlanTaskResponseIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProjectPlanTaskResponseID = value;
+					this.SendPropertyChanged("ProjectPlanTaskResponseID");
+					this.OnProjectPlanTaskResponseIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectPlanTaskID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> ProjectPlanTaskID
+		{
+			get
+			{
+				return this._ProjectPlanTaskID;
+			}
+			set
+			{
+				if ((this._ProjectPlanTaskID != value))
+				{
+					if (this._ProjectPlanTask.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProjectPlanTaskIDChanging(value);
+					this.SendPropertyChanging();
+					this._ProjectPlanTaskID = value;
+					this.SendPropertyChanged("ProjectPlanTaskID");
+					this.OnProjectPlanTaskIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResponsibleContactID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> ResponsibleContactID
+		{
+			get
+			{
+				return this._ResponsibleContactID;
+			}
+			set
+			{
+				if ((this._ResponsibleContactID != value))
+				{
+					this.OnResponsibleContactIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResponsibleContactID = value;
+					this.SendPropertyChanged("ResponsibleContactID");
+					this.OnResponsibleContactIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActualWorkTypeID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> ActualWorkTypeID
+		{
+			get
+			{
+				return this._ActualWorkTypeID;
+			}
+			set
+			{
+				if ((this._ActualWorkTypeID != value))
+				{
+					this.OnActualWorkTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._ActualWorkTypeID = value;
+					this.SendPropertyChanged("ActualWorkTypeID");
+					this.OnActualWorkTypeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Began", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Began
+		{
+			get
+			{
+				return this._Began;
+			}
+			set
+			{
+				if ((this._Began != value))
+				{
+					this.OnBeganChanging(value);
+					this.SendPropertyChanging();
+					this._Began = value;
+					this.SendPropertyChanged("Began");
+					this.OnBeganChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Completed", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Completed
+		{
+			get
+			{
+				return this._Completed;
+			}
+			set
+			{
+				if ((this._Completed != value))
+				{
+					this.OnCompletedChanging(value);
+					this.SendPropertyChanging();
+					this._Completed = value;
+					this.SendPropertyChanged("Completed");
+					this.OnCompletedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hours", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> Hours
+		{
+			get
+			{
+				return this._Hours;
+			}
+			set
+			{
+				if ((this._Hours != value))
+				{
+					this.OnHoursChanging(value);
+					this.SendPropertyChanging();
+					this._Hours = value;
+					this.SendPropertyChanged("Hours");
+					this.OnHoursChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstimatedProRataUnits", DbType="Decimal(38,20)")]
+		public System.Nullable<decimal> EstimatedProRataUnits
+		{
+			get
+			{
+				return this._EstimatedProRataUnits;
+			}
+			set
+			{
+				if ((this._EstimatedProRataUnits != value))
+				{
+					this.OnEstimatedProRataUnitsChanging(value);
+					this.SendPropertyChanging();
+					this._EstimatedProRataUnits = value;
+					this.SendPropertyChanged("EstimatedProRataUnits");
+					this.OnEstimatedProRataUnitsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstimatedProRataCost", DbType="Money")]
+		public System.Nullable<decimal> EstimatedProRataCost
+		{
+			get
+			{
+				return this._EstimatedProRataCost;
+			}
+			set
+			{
+				if ((this._EstimatedProRataCost != value))
+				{
+					this.OnEstimatedProRataCostChanging(value);
+					this.SendPropertyChanging();
+					this._EstimatedProRataCost = value;
+					this.SendPropertyChanged("EstimatedProRataCost");
+					this.OnEstimatedProRataCostChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstimatedValue", DbType="Money")]
+		public System.Nullable<decimal> EstimatedValue
+		{
+			get
+			{
+				return this._EstimatedValue;
+			}
+			set
+			{
+				if ((this._EstimatedValue != value))
+				{
+					this.OnEstimatedValueChanging(value);
+					this.SendPropertyChanging();
+					this._EstimatedValue = value;
+					this.SendPropertyChanged("EstimatedValue");
+					this.OnEstimatedValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedProRataUnits", DbType="Decimal(38,20)")]
+		public System.Nullable<decimal> ApprovedProRataUnits
+		{
+			get
+			{
+				return this._ApprovedProRataUnits;
+			}
+			set
+			{
+				if ((this._ApprovedProRataUnits != value))
+				{
+					this.OnApprovedProRataUnitsChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovedProRataUnits = value;
+					this.SendPropertyChanged("ApprovedProRataUnits");
+					this.OnApprovedProRataUnitsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedProRataCost", DbType="Money")]
+		public System.Nullable<decimal> ApprovedProRataCost
+		{
+			get
+			{
+				return this._ApprovedProRataCost;
+			}
+			set
+			{
+				if ((this._ApprovedProRataCost != value))
+				{
+					this.OnApprovedProRataCostChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovedProRataCost = value;
+					this.SendPropertyChanged("ApprovedProRataCost");
+					this.OnApprovedProRataCostChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Approved", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Approved
+		{
+			get
+			{
+				return this._Approved;
+			}
+			set
+			{
+				if ((this._Approved != value))
+				{
+					this.OnApprovedChanging(value);
+					this.SendPropertyChanging();
+					this._Approved = value;
+					this.SendPropertyChanged("Approved");
+					this.OnApprovedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApprovedBy", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> ApprovedBy
+		{
+			get
+			{
+				return this._ApprovedBy;
+			}
+			set
+			{
+				if ((this._ApprovedBy != value))
+				{
+					this.OnApprovedByChanging(value);
+					this.SendPropertyChanging();
+					this._ApprovedBy = value;
+					this.SendPropertyChanged("ApprovedBy");
+					this.OnApprovedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comments", DbType="NVarChar(255)")]
+		public string Comments
+		{
+			get
+			{
+				return this._Comments;
+			}
+			set
+			{
+				if ((this._Comments != value))
+				{
+					this.OnCommentsChanging(value);
+					this.SendPropertyChanging();
+					this._Comments = value;
+					this.SendPropertyChanged("Comments");
+					this.OnCommentsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Version", DbType="Int NOT NULL")]
+		public int Version
+		{
+			get
+			{
+				return this._Version;
+			}
+			set
+			{
+				if ((this._Version != value))
+				{
+					this.OnVersionChanging(value);
+					this.SendPropertyChanging();
+					this._Version = value;
+					this.SendPropertyChanged("Version");
+					this.OnVersionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionAntecedentID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> VersionAntecedentID
+		{
+			get
+			{
+				return this._VersionAntecedentID;
+			}
+			set
+			{
+				if ((this._VersionAntecedentID != value))
+				{
+					this.OnVersionAntecedentIDChanging(value);
+					this.SendPropertyChanging();
+					this._VersionAntecedentID = value;
+					this.SendPropertyChanged("VersionAntecedentID");
+					this.OnVersionAntecedentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionCertainty", DbType="Int")]
+		public System.Nullable<int> VersionCertainty
+		{
+			get
+			{
+				return this._VersionCertainty;
+			}
+			set
+			{
+				if ((this._VersionCertainty != value))
+				{
+					this.OnVersionCertaintyChanging(value);
+					this.SendPropertyChanging();
+					this._VersionCertainty = value;
+					this.SendPropertyChanged("VersionCertainty");
+					this.OnVersionCertaintyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionWorkflowInstanceID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> VersionWorkflowInstanceID
+		{
+			get
+			{
+				return this._VersionWorkflowInstanceID;
+			}
+			set
+			{
+				if ((this._VersionWorkflowInstanceID != value))
+				{
+					this.OnVersionWorkflowInstanceIDChanging(value);
+					this.SendPropertyChanging();
+					this._VersionWorkflowInstanceID = value;
+					this.SendPropertyChanged("VersionWorkflowInstanceID");
+					this.OnVersionWorkflowInstanceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionUpdatedBy", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> VersionUpdatedBy
+		{
+			get
+			{
+				return this._VersionUpdatedBy;
+			}
+			set
+			{
+				if ((this._VersionUpdatedBy != value))
+				{
+					this.OnVersionUpdatedByChanging(value);
+					this.SendPropertyChanging();
+					this._VersionUpdatedBy = value;
+					this.SendPropertyChanged("VersionUpdatedBy");
+					this.OnVersionUpdatedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionDeletedBy", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> VersionDeletedBy
+		{
+			get
+			{
+				return this._VersionDeletedBy;
+			}
+			set
+			{
+				if ((this._VersionDeletedBy != value))
+				{
+					this.OnVersionDeletedByChanging(value);
+					this.SendPropertyChanging();
+					this._VersionDeletedBy = value;
+					this.SendPropertyChanged("VersionDeletedBy");
+					this.OnVersionDeletedByChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionOwnerContactID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> VersionOwnerContactID
+		{
+			get
+			{
+				return this._VersionOwnerContactID;
+			}
+			set
+			{
+				if ((this._VersionOwnerContactID != value))
+				{
+					this.OnVersionOwnerContactIDChanging(value);
+					this.SendPropertyChanging();
+					this._VersionOwnerContactID = value;
+					this.SendPropertyChanged("VersionOwnerContactID");
+					this.OnVersionOwnerContactIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionOwnerCompanyID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> VersionOwnerCompanyID
+		{
+			get
+			{
+				return this._VersionOwnerCompanyID;
+			}
+			set
+			{
+				if ((this._VersionOwnerCompanyID != value))
+				{
+					this.OnVersionOwnerCompanyIDChanging(value);
+					this.SendPropertyChanging();
+					this._VersionOwnerCompanyID = value;
+					this.SendPropertyChanged("VersionOwnerCompanyID");
+					this.OnVersionOwnerCompanyIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionUpdated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> VersionUpdated
+		{
+			get
+			{
+				return this._VersionUpdated;
+			}
+			set
+			{
+				if ((this._VersionUpdated != value))
+				{
+					this.OnVersionUpdatedChanging(value);
+					this.SendPropertyChanging();
+					this._VersionUpdated = value;
+					this.SendPropertyChanged("VersionUpdated");
+					this.OnVersionUpdatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="X_ProjectPlanTask_ProjectPlanTaskResponse", Storage="_ProjectPlanTask", ThisKey="ProjectPlanTaskID", OtherKey="ProjectPlanTaskID", IsForeignKey=true)]
+		public ProjectPlanTask ProjectPlanTask
+		{
+			get
+			{
+				return this._ProjectPlanTask.Entity;
+			}
+			set
+			{
+				ProjectPlanTask previousValue = this._ProjectPlanTask.Entity;
+				if (((previousValue != value) 
+							|| (this._ProjectPlanTask.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ProjectPlanTask.Entity = null;
+						previousValue.ProjectPlanTaskResponses.Remove(this);
+					}
+					this._ProjectPlanTask.Entity = value;
+					if ((value != null))
+					{
+						value.ProjectPlanTaskResponses.Add(this);
+						this._ProjectPlanTaskID = value.ProjectPlanTaskID;
+					}
+					else
+					{
+						this._ProjectPlanTaskID = default(Nullable<System.Guid>);
+					}
+					this.SendPropertyChanged("ProjectPlanTask");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.X_ProjectPlanTask")]
 	public partial class ProjectPlanTask : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1932,6 +2343,8 @@ namespace XODB.Models
 		
 		private string _ProjectTaskName;
 		
+		private System.Nullable<System.Guid> _WorkTypeID;
+		
 		private int _Priority;
 		
 		private System.Nullable<decimal> _Progress;
@@ -1940,9 +2353,7 @@ namespace XODB.Models
 		
 		private System.Nullable<System.DateTime> _StopDate;
 		
-		private System.Nullable<decimal> _DurationManHours;
-		
-		private bool _IsMilestone;
+		private System.Nullable<decimal> _AllocatedManHours;
 		
 		private string _Comment;
 		
@@ -1964,9 +2375,9 @@ namespace XODB.Models
 		
 		private System.Nullable<System.DateTime> _VersionUpdated;
 		
-		private EntitySet<ProjectPlanTaskResponse> _ProjectPlanTaskResponses;
-		
 		private EntitySet<ProjectPlanTaskWorker> _ProjectPlanTaskWorkers;
+		
+		private EntitySet<ProjectPlanTaskResponse> _ProjectPlanTaskResponses;
 		
 		private EntitySet<ProjectPlanTask> _ProjectPlanTasks;
 		
@@ -1986,6 +2397,8 @@ namespace XODB.Models
     partial void OnParentProjectTaskIDChanged();
     partial void OnProjectTaskNameChanging(string value);
     partial void OnProjectTaskNameChanged();
+    partial void OnWorkTypeIDChanging(System.Nullable<System.Guid> value);
+    partial void OnWorkTypeIDChanged();
     partial void OnPriorityChanging(int value);
     partial void OnPriorityChanged();
     partial void OnProgressChanging(System.Nullable<decimal> value);
@@ -1994,10 +2407,8 @@ namespace XODB.Models
     partial void OnStartDateChanged();
     partial void OnStopDateChanging(System.Nullable<System.DateTime> value);
     partial void OnStopDateChanged();
-    partial void OnDurationManHoursChanging(System.Nullable<decimal> value);
-    partial void OnDurationManHoursChanged();
-    partial void OnIsMilestoneChanging(bool value);
-    partial void OnIsMilestoneChanged();
+    partial void OnAllocatedManHoursChanging(System.Nullable<decimal> value);
+    partial void OnAllocatedManHoursChanged();
     partial void OnCommentChanging(string value);
     partial void OnCommentChanged();
     partial void OnVersionChanging(int value);
@@ -2022,8 +2433,8 @@ namespace XODB.Models
 		
 		public ProjectPlanTask()
 		{
-			this._ProjectPlanTaskResponses = new EntitySet<ProjectPlanTaskResponse>(new Action<ProjectPlanTaskResponse>(this.attach_ProjectPlanTaskResponses), new Action<ProjectPlanTaskResponse>(this.detach_ProjectPlanTaskResponses));
 			this._ProjectPlanTaskWorkers = new EntitySet<ProjectPlanTaskWorker>(new Action<ProjectPlanTaskWorker>(this.attach_ProjectPlanTaskWorkers), new Action<ProjectPlanTaskWorker>(this.detach_ProjectPlanTaskWorkers));
+			this._ProjectPlanTaskResponses = new EntitySet<ProjectPlanTaskResponse>(new Action<ProjectPlanTaskResponse>(this.attach_ProjectPlanTaskResponses), new Action<ProjectPlanTaskResponse>(this.detach_ProjectPlanTaskResponses));
 			this._ProjectPlanTasks = new EntitySet<ProjectPlanTask>(new Action<ProjectPlanTask>(this.attach_ProjectPlanTasks), new Action<ProjectPlanTask>(this.detach_ProjectPlanTasks));
 			this._ProjectPlan = default(EntityRef<ProjectPlan>);
 			this._X_ProjectPlanTask1 = default(EntityRef<ProjectPlanTask>);
@@ -2118,6 +2529,26 @@ namespace XODB.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkTypeID", DbType="UniqueIdentifier")]
+		public System.Nullable<System.Guid> WorkTypeID
+		{
+			get
+			{
+				return this._WorkTypeID;
+			}
+			set
+			{
+				if ((this._WorkTypeID != value))
+				{
+					this.OnWorkTypeIDChanging(value);
+					this.SendPropertyChanging();
+					this._WorkTypeID = value;
+					this.SendPropertyChanged("WorkTypeID");
+					this.OnWorkTypeIDChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Priority", DbType="Int NOT NULL")]
 		public int Priority
 		{
@@ -2198,42 +2629,22 @@ namespace XODB.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurationManHours", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> DurationManHours
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllocatedManHours", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> AllocatedManHours
 		{
 			get
 			{
-				return this._DurationManHours;
+				return this._AllocatedManHours;
 			}
 			set
 			{
-				if ((this._DurationManHours != value))
+				if ((this._AllocatedManHours != value))
 				{
-					this.OnDurationManHoursChanging(value);
+					this.OnAllocatedManHoursChanging(value);
 					this.SendPropertyChanging();
-					this._DurationManHours = value;
-					this.SendPropertyChanged("DurationManHours");
-					this.OnDurationManHoursChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsMilestone", DbType="Bit NOT NULL")]
-		public bool IsMilestone
-		{
-			get
-			{
-				return this._IsMilestone;
-			}
-			set
-			{
-				if ((this._IsMilestone != value))
-				{
-					this.OnIsMilestoneChanging(value);
-					this.SendPropertyChanging();
-					this._IsMilestone = value;
-					this.SendPropertyChanged("IsMilestone");
-					this.OnIsMilestoneChanged();
+					this._AllocatedManHours = value;
+					this.SendPropertyChanged("AllocatedManHours");
+					this.OnAllocatedManHoursChanged();
 				}
 			}
 		}
@@ -2438,20 +2849,7 @@ namespace XODB.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlanTask_ProjectPlanTaskResponse", Storage="_ProjectPlanTaskResponses", ThisKey="ProjectPlanTaskID", OtherKey="ProjectPlanTaskID")]
-		public EntitySet<ProjectPlanTaskResponse> ProjectPlanTaskResponses
-		{
-			get
-			{
-				return this._ProjectPlanTaskResponses;
-			}
-			set
-			{
-				this._ProjectPlanTaskResponses.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlanTask_ProjectPlanTaskWorker", Storage="_ProjectPlanTaskWorkers", ThisKey="ProjectPlanTaskID", OtherKey="ProjectPlanTaskID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="X_ProjectPlanTask_ProjectPlanTaskWorker", Storage="_ProjectPlanTaskWorkers", ThisKey="ProjectPlanTaskID", OtherKey="ProjectPlanTaskID")]
 		public EntitySet<ProjectPlanTaskWorker> ProjectPlanTaskWorkers
 		{
 			get
@@ -2464,7 +2862,20 @@ namespace XODB.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlanTask_ProjectPlanTask", Storage="_ProjectPlanTasks", ThisKey="ProjectPlanTaskID", OtherKey="ParentProjectTaskID")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="X_ProjectPlanTask_ProjectPlanTaskResponse", Storage="_ProjectPlanTaskResponses", ThisKey="ProjectPlanTaskID", OtherKey="ProjectPlanTaskID")]
+		public EntitySet<ProjectPlanTaskResponse> ProjectPlanTaskResponses
+		{
+			get
+			{
+				return this._ProjectPlanTaskResponses;
+			}
+			set
+			{
+				this._ProjectPlanTaskResponses.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="X_ProjectPlanTask_X_ProjectPlanTask", Storage="_ProjectPlanTasks", ThisKey="ProjectPlanTaskID", OtherKey="ParentProjectTaskID")]
 		public EntitySet<ProjectPlanTask> ProjectPlanTasks
 		{
 			get
@@ -2477,7 +2888,7 @@ namespace XODB.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlan_ProjectPlanTask", Storage="_ProjectPlan", ThisKey="ProjectPlanID", OtherKey="ProjectPlanID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlan_X_ProjectPlanTask", Storage="_ProjectPlan", ThisKey="ProjectPlanID", OtherKey="ProjectPlanID", IsForeignKey=true)]
 		public ProjectPlan ProjectPlan
 		{
 			get
@@ -2511,7 +2922,7 @@ namespace XODB.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ProjectPlanTask_ProjectPlanTask", Storage="_X_ProjectPlanTask1", ThisKey="ParentProjectTaskID", OtherKey="ProjectPlanTaskID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="X_ProjectPlanTask_X_ProjectPlanTask", Storage="_X_ProjectPlanTask1", ThisKey="ParentProjectTaskID", OtherKey="ProjectPlanTaskID", IsForeignKey=true)]
 		public ProjectPlanTask X_ProjectPlanTask1
 		{
 			get
@@ -2565,18 +2976,6 @@ namespace XODB.Models
 			}
 		}
 		
-		private void attach_ProjectPlanTaskResponses(ProjectPlanTaskResponse entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProjectPlanTask = this;
-		}
-		
-		private void detach_ProjectPlanTaskResponses(ProjectPlanTaskResponse entity)
-		{
-			this.SendPropertyChanging();
-			entity.ProjectPlanTask = null;
-		}
-		
 		private void attach_ProjectPlanTaskWorkers(ProjectPlanTaskWorker entity)
 		{
 			this.SendPropertyChanging();
@@ -2584,6 +2983,18 @@ namespace XODB.Models
 		}
 		
 		private void detach_ProjectPlanTaskWorkers(ProjectPlanTaskWorker entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProjectPlanTask = null;
+		}
+		
+		private void attach_ProjectPlanTaskResponses(ProjectPlanTaskResponse entity)
+		{
+			this.SendPropertyChanging();
+			entity.ProjectPlanTask = this;
+		}
+		
+		private void detach_ProjectPlanTaskResponses(ProjectPlanTaskResponse entity)
 		{
 			this.SendPropertyChanging();
 			entity.ProjectPlanTask = null;
@@ -2599,177 +3010,6 @@ namespace XODB.Models
 		{
 			this.SendPropertyChanging();
 			entity.X_ProjectPlanTask1 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.X_VW_ProjectStatus")]
-	public partial class ProjectStatus
-	{
-		
-		private System.Guid _ProjectID;
-		
-		private string _ProjectName;
-		
-		private string _ProjectTaskName;
-		
-		private System.Nullable<System.Guid> _Creator;
-		
-		private string _CreatorName;
-		
-		private System.Nullable<System.Guid> _Reviewer;
-		
-		private string _ReviewerName;
-		
-		private string _Comment;
-		
-		private System.Nullable<System.DateTime> _VersionUpdated;
-		
-		public ProjectStatus()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectID", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid ProjectID
-		{
-			get
-			{
-				return this._ProjectID;
-			}
-			set
-			{
-				if ((this._ProjectID != value))
-				{
-					this._ProjectID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectName", DbType="NVarChar(16)")]
-		public string ProjectName
-		{
-			get
-			{
-				return this._ProjectName;
-			}
-			set
-			{
-				if ((this._ProjectName != value))
-				{
-					this._ProjectName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProjectTaskName", DbType="NVarChar(50)")]
-		public string ProjectTaskName
-		{
-			get
-			{
-				return this._ProjectTaskName;
-			}
-			set
-			{
-				if ((this._ProjectTaskName != value))
-				{
-					this._ProjectTaskName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Creator", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> Creator
-		{
-			get
-			{
-				return this._Creator;
-			}
-			set
-			{
-				if ((this._Creator != value))
-				{
-					this._Creator = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatorName", DbType="NVarChar(120)")]
-		public string CreatorName
-		{
-			get
-			{
-				return this._CreatorName;
-			}
-			set
-			{
-				if ((this._CreatorName != value))
-				{
-					this._CreatorName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Reviewer", DbType="UniqueIdentifier")]
-		public System.Nullable<System.Guid> Reviewer
-		{
-			get
-			{
-				return this._Reviewer;
-			}
-			set
-			{
-				if ((this._Reviewer != value))
-				{
-					this._Reviewer = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReviewerName", DbType="NVarChar(120)")]
-		public string ReviewerName
-		{
-			get
-			{
-				return this._ReviewerName;
-			}
-			set
-			{
-				if ((this._ReviewerName != value))
-				{
-					this._ReviewerName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comment", DbType="NVarChar(MAX)")]
-		public string Comment
-		{
-			get
-			{
-				return this._Comment;
-			}
-			set
-			{
-				if ((this._Comment != value))
-				{
-					this._Comment = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VersionUpdated", DbType="DateTime")]
-		public System.Nullable<System.DateTime> VersionUpdated
-		{
-			get
-			{
-				return this._VersionUpdated;
-			}
-			set
-			{
-				if ((this._VersionUpdated != value))
-				{
-					this._VersionUpdated = value;
-				}
-			}
 		}
 	}
 }

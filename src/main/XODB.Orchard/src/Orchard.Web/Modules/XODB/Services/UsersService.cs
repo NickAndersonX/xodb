@@ -119,7 +119,7 @@ namespace XODB.Services {
                     c.ContactID = o.guid.HasValue ? o.guid.Value : Guid.NewGuid();
                     c.Username = o.username;
                     c.Firstname = o.givenName;
-                    c.ContactName = o.name;
+                    c.ContactName = string.Join(string.Empty, string.Format("{0}[{1}]", o.name, o.username).Take(120));
                     c.Surname = o.sn;
                     c.DefaultEmail = o.email;
                     d.Contacts.InsertOnSubmit(c);
@@ -135,12 +135,12 @@ namespace XODB.Services {
                                       || o.sn != x.Surname
                                       || o.email != x.DefaultEmail
                                       || o.name != x.ContactName
-                              ) select new {x.ContactID, o.givenName, o.sn, o.email, o.name};
+                              ) select new {x.ContactID, o.givenName, o.sn, o.email, o.name, o.username};
                 foreach (var o in ad_diff)
                 {
                     var c = xodbusers.First(x => x.ContactID == o.ContactID);
                     c.Firstname = o.givenName;
-                    c.ContactName = o.name;
+                    c.ContactName = string.Join(string.Empty, string.Format("{0}[{1}]", o.name, o.username).Take(120));
                     c.Surname = o.sn;
                     c.DefaultEmail = o.email;
                 }
