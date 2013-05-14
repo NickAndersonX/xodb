@@ -34,21 +34,28 @@ namespace XODB.Services {
         private readonly IOrchardServices _orchardServices;
         private readonly IContentManager _contentManager;
         private readonly IRoleService _roleService;
-        private readonly IUserService _userService;
         private readonly IMessageManager _messageManager;
         private readonly IScheduledTaskManager _taskManager;
-        private readonly PrincipalContext _securityContext = new PrincipalContext(ContextType.Domain); //TODO: May look at others one day
+        private PrincipalContext _securityContext;
+        private PrincipalContext securityContext
+        {
+            get
+            {
+                if (_securityContext == null)
+                    _securityContext = new PrincipalContext(ContextType.Domain); //TODO: May look at others one day
+                return _securityContext;
+            }
+        }
         private readonly IRepository<EmailPartRecord> _repository;
         public ILogger Logger { get; set; }
 
 
-        public UsersService(IContentManager contentManager, IOrchardServices orchardServices, IRoleService roleService, IUserService userService, IMessageManager messageManager, IScheduledTaskManager taskManager, IRepository<EmailPartRecord> repository)
+        public UsersService(IContentManager contentManager, IOrchardServices orchardServices, IRoleService roleService, IMessageManager messageManager, IScheduledTaskManager taskManager, IRepository<EmailPartRecord> repository)
         {
             _repository = repository;
             _orchardServices = orchardServices;
             _contentManager = contentManager;
             _roleService = roleService;
-            _userService = userService;
             _messageManager = messageManager;
             _taskManager = taskManager;
             T = NullLocalizer.Instance;
@@ -194,7 +201,7 @@ namespace XODB.Services {
                 return temp;
             try
             {
-                temp = ((NTAccount)(GroupPrincipal.FindByIdentity(_securityContext, string.Format("{0}", fqdn)).Sid).Translate(typeof(NTAccount))).ToString();
+                temp = ((NTAccount)(GroupPrincipal.FindByIdentity(securityContext, string.Format("{0}", fqdn)).Sid).Translate(typeof(NTAccount))).ToString();
             }
             catch
             {
