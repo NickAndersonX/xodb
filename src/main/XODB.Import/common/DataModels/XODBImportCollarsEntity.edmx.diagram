@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82388c43ef4e471090afe70bfa5fc0d4" Name="Diagram1">
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_DictionaryDataStatus" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_DictionaryHoleStatus" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_DictionaryHoleType" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_Header" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_HeaderRelation" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_Header_X_DictionaryData_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_Header_X_DictionaryHole_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_Header_X_DictionaryHole_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_HeaderRelation_X_Header" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_HeaderRelation_X_Header1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_Survey" Width="2.25" PointX="0.5" PointY="21" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_Survey_X_Header" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_Lithology" Width="1.5" PointX="5.875" PointY="11.5" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_LithologyData_X_Header" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

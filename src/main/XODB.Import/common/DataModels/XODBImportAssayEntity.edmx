@@ -1,0 +1,1496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="XODBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="XODBModelStoreContainer">
+          <EntitySet Name="X_AssayGroup" EntityType="XODBModel.Store.X_AssayGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_AssayGroupStandardTestResult" EntityType="XODBModel.Store.X_AssayGroupStandardTestResult" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_AssayGroupTest" EntityType="XODBModel.Store.X_AssayGroupTest" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_AssayGroupTestResult" EntityType="XODBModel.Store.X_AssayGroupTestResult" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_AssayGroupTestResultComment" EntityType="XODBModel.Store.X_AssayGroupTestResultComment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_AssayGroupTestResultDuplicate" EntityType="XODBModel.Store.X_AssayGroupTestResultDuplicate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_DictionarySampleCategory" EntityType="XODBModel.Store.X_DictionarySampleCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_DictionarySampleState" EntityType="XODBModel.Store.X_DictionarySampleState" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_DictionarySampleType" EntityType="XODBModel.Store.X_DictionarySampleType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_DictionaryUnit" EntityType="XODBModel.Store.X_DictionaryUnit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_Parameter" EntityType="XODBModel.Store.X_Parameter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_ParameterDuplicate" EntityType="XODBModel.Store.X_ParameterDuplicate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_ParameterGroup" EntityType="XODBModel.Store.X_ParameterGroup" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_Sample" EntityType="XODBModel.Store.X_Sample" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_AssayGroupTest" Association="XODBModel.Store.FK_X_AssayGroupStandardTestResult_X_AssayGroupTest">
+            <End Role="X_AssayGroupTest" EntitySet="X_AssayGroupTest" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_AssayGroupTestSample" Association="XODBModel.Store.FK_X_AssayGroupStandardTestResult_X_AssayGroupTestSample">
+            <End Role="X_Sample" EntitySet="X_Sample" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_DictionarySample_Category" Association="XODBModel.Store.FK_X_AssayGroupStandardTestResult_X_DictionarySample_Category">
+            <End Role="X_DictionarySampleCategory" EntitySet="X_DictionarySampleCategory" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_DictionarySampleState" Association="XODBModel.Store.FK_X_AssayGroupStandardTestResult_X_DictionarySampleState">
+            <End Role="X_DictionarySampleState" EntitySet="X_DictionarySampleState" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_DictionarySampleType" Association="XODBModel.Store.FK_X_AssayGroupStandardTestResult_X_DictionarySampleType">
+            <End Role="X_DictionarySampleType" EntitySet="X_DictionarySampleType" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTest_X_AssayGroup" Association="XODBModel.Store.FK_X_AssayGroupTest_X_AssayGroup">
+            <End Role="X_AssayGroup" EntitySet="X_AssayGroup" />
+            <End Role="X_AssayGroupTest" EntitySet="X_AssayGroupTest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTest_X_Parameter" Association="XODBModel.Store.FK_X_AssayGroupTest_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+            <End Role="X_AssayGroupTest" EntitySet="X_AssayGroupTest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestResult_X_AssayGroupTest" Association="XODBModel.Store.FK_X_AssayGroupTestResult_X_AssayGroupTest">
+            <End Role="X_AssayGroupTest" EntitySet="X_AssayGroupTest" />
+            <End Role="X_AssayGroupTestResult" EntitySet="X_AssayGroupTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestResult_X_AssayGroupTestSample" Association="XODBModel.Store.FK_X_AssayGroupTestResult_X_AssayGroupTestSample">
+            <End Role="X_Sample" EntitySet="X_Sample" />
+            <End Role="X_AssayGroupTestResult" EntitySet="X_AssayGroupTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestResultComment_X_AssayGroupTestResult" Association="XODBModel.Store.FK_X_AssayGroupTestResultComment_X_AssayGroupTestResult">
+            <End Role="X_AssayGroupTestResult" EntitySet="X_AssayGroupTestResult" />
+            <End Role="X_AssayGroupTestResultComment" EntitySet="X_AssayGroupTestResultComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestResultDuplicate_X_AssayGroupTestResult" Association="XODBModel.Store.FK_X_AssayGroupTestResultDuplicate_X_AssayGroupTestResult">
+            <End Role="X_AssayGroupTestResult" EntitySet="X_AssayGroupTestResult" />
+            <End Role="X_AssayGroupTestResultDuplicate" EntitySet="X_AssayGroupTestResultDuplicate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestSample_X_DictionarySampleCategory" Association="XODBModel.Store.FK_X_AssayGroupTestSample_X_DictionarySampleCategory">
+            <End Role="X_DictionarySampleCategory" EntitySet="X_DictionarySampleCategory" />
+            <End Role="X_Sample" EntitySet="X_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestSample_X_DictionarySampleState" Association="XODBModel.Store.FK_X_AssayGroupTestSample_X_DictionarySampleState">
+            <End Role="X_DictionarySampleState" EntitySet="X_DictionarySampleState" />
+            <End Role="X_Sample" EntitySet="X_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestSample_X_DictionarySampleType" Association="XODBModel.Store.FK_X_AssayGroupTestSample_X_DictionarySampleType">
+            <End Role="X_DictionarySampleType" EntitySet="X_DictionarySampleType" />
+            <End Role="X_Sample" EntitySet="X_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_CompositeData_X_DictionaryUnit" Association="XODBModel.Store.FK_X_CompositeData_X_DictionaryUnit">
+            <End Role="X_DictionaryUnit" EntitySet="X_DictionaryUnit" />
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_ParameterDuplicate_X_Parameter" Association="XODBModel.Store.FK_X_ParameterDuplicate_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+            <End Role="X_ParameterDuplicate" EntitySet="X_ParameterDuplicate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_ParameterDuplicate_X_Parameter1" Association="XODBModel.Store.FK_X_ParameterDuplicate_X_Parameter1">
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+            <End Role="X_ParameterDuplicate" EntitySet="X_ParameterDuplicate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_ParameterGroup_X_ParameterGroup" Association="XODBModel.Store.FK_X_ParameterGroup_X_ParameterGroup">
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+            <End Role="X_ParameterGroup" EntitySet="X_ParameterGroup" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="X_AssayGroup">
+          <Key>
+            <PropertyRef Name="AssayGroupID" />
+          </Key>
+          <Property Name="AssayGroupID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProjectID" Type="uniqueidentifier" />
+          <Property Name="AssayGroupName" Type="nvarchar" MaxLength="16" />
+          <Property Name="LabCompanyID" Type="uniqueidentifier" />
+          <Property Name="Submitted" Type="date" />
+          <Property Name="SubmittedContactID" Type="uniqueidentifier" />
+          <Property Name="Received" Type="date" />
+          <Property Name="ReceivedContactID" Type="uniqueidentifier" />
+          <Property Name="Entered" Type="date" />
+          <Property Name="EnteredContactID" Type="uniqueidentifier" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupStandardTestResult">
+          <Key>
+            <PropertyRef Name="AssayGroupStandardTestResultID" />
+          </Key>
+          <Property Name="AssayGroupStandardTestResultID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AssayGroupTestSampleID" Type="uniqueidentifier" />
+          <Property Name="AssayGroupTestID" Type="uniqueidentifier" />
+          <Property Name="AssayStandardID" Type="uniqueidentifier" />
+          <Property Name="SampleCategoryID" Type="uniqueidentifier" />
+          <Property Name="SampleStateID" Type="uniqueidentifier" />
+          <Property Name="SampleTypeID" Type="uniqueidentifier" />
+          <Property Name="LabResultText" Type="nvarchar" MaxLength="58" />
+          <Property Name="LabResult" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="LabSampleNumber" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="LabBatchNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="Sampled" Type="date" />
+          <Property Name="SampledBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupTest">
+          <Key>
+            <PropertyRef Name="AssayGroupTestID" />
+          </Key>
+          <Property Name="AssayGroupTestID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AssayGroupID" Type="uniqueidentifier" />
+          <Property Name="AssayTypeName" Type="nvarchar" MaxLength="16" />
+          <Property Name="AssayTestName" Type="nvarchar" MaxLength="16" />
+          <Property Name="ParameterID" Type="uniqueidentifier" />
+          <Property Name="AssayTestPriority" Type="int" />
+          <Property Name="AssayMethodID" Type="uniqueidentifier" />
+          <Property Name="AssayTypeID" Type="uniqueidentifier" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupTestResult">
+          <Key>
+            <PropertyRef Name="AssayGroupTestResultID" />
+          </Key>
+          <Property Name="AssayGroupTestResultID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SampleID" Type="uniqueidentifier" />
+          <Property Name="AssayGroupTestID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LabResultText" Type="nvarchar" MaxLength="58" />
+          <Property Name="LabResult" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="LabSampleNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="LabBatchNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="Sampled" Type="date" />
+          <Property Name="SampledBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupTestResultComment">
+          <Key>
+            <PropertyRef Name="AssayGroupTestResultCommentID" />
+          </Key>
+          <Property Name="AssayGroupTestResultCommentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AssayGroupTestResultID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupTestResultDuplicate">
+          <Key>
+            <PropertyRef Name="AssayGroupTestResultDuplicateID" />
+          </Key>
+          <Property Name="AssayGroupTestResultDuplicateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AssayGroupTestResultID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LabResultText" Type="nvarchar" MaxLength="58" />
+          <Property Name="LabResult" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="LabSampleNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="LabBatchNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="Sampled" Type="date" />
+          <Property Name="SampledBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_DictionarySampleCategory">
+          <Key>
+            <PropertyRef Name="SampleCategoryID" />
+          </Key>
+          <Property Name="SampleCategoryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StandardSampleCategoryName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="CoalSampleCategoryName" Type="nvarchar" MaxLength="16" />
+          <Property Name="GoldSampleCategoryName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustomSampleCategoryName" Type="nvarchar" MaxLength="16" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="X_DictionarySampleState">
+          <Key>
+            <PropertyRef Name="SampleStateID" />
+          </Key>
+          <Property Name="SampleStateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StandardSampleStateName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="CoalSampleStateName" Type="nvarchar" MaxLength="16" />
+          <Property Name="GoldSampleStateName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustomSampleStateName" Type="nvarchar" MaxLength="16" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="X_DictionarySampleType">
+          <Key>
+            <PropertyRef Name="SampleTypeID" />
+          </Key>
+          <Property Name="SampleTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StandardSampleTypeName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="CoalSampleTypeName" Type="nvarchar" MaxLength="16" />
+          <Property Name="GoldSampleTypeName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustomSampleTypeName" Type="nvarchar" MaxLength="16" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="X_DictionaryUnit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StrictlySI" Type="bit" />
+          <Property Name="EquivalentUnit" Type="uniqueidentifier" />
+          <Property Name="EquivalentMultiplier" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="StandardUnitName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="CoalUnitName" Type="nvarchar" MaxLength="16" />
+          <Property Name="GoldUnitName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustomUnitName" Type="nvarchar" MaxLength="16" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="X_Parameter">
+          <Key>
+            <PropertyRef Name="ParameterID" />
+          </Key>
+          <Property Name="ParameterID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParameterType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParameterName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DefaultParameterValue" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="DefaultParameterText" Type="nvarchar" MaxLength="255" />
+          <Property Name="UnitID" Type="uniqueidentifier" />
+          <Property Name="Format" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Locale" Type="nvarchar" MaxLength="16" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_ParameterDuplicate">
+          <Key>
+            <PropertyRef Name="ParameterDuplicateID" />
+          </Key>
+          <Property Name="ParameterDuplicateID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Parameter1ID" Type="uniqueidentifier" />
+          <Property Name="Parameter2ID" Type="uniqueidentifier" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_ParameterGroup">
+          <Key>
+            <PropertyRef Name="ParameterGroupID" />
+          </Key>
+          <Property Name="ParameterGroupID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParameterID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GroupID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_Sample">
+          <Key>
+            <PropertyRef Name="SampleID" />
+          </Key>
+          <Property Name="SampleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="HeaderID" Type="uniqueidentifier" />
+          <Property Name="SampleCategoryID" Type="uniqueidentifier" />
+          <Property Name="SampleStateID" Type="uniqueidentifier" />
+          <Property Name="SampleTypeID" Type="uniqueidentifier" />
+          <Property Name="SampleName" Type="nvarchar" MaxLength="16" />
+          <Property Name="SampleNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="SampleTaken" Type="datetime" />
+          <Property Name="FromDepth" Type="numeric" Precision="7" Scale="3" />
+          <Property Name="ToDepth" Type="numeric" Precision="7" Scale="3" />
+          <Property Name="SampleMassKg" Type="numeric" Precision="6" Scale="4" />
+          <Property Name="DryMassKg" Type="numeric" Precision="6" Scale="4" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_AssayGroupTest">
+          <End Role="X_AssayGroupTest" Type="XODBModel.Store.X_AssayGroupTest" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.Store.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroupTest">
+              <PropertyRef Name="AssayGroupTestID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="AssayGroupTestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_AssayGroupTestSample">
+          <End Role="X_Sample" Type="XODBModel.Store.X_Sample" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.Store.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Sample">
+              <PropertyRef Name="SampleID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="AssayGroupTestSampleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_DictionarySample_Category">
+          <End Role="X_DictionarySampleCategory" Type="XODBModel.Store.X_DictionarySampleCategory" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.Store.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleCategory">
+              <PropertyRef Name="SampleCategoryID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="SampleCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_DictionarySampleState">
+          <End Role="X_DictionarySampleState" Type="XODBModel.Store.X_DictionarySampleState" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.Store.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleState">
+              <PropertyRef Name="SampleStateID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="SampleStateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_DictionarySampleType">
+          <End Role="X_DictionarySampleType" Type="XODBModel.Store.X_DictionarySampleType" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.Store.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleType">
+              <PropertyRef Name="SampleTypeID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="SampleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTest_X_AssayGroup">
+          <End Role="X_AssayGroup" Type="XODBModel.Store.X_AssayGroup" Multiplicity="0..1" />
+          <End Role="X_AssayGroupTest" Type="XODBModel.Store.X_AssayGroupTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroup">
+              <PropertyRef Name="AssayGroupID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTest">
+              <PropertyRef Name="AssayGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTest_X_Parameter">
+          <End Role="X_Parameter" Type="XODBModel.Store.X_Parameter" Multiplicity="0..1" />
+          <End Role="X_AssayGroupTest" Type="XODBModel.Store.X_AssayGroupTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTest">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestResult_X_AssayGroupTest">
+          <End Role="X_AssayGroupTest" Type="XODBModel.Store.X_AssayGroupTest" Multiplicity="1" />
+          <End Role="X_AssayGroupTestResult" Type="XODBModel.Store.X_AssayGroupTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroupTest">
+              <PropertyRef Name="AssayGroupTestID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTestResult">
+              <PropertyRef Name="AssayGroupTestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestResult_X_AssayGroupTestSample">
+          <End Role="X_Sample" Type="XODBModel.Store.X_Sample" Multiplicity="0..1" />
+          <End Role="X_AssayGroupTestResult" Type="XODBModel.Store.X_AssayGroupTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Sample">
+              <PropertyRef Name="SampleID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTestResult">
+              <PropertyRef Name="SampleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestResultComment_X_AssayGroupTestResult">
+          <End Role="X_AssayGroupTestResult" Type="XODBModel.Store.X_AssayGroupTestResult" Multiplicity="1" />
+          <End Role="X_AssayGroupTestResultComment" Type="XODBModel.Store.X_AssayGroupTestResultComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroupTestResult">
+              <PropertyRef Name="AssayGroupTestResultID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTestResultComment">
+              <PropertyRef Name="AssayGroupTestResultID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestResultDuplicate_X_AssayGroupTestResult">
+          <End Role="X_AssayGroupTestResult" Type="XODBModel.Store.X_AssayGroupTestResult" Multiplicity="1" />
+          <End Role="X_AssayGroupTestResultDuplicate" Type="XODBModel.Store.X_AssayGroupTestResultDuplicate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroupTestResult">
+              <PropertyRef Name="AssayGroupTestResultID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTestResultDuplicate">
+              <PropertyRef Name="AssayGroupTestResultID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestSample_X_DictionarySampleCategory">
+          <End Role="X_DictionarySampleCategory" Type="XODBModel.Store.X_DictionarySampleCategory" Multiplicity="0..1" />
+          <End Role="X_Sample" Type="XODBModel.Store.X_Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleCategory">
+              <PropertyRef Name="SampleCategoryID" />
+            </Principal>
+            <Dependent Role="X_Sample">
+              <PropertyRef Name="SampleCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestSample_X_DictionarySampleState">
+          <End Role="X_DictionarySampleState" Type="XODBModel.Store.X_DictionarySampleState" Multiplicity="0..1" />
+          <End Role="X_Sample" Type="XODBModel.Store.X_Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleState">
+              <PropertyRef Name="SampleStateID" />
+            </Principal>
+            <Dependent Role="X_Sample">
+              <PropertyRef Name="SampleStateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestSample_X_DictionarySampleType">
+          <End Role="X_DictionarySampleType" Type="XODBModel.Store.X_DictionarySampleType" Multiplicity="0..1" />
+          <End Role="X_Sample" Type="XODBModel.Store.X_Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleType">
+              <PropertyRef Name="SampleTypeID" />
+            </Principal>
+            <Dependent Role="X_Sample">
+              <PropertyRef Name="SampleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_CompositeData_X_DictionaryUnit">
+          <End Role="X_DictionaryUnit" Type="XODBModel.Store.X_DictionaryUnit" Multiplicity="0..1" />
+          <End Role="X_Parameter" Type="XODBModel.Store.X_Parameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="X_Parameter">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_ParameterDuplicate_X_Parameter">
+          <End Role="X_Parameter" Type="XODBModel.Store.X_Parameter" Multiplicity="0..1" />
+          <End Role="X_ParameterDuplicate" Type="XODBModel.Store.X_ParameterDuplicate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_ParameterDuplicate">
+              <PropertyRef Name="Parameter1ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_ParameterDuplicate_X_Parameter1">
+          <End Role="X_Parameter" Type="XODBModel.Store.X_Parameter" Multiplicity="0..1" />
+          <End Role="X_ParameterDuplicate" Type="XODBModel.Store.X_ParameterDuplicate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_ParameterDuplicate">
+              <PropertyRef Name="Parameter2ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_ParameterGroup_X_ParameterGroup">
+          <End Role="X_Parameter" Type="XODBModel.Store.X_Parameter" Multiplicity="1" />
+          <End Role="X_ParameterGroup" Type="XODBModel.Store.X_ParameterGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_ParameterGroup">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XODBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="XODBImportAssayEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="X_AssayGroup" EntityType="XODBModel.X_AssayGroup" />
+          <EntitySet Name="X_AssayGroupStandardTestResult" EntityType="XODBModel.X_AssayGroupStandardTestResult" />
+          <EntitySet Name="X_AssayGroupTest" EntityType="XODBModel.X_AssayGroupTest" />
+          <EntitySet Name="X_AssayGroupTestResult" EntityType="XODBModel.X_AssayGroupTestResult" />
+          <EntitySet Name="X_AssayGroupTestResultComment" EntityType="XODBModel.X_AssayGroupTestResultComment" />
+          <EntitySet Name="X_AssayGroupTestResultDuplicate" EntityType="XODBModel.X_AssayGroupTestResultDuplicate" />
+          <EntitySet Name="X_DictionarySampleCategory" EntityType="XODBModel.X_DictionarySampleCategory" />
+          <EntitySet Name="X_DictionarySampleState" EntityType="XODBModel.X_DictionarySampleState" />
+          <EntitySet Name="X_DictionarySampleType" EntityType="XODBModel.X_DictionarySampleType" />
+          <EntitySet Name="X_DictionaryUnit" EntityType="XODBModel.X_DictionaryUnit" />
+          <EntitySet Name="X_Parameter_ASSAY" EntityType="XODBModel.X_Parameter_ASSAY" />
+          <EntitySet Name="X_ParameterDuplicate" EntityType="XODBModel.X_ParameterDuplicate" />
+          <EntitySet Name="X_Sample" EntityType="XODBModel.X_Sample" />
+          <AssociationSet Name="FK_X_AssayGroupTest_X_AssayGroup" Association="XODBModel.FK_X_AssayGroupTest_X_AssayGroup">
+            <End Role="X_AssayGroup" EntitySet="X_AssayGroup" />
+            <End Role="X_AssayGroupTest" EntitySet="X_AssayGroupTest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_AssayGroupTest" Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_AssayGroupTest">
+            <End Role="X_AssayGroupTest" EntitySet="X_AssayGroupTest" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_AssayGroupTestSample" Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_AssayGroupTestSample">
+            <End Role="X_Sample" EntitySet="X_Sample" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_DictionarySample_Category" Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySample_Category">
+            <End Role="X_DictionarySampleCategory" EntitySet="X_DictionarySampleCategory" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_DictionarySampleState" Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySampleState">
+            <End Role="X_DictionarySampleState" EntitySet="X_DictionarySampleState" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupStandardTestResult_X_DictionarySampleType" Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySampleType">
+            <End Role="X_DictionarySampleType" EntitySet="X_DictionarySampleType" />
+            <End Role="X_AssayGroupStandardTestResult" EntitySet="X_AssayGroupStandardTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTest_X_Parameter" Association="XODBModel.FK_X_AssayGroupTest_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Parameter_ASSAY" />
+            <End Role="X_AssayGroupTest" EntitySet="X_AssayGroupTest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestResult_X_AssayGroupTest" Association="XODBModel.FK_X_AssayGroupTestResult_X_AssayGroupTest">
+            <End Role="X_AssayGroupTest" EntitySet="X_AssayGroupTest" />
+            <End Role="X_AssayGroupTestResult" EntitySet="X_AssayGroupTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestResult_X_AssayGroupTestSample" Association="XODBModel.FK_X_AssayGroupTestResult_X_AssayGroupTestSample">
+            <End Role="X_Sample" EntitySet="X_Sample" />
+            <End Role="X_AssayGroupTestResult" EntitySet="X_AssayGroupTestResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestResultComment_X_AssayGroupTestResult" Association="XODBModel.FK_X_AssayGroupTestResultComment_X_AssayGroupTestResult">
+            <End Role="X_AssayGroupTestResult" EntitySet="X_AssayGroupTestResult" />
+            <End Role="X_AssayGroupTestResultComment" EntitySet="X_AssayGroupTestResultComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestResultDuplicate_X_AssayGroupTestResult" Association="XODBModel.FK_X_AssayGroupTestResultDuplicate_X_AssayGroupTestResult">
+            <End Role="X_AssayGroupTestResult" EntitySet="X_AssayGroupTestResult" />
+            <End Role="X_AssayGroupTestResultDuplicate" EntitySet="X_AssayGroupTestResultDuplicate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestSample_X_DictionarySampleCategory" Association="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleCategory">
+            <End Role="X_DictionarySampleCategory" EntitySet="X_DictionarySampleCategory" />
+            <End Role="X_Sample" EntitySet="X_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestSample_X_DictionarySampleState" Association="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleState">
+            <End Role="X_DictionarySampleState" EntitySet="X_DictionarySampleState" />
+            <End Role="X_Sample" EntitySet="X_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_AssayGroupTestSample_X_DictionarySampleType" Association="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleType">
+            <End Role="X_DictionarySampleType" EntitySet="X_DictionarySampleType" />
+            <End Role="X_Sample" EntitySet="X_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_CompositeData_X_DictionaryUnit" Association="XODBModel.FK_X_CompositeData_X_DictionaryUnit">
+            <End Role="X_DictionaryUnit" EntitySet="X_DictionaryUnit" />
+            <End Role="X_Parameter" EntitySet="X_Parameter_ASSAY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_ParameterDuplicate_X_Parameter" Association="XODBModel.FK_X_ParameterDuplicate_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Parameter_ASSAY" />
+            <End Role="X_ParameterDuplicate" EntitySet="X_ParameterDuplicate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_ParameterDuplicate_X_Parameter1" Association="XODBModel.FK_X_ParameterDuplicate_X_Parameter1">
+            <End Role="X_Parameter" EntitySet="X_Parameter_ASSAY" />
+            <End Role="X_ParameterDuplicate" EntitySet="X_ParameterDuplicate" />
+          </AssociationSet>
+          <EntitySet Name="X_ParameterGroup" EntityType="XODBModel.X_ParameterGroup" />
+          <AssociationSet Name="FK_X_ParameterGroup_X_ParameterGroup" Association="XODBModel.FK_X_ParameterGroup_X_ParameterGroup">
+            <End Role="X_Parameter" EntitySet="X_Parameter_ASSAY" />
+            <End Role="X_ParameterGroup" EntitySet="X_ParameterGroup" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="X_AssayGroup">
+          <Key>
+            <PropertyRef Name="AssayGroupID" />
+          </Key>
+          <Property Name="AssayGroupID" Type="Guid" Nullable="false" />
+          <Property Name="ProjectID" Type="Guid" />
+          <Property Name="AssayGroupName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="LabCompanyID" Type="Guid" />
+          <Property Name="Submitted" Type="DateTime" Precision="0" />
+          <Property Name="SubmittedContactID" Type="Guid" />
+          <Property Name="Received" Type="DateTime" Precision="0" />
+          <Property Name="ReceivedContactID" Type="Guid" />
+          <Property Name="Entered" Type="DateTime" Precision="0" />
+          <Property Name="EnteredContactID" Type="Guid" />
+          <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_AssayGroupTest" Relationship="XODBModel.FK_X_AssayGroupTest_X_AssayGroup" FromRole="X_AssayGroup" ToRole="X_AssayGroupTest" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupStandardTestResult">
+          <Key>
+            <PropertyRef Name="AssayGroupStandardTestResultID" />
+          </Key>
+          <Property Name="AssayGroupStandardTestResultID" Type="Guid" Nullable="false" />
+          <Property Name="AssayGroupTestSampleID" Type="Guid" />
+          <Property Name="AssayGroupTestID" Type="Guid" />
+          <Property Name="AssayStandardID" Type="Guid" />
+          <Property Name="SampleCategoryID" Type="Guid" />
+          <Property Name="SampleStateID" Type="Guid" />
+          <Property Name="SampleTypeID" Type="Guid" />
+          <Property Name="LabResultText" Type="String" MaxLength="58" Unicode="true" FixedLength="false" />
+          <Property Name="LabResult" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="LabSampleNumber" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="LabBatchNumber" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Sampled" Type="DateTime" Precision="0" />
+          <Property Name="SampledBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_AssayGroupTest" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_AssayGroupTest" FromRole="X_AssayGroupStandardTestResult" ToRole="X_AssayGroupTest" />
+          <NavigationProperty Name="X_Sample" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_AssayGroupTestSample" FromRole="X_AssayGroupStandardTestResult" ToRole="X_Sample" />
+          <NavigationProperty Name="X_DictionarySampleCategory" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySample_Category" FromRole="X_AssayGroupStandardTestResult" ToRole="X_DictionarySampleCategory" />
+          <NavigationProperty Name="X_DictionarySampleState" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySampleState" FromRole="X_AssayGroupStandardTestResult" ToRole="X_DictionarySampleState" />
+          <NavigationProperty Name="X_DictionarySampleType" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySampleType" FromRole="X_AssayGroupStandardTestResult" ToRole="X_DictionarySampleType" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupTest">
+          <Key>
+            <PropertyRef Name="AssayGroupTestID" />
+          </Key>
+          <Property Name="AssayGroupTestID" Type="Guid" Nullable="false" />
+          <Property Name="AssayGroupID" Type="Guid" />
+          <Property Name="AssayTypeName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="AssayTestName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="ParameterID" Type="Guid" />
+          <Property Name="AssayTestPriority" Type="Int32" />
+          <Property Name="AssayMethodID" Type="Guid" />
+          <Property Name="AssayTypeID" Type="Guid" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_AssayGroup" Relationship="XODBModel.FK_X_AssayGroupTest_X_AssayGroup" FromRole="X_AssayGroupTest" ToRole="X_AssayGroup" />
+          <NavigationProperty Name="X_AssayGroupStandardTestResult" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_AssayGroupTest" FromRole="X_AssayGroupTest" ToRole="X_AssayGroupStandardTestResult" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODBModel.FK_X_AssayGroupTest_X_Parameter" FromRole="X_AssayGroupTest" ToRole="X_Parameter" />
+          <NavigationProperty Name="X_AssayGroupTestResult" Relationship="XODBModel.FK_X_AssayGroupTestResult_X_AssayGroupTest" FromRole="X_AssayGroupTest" ToRole="X_AssayGroupTestResult" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupTestResult">
+          <Key>
+            <PropertyRef Name="AssayGroupTestResultID" />
+          </Key>
+          <Property Name="AssayGroupTestResultID" Type="Guid" Nullable="false" />
+          <Property Name="SampleID" Type="Guid" />
+          <Property Name="AssayGroupTestID" Type="Guid" Nullable="false" />
+          <Property Name="LabResultText" Type="String" MaxLength="58" Unicode="true" FixedLength="false" />
+          <Property Name="LabResult" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="LabSampleNumber" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="LabBatchNumber" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Sampled" Type="DateTime" Precision="0" />
+          <Property Name="SampledBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_AssayGroupTest" Relationship="XODBModel.FK_X_AssayGroupTestResult_X_AssayGroupTest" FromRole="X_AssayGroupTestResult" ToRole="X_AssayGroupTest" />
+          <NavigationProperty Name="X_Sample" Relationship="XODBModel.FK_X_AssayGroupTestResult_X_AssayGroupTestSample" FromRole="X_AssayGroupTestResult" ToRole="X_Sample" />
+          <NavigationProperty Name="X_AssayGroupTestResultComment" Relationship="XODBModel.FK_X_AssayGroupTestResultComment_X_AssayGroupTestResult" FromRole="X_AssayGroupTestResult" ToRole="X_AssayGroupTestResultComment" />
+          <NavigationProperty Name="X_AssayGroupTestResultDuplicate" Relationship="XODBModel.FK_X_AssayGroupTestResultDuplicate_X_AssayGroupTestResult" FromRole="X_AssayGroupTestResult" ToRole="X_AssayGroupTestResultDuplicate" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupTestResultComment">
+          <Key>
+            <PropertyRef Name="AssayGroupTestResultCommentID" />
+          </Key>
+          <Property Name="AssayGroupTestResultCommentID" Type="Guid" Nullable="false" />
+          <Property Name="AssayGroupTestResultID" Type="Guid" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_AssayGroupTestResult" Relationship="XODBModel.FK_X_AssayGroupTestResultComment_X_AssayGroupTestResult" FromRole="X_AssayGroupTestResultComment" ToRole="X_AssayGroupTestResult" />
+        </EntityType>
+        <EntityType Name="X_AssayGroupTestResultDuplicate">
+          <Key>
+            <PropertyRef Name="AssayGroupTestResultDuplicateID" />
+          </Key>
+          <Property Name="AssayGroupTestResultDuplicateID" Type="Guid" Nullable="false" />
+          <Property Name="AssayGroupTestResultID" Type="Guid" Nullable="false" />
+          <Property Name="LabResultText" Type="String" MaxLength="58" Unicode="true" FixedLength="false" />
+          <Property Name="LabResult" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="LabSampleNumber" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="LabBatchNumber" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Sampled" Type="DateTime" Precision="0" />
+          <Property Name="SampledBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_AssayGroupTestResult" Relationship="XODBModel.FK_X_AssayGroupTestResultDuplicate_X_AssayGroupTestResult" FromRole="X_AssayGroupTestResultDuplicate" ToRole="X_AssayGroupTestResult" />
+        </EntityType>
+        <EntityType Name="X_DictionarySampleCategory">
+          <Key>
+            <PropertyRef Name="SampleCategoryID" />
+          </Key>
+          <Property Name="SampleCategoryID" Type="Guid" Nullable="false" />
+          <Property Name="StandardSampleCategoryName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CoalSampleCategoryName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="GoldSampleCategoryName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CustomSampleCategoryName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="X_AssayGroupStandardTestResult" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySample_Category" FromRole="X_DictionarySampleCategory" ToRole="X_AssayGroupStandardTestResult" />
+          <NavigationProperty Name="X_Sample" Relationship="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleCategory" FromRole="X_DictionarySampleCategory" ToRole="X_Sample" />
+        </EntityType>
+        <EntityType Name="X_DictionarySampleState">
+          <Key>
+            <PropertyRef Name="SampleStateID" />
+          </Key>
+          <Property Name="SampleStateID" Type="Guid" Nullable="false" />
+          <Property Name="StandardSampleStateName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CoalSampleStateName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="GoldSampleStateName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CustomSampleStateName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="X_AssayGroupStandardTestResult" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySampleState" FromRole="X_DictionarySampleState" ToRole="X_AssayGroupStandardTestResult" />
+          <NavigationProperty Name="X_Sample" Relationship="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleState" FromRole="X_DictionarySampleState" ToRole="X_Sample" />
+        </EntityType>
+        <EntityType Name="X_DictionarySampleType">
+          <Key>
+            <PropertyRef Name="SampleTypeID" />
+          </Key>
+          <Property Name="SampleTypeID" Type="Guid" Nullable="false" />
+          <Property Name="StandardSampleTypeName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CoalSampleTypeName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="GoldSampleTypeName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CustomSampleTypeName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="X_AssayGroupStandardTestResult" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySampleType" FromRole="X_DictionarySampleType" ToRole="X_AssayGroupStandardTestResult" />
+          <NavigationProperty Name="X_Sample" Relationship="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleType" FromRole="X_DictionarySampleType" ToRole="X_Sample" />
+        </EntityType>
+        <EntityType Name="X_DictionaryUnit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="Guid" Nullable="false" />
+          <Property Name="StrictlySI" Type="Boolean" />
+          <Property Name="EquivalentUnit" Type="Guid" />
+          <Property Name="EquivalentMultiplier" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="StandardUnitName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CoalUnitName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="GoldUnitName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CustomUnitName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODBModel.FK_X_CompositeData_X_DictionaryUnit" FromRole="X_DictionaryUnit" ToRole="X_Parameter" />
+        </EntityType>
+        <EntityType Name="X_Parameter_ASSAY">
+          <Key>
+            <PropertyRef Name="ParameterID" />
+          </Key>
+          <Property Name="ParameterID" Type="Guid" Nullable="false" />
+          <Property Name="ParameterType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ParameterName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DefaultParameterValue" Type="Decimal" Precision="38" Scale="20" />
+          <Property Name="DefaultParameterText" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="UnitID" Type="Guid" />
+          <Property Name="Format" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Locale" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_AssayGroupTest" Relationship="XODBModel.FK_X_AssayGroupTest_X_Parameter" FromRole="X_Parameter" ToRole="X_AssayGroupTest" />
+          <NavigationProperty Name="X_DictionaryUnit" Relationship="XODBModel.FK_X_CompositeData_X_DictionaryUnit" FromRole="X_Parameter" ToRole="X_DictionaryUnit" />
+          <NavigationProperty Name="X_ParameterDuplicate" Relationship="XODBModel.FK_X_ParameterDuplicate_X_Parameter" FromRole="X_Parameter" ToRole="X_ParameterDuplicate" />
+          <NavigationProperty Name="X_ParameterDuplicate1" Relationship="XODBModel.FK_X_ParameterDuplicate_X_Parameter1" FromRole="X_Parameter" ToRole="X_ParameterDuplicate" />
+          <NavigationProperty Name="X_ParameterGroup" Relationship="XODBModel.FK_X_ParameterGroup_X_ParameterGroup" FromRole="X_Parameter" ToRole="X_ParameterGroup" />
+        </EntityType>
+        <EntityType Name="X_ParameterDuplicate">
+          <Key>
+            <PropertyRef Name="ParameterDuplicateID" />
+          </Key>
+          <Property Name="ParameterDuplicateID" Type="Guid" Nullable="false" />
+          <Property Name="Parameter1ID" Type="Guid" />
+          <Property Name="Parameter2ID" Type="Guid" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODBModel.FK_X_ParameterDuplicate_X_Parameter" FromRole="X_ParameterDuplicate" ToRole="X_Parameter" />
+          <NavigationProperty Name="X_Parameter1" Relationship="XODBModel.FK_X_ParameterDuplicate_X_Parameter1" FromRole="X_ParameterDuplicate" ToRole="X_Parameter" />
+        </EntityType>
+        <EntityType Name="X_Sample">
+          <Key>
+            <PropertyRef Name="SampleID" />
+          </Key>
+          <Property Name="SampleID" Type="Guid" Nullable="false" />
+          <Property Name="HeaderID" Type="Guid" />
+          <Property Name="SampleCategoryID" Type="Guid" />
+          <Property Name="SampleStateID" Type="Guid" />
+          <Property Name="SampleTypeID" Type="Guid" />
+          <Property Name="SampleName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="SampleNumber" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="SampleTaken" Type="DateTime" Precision="3" />
+          <Property Name="FromDepth" Type="Decimal" Precision="7" Scale="3" />
+          <Property Name="ToDepth" Type="Decimal" Precision="7" Scale="3" />
+          <Property Name="SampleMassKg" Type="Decimal" Precision="6" Scale="4" />
+          <Property Name="DryMassKg" Type="Decimal" Precision="6" Scale="4" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_AssayGroupStandardTestResult" Relationship="XODBModel.FK_X_AssayGroupStandardTestResult_X_AssayGroupTestSample" FromRole="X_Sample" ToRole="X_AssayGroupStandardTestResult" />
+          <NavigationProperty Name="X_AssayGroupTestResult" Relationship="XODBModel.FK_X_AssayGroupTestResult_X_AssayGroupTestSample" FromRole="X_Sample" ToRole="X_AssayGroupTestResult" />
+          <NavigationProperty Name="X_DictionarySampleCategory" Relationship="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleCategory" FromRole="X_Sample" ToRole="X_DictionarySampleCategory" />
+          <NavigationProperty Name="X_DictionarySampleState" Relationship="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleState" FromRole="X_Sample" ToRole="X_DictionarySampleState" />
+          <NavigationProperty Name="X_DictionarySampleType" Relationship="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleType" FromRole="X_Sample" ToRole="X_DictionarySampleType" />
+        </EntityType>
+        <Association Name="FK_X_AssayGroupTest_X_AssayGroup">
+          <End Role="X_AssayGroup" Type="XODBModel.X_AssayGroup" Multiplicity="0..1" />
+          <End Role="X_AssayGroupTest" Type="XODBModel.X_AssayGroupTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroup">
+              <PropertyRef Name="AssayGroupID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTest">
+              <PropertyRef Name="AssayGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_AssayGroupTest">
+          <End Role="X_AssayGroupTest" Type="XODBModel.X_AssayGroupTest" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroupTest">
+              <PropertyRef Name="AssayGroupTestID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="AssayGroupTestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_AssayGroupTestSample">
+          <End Role="X_Sample" Type="XODBModel.X_Sample" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Sample">
+              <PropertyRef Name="SampleID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="AssayGroupTestSampleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_DictionarySample_Category">
+          <End Role="X_DictionarySampleCategory" Type="XODBModel.X_DictionarySampleCategory" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleCategory">
+              <PropertyRef Name="SampleCategoryID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="SampleCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_DictionarySampleState">
+          <End Role="X_DictionarySampleState" Type="XODBModel.X_DictionarySampleState" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleState">
+              <PropertyRef Name="SampleStateID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="SampleStateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupStandardTestResult_X_DictionarySampleType">
+          <End Role="X_DictionarySampleType" Type="XODBModel.X_DictionarySampleType" Multiplicity="0..1" />
+          <End Role="X_AssayGroupStandardTestResult" Type="XODBModel.X_AssayGroupStandardTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleType">
+              <PropertyRef Name="SampleTypeID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupStandardTestResult">
+              <PropertyRef Name="SampleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTest_X_Parameter">
+          <End Role="X_Parameter" Type="XODBModel.X_Parameter_ASSAY" Multiplicity="0..1" />
+          <End Role="X_AssayGroupTest" Type="XODBModel.X_AssayGroupTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTest">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestResult_X_AssayGroupTest">
+          <End Role="X_AssayGroupTest" Type="XODBModel.X_AssayGroupTest" Multiplicity="1" />
+          <End Role="X_AssayGroupTestResult" Type="XODBModel.X_AssayGroupTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroupTest">
+              <PropertyRef Name="AssayGroupTestID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTestResult">
+              <PropertyRef Name="AssayGroupTestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestResult_X_AssayGroupTestSample">
+          <End Role="X_Sample" Type="XODBModel.X_Sample" Multiplicity="0..1" />
+          <End Role="X_AssayGroupTestResult" Type="XODBModel.X_AssayGroupTestResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Sample">
+              <PropertyRef Name="SampleID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTestResult">
+              <PropertyRef Name="SampleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestResultComment_X_AssayGroupTestResult">
+          <End Role="X_AssayGroupTestResult" Type="XODBModel.X_AssayGroupTestResult" Multiplicity="1" />
+          <End Role="X_AssayGroupTestResultComment" Type="XODBModel.X_AssayGroupTestResultComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroupTestResult">
+              <PropertyRef Name="AssayGroupTestResultID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTestResultComment">
+              <PropertyRef Name="AssayGroupTestResultID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestResultDuplicate_X_AssayGroupTestResult">
+          <End Role="X_AssayGroupTestResult" Type="XODBModel.X_AssayGroupTestResult" Multiplicity="1" />
+          <End Role="X_AssayGroupTestResultDuplicate" Type="XODBModel.X_AssayGroupTestResultDuplicate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_AssayGroupTestResult">
+              <PropertyRef Name="AssayGroupTestResultID" />
+            </Principal>
+            <Dependent Role="X_AssayGroupTestResultDuplicate">
+              <PropertyRef Name="AssayGroupTestResultID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestSample_X_DictionarySampleCategory">
+          <End Role="X_DictionarySampleCategory" Type="XODBModel.X_DictionarySampleCategory" Multiplicity="0..1" />
+          <End Role="X_Sample" Type="XODBModel.X_Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleCategory">
+              <PropertyRef Name="SampleCategoryID" />
+            </Principal>
+            <Dependent Role="X_Sample">
+              <PropertyRef Name="SampleCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestSample_X_DictionarySampleState">
+          <End Role="X_DictionarySampleState" Type="XODBModel.X_DictionarySampleState" Multiplicity="0..1" />
+          <End Role="X_Sample" Type="XODBModel.X_Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleState">
+              <PropertyRef Name="SampleStateID" />
+            </Principal>
+            <Dependent Role="X_Sample">
+              <PropertyRef Name="SampleStateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_AssayGroupTestSample_X_DictionarySampleType">
+          <End Role="X_DictionarySampleType" Type="XODBModel.X_DictionarySampleType" Multiplicity="0..1" />
+          <End Role="X_Sample" Type="XODBModel.X_Sample" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionarySampleType">
+              <PropertyRef Name="SampleTypeID" />
+            </Principal>
+            <Dependent Role="X_Sample">
+              <PropertyRef Name="SampleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_CompositeData_X_DictionaryUnit">
+          <End Role="X_DictionaryUnit" Type="XODBModel.X_DictionaryUnit" Multiplicity="0..1" />
+          <End Role="X_Parameter" Type="XODBModel.X_Parameter_ASSAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="X_Parameter">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_ParameterDuplicate_X_Parameter">
+          <End Role="X_Parameter" Type="XODBModel.X_Parameter_ASSAY" Multiplicity="0..1" />
+          <End Role="X_ParameterDuplicate" Type="XODBModel.X_ParameterDuplicate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_ParameterDuplicate">
+              <PropertyRef Name="Parameter1ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_ParameterDuplicate_X_Parameter1">
+          <End Role="X_Parameter" Type="XODBModel.X_Parameter_ASSAY" Multiplicity="0..1" />
+          <End Role="X_ParameterDuplicate" Type="XODBModel.X_ParameterDuplicate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_ParameterDuplicate">
+              <PropertyRef Name="Parameter2ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="X_ParameterGroup">
+          <Key>
+            <PropertyRef Name="ParameterGroupID" />
+          </Key>
+          <Property Type="Guid" Name="ParameterGroupID" Nullable="false" />
+          <Property Type="Guid" Name="ParameterID" Nullable="false" />
+          <Property Type="Guid" Name="GroupID" Nullable="false" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODBModel.FK_X_ParameterGroup_X_ParameterGroup" FromRole="X_ParameterGroup" ToRole="X_Parameter" />
+        </EntityType>
+        <Association Name="FK_X_ParameterGroup_X_ParameterGroup">
+          <End Type="XODBModel.X_Parameter_ASSAY" Role="X_Parameter" Multiplicity="1" />
+          <End Type="XODBModel.X_ParameterGroup" Role="X_ParameterGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_ParameterGroup">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XODBModelStoreContainer" CdmEntityContainer="XODBImportAssayEntities">
+          <EntitySetMapping Name="X_AssayGroup">
+            <EntityTypeMapping TypeName="XODBModel.X_AssayGroup">
+              <MappingFragment StoreEntitySet="X_AssayGroup">
+                <ScalarProperty Name="AssayGroupID" ColumnName="AssayGroupID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="AssayGroupName" ColumnName="AssayGroupName" />
+                <ScalarProperty Name="LabCompanyID" ColumnName="LabCompanyID" />
+                <ScalarProperty Name="Submitted" ColumnName="Submitted" />
+                <ScalarProperty Name="SubmittedContactID" ColumnName="SubmittedContactID" />
+                <ScalarProperty Name="Received" ColumnName="Received" />
+                <ScalarProperty Name="ReceivedContactID" ColumnName="ReceivedContactID" />
+                <ScalarProperty Name="Entered" ColumnName="Entered" />
+                <ScalarProperty Name="EnteredContactID" ColumnName="EnteredContactID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_AssayGroupStandardTestResult">
+            <EntityTypeMapping TypeName="XODBModel.X_AssayGroupStandardTestResult">
+              <MappingFragment StoreEntitySet="X_AssayGroupStandardTestResult">
+                <ScalarProperty Name="AssayGroupStandardTestResultID" ColumnName="AssayGroupStandardTestResultID" />
+                <ScalarProperty Name="AssayGroupTestSampleID" ColumnName="AssayGroupTestSampleID" />
+                <ScalarProperty Name="AssayGroupTestID" ColumnName="AssayGroupTestID" />
+                <ScalarProperty Name="AssayStandardID" ColumnName="AssayStandardID" />
+                <ScalarProperty Name="SampleCategoryID" ColumnName="SampleCategoryID" />
+                <ScalarProperty Name="SampleStateID" ColumnName="SampleStateID" />
+                <ScalarProperty Name="SampleTypeID" ColumnName="SampleTypeID" />
+                <ScalarProperty Name="LabResultText" ColumnName="LabResultText" />
+                <ScalarProperty Name="LabResult" ColumnName="LabResult" />
+                <ScalarProperty Name="LabSampleNumber" ColumnName="LabSampleNumber" />
+                <ScalarProperty Name="LabBatchNumber" ColumnName="LabBatchNumber" />
+                <ScalarProperty Name="Sampled" ColumnName="Sampled" />
+                <ScalarProperty Name="SampledBy" ColumnName="SampledBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_AssayGroupTest">
+            <EntityTypeMapping TypeName="XODBModel.X_AssayGroupTest">
+              <MappingFragment StoreEntitySet="X_AssayGroupTest">
+                <ScalarProperty Name="AssayGroupTestID" ColumnName="AssayGroupTestID" />
+                <ScalarProperty Name="AssayGroupID" ColumnName="AssayGroupID" />
+                <ScalarProperty Name="AssayTypeName" ColumnName="AssayTypeName" />
+                <ScalarProperty Name="AssayTestName" ColumnName="AssayTestName" />
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+                <ScalarProperty Name="AssayTestPriority" ColumnName="AssayTestPriority" />
+                <ScalarProperty Name="AssayMethodID" ColumnName="AssayMethodID" />
+                <ScalarProperty Name="AssayTypeID" ColumnName="AssayTypeID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_AssayGroupTestResult">
+            <EntityTypeMapping TypeName="XODBModel.X_AssayGroupTestResult">
+              <MappingFragment StoreEntitySet="X_AssayGroupTestResult">
+                <ScalarProperty Name="AssayGroupTestResultID" ColumnName="AssayGroupTestResultID" />
+                <ScalarProperty Name="SampleID" ColumnName="SampleID" />
+                <ScalarProperty Name="AssayGroupTestID" ColumnName="AssayGroupTestID" />
+                <ScalarProperty Name="LabResultText" ColumnName="LabResultText" />
+                <ScalarProperty Name="LabResult" ColumnName="LabResult" />
+                <ScalarProperty Name="LabSampleNumber" ColumnName="LabSampleNumber" />
+                <ScalarProperty Name="LabBatchNumber" ColumnName="LabBatchNumber" />
+                <ScalarProperty Name="Sampled" ColumnName="Sampled" />
+                <ScalarProperty Name="SampledBy" ColumnName="SampledBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_AssayGroupTestResultComment">
+            <EntityTypeMapping TypeName="XODBModel.X_AssayGroupTestResultComment">
+              <MappingFragment StoreEntitySet="X_AssayGroupTestResultComment">
+                <ScalarProperty Name="AssayGroupTestResultCommentID" ColumnName="AssayGroupTestResultCommentID" />
+                <ScalarProperty Name="AssayGroupTestResultID" ColumnName="AssayGroupTestResultID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_AssayGroupTestResultDuplicate">
+            <EntityTypeMapping TypeName="XODBModel.X_AssayGroupTestResultDuplicate">
+              <MappingFragment StoreEntitySet="X_AssayGroupTestResultDuplicate">
+                <ScalarProperty Name="AssayGroupTestResultDuplicateID" ColumnName="AssayGroupTestResultDuplicateID" />
+                <ScalarProperty Name="AssayGroupTestResultID" ColumnName="AssayGroupTestResultID" />
+                <ScalarProperty Name="LabResultText" ColumnName="LabResultText" />
+                <ScalarProperty Name="LabResult" ColumnName="LabResult" />
+                <ScalarProperty Name="LabSampleNumber" ColumnName="LabSampleNumber" />
+                <ScalarProperty Name="LabBatchNumber" ColumnName="LabBatchNumber" />
+                <ScalarProperty Name="Sampled" ColumnName="Sampled" />
+                <ScalarProperty Name="SampledBy" ColumnName="SampledBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_DictionarySampleCategory">
+            <EntityTypeMapping TypeName="XODBModel.X_DictionarySampleCategory">
+              <MappingFragment StoreEntitySet="X_DictionarySampleCategory">
+                <ScalarProperty Name="SampleCategoryID" ColumnName="SampleCategoryID" />
+                <ScalarProperty Name="StandardSampleCategoryName" ColumnName="StandardSampleCategoryName" />
+                <ScalarProperty Name="CoalSampleCategoryName" ColumnName="CoalSampleCategoryName" />
+                <ScalarProperty Name="GoldSampleCategoryName" ColumnName="GoldSampleCategoryName" />
+                <ScalarProperty Name="CustomSampleCategoryName" ColumnName="CustomSampleCategoryName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_DictionarySampleState">
+            <EntityTypeMapping TypeName="XODBModel.X_DictionarySampleState">
+              <MappingFragment StoreEntitySet="X_DictionarySampleState">
+                <ScalarProperty Name="SampleStateID" ColumnName="SampleStateID" />
+                <ScalarProperty Name="StandardSampleStateName" ColumnName="StandardSampleStateName" />
+                <ScalarProperty Name="CoalSampleStateName" ColumnName="CoalSampleStateName" />
+                <ScalarProperty Name="GoldSampleStateName" ColumnName="GoldSampleStateName" />
+                <ScalarProperty Name="CustomSampleStateName" ColumnName="CustomSampleStateName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_DictionarySampleType">
+            <EntityTypeMapping TypeName="XODBModel.X_DictionarySampleType">
+              <MappingFragment StoreEntitySet="X_DictionarySampleType">
+                <ScalarProperty Name="SampleTypeID" ColumnName="SampleTypeID" />
+                <ScalarProperty Name="StandardSampleTypeName" ColumnName="StandardSampleTypeName" />
+                <ScalarProperty Name="CoalSampleTypeName" ColumnName="CoalSampleTypeName" />
+                <ScalarProperty Name="GoldSampleTypeName" ColumnName="GoldSampleTypeName" />
+                <ScalarProperty Name="CustomSampleTypeName" ColumnName="CustomSampleTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_DictionaryUnit">
+            <EntityTypeMapping TypeName="XODBModel.X_DictionaryUnit">
+              <MappingFragment StoreEntitySet="X_DictionaryUnit">
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="StrictlySI" ColumnName="StrictlySI" />
+                <ScalarProperty Name="EquivalentUnit" ColumnName="EquivalentUnit" />
+                <ScalarProperty Name="EquivalentMultiplier" ColumnName="EquivalentMultiplier" />
+                <ScalarProperty Name="StandardUnitName" ColumnName="StandardUnitName" />
+                <ScalarProperty Name="CoalUnitName" ColumnName="CoalUnitName" />
+                <ScalarProperty Name="GoldUnitName" ColumnName="GoldUnitName" />
+                <ScalarProperty Name="CustomUnitName" ColumnName="CustomUnitName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_Parameter_ASSAY">
+            <EntityTypeMapping TypeName="XODBModel.X_Parameter_ASSAY">
+              <MappingFragment StoreEntitySet="X_Parameter">
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+                <ScalarProperty Name="ParameterType" ColumnName="ParameterType" />
+                <ScalarProperty Name="ParameterName" ColumnName="ParameterName" />
+                <ScalarProperty Name="DefaultParameterValue" ColumnName="DefaultParameterValue" />
+                <ScalarProperty Name="DefaultParameterText" ColumnName="DefaultParameterText" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="Format" ColumnName="Format" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Locale" ColumnName="Locale" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_ParameterDuplicate">
+            <EntityTypeMapping TypeName="XODBModel.X_ParameterDuplicate">
+              <MappingFragment StoreEntitySet="X_ParameterDuplicate">
+                <ScalarProperty Name="ParameterDuplicateID" ColumnName="ParameterDuplicateID" />
+                <ScalarProperty Name="Parameter1ID" ColumnName="Parameter1ID" />
+                <ScalarProperty Name="Parameter2ID" ColumnName="Parameter2ID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_Sample">
+            <EntityTypeMapping TypeName="XODBModel.X_Sample">
+              <MappingFragment StoreEntitySet="X_Sample">
+                <ScalarProperty Name="SampleID" ColumnName="SampleID" />
+                <ScalarProperty Name="HeaderID" ColumnName="HeaderID" />
+                <ScalarProperty Name="SampleCategoryID" ColumnName="SampleCategoryID" />
+                <ScalarProperty Name="SampleStateID" ColumnName="SampleStateID" />
+                <ScalarProperty Name="SampleTypeID" ColumnName="SampleTypeID" />
+                <ScalarProperty Name="SampleName" ColumnName="SampleName" />
+                <ScalarProperty Name="SampleNumber" ColumnName="SampleNumber" />
+                <ScalarProperty Name="SampleTaken" ColumnName="SampleTaken" />
+                <ScalarProperty Name="FromDepth" ColumnName="FromDepth" />
+                <ScalarProperty Name="ToDepth" ColumnName="ToDepth" />
+                <ScalarProperty Name="SampleMassKg" ColumnName="SampleMassKg" />
+                <ScalarProperty Name="DryMassKg" ColumnName="DryMassKg" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_ParameterGroup">
+            <EntityTypeMapping TypeName="XODBModel.X_ParameterGroup">
+              <MappingFragment StoreEntitySet="X_ParameterGroup">
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+                <ScalarProperty Name="ParameterGroupID" ColumnName="ParameterGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

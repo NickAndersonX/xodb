@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4814C95D-0008-495A-B627-E3FEDA2FB1A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XODB.Import</RootNamespace>
+    <AssemblyName>XODB.Import</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\wwwroot\src\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseImportTools.cs" />
+    <Compile Include="ImportUtils\BlockImport.cs" />
+    <Compile Include="ColumnSpecs\ColumnMetaInfo.cs" />
+    <Compile Include="ColumnSpecs\FKSpecification.cs" />
+    <Compile Include="DataModels\XODBImportAssayEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XODBImportAssayEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\XODBImportAssayEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\XODBImportAssayEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XODBImportAssayEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\XODBImportCollarsEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XODBImportCollarsEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\XODBImportCollarsEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\XODBImportCollarsEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XODBImportCollarsEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\XODBImportModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XODBImportModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\XODBImportModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\XODBImportModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XODBImportModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_AssayGroup.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_AssayGroupStandardTestResult.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_AssayGroupTest.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_AssayGroupTestResult.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_AssayGroupTestResultComment.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_AssayGroupTestResultDuplicate.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_BlockModel.cs">
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_BlockModelBlock.cs">
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_BlockModelBlockData.cs">
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_BlockModelMetadata.cs">
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_DictionaryDataStatus.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_DictionaryHoleStatus.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_DictionaryHoleType.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_DictionarySampleCategory.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_DictionarySampleState.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_DictionarySampleType.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_DictionaryUnit.cs">
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_Header.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_HeaderRelation.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_Lithology.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_MetaData.cs">
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_MetaDataRelation.cs">
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_Parameter.cs">
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_ParameterDuplicate.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_ParameterGroup.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_Parameter_ASSAY.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_Project.cs">
+      <DependentUpon>XODBImportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_Sample.cs">
+      <DependentUpon>XODBImportAssayEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_Survey.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataWrappers\CollarInfo.cs" />
+    <Compile Include="FileIO\FileIO.cs" />
+    <Compile Include="FormatSpecificationIO\ImportDataMapIO.cs" />
+    <Compile Include="FormatSpecification\ColumnMap.cs" />
+    <Compile Include="FormatSpecification\ImportDataMap.cs" />
+    <Compile Include="ModelImportStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ImportUtils\AssayImport.cs" />
+    <Compile Include="ImportUtils\AssayQueries.cs" />
+    <Compile Include="ImportUtils\CollarImport.cs" />
+    <Compile Include="ImportUtils\CollarQueries.cs" />
+    <Compile Include="ImportUtils\GenUtils.cs" />
+    <Compile Include="ImportUtils\LithoQueries.cs" />
+    <Compile Include="ImportUtils\LithoImport.cs" />
+    <Compile Include="ImportUtils\SurveyImport.cs" />
+    <Compile Include="ImportUtils\ForeignKeyUtils.cs" />
+    <Compile Include="ImportUtils\ProjectUtils.cs" />
+    <Compile Include="ImportUtils\SurveyQueries.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="DataModels\XODBImportModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>XODBImportModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="DataModels\XODBImportCollarsEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>XODBImportCollarsEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="DataModels\XODBImportAssayEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>XODBImportAssayEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModels\XODBImportAssayEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XODBImportAssayEntity.edmx</DependentUpon>
+      <LastGenOutput>XODBImportAssayEntity.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataModels\XODBImportAssayEntity.edmx.diagram">
+      <DependentUpon>XODBImportAssayEntity.edmx</DependentUpon>
+    </None>
+    <None Include="DataModels\XODBImportAssayEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XODBImportAssayEntity.edmx</DependentUpon>
+      <LastGenOutput>XODBImportAssayEntity.cs</LastGenOutput>
+    </None>
+    <None Include="DataModels\XODBImportCollarsEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XODBImportCollarsEntity.edmx</DependentUpon>
+      <LastGenOutput>XODBImportCollarsEntity.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataModels\XODBImportCollarsEntity.edmx.diagram">
+      <DependentUpon>XODBImportCollarsEntity.edmx</DependentUpon>
+    </None>
+    <None Include="DataModels\XODBImportCollarsEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XODBImportCollarsEntity.edmx</DependentUpon>
+      <LastGenOutput>XODBImportCollarsEntity.cs</LastGenOutput>
+    </None>
+    <None Include="DataModels\XODBImportModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XODBImportModel.edmx</DependentUpon>
+      <LastGenOutput>XODBImportModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataModels\XODBImportModel.edmx.diagram">
+      <DependentUpon>XODBImportModel.edmx</DependentUpon>
+    </None>
+    <None Include="DataModels\XODBImportModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>XODBImportModel.edmx</DependentUpon>
+      <LastGenOutput>XODBImportModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

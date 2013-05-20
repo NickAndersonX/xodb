@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="93a3fe84a99a4680ac0b70c5ce4791b3" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="XODBImportModel.X_BlockModel" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBImportModel.X_BlockModelBlockData" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBImportModel.X_BlockModelMetadata" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBImportModel.X_DictionaryUnit" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBImportModel.X_Parameter" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="XODBImportModel.FK_X_BlockModelMetadata_X_BlockModel" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBImportModel.FK_X_BlockModelBlockData_X_Parameter" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBImportModel.FK_X_BlockModelMetadata_X_Parameter" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBImportModel.FK_X_CompositeData_X_DictionaryUnit" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="XODBImportModel.X_BlockModelBlock" Width="3.25" PointX="10" PointY="7.5" />
+        <AssociationConnector Association="XODBImportModel.FK_X_BlockModelBlock_X_BlockModel" />
+        <AssociationConnector Association="XODBImportModel.FK_X_BlockModelBlockData_X_BlockModelBlock" />
+        <EntityTypeShape EntityType="XODBImportModel.X_MetaData" Width="1.5" PointX="10.875" PointY="2.75" />
+        <EntityTypeShape EntityType="XODBImportModel.X_MetaDataRelation" Width="1.5" PointX="13.5" PointY="2.75" />
+        <AssociationConnector Association="XODBImportModel.FK_X_MetaDataRelation_X_MetaData" />
+        <EntityTypeShape EntityType="XODBImportModel.X_Project" Width="1.5" PointX="1.875" PointY="11.25" />
+        <AssociationConnector Association="XODBImportModel.FK_X_BlockModel_X_Project" />
+        <AssociationConnector Association="XODBImportModel.FK_X_BlockModelBlockData_X_BlockModel" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

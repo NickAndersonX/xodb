@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eb931c7040074e9bb0358efc2fff9193" Name="Diagram1">
+        <EntityTypeShape EntityType="XODBModel.X_AssayGroup" Width="1.5" PointX="1.5" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_AssayGroupStandardTestResult" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_AssayGroupTest" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_AssayGroupTestResult" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_AssayGroupTestResultComment" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_AssayGroupTestResultDuplicate" Width="1.5" PointX="10.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_DictionarySampleCategory" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_DictionarySampleState" Width="3" PointX="2.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_DictionarySampleType" Width="1.5" PointX="3.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_DictionaryUnit" Width="1.5" PointX="1.5" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_Parameter_ASSAY" Width="2.625" PointX="1.5" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_ParameterDuplicate" Width="3.5" PointX="4.875" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="XODBModel.X_Sample" Width="1.5" PointX="6" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupTest_X_AssayGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_AssayGroupTest" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_AssayGroupTestSample" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySample_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySampleState" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupStandardTestResult_X_DictionarySampleType" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupTest_X_Parameter" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupTestResult_X_AssayGroupTest" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupTestResult_X_AssayGroupTestSample" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupTestResultComment_X_AssayGroupTestResult" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupTestResultDuplicate_X_AssayGroupTestResult" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleState" ManuallyRouted="true" >
+          <ConnectorPoint PointX="5.25" PointY="3.7785953776041659" />
+          <ConnectorPoint PointX="5.745" PointY="3.7785953776041659" />
+          <ConnectorPoint PointX="5.745" PointY="5.1223453776041659" />
+          <ConnectorPoint PointX="6.75" PointY="5.1223453776041659" />
+          <ConnectorPoint PointX="6.75" PointY="6.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="XODBModel.FK_X_AssayGroupTestSample_X_DictionarySampleType" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_CompositeData_X_DictionaryUnit" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_ParameterDuplicate_X_Parameter" ManuallyRouted="false" />
+        <AssociationConnector Association="XODBModel.FK_X_ParameterDuplicate_X_Parameter1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="XODBModel.X_ParameterGroup" Width="1.5" PointX="2.3231749824821835" PointY="0.48380550764678304" />
+        <AssociationConnector Association="XODBModel.FK_X_ParameterGroup_X_ParameterGroup" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

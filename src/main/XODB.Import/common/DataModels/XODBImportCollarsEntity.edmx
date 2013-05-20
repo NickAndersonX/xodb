@@ -1,0 +1,921 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="XODBImportCollarModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="XODBImportCollarModelStoreContainer">
+          <EntitySet Name="X_DictionaryDataStatus" EntityType="XODBImportCollarModel.Store.X_DictionaryDataStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_DictionaryHoleStatus" EntityType="XODBImportCollarModel.Store.X_DictionaryHoleStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_DictionaryHoleType" EntityType="XODBImportCollarModel.Store.X_DictionaryHoleType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_Header" EntityType="XODBImportCollarModel.Store.X_Header" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_HeaderRelation" EntityType="XODBImportCollarModel.Store.X_HeaderRelation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_Lithology" EntityType="XODBImportCollarModel.Store.X_Lithology" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_Survey" EntityType="XODBImportCollarModel.Store.X_Survey" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_X_Header_X_DictionaryData_Status" Association="XODBImportCollarModel.Store.FK_X_Header_X_DictionaryData_Status">
+            <End Role="X_DictionaryDataStatus" EntitySet="X_DictionaryDataStatus" />
+            <End Role="X_Header" EntitySet="X_Header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_Header_X_DictionaryHole_Status" Association="XODBImportCollarModel.Store.FK_X_Header_X_DictionaryHole_Status">
+            <End Role="X_DictionaryHoleStatus" EntitySet="X_DictionaryHoleStatus" />
+            <End Role="X_Header" EntitySet="X_Header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_Header_X_DictionaryHole_Type" Association="XODBImportCollarModel.Store.FK_X_Header_X_DictionaryHole_Type">
+            <End Role="X_DictionaryHoleType" EntitySet="X_DictionaryHoleType" />
+            <End Role="X_Header" EntitySet="X_Header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_HeaderRelation_X_Header" Association="XODBImportCollarModel.Store.FK_X_HeaderRelation_X_Header">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_HeaderRelation" EntitySet="X_HeaderRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_HeaderRelation_X_Header1" Association="XODBImportCollarModel.Store.FK_X_HeaderRelation_X_Header1">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_HeaderRelation" EntitySet="X_HeaderRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_LithologyData_X_Header" Association="XODBImportCollarModel.Store.FK_X_LithologyData_X_Header">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_Lithology" EntitySet="X_Lithology" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_Survey_X_Header" Association="XODBImportCollarModel.Store.FK_X_Survey_X_Header">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_Survey" EntitySet="X_Survey" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="X_DictionaryDataStatus">
+          <Key>
+            <PropertyRef Name="DataStatusID" />
+          </Key>
+          <Property Name="DataStatusID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StandardDataStatusName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="CoalDataStatusName" Type="nvarchar" MaxLength="16" />
+          <Property Name="GoldDataStatusName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustomDataStatusName" Type="nvarchar" MaxLength="16" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="FullDescription" Type="nvarchar(max)" />
+          <Property Name="Thumbnail" Type="varbinary(max)" />
+          <Property Name="OriginalFileDataID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="X_DictionaryHoleStatus">
+          <Key>
+            <PropertyRef Name="HoleStatusID" />
+          </Key>
+          <Property Name="HoleStatusID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StandardHoleStatusName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="CoalHoleStatusName" Type="nvarchar" MaxLength="16" />
+          <Property Name="GoldHoleStatusName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustomHoleStatusName" Type="nvarchar" MaxLength="16" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="FullDescription" Type="nvarchar(max)" />
+          <Property Name="Thumbnail" Type="varbinary(max)" />
+          <Property Name="OriginalFileDataID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="X_DictionaryHoleType">
+          <Key>
+            <PropertyRef Name="HoleTypeID" />
+          </Key>
+          <Property Name="HoleTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StandardHoleTypeName" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="CoalHoleTypeName" Type="nvarchar" MaxLength="16" />
+          <Property Name="GoldHoleTypeName" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustomHoleTypeName" Type="nvarchar" MaxLength="16" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="FullDescription" Type="nvarchar(max)" />
+          <Property Name="Thumbnail" Type="varbinary(max)" />
+          <Property Name="OriginalFileDataID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="X_Header">
+          <Key>
+            <PropertyRef Name="HeaderID" />
+          </Key>
+          <Property Name="HeaderID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProjectID" Type="uniqueidentifier" />
+          <Property Name="HoleName" Type="nvarchar" MaxLength="16" />
+          <Property Name="Site" Type="nvarchar" MaxLength="16" />
+          <Property Name="HoleTypeID" Type="uniqueidentifier" />
+          <Property Name="DataStatusID" Type="uniqueidentifier" />
+          <Property Name="PrimaryHolePurposeID" Type="uniqueidentifier" />
+          <Property Name="SecondaryHolePurposeID" Type="uniqueidentifier" />
+          <Property Name="SurveyAccuracyID" Type="uniqueidentifier" />
+          <Property Name="GeodeticDatumID" Type="uniqueidentifier" />
+          <Property Name="UtmZoneNumber" Type="int" />
+          <Property Name="UtmZoneHemisphere" Type="nvarchar" MaxLength="1" />
+          <Property Name="HeightDatumID" Type="uniqueidentifier" />
+          <Property Name="Easting" Type="numeric" Precision="19" Scale="7" />
+          <Property Name="Northing" Type="numeric" Precision="19" Scale="7" />
+          <Property Name="Elevation" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="Inclination" Type="int" />
+          <Property Name="Azimuth" Type="int" />
+          <Property Name="LocationID" Type="uniqueidentifier" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="CompleteDate" Type="date" />
+          <Property Name="TotalDepth" Type="numeric" Precision="7" Scale="3" />
+          <Property Name="HoleRedrilled" Type="nvarchar" MaxLength="16" />
+          <Property Name="GeologyCompanyID" Type="uniqueidentifier" />
+          <Property Name="HasHadGeotechLogs" Type="bit" />
+          <Property Name="HasHadCorePhotos" Type="bit" />
+          <Property Name="GeophysicalLoggingCompanyID" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID1" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID2" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID3" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID4" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID5" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID6" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID7" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID8" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID9" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID10" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID11" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLogTypeID12" Type="uniqueidentifier" />
+          <Property Name="GeophysicalLoggerID" Type="uniqueidentifier" />
+          <Property Name="StandingWaterLevel" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="StandingWaterLevelDate" Type="date" />
+          <Property Name="DateRehabilitated" Type="date" />
+          <Property Name="HoleStatusID" Type="uniqueidentifier" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_HeaderRelation">
+          <Key>
+            <PropertyRef Name="HeaderRelationID" />
+          </Key>
+          <Property Name="HeaderRelationID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OriginalHeaderID" Type="uniqueidentifier" />
+          <Property Name="RelatedHeaderID" Type="uniqueidentifier" />
+          <Property Name="RelationTypeID" Type="uniqueidentifier" />
+          <Property Name="Related" Type="date" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_Lithology">
+          <Key>
+            <PropertyRef Name="LithologyID" />
+          </Key>
+          <Property Name="LithologyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="HeaderID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FromDepth" Type="numeric" Precision="7" Scale="3" />
+          <Property Name="ToDepth" Type="numeric" Precision="7" Scale="3" />
+          <Property Name="RecoveredThickness" Type="numeric" Precision="7" Scale="3" />
+          <Property Name="DomainID" Type="uniqueidentifier" />
+          <Property Name="SeamID" Type="uniqueidentifier" />
+          <Property Name="PlyID" Type="uniqueidentifier" />
+          <Property Name="StratigraphyID" Type="uniqueidentifier" />
+          <Property Name="HorizonID" Type="uniqueidentifier" />
+          <Property Name="SampleTypeID" Type="uniqueidentifier" />
+          <Property Name="SampleNumber" Type="nvarchar" MaxLength="16" />
+          <Property Name="SampleMassKg" Type="numeric" Precision="6" Scale="4" />
+          <Property Name="IntervalStatusID" Type="uniqueidentifier" />
+          <Property Name="LithologyPercentage" Type="int" />
+          <Property Name="LithologyTypeID" Type="uniqueidentifier" />
+          <Property Name="LithologyQualifierID" Type="uniqueidentifier" />
+          <Property Name="ShadeID" Type="uniqueidentifier" />
+          <Property Name="HueID" Type="uniqueidentifier" />
+          <Property Name="ColourID" Type="uniqueidentifier" />
+          <Property Name="AdjectiveID1" Type="uniqueidentifier" />
+          <Property Name="AdjectiveID2" Type="uniqueidentifier" />
+          <Property Name="AdjectiveID3" Type="uniqueidentifier" />
+          <Property Name="AdjectiveID4" Type="uniqueidentifier" />
+          <Property Name="LithologyInterrelationID" Type="uniqueidentifier" />
+          <Property Name="WeatheringID" Type="uniqueidentifier" />
+          <Property Name="EstimatedStrengthID" Type="uniqueidentifier" />
+          <Property Name="BedSpacingID" Type="uniqueidentifier" />
+          <Property Name="DefectTypeID" Type="uniqueidentifier" />
+          <Property Name="DefectCompletenessID" Type="uniqueidentifier" />
+          <Property Name="DefectSpacingID" Type="uniqueidentifier" />
+          <Property Name="DefectDip" Type="int" />
+          <Property Name="CoreStateID" Type="uniqueidentifier" />
+          <Property Name="MechanicalStateID" Type="uniqueidentifier" />
+          <Property Name="TextureID" Type="uniqueidentifier" />
+          <Property Name="BasalContactID" Type="uniqueidentifier" />
+          <Property Name="SedimentaryFeature1ID" Type="uniqueidentifier" />
+          <Property Name="SedimentaryFeature2ID" Type="uniqueidentifier" />
+          <Property Name="BeddingDip" Type="int" />
+          <Property Name="MineralAndFossilAbundanceID" Type="uniqueidentifier" />
+          <Property Name="MineralAndFossilTypeID" Type="uniqueidentifier" />
+          <Property Name="MineralAndFossilAssociationID" Type="uniqueidentifier" />
+          <Property Name="GasDetectedID" Type="uniqueidentifier" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_Survey">
+          <Key>
+            <PropertyRef Name="SurveyID" />
+          </Key>
+          <Property Name="SurveyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="HeaderID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Depth" Type="numeric" Nullable="false" Precision="7" Scale="3" />
+          <Property Name="Dip" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="MagneticDip" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="MagnetAffected" Type="bit" />
+          <Property Name="OriginalAzimuth" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="CorrectedAzimuth" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="Gravity" Type="numeric" Precision="5" Scale="4" />
+          <Property Name="InstrumentModelID" Type="uniqueidentifier" />
+          <Property Name="InstrumentAssetID" Type="nvarchar" MaxLength="16" />
+          <Property Name="Surveyed" Type="date" />
+          <Property Name="SurveyContactID" Type="uniqueidentifier" />
+          <Property Name="SurveyCompanyID" Type="uniqueidentifier" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_X_Header_X_DictionaryData_Status">
+          <End Role="X_DictionaryDataStatus" Type="XODBImportCollarModel.Store.X_DictionaryDataStatus" Multiplicity="0..1" />
+          <End Role="X_Header" Type="XODBImportCollarModel.Store.X_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryDataStatus">
+              <PropertyRef Name="DataStatusID" />
+            </Principal>
+            <Dependent Role="X_Header">
+              <PropertyRef Name="DataStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_Header_X_DictionaryHole_Status">
+          <End Role="X_DictionaryHoleStatus" Type="XODBImportCollarModel.Store.X_DictionaryHoleStatus" Multiplicity="0..1" />
+          <End Role="X_Header" Type="XODBImportCollarModel.Store.X_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryHoleStatus">
+              <PropertyRef Name="HoleStatusID" />
+            </Principal>
+            <Dependent Role="X_Header">
+              <PropertyRef Name="HoleStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_Header_X_DictionaryHole_Type">
+          <End Role="X_DictionaryHoleType" Type="XODBImportCollarModel.Store.X_DictionaryHoleType" Multiplicity="0..1" />
+          <End Role="X_Header" Type="XODBImportCollarModel.Store.X_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryHoleType">
+              <PropertyRef Name="HoleTypeID" />
+            </Principal>
+            <Dependent Role="X_Header">
+              <PropertyRef Name="HoleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_HeaderRelation_X_Header">
+          <End Role="X_Header" Type="XODBImportCollarModel.Store.X_Header" Multiplicity="0..1" />
+          <End Role="X_HeaderRelation" Type="XODBImportCollarModel.Store.X_HeaderRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_HeaderRelation">
+              <PropertyRef Name="OriginalHeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_HeaderRelation_X_Header1">
+          <End Role="X_Header" Type="XODBImportCollarModel.Store.X_Header" Multiplicity="0..1" />
+          <End Role="X_HeaderRelation" Type="XODBImportCollarModel.Store.X_HeaderRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_HeaderRelation">
+              <PropertyRef Name="RelatedHeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_LithologyData_X_Header">
+          <End Role="X_Header" Type="XODBImportCollarModel.Store.X_Header" Multiplicity="1" />
+          <End Role="X_Lithology" Type="XODBImportCollarModel.Store.X_Lithology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_Lithology">
+              <PropertyRef Name="HeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_Survey_X_Header">
+          <End Role="X_Header" Type="XODBImportCollarModel.Store.X_Header" Multiplicity="1" />
+          <End Role="X_Survey" Type="XODBImportCollarModel.Store.X_Survey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_Survey">
+              <PropertyRef Name="HeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XODBImportCollarModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="XODBImportCollarEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="X_DictionaryDataStatus" EntityType="XODBImportCollarModel.X_DictionaryDataStatus" />
+          <EntitySet Name="X_DictionaryHoleStatus" EntityType="XODBImportCollarModel.X_DictionaryHoleStatus" />
+          <EntitySet Name="X_DictionaryHoleType" EntityType="XODBImportCollarModel.X_DictionaryHoleType" />
+          <EntitySet Name="X_Header" EntityType="XODBImportCollarModel.X_Header" />
+          <EntitySet Name="X_HeaderRelation" EntityType="XODBImportCollarModel.X_HeaderRelation" />
+          <AssociationSet Name="FK_X_Header_X_DictionaryData_Status" Association="XODBImportCollarModel.FK_X_Header_X_DictionaryData_Status">
+            <End Role="X_DictionaryDataStatus" EntitySet="X_DictionaryDataStatus" />
+            <End Role="X_Header" EntitySet="X_Header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_Header_X_DictionaryHole_Status" Association="XODBImportCollarModel.FK_X_Header_X_DictionaryHole_Status">
+            <End Role="X_DictionaryHoleStatus" EntitySet="X_DictionaryHoleStatus" />
+            <End Role="X_Header" EntitySet="X_Header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_Header_X_DictionaryHole_Type" Association="XODBImportCollarModel.FK_X_Header_X_DictionaryHole_Type">
+            <End Role="X_DictionaryHoleType" EntitySet="X_DictionaryHoleType" />
+            <End Role="X_Header" EntitySet="X_Header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_HeaderRelation_X_Header" Association="XODBImportCollarModel.FK_X_HeaderRelation_X_Header">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_HeaderRelation" EntitySet="X_HeaderRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_HeaderRelation_X_Header1" Association="XODBImportCollarModel.FK_X_HeaderRelation_X_Header1">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_HeaderRelation" EntitySet="X_HeaderRelation" />
+          </AssociationSet>
+          <EntitySet Name="X_Survey" EntityType="XODBImportCollarModel.X_Survey" />
+          <AssociationSet Name="FK_X_Survey_X_Header" Association="XODBImportCollarModel.FK_X_Survey_X_Header">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_Survey" EntitySet="X_Survey" />
+          </AssociationSet>
+          <EntitySet Name="X_Lithology" EntityType="XODBImportCollarModel.X_Lithology" />
+          <AssociationSet Name="FK_X_LithologyData_X_Header" Association="XODBImportCollarModel.FK_X_LithologyData_X_Header">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_Lithology" EntitySet="X_Lithology" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="X_DictionaryDataStatus">
+          <Key>
+            <PropertyRef Name="DataStatusID" />
+          </Key>
+          <Property Name="DataStatusID" Type="Guid" Nullable="false" />
+          <Property Name="StandardDataStatusName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CoalDataStatusName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="GoldDataStatusName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CustomDataStatusName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="X_Header" Relationship="XODBImportCollarModel.FK_X_Header_X_DictionaryData_Status" FromRole="X_DictionaryDataStatus" ToRole="X_Header" />
+          <Property Type="String" Name="FullDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Thumbnail" MaxLength="Max" FixedLength="false" />
+          <Property Type="Guid" Name="OriginalFileDataID" />
+        </EntityType>
+        <EntityType Name="X_DictionaryHoleStatus">
+          <Key>
+            <PropertyRef Name="HoleStatusID" />
+          </Key>
+          <Property Name="HoleStatusID" Type="Guid" Nullable="false" />
+          <Property Name="StandardHoleStatusName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CoalHoleStatusName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="GoldHoleStatusName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CustomHoleStatusName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="X_Header" Relationship="XODBImportCollarModel.FK_X_Header_X_DictionaryHole_Status" FromRole="X_DictionaryHoleStatus" ToRole="X_Header" />
+          <Property Type="String" Name="FullDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Thumbnail" MaxLength="Max" FixedLength="false" />
+          <Property Type="Guid" Name="OriginalFileDataID" />
+        </EntityType>
+        <EntityType Name="X_DictionaryHoleType">
+          <Key>
+            <PropertyRef Name="HoleTypeID" />
+          </Key>
+          <Property Name="HoleTypeID" Type="Guid" Nullable="false" />
+          <Property Name="StandardHoleTypeName" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CoalHoleTypeName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="GoldHoleTypeName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="CustomHoleTypeName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="X_Header" Relationship="XODBImportCollarModel.FK_X_Header_X_DictionaryHole_Type" FromRole="X_DictionaryHoleType" ToRole="X_Header" />
+          <Property Type="String" Name="FullDescription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Thumbnail" MaxLength="Max" FixedLength="false" />
+          <Property Type="Guid" Name="OriginalFileDataID" />
+        </EntityType>
+        <EntityType Name="X_Header">
+          <Key>
+            <PropertyRef Name="HeaderID" />
+          </Key>
+          <Property Name="HeaderID" Type="Guid" Nullable="false" />
+          <Property Name="ProjectID" Type="Guid" />
+          <Property Name="HoleName" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Site" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="HoleTypeID" Type="Guid" />
+          <Property Name="DataStatusID" Type="Guid" />
+          <Property Name="PrimaryHolePurposeID" Type="Guid" />
+          <Property Name="SecondaryHolePurposeID" Type="Guid" />
+          <Property Name="SurveyAccuracyID" Type="Guid" />
+          <Property Name="GeodeticDatumID" Type="Guid" />
+          <Property Name="UtmZoneNumber" Type="Int32" />
+          <Property Name="UtmZoneHemisphere" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+          <Property Name="HeightDatumID" Type="Guid" />
+          <Property Name="Easting" Type="Decimal" Precision="19" Scale="7" />
+          <Property Name="Northing" Type="Decimal" Precision="19" Scale="7" />
+          <Property Name="Elevation" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="Inclination" Type="Int32" />
+          <Property Name="Azimuth" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="CompleteDate" Type="DateTime" Precision="0" />
+          <Property Name="TotalDepth" Type="Decimal" Precision="7" Scale="3" />
+          <Property Name="HoleRedrilled" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="GeologyCompanyID" Type="Guid" />
+          <Property Name="HasHadGeotechLogs" Type="Boolean" />
+          <Property Name="HasHadCorePhotos" Type="Boolean" />
+          <Property Name="GeophysicalLoggingCompanyID" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID1" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID2" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID3" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID4" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID5" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID6" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID7" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID8" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID9" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID10" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID11" Type="Guid" />
+          <Property Name="GeophysicalLogTypeID12" Type="Guid" />
+          <Property Name="GeophysicalLoggerID" Type="Guid" />
+          <Property Name="StandingWaterLevel" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="StandingWaterLevelDate" Type="DateTime" Precision="0" />
+          <Property Name="DateRehabilitated" Type="DateTime" Precision="0" />
+          <Property Name="HoleStatusID" Type="Guid" />
+          <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_DictionaryDataStatus" Relationship="XODBImportCollarModel.FK_X_Header_X_DictionaryData_Status" FromRole="X_Header" ToRole="X_DictionaryDataStatus" />
+          <NavigationProperty Name="X_DictionaryHoleStatus" Relationship="XODBImportCollarModel.FK_X_Header_X_DictionaryHole_Status" FromRole="X_Header" ToRole="X_DictionaryHoleStatus" />
+          <NavigationProperty Name="X_DictionaryHoleType" Relationship="XODBImportCollarModel.FK_X_Header_X_DictionaryHole_Type" FromRole="X_Header" ToRole="X_DictionaryHoleType" />
+          <NavigationProperty Name="X_HeaderRelation" Relationship="XODBImportCollarModel.FK_X_HeaderRelation_X_Header" FromRole="X_Header" ToRole="X_HeaderRelation" />
+          <NavigationProperty Name="X_HeaderRelation1" Relationship="XODBImportCollarModel.FK_X_HeaderRelation_X_Header1" FromRole="X_Header" ToRole="X_HeaderRelation" />
+          <Property Type="Guid" Name="LocationID" />
+          <NavigationProperty Name="X_Survey" Relationship="XODBImportCollarModel.FK_X_Survey_X_Header" FromRole="X_Header" ToRole="X_Survey" />
+          <NavigationProperty Name="X_Lithology" Relationship="XODBImportCollarModel.FK_X_LithologyData_X_Header" FromRole="X_Header" ToRole="X_Lithology" />
+        </EntityType>
+        <EntityType Name="X_HeaderRelation">
+          <Key>
+            <PropertyRef Name="HeaderRelationID" />
+          </Key>
+          <Property Name="HeaderRelationID" Type="Guid" Nullable="false" />
+          <Property Name="OriginalHeaderID" Type="Guid" />
+          <Property Name="RelatedHeaderID" Type="Guid" />
+          <Property Name="RelationTypeID" Type="Guid" />
+          <Property Name="Related" Type="DateTime" Precision="0" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="Guid" />
+          <Property Name="VersionCertainty" Type="Int32" />
+          <Property Name="VersionWorkflowInstanceID" Type="Guid" />
+          <Property Name="VersionUpdatedBy" Type="Guid" />
+          <Property Name="VersionDeletedBy" Type="Guid" />
+          <Property Name="VersionOwnerContactID" Type="Guid" />
+          <Property Name="VersionOwnerCompanyID" Type="Guid" />
+          <Property Name="VersionUpdated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="X_Header" Relationship="XODBImportCollarModel.FK_X_HeaderRelation_X_Header" FromRole="X_HeaderRelation" ToRole="X_Header" />
+          <NavigationProperty Name="X_Header1" Relationship="XODBImportCollarModel.FK_X_HeaderRelation_X_Header1" FromRole="X_HeaderRelation" ToRole="X_Header" />
+        </EntityType>
+        <Association Name="FK_X_Header_X_DictionaryData_Status">
+          <End Role="X_DictionaryDataStatus" Type="XODBImportCollarModel.X_DictionaryDataStatus" Multiplicity="0..1" />
+          <End Role="X_Header" Type="XODBImportCollarModel.X_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryDataStatus">
+              <PropertyRef Name="DataStatusID" />
+            </Principal>
+            <Dependent Role="X_Header">
+              <PropertyRef Name="DataStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_Header_X_DictionaryHole_Status">
+          <End Role="X_DictionaryHoleStatus" Type="XODBImportCollarModel.X_DictionaryHoleStatus" Multiplicity="0..1" />
+          <End Role="X_Header" Type="XODBImportCollarModel.X_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryHoleStatus">
+              <PropertyRef Name="HoleStatusID" />
+            </Principal>
+            <Dependent Role="X_Header">
+              <PropertyRef Name="HoleStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_Header_X_DictionaryHole_Type">
+          <End Role="X_DictionaryHoleType" Type="XODBImportCollarModel.X_DictionaryHoleType" Multiplicity="0..1" />
+          <End Role="X_Header" Type="XODBImportCollarModel.X_Header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_DictionaryHoleType">
+              <PropertyRef Name="HoleTypeID" />
+            </Principal>
+            <Dependent Role="X_Header">
+              <PropertyRef Name="HoleTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_HeaderRelation_X_Header">
+          <End Role="X_Header" Type="XODBImportCollarModel.X_Header" Multiplicity="0..1" />
+          <End Role="X_HeaderRelation" Type="XODBImportCollarModel.X_HeaderRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_HeaderRelation">
+              <PropertyRef Name="OriginalHeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_HeaderRelation_X_Header1">
+          <End Role="X_Header" Type="XODBImportCollarModel.X_Header" Multiplicity="0..1" />
+          <End Role="X_HeaderRelation" Type="XODBImportCollarModel.X_HeaderRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_HeaderRelation">
+              <PropertyRef Name="RelatedHeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="X_Survey">
+          <Key>
+            <PropertyRef Name="SurveyID" />
+          </Key>
+          <Property Type="Guid" Name="SurveyID" Nullable="false" />
+          <Property Type="Guid" Name="HeaderID" Nullable="false" />
+          <Property Type="Decimal" Name="Depth" Nullable="false" Precision="7" Scale="3" />
+          <Property Type="Decimal" Name="Dip" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="MagneticDip" Precision="5" Scale="2" />
+          <Property Type="Boolean" Name="MagnetAffected" />
+          <Property Type="Decimal" Name="OriginalAzimuth" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="CorrectedAzimuth" Precision="5" Scale="2" />
+          <Property Type="Decimal" Name="Gravity" Precision="5" Scale="4" />
+          <Property Type="Guid" Name="InstrumentModelID" />
+          <Property Type="String" Name="InstrumentAssetID" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Surveyed" Precision="0" />
+          <Property Type="Guid" Name="SurveyContactID" />
+          <Property Type="Guid" Name="SurveyCompanyID" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_Header" Relationship="XODBImportCollarModel.FK_X_Survey_X_Header" FromRole="X_Survey" ToRole="X_Header" />
+        </EntityType>
+        <Association Name="FK_X_Survey_X_Header">
+          <End Type="XODBImportCollarModel.X_Header" Role="X_Header" Multiplicity="1" />
+          <End Type="XODBImportCollarModel.X_Survey" Role="X_Survey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_Survey">
+              <PropertyRef Name="HeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="X_Lithology">
+          <Key>
+            <PropertyRef Name="LithologyID" />
+          </Key>
+          <Property Type="Guid" Name="LithologyID" Nullable="false" />
+          <Property Type="Guid" Name="HeaderID" Nullable="false" />
+          <Property Type="Decimal" Name="FromDepth" Precision="7" Scale="3" />
+          <Property Type="Decimal" Name="ToDepth" Precision="7" Scale="3" />
+          <Property Type="Decimal" Name="RecoveredThickness" Precision="7" Scale="3" />
+          <Property Type="Guid" Name="DomainID" />
+          <Property Type="Guid" Name="SeamID" />
+          <Property Type="Guid" Name="PlyID" />
+          <Property Type="Guid" Name="StratigraphyID" />
+          <Property Type="Guid" Name="HorizonID" />
+          <Property Type="Guid" Name="SampleTypeID" />
+          <Property Type="String" Name="SampleNumber" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="SampleMassKg" Precision="6" Scale="4" />
+          <Property Type="Guid" Name="IntervalStatusID" />
+          <Property Type="Int32" Name="LithologyPercentage" />
+          <Property Type="Guid" Name="LithologyTypeID" />
+          <Property Type="Guid" Name="LithologyQualifierID" />
+          <Property Type="Guid" Name="ShadeID" />
+          <Property Type="Guid" Name="HueID" />
+          <Property Type="Guid" Name="ColourID" />
+          <Property Type="Guid" Name="AdjectiveID1" />
+          <Property Type="Guid" Name="AdjectiveID2" />
+          <Property Type="Guid" Name="AdjectiveID3" />
+          <Property Type="Guid" Name="AdjectiveID4" />
+          <Property Type="Guid" Name="LithologyInterrelationID" />
+          <Property Type="Guid" Name="WeatheringID" />
+          <Property Type="Guid" Name="EstimatedStrengthID" />
+          <Property Type="Guid" Name="BedSpacingID" />
+          <Property Type="Guid" Name="DefectTypeID" />
+          <Property Type="Guid" Name="DefectCompletenessID" />
+          <Property Type="Guid" Name="DefectSpacingID" />
+          <Property Type="Int32" Name="DefectDip" />
+          <Property Type="Guid" Name="CoreStateID" />
+          <Property Type="Guid" Name="MechanicalStateID" />
+          <Property Type="Guid" Name="TextureID" />
+          <Property Type="Guid" Name="BasalContactID" />
+          <Property Type="Guid" Name="SedimentaryFeature1ID" />
+          <Property Type="Guid" Name="SedimentaryFeature2ID" />
+          <Property Type="Int32" Name="BeddingDip" />
+          <Property Type="Guid" Name="MineralAndFossilAbundanceID" />
+          <Property Type="Guid" Name="MineralAndFossilTypeID" />
+          <Property Type="Guid" Name="MineralAndFossilAssociationID" />
+          <Property Type="Guid" Name="GasDetectedID" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_Header" Relationship="XODBImportCollarModel.FK_X_LithologyData_X_Header" FromRole="X_Lithology" ToRole="X_Header" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_X_LithologyData_X_Header">
+          <End Type="XODBImportCollarModel.X_Header" Role="X_Header" Multiplicity="1" />
+          <End Type="XODBImportCollarModel.X_Lithology" Role="X_Lithology" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_Lithology">
+              <PropertyRef Name="HeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XODBImportCollarModelStoreContainer" CdmEntityContainer="XODBImportCollarEntities">
+          <EntitySetMapping Name="X_DictionaryDataStatus">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_DictionaryDataStatus">
+              <MappingFragment StoreEntitySet="X_DictionaryDataStatus">
+                <ScalarProperty Name="OriginalFileDataID" ColumnName="OriginalFileDataID" />
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+                <ScalarProperty Name="FullDescription" ColumnName="FullDescription" />
+                <ScalarProperty Name="DataStatusID" ColumnName="DataStatusID" />
+                <ScalarProperty Name="StandardDataStatusName" ColumnName="StandardDataStatusName" />
+                <ScalarProperty Name="CoalDataStatusName" ColumnName="CoalDataStatusName" />
+                <ScalarProperty Name="GoldDataStatusName" ColumnName="GoldDataStatusName" />
+                <ScalarProperty Name="CustomDataStatusName" ColumnName="CustomDataStatusName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_DictionaryHoleStatus">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_DictionaryHoleStatus">
+              <MappingFragment StoreEntitySet="X_DictionaryHoleStatus">
+                <ScalarProperty Name="OriginalFileDataID" ColumnName="OriginalFileDataID" />
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+                <ScalarProperty Name="FullDescription" ColumnName="FullDescription" />
+                <ScalarProperty Name="HoleStatusID" ColumnName="HoleStatusID" />
+                <ScalarProperty Name="StandardHoleStatusName" ColumnName="StandardHoleStatusName" />
+                <ScalarProperty Name="CoalHoleStatusName" ColumnName="CoalHoleStatusName" />
+                <ScalarProperty Name="GoldHoleStatusName" ColumnName="GoldHoleStatusName" />
+                <ScalarProperty Name="CustomHoleStatusName" ColumnName="CustomHoleStatusName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_DictionaryHoleType">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_DictionaryHoleType">
+              <MappingFragment StoreEntitySet="X_DictionaryHoleType">
+                <ScalarProperty Name="OriginalFileDataID" ColumnName="OriginalFileDataID" />
+                <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+                <ScalarProperty Name="FullDescription" ColumnName="FullDescription" />
+                <ScalarProperty Name="HoleTypeID" ColumnName="HoleTypeID" />
+                <ScalarProperty Name="StandardHoleTypeName" ColumnName="StandardHoleTypeName" />
+                <ScalarProperty Name="CoalHoleTypeName" ColumnName="CoalHoleTypeName" />
+                <ScalarProperty Name="GoldHoleTypeName" ColumnName="GoldHoleTypeName" />
+                <ScalarProperty Name="CustomHoleTypeName" ColumnName="CustomHoleTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_Header">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_Header">
+              <MappingFragment StoreEntitySet="X_Header">
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="HeaderID" ColumnName="HeaderID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="HoleName" ColumnName="HoleName" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="HoleTypeID" ColumnName="HoleTypeID" />
+                <ScalarProperty Name="DataStatusID" ColumnName="DataStatusID" />
+                <ScalarProperty Name="PrimaryHolePurposeID" ColumnName="PrimaryHolePurposeID" />
+                <ScalarProperty Name="SecondaryHolePurposeID" ColumnName="SecondaryHolePurposeID" />
+                <ScalarProperty Name="SurveyAccuracyID" ColumnName="SurveyAccuracyID" />
+                <ScalarProperty Name="GeodeticDatumID" ColumnName="GeodeticDatumID" />
+                <ScalarProperty Name="UtmZoneNumber" ColumnName="UtmZoneNumber" />
+                <ScalarProperty Name="UtmZoneHemisphere" ColumnName="UtmZoneHemisphere" />
+                <ScalarProperty Name="HeightDatumID" ColumnName="HeightDatumID" />
+                <ScalarProperty Name="Easting" ColumnName="Easting" />
+                <ScalarProperty Name="Northing" ColumnName="Northing" />
+                <ScalarProperty Name="Elevation" ColumnName="Elevation" />
+                <ScalarProperty Name="Inclination" ColumnName="Inclination" />
+                <ScalarProperty Name="Azimuth" ColumnName="Azimuth" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="TotalDepth" ColumnName="TotalDepth" />
+                <ScalarProperty Name="HoleRedrilled" ColumnName="HoleRedrilled" />
+                <ScalarProperty Name="GeologyCompanyID" ColumnName="GeologyCompanyID" />
+                <ScalarProperty Name="HasHadGeotechLogs" ColumnName="HasHadGeotechLogs" />
+                <ScalarProperty Name="HasHadCorePhotos" ColumnName="HasHadCorePhotos" />
+                <ScalarProperty Name="GeophysicalLoggingCompanyID" ColumnName="GeophysicalLoggingCompanyID" />
+                <ScalarProperty Name="GeophysicalLogTypeID1" ColumnName="GeophysicalLogTypeID1" />
+                <ScalarProperty Name="GeophysicalLogTypeID2" ColumnName="GeophysicalLogTypeID2" />
+                <ScalarProperty Name="GeophysicalLogTypeID3" ColumnName="GeophysicalLogTypeID3" />
+                <ScalarProperty Name="GeophysicalLogTypeID4" ColumnName="GeophysicalLogTypeID4" />
+                <ScalarProperty Name="GeophysicalLogTypeID5" ColumnName="GeophysicalLogTypeID5" />
+                <ScalarProperty Name="GeophysicalLogTypeID6" ColumnName="GeophysicalLogTypeID6" />
+                <ScalarProperty Name="GeophysicalLogTypeID7" ColumnName="GeophysicalLogTypeID7" />
+                <ScalarProperty Name="GeophysicalLogTypeID8" ColumnName="GeophysicalLogTypeID8" />
+                <ScalarProperty Name="GeophysicalLogTypeID9" ColumnName="GeophysicalLogTypeID9" />
+                <ScalarProperty Name="GeophysicalLogTypeID10" ColumnName="GeophysicalLogTypeID10" />
+                <ScalarProperty Name="GeophysicalLogTypeID11" ColumnName="GeophysicalLogTypeID11" />
+                <ScalarProperty Name="GeophysicalLogTypeID12" ColumnName="GeophysicalLogTypeID12" />
+                <ScalarProperty Name="GeophysicalLoggerID" ColumnName="GeophysicalLoggerID" />
+                <ScalarProperty Name="StandingWaterLevel" ColumnName="StandingWaterLevel" />
+                <ScalarProperty Name="StandingWaterLevelDate" ColumnName="StandingWaterLevelDate" />
+                <ScalarProperty Name="DateRehabilitated" ColumnName="DateRehabilitated" />
+                <ScalarProperty Name="HoleStatusID" ColumnName="HoleStatusID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_HeaderRelation">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_HeaderRelation">
+              <MappingFragment StoreEntitySet="X_HeaderRelation">
+                <ScalarProperty Name="HeaderRelationID" ColumnName="HeaderRelationID" />
+                <ScalarProperty Name="OriginalHeaderID" ColumnName="OriginalHeaderID" />
+                <ScalarProperty Name="RelatedHeaderID" ColumnName="RelatedHeaderID" />
+                <ScalarProperty Name="RelationTypeID" ColumnName="RelationTypeID" />
+                <ScalarProperty Name="Related" ColumnName="Related" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_Survey">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_Survey">
+              <MappingFragment StoreEntitySet="X_Survey">
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="SurveyCompanyID" ColumnName="SurveyCompanyID" />
+                <ScalarProperty Name="SurveyContactID" ColumnName="SurveyContactID" />
+                <ScalarProperty Name="Surveyed" ColumnName="Surveyed" />
+                <ScalarProperty Name="InstrumentAssetID" ColumnName="InstrumentAssetID" />
+                <ScalarProperty Name="InstrumentModelID" ColumnName="InstrumentModelID" />
+                <ScalarProperty Name="Gravity" ColumnName="Gravity" />
+                <ScalarProperty Name="CorrectedAzimuth" ColumnName="CorrectedAzimuth" />
+                <ScalarProperty Name="OriginalAzimuth" ColumnName="OriginalAzimuth" />
+                <ScalarProperty Name="MagnetAffected" ColumnName="MagnetAffected" />
+                <ScalarProperty Name="MagneticDip" ColumnName="MagneticDip" />
+                <ScalarProperty Name="Dip" ColumnName="Dip" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+                <ScalarProperty Name="HeaderID" ColumnName="HeaderID" />
+                <ScalarProperty Name="SurveyID" ColumnName="SurveyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_Lithology">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_Lithology">
+              <MappingFragment StoreEntitySet="X_Lithology">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="GasDetectedID" ColumnName="GasDetectedID" />
+                <ScalarProperty Name="MineralAndFossilAssociationID" ColumnName="MineralAndFossilAssociationID" />
+                <ScalarProperty Name="MineralAndFossilTypeID" ColumnName="MineralAndFossilTypeID" />
+                <ScalarProperty Name="MineralAndFossilAbundanceID" ColumnName="MineralAndFossilAbundanceID" />
+                <ScalarProperty Name="BeddingDip" ColumnName="BeddingDip" />
+                <ScalarProperty Name="SedimentaryFeature2ID" ColumnName="SedimentaryFeature2ID" />
+                <ScalarProperty Name="SedimentaryFeature1ID" ColumnName="SedimentaryFeature1ID" />
+                <ScalarProperty Name="BasalContactID" ColumnName="BasalContactID" />
+                <ScalarProperty Name="TextureID" ColumnName="TextureID" />
+                <ScalarProperty Name="MechanicalStateID" ColumnName="MechanicalStateID" />
+                <ScalarProperty Name="CoreStateID" ColumnName="CoreStateID" />
+                <ScalarProperty Name="DefectDip" ColumnName="DefectDip" />
+                <ScalarProperty Name="DefectSpacingID" ColumnName="DefectSpacingID" />
+                <ScalarProperty Name="DefectCompletenessID" ColumnName="DefectCompletenessID" />
+                <ScalarProperty Name="DefectTypeID" ColumnName="DefectTypeID" />
+                <ScalarProperty Name="BedSpacingID" ColumnName="BedSpacingID" />
+                <ScalarProperty Name="EstimatedStrengthID" ColumnName="EstimatedStrengthID" />
+                <ScalarProperty Name="WeatheringID" ColumnName="WeatheringID" />
+                <ScalarProperty Name="LithologyInterrelationID" ColumnName="LithologyInterrelationID" />
+                <ScalarProperty Name="AdjectiveID4" ColumnName="AdjectiveID4" />
+                <ScalarProperty Name="AdjectiveID3" ColumnName="AdjectiveID3" />
+                <ScalarProperty Name="AdjectiveID2" ColumnName="AdjectiveID2" />
+                <ScalarProperty Name="AdjectiveID1" ColumnName="AdjectiveID1" />
+                <ScalarProperty Name="ColourID" ColumnName="ColourID" />
+                <ScalarProperty Name="HueID" ColumnName="HueID" />
+                <ScalarProperty Name="ShadeID" ColumnName="ShadeID" />
+                <ScalarProperty Name="LithologyQualifierID" ColumnName="LithologyQualifierID" />
+                <ScalarProperty Name="LithologyTypeID" ColumnName="LithologyTypeID" />
+                <ScalarProperty Name="LithologyPercentage" ColumnName="LithologyPercentage" />
+                <ScalarProperty Name="IntervalStatusID" ColumnName="IntervalStatusID" />
+                <ScalarProperty Name="SampleMassKg" ColumnName="SampleMassKg" />
+                <ScalarProperty Name="SampleNumber" ColumnName="SampleNumber" />
+                <ScalarProperty Name="SampleTypeID" ColumnName="SampleTypeID" />
+                <ScalarProperty Name="HorizonID" ColumnName="HorizonID" />
+                <ScalarProperty Name="StratigraphyID" ColumnName="StratigraphyID" />
+                <ScalarProperty Name="PlyID" ColumnName="PlyID" />
+                <ScalarProperty Name="SeamID" ColumnName="SeamID" />
+                <ScalarProperty Name="DomainID" ColumnName="DomainID" />
+                <ScalarProperty Name="RecoveredThickness" ColumnName="RecoveredThickness" />
+                <ScalarProperty Name="ToDepth" ColumnName="ToDepth" />
+                <ScalarProperty Name="FromDepth" ColumnName="FromDepth" />
+                <ScalarProperty Name="HeaderID" ColumnName="HeaderID" />
+                <ScalarProperty Name="LithologyID" ColumnName="LithologyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
