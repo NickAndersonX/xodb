@@ -348,7 +348,7 @@
     <Content Include="Views\User\ModelPivotChartPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\xodbimport\src\XODB.Import.csproj">
+    <ProjectReference Include="..\..\..\..\..\XODB.Import\common\XODB.Import.csproj">
       <Project>{4814c95d-0008-495a-b627-e3feda2fb1a4}</Project>
       <Name>XODB.Import</Name>
     </ProjectReference>
