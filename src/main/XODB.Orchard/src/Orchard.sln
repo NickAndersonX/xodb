@@ -152,7 +152,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XODB", "Orchard.Web\Modules
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laughlin.ErrorLog", "Orchard.Web\Modules\Laughlin.ErrorLog\Laughlin.ErrorLog.csproj", "{6022DAAC-C54B-42DA-9BC7-DB60108DCCF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XODB.Import", "..\..\xodbimport\src\XODB.Import.csproj", "{4814C95D-0008-495A-B627-E3FEDA2FB1A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XODB.Import", "..\..\XODB.Import\common\XODB.Import.csproj", "{4814C95D-0008-495A-B627-E3FEDA2FB1A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchard.Gallery", "Orchard.Web\Modules\Orchard.Gallery\Orchard.Gallery.csproj", "{F2C0AC17-210D-4AF6-B027-56899AAC6569}"
 EndProject
