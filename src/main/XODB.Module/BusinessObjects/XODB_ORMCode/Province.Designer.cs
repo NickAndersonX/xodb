@@ -127,14 +127,14 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_TenementReferencesProvince", typeof(Tenement))]
-        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
         [Association(@"ProspectusProjectProvinceReferencesProvince", typeof(ProspectusProjectProvince))]
         public XPCollection<ProspectusProjectProvince> ProspectusProjectProvinces { get { return GetCollection<ProspectusProjectProvince>("ProspectusProjectProvinces"); } }
         [Association(@"TenementProvinceReferencesProvince", typeof(TenementProvince))]
         public XPCollection<TenementProvince> TenementProvinces { get { return GetCollection<TenementProvince>("TenementProvinces"); } }
         [Association(@"ComplianceReferencesProvince", typeof(Compliance))]
         public XPCollection<Compliance> Compliances { get { return GetCollection<Compliance>("Compliances"); } }
+        [Association(@"X_TenementReferencesProvince", typeof(Tenement))]
+        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
     }
 
 }

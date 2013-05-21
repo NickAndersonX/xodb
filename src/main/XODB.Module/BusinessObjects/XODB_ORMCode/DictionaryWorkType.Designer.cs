@@ -126,22 +126,22 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"DictionaryWorkTypeRelationReferencesX_DictionaryWorkType", typeof(DictionaryWorkTypeRelation))]
         public XPCollection<DictionaryWorkTypeRelation> DictionaryWorkTypeRelations { get { return GetCollection<DictionaryWorkTypeRelation>("DictionaryWorkTypeRelations"); } }
-        [Association(@"ProjectPlanTaskResponseReferencesX_DictionaryWorkType", typeof(ProjectPlanTaskResponse))]
-        public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses"); } }
-        [Association(@"ProjectDeliverableReferencesX_DictionaryWorkType", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
-        [Association(@"OpportunityReferencesX_DictionaryWorkType1", typeof(Opportunity))]
-        public XPCollection<Opportunity> Opportunitys1 { get { return GetCollection<Opportunity>("Opportunitys1"); } }
-        [Association(@"OpportunityReferencesX_DictionaryWorkType", typeof(Opportunity))]
-        public XPCollection<Opportunity> Opportunitys { get { return GetCollection<Opportunity>("Opportunitys"); } }
-        [Association(@"X_ProjectPlanTaskReferencesX_DictionaryWorkType", typeof(ProjectPlanTask))]
-        public XPCollection<ProjectPlanTask> X_ProjectPlanTasks { get { return GetCollection<ProjectPlanTask>("X_ProjectPlanTasks"); } }
-        [Association(@"ExperienceReferencesX_DictionaryWorkType", typeof(Experience))]
-        public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
         [Association(@"DictionaryWorkTypeRelationReferencesX_DictionaryWorkType1", typeof(DictionaryWorkTypeRelation))]
         public XPCollection<DictionaryWorkTypeRelation> DictionaryWorkTypeRelations1 { get { return GetCollection<DictionaryWorkTypeRelation>("DictionaryWorkTypeRelations1"); } }
+        [Association(@"ExperienceReferencesX_DictionaryWorkType", typeof(Experience))]
+        public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
+        [Association(@"ProjectPlanTaskResponseReferencesX_DictionaryWorkType", typeof(ProjectPlanTaskResponse))]
+        public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses"); } }
         [Association(@"ComplianceWorkTypeReferencesX_DictionaryWorkType", typeof(ComplianceWorkType))]
         public XPCollection<ComplianceWorkType> ComplianceWorkTypes { get { return GetCollection<ComplianceWorkType>("ComplianceWorkTypes"); } }
+        [Association(@"OpportunityReferencesX_DictionaryWorkType", typeof(Opportunity))]
+        public XPCollection<Opportunity> Opportunitys { get { return GetCollection<Opportunity>("Opportunitys"); } }
+        [Association(@"OpportunityReferencesX_DictionaryWorkType1", typeof(Opportunity))]
+        public XPCollection<Opportunity> Opportunitys1 { get { return GetCollection<Opportunity>("Opportunitys1"); } }
+        [Association(@"ProjectDeliverableReferencesX_DictionaryWorkType", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
+        [Association(@"X_ProjectPlanTaskReferencesX_DictionaryWorkType", typeof(ProjectPlanTask))]
+        public XPCollection<ProjectPlanTask> X_ProjectPlanTasks { get { return GetCollection<ProjectPlanTask>("X_ProjectPlanTasks"); } }
     }
 
 }

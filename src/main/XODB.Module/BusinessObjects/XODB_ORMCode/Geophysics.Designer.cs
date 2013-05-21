@@ -22,19 +22,33 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fGeophysicsID; }
             set { SetPropertyValue<Guid>("GeophysicsID", ref fGeophysicsID, value); }
         }
-        string fDimensionUnit;
-        [Size(16)]
-        public string DimensionUnit
+        string fFileName;
+        [Size(255)]
+        public string FileName
         {
-            get { return fDimensionUnit; }
-            set { SetPropertyValue<string>("DimensionUnit", ref fDimensionUnit, value); }
+            get { return fFileName; }
+            set { SetPropertyValue<string>("FileName", ref fFileName, value); }
+        }
+        FileData fOriginalFileDataID;
+        [Association(@"X_GeophysicsReferencesFileData")]
+        public FileData OriginalFileDataID
+        {
+            get { return fOriginalFileDataID; }
+            set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
         Header fHeaderID;
-        [Association(@"GeophysicsReferencesHeader")]
+        [Association(@"X_GeophysicsReferencesHeader")]
         public Header HeaderID
         {
             get { return fHeaderID; }
             set { SetPropertyValue<Header>("HeaderID", ref fHeaderID, value); }
+        }
+        DictionaryUnit fDimensionUnitID;
+        [Association(@"X_GeophysicsReferencesDictionaryUnit")]
+        public DictionaryUnit DimensionUnitID
+        {
+            get { return fDimensionUnitID; }
+            set { SetPropertyValue<DictionaryUnit>("DimensionUnitID", ref fDimensionUnitID, value); }
         }
         string fLasVersion;
         [Size(16)]
@@ -125,7 +139,7 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"GeophysicsMetadataReferencesGeophysics", typeof(GeophysicsMetadata))]
+        [Association(@"GeophysicsMetadataReferencesX_Geophysics", typeof(GeophysicsMetadata))]
         public XPCollection<GeophysicsMetadata> GeophysicsMetadatas { get { return GetCollection<GeophysicsMetadata>("GeophysicsMetadatas"); } }
     }
 

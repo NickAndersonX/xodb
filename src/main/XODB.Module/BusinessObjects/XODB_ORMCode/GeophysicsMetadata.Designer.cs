@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("GeophysicsMetadataID", ref fGeophysicsMetadataID, value); }
         }
         Geophysics fGeophysicsID;
-        [Association(@"GeophysicsMetadataReferencesGeophysics")]
+        [Association(@"GeophysicsMetadataReferencesX_Geophysics")]
         public Geophysics GeophysicsID
         {
             get { return fGeophysicsID; }

@@ -141,16 +141,16 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"ProjectPlanTaskWorkerReferencesX_ProjectPlanTask", typeof(ProjectPlanTaskWorker))]
-        public XPCollection<ProjectPlanTaskWorker> ProjectPlanTaskWorkers { get { return GetCollection<ProjectPlanTaskWorker>("ProjectPlanTaskWorkers"); } }
-        [Association(@"ProjectDeliverableReferencesX_ProjectPlanTask", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
         [Association(@"ProjectPlanTaskResponseReferencesX_ProjectPlanTask", typeof(ProjectPlanTaskResponse))]
         public XPCollection<ProjectPlanTaskResponse> ProjectPlanTaskResponses { get { return GetCollection<ProjectPlanTaskResponse>("ProjectPlanTaskResponses"); } }
-        [Association(@"X_ProjectPlanTaskReferencesX_ProjectPlanTask", typeof(ProjectPlanTask))]
-        public XPCollection<ProjectPlanTask> X_ProjectPlanTaskCollection { get { return GetCollection<ProjectPlanTask>("X_ProjectPlanTaskCollection"); } }
+        [Association(@"ProjectPlanTaskWorkerReferencesX_ProjectPlanTask", typeof(ProjectPlanTaskWorker))]
+        public XPCollection<ProjectPlanTaskWorker> ProjectPlanTaskWorkers { get { return GetCollection<ProjectPlanTaskWorker>("ProjectPlanTaskWorkers"); } }
         [Association(@"ProjectPlanTaskComplianceResponseReferencesX_ProjectPlanTask", typeof(ProjectPlanTaskComplianceResponse))]
         public XPCollection<ProjectPlanTaskComplianceResponse> ProjectPlanTaskComplianceResponses { get { return GetCollection<ProjectPlanTaskComplianceResponse>("ProjectPlanTaskComplianceResponses"); } }
+        [Association(@"ProjectDeliverableReferencesX_ProjectPlanTask", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
+        [Association(@"X_ProjectPlanTaskReferencesX_ProjectPlanTask", typeof(ProjectPlanTask))]
+        public XPCollection<ProjectPlanTask> X_ProjectPlanTaskCollection { get { return GetCollection<ProjectPlanTask>("X_ProjectPlanTaskCollection"); } }
     }
 
 }

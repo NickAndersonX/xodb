@@ -102,6 +102,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Parameter> Parameters { get { return GetCollection<Parameter>("Parameters"); } }
         [Association(@"X_ProjectDeliverableReferencesDictionaryUnit", typeof(ProjectDeliverable))]
         public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
+        [Association(@"X_GeophysicsReferencesDictionaryUnit", typeof(Geophysics))]
+        public XPCollection<Geophysics> X_GeophysicsCollection { get { return GetCollection<Geophysics>("X_GeophysicsCollection"); } }
     }
 
 }

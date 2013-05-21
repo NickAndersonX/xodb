@@ -159,8 +159,6 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_DictionaryWorkTypeReferencesFileData", typeof(DictionaryWorkType))]
-        public XPCollection<DictionaryWorkType> X_DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("X_DictionaryWorkTypes"); } }
         [Association(@"FileDataReferencesFileData", typeof(FileData))]
         public XPCollection<FileData> FileDataCollection { get { return GetCollection<FileData>("FileDataCollection"); } }
         [Association(@"DictionaryAdjectiveReferencesFileData", typeof(DictionaryAdjective))]
@@ -343,6 +341,10 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
         [Association(@"X_ContractReferencesFileData", typeof(Contract))]
         public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
+        [Association(@"X_DictionaryWorkTypeReferencesFileData", typeof(DictionaryWorkType))]
+        public XPCollection<DictionaryWorkType> X_DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("X_DictionaryWorkTypes"); } }
+        [Association(@"X_GeophysicsReferencesFileData", typeof(Geophysics))]
+        public XPCollection<Geophysics> X_GeophysicsCollection { get { return GetCollection<Geophysics>("X_GeophysicsCollection"); } }
     }
 
 }

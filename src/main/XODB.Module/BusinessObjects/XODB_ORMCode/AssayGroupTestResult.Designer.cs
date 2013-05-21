@@ -130,10 +130,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"AssayGroupTestResultDuplicateReferencesX_AssayGroupTestResult", typeof(AssayGroupTestResultDuplicate))]
-        public XPCollection<AssayGroupTestResultDuplicate> AssayGroupTestResultDuplicates { get { return GetCollection<AssayGroupTestResultDuplicate>("AssayGroupTestResultDuplicates"); } }
         [Association(@"AssayGroupTestResultCommentReferencesX_AssayGroupTestResult", typeof(AssayGroupTestResultComment))]
         public XPCollection<AssayGroupTestResultComment> AssayGroupTestResultComments { get { return GetCollection<AssayGroupTestResultComment>("AssayGroupTestResultComments"); } }
+        [Association(@"AssayGroupTestResultDuplicateReferencesX_AssayGroupTestResult", typeof(AssayGroupTestResultDuplicate))]
+        public XPCollection<AssayGroupTestResultDuplicate> AssayGroupTestResultDuplicates { get { return GetCollection<AssayGroupTestResultDuplicate>("AssayGroupTestResultDuplicates"); } }
     }
 
 }

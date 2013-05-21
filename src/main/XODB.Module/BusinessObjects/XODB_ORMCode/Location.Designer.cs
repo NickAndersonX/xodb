@@ -158,16 +158,16 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"LocationAliasReferencesX_Location", typeof(LocationAlias))]
-        public XPCollection<LocationAlias> LocationAliasCollection { get { return GetCollection<LocationAlias>("LocationAliasCollection"); } }
-        [Association(@"HeaderReferencesX_Location", typeof(Header))]
-        public XPCollection<Header> Headers { get { return GetCollection<Header>("Headers"); } }
-        [Association(@"ExperienceReferencesX_Location", typeof(Experience))]
-        public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
-        [Association(@"LocationHistoryReferencesX_Location", typeof(LocationHistory))]
-        public XPCollection<LocationHistory> LocationHistorys { get { return GetCollection<LocationHistory>("LocationHistorys"); } }
         [Association(@"AddressReferencesX_Location", typeof(Address))]
         public XPCollection<Address> AddressCollection { get { return GetCollection<Address>("AddressCollection"); } }
+        [Association(@"ExperienceReferencesX_Location", typeof(Experience))]
+        public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
+        [Association(@"HeaderReferencesX_Location", typeof(Header))]
+        public XPCollection<Header> Headers { get { return GetCollection<Header>("Headers"); } }
+        [Association(@"LocationAliasReferencesX_Location", typeof(LocationAlias))]
+        public XPCollection<LocationAlias> LocationAliasCollection { get { return GetCollection<LocationAlias>("LocationAliasCollection"); } }
+        [Association(@"LocationHistoryReferencesX_Location", typeof(LocationHistory))]
+        public XPCollection<LocationHistory> LocationHistorys { get { return GetCollection<LocationHistory>("LocationHistorys"); } }
     }
 
 }

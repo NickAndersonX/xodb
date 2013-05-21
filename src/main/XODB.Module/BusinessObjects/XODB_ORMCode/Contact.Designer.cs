@@ -195,8 +195,6 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_TenementReferencesContact", typeof(Tenement))]
-        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
         [Association(@"AssayGroupReferencesContact", typeof(AssayGroup))]
         public XPCollection<AssayGroup> AssayGroups { get { return GetCollection<AssayGroup>("AssayGroups"); } }
         [Association(@"AssayGroupReferencesContact1", typeof(AssayGroup))]
@@ -273,10 +271,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Contract> X_Contracts2 { get { return GetCollection<Contract>("X_Contracts2"); } }
         [Association(@"X_ContractReferencesContact3", typeof(Contract))]
         public XPCollection<Contract> X_Contracts3 { get { return GetCollection<Contract>("X_Contracts3"); } }
-        [Association(@"X_LocationReferencesContact", typeof(Location))]
-        public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
         [Association(@"X_SurveyReferencesContact", typeof(Survey))]
         public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
+        [Association(@"X_LocationReferencesContact", typeof(Location))]
+        public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
+        [Association(@"X_TenementReferencesContact", typeof(Tenement))]
+        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
     }
 
 }

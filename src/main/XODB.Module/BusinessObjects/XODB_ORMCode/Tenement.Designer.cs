@@ -138,22 +138,22 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"LeaseApplicationReferencesX_Tenement", typeof(LeaseApplication))]
-        public XPCollection<LeaseApplication> LeaseApplications { get { return GetCollection<LeaseApplication>("LeaseApplications"); } }
         [Association(@"LeaseReferencesX_Tenement", typeof(Lease))]
         public XPCollection<Lease> Leases { get { return GetCollection<Lease>("Leases"); } }
+        [Association(@"LeaseApplicationReferencesX_Tenement", typeof(LeaseApplication))]
+        public XPCollection<LeaseApplication> LeaseApplications { get { return GetCollection<LeaseApplication>("LeaseApplications"); } }
         [Association(@"ProjectReferencesX_Tenement", typeof(Project))]
         public XPCollection<Project> Projects { get { return GetCollection<Project>("Projects"); } }
-        [Association(@"TenementRelationReferencesX_Tenement1", typeof(TenementRelation))]
-        public XPCollection<TenementRelation> TenementRelations1 { get { return GetCollection<TenementRelation>("TenementRelations1"); } }
-        [Association(@"TenementRelationReferencesX_Tenement", typeof(TenementRelation))]
-        public XPCollection<TenementRelation> TenementRelations { get { return GetCollection<TenementRelation>("TenementRelations"); } }
-        [Association(@"TenementProvinceReferencesX_Tenement", typeof(TenementProvince))]
-        public XPCollection<TenementProvince> TenementProvinces { get { return GetCollection<TenementProvince>("TenementProvinces"); } }
-        [Association(@"TenementCommodityReferencesX_Tenement", typeof(TenementCommodity))]
-        public XPCollection<TenementCommodity> TenementCommoditys { get { return GetCollection<TenementCommodity>("TenementCommoditys"); } }
         [Association(@"ProspectusReferencesX_Tenement", typeof(Prospectus))]
         public XPCollection<Prospectus> ProspectusCollection { get { return GetCollection<Prospectus>("ProspectusCollection"); } }
+        [Association(@"TenementCommodityReferencesX_Tenement", typeof(TenementCommodity))]
+        public XPCollection<TenementCommodity> TenementCommoditys { get { return GetCollection<TenementCommodity>("TenementCommoditys"); } }
+        [Association(@"TenementProvinceReferencesX_Tenement", typeof(TenementProvince))]
+        public XPCollection<TenementProvince> TenementProvinces { get { return GetCollection<TenementProvince>("TenementProvinces"); } }
+        [Association(@"TenementRelationReferencesX_Tenement", typeof(TenementRelation))]
+        public XPCollection<TenementRelation> TenementRelations { get { return GetCollection<TenementRelation>("TenementRelations"); } }
+        [Association(@"TenementRelationReferencesX_Tenement1", typeof(TenementRelation))]
+        public XPCollection<TenementRelation> TenementRelations1 { get { return GetCollection<TenementRelation>("TenementRelations1"); } }
     }
 
 }

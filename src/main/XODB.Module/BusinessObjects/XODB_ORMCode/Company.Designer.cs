@@ -152,12 +152,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Contract> X_Contracts2 { get { return GetCollection<Contract>("X_Contracts2"); } }
         [Association(@"X_ContractReferencesCompany3", typeof(Contract))]
         public XPCollection<Contract> X_Contracts3 { get { return GetCollection<Contract>("X_Contracts3"); } }
+        [Association(@"X_SurveyReferencesCompany", typeof(Survey))]
+        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
         [Association(@"X_LocationReferencesCompany", typeof(Location))]
         public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
         [Association(@"X_TenementReferencesCompany", typeof(Tenement))]
         public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
-        [Association(@"X_SurveyReferencesCompany", typeof(Survey))]
-        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
     }
 
 }
