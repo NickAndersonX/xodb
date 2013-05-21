@@ -168,6 +168,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<LocationAlias> LocationAliasCollection { get { return GetCollection<LocationAlias>("LocationAliasCollection"); } }
         [Association(@"LocationHistoryReferencesX_Location", typeof(LocationHistory))]
         public XPCollection<LocationHistory> LocationHistorys { get { return GetCollection<LocationHistory>("LocationHistorys"); } }
+        [Association(@"Q_AccountReferencesLocation", typeof(Account))]
+        public XPCollection<Account> Q_Accounts { get { return GetCollection<Account>("Q_Accounts"); } }
+        [Association(@"Q_WarehouseReferencesLocation", typeof(Warehouse))]
+        public XPCollection<Warehouse> Q_Warehouses { get { return GetCollection<Warehouse>("Q_Warehouses"); } }
+        [Association(@"Q_AssetReferencesLocation", typeof(Asset))]
+        public XPCollection<Asset> Q_Assets { get { return GetCollection<Asset>("Q_Assets"); } }
     }
 
 }

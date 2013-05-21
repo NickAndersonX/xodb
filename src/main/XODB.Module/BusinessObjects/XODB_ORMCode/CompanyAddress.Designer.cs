@@ -90,6 +90,14 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        [Association(@"E_InvoiceReferencesCompanyAddress", typeof(Invoice))]
+        public XPCollection<Invoice> E_Invoices { get { return GetCollection<Invoice>("E_Invoices"); } }
+        [Association(@"E_InvoiceReferencesCompanyAddress1", typeof(Invoice))]
+        public XPCollection<Invoice> E_Invoices1 { get { return GetCollection<Invoice>("E_Invoices1"); } }
+        [Association(@"Q_DeliveryAdviceReferencesCompanyAddress", typeof(DeliveryAdvice))]
+        public XPCollection<DeliveryAdvice> Q_DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices"); } }
+        [Association(@"Q_DeliveryAdviceReferencesCompanyAddress1", typeof(DeliveryAdvice))]
+        public XPCollection<DeliveryAdvice> Q_DeliveryAdvices1 { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices1"); } }
     }
 
 }

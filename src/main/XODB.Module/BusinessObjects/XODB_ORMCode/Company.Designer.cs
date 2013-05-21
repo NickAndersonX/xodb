@@ -158,6 +158,26 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
         [Association(@"X_TenementReferencesCompany", typeof(Tenement))]
         public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
+        [Association(@"Q_AccountReferencesCompany", typeof(Account))]
+        public XPCollection<Account> Q_Accounts { get { return GetCollection<Account>("Q_Accounts"); } }
+        [Association(@"E_PurchaseOrderReferencesCompany", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> E_PurchaseOrders { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders"); } }
+        [Association(@"E_PurchaseOrderReferencesCompany1", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> E_PurchaseOrders1 { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders1"); } }
+        [Association(@"E_InvoiceReferencesCompany", typeof(Invoice))]
+        public XPCollection<Invoice> E_Invoices { get { return GetCollection<Invoice>("E_Invoices"); } }
+        [Association(@"E_InvoiceReferencesCompany1", typeof(Invoice))]
+        public XPCollection<Invoice> E_Invoices1 { get { return GetCollection<Invoice>("E_Invoices1"); } }
+        [Association(@"Q_WarehouseReferencesCompany", typeof(Warehouse))]
+        public XPCollection<Warehouse> Q_Warehouses { get { return GetCollection<Warehouse>("Q_Warehouses"); } }
+        [Association(@"Q_CompanyAccountReferencesCompany", typeof(CompanyAccount))]
+        public XPCollection<CompanyAccount> Q_CompanyAccounts { get { return GetCollection<CompanyAccount>("Q_CompanyAccounts"); } }
+        [Association(@"Q_AccountDiscountReferencesCompany", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
+        [Association(@"Q_SupplierPartReferencesCompany", typeof(SupplierPart))]
+        public XPCollection<SupplierPart> Q_SupplierParts { get { return GetCollection<SupplierPart>("Q_SupplierParts"); } }
+        [Association(@"Q_DeliveryAdviceReferencesCompany", typeof(DeliveryAdvice))]
+        public XPCollection<DeliveryAdvice> Q_DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices"); } }
     }
 
 }

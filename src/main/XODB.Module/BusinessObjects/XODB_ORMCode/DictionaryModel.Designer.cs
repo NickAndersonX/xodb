@@ -86,8 +86,75 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
+        Guid fParentModelID;
+        public Guid ParentModelID
+        {
+            get { return fParentModelID; }
+            set { SetPropertyValue<Guid>("ParentModelID", ref fParentModelID, value); }
+        }
+        string fEcriModelName;
+        [Size(60)]
+        public string EcriModelName
+        {
+            get { return fEcriModelName; }
+            set { SetPropertyValue<string>("EcriModelName", ref fEcriModelName, value); }
+        }
+        Guid fDeviceTypeID;
+        public Guid DeviceTypeID
+        {
+            get { return fDeviceTypeID; }
+            set { SetPropertyValue<Guid>("DeviceTypeID", ref fDeviceTypeID, value); }
+        }
+        bool fIsMake;
+        public bool IsMake
+        {
+            get { return fIsMake; }
+            set { SetPropertyValue<bool>("IsMake", ref fIsMake, value); }
+        }
+        DateTime fManufacturedFrom;
+        public DateTime ManufacturedFrom
+        {
+            get { return fManufacturedFrom; }
+            set { SetPropertyValue<DateTime>("ManufacturedFrom", ref fManufacturedFrom, value); }
+        }
+        DateTime fManufacturedUntil;
+        public DateTime ManufacturedUntil
+        {
+            get { return fManufacturedUntil; }
+            set { SetPropertyValue<DateTime>("ManufacturedUntil", ref fManufacturedUntil, value); }
+        }
+        DateTime fSupportedUntil;
+        public DateTime SupportedUntil
+        {
+            get { return fSupportedUntil; }
+            set { SetPropertyValue<DateTime>("SupportedUntil", ref fSupportedUntil, value); }
+        }
+        Guid fSupportUnitID;
+        public Guid SupportUnitID
+        {
+            get { return fSupportUnitID; }
+            set { SetPropertyValue<Guid>("SupportUnitID", ref fSupportUnitID, value); }
+        }
+        decimal fSupportQuantity;
+        public decimal SupportQuantity
+        {
+            get { return fSupportQuantity; }
+            set { SetPropertyValue<decimal>("SupportQuantity", ref fSupportQuantity, value); }
+        }
         [Association(@"X_SurveyReferencesDictionaryModel", typeof(Survey))]
         public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
+        [Association(@"Q_RecallModelReferencesDictionaryModel", typeof(RecallModel))]
+        public XPCollection<RecallModel> Q_RecallModels { get { return GetCollection<RecallModel>("Q_RecallModels"); } }
+        [Association(@"Q_ModelScheduleCycleReferencesDictionaryModel", typeof(ModelScheduleCycle))]
+        public XPCollection<ModelScheduleCycle> Q_ModelScheduleCycles { get { return GetCollection<ModelScheduleCycle>("Q_ModelScheduleCycles"); } }
+        [Association(@"Q_ModelPartReferencesDictionaryModel", typeof(ModelPart))]
+        public XPCollection<ModelPart> Q_ModelParts { get { return GetCollection<ModelPart>("Q_ModelParts"); } }
+        [Association(@"Q_ModelWarrantyReferencesDictionaryModel", typeof(ModelWarranty))]
+        public XPCollection<ModelWarranty> Q_ModelWarrantys { get { return GetCollection<ModelWarranty>("Q_ModelWarrantys"); } }
+        [Association(@"Q_AssetReferencesDictionaryModel", typeof(Asset))]
+        public XPCollection<Asset> Q_Assets { get { return GetCollection<Asset>("Q_Assets"); } }
+        [Association(@"Q_ModelProcedureReferencesDictionaryModel", typeof(ModelProcedure))]
+        public XPCollection<ModelProcedure> Q_ModelProcedures { get { return GetCollection<ModelProcedure>("Q_ModelProcedures"); } }
     }
 
 }

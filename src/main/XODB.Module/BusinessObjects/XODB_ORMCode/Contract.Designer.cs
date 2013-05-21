@@ -198,6 +198,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        [Association(@"Q_ModelWarrantyReferencesContract", typeof(ModelWarranty))]
+        public XPCollection<ModelWarranty> Q_ModelWarrantys { get { return GetCollection<ModelWarranty>("Q_ModelWarrantys"); } }
+        [Association(@"Q_ContractAssetReferencesContract", typeof(ContractAsset))]
+        public XPCollection<ContractAsset> Q_ContractAssets { get { return GetCollection<ContractAsset>("Q_ContractAssets"); } }
     }
 
 }

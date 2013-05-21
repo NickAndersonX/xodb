@@ -167,6 +167,8 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"ProjectPlanTaskComplianceResponseReferencesProjectPlanTaskResponse", typeof(ProjectPlanTaskComplianceResponse))]
         public XPCollection<ProjectPlanTaskComplianceResponse> ProjectPlanTaskComplianceResponses { get { return GetCollection<ProjectPlanTaskComplianceResponse>("ProjectPlanTaskComplianceResponses"); } }
+        [Association(@"E_SupplyItemReferencesProjectPlanTaskResponse", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
     }
 
 }

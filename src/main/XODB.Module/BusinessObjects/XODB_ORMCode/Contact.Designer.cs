@@ -277,6 +277,22 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
         [Association(@"X_TenementReferencesContact", typeof(Tenement))]
         public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
+        [Association(@"Q_RecallReferencesContact", typeof(Recall))]
+        public XPCollection<Recall> Q_Recalls { get { return GetCollection<Recall>("Q_Recalls"); } }
+        [Association(@"Q_RecallReferencesContact1", typeof(Recall))]
+        public XPCollection<Recall> Q_Recalls1 { get { return GetCollection<Recall>("Q_Recalls1"); } }
+        [Association(@"Q_RecallReferencesContact2", typeof(Recall))]
+        public XPCollection<Recall> Q_Recalls2 { get { return GetCollection<Recall>("Q_Recalls2"); } }
+        [Association(@"Q_RecallReferencesContact3", typeof(Recall))]
+        public XPCollection<Recall> Q_Recalls3 { get { return GetCollection<Recall>("Q_Recalls3"); } }
+        [Association(@"E_PurchaseOrderReferencesContact", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> E_PurchaseOrders { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders"); } }
+        [Association(@"E_PurchaseOrderReferencesContact1", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> E_PurchaseOrders1 { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders1"); } }
+        [Association(@"E_SupplyReferencesContact", typeof(Supply))]
+        public XPCollection<Supply> E_Supplys { get { return GetCollection<Supply>("E_Supplys"); } }
+        [Association(@"E_SupplyReferencesContact1", typeof(Supply))]
+        public XPCollection<Supply> E_Supplys1 { get { return GetCollection<Supply>("E_Supplys1"); } }
     }
 
 }

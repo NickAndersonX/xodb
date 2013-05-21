@@ -135,6 +135,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Compliance> Compliances { get { return GetCollection<Compliance>("Compliances"); } }
         [Association(@"X_TenementReferencesProvince", typeof(Tenement))]
         public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
+        [Association(@"E_DictionaryTaxReferencesProvince", typeof(DictionaryTax))]
+        public XPCollection<DictionaryTax> E_DictionaryTaxs { get { return GetCollection<DictionaryTax>("E_DictionaryTaxs"); } }
     }
 
 }

@@ -234,6 +234,12 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"X_ContractReferencesProjectDeliverable", typeof(Contract))]
         public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
+        [Association(@"E_SupplyReferencesProjectDeliverable", typeof(Supply))]
+        public XPCollection<Supply> E_Supplys { get { return GetCollection<Supply>("E_Supplys"); } }
+        [Association(@"E_SupplyReferencesProjectDeliverable1", typeof(Supply))]
+        public XPCollection<Supply> E_Supplys1 { get { return GetCollection<Supply>("E_Supplys1"); } }
+        [Association(@"Q_DeliveryAdviceReferencesProjectDeliverable", typeof(DeliveryAdvice))]
+        public XPCollection<DeliveryAdvice> Q_DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices"); } }
     }
 
 }

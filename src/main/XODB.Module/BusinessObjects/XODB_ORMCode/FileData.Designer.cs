@@ -345,6 +345,10 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<DictionaryWorkType> X_DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("X_DictionaryWorkTypes"); } }
         [Association(@"X_GeophysicsReferencesFileData", typeof(Geophysics))]
         public XPCollection<Geophysics> X_GeophysicsCollection { get { return GetCollection<Geophysics>("X_GeophysicsCollection"); } }
+        [Association(@"Q_SupplierPartReferencesFileData", typeof(SupplierPart))]
+        public XPCollection<SupplierPart> Q_SupplierParts { get { return GetCollection<SupplierPart>("Q_SupplierParts"); } }
+        [Association(@"Q_ModelProcedureTaskReferencesFileData", typeof(ModelProcedureTask))]
+        public XPCollection<ModelProcedureTask> Q_ModelProcedureTasks { get { return GetCollection<ModelProcedureTask>("Q_ModelProcedureTasks"); } }
     }
 
 }

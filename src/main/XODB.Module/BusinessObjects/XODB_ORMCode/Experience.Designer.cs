@@ -239,6 +239,16 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
         [Association(@"ProjectPlanTaskWorkerReferencesExperience", typeof(ProjectPlanTaskWorker))]
         public XPCollection<ProjectPlanTaskWorker> ProjectPlanTaskWorkers { get { return GetCollection<ProjectPlanTaskWorker>("ProjectPlanTaskWorkers"); } }
+        [Association(@"Q_AccountDiscountReferencesExperience", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
+        [Association(@"Q_AssetReferencesExperience", typeof(Asset))]
+        public XPCollection<Asset> Q_Assets { get { return GetCollection<Asset>("Q_Assets"); } }
+        [Association(@"X_TaskReferencesExperience", typeof(Task))]
+        public XPCollection<Task> X_Tasks { get { return GetCollection<Task>("X_Tasks"); } }
+        [Association(@"Q_WorkflowScheduleReferencesExperience", typeof(WorkflowSchedule))]
+        public XPCollection<WorkflowSchedule> Q_WorkflowSchedules { get { return GetCollection<WorkflowSchedule>("Q_WorkflowSchedules"); } }
+        [Association(@"Q_DictionaryDeviceTypeReferencesExperience", typeof(DictionaryDeviceType))]
+        public XPCollection<DictionaryDeviceType> Q_DictionaryDeviceTypes { get { return GetCollection<DictionaryDeviceType>("Q_DictionaryDeviceTypes"); } }
     }
 
 }

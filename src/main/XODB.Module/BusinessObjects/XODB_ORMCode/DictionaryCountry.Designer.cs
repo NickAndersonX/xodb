@@ -96,6 +96,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
         [Association(@"X_TenementReferencesDictionaryCountry", typeof(Tenement))]
         public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
+        [Association(@"E_DictionaryTaxReferencesDictionaryCountry", typeof(DictionaryTax))]
+        public XPCollection<DictionaryTax> E_DictionaryTaxs { get { return GetCollection<DictionaryTax>("E_DictionaryTaxs"); } }
     }
 
 }

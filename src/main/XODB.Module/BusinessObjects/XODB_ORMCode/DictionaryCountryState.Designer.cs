@@ -87,6 +87,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Province> Provinces { get { return GetCollection<Province>("Provinces"); } }
         [Association(@"X_LocationReferencesDictionaryCountryState", typeof(Location))]
         public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
+        [Association(@"E_DictionaryTaxReferencesDictionaryCountryState", typeof(DictionaryTax))]
+        public XPCollection<DictionaryTax> E_DictionaryTaxs { get { return GetCollection<DictionaryTax>("E_DictionaryTaxs"); } }
     }
 
 }
