@@ -78,6 +78,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Account.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AccountDiscount.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AccountDiscount.Designer.cs">
+      <DependentUpon>AccountDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Address.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Address.Designer.cs">
       <DependentUpon>Address.cs</DependentUpon>
@@ -105,6 +113,22 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestResultDuplicate.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\AssayGroupTestResultDuplicate.Designer.cs">
       <DependentUpon>AssayGroupTestResultDuplicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Asset.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Asset.Designer.cs">
+      <DependentUpon>Asset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssetAlias.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssetAlias.Designer.cs">
+      <DependentUpon>AssetAlias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssetMaintenance.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssetMaintenance.Designer.cs">
+      <DependentUpon>AssetMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssetWarranty.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\AssetWarranty.Designer.cs">
+      <DependentUpon>AssetWarranty.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\BlockModel.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\BlockModel.Designer.cs">
@@ -134,6 +158,10 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\Company.Designer.cs">
       <DependentUpon>Company.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\CompanyAccount.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\CompanyAccount.Designer.cs">
+      <DependentUpon>CompanyAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\CompanyAddress.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\CompanyAddress.Designer.cs">
       <DependentUpon>CompanyAddress.cs</DependentUpon>
@@ -145,6 +173,10 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\Compliance.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Compliance.Designer.cs">
       <DependentUpon>Compliance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ComplianceTask.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ComplianceTask.Designer.cs">
+      <DependentUpon>ComplianceTask.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\ComplianceWorkType.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\ComplianceWorkType.Designer.cs">
@@ -171,13 +203,33 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\Contract.Designer.cs">
       <DependentUpon>Contract.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ContractAsset.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ContractAsset.Designer.cs">
+      <DependentUpon>ContractAsset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Credit.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Credit.Designer.cs">
+      <DependentUpon>Credit.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Defect.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Defect.Designer.cs">
       <DependentUpon>Defect.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DeliveryAdvice.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DeliveryAdvice.Designer.cs">
+      <DependentUpon>DeliveryAdvice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DeliveryAdviceItem.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DeliveryAdviceItem.Designer.cs">
+      <DependentUpon>DeliveryAdviceItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Desurvey.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Desurvey.Designer.cs">
       <DependentUpon>Desurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DicitonaryAssetStatus.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DicitonaryAssetStatus.Designer.cs">
+      <DependentUpon>DicitonaryAssetStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Dictionary.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Dictionary.Designer.cs">
@@ -239,6 +291,10 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDataStatus.Designer.cs">
       <DependentUpon>DictionaryDataStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDecontaminationStatus.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDecontaminationStatus.Designer.cs">
+      <DependentUpon>DictionaryDecontaminationStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectCompleteness.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectCompleteness.Designer.cs">
       <DependentUpon>DictionaryDefectCompleteness.cs</DependentUpon>
@@ -255,9 +311,17 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDefectType.Designer.cs">
       <DependentUpon>DictionaryDefectType.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDeliveryAdviceReason.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDeliveryAdviceReason.Designer.cs">
+      <DependentUpon>DictionaryDeliveryAdviceReason.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDesurveyAlgorithmType.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDesurveyAlgorithmType.Designer.cs">
       <DependentUpon>DictionaryDesurveyAlgorithmType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDeviceType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDeviceType.Designer.cs">
+      <DependentUpon>DictionaryDeviceType.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDimension.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryDimension.Designer.cs">
@@ -298,6 +362,10 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryEstimatedStrength.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryEstimatedStrength.Designer.cs">
       <DependentUpon>DictionaryEstimatedStrength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryEventType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryEventType.Designer.cs">
+      <DependentUpon>DictionaryEventType.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryFailureMode.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryFailureMode.Designer.cs">
@@ -431,6 +499,22 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryMoistureSensitivity.Designer.cs">
       <DependentUpon>DictionaryMoistureSensitivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPart.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPart.Designer.cs">
+      <DependentUpon>DictionaryPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPartCategory.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPartCategory.Designer.cs">
+      <DependentUpon>DictionaryPartCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPartKit.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPartKit.Designer.cs">
+      <DependentUpon>DictionaryPartKit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPartKitItem.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPartKitItem.Designer.cs">
+      <DependentUpon>DictionaryPartKitItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPlasticity.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPlasticity.Designer.cs">
       <DependentUpon>DictionaryPlasticity.cs</DependentUpon>
@@ -450,6 +534,10 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPosition.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryPosition.Designer.cs">
       <DependentUpon>DictionaryPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProcedure.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProcedure.Designer.cs">
+      <DependentUpon>DictionaryProcedure.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProfession.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryProfession.Designer.cs">
@@ -515,6 +603,10 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionarySurveyAccuracy.Designer.cs">
       <DependentUpon>DictionarySurveyAccuracy.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryTax.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryTax.Designer.cs">
+      <DependentUpon>DictionaryTax.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryTexture.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryTexture.Designer.cs">
       <DependentUpon>DictionaryTexture.cs</DependentUpon>
@@ -526,6 +618,10 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryUsageAuditType.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryUsageAuditType.Designer.cs">
       <DependentUpon>DictionaryUsageAuditType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWarrantyType.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWarrantyType.Designer.cs">
+      <DependentUpon>DictionaryWarrantyType.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWeathering.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\DictionaryWeathering.Designer.cs">
@@ -579,6 +675,18 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\HeaderRelation.Designer.cs">
       <DependentUpon>HeaderRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Invoice.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\InvoiceLine.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\InvoiceLine.Designer.cs">
+      <DependentUpon>InvoiceLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Journal.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Journal.Designer.cs">
+      <DependentUpon>Journal.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Lease.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Lease.Designer.cs">
       <DependentUpon>Lease.cs</DependentUpon>
@@ -615,6 +723,34 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\Mineralogy.Designer.cs">
       <DependentUpon>Mineralogy.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelPart.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelPart.Designer.cs">
+      <DependentUpon>ModelPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelPartKit.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelPartKit.Designer.cs">
+      <DependentUpon>ModelPartKit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelProcedure.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelProcedure.Designer.cs">
+      <DependentUpon>ModelProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelProcedureTask.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelProcedureTask.Designer.cs">
+      <DependentUpon>ModelProcedureTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelProcedureTaskPart.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelProcedureTaskPart.Designer.cs">
+      <DependentUpon>ModelProcedureTaskPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelScheduleCycle.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelScheduleCycle.Designer.cs">
+      <DependentUpon>ModelScheduleCycle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelWarranty.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ModelWarranty.Designer.cs">
+      <DependentUpon>ModelWarranty.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Opportunity.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Opportunity.Designer.cs">
       <DependentUpon>Opportunity.cs</DependentUpon>
@@ -630,6 +766,10 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\ParameterGroup.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\ParameterGroup.Designer.cs">
       <DependentUpon>ParameterGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Payment.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\PointLoad.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\PointLoad.Designer.cs">
@@ -659,6 +799,10 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTaskComplianceResponse.Designer.cs">
       <DependentUpon>ProjectPlanTaskComplianceResponse.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTaskPart.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTaskPart.Designer.cs">
+      <DependentUpon>ProjectPlanTaskPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTaskResponse.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\ProjectPlanTaskResponse.Designer.cs">
       <DependentUpon>ProjectPlanTaskResponse.cs</DependentUpon>
@@ -687,6 +831,22 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\Province.Designer.cs">
       <DependentUpon>Province.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\PurchaseOrder.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\PurchaseOrder.Designer.cs">
+      <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Recall.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Recall.Designer.cs">
+      <DependentUpon>Recall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\RecallModel.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\RecallModel.Designer.cs">
+      <DependentUpon>RecallModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\RecallModelAsset.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\RecallModelAsset.Designer.cs">
+      <DependentUpon>RecallModelAsset.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Recovery.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Recovery.Designer.cs">
       <DependentUpon>Recovery.cs</DependentUpon>
@@ -703,9 +863,25 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\SecurityWhitelist.Designer.cs">
       <DependentUpon>SecurityWhitelist.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\SupplierPart.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\SupplierPart.Designer.cs">
+      <DependentUpon>SupplierPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Supply.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Supply.Designer.cs">
+      <DependentUpon>Supply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\SupplyItem.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\SupplyItem.Designer.cs">
+      <DependentUpon>SupplyItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Survey.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Survey.Designer.cs">
       <DependentUpon>Survey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Task.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Task.Designer.cs">
+      <DependentUpon>Task.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\Tenement.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\Tenement.Designer.cs">
@@ -731,9 +907,21 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\UserData.Designer.cs">
       <DependentUpon>UserData.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\Warehouse.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\Warehouse.Designer.cs">
+      <DependentUpon>Warehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\WarehousePart.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\WarehousePart.Designer.cs">
+      <DependentUpon>WarehousePart.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusinessObjects\XODB_ORMCode\WaterFlow.cs" />
     <Compile Include="BusinessObjects\XODB_ORMCode\WaterFlow.Designer.cs">
       <DependentUpon>WaterFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessObjects\XODB_ORMCode\WorkflowSchedule.cs" />
+    <Compile Include="BusinessObjects\XODB_ORMCode\WorkflowSchedule.Designer.cs">
+      <DependentUpon>WorkflowSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
