@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryModel>("ModelID", ref fModelID, value); }
         }
         ModelProcedure fModelProcedureID;
-        [Association(@"Q_ModelScheduleCycleReferencesQ_ModelProcedure")]
+        [Association(@"ModelScheduleCycleReferencesQ_ModelProcedure")]
         public ModelProcedure ModelProcedureID
         {
             get { return fModelProcedureID; }
@@ -43,7 +43,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("Sequence", ref fSequence, value); }
         }
         DictionaryUnit fScheduleFrequencyUnitID;
-        [Association(@"Q_ModelScheduleCycleReferencesDictionaryUnit")]
+        [Association(@"ModelScheduleCycleReferencesDictionaryUnit")]
         public DictionaryUnit ScheduleFrequencyUnitID
         {
             get { return fScheduleFrequencyUnitID; }

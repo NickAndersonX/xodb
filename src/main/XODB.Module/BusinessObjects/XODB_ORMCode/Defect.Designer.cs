@@ -42,28 +42,28 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("ToDepth", ref fToDepth, value); }
         }
         DictionaryWeathering fWeatheringID;
-        [Association(@"X_DefectReferencesDictionaryWeathering")]
+        [Association(@"DefectReferencesDictionaryWeathering")]
         public DictionaryWeathering WeatheringID
         {
             get { return fWeatheringID; }
             set { SetPropertyValue<DictionaryWeathering>("WeatheringID", ref fWeatheringID, value); }
         }
         DictionaryRockMassUnitType fRockMassUnitTypeID;
-        [Association(@"X_DefectReferencesDictionaryRockMassUnitType")]
+        [Association(@"DefectReferencesDictionaryRockMassUnitType")]
         public DictionaryRockMassUnitType RockMassUnitTypeID
         {
             get { return fRockMassUnitTypeID; }
             set { SetPropertyValue<DictionaryRockMassUnitType>("RockMassUnitTypeID", ref fRockMassUnitTypeID, value); }
         }
         DictionaryAlteration fAlterationID;
-        [Association(@"X_DefectReferencesDictionaryAlteration")]
+        [Association(@"DefectReferencesDictionaryAlteration")]
         public DictionaryAlteration AlterationID
         {
             get { return fAlterationID; }
             set { SetPropertyValue<DictionaryAlteration>("AlterationID", ref fAlterationID, value); }
         }
         DictionaryEstimatedStrength fEstimatedStrengthID;
-        [Association(@"X_DefectReferencesDictionaryEstimatedStrength")]
+        [Association(@"DefectReferencesDictionaryEstimatedStrength")]
         public DictionaryEstimatedStrength EstimatedStrengthID
         {
             get { return fEstimatedStrengthID; }
@@ -83,14 +83,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("BedDip", ref fBedDip, value); }
         }
         DictionaryMoistureSensitivity fMoistureSensitivityID;
-        [Association(@"X_DefectReferencesDictionaryMoistureSensitivity")]
+        [Association(@"DefectReferencesDictionaryMoistureSensitivity")]
         public DictionaryMoistureSensitivity MoistureSensitivityID
         {
             get { return fMoistureSensitivityID; }
             set { SetPropertyValue<DictionaryMoistureSensitivity>("MoistureSensitivityID", ref fMoistureSensitivityID, value); }
         }
         DictionaryPlasticity fPlasticityID;
-        [Association(@"X_DefectReferencesDictionaryPlasticity")]
+        [Association(@"DefectReferencesDictionaryPlasticity")]
         public DictionaryPlasticity PlasticityID
         {
             get { return fPlasticityID; }
@@ -166,21 +166,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("DipOrientation", ref fDipOrientation, value); }
         }
         DictionaryDipOrientationMethod fDipOrientationMethodID;
-        [Association(@"X_DefectReferencesDictionaryDipOrientationMethod")]
+        [Association(@"DefectReferencesDictionaryDipOrientationMethod")]
         public DictionaryDipOrientationMethod DipOrientationMethodID
         {
             get { return fDipOrientationMethodID; }
             set { SetPropertyValue<DictionaryDipOrientationMethod>("DipOrientationMethodID", ref fDipOrientationMethodID, value); }
         }
         DictionaryShape fShapeID;
-        [Association(@"X_DefectReferencesDictionaryShape")]
+        [Association(@"DefectReferencesDictionaryShape")]
         public DictionaryShape ShapeID
         {
             get { return fShapeID; }
             set { SetPropertyValue<DictionaryShape>("ShapeID", ref fShapeID, value); }
         }
         DictionarySurfaceRoughness fRoughnessID;
-        [Association(@"X_DefectReferencesDictionarySurfaceRoughness")]
+        [Association(@"DefectReferencesDictionarySurfaceRoughness")]
         public DictionarySurfaceRoughness RoughnessID
         {
             get { return fRoughnessID; }
@@ -199,35 +199,35 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("PerpendicularWidth", ref fPerpendicularWidth, value); }
         }
         DictionaryInfillType fPrimaryInfillTypeID;
-        [Association(@"X_DefectReferencesDictionaryInfillType")]
+        [Association(@"DefectReferencesDictionaryInfillType")]
         public DictionaryInfillType PrimaryInfillTypeID
         {
             get { return fPrimaryInfillTypeID; }
             set { SetPropertyValue<DictionaryInfillType>("PrimaryInfillTypeID", ref fPrimaryInfillTypeID, value); }
         }
         DictionaryInfillType fSecondaryInfillTypeID;
-        [Association(@"X_DefectReferencesDictionaryInfillType1")]
+        [Association(@"DefectReferencesDictionaryInfillType1")]
         public DictionaryInfillType SecondaryInfillTypeID
         {
             get { return fSecondaryInfillTypeID; }
             set { SetPropertyValue<DictionaryInfillType>("SecondaryInfillTypeID", ref fSecondaryInfillTypeID, value); }
         }
         DictionaryInfillMode fInfillModeID;
-        [Association(@"X_DefectReferencesDictionaryInfillMode")]
+        [Association(@"DefectReferencesDictionaryInfillMode")]
         public DictionaryInfillMode InfillModeID
         {
             get { return fInfillModeID; }
             set { SetPropertyValue<DictionaryInfillMode>("InfillModeID", ref fInfillModeID, value); }
         }
         DictionaryEstimatedStrength fInfillEstimatedStrengthID;
-        [Association(@"X_DefectReferencesDictionaryEstimatedStrength1")]
+        [Association(@"DefectReferencesDictionaryEstimatedStrength1")]
         public DictionaryEstimatedStrength InfillEstimatedStrengthID
         {
             get { return fInfillEstimatedStrengthID; }
             set { SetPropertyValue<DictionaryEstimatedStrength>("InfillEstimatedStrengthID", ref fInfillEstimatedStrengthID, value); }
         }
         DictionaryPlasticity fInfillPlasticityID;
-        [Association(@"X_DefectReferencesDictionaryPlasticity1")]
+        [Association(@"DefectReferencesDictionaryPlasticity1")]
         public DictionaryPlasticity InfillPlasticityID
         {
             get { return fInfillPlasticityID; }

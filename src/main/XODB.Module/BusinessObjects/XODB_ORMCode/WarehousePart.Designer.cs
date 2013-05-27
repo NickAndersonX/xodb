@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("WarehousePartID", ref fWarehousePartID, value); }
         }
         DictionaryPart fPartID;
-        [Association(@"Q_WarehousePartReferencesQ_DictionaryPart")]
+        [Association(@"WarehousePartReferencesQ_DictionaryPart")]
         public DictionaryPart PartID
         {
             get { return fPartID; }
             set { SetPropertyValue<DictionaryPart>("PartID", ref fPartID, value); }
         }
         Warehouse fWarehouseID;
-        [Association(@"Q_WarehousePartReferencesWarehouse")]
+        [Association(@"WarehousePartReferencesWarehouse")]
         public Warehouse WarehouseID
         {
             get { return fWarehouseID; }

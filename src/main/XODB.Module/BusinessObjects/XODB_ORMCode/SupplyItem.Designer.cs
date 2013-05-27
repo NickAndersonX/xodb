@@ -23,56 +23,56 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SupplyItemID", ref fSupplyItemID, value); }
         }
         Supply fSupplyID;
-        [Association(@"E_SupplyItemReferencesSupply")]
+        [Association(@"SupplyItemReferencesSupply")]
         public Supply SupplyID
         {
             get { return fSupplyID; }
             set { SetPropertyValue<Supply>("SupplyID", ref fSupplyID, value); }
         }
         ProjectPlanTaskModel fProjectPlanTaskModelID;
-        [Association(@"E_SupplyItemReferencesProjectPlanTaskModel")]
+        [Association(@"SupplyItemReferencesProjectPlanTaskModel")]
         public ProjectPlanTaskModel ProjectPlanTaskModelID
         {
             get { return fProjectPlanTaskModelID; }
             set { SetPropertyValue<ProjectPlanTaskModel>("ProjectPlanTaskModelID", ref fProjectPlanTaskModelID, value); }
         }
         ProjectPlanTaskPart fProjectPlanTaskPartID;
-        [Association(@"E_SupplyItemReferencesProjectPlanTaskPart")]
+        [Association(@"SupplyItemReferencesProjectPlanTaskPart")]
         public ProjectPlanTaskPart ProjectPlanTaskPartID
         {
             get { return fProjectPlanTaskPartID; }
             set { SetPropertyValue<ProjectPlanTaskPart>("ProjectPlanTaskPartID", ref fProjectPlanTaskPartID, value); }
         }
         ProjectPlanTaskResponse fProjectPlanTaskResponseID;
-        [Association(@"E_SupplyItemReferencesProjectPlanTaskResponse")]
+        [Association(@"SupplyItemReferencesProjectPlanTaskResponse")]
         public ProjectPlanTaskResponse ProjectPlanTaskResponseID
         {
             get { return fProjectPlanTaskResponseID; }
             set { SetPropertyValue<ProjectPlanTaskResponse>("ProjectPlanTaskResponseID", ref fProjectPlanTaskResponseID, value); }
         }
         Account fCustomerAccountID;
-        [Association(@"E_SupplyItemReferencesAccount")]
+        [Association(@"SupplyItemReferencesAccount")]
         public Account CustomerAccountID
         {
             get { return fCustomerAccountID; }
             set { SetPropertyValue<Account>("CustomerAccountID", ref fCustomerAccountID, value); }
         }
         DictionaryUnit fModelUnitID;
-        [Association(@"E_SupplyItemReferencesDictionaryUnit2")]
+        [Association(@"SupplyItemReferencesDictionaryUnit2")]
         public DictionaryUnit ModelUnitID
         {
             get { return fModelUnitID; }
             set { SetPropertyValue<DictionaryUnit>("ModelUnitID", ref fModelUnitID, value); }
         }
         DictionaryUnit fLabourUnitID;
-        [Association(@"E_SupplyItemReferencesDictionaryUnit1")]
+        [Association(@"SupplyItemReferencesDictionaryUnit1")]
         public DictionaryUnit LabourUnitID
         {
             get { return fLabourUnitID; }
             set { SetPropertyValue<DictionaryUnit>("LabourUnitID", ref fLabourUnitID, value); }
         }
         DictionaryUnit fPartUnitID;
-        [Association(@"E_SupplyItemReferencesDictionaryUnit")]
+        [Association(@"SupplyItemReferencesDictionaryUnit")]
         public DictionaryUnit PartUnitID
         {
             get { return fPartUnitID; }
@@ -181,7 +181,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("OriginalSubtotal", ref fOriginalSubtotal, value); }
         }
         Currency fCurrencyID;
-        [Association(@"E_SupplyItemReferencesCurrency")]
+        [Association(@"SupplyItemReferencesCurrency")]
         public Currency CurrencyID
         {
             get { return fCurrencyID; }
@@ -254,10 +254,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"SupplyItemTaxReferencesE_SupplyItem", typeof(SupplyItemTax))]
-        public XPCollection<SupplyItemTax> SupplyItemTaxs { get { return GetCollection<SupplyItemTax>("SupplyItemTaxs"); } }
         [Association(@"InvoiceLineReferencesE_SupplyItem", typeof(InvoiceLine))]
         public XPCollection<InvoiceLine> InvoiceLines { get { return GetCollection<InvoiceLine>("InvoiceLines"); } }
+        [Association(@"SupplyItemTaxReferencesE_SupplyItem", typeof(SupplyItemTax))]
+        public XPCollection<SupplyItemTax> SupplyItemTaxs { get { return GetCollection<SupplyItemTax>("SupplyItemTaxs"); } }
     }
 
 }

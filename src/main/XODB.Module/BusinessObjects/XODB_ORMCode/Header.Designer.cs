@@ -396,10 +396,10 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<WaterFlow> WaterFlows { get { return GetCollection<WaterFlow>("WaterFlows"); } }
         [Association(@"SampleReferencesHeader", typeof(Sample))]
         public XPCollection<Sample> Samples { get { return GetCollection<Sample>("Samples"); } }
-        [Association(@"X_SurveyReferencesHeader", typeof(Survey))]
-        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
-        [Association(@"X_GeophysicsReferencesHeader", typeof(Geophysics))]
-        public XPCollection<Geophysics> X_GeophysicsCollection { get { return GetCollection<Geophysics>("X_GeophysicsCollection"); } }
+        [Association(@"SurveyReferencesHeader", typeof(Survey))]
+        public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
+        [Association(@"GeophysicsReferencesHeader", typeof(Geophysics))]
+        public XPCollection<Geophysics> GeophysicsCollection { get { return GetCollection<Geophysics>("GeophysicsCollection"); } }
     }
 
 }

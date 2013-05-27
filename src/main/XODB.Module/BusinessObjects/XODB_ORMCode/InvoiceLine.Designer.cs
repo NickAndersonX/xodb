@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("InvoiceLineID", ref fInvoiceLineID, value); }
         }
         Invoice fInvoiceID;
-        [Association(@"E_InvoiceLineReferencesE_Invoice")]
+        [Association(@"InvoiceLineReferencesE_Invoice")]
         public Invoice InvoiceID
         {
             get { return fInvoiceID; }
@@ -56,7 +56,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("Quantity", ref fQuantity, value); }
         }
         DictionaryTax fTaxID;
-        [Association(@"E_InvoiceLineReferencesE_DictionaryTax")]
+        [Association(@"InvoiceLineReferencesE_DictionaryTax")]
         public DictionaryTax TaxID
         {
             get { return fTaxID; }
@@ -148,8 +148,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fCurrencyID; }
             set { SetPropertyValue<Currency>("CurrencyID", ref fCurrencyID, value); }
         }
-        [Association(@"E_CreditReferencesInvoiceLine", typeof(Credit))]
-        public XPCollection<Credit> E_Credits { get { return GetCollection<Credit>("E_Credits"); } }
+        [Association(@"CreditReferencesInvoiceLine", typeof(Credit))]
+        public XPCollection<Credit> Credits { get { return GetCollection<Credit>("Credits"); } }
     }
 
 }

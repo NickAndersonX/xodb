@@ -65,8 +65,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"X_DictionaryModelReferencesDictionaryModelStatus", typeof(DictionaryModel))]
-        public XPCollection<DictionaryModel> X_DictionaryModels { get { return GetCollection<DictionaryModel>("X_DictionaryModels"); } }
+        [Association(@"DictionaryModelReferencesDictionaryModelStatus", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> DictionaryModels { get { return GetCollection<DictionaryModel>("DictionaryModels"); } }
     }
 
 }

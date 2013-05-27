@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("UsageAuditID", ref fUsageAuditID, value); }
         }
         DictionaryUsageAuditType fUsageAuditTypeID;
-        [Association(@"X_UsageAuditReferencesDictionaryUsageAuditType")]
+        [Association(@"UsageAuditReferencesDictionaryUsageAuditType")]
         public DictionaryUsageAuditType UsageAuditTypeID
         {
             get { return fUsageAuditTypeID; }

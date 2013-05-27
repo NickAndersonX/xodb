@@ -42,7 +42,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("ReferenceDate", ref fReferenceDate, value); }
         }
         Account fAccountID;
-        [Association(@"E_JournalReferencesQ_Account")]
+        [Association(@"JournalReferencesQ_Account")]
         public Account AccountID
         {
             get { return fAccountID; }

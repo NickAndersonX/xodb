@@ -63,8 +63,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<Guid>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"X_CostEstimateModelReferencesX_DictionaryCostType", typeof(CostEstimateModel))]
-        public XPCollection<CostEstimateModel> X_CostEstimateModels { get { return GetCollection<CostEstimateModel>("X_CostEstimateModels"); } }
+        [Association(@"CostEstimateModelReferencesX_DictionaryCostType", typeof(CostEstimateModel))]
+        public XPCollection<CostEstimateModel> CostEstimateModels { get { return GetCollection<CostEstimateModel>("CostEstimateModels"); } }
     }
 
 }

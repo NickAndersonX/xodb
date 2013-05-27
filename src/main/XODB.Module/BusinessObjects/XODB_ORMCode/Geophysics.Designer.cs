@@ -30,21 +30,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("FileName", ref fFileName, value); }
         }
         FileData fOriginalFileDataID;
-        [Association(@"X_GeophysicsReferencesFileData")]
+        [Association(@"GeophysicsReferencesFileData")]
         public FileData OriginalFileDataID
         {
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
         Header fHeaderID;
-        [Association(@"X_GeophysicsReferencesHeader")]
+        [Association(@"GeophysicsReferencesHeader")]
         public Header HeaderID
         {
             get { return fHeaderID; }
             set { SetPropertyValue<Header>("HeaderID", ref fHeaderID, value); }
         }
         DictionaryUnit fDimensionUnitID;
-        [Association(@"X_GeophysicsReferencesDictionaryUnit")]
+        [Association(@"GeophysicsReferencesDictionaryUnit")]
         public DictionaryUnit DimensionUnitID
         {
             get { return fDimensionUnitID; }

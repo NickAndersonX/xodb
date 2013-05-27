@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ContractConditionPartID", ref fContractConditionPartID, value); }
         }
         ContractCondition fContractConditionID;
-        [Association(@"X_ContractConditionPartReferencesX_ContractCondition")]
+        [Association(@"ContractConditionPartReferencesX_ContractCondition")]
         public ContractCondition ContractConditionID
         {
             get { return fContractConditionID; }

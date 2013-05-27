@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryModel>("ModelID", ref fModelID, value); }
         }
         DictionaryCharacteristic fCharacteristicID;
-        [Association(@"X_ModelCharacteristicReferencesX_DictionaryCharacteristic")]
+        [Association(@"ModelCharacteristicReferencesX_DictionaryCharacteristic")]
         public DictionaryCharacteristic CharacteristicID
         {
             get { return fCharacteristicID; }

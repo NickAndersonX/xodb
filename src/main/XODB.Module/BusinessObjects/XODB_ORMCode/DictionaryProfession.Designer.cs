@@ -82,8 +82,8 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"ExperienceReferencesDictionaryProfession", typeof(Experience))]
         public XPCollection<Experience> Experiences { get { return GetCollection<Experience>("Experiences"); } }
-        [Association(@"X_DictionaryWorkTypeReferencesDictionaryProfession", typeof(DictionaryWorkType))]
-        public XPCollection<DictionaryWorkType> X_DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("X_DictionaryWorkTypes"); } }
+        [Association(@"DictionaryWorkTypeReferencesDictionaryProfession", typeof(DictionaryWorkType))]
+        public XPCollection<DictionaryWorkType> DictionaryWorkTypes { get { return GetCollection<DictionaryWorkType>("DictionaryWorkTypes"); } }
     }
 
 }

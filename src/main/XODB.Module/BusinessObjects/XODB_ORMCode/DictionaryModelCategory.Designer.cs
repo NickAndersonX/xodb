@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryModel>("ModelID", ref fModelID, value); }
         }
         DictionaryDeviceType fCategoryDeviceTypeID;
-        [Association(@"X_DictionaryModelCategoryReferencesDictionaryDeviceType")]
+        [Association(@"DictionaryModelCategoryReferencesDictionaryDeviceType")]
         public DictionaryDeviceType CategoryDeviceTypeID
         {
             get { return fCategoryDeviceTypeID; }

@@ -24,7 +24,7 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         DictionaryCountry fCountryID;
         [Size(2)]
-        [Association(@"E_CurrencyReferencesDictionaryCountry")]
+        [Association(@"CurrencyReferencesDictionaryCountry")]
         public DictionaryCountry CountryID
         {
             get { return fCountryID; }
@@ -102,10 +102,6 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"E_SupplyItemReferencesCurrency", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
-        [Association(@"E_CreditReferencesCurrency", typeof(Credit))]
-        public XPCollection<Credit> E_Credits { get { return GetCollection<Credit>("E_Credits"); } }
         [Association(@"PurchaseOrderReferencesE_Currency", typeof(PurchaseOrder))]
         public XPCollection<PurchaseOrder> PurchaseOrders { get { return GetCollection<PurchaseOrder>("PurchaseOrders"); } }
         [Association(@"PaymentReferencesE_Currency", typeof(Payment))]
@@ -116,6 +112,10 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Journal> Journals { get { return GetCollection<Journal>("Journals"); } }
         [Association(@"InvoiceLineReferencesE_Currency", typeof(InvoiceLine))]
         public XPCollection<InvoiceLine> InvoiceLines { get { return GetCollection<InvoiceLine>("InvoiceLines"); } }
+        [Association(@"SupplyItemReferencesCurrency", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> SupplyItems { get { return GetCollection<SupplyItem>("SupplyItems"); } }
+        [Association(@"CreditReferencesCurrency", typeof(Credit))]
+        public XPCollection<Credit> Credits { get { return GetCollection<Credit>("Credits"); } }
     }
 
 }

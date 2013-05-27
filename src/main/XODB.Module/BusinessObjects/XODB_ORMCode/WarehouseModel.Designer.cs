@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryModel>("ModelID", ref fModelID, value); }
         }
         Warehouse fWarehouseID;
-        [Association(@"Q_WarehouseModelReferencesWarehouse")]
+        [Association(@"WarehouseModelReferencesWarehouse")]
         public Warehouse WarehouseID
         {
             get { return fWarehouseID; }
@@ -120,10 +120,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_WarehouseModelSupplierReferencesQ_WarehouseModel", typeof(WarehouseModelSupplier))]
-        public XPCollection<WarehouseModelSupplier> Q_WarehouseModelSuppliers { get { return GetCollection<WarehouseModelSupplier>("Q_WarehouseModelSuppliers"); } }
-        [Association(@"Q_ProjectPlanTaskModelReferencesQ_WarehouseModel", typeof(ProjectPlanTaskModel))]
-        public XPCollection<ProjectPlanTaskModel> Q_ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("Q_ProjectPlanTaskModels"); } }
+        [Association(@"WarehouseModelSupplierReferencesQ_WarehouseModel", typeof(WarehouseModelSupplier))]
+        public XPCollection<WarehouseModelSupplier> WarehouseModelSuppliers { get { return GetCollection<WarehouseModelSupplier>("WarehouseModelSuppliers"); } }
+        [Association(@"ProjectPlanTaskModelReferencesQ_WarehouseModel", typeof(ProjectPlanTaskModel))]
+        public XPCollection<ProjectPlanTaskModel> ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("ProjectPlanTaskModels"); } }
     }
 
 }

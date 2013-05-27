@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("TaskID", ref fTaskID, value); }
         }
         Task fParentTaskID;
-        [Association(@"X_TaskReferencesX_Task")]
+        [Association(@"TaskReferencesX_Task")]
         public Task ParentTaskID
         {
             get { return fParentTaskID; }
@@ -37,7 +37,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("TaskName", ref fTaskName, value); }
         }
         Experience fWorkTypeID;
-        [Association(@"X_TaskReferencesExperience")]
+        [Association(@"TaskReferencesExperience")]
         public Experience WorkTypeID
         {
             get { return fWorkTypeID; }
@@ -56,7 +56,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("EstimatedDuration", ref fEstimatedDuration, value); }
         }
         DictionaryUnit fEstimatedDurationUnitID;
-        [Association(@"X_TaskReferencesDictionaryUnit")]
+        [Association(@"TaskReferencesDictionaryUnit")]
         public DictionaryUnit EstimatedDurationUnitID
         {
             get { return fEstimatedDurationUnitID; }
@@ -123,12 +123,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_TaskReferencesX_Task", typeof(Task))]
-        public XPCollection<Task> X_TaskCollection { get { return GetCollection<Task>("X_TaskCollection"); } }
-        [Association(@"X_ComplianceTaskReferencesX_Task", typeof(ComplianceTask))]
-        public XPCollection<ComplianceTask> X_ComplianceTasks { get { return GetCollection<ComplianceTask>("X_ComplianceTasks"); } }
-        [Association(@"Q_ModelProcedureTaskReferencesX_Task", typeof(ModelProcedureTask))]
-        public XPCollection<ModelProcedureTask> Q_ModelProcedureTasks { get { return GetCollection<ModelProcedureTask>("Q_ModelProcedureTasks"); } }
+        [Association(@"TaskReferencesX_Task", typeof(Task))]
+        public XPCollection<Task> TaskCollection { get { return GetCollection<Task>("TaskCollection"); } }
+        [Association(@"ComplianceTaskReferencesX_Task", typeof(ComplianceTask))]
+        public XPCollection<ComplianceTask> ComplianceTasks { get { return GetCollection<ComplianceTask>("ComplianceTasks"); } }
+        [Association(@"ModelProcedureTaskReferencesX_Task", typeof(ModelProcedureTask))]
+        public XPCollection<ModelProcedureTask> ModelProcedureTasks { get { return GetCollection<ModelProcedureTask>("ModelProcedureTasks"); } }
     }
 
 }

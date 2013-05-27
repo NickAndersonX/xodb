@@ -23,21 +23,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("CreditID", ref fCreditID, value); }
         }
         Supply fSupplyID;
-        [Association(@"E_CreditReferencesSupply")]
+        [Association(@"CreditReferencesSupply")]
         public Supply SupplyID
         {
             get { return fSupplyID; }
             set { SetPropertyValue<Supply>("SupplyID", ref fSupplyID, value); }
         }
         Invoice fInvoiceID;
-        [Association(@"E_CreditReferencesInvoice")]
+        [Association(@"CreditReferencesInvoice")]
         public Invoice InvoiceID
         {
             get { return fInvoiceID; }
             set { SetPropertyValue<Invoice>("InvoiceID", ref fInvoiceID, value); }
         }
         InvoiceLine fInvoiceLineID;
-        [Association(@"E_CreditReferencesInvoiceLine")]
+        [Association(@"CreditReferencesInvoiceLine")]
         public InvoiceLine InvoiceLineID
         {
             get { return fInvoiceLineID; }
@@ -62,7 +62,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("OriginalCredit", ref fOriginalCredit, value); }
         }
         Currency fCurrencyID;
-        [Association(@"E_CreditReferencesCurrency")]
+        [Association(@"CreditReferencesCurrency")]
         public Currency CurrencyID
         {
             get { return fCurrencyID; }

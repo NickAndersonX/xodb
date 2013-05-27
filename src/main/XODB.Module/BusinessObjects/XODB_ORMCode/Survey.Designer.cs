@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SurveyID", ref fSurveyID, value); }
         }
         Header fHeaderID;
-        [Association(@"X_SurveyReferencesHeader")]
+        [Association(@"SurveyReferencesHeader")]
         public Header HeaderID
         {
             get { return fHeaderID; }
@@ -92,14 +92,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("Surveyed", ref fSurveyed, value); }
         }
         Contact fSurveyContactID;
-        [Association(@"X_SurveyReferencesContact")]
+        [Association(@"SurveyReferencesContact")]
         public Contact SurveyContactID
         {
             get { return fSurveyContactID; }
             set { SetPropertyValue<Contact>("SurveyContactID", ref fSurveyContactID, value); }
         }
         Company fSurveyCompanyID;
-        [Association(@"X_SurveyReferencesCompany")]
+        [Association(@"SurveyReferencesCompany")]
         public Company SurveyCompanyID
         {
             get { return fSurveyCompanyID; }

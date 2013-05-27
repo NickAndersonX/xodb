@@ -246,7 +246,7 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"LocationHistoryReferencesContact", typeof(LocationHistory))]
         public XPCollection<LocationHistory> LocationHistories { get { return GetCollection<LocationHistory>("LocationHistories"); } }
         [Association(@"OpportunityReferencesContact", typeof(Opportunity))]
-        public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
+        public XPCollection<Opportunity> Opportunitys { get { return GetCollection<Opportunity>("Opportunitys"); } }
         [Association(@"OpportunityReferencesContact1", typeof(Opportunity))]
         public XPCollection<Opportunity> OpportunitiesOpenedBy { get { return GetCollection<Opportunity>("OpportunitiesOpenedBy"); } }
         [Association(@"OpportunityReferencesContact2", typeof(Opportunity))]
@@ -256,43 +256,43 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"OpportunityReferencesContact4", typeof(Opportunity))]
         public XPCollection<Opportunity> OpportunitiesConvertedBy { get { return GetCollection<Opportunity>("OpportunitiesConvertedBy"); } }
         [Association(@"OpportunityReferencesContact5", typeof(Opportunity))]
-        public XPCollection<Opportunity> Opportunitys { get { return GetCollection<Opportunity>("Opportunitys"); } }
-        [Association(@"X_ProjectDeliverableReferencesContact", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
-        [Association(@"X_ProjectDeliverableReferencesContact1", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> X_ProjectDeliverables1 { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables1"); } }
-        [Association(@"X_ProjectDeliverableReferencesContact2", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> X_ProjectDeliverables2 { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables2"); } }
-        [Association(@"X_ContractReferencesContact", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
-        [Association(@"X_ContractReferencesContact1", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts1 { get { return GetCollection<Contract>("X_Contracts1"); } }
-        [Association(@"X_ContractReferencesContact2", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts2 { get { return GetCollection<Contract>("X_Contracts2"); } }
-        [Association(@"X_ContractReferencesContact3", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts3 { get { return GetCollection<Contract>("X_Contracts3"); } }
-        [Association(@"X_SurveyReferencesContact", typeof(Survey))]
-        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
-        [Association(@"X_LocationReferencesContact", typeof(Location))]
-        public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
-        [Association(@"X_TenementReferencesContact", typeof(Tenement))]
-        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
-        [Association(@"Q_RecallReferencesContact", typeof(Recall))]
-        public XPCollection<Recall> Q_Recalls { get { return GetCollection<Recall>("Q_Recalls"); } }
-        [Association(@"Q_RecallReferencesContact1", typeof(Recall))]
-        public XPCollection<Recall> Q_Recalls1 { get { return GetCollection<Recall>("Q_Recalls1"); } }
-        [Association(@"Q_RecallReferencesContact2", typeof(Recall))]
-        public XPCollection<Recall> Q_Recalls2 { get { return GetCollection<Recall>("Q_Recalls2"); } }
-        [Association(@"Q_RecallReferencesContact3", typeof(Recall))]
-        public XPCollection<Recall> Q_Recalls3 { get { return GetCollection<Recall>("Q_Recalls3"); } }
-        [Association(@"E_PurchaseOrderReferencesContact", typeof(PurchaseOrder))]
-        public XPCollection<PurchaseOrder> E_PurchaseOrders { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders"); } }
-        [Association(@"E_PurchaseOrderReferencesContact1", typeof(PurchaseOrder))]
-        public XPCollection<PurchaseOrder> E_PurchaseOrders1 { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders1"); } }
-        [Association(@"E_SupplyReferencesContact", typeof(Supply))]
-        public XPCollection<Supply> E_Supplys { get { return GetCollection<Supply>("E_Supplys"); } }
-        [Association(@"E_SupplyReferencesContact1", typeof(Supply))]
-        public XPCollection<Supply> E_Supplys1 { get { return GetCollection<Supply>("E_Supplys1"); } }
+        public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
+        [Association(@"ProjectDeliverableReferencesContact", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
+        [Association(@"ProjectDeliverableReferencesContact1", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables1 { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables1"); } }
+        [Association(@"ProjectDeliverableReferencesContact2", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables2 { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables2"); } }
+        [Association(@"ContractReferencesContact", typeof(Contract))]
+        public XPCollection<Contract> Contracts { get { return GetCollection<Contract>("Contracts"); } }
+        [Association(@"ContractReferencesContact1", typeof(Contract))]
+        public XPCollection<Contract> Contracts1 { get { return GetCollection<Contract>("Contracts1"); } }
+        [Association(@"ContractReferencesContact2", typeof(Contract))]
+        public XPCollection<Contract> Contracts2 { get { return GetCollection<Contract>("Contracts2"); } }
+        [Association(@"ContractReferencesContact3", typeof(Contract))]
+        public XPCollection<Contract> Contracts3 { get { return GetCollection<Contract>("Contracts3"); } }
+        [Association(@"SurveyReferencesContact", typeof(Survey))]
+        public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
+        [Association(@"LocationReferencesContact", typeof(Location))]
+        public XPCollection<Location> Locations { get { return GetCollection<Location>("Locations"); } }
+        [Association(@"TenementReferencesContact", typeof(Tenement))]
+        public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
+        [Association(@"RecallReferencesContact", typeof(Recall))]
+        public XPCollection<Recall> Recalls { get { return GetCollection<Recall>("Recalls"); } }
+        [Association(@"RecallReferencesContact1", typeof(Recall))]
+        public XPCollection<Recall> Recalls1 { get { return GetCollection<Recall>("Recalls1"); } }
+        [Association(@"RecallReferencesContact2", typeof(Recall))]
+        public XPCollection<Recall> Recalls2 { get { return GetCollection<Recall>("Recalls2"); } }
+        [Association(@"RecallReferencesContact3", typeof(Recall))]
+        public XPCollection<Recall> Recalls3 { get { return GetCollection<Recall>("Recalls3"); } }
+        [Association(@"PurchaseOrderReferencesContact", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> PurchaseOrders { get { return GetCollection<PurchaseOrder>("PurchaseOrders"); } }
+        [Association(@"PurchaseOrderReferencesContact1", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> PurchaseOrders1 { get { return GetCollection<PurchaseOrder>("PurchaseOrders1"); } }
+        [Association(@"SupplyReferencesContact", typeof(Supply))]
+        public XPCollection<Supply> Supplies { get { return GetCollection<Supply>("Supplies"); } }
+        [Association(@"SupplyReferencesContact1", typeof(Supply))]
+        public XPCollection<Supply> Supplies1 { get { return GetCollection<Supply>("Supplies1"); } }
     }
 
 }

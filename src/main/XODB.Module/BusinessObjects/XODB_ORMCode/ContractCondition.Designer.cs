@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ContractConditionID", ref fContractConditionID, value); }
         }
         Contract fContractID;
-        [Association(@"X_ContractConditionReferencesContract")]
+        [Association(@"ContractConditionReferencesContract")]
         public Contract ContractID
         {
             get { return fContractID; }
             set { SetPropertyValue<Contract>("ContractID", ref fContractID, value); }
         }
         DictionaryContractConditionType fContractConditionTypeID;
-        [Association(@"X_ContractConditionReferencesX_DictionaryContractConditionType")]
+        [Association(@"ContractConditionReferencesX_DictionaryContractConditionType")]
         public DictionaryContractConditionType ContractConditionTypeID
         {
             get { return fContractConditionTypeID; }
@@ -73,7 +73,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("EstimatedValueUpfront", ref fEstimatedValueUpfront, value); }
         }
         DictionaryUnit fEstimatedValueOngoingUnitID;
-        [Association(@"X_ContractConditionReferencesDictionaryUnit")]
+        [Association(@"ContractConditionReferencesDictionaryUnit")]
         public DictionaryUnit EstimatedValueOngoingUnitID
         {
             get { return fEstimatedValueOngoingUnitID; }
@@ -139,10 +139,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_ContractConditionModelReferencesX_ContractCondition", typeof(ContractConditionModel))]
-        public XPCollection<ContractConditionModel> X_ContractConditionModels { get { return GetCollection<ContractConditionModel>("X_ContractConditionModels"); } }
-        [Association(@"X_ContractConditionPartReferencesX_ContractCondition", typeof(ContractConditionPart))]
-        public XPCollection<ContractConditionPart> X_ContractConditionParts { get { return GetCollection<ContractConditionPart>("X_ContractConditionParts"); } }
+        [Association(@"ContractConditionModelReferencesX_ContractCondition", typeof(ContractConditionModel))]
+        public XPCollection<ContractConditionModel> ContractConditionModels { get { return GetCollection<ContractConditionModel>("ContractConditionModels"); } }
+        [Association(@"ContractConditionPartReferencesX_ContractCondition", typeof(ContractConditionPart))]
+        public XPCollection<ContractConditionPart> ContractConditionParts { get { return GetCollection<ContractConditionPart>("ContractConditionParts"); } }
     }
 
 }

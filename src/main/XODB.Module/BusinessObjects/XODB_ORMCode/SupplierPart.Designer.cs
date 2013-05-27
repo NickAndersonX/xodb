@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SupplierPartID", ref fSupplierPartID, value); }
         }
         Company fSupplierID;
-        [Association(@"Q_SupplierPartReferencesCompany")]
+        [Association(@"SupplierPartReferencesCompany")]
         public Company SupplierID
         {
             get { return fSupplierID; }
@@ -61,7 +61,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("PricePerUnit", ref fPricePerUnit, value); }
         }
         DictionaryUnit fPriceUnitID;
-        [Association(@"Q_SupplierPartReferencesDictionaryUnit")]
+        [Association(@"SupplierPartReferencesDictionaryUnit")]
         public DictionaryUnit PriceUnitID
         {
             get { return fPriceUnitID; }
@@ -82,14 +82,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("SupplierPartDescription", ref fSupplierPartDescription, value); }
         }
         FileData fSupplierFileDataID;
-        [Association(@"Q_SupplierPartReferencesFileData")]
+        [Association(@"SupplierPartReferencesFileData")]
         public FileData SupplierFileDataID
         {
             get { return fSupplierFileDataID; }
             set { SetPropertyValue<FileData>("SupplierFileDataID", ref fSupplierFileDataID, value); }
         }
         DictionaryUnit fLeadTimeUnitID;
-        [Association(@"Q_SupplierPartReferencesDictionaryUnit1")]
+        [Association(@"SupplierPartReferencesDictionaryUnit1")]
         public DictionaryUnit LeadTimeUnitID
         {
             get { return fLeadTimeUnitID; }
@@ -164,8 +164,8 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"ProjectPlanTaskPartReferencesSupplierPart", typeof(ProjectPlanTaskPart))]
         public XPCollection<ProjectPlanTaskPart> ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("ProjectPlanTaskParts"); } }
-        [Association(@"Q_WarehousePartSupplierReferencesSupplierPart", typeof(WarehousePartSupplier))]
-        public XPCollection<WarehousePartSupplier> Q_WarehousePartSuppliers { get { return GetCollection<WarehousePartSupplier>("Q_WarehousePartSuppliers"); } }
+        [Association(@"WarehousePartSupplierReferencesSupplierPart", typeof(WarehousePartSupplier))]
+        public XPCollection<WarehousePartSupplier> WarehousePartSuppliers { get { return GetCollection<WarehousePartSupplier>("WarehousePartSuppliers"); } }
     }
 
 }

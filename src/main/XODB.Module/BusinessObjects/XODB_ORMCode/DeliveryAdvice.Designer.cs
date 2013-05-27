@@ -37,7 +37,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("Sequence", ref fSequence, value); }
         }
         Company fShippingCompanyID;
-        [Association(@"Q_DeliveryAdviceReferencesCompany")]
+        [Association(@"DeliveryAdviceReferencesCompany")]
         public Company ShippingCompanyID
         {
             get { return fShippingCompanyID; }
@@ -82,21 +82,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<bool>("IsEditable", ref fIsEditable, value); }
         }
         CompanyAddress fSourceCompanyAddressID;
-        [Association(@"Q_DeliveryAdviceReferencesCompanyAddress")]
+        [Association(@"DeliveryAdviceReferencesCompanyAddress")]
         public CompanyAddress SourceCompanyAddressID
         {
             get { return fSourceCompanyAddressID; }
             set { SetPropertyValue<CompanyAddress>("SourceCompanyAddressID", ref fSourceCompanyAddressID, value); }
         }
         CompanyAddress fDestinationCompanyAddressID;
-        [Association(@"Q_DeliveryAdviceReferencesCompanyAddress1")]
+        [Association(@"DeliveryAdviceReferencesCompanyAddress1")]
         public CompanyAddress DestinationCompanyAddressID
         {
             get { return fDestinationCompanyAddressID; }
             set { SetPropertyValue<CompanyAddress>("DestinationCompanyAddressID", ref fDestinationCompanyAddressID, value); }
         }
         DictionaryDeliveryAdviceReason fDeliveryAdviceReasonID;
-        [Association(@"Q_DeliveryAdviceReferencesQ_DictionaryDeliveryAdviceReason")]
+        [Association(@"DeliveryAdviceReferencesQ_DictionaryDeliveryAdviceReason")]
         public DictionaryDeliveryAdviceReason DeliveryAdviceReasonID
         {
             get { return fDeliveryAdviceReasonID; }
@@ -110,21 +110,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("DeliveryAdviceReasonNote", ref fDeliveryAdviceReasonNote, value); }
         }
         Account fBillingAccountID;
-        [Association(@"Q_DeliveryAdviceReferencesQ_Account")]
+        [Association(@"DeliveryAdviceReferencesQ_Account")]
         public Account BillingAccountID
         {
             get { return fBillingAccountID; }
             set { SetPropertyValue<Account>("BillingAccountID", ref fBillingAccountID, value); }
         }
         ProjectDeliverable fProjectDeliverableID;
-        [Association(@"Q_DeliveryAdviceReferencesProjectDeliverable")]
+        [Association(@"DeliveryAdviceReferencesProjectDeliverable")]
         public ProjectDeliverable ProjectDeliverableID
         {
             get { return fProjectDeliverableID; }
             set { SetPropertyValue<ProjectDeliverable>("ProjectDeliverableID", ref fProjectDeliverableID, value); }
         }
         Project fProjectID;
-        [Association(@"Q_DeliveryAdviceReferencesProject")]
+        [Association(@"DeliveryAdviceReferencesProject")]
         public Project ProjectID
         {
             get { return fProjectID; }
@@ -184,8 +184,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_DeliveryAdviceItemReferencesQ_DeliveryAdvice", typeof(DeliveryAdviceItem))]
-        public XPCollection<DeliveryAdviceItem> Q_DeliveryAdviceItems { get { return GetCollection<DeliveryAdviceItem>("Q_DeliveryAdviceItems"); } }
+        [Association(@"DeliveryAdviceItemReferencesQ_DeliveryAdvice", typeof(DeliveryAdviceItem))]
+        public XPCollection<DeliveryAdviceItem> DeliveryAdviceItems { get { return GetCollection<DeliveryAdviceItem>("DeliveryAdviceItems"); } }
     }
 
 }

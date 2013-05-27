@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ModelProcedureTaskID", ref fModelProcedureTaskID, value); }
         }
         ModelProcedure fModelProcedureID;
-        [Association(@"Q_ModelProcedureTaskReferencesQ_ModelProcedure")]
+        [Association(@"ModelProcedureTaskReferencesQ_ModelProcedure")]
         public ModelProcedure ModelProcedureID
         {
             get { return fModelProcedureID; }
             set { SetPropertyValue<ModelProcedure>("ModelProcedureID", ref fModelProcedureID, value); }
         }
         Task fTaskID;
-        [Association(@"Q_ModelProcedureTaskReferencesX_Task")]
+        [Association(@"ModelProcedureTaskReferencesX_Task")]
         public Task TaskID
         {
             get { return fTaskID; }
@@ -43,7 +43,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("Sequence", ref fSequence, value); }
         }
         FileData fFileDataID;
-        [Association(@"Q_ModelProcedureTaskReferencesFileData")]
+        [Association(@"ModelProcedureTaskReferencesFileData")]
         public FileData FileDataID
         {
             get { return fFileDataID; }
@@ -69,7 +69,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("EstimatedDuration", ref fEstimatedDuration, value); }
         }
         DictionaryUnit fEstimatedDurationUnitID;
-        [Association(@"Q_ModelProcedureTaskReferencesDictionaryUnit")]
+        [Association(@"ModelProcedureTaskReferencesDictionaryUnit")]
         public DictionaryUnit EstimatedDurationUnitID
         {
             get { return fEstimatedDurationUnitID; }
@@ -129,8 +129,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_ModelProcedureTaskPartReferencesQ_ModelProcedureTask", typeof(ModelProcedureTaskPart))]
-        public XPCollection<ModelProcedureTaskPart> Q_ModelProcedureTaskParts { get { return GetCollection<ModelProcedureTaskPart>("Q_ModelProcedureTaskParts"); } }
+        [Association(@"ModelProcedureTaskPartReferencesQ_ModelProcedureTask", typeof(ModelProcedureTaskPart))]
+        public XPCollection<ModelProcedureTaskPart> ModelProcedureTaskParts { get { return GetCollection<ModelProcedureTaskPart>("ModelProcedureTaskParts"); } }
     }
 
 }

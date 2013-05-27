@@ -97,8 +97,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_AssetReferencesQ_DicitonaryAssetStatus", typeof(Asset))]
-        public XPCollection<Asset> Q_Assets { get { return GetCollection<Asset>("Q_Assets"); } }
+        [Association(@"AssetReferencesQ_DicitonaryAssetStatus", typeof(Asset))]
+        public XPCollection<Asset> Assets { get { return GetCollection<Asset>("Assets"); } }
     }
 
 }

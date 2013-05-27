@@ -24,7 +24,7 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         BlockModel fBlockModelID;
         [Indexed(@"CentroidX;CentroidY;CentroidZ", Name = @"NonClusteredIndex-20130213-121247")]
-        [Association(@"X_BlockModelBlockReferencesBlockModel")]
+        [Association(@"BlockModelBlockReferencesBlockModel")]
         public BlockModel BlockModelID
         {
             get { return fBlockModelID; }

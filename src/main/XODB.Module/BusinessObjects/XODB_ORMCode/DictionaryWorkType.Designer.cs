@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("WorkTypeID", ref fWorkTypeID, value); }
         }
         DictionaryProfession fProfessionID;
-        [Association(@"X_DictionaryWorkTypeReferencesDictionaryProfession")]
+        [Association(@"DictionaryWorkTypeReferencesDictionaryProfession")]
         public DictionaryProfession ProfessionID
         {
             get { return fProfessionID; }
@@ -64,7 +64,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
         }
         FileData fOriginalFileDataID;
-        [Association(@"X_DictionaryWorkTypeReferencesFileData")]
+        [Association(@"DictionaryWorkTypeReferencesFileData")]
         public FileData OriginalFileDataID
         {
             get { return fOriginalFileDataID; }
@@ -135,13 +135,13 @@ namespace XODB.Module.BusinessObjects.XODB
         [Association(@"ComplianceWorkTypeReferencesX_DictionaryWorkType", typeof(ComplianceWorkType))]
         public XPCollection<ComplianceWorkType> ComplianceWorkTypes { get { return GetCollection<ComplianceWorkType>("ComplianceWorkTypes"); } }
         [Association(@"OpportunityReferencesX_DictionaryWorkType", typeof(Opportunity))]
-        public XPCollection<Opportunity> Opportunitys { get { return GetCollection<Opportunity>("Opportunitys"); } }
+        public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
         [Association(@"OpportunityReferencesX_DictionaryWorkType1", typeof(Opportunity))]
-        public XPCollection<Opportunity> Opportunitys1 { get { return GetCollection<Opportunity>("Opportunitys1"); } }
+        public XPCollection<Opportunity> Opportunities1 { get { return GetCollection<Opportunity>("Opportunities1"); } }
         [Association(@"ProjectDeliverableReferencesX_DictionaryWorkType", typeof(ProjectDeliverable))]
         public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
-        [Association(@"X_ProjectPlanTaskReferencesX_DictionaryWorkType", typeof(ProjectPlanTask))]
-        public XPCollection<ProjectPlanTask> X_ProjectPlanTasks { get { return GetCollection<ProjectPlanTask>("X_ProjectPlanTasks"); } }
+        [Association(@"ProjectPlanTaskReferencesX_DictionaryWorkType", typeof(ProjectPlanTask))]
+        public XPCollection<ProjectPlanTask> ProjectPlanTasks { get { return GetCollection<ProjectPlanTask>("ProjectPlanTasks"); } }
     }
 
 }

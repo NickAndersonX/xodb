@@ -37,14 +37,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("CustomCharacteristicName", ref fCustomCharacteristicName, value); }
         }
         DictionaryUnit fUnitID;
-        [Association(@"X_DictionaryCharacteristicReferencesDictionaryUnit")]
+        [Association(@"DictionaryCharacteristicReferencesDictionaryUnit")]
         public DictionaryUnit UnitID
         {
             get { return fUnitID; }
             set { SetPropertyValue<DictionaryUnit>("UnitID", ref fUnitID, value); }
         }
         DictionaryCharacteristicType fCharacteristicTypeID;
-        [Association(@"X_DictionaryCharacteristicReferencesX_DictionaryCharacteristicType")]
+        [Association(@"DictionaryCharacteristicReferencesX_DictionaryCharacteristicType")]
         public DictionaryCharacteristicType CharacteristicTypeID
         {
             get { return fCharacteristicTypeID; }
@@ -72,16 +72,16 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
         }
         FileData fOriginalFileDataID;
-        [Association(@"X_DictionaryCharacteristicReferencesFileData")]
+        [Association(@"DictionaryCharacteristicReferencesFileData")]
         public FileData OriginalFileDataID
         {
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"X_ModelCharacteristicReferencesX_DictionaryCharacteristic", typeof(ModelCharacteristic))]
-        public XPCollection<ModelCharacteristic> X_ModelCharacteristics { get { return GetCollection<ModelCharacteristic>("X_ModelCharacteristics"); } }
-        [Association(@"X_PartCharacteristicReferencesX_DictionaryCharacteristic", typeof(PartCharacteristic))]
-        public XPCollection<PartCharacteristic> X_PartCharacteristics { get { return GetCollection<PartCharacteristic>("X_PartCharacteristics"); } }
+        [Association(@"ModelCharacteristicReferencesX_DictionaryCharacteristic", typeof(ModelCharacteristic))]
+        public XPCollection<ModelCharacteristic> ModelCharacteristics { get { return GetCollection<ModelCharacteristic>("ModelCharacteristics"); } }
+        [Association(@"PartCharacteristicReferencesX_DictionaryCharacteristic", typeof(PartCharacteristic))]
+        public XPCollection<PartCharacteristic> PartCharacteristics { get { return GetCollection<PartCharacteristic>("PartCharacteristics"); } }
     }
 
 }

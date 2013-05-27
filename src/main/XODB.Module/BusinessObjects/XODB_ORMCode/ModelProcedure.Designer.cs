@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryModel>("ModelID", ref fModelID, value); }
         }
         DictionaryProcedure fProcedureID;
-        [Association(@"Q_ModelProcedureReferencesQ_DictionaryProcedure")]
+        [Association(@"ModelProcedureReferencesQ_DictionaryProcedure")]
         public DictionaryProcedure ProcedureID
         {
             get { return fProcedureID; }
@@ -114,12 +114,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_ModelScheduleCycleReferencesQ_ModelProcedure", typeof(ModelScheduleCycle))]
-        public XPCollection<ModelScheduleCycle> Q_ModelScheduleCycles { get { return GetCollection<ModelScheduleCycle>("Q_ModelScheduleCycles"); } }
-        [Association(@"Q_AssetMaintenanceReferencesQ_ModelProcedure", typeof(AssetMaintenance))]
-        public XPCollection<AssetMaintenance> Q_AssetMaintenances { get { return GetCollection<AssetMaintenance>("Q_AssetMaintenances"); } }
-        [Association(@"Q_ModelProcedureTaskReferencesQ_ModelProcedure", typeof(ModelProcedureTask))]
-        public XPCollection<ModelProcedureTask> Q_ModelProcedureTasks { get { return GetCollection<ModelProcedureTask>("Q_ModelProcedureTasks"); } }
+        [Association(@"ModelScheduleCycleReferencesQ_ModelProcedure", typeof(ModelScheduleCycle))]
+        public XPCollection<ModelScheduleCycle> ModelScheduleCycles { get { return GetCollection<ModelScheduleCycle>("ModelScheduleCycles"); } }
+        [Association(@"AssetMaintenanceReferencesQ_ModelProcedure", typeof(AssetMaintenance))]
+        public XPCollection<AssetMaintenance> AssetMaintenances { get { return GetCollection<AssetMaintenance>("AssetMaintenances"); } }
+        [Association(@"ModelProcedureTaskReferencesQ_ModelProcedure", typeof(ModelProcedureTask))]
+        public XPCollection<ModelProcedureTask> ModelProcedureTasks { get { return GetCollection<ModelProcedureTask>("ModelProcedureTasks"); } }
     }
 
 }

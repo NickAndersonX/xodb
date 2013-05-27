@@ -43,8 +43,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
-        [Association(@"Q_ModelProcedureReferencesQ_DictionaryProcedure", typeof(ModelProcedure))]
-        public XPCollection<ModelProcedure> Q_ModelProcedures { get { return GetCollection<ModelProcedure>("Q_ModelProcedures"); } }
+        [Association(@"ModelProcedureReferencesQ_DictionaryProcedure", typeof(ModelProcedure))]
+        public XPCollection<ModelProcedure> ModelProcedures { get { return GetCollection<ModelProcedure>("ModelProcedures"); } }
     }
 
 }

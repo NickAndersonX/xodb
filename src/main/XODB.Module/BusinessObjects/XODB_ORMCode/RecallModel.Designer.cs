@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("RecallModelID", ref fRecallModelID, value); }
         }
         Recall fRecallID;
-        [Association(@"Q_RecallModelReferencesQ_Recall")]
+        [Association(@"RecallModelReferencesQ_Recall")]
         public Recall RecallID
         {
             get { return fRecallID; }
@@ -97,8 +97,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_RecallModelAssetReferencesRecallModel", typeof(RecallModelAsset))]
-        public XPCollection<RecallModelAsset> Q_RecallModelAssets { get { return GetCollection<RecallModelAsset>("Q_RecallModelAssets"); } }
+        [Association(@"RecallModelAssetReferencesRecallModel", typeof(RecallModelAsset))]
+        public XPCollection<RecallModelAsset> RecallModelAssets { get { return GetCollection<RecallModelAsset>("RecallModelAssets"); } }
     }
 
 }

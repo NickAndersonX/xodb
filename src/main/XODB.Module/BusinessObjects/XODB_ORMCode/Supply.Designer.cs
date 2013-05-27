@@ -23,28 +23,28 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SupplyID", ref fSupplyID, value); }
         }
         Supply fParentSupplyID;
-        [Association(@"E_SupplyReferencesE_Supply")]
+        [Association(@"SupplyReferencesE_Supply")]
         public Supply ParentSupplyID
         {
             get { return fParentSupplyID; }
             set { SetPropertyValue<Supply>("ParentSupplyID", ref fParentSupplyID, value); }
         }
         Project fProjectID;
-        [Association(@"E_SupplyReferencesProject")]
+        [Association(@"SupplyReferencesProject")]
         public Project ProjectID
         {
             get { return fProjectID; }
             set { SetPropertyValue<Project>("ProjectID", ref fProjectID, value); }
         }
         Invoice fCustomerInvoiceID;
-        [Association(@"E_SupplyReferencesE_Invoice1")]
+        [Association(@"SupplyReferencesE_Invoice1")]
         public Invoice CustomerInvoiceID
         {
             get { return fCustomerInvoiceID; }
             set { SetPropertyValue<Invoice>("CustomerInvoiceID", ref fCustomerInvoiceID, value); }
         }
         Invoice fSupplierInvoiceID;
-        [Association(@"E_SupplyReferencesE_Invoice")]
+        [Association(@"SupplyReferencesE_Invoice")]
         public Invoice SupplierInvoiceID
         {
             get { return fSupplierInvoiceID; }
@@ -57,28 +57,28 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("Sequence", ref fSequence, value); }
         }
         PurchaseOrder fCustomerPurchaseOrderID;
-        [Association(@"E_SupplyReferencesE_PurchaseOrder1")]
+        [Association(@"SupplyReferencesE_PurchaseOrder1")]
         public PurchaseOrder CustomerPurchaseOrderID
         {
             get { return fCustomerPurchaseOrderID; }
             set { SetPropertyValue<PurchaseOrder>("CustomerPurchaseOrderID", ref fCustomerPurchaseOrderID, value); }
         }
         Contact fCustomerApprovedBy;
-        [Association(@"E_SupplyReferencesContact")]
+        [Association(@"SupplyReferencesContact")]
         public Contact CustomerApprovedBy
         {
             get { return fCustomerApprovedBy; }
             set { SetPropertyValue<Contact>("CustomerApprovedBy", ref fCustomerApprovedBy, value); }
         }
         PurchaseOrder fSupplierPurchaseOrderID;
-        [Association(@"E_SupplyReferencesE_PurchaseOrder")]
+        [Association(@"SupplyReferencesE_PurchaseOrder")]
         public PurchaseOrder SupplierPurchaseOrderID
         {
             get { return fSupplierPurchaseOrderID; }
             set { SetPropertyValue<PurchaseOrder>("SupplierPurchaseOrderID", ref fSupplierPurchaseOrderID, value); }
         }
         Contact fSupplierApprovedBy;
-        [Association(@"E_SupplyReferencesContact1")]
+        [Association(@"SupplyReferencesContact1")]
         public Contact SupplierApprovedBy
         {
             get { return fSupplierApprovedBy; }
@@ -127,14 +127,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<bool>("IsFinalised", ref fIsFinalised, value); }
         }
         ProjectDeliverable fCurrentProjectDeliverableID;
-        [Association(@"E_SupplyReferencesProjectDeliverable")]
+        [Association(@"SupplyReferencesProjectDeliverable")]
         public ProjectDeliverable CurrentProjectDeliverableID
         {
             get { return fCurrentProjectDeliverableID; }
             set { SetPropertyValue<ProjectDeliverable>("CurrentProjectDeliverableID", ref fCurrentProjectDeliverableID, value); }
         }
         ProjectDeliverable fFinalProjectDeliverableID;
-        [Association(@"E_SupplyReferencesProjectDeliverable1")]
+        [Association(@"SupplyReferencesProjectDeliverable1")]
         public ProjectDeliverable FinalProjectDeliverableID
         {
             get { return fFinalProjectDeliverableID; }
@@ -207,12 +207,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"E_CreditReferencesSupply", typeof(Credit))]
-        public XPCollection<Credit> E_Credits { get { return GetCollection<Credit>("E_Credits"); } }
-        [Association(@"E_SupplyReferencesE_Supply", typeof(Supply))]
-        public XPCollection<Supply> E_SupplyCollection { get { return GetCollection<Supply>("E_SupplyCollection"); } }
-        [Association(@"E_SupplyItemReferencesSupply", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
+        [Association(@"SupplyReferencesE_Supply", typeof(Supply))]
+        public XPCollection<Supply> SupplyCollection { get { return GetCollection<Supply>("SupplyCollection"); } }
+        [Association(@"SupplyItemReferencesSupply", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> SupplyItems { get { return GetCollection<SupplyItem>("SupplyItems"); } }
+        [Association(@"CreditReferencesSupply", typeof(Credit))]
+        public XPCollection<Credit> Credits { get { return GetCollection<Credit>("Credits"); } }
     }
 
 }

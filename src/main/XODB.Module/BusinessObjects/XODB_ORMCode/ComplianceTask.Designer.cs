@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ComplianceTaskID", ref fComplianceTaskID, value); }
         }
         Compliance fComplianceID;
-        [Association(@"X_ComplianceTaskReferencesCompliance")]
+        [Association(@"ComplianceTaskReferencesCompliance")]
         public Compliance ComplianceID
         {
             get { return fComplianceID; }
             set { SetPropertyValue<Compliance>("ComplianceID", ref fComplianceID, value); }
         }
         Task fTaskID;
-        [Association(@"X_ComplianceTaskReferencesX_Task")]
+        [Association(@"ComplianceTaskReferencesX_Task")]
         public Task TaskID
         {
             get { return fTaskID; }

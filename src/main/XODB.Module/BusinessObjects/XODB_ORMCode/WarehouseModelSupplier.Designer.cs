@@ -23,21 +23,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("WarehouseModelSupplierID", ref fWarehouseModelSupplierID, value); }
         }
         WarehouseModel fWarehouseModelID;
-        [Association(@"Q_WarehouseModelSupplierReferencesQ_WarehouseModel")]
+        [Association(@"WarehouseModelSupplierReferencesQ_WarehouseModel")]
         public WarehouseModel WarehouseModelID
         {
             get { return fWarehouseModelID; }
             set { SetPropertyValue<WarehouseModel>("WarehouseModelID", ref fWarehouseModelID, value); }
         }
         SupplierModel fSupplierModelID;
-        [Association(@"Q_WarehouseModelSupplierReferencesQ_SupplierModel")]
+        [Association(@"WarehouseModelSupplierReferencesQ_SupplierModel")]
         public SupplierModel SupplierModelID
         {
             get { return fSupplierModelID; }
             set { SetPropertyValue<SupplierModel>("SupplierModelID", ref fSupplierModelID, value); }
         }
         DictionaryUnit fQuantityUnitID;
-        [Association(@"Q_WarehouseModelSupplierReferencesDictionaryUnit")]
+        [Association(@"WarehouseModelSupplierReferencesDictionaryUnit")]
         public DictionaryUnit QuantityUnitID
         {
             get { return fQuantityUnitID; }

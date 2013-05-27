@@ -43,10 +43,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
-        [Association(@"Q_ModelWarrantyReferencesQ_DictionaryWarrantyType", typeof(ModelWarranty))]
-        public XPCollection<ModelWarranty> Q_ModelWarrantys { get { return GetCollection<ModelWarranty>("Q_ModelWarrantys"); } }
-        [Association(@"Q_AssetWarrantyReferencesQ_DictionaryWarrantyType", typeof(AssetWarranty))]
-        public XPCollection<AssetWarranty> Q_AssetWarrantys { get { return GetCollection<AssetWarranty>("Q_AssetWarrantys"); } }
+        [Association(@"ModelWarrantyReferencesQ_DictionaryWarrantyType", typeof(ModelWarranty))]
+        public XPCollection<ModelWarranty> ModelWarranties { get { return GetCollection<ModelWarranty>("ModelWarranties"); } }
+        [Association(@"AssetWarrantyReferencesQ_DictionaryWarrantyType", typeof(AssetWarranty))]
+        public XPCollection<AssetWarranty> AssetWarranties { get { return GetCollection<AssetWarranty>("AssetWarranties"); } }
     }
 
 }

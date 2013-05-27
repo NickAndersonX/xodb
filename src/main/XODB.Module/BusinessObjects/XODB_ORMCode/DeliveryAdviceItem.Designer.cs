@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("DeliveryAdviceItemID", ref fDeliveryAdviceItemID, value); }
         }
         DeliveryAdvice fDeliveryAdviceID;
-        [Association(@"Q_DeliveryAdviceItemReferencesQ_DeliveryAdvice")]
+        [Association(@"DeliveryAdviceItemReferencesQ_DeliveryAdvice")]
         public DeliveryAdvice DeliveryAdviceID
         {
             get { return fDeliveryAdviceID; }
             set { SetPropertyValue<DeliveryAdvice>("DeliveryAdviceID", ref fDeliveryAdviceID, value); }
         }
         Asset fAssetID;
-        [Association(@"Q_DeliveryAdviceItemReferencesQ_Asset")]
+        [Association(@"DeliveryAdviceItemReferencesQ_Asset")]
         public Asset AssetID
         {
             get { return fAssetID; }
@@ -76,7 +76,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("ItemInstruction", ref fItemInstruction, value); }
         }
         DictionaryDecontaminationStatus fDecontaminationStatusID;
-        [Association(@"Q_DeliveryAdviceItemReferencesQ_DictionaryDecontaminationStatus")]
+        [Association(@"DeliveryAdviceItemReferencesQ_DictionaryDecontaminationStatus")]
         public DictionaryDecontaminationStatus DecontaminationStatusID
         {
             get { return fDecontaminationStatusID; }

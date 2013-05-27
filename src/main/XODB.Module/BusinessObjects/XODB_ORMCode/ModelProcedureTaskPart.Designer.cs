@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ModelProcedureTaskPartID", ref fModelProcedureTaskPartID, value); }
         }
         ModelProcedureTask fModelProcedureTaskID;
-        [Association(@"Q_ModelProcedureTaskPartReferencesQ_ModelProcedureTask")]
+        [Association(@"ModelProcedureTaskPartReferencesQ_ModelProcedureTask")]
         public ModelProcedureTask ModelProcedureTaskID
         {
             get { return fModelProcedureTaskID; }

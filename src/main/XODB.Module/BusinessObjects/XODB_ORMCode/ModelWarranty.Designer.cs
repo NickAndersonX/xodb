@@ -30,14 +30,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryModel>("ModelID", ref fModelID, value); }
         }
         DictionaryWarrantyType fWarrantyTypeID;
-        [Association(@"Q_ModelWarrantyReferencesQ_DictionaryWarrantyType")]
+        [Association(@"ModelWarrantyReferencesQ_DictionaryWarrantyType")]
         public DictionaryWarrantyType WarrantyTypeID
         {
             get { return fWarrantyTypeID; }
             set { SetPropertyValue<DictionaryWarrantyType>("WarrantyTypeID", ref fWarrantyTypeID, value); }
         }
         DictionaryUnit fWarrantyPeriodUnitID;
-        [Association(@"Q_ModelWarrantyReferencesDictionaryUnit")]
+        [Association(@"ModelWarrantyReferencesDictionaryUnit")]
         public DictionaryUnit WarrantyPeriodUnitID
         {
             get { return fWarrantyPeriodUnitID; }
@@ -62,7 +62,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("WarrantyRenewal", ref fWarrantyRenewal, value); }
         }
         Contract fSupplierContractID;
-        [Association(@"Q_ModelWarrantyReferencesContract")]
+        [Association(@"ModelWarrantyReferencesContract")]
         public Contract SupplierContractID
         {
             get { return fSupplierContractID; }
@@ -122,8 +122,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_AssetWarrantyReferencesQ_ModelWarranty", typeof(AssetWarranty))]
-        public XPCollection<AssetWarranty> Q_AssetWarrantys { get { return GetCollection<AssetWarranty>("Q_AssetWarrantys"); } }
+        [Association(@"AssetWarrantyReferencesQ_ModelWarranty", typeof(AssetWarranty))]
+        public XPCollection<AssetWarranty> AssetWarranties { get { return GetCollection<AssetWarranty>("AssetWarranties"); } }
     }
 
 }

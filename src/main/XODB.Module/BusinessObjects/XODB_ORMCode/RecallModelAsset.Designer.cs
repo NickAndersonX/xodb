@@ -23,21 +23,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("RecallModelAssetID", ref fRecallModelAssetID, value); }
         }
         RecallModel fRecallModelID;
-        [Association(@"Q_RecallModelAssetReferencesRecallModel")]
+        [Association(@"RecallModelAssetReferencesRecallModel")]
         public RecallModel RecallModelID
         {
             get { return fRecallModelID; }
             set { SetPropertyValue<RecallModel>("RecallModelID", ref fRecallModelID, value); }
         }
         Asset fAssetID;
-        [Association(@"Q_RecallModelAssetReferencesAsset")]
+        [Association(@"RecallModelAssetReferencesAsset")]
         public Asset AssetID
         {
             get { return fAssetID; }
             set { SetPropertyValue<Asset>("AssetID", ref fAssetID, value); }
         }
         ProjectPlan fProjectPlanID;
-        [Association(@"Q_RecallModelAssetReferencesProjectPlan")]
+        [Association(@"RecallModelAssetReferencesProjectPlan")]
         public ProjectPlan ProjectPlanID
         {
             get { return fProjectPlanID; }

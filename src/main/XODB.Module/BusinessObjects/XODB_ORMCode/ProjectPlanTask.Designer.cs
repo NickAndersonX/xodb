@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ProjectPlanTaskID", ref fProjectPlanTaskID, value); }
         }
         ProjectPlan fProjectPlanID;
-        [Association(@"X_ProjectPlanTaskReferencesProjectPlan")]
+        [Association(@"ProjectPlanTaskReferencesProjectPlan")]
         public ProjectPlan ProjectPlanID
         {
             get { return fProjectPlanID; }
             set { SetPropertyValue<ProjectPlan>("ProjectPlanID", ref fProjectPlanID, value); }
         }
         ProjectPlanTask fParentProjectTaskID;
-        [Association(@"X_ProjectPlanTaskReferencesX_ProjectPlanTask")]
+        [Association(@"ProjectPlanTaskReferencesX_ProjectPlanTask")]
         public ProjectPlanTask ParentProjectTaskID
         {
             get { return fParentProjectTaskID; }
@@ -44,7 +44,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("ProjectTaskName", ref fProjectTaskName, value); }
         }
         DictionaryWorkType fWorkTypeID;
-        [Association(@"X_ProjectPlanTaskReferencesX_DictionaryWorkType")]
+        [Association(@"ProjectPlanTaskReferencesX_DictionaryWorkType")]
         public DictionaryWorkType WorkTypeID
         {
             get { return fWorkTypeID; }
@@ -149,12 +149,12 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<ProjectPlanTaskComplianceResponse> ProjectPlanTaskComplianceResponses { get { return GetCollection<ProjectPlanTaskComplianceResponse>("ProjectPlanTaskComplianceResponses"); } }
         [Association(@"ProjectDeliverableReferencesX_ProjectPlanTask", typeof(ProjectDeliverable))]
         public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
-        [Association(@"X_ProjectPlanTaskReferencesX_ProjectPlanTask", typeof(ProjectPlanTask))]
-        public XPCollection<ProjectPlanTask> X_ProjectPlanTaskCollection { get { return GetCollection<ProjectPlanTask>("X_ProjectPlanTaskCollection"); } }
-        [Association(@"Q_ProjectPlanTaskPartReferencesProjectPlanTask", typeof(ProjectPlanTaskPart))]
-        public XPCollection<ProjectPlanTaskPart> Q_ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("Q_ProjectPlanTaskParts"); } }
-        [Association(@"Q_ProjectPlanTaskModelReferencesProjectPlanTask", typeof(ProjectPlanTaskModel))]
-        public XPCollection<ProjectPlanTaskModel> Q_ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("Q_ProjectPlanTaskModels"); } }
+        [Association(@"ProjectPlanTaskReferencesX_ProjectPlanTask", typeof(ProjectPlanTask))]
+        public XPCollection<ProjectPlanTask> ProjectPlanTaskCollection { get { return GetCollection<ProjectPlanTask>("ProjectPlanTaskCollection"); } }
+        [Association(@"ProjectPlanTaskPartReferencesProjectPlanTask", typeof(ProjectPlanTaskPart))]
+        public XPCollection<ProjectPlanTaskPart> ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("ProjectPlanTaskParts"); } }
+        [Association(@"ProjectPlanTaskModelReferencesProjectPlanTask", typeof(ProjectPlanTaskModel))]
+        public XPCollection<ProjectPlanTaskModel> ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("ProjectPlanTaskModels"); } }
     }
 
 }

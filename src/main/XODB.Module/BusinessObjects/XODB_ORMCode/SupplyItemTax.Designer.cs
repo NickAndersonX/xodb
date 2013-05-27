@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<SupplyItem>("SupplyItemID", ref fSupplyItemID, value); }
         }
         DictionaryTax fTaxID;
-        [Association(@"E_SupplyItemTaxReferencesDictionaryTax")]
+        [Association(@"SupplyItemTaxReferencesDictionaryTax")]
         public DictionaryTax TaxID
         {
             get { return fTaxID; }

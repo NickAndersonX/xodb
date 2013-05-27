@@ -107,60 +107,60 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"ParameterReferencesDictionaryUnit", typeof(Parameter))]
         public XPCollection<Parameter> Parameters { get { return GetCollection<Parameter>("Parameters"); } }
-        [Association(@"X_ProjectDeliverableReferencesDictionaryUnit", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
-        [Association(@"X_GeophysicsReferencesDictionaryUnit", typeof(Geophysics))]
-        public XPCollection<Geophysics> X_GeophysicsCollection { get { return GetCollection<Geophysics>("X_GeophysicsCollection"); } }
-        [Association(@"Q_DictionaryPartKitItemReferencesDictionaryUnit", typeof(DictionaryPartKitItem))]
-        public XPCollection<DictionaryPartKitItem> Q_DictionaryPartKitItems { get { return GetCollection<DictionaryPartKitItem>("Q_DictionaryPartKitItems"); } }
-        [Association(@"Q_ModelScheduleCycleReferencesDictionaryUnit", typeof(ModelScheduleCycle))]
-        public XPCollection<ModelScheduleCycle> Q_ModelScheduleCycles { get { return GetCollection<ModelScheduleCycle>("Q_ModelScheduleCycles"); } }
-        [Association(@"Q_ModelWarrantyReferencesDictionaryUnit", typeof(ModelWarranty))]
-        public XPCollection<ModelWarranty> Q_ModelWarrantys { get { return GetCollection<ModelWarranty>("Q_ModelWarrantys"); } }
-        [Association(@"Q_SupplierPartReferencesDictionaryUnit", typeof(SupplierPart))]
-        public XPCollection<SupplierPart> Q_SupplierParts { get { return GetCollection<SupplierPart>("Q_SupplierParts"); } }
-        [Association(@"Q_SupplierPartReferencesDictionaryUnit1", typeof(SupplierPart))]
-        public XPCollection<SupplierPart> Q_SupplierParts1 { get { return GetCollection<SupplierPart>("Q_SupplierParts1"); } }
-        [Association(@"X_TaskReferencesDictionaryUnit", typeof(Task))]
-        public XPCollection<Task> X_Tasks { get { return GetCollection<Task>("X_Tasks"); } }
-        [Association(@"Q_ProjectPlanTaskPartReferencesDictionaryUnit", typeof(ProjectPlanTaskPart))]
-        public XPCollection<ProjectPlanTaskPart> Q_ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("Q_ProjectPlanTaskParts"); } }
-        [Association(@"Q_AssetWarrantyReferencesDictionaryUnit", typeof(AssetWarranty))]
-        public XPCollection<AssetWarranty> Q_AssetWarrantys { get { return GetCollection<AssetWarranty>("Q_AssetWarrantys"); } }
-        [Association(@"Q_ModelProcedureTaskReferencesDictionaryUnit", typeof(ModelProcedureTask))]
-        public XPCollection<ModelProcedureTask> Q_ModelProcedureTasks { get { return GetCollection<ModelProcedureTask>("Q_ModelProcedureTasks"); } }
-        [Association(@"E_DictionaryTaxReferencesDictionaryUnit", typeof(DictionaryTax))]
-        public XPCollection<DictionaryTax> E_DictionaryTaxs { get { return GetCollection<DictionaryTax>("E_DictionaryTaxs"); } }
-        [Association(@"Q_DictionaryPartReferencesDictionaryUnit", typeof(DictionaryPart))]
-        public XPCollection<DictionaryPart> Q_DictionaryParts { get { return GetCollection<DictionaryPart>("Q_DictionaryParts"); } }
-        [Association(@"X_CostEstimateModelReferencesDictionaryUnit", typeof(CostEstimateModel))]
-        public XPCollection<CostEstimateModel> X_CostEstimateModels { get { return GetCollection<CostEstimateModel>("X_CostEstimateModels"); } }
-        [Association(@"X_CostEstimateModelReferencesDictionaryUnit1", typeof(CostEstimateModel))]
-        public XPCollection<CostEstimateModel> X_CostEstimateModels1 { get { return GetCollection<CostEstimateModel>("X_CostEstimateModels1"); } }
-        [Association(@"Q_WarehouseModelSupplierReferencesDictionaryUnit", typeof(WarehouseModelSupplier))]
-        public XPCollection<WarehouseModelSupplier> Q_WarehouseModelSuppliers { get { return GetCollection<WarehouseModelSupplier>("Q_WarehouseModelSuppliers"); } }
-        [Association(@"X_DictionaryCharacteristicReferencesDictionaryUnit", typeof(DictionaryCharacteristic))]
-        public XPCollection<DictionaryCharacteristic> X_DictionaryCharacteristics { get { return GetCollection<DictionaryCharacteristic>("X_DictionaryCharacteristics"); } }
-        [Association(@"X_ContractConditionReferencesDictionaryUnit", typeof(ContractCondition))]
-        public XPCollection<ContractCondition> X_ContractConditions { get { return GetCollection<ContractCondition>("X_ContractConditions"); } }
-        [Association(@"Q_ProjectPlanTaskModelReferencesDictionaryUnit", typeof(ProjectPlanTaskModel))]
-        public XPCollection<ProjectPlanTaskModel> Q_ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("Q_ProjectPlanTaskModels"); } }
-        [Association(@"Q_SupplierModelReferencesDictionaryUnit", typeof(SupplierModel))]
-        public XPCollection<SupplierModel> Q_SupplierModels { get { return GetCollection<SupplierModel>("Q_SupplierModels"); } }
-        [Association(@"Q_SupplierModelReferencesDictionaryUnit1", typeof(SupplierModel))]
-        public XPCollection<SupplierModel> Q_SupplierModels1 { get { return GetCollection<SupplierModel>("Q_SupplierModels1"); } }
-        [Association(@"Q_WarehousePartSupplierReferencesDictionaryUnit", typeof(WarehousePartSupplier))]
-        public XPCollection<WarehousePartSupplier> Q_WarehousePartSuppliers { get { return GetCollection<WarehousePartSupplier>("Q_WarehousePartSuppliers"); } }
-        [Association(@"E_SupplyItemReferencesDictionaryUnit2", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems2 { get { return GetCollection<SupplyItem>("E_SupplyItems2"); } }
-        [Association(@"E_SupplyItemReferencesDictionaryUnit1", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems1 { get { return GetCollection<SupplyItem>("E_SupplyItems1"); } }
-        [Association(@"E_SupplyItemReferencesDictionaryUnit", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
-        [Association(@"X_DictionaryModelReferencesDictionaryUnit", typeof(DictionaryModel))]
-        public XPCollection<DictionaryModel> X_DictionaryModels { get { return GetCollection<DictionaryModel>("X_DictionaryModels"); } }
-        [Association(@"Q_AccountDiscountReferencesDictionaryUnit", typeof(AccountDiscount))]
-        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
+        [Association(@"ProjectDeliverableReferencesDictionaryUnit", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
+        [Association(@"GeophysicsReferencesDictionaryUnit", typeof(Geophysics))]
+        public XPCollection<Geophysics> GeophysicsCollection { get { return GetCollection<Geophysics>("GeophysicsCollection"); } }
+        [Association(@"DictionaryPartKitItemReferencesDictionaryUnit", typeof(DictionaryPartKitItem))]
+        public XPCollection<DictionaryPartKitItem> DictionaryPartKitItems { get { return GetCollection<DictionaryPartKitItem>("DictionaryPartKitItems"); } }
+        [Association(@"ModelScheduleCycleReferencesDictionaryUnit", typeof(ModelScheduleCycle))]
+        public XPCollection<ModelScheduleCycle> ModelScheduleCycles { get { return GetCollection<ModelScheduleCycle>("ModelScheduleCycles"); } }
+        [Association(@"ModelWarrantyReferencesDictionaryUnit", typeof(ModelWarranty))]
+        public XPCollection<ModelWarranty> ModelWarranties { get { return GetCollection<ModelWarranty>("ModelWarranties"); } }
+        [Association(@"SupplierPartReferencesDictionaryUnit", typeof(SupplierPart))]
+        public XPCollection<SupplierPart> SupplierParts { get { return GetCollection<SupplierPart>("SupplierParts"); } }
+        [Association(@"SupplierPartReferencesDictionaryUnit1", typeof(SupplierPart))]
+        public XPCollection<SupplierPart> SupplierParts1 { get { return GetCollection<SupplierPart>("SupplierParts1"); } }
+        [Association(@"TaskReferencesDictionaryUnit", typeof(Task))]
+        public XPCollection<Task> Tasks { get { return GetCollection<Task>("Tasks"); } }
+        [Association(@"ProjectPlanTaskPartReferencesDictionaryUnit", typeof(ProjectPlanTaskPart))]
+        public XPCollection<ProjectPlanTaskPart> ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("ProjectPlanTaskParts"); } }
+        [Association(@"AssetWarrantyReferencesDictionaryUnit", typeof(AssetWarranty))]
+        public XPCollection<AssetWarranty> AssetWarranties { get { return GetCollection<AssetWarranty>("AssetWarranties"); } }
+        [Association(@"ModelProcedureTaskReferencesDictionaryUnit", typeof(ModelProcedureTask))]
+        public XPCollection<ModelProcedureTask> ModelProcedureTasks { get { return GetCollection<ModelProcedureTask>("ModelProcedureTasks"); } }
+        [Association(@"DictionaryTaxReferencesDictionaryUnit", typeof(DictionaryTax))]
+        public XPCollection<DictionaryTax> DictionaryTaxs { get { return GetCollection<DictionaryTax>("DictionaryTaxs"); } }
+        [Association(@"CostEstimateModelReferencesDictionaryUnit", typeof(CostEstimateModel))]
+        public XPCollection<CostEstimateModel> CostEstimateModels { get { return GetCollection<CostEstimateModel>("CostEstimateModels"); } }
+        [Association(@"CostEstimateModelReferencesDictionaryUnit1", typeof(CostEstimateModel))]
+        public XPCollection<CostEstimateModel> CostEstimateModels1 { get { return GetCollection<CostEstimateModel>("CostEstimateModels1"); } }
+        [Association(@"WarehouseModelSupplierReferencesDictionaryUnit", typeof(WarehouseModelSupplier))]
+        public XPCollection<WarehouseModelSupplier> WarehouseModelSuppliers { get { return GetCollection<WarehouseModelSupplier>("WarehouseModelSuppliers"); } }
+        [Association(@"DictionaryCharacteristicReferencesDictionaryUnit", typeof(DictionaryCharacteristic))]
+        public XPCollection<DictionaryCharacteristic> DictionaryCharacteristics { get { return GetCollection<DictionaryCharacteristic>("DictionaryCharacteristics"); } }
+        [Association(@"ContractConditionReferencesDictionaryUnit", typeof(ContractCondition))]
+        public XPCollection<ContractCondition> ContractConditions { get { return GetCollection<ContractCondition>("ContractConditions"); } }
+        [Association(@"ProjectPlanTaskModelReferencesDictionaryUnit", typeof(ProjectPlanTaskModel))]
+        public XPCollection<ProjectPlanTaskModel> ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("ProjectPlanTaskModels"); } }
+        [Association(@"SupplierModelReferencesDictionaryUnit", typeof(SupplierModel))]
+        public XPCollection<SupplierModel> SupplierModels { get { return GetCollection<SupplierModel>("SupplierModels"); } }
+        [Association(@"SupplierModelReferencesDictionaryUnit1", typeof(SupplierModel))]
+        public XPCollection<SupplierModel> SupplierModels1 { get { return GetCollection<SupplierModel>("SupplierModels1"); } }
+        [Association(@"WarehousePartSupplierReferencesDictionaryUnit", typeof(WarehousePartSupplier))]
+        public XPCollection<WarehousePartSupplier> WarehousePartSuppliers { get { return GetCollection<WarehousePartSupplier>("WarehousePartSuppliers"); } }
+        [Association(@"DictionaryModelReferencesDictionaryUnit", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> DictionaryModels { get { return GetCollection<DictionaryModel>("DictionaryModels"); } }
+        [Association(@"SupplyItemReferencesDictionaryUnit", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> SupplyItems { get { return GetCollection<SupplyItem>("SupplyItems"); } }
+        [Association(@"SupplyItemReferencesDictionaryUnit1", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> SupplyItems1 { get { return GetCollection<SupplyItem>("SupplyItems1"); } }
+        [Association(@"SupplyItemReferencesDictionaryUnit2", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> SupplyItems2 { get { return GetCollection<SupplyItem>("SupplyItems2"); } }
+        [Association(@"AccountDiscountReferencesDictionaryUnit", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> AccountDiscounts { get { return GetCollection<AccountDiscount>("AccountDiscounts"); } }
+        [Association(@"DictionaryPartReferencesDictionaryUnit", typeof(DictionaryPart))]
+        public XPCollection<DictionaryPart> DictionaryParts { get { return GetCollection<DictionaryPart>("DictionaryParts"); } }
     }
 
 }

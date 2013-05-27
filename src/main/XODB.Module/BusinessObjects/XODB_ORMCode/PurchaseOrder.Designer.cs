@@ -50,42 +50,42 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("Ordered", ref fOrdered, value); }
         }
         Company fCustomerCompanyID;
-        [Association(@"E_PurchaseOrderReferencesCompany")]
+        [Association(@"PurchaseOrderReferencesCompany")]
         public Company CustomerCompanyID
         {
             get { return fCustomerCompanyID; }
             set { SetPropertyValue<Company>("CustomerCompanyID", ref fCustomerCompanyID, value); }
         }
         Contact fCustomerContactID;
-        [Association(@"E_PurchaseOrderReferencesContact")]
+        [Association(@"PurchaseOrderReferencesContact")]
         public Contact CustomerContactID
         {
             get { return fCustomerContactID; }
             set { SetPropertyValue<Contact>("CustomerContactID", ref fCustomerContactID, value); }
         }
         Account fCustomerAccountID;
-        [Association(@"E_PurchaseOrderReferencesQ_Account")]
+        [Association(@"PurchaseOrderReferencesQ_Account")]
         public Account CustomerAccountID
         {
             get { return fCustomerAccountID; }
             set { SetPropertyValue<Account>("CustomerAccountID", ref fCustomerAccountID, value); }
         }
         Company fSupplierCompanyID;
-        [Association(@"E_PurchaseOrderReferencesCompany1")]
+        [Association(@"PurchaseOrderReferencesCompany1")]
         public Company SupplierCompanyID
         {
             get { return fSupplierCompanyID; }
             set { SetPropertyValue<Company>("SupplierCompanyID", ref fSupplierCompanyID, value); }
         }
         Contact fSupplierContactID;
-        [Association(@"E_PurchaseOrderReferencesContact1")]
+        [Association(@"PurchaseOrderReferencesContact1")]
         public Contact SupplierContactID
         {
             get { return fSupplierContactID; }
             set { SetPropertyValue<Contact>("SupplierContactID", ref fSupplierContactID, value); }
         }
         Account fSupplierAccountID;
-        [Association(@"E_PurchaseOrderReferencesQ_Account1")]
+        [Association(@"PurchaseOrderReferencesQ_Account1")]
         public Account SupplierAccountID
         {
             get { return fSupplierAccountID; }
@@ -171,12 +171,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fProjectID; }
             set { SetPropertyValue<Project>("ProjectID", ref fProjectID, value); }
         }
-        [Association(@"E_SupplyReferencesE_PurchaseOrder", typeof(Supply))]
-        public XPCollection<Supply> E_Supplys { get { return GetCollection<Supply>("E_Supplys"); } }
-        [Association(@"E_SupplyReferencesE_PurchaseOrder1", typeof(Supply))]
-        public XPCollection<Supply> E_Supplys1 { get { return GetCollection<Supply>("E_Supplys1"); } }
-        [Association(@"Q_AssetReferencesE_PurchaseOrder", typeof(Asset))]
-        public XPCollection<Asset> Q_Assets { get { return GetCollection<Asset>("Q_Assets"); } }
+        [Association(@"SupplyReferencesE_PurchaseOrder", typeof(Supply))]
+        public XPCollection<Supply> Supplies { get { return GetCollection<Supply>("Supplies"); } }
+        [Association(@"SupplyReferencesE_PurchaseOrder1", typeof(Supply))]
+        public XPCollection<Supply> Supplies1 { get { return GetCollection<Supply>("Supplies1"); } }
+        [Association(@"AssetReferencesE_PurchaseOrder", typeof(Asset))]
+        public XPCollection<Asset> Assets { get { return GetCollection<Asset>("Assets"); } }
     }
 
 }

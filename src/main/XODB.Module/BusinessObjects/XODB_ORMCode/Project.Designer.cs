@@ -131,16 +131,16 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<ProjectPlan> ProjectPlans { get { return GetCollection<ProjectPlan>("ProjectPlans"); } }
         [Association(@"OpportunityReferencesProject", typeof(Opportunity))]
         public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
-        [Association(@"X_ProjectDeliverableReferencesProject", typeof(ProjectDeliverable))]
-        public XPCollection<ProjectDeliverable> X_ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("X_ProjectDeliverables"); } }
-        [Association(@"X_ContractReferencesProject", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
-        [Association(@"Q_RecallReferencesProject", typeof(Recall))]
-        public XPCollection<Recall> Q_Recalls { get { return GetCollection<Recall>("Q_Recalls"); } }
-        [Association(@"E_SupplyReferencesProject", typeof(Supply))]
-        public XPCollection<Supply> E_Supplys { get { return GetCollection<Supply>("E_Supplys"); } }
-        [Association(@"Q_DeliveryAdviceReferencesProject", typeof(DeliveryAdvice))]
-        public XPCollection<DeliveryAdvice> Q_DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices"); } }
+        [Association(@"ProjectDeliverableReferencesProject", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
+        [Association(@"ContractReferencesProject", typeof(Contract))]
+        public XPCollection<Contract> Contracts { get { return GetCollection<Contract>("Contracts"); } }
+        [Association(@"RecallReferencesProject", typeof(Recall))]
+        public XPCollection<Recall> Recalls { get { return GetCollection<Recall>("Recalls"); } }
+        [Association(@"SupplyReferencesProject", typeof(Supply))]
+        public XPCollection<Supply> Supplies { get { return GetCollection<Supply>("Supplies"); } }
+        [Association(@"DeliveryAdviceReferencesProject", typeof(DeliveryAdvice))]
+        public XPCollection<DeliveryAdvice> DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("DeliveryAdvices"); } }
         [Association(@"PurchaseOrderReferencesProject", typeof(PurchaseOrder))]
         public XPCollection<PurchaseOrder> PurchaseOrders { get { return GetCollection<PurchaseOrder>("PurchaseOrders"); } }
     }

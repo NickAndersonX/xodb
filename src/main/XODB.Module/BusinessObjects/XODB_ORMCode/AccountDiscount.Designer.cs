@@ -23,35 +23,35 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("AccountProductDiscountID", ref fAccountProductDiscountID, value); }
         }
         Account fSourceAccountID;
-        [Association(@"Q_AccountDiscountReferencesAccount")]
+        [Association(@"AccountDiscountReferencesAccount")]
         public Account SourceAccountID
         {
             get { return fSourceAccountID; }
             set { SetPropertyValue<Account>("SourceAccountID", ref fSourceAccountID, value); }
         }
         Company fClientCompanyID;
-        [Association(@"Q_AccountDiscountReferencesCompany")]
+        [Association(@"AccountDiscountReferencesCompany")]
         public Company ClientCompanyID
         {
             get { return fClientCompanyID; }
             set { SetPropertyValue<Company>("ClientCompanyID", ref fClientCompanyID, value); }
         }
         Experience fProviderExperienceID;
-        [Association(@"Q_AccountDiscountReferencesExperience")]
+        [Association(@"AccountDiscountReferencesExperience")]
         public Experience ProviderExperienceID
         {
             get { return fProviderExperienceID; }
             set { SetPropertyValue<Experience>("ProviderExperienceID", ref fProviderExperienceID, value); }
         }
         DictionaryDeviceType fDeviceTypeID;
-        [Association(@"Q_AccountDiscountReferencesDictionaryDeviceType")]
+        [Association(@"AccountDiscountReferencesDictionaryDeviceType")]
         public DictionaryDeviceType DeviceTypeID
         {
             get { return fDeviceTypeID; }
             set { SetPropertyValue<DictionaryDeviceType>("DeviceTypeID", ref fDeviceTypeID, value); }
         }
         DictionaryUnit fLevelUnitID;
-        [Association(@"Q_AccountDiscountReferencesDictionaryUnit")]
+        [Association(@"AccountDiscountReferencesDictionaryUnit")]
         public DictionaryUnit LevelUnitID
         {
             get { return fLevelUnitID; }

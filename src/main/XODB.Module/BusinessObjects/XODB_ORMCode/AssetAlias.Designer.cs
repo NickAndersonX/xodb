@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("AssetAliasID", ref fAssetAliasID, value); }
         }
         Asset fAssetID;
-        [Association(@"Q_AssetAliasReferencesQ_Asset")]
+        [Association(@"AssetAliasReferencesQ_Asset")]
         public Asset AssetID
         {
             get { return fAssetID; }

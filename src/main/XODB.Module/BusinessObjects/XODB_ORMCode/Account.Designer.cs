@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("AccountID", ref fAccountID, value); }
         }
         Account fParentAccountID;
-        [Association(@"Q_AccountReferencesQ_Account")]
+        [Association(@"AccountReferencesQ_Account")]
         public Account ParentAccountID
         {
             get { return fParentAccountID; }
@@ -45,14 +45,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("AccountName", ref fAccountName, value); }
         }
         Company fPrimaryCompanyID;
-        [Association(@"Q_AccountReferencesCompany")]
+        [Association(@"AccountReferencesCompany")]
         public Company PrimaryCompanyID
         {
             get { return fPrimaryCompanyID; }
             set { SetPropertyValue<Company>("PrimaryCompanyID", ref fPrimaryCompanyID, value); }
         }
         Location fDefaultLocationID;
-        [Association(@"Q_AccountReferencesLocation")]
+        [Association(@"AccountReferencesLocation")]
         public Location DefaultLocationID
         {
             get { return fDefaultLocationID; }
@@ -119,36 +119,36 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_AccountReferencesQ_Account", typeof(Account))]
-        public XPCollection<Account> Q_AccountCollection { get { return GetCollection<Account>("Q_AccountCollection"); } }
-        [Association(@"E_PurchaseOrderReferencesQ_Account", typeof(PurchaseOrder))]
-        public XPCollection<PurchaseOrder> E_PurchaseOrders { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders"); } }
-        [Association(@"E_PurchaseOrderReferencesQ_Account1", typeof(PurchaseOrder))]
-        public XPCollection<PurchaseOrder> E_PurchaseOrders1 { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders1"); } }
-        [Association(@"E_PaymentReferencesQ_Account", typeof(Payment))]
-        public XPCollection<Payment> E_Payments { get { return GetCollection<Payment>("E_Payments"); } }
-        [Association(@"E_PaymentReferencesQ_Account1", typeof(Payment))]
-        public XPCollection<Payment> E_Payments1 { get { return GetCollection<Payment>("E_Payments1"); } }
-        [Association(@"E_InvoiceReferencesQ_Account", typeof(Invoice))]
-        public XPCollection<Invoice> E_Invoices { get { return GetCollection<Invoice>("E_Invoices"); } }
-        [Association(@"E_InvoiceReferencesQ_Account1", typeof(Invoice))]
-        public XPCollection<Invoice> E_Invoices1 { get { return GetCollection<Invoice>("E_Invoices1"); } }
-        [Association(@"E_JournalReferencesQ_Account", typeof(Journal))]
-        public XPCollection<Journal> E_Journals { get { return GetCollection<Journal>("E_Journals"); } }
-        [Association(@"Q_CompanyAccountReferencesQ_Account", typeof(CompanyAccount))]
-        public XPCollection<CompanyAccount> Q_CompanyAccounts { get { return GetCollection<CompanyAccount>("Q_CompanyAccounts"); } }
-        [Association(@"Q_AssetReferencesQ_Account", typeof(Asset))]
-        public XPCollection<Asset> Q_Assets { get { return GetCollection<Asset>("Q_Assets"); } }
-        [Association(@"Q_AssetReferencesQ_Account1", typeof(Asset))]
-        public XPCollection<Asset> Q_Assets1 { get { return GetCollection<Asset>("Q_Assets1"); } }
-        [Association(@"Q_AssetReferencesQ_Account2", typeof(Asset))]
-        public XPCollection<Asset> Q_Assets2 { get { return GetCollection<Asset>("Q_Assets2"); } }
-        [Association(@"Q_DeliveryAdviceReferencesQ_Account", typeof(DeliveryAdvice))]
-        public XPCollection<DeliveryAdvice> Q_DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices"); } }
-        [Association(@"E_SupplyItemReferencesAccount", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
-        [Association(@"Q_AccountDiscountReferencesAccount", typeof(AccountDiscount))]
-        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
+        [Association(@"AccountReferencesQ_Account", typeof(Account))]
+        public XPCollection<Account> AccountCollection { get { return GetCollection<Account>("AccountCollection"); } }
+        [Association(@"PurchaseOrderReferencesQ_Account", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> PurchaseOrders { get { return GetCollection<PurchaseOrder>("PurchaseOrders"); } }
+        [Association(@"PurchaseOrderReferencesQ_Account1", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> PurchaseOrders1 { get { return GetCollection<PurchaseOrder>("PurchaseOrders1"); } }
+        [Association(@"PaymentReferencesQ_Account", typeof(Payment))]
+        public XPCollection<Payment> Payments { get { return GetCollection<Payment>("Payments"); } }
+        [Association(@"PaymentReferencesQ_Account1", typeof(Payment))]
+        public XPCollection<Payment> Payments1 { get { return GetCollection<Payment>("Payments1"); } }
+        [Association(@"InvoiceReferencesQ_Account", typeof(Invoice))]
+        public XPCollection<Invoice> Invoices { get { return GetCollection<Invoice>("Invoices"); } }
+        [Association(@"InvoiceReferencesQ_Account1", typeof(Invoice))]
+        public XPCollection<Invoice> Invoices1 { get { return GetCollection<Invoice>("Invoices1"); } }
+        [Association(@"JournalReferencesQ_Account", typeof(Journal))]
+        public XPCollection<Journal> Journals { get { return GetCollection<Journal>("Journals"); } }
+        [Association(@"CompanyAccountReferencesQ_Account", typeof(CompanyAccount))]
+        public XPCollection<CompanyAccount> CompanyAccounts { get { return GetCollection<CompanyAccount>("CompanyAccounts"); } }
+        [Association(@"AssetReferencesQ_Account", typeof(Asset))]
+        public XPCollection<Asset> Assets { get { return GetCollection<Asset>("Assets"); } }
+        [Association(@"AssetReferencesQ_Account1", typeof(Asset))]
+        public XPCollection<Asset> Assets1 { get { return GetCollection<Asset>("Assets1"); } }
+        [Association(@"AssetReferencesQ_Account2", typeof(Asset))]
+        public XPCollection<Asset> Assets2 { get { return GetCollection<Asset>("Assets2"); } }
+        [Association(@"DeliveryAdviceReferencesQ_Account", typeof(DeliveryAdvice))]
+        public XPCollection<DeliveryAdvice> DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("DeliveryAdvices"); } }
+        [Association(@"SupplyItemReferencesAccount", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> SupplyItems { get { return GetCollection<SupplyItem>("SupplyItems"); } }
+        [Association(@"AccountDiscountReferencesAccount", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> AccountDiscounts { get { return GetCollection<AccountDiscount>("AccountDiscounts"); } }
     }
 
 }

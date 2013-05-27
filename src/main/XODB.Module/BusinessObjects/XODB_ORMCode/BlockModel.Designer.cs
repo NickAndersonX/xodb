@@ -285,8 +285,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<BlockModelMetadata> BlockModelMetadatas { get { return GetCollection<BlockModelMetadata>("BlockModelMetadatas"); } }
         [Association(@"BlockModelBlockDataReferencesBlockModel", typeof(BlockModelBlockData))]
         public XPCollection<BlockModelBlockData> BlockModelBlockDatas { get { return GetCollection<BlockModelBlockData>("BlockModelBlockDatas"); } }
-        [Association(@"X_BlockModelBlockReferencesBlockModel", typeof(BlockModelBlock))]
-        public XPCollection<BlockModelBlock> X_BlockModelBlocks { get { return GetCollection<BlockModelBlock>("X_BlockModelBlocks"); } }
+        [Association(@"BlockModelBlockReferencesBlockModel", typeof(BlockModelBlock))]
+        public XPCollection<BlockModelBlock> BlockModelBlocks { get { return GetCollection<BlockModelBlock>("BlockModelBlocks"); } }
     }
 
 }

@@ -43,8 +43,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
-        [Association(@"Q_WorkflowScheduleReferencesQ_DictionaryEventType", typeof(WorkflowSchedule))]
-        public XPCollection<WorkflowSchedule> Q_WorkflowSchedules { get { return GetCollection<WorkflowSchedule>("Q_WorkflowSchedules"); } }
+        [Association(@"WorkflowScheduleReferencesQ_DictionaryEventType", typeof(WorkflowSchedule))]
+        public XPCollection<WorkflowSchedule> WorkflowSchedules { get { return GetCollection<WorkflowSchedule>("WorkflowSchedules"); } }
     }
 
 }

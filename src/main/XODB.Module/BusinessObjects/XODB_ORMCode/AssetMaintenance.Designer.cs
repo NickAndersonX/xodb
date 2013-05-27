@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("AssetMaintenanceID", ref fAssetMaintenanceID, value); }
         }
         Asset fAssetID;
-        [Association(@"Q_AssetMaintenanceReferencesQ_Asset")]
+        [Association(@"AssetMaintenanceReferencesQ_Asset")]
         public Asset AssetID
         {
             get { return fAssetID; }
             set { SetPropertyValue<Asset>("AssetID", ref fAssetID, value); }
         }
         ModelProcedure fModelProcedureID;
-        [Association(@"Q_AssetMaintenanceReferencesQ_ModelProcedure")]
+        [Association(@"AssetMaintenanceReferencesQ_ModelProcedure")]
         public ModelProcedure ModelProcedureID
         {
             get { return fModelProcedureID; }

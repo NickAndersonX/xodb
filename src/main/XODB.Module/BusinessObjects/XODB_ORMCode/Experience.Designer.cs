@@ -239,16 +239,16 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
         [Association(@"ProjectPlanTaskWorkerReferencesExperience", typeof(ProjectPlanTaskWorker))]
         public XPCollection<ProjectPlanTaskWorker> ProjectPlanTaskWorkers { get { return GetCollection<ProjectPlanTaskWorker>("ProjectPlanTaskWorkers"); } }
-        [Association(@"Q_AssetReferencesExperience", typeof(Asset))]
-        public XPCollection<Asset> Q_Assets { get { return GetCollection<Asset>("Q_Assets"); } }
-        [Association(@"X_TaskReferencesExperience", typeof(Task))]
-        public XPCollection<Task> X_Tasks { get { return GetCollection<Task>("X_Tasks"); } }
-        [Association(@"Q_WorkflowScheduleReferencesExperience", typeof(WorkflowSchedule))]
-        public XPCollection<WorkflowSchedule> Q_WorkflowSchedules { get { return GetCollection<WorkflowSchedule>("Q_WorkflowSchedules"); } }
-        [Association(@"Q_DictionaryDeviceTypeReferencesExperience", typeof(DictionaryDeviceType))]
-        public XPCollection<DictionaryDeviceType> Q_DictionaryDeviceTypes { get { return GetCollection<DictionaryDeviceType>("Q_DictionaryDeviceTypes"); } }
-        [Association(@"Q_AccountDiscountReferencesExperience", typeof(AccountDiscount))]
-        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
+        [Association(@"AssetReferencesExperience", typeof(Asset))]
+        public XPCollection<Asset> Assets { get { return GetCollection<Asset>("Assets"); } }
+        [Association(@"TaskReferencesExperience", typeof(Task))]
+        public XPCollection<Task> Tasks { get { return GetCollection<Task>("Tasks"); } }
+        [Association(@"WorkflowScheduleReferencesExperience", typeof(WorkflowSchedule))]
+        public XPCollection<WorkflowSchedule> WorkflowSchedules { get { return GetCollection<WorkflowSchedule>("WorkflowSchedules"); } }
+        [Association(@"DictionaryDeviceTypeReferencesExperience", typeof(DictionaryDeviceType))]
+        public XPCollection<DictionaryDeviceType> DictionaryDeviceTypes { get { return GetCollection<DictionaryDeviceType>("DictionaryDeviceTypes"); } }
+        [Association(@"AccountDiscountReferencesExperience", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> AccountDiscounts { get { return GetCollection<AccountDiscount>("AccountDiscounts"); } }
     }
 
 }

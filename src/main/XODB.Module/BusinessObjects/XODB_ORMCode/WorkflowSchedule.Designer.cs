@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("WorkflowScheduleID", ref fWorkflowScheduleID, value); }
         }
         DictionaryEventType fEventTypeID;
-        [Association(@"Q_WorkflowScheduleReferencesQ_DictionaryEventType")]
+        [Association(@"WorkflowScheduleReferencesQ_DictionaryEventType")]
         public DictionaryEventType EventTypeID
         {
             get { return fEventTypeID; }
@@ -43,7 +43,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ReferenceID", ref fReferenceID, value); }
         }
         Experience fWorkerID;
-        [Association(@"Q_WorkflowScheduleReferencesExperience")]
+        [Association(@"WorkflowScheduleReferencesExperience")]
         public Experience WorkerID
         {
             get { return fWorkerID; }

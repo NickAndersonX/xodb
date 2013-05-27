@@ -36,7 +36,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("GlobalRecallOrigin", ref fGlobalRecallOrigin, value); }
         }
         Project fProjectID;
-        [Association(@"Q_RecallReferencesProject")]
+        [Association(@"RecallReferencesProject")]
         public Project ProjectID
         {
             get { return fProjectID; }
@@ -49,7 +49,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("Issued", ref fIssued, value); }
         }
         Contact fIssuedBy;
-        [Association(@"Q_RecallReferencesContact")]
+        [Association(@"RecallReferencesContact")]
         public Contact IssuedBy
         {
             get { return fIssuedBy; }
@@ -62,7 +62,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("Received", ref fReceived, value); }
         }
         Contact fReceivedBy;
-        [Association(@"Q_RecallReferencesContact1")]
+        [Association(@"RecallReferencesContact1")]
         public Contact ReceivedBy
         {
             get { return fReceivedBy; }
@@ -75,14 +75,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("Actioned", ref fActioned, value); }
         }
         Contact fActionedBy;
-        [Association(@"Q_RecallReferencesContact2")]
+        [Association(@"RecallReferencesContact2")]
         public Contact ActionedBy
         {
             get { return fActionedBy; }
             set { SetPropertyValue<Contact>("ActionedBy", ref fActionedBy, value); }
         }
         Contact fResponsibleContactID;
-        [Association(@"Q_RecallReferencesContact3")]
+        [Association(@"RecallReferencesContact3")]
         public Contact ResponsibleContactID
         {
             get { return fResponsibleContactID; }
@@ -149,8 +149,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_RecallModelReferencesQ_Recall", typeof(RecallModel))]
-        public XPCollection<RecallModel> Q_RecallModels { get { return GetCollection<RecallModel>("Q_RecallModels"); } }
+        [Association(@"RecallModelReferencesQ_Recall", typeof(RecallModel))]
+        public XPCollection<RecallModel> RecallModels { get { return GetCollection<RecallModel>("RecallModels"); } }
     }
 
 }

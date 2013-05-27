@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ProjectPlanTaskModelID", ref fProjectPlanTaskModelID, value); }
         }
         ProjectPlanTask fProjectPlanTaskID;
-        [Association(@"Q_ProjectPlanTaskModelReferencesProjectPlanTask")]
+        [Association(@"ProjectPlanTaskModelReferencesProjectPlanTask")]
         public ProjectPlanTask ProjectPlanTaskID
         {
             get { return fProjectPlanTaskID; }
@@ -37,21 +37,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryModel>("ModelID", ref fModelID, value); }
         }
         WarehouseModel fWarehouseModelID;
-        [Association(@"Q_ProjectPlanTaskModelReferencesQ_WarehouseModel")]
+        [Association(@"ProjectPlanTaskModelReferencesQ_WarehouseModel")]
         public WarehouseModel WarehouseModelID
         {
             get { return fWarehouseModelID; }
             set { SetPropertyValue<WarehouseModel>("WarehouseModelID", ref fWarehouseModelID, value); }
         }
         SupplierModel fSupplierModelID;
-        [Association(@"Q_ProjectPlanTaskModelReferencesQ_SupplierModel")]
+        [Association(@"ProjectPlanTaskModelReferencesQ_SupplierModel")]
         public SupplierModel SupplierModelID
         {
             get { return fSupplierModelID; }
             set { SetPropertyValue<SupplierModel>("SupplierModelID", ref fSupplierModelID, value); }
         }
         DictionaryUnit fQuantityUnitID;
-        [Association(@"Q_ProjectPlanTaskModelReferencesDictionaryUnit")]
+        [Association(@"ProjectPlanTaskModelReferencesDictionaryUnit")]
         public DictionaryUnit QuantityUnitID
         {
             get { return fQuantityUnitID; }
@@ -148,8 +148,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"E_SupplyItemReferencesProjectPlanTaskModel", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
+        [Association(@"SupplyItemReferencesProjectPlanTaskModel", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> SupplyItems { get { return GetCollection<SupplyItem>("SupplyItems"); } }
     }
 
 }

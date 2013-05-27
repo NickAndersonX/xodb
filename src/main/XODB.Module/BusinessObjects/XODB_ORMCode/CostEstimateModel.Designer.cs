@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("CostEstimateModelID", ref fCostEstimateModelID, value); }
         }
         CostEstimateModel fParentCostEstimateModelID;
-        [Association(@"X_CostEstimateModelReferencesX_CostEstimateModel")]
+        [Association(@"CostEstimateModelReferencesX_CostEstimateModel")]
         public CostEstimateModel ParentCostEstimateModelID
         {
             get { return fParentCostEstimateModelID; }
             set { SetPropertyValue<CostEstimateModel>("ParentCostEstimateModelID", ref fParentCostEstimateModelID, value); }
         }
         Contract fContractID;
-        [Association(@"X_CostEstimateModelReferencesContract")]
+        [Association(@"CostEstimateModelReferencesContract")]
         public Contract ContractID
         {
             get { return fContractID; }
@@ -44,14 +44,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryModel>("ModelID", ref fModelID, value); }
         }
         DictionaryCostType fCostTypeID;
-        [Association(@"X_CostEstimateModelReferencesX_DictionaryCostType")]
+        [Association(@"CostEstimateModelReferencesX_DictionaryCostType")]
         public DictionaryCostType CostTypeID
         {
             get { return fCostTypeID; }
             set { SetPropertyValue<DictionaryCostType>("CostTypeID", ref fCostTypeID, value); }
         }
         DictionaryUnit fProRataUnitID;
-        [Association(@"X_CostEstimateModelReferencesDictionaryUnit")]
+        [Association(@"CostEstimateModelReferencesDictionaryUnit")]
         public DictionaryUnit ProRataUnitID
         {
             get { return fProRataUnitID; }
@@ -76,7 +76,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<bool>("IsAccruableWithParentCost", ref fIsAccruableWithParentCost, value); }
         }
         DictionaryUnit fAccruedQuantumSIUnitID;
-        [Association(@"X_CostEstimateModelReferencesDictionaryUnit1")]
+        [Association(@"CostEstimateModelReferencesDictionaryUnit1")]
         public DictionaryUnit AccruedQuantumSIUnitID
         {
             get { return fAccruedQuantumSIUnitID; }
@@ -156,8 +156,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_CostEstimateModelReferencesX_CostEstimateModel", typeof(CostEstimateModel))]
-        public XPCollection<CostEstimateModel> X_CostEstimateModelCollection { get { return GetCollection<CostEstimateModel>("X_CostEstimateModelCollection"); } }
+        [Association(@"CostEstimateModelReferencesX_CostEstimateModel", typeof(CostEstimateModel))]
+        public XPCollection<CostEstimateModel> CostEstimateModelCollection { get { return GetCollection<CostEstimateModel>("CostEstimateModelCollection"); } }
     }
 
 }

@@ -43,10 +43,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
-        [Association(@"Q_DictionaryPartKitItemReferencesQ_DictionaryPartKit", typeof(DictionaryPartKitItem))]
-        public XPCollection<DictionaryPartKitItem> Q_DictionaryPartKitItems { get { return GetCollection<DictionaryPartKitItem>("Q_DictionaryPartKitItems"); } }
-        [Association(@"Q_ModelPartKitReferencesQ_DictionaryPartKit", typeof(ModelPartKit))]
-        public XPCollection<ModelPartKit> Q_ModelPartKits { get { return GetCollection<ModelPartKit>("Q_ModelPartKits"); } }
+        [Association(@"DictionaryPartKitItemReferencesQ_DictionaryPartKit", typeof(DictionaryPartKitItem))]
+        public XPCollection<DictionaryPartKitItem> DictionaryPartKitItems { get { return GetCollection<DictionaryPartKitItem>("DictionaryPartKitItems"); } }
+        [Association(@"ModelPartKitReferencesQ_DictionaryPartKit", typeof(ModelPartKit))]
+        public XPCollection<ModelPartKit> ModelPartKits { get { return GetCollection<ModelPartKit>("ModelPartKits"); } }
     }
 
 }

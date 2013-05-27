@@ -142,46 +142,46 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Header> Headers { get { return GetCollection<Header>("Headers"); } }
         [Association(@"HeaderReferencesCompany1", typeof(Header))]
         public XPCollection<Header> Headers1 { get { return GetCollection<Header>("Headers1"); } }
-        [Association(@"X_ContractReferencesCompany", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
-        [Association(@"X_ContractReferencesCompany1", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts1 { get { return GetCollection<Contract>("X_Contracts1"); } }
-        [Association(@"X_ContractReferencesCompany2", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts2 { get { return GetCollection<Contract>("X_Contracts2"); } }
-        [Association(@"X_ContractReferencesCompany3", typeof(Contract))]
-        public XPCollection<Contract> X_Contracts3 { get { return GetCollection<Contract>("X_Contracts3"); } }
-        [Association(@"X_SurveyReferencesCompany", typeof(Survey))]
-        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
-        [Association(@"X_LocationReferencesCompany", typeof(Location))]
-        public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
-        [Association(@"X_TenementReferencesCompany", typeof(Tenement))]
-        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
-        [Association(@"Q_AccountReferencesCompany", typeof(Account))]
-        public XPCollection<Account> Q_Accounts { get { return GetCollection<Account>("Q_Accounts"); } }
-        [Association(@"E_PurchaseOrderReferencesCompany", typeof(PurchaseOrder))]
-        public XPCollection<PurchaseOrder> E_PurchaseOrders { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders"); } }
-        [Association(@"E_PurchaseOrderReferencesCompany1", typeof(PurchaseOrder))]
-        public XPCollection<PurchaseOrder> E_PurchaseOrders1 { get { return GetCollection<PurchaseOrder>("E_PurchaseOrders1"); } }
-        [Association(@"E_InvoiceReferencesCompany", typeof(Invoice))]
-        public XPCollection<Invoice> E_Invoices { get { return GetCollection<Invoice>("E_Invoices"); } }
-        [Association(@"E_InvoiceReferencesCompany1", typeof(Invoice))]
-        public XPCollection<Invoice> E_Invoices1 { get { return GetCollection<Invoice>("E_Invoices1"); } }
-        [Association(@"Q_WarehouseReferencesCompany", typeof(Warehouse))]
-        public XPCollection<Warehouse> Q_Warehouses { get { return GetCollection<Warehouse>("Q_Warehouses"); } }
-        [Association(@"Q_CompanyAccountReferencesCompany", typeof(CompanyAccount))]
-        public XPCollection<CompanyAccount> Q_CompanyAccounts { get { return GetCollection<CompanyAccount>("Q_CompanyAccounts"); } }
-        [Association(@"Q_SupplierPartReferencesCompany", typeof(SupplierPart))]
-        public XPCollection<SupplierPart> Q_SupplierParts { get { return GetCollection<SupplierPart>("Q_SupplierParts"); } }
-        [Association(@"Q_DeliveryAdviceReferencesCompany", typeof(DeliveryAdvice))]
-        public XPCollection<DeliveryAdvice> Q_DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices"); } }
-        [Association(@"Q_SupplierModelReferencesCompany", typeof(SupplierModel))]
-        public XPCollection<SupplierModel> Q_SupplierModels { get { return GetCollection<SupplierModel>("Q_SupplierModels"); } }
-        [Association(@"X_DictionaryModelReferencesCompany", typeof(DictionaryModel))]
-        public XPCollection<DictionaryModel> X_DictionaryModels { get { return GetCollection<DictionaryModel>("X_DictionaryModels"); } }
-        [Association(@"Q_DictionaryPartReferencesCompany", typeof(DictionaryPart))]
-        public XPCollection<DictionaryPart> Q_DictionaryParts { get { return GetCollection<DictionaryPart>("Q_DictionaryParts"); } }
-        [Association(@"Q_AccountDiscountReferencesCompany", typeof(AccountDiscount))]
-        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
+        [Association(@"ContractReferencesCompany", typeof(Contract))]
+        public XPCollection<Contract> Contracts { get { return GetCollection<Contract>("Contracts"); } }
+        [Association(@"ContractReferencesCompany1", typeof(Contract))]
+        public XPCollection<Contract> Contracts1 { get { return GetCollection<Contract>("Contracts1"); } }
+        [Association(@"ContractReferencesCompany2", typeof(Contract))]
+        public XPCollection<Contract> Contracts2 { get { return GetCollection<Contract>("Contracts2"); } }
+        [Association(@"ContractReferencesCompany3", typeof(Contract))]
+        public XPCollection<Contract> Contracts3 { get { return GetCollection<Contract>("Contracts3"); } }
+        [Association(@"SurveyReferencesCompany", typeof(Survey))]
+        public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
+        [Association(@"LocationReferencesCompany", typeof(Location))]
+        public XPCollection<Location> Locations { get { return GetCollection<Location>("Locations"); } }
+        [Association(@"TenementReferencesCompany", typeof(Tenement))]
+        public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
+        [Association(@"AccountReferencesCompany", typeof(Account))]
+        public XPCollection<Account> Accounts { get { return GetCollection<Account>("Accounts"); } }
+        [Association(@"PurchaseOrderReferencesCompany", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> PurchaseOrders { get { return GetCollection<PurchaseOrder>("PurchaseOrders"); } }
+        [Association(@"PurchaseOrderReferencesCompany1", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> PurchaseOrders1 { get { return GetCollection<PurchaseOrder>("PurchaseOrders1"); } }
+        [Association(@"InvoiceReferencesCompany", typeof(Invoice))]
+        public XPCollection<Invoice> Invoices { get { return GetCollection<Invoice>("Invoices"); } }
+        [Association(@"InvoiceReferencesCompany1", typeof(Invoice))]
+        public XPCollection<Invoice> Invoices1 { get { return GetCollection<Invoice>("Invoices1"); } }
+        [Association(@"WarehouseReferencesCompany", typeof(Warehouse))]
+        public XPCollection<Warehouse> Warehouses { get { return GetCollection<Warehouse>("Warehouses"); } }
+        [Association(@"CompanyAccountReferencesCompany", typeof(CompanyAccount))]
+        public XPCollection<CompanyAccount> CompanyAccounts { get { return GetCollection<CompanyAccount>("CompanyAccounts"); } }
+        [Association(@"SupplierPartReferencesCompany", typeof(SupplierPart))]
+        public XPCollection<SupplierPart> SupplierParts { get { return GetCollection<SupplierPart>("SupplierParts"); } }
+        [Association(@"DeliveryAdviceReferencesCompany", typeof(DeliveryAdvice))]
+        public XPCollection<DeliveryAdvice> DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("DeliveryAdvices"); } }
+        [Association(@"SupplierModelReferencesCompany", typeof(SupplierModel))]
+        public XPCollection<SupplierModel> SupplierModels { get { return GetCollection<SupplierModel>("SupplierModels"); } }
+        [Association(@"DictionaryModelReferencesCompany", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> DictionaryModels { get { return GetCollection<DictionaryModel>("DictionaryModels"); } }
+        [Association(@"AccountDiscountReferencesCompany", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> AccountDiscounts { get { return GetCollection<AccountDiscount>("AccountDiscounts"); } }
+        [Association(@"DictionaryPartReferencesCompany", typeof(DictionaryPart))]
+        public XPCollection<DictionaryPart> DictionaryParts { get { return GetCollection<DictionaryPart>("DictionaryParts"); } }
     }
 
 }

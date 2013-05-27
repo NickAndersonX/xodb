@@ -37,70 +37,70 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
         Project fProjectID;
-        [Association(@"X_ContractReferencesProject")]
+        [Association(@"ContractReferencesProject")]
         public Project ProjectID
         {
             get { return fProjectID; }
             set { SetPropertyValue<Project>("ProjectID", ref fProjectID, value); }
         }
         ProjectDeliverable fLastDeliverableID;
-        [Association(@"X_ContractReferencesProjectDeliverable")]
+        [Association(@"ContractReferencesProjectDeliverable")]
         public ProjectDeliverable LastDeliverableID
         {
             get { return fLastDeliverableID; }
             set { SetPropertyValue<ProjectDeliverable>("LastDeliverableID", ref fLastDeliverableID, value); }
         }
         Contact fObligeeID;
-        [Association(@"X_ContractReferencesContact")]
+        [Association(@"ContractReferencesContact")]
         public Contact ObligeeID
         {
             get { return fObligeeID; }
             set { SetPropertyValue<Contact>("ObligeeID", ref fObligeeID, value); }
         }
         Company fObligeeCompanyID;
-        [Association(@"X_ContractReferencesCompany")]
+        [Association(@"ContractReferencesCompany")]
         public Company ObligeeCompanyID
         {
             get { return fObligeeCompanyID; }
             set { SetPropertyValue<Company>("ObligeeCompanyID", ref fObligeeCompanyID, value); }
         }
         Contact fObligorID;
-        [Association(@"X_ContractReferencesContact1")]
+        [Association(@"ContractReferencesContact1")]
         public Contact ObligorID
         {
             get { return fObligorID; }
             set { SetPropertyValue<Contact>("ObligorID", ref fObligorID, value); }
         }
         Company fObligorCompanyID;
-        [Association(@"X_ContractReferencesCompany1")]
+        [Association(@"ContractReferencesCompany1")]
         public Company ObligorCompanyID
         {
             get { return fObligorCompanyID; }
             set { SetPropertyValue<Company>("ObligorCompanyID", ref fObligorCompanyID, value); }
         }
         Contact fAssigneeID;
-        [Association(@"X_ContractReferencesContact2")]
+        [Association(@"ContractReferencesContact2")]
         public Contact AssigneeID
         {
             get { return fAssigneeID; }
             set { SetPropertyValue<Contact>("AssigneeID", ref fAssigneeID, value); }
         }
         Company fAssigneeCompanyID;
-        [Association(@"X_ContractReferencesCompany2")]
+        [Association(@"ContractReferencesCompany2")]
         public Company AssigneeCompanyID
         {
             get { return fAssigneeCompanyID; }
             set { SetPropertyValue<Company>("AssigneeCompanyID", ref fAssigneeCompanyID, value); }
         }
         Contact fSolicitorID;
-        [Association(@"X_ContractReferencesContact3")]
+        [Association(@"ContractReferencesContact3")]
         public Contact SolicitorID
         {
             get { return fSolicitorID; }
             set { SetPropertyValue<Contact>("SolicitorID", ref fSolicitorID, value); }
         }
         Company fSolicitorCompanyID;
-        [Association(@"X_ContractReferencesCompany3")]
+        [Association(@"ContractReferencesCompany3")]
         public Company SolicitorCompanyID
         {
             get { return fSolicitorCompanyID; }
@@ -132,7 +132,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("Comment", ref fComment, value); }
         }
         FileData fFileDataID;
-        [Association(@"X_ContractReferencesFileData")]
+        [Association(@"ContractReferencesFileData")]
         public FileData FileDataID
         {
             get { return fFileDataID; }
@@ -247,22 +247,22 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fTax; }
             set { SetPropertyValue<decimal>("Tax", ref fTax, value); }
         }
-        [Association(@"Q_ModelWarrantyReferencesContract", typeof(ModelWarranty))]
-        public XPCollection<ModelWarranty> Q_ModelWarrantys { get { return GetCollection<ModelWarranty>("Q_ModelWarrantys"); } }
-        [Association(@"Q_ContractAssetReferencesContract", typeof(ContractAsset))]
-        public XPCollection<ContractAsset> Q_ContractAssets { get { return GetCollection<ContractAsset>("Q_ContractAssets"); } }
+        [Association(@"ModelWarrantyReferencesContract", typeof(ModelWarranty))]
+        public XPCollection<ModelWarranty> ModelWarranties { get { return GetCollection<ModelWarranty>("ModelWarranties"); } }
+        [Association(@"ContractAssetReferencesContract", typeof(ContractAsset))]
+        public XPCollection<ContractAsset> ContractAssets { get { return GetCollection<ContractAsset>("ContractAssets"); } }
         [Association(@"ProjectDeliverableReferencesContract", typeof(ProjectDeliverable))]
         public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
         [Association(@"ContractReferencesContract", typeof(Contract))]
         public XPCollection<Contract> ContractCollection { get { return GetCollection<Contract>("ContractCollection"); } }
         [Association(@"SupplierPartReferencesContract", typeof(SupplierPart))]
         public XPCollection<SupplierPart> SupplierParts { get { return GetCollection<SupplierPart>("SupplierParts"); } }
-        [Association(@"X_CostEstimateModelReferencesContract", typeof(CostEstimateModel))]
-        public XPCollection<CostEstimateModel> X_CostEstimateModels { get { return GetCollection<CostEstimateModel>("X_CostEstimateModels"); } }
-        [Association(@"X_ContractConditionReferencesContract", typeof(ContractCondition))]
-        public XPCollection<ContractCondition> X_ContractConditions { get { return GetCollection<ContractCondition>("X_ContractConditions"); } }
-        [Association(@"Q_SupplierModelReferencesContract", typeof(SupplierModel))]
-        public XPCollection<SupplierModel> Q_SupplierModels { get { return GetCollection<SupplierModel>("Q_SupplierModels"); } }
+        [Association(@"CostEstimateModelReferencesContract", typeof(CostEstimateModel))]
+        public XPCollection<CostEstimateModel> CostEstimateModels { get { return GetCollection<CostEstimateModel>("CostEstimateModels"); } }
+        [Association(@"ContractConditionReferencesContract", typeof(ContractCondition))]
+        public XPCollection<ContractCondition> ContractConditions { get { return GetCollection<ContractCondition>("ContractConditions"); } }
+        [Association(@"SupplierModelReferencesContract", typeof(SupplierModel))]
+        public XPCollection<SupplierModel> SupplierModels { get { return GetCollection<SupplierModel>("SupplierModels"); } }
     }
 
 }

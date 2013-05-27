@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("PartCategoryID", ref fPartCategoryID, value); }
         }
         DictionaryPart fPartID;
-        [Association(@"Q_DictionaryPartCategoryReferencesQ_DictionaryPart")]
+        [Association(@"DictionaryPartCategoryReferencesQ_DictionaryPart")]
         public DictionaryPart PartID
         {
             get { return fPartID; }
             set { SetPropertyValue<DictionaryPart>("PartID", ref fPartID, value); }
         }
         DictionaryDeviceType fCategoryDeviceTypeID;
-        [Association(@"Q_DictionaryPartCategoryReferencesDictionaryDeviceType")]
+        [Association(@"DictionaryPartCategoryReferencesDictionaryDeviceType")]
         public DictionaryDeviceType CategoryDeviceTypeID
         {
             get { return fCategoryDeviceTypeID; }

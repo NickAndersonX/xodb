@@ -29,21 +29,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("Sequence", ref fSequence, value); }
         }
         Company fSupplierCompanyID;
-        [Association(@"E_InvoiceReferencesCompany")]
+        [Association(@"InvoiceReferencesCompany")]
         public Company SupplierCompanyID
         {
             get { return fSupplierCompanyID; }
             set { SetPropertyValue<Company>("SupplierCompanyID", ref fSupplierCompanyID, value); }
         }
         CompanyAddress fSupplierCompanyAddressID;
-        [Association(@"E_InvoiceReferencesCompanyAddress")]
+        [Association(@"InvoiceReferencesCompanyAddress")]
         public CompanyAddress SupplierCompanyAddressID
         {
             get { return fSupplierCompanyAddressID; }
             set { SetPropertyValue<CompanyAddress>("SupplierCompanyAddressID", ref fSupplierCompanyAddressID, value); }
         }
         Account fSupplierAccountID;
-        [Association(@"E_InvoiceReferencesQ_Account")]
+        [Association(@"InvoiceReferencesQ_Account")]
         public Account SupplierAccountID
         {
             get { return fSupplierAccountID; }
@@ -57,21 +57,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("SupplierReferenceNumber", ref fSupplierReferenceNumber, value); }
         }
         Company fCustomerCompanyID;
-        [Association(@"E_InvoiceReferencesCompany1")]
+        [Association(@"InvoiceReferencesCompany1")]
         public Company CustomerCompanyID
         {
             get { return fCustomerCompanyID; }
             set { SetPropertyValue<Company>("CustomerCompanyID", ref fCustomerCompanyID, value); }
         }
         CompanyAddress fCustomerCompanyAddressID;
-        [Association(@"E_InvoiceReferencesCompanyAddress1")]
+        [Association(@"InvoiceReferencesCompanyAddress1")]
         public CompanyAddress CustomerCompanyAddressID
         {
             get { return fCustomerCompanyAddressID; }
             set { SetPropertyValue<CompanyAddress>("CustomerCompanyAddressID", ref fCustomerCompanyAddressID, value); }
         }
         Account fCustomerAccountID;
-        [Association(@"E_InvoiceReferencesQ_Account1")]
+        [Association(@"InvoiceReferencesQ_Account1")]
         public Account CustomerAccountID
         {
             get { return fCustomerAccountID; }
@@ -205,14 +205,14 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fCurrencyID; }
             set { SetPropertyValue<Currency>("CurrencyID", ref fCurrencyID, value); }
         }
-        [Association(@"E_CreditReferencesInvoice", typeof(Credit))]
-        public XPCollection<Credit> E_Credits { get { return GetCollection<Credit>("E_Credits"); } }
-        [Association(@"E_SupplyReferencesE_Invoice", typeof(Supply))]
-        public XPCollection<Supply> E_Supplys { get { return GetCollection<Supply>("E_Supplys"); } }
-        [Association(@"E_SupplyReferencesE_Invoice1", typeof(Supply))]
-        public XPCollection<Supply> E_Supplys1 { get { return GetCollection<Supply>("E_Supplys1"); } }
-        [Association(@"E_InvoiceLineReferencesE_Invoice", typeof(InvoiceLine))]
-        public XPCollection<InvoiceLine> E_InvoiceLines { get { return GetCollection<InvoiceLine>("E_InvoiceLines"); } }
+        [Association(@"SupplyReferencesE_Invoice", typeof(Supply))]
+        public XPCollection<Supply> Supplies { get { return GetCollection<Supply>("Supplies"); } }
+        [Association(@"SupplyReferencesE_Invoice1", typeof(Supply))]
+        public XPCollection<Supply> Supplies1 { get { return GetCollection<Supply>("Supplies1"); } }
+        [Association(@"InvoiceLineReferencesE_Invoice", typeof(InvoiceLine))]
+        public XPCollection<InvoiceLine> InvoiceLines { get { return GetCollection<InvoiceLine>("InvoiceLines"); } }
+        [Association(@"CreditReferencesInvoice", typeof(Credit))]
+        public XPCollection<Credit> Credits { get { return GetCollection<Credit>("Credits"); } }
     }
 
 }

@@ -58,14 +58,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
         }
         FileData fOriginalFileDataID;
-        [Association(@"X_DictionaryCharacteristicTypeReferencesFileData")]
+        [Association(@"DictionaryCharacteristicTypeReferencesFileData")]
         public FileData OriginalFileDataID
         {
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
-        [Association(@"X_DictionaryCharacteristicReferencesX_DictionaryCharacteristicType", typeof(DictionaryCharacteristic))]
-        public XPCollection<DictionaryCharacteristic> X_DictionaryCharacteristics { get { return GetCollection<DictionaryCharacteristic>("X_DictionaryCharacteristics"); } }
+        [Association(@"DictionaryCharacteristicReferencesX_DictionaryCharacteristicType", typeof(DictionaryCharacteristic))]
+        public XPCollection<DictionaryCharacteristic> DictionaryCharacteristics { get { return GetCollection<DictionaryCharacteristic>("DictionaryCharacteristics"); } }
     }
 
 }

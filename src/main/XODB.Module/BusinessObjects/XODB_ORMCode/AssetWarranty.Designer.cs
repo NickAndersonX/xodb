@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("AssetyWarrantyID", ref fAssetyWarrantyID, value); }
         }
         Asset fAssetID;
-        [Association(@"Q_AssetWarrantyReferencesQ_Asset")]
+        [Association(@"AssetWarrantyReferencesQ_Asset")]
         public Asset AssetID
         {
             get { return fAssetID; }
             set { SetPropertyValue<Asset>("AssetID", ref fAssetID, value); }
         }
         ModelWarranty fModelWarrantyID;
-        [Association(@"Q_AssetWarrantyReferencesQ_ModelWarranty")]
+        [Association(@"AssetWarrantyReferencesQ_ModelWarranty")]
         public ModelWarranty ModelWarrantyID
         {
             get { return fModelWarrantyID; }
@@ -55,14 +55,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("Frequency", ref fFrequency, value); }
         }
         DictionaryUnit fFrequencyUnitID;
-        [Association(@"Q_AssetWarrantyReferencesDictionaryUnit")]
+        [Association(@"AssetWarrantyReferencesDictionaryUnit")]
         public DictionaryUnit FrequencyUnitID
         {
             get { return fFrequencyUnitID; }
             set { SetPropertyValue<DictionaryUnit>("FrequencyUnitID", ref fFrequencyUnitID, value); }
         }
         DictionaryWarrantyType fWarrantyTypeID;
-        [Association(@"Q_AssetWarrantyReferencesQ_DictionaryWarrantyType")]
+        [Association(@"AssetWarrantyReferencesQ_DictionaryWarrantyType")]
         public DictionaryWarrantyType WarrantyTypeID
         {
             get { return fWarrantyTypeID; }

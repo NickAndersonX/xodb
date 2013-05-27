@@ -44,7 +44,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("CustomDeviceTypeName", ref fCustomDeviceTypeName, value); }
         }
         Experience fPrimaryWorkTypeID;
-        [Association(@"Q_DictionaryDeviceTypeReferencesExperience")]
+        [Association(@"DictionaryDeviceTypeReferencesExperience")]
         public Experience PrimaryWorkTypeID
         {
             get { return fPrimaryWorkTypeID; }
@@ -82,18 +82,18 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fIsPart; }
             set { SetPropertyValue<bool>("IsPart", ref fIsPart, value); }
         }
-        [Association(@"Q_AccountDiscountReferencesDictionaryDeviceType", typeof(AccountDiscount))]
-        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
-        [Association(@"X_DictionaryModelReferencesDictionaryDeviceType", typeof(DictionaryModel))]
-        public XPCollection<DictionaryModel> X_DictionaryModels { get { return GetCollection<DictionaryModel>("X_DictionaryModels"); } }
-        [Association(@"Q_DictionaryPartReferencesDictionaryDeviceType", typeof(DictionaryPart))]
-        public XPCollection<DictionaryPart> Q_DictionaryParts { get { return GetCollection<DictionaryPart>("Q_DictionaryParts"); } }
-        [Association(@"Q_DictionaryPartCategoryReferencesDictionaryDeviceType", typeof(DictionaryPartCategory))]
-        public XPCollection<DictionaryPartCategory> Q_DictionaryPartCategorys { get { return GetCollection<DictionaryPartCategory>("Q_DictionaryPartCategorys"); } }
         [Association(@"DictionaryDeviceTypeReferencesDictionaryDeviceType", typeof(DictionaryDeviceType))]
         public XPCollection<DictionaryDeviceType> DictionaryDeviceTypeCollection { get { return GetCollection<DictionaryDeviceType>("DictionaryDeviceTypeCollection"); } }
-        [Association(@"X_DictionaryModelCategoryReferencesDictionaryDeviceType", typeof(DictionaryModelCategory))]
-        public XPCollection<DictionaryModelCategory> X_DictionaryModelCategorys { get { return GetCollection<DictionaryModelCategory>("X_DictionaryModelCategorys"); } }
+        [Association(@"DictionaryModelCategoryReferencesDictionaryDeviceType", typeof(DictionaryModelCategory))]
+        public XPCollection<DictionaryModelCategory> DictionaryModelCategories { get { return GetCollection<DictionaryModelCategory>("DictionaryModelCategories"); } }
+        [Association(@"DictionaryModelReferencesDictionaryDeviceType", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> DictionaryModels { get { return GetCollection<DictionaryModel>("DictionaryModels"); } }
+        [Association(@"AccountDiscountReferencesDictionaryDeviceType", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> AccountDiscounts { get { return GetCollection<AccountDiscount>("AccountDiscounts"); } }
+        [Association(@"DictionaryPartReferencesDictionaryDeviceType", typeof(DictionaryPart))]
+        public XPCollection<DictionaryPart> DictionaryParts { get { return GetCollection<DictionaryPart>("DictionaryParts"); } }
+        [Association(@"DictionaryPartCategoryReferencesDictionaryDeviceType", typeof(DictionaryPartCategory))]
+        public XPCollection<DictionaryPartCategory> DictionaryPartCategories { get { return GetCollection<DictionaryPartCategory>("DictionaryPartCategories"); } }
     }
 
 }

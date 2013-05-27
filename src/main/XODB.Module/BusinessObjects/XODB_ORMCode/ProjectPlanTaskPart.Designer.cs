@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ProjectPlanTaskPartID", ref fProjectPlanTaskPartID, value); }
         }
         ProjectPlanTask fProjectPlanTaskID;
-        [Association(@"Q_ProjectPlanTaskPartReferencesProjectPlanTask")]
+        [Association(@"ProjectPlanTaskPartReferencesProjectPlanTask")]
         public ProjectPlanTask ProjectPlanTaskID
         {
             get { return fProjectPlanTaskID; }
@@ -37,7 +37,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryPart>("PartID", ref fPartID, value); }
         }
         DictionaryUnit fQuantityUnitID;
-        [Association(@"Q_ProjectPlanTaskPartReferencesDictionaryUnit")]
+        [Association(@"ProjectPlanTaskPartReferencesDictionaryUnit")]
         public DictionaryUnit QuantityUnitID
         {
             get { return fQuantityUnitID; }
@@ -148,8 +148,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fNote; }
             set { SetPropertyValue<string>("Note", ref fNote, value); }
         }
-        [Association(@"E_SupplyItemReferencesProjectPlanTaskPart", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
+        [Association(@"SupplyItemReferencesProjectPlanTaskPart", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> SupplyItems { get { return GetCollection<SupplyItem>("SupplyItems"); } }
     }
 
 }

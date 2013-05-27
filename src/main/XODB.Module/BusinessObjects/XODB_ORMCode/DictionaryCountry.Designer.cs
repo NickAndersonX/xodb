@@ -106,14 +106,14 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Province> Provinces { get { return GetCollection<Province>("Provinces"); } }
         [Association(@"ComplianceReferencesDictionaryCountry", typeof(Compliance))]
         public XPCollection<Compliance> Compliances { get { return GetCollection<Compliance>("Compliances"); } }
-        [Association(@"X_LocationReferencesDictionaryCountry", typeof(Location))]
-        public XPCollection<Location> X_Locations { get { return GetCollection<Location>("X_Locations"); } }
-        [Association(@"X_TenementReferencesDictionaryCountry", typeof(Tenement))]
-        public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
-        [Association(@"E_DictionaryTaxReferencesDictionaryCountry", typeof(DictionaryTax))]
-        public XPCollection<DictionaryTax> E_DictionaryTaxs { get { return GetCollection<DictionaryTax>("E_DictionaryTaxs"); } }
-        [Association(@"E_CurrencyReferencesDictionaryCountry", typeof(Currency))]
-        public XPCollection<Currency> E_Currencys { get { return GetCollection<Currency>("E_Currencys"); } }
+        [Association(@"LocationReferencesDictionaryCountry", typeof(Location))]
+        public XPCollection<Location> Locations { get { return GetCollection<Location>("Locations"); } }
+        [Association(@"TenementReferencesDictionaryCountry", typeof(Tenement))]
+        public XPCollection<Tenement> Tenements { get { return GetCollection<Tenement>("Tenements"); } }
+        [Association(@"DictionaryTaxReferencesDictionaryCountry", typeof(DictionaryTax))]
+        public XPCollection<DictionaryTax> DictionaryTaxs { get { return GetCollection<DictionaryTax>("DictionaryTaxs"); } }
+        [Association(@"CurrencyReferencesDictionaryCountry", typeof(Currency))]
+        public XPCollection<Currency> Currencies { get { return GetCollection<Currency>("Currencies"); } }
     }
 
 }

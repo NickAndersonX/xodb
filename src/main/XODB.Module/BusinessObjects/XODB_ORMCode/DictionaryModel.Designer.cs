@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ModelID", ref fModelID, value); }
         }
         DictionaryModel fParentModelID;
-        [Association(@"X_DictionaryModelReferencesX_DictionaryModel")]
+        [Association(@"DictionaryModelReferencesX_DictionaryModel")]
         public DictionaryModel ParentModelID
         {
             get { return fParentModelID; }
@@ -51,7 +51,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("CustomModelName", ref fCustomModelName, value); }
         }
         Company fCompanyID;
-        [Association(@"X_DictionaryModelReferencesCompany")]
+        [Association(@"DictionaryModelReferencesCompany")]
         public Company CompanyID
         {
             get { return fCompanyID; }
@@ -65,14 +65,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("OriginalManufacturerName", ref fOriginalManufacturerName, value); }
         }
         DictionaryModelStatus fModelStatusID;
-        [Association(@"X_DictionaryModelReferencesDictionaryModelStatus")]
+        [Association(@"DictionaryModelReferencesDictionaryModelStatus")]
         public DictionaryModelStatus ModelStatusID
         {
             get { return fModelStatusID; }
             set { SetPropertyValue<DictionaryModelStatus>("ModelStatusID", ref fModelStatusID, value); }
         }
         DictionaryDeviceType fDeviceTypeID;
-        [Association(@"X_DictionaryModelReferencesDictionaryDeviceType")]
+        [Association(@"DictionaryModelReferencesDictionaryDeviceType")]
         public DictionaryDeviceType DeviceTypeID
         {
             get { return fDeviceTypeID; }
@@ -103,7 +103,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("SupportedUntil", ref fSupportedUntil, value); }
         }
         DictionaryUnit fEstimatedLifetimeUnitID;
-        [Association(@"X_DictionaryModelReferencesDictionaryUnit")]
+        [Association(@"DictionaryModelReferencesDictionaryUnit")]
         public DictionaryUnit EstimatedLifetimeUnitID
         {
             get { return fEstimatedLifetimeUnitID; }
@@ -137,7 +137,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
         }
         FileData fOriginalFileDataID;
-        [Association(@"X_DictionaryModelReferencesFileData")]
+        [Association(@"DictionaryModelReferencesFileData")]
         public FileData OriginalFileDataID
         {
             get { return fOriginalFileDataID; }
@@ -197,36 +197,36 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"ModelScheduleCycleReferencesX_DictionaryModel", typeof(ModelScheduleCycle))]
-        public XPCollection<ModelScheduleCycle> ModelScheduleCycles { get { return GetCollection<ModelScheduleCycle>("ModelScheduleCycles"); } }
-        [Association(@"X_DictionaryModelReferencesX_DictionaryModel", typeof(DictionaryModel))]
-        public XPCollection<DictionaryModel> X_DictionaryModelCollection { get { return GetCollection<DictionaryModel>("X_DictionaryModelCollection"); } }
-        [Association(@"RecallModelReferencesX_DictionaryModel", typeof(RecallModel))]
-        public XPCollection<RecallModel> RecallModels { get { return GetCollection<RecallModel>("RecallModels"); } }
-        [Association(@"ProjectPlanTaskModelReferencesX_DictionaryModel", typeof(ProjectPlanTaskModel))]
-        public XPCollection<ProjectPlanTaskModel> ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("ProjectPlanTaskModels"); } }
-        [Association(@"ModelCharacteristicReferencesX_DictionaryModel", typeof(ModelCharacteristic))]
-        public XPCollection<ModelCharacteristic> ModelCharacteristics { get { return GetCollection<ModelCharacteristic>("ModelCharacteristics"); } }
-        [Association(@"DictionaryModelCategoryReferencesX_DictionaryModel", typeof(DictionaryModelCategory))]
-        public XPCollection<DictionaryModelCategory> DictionaryModelCategorys { get { return GetCollection<DictionaryModelCategory>("DictionaryModelCategorys"); } }
-        [Association(@"CostEstimateModelReferencesX_DictionaryModel", typeof(CostEstimateModel))]
-        public XPCollection<CostEstimateModel> CostEstimateModels { get { return GetCollection<CostEstimateModel>("CostEstimateModels"); } }
-        [Association(@"WarehouseModelReferencesX_DictionaryModel", typeof(WarehouseModel))]
-        public XPCollection<WarehouseModel> WarehouseModels { get { return GetCollection<WarehouseModel>("WarehouseModels"); } }
-        [Association(@"ModelProcedureReferencesX_DictionaryModel", typeof(ModelProcedure))]
-        public XPCollection<ModelProcedure> ModelProcedures { get { return GetCollection<ModelProcedure>("ModelProcedures"); } }
-        [Association(@"AssetReferencesX_DictionaryModel", typeof(Asset))]
-        public XPCollection<Asset> Assets { get { return GetCollection<Asset>("Assets"); } }
-        [Association(@"ModelWarrantyReferencesX_DictionaryModel", typeof(ModelWarranty))]
-        public XPCollection<ModelWarranty> ModelWarrantys { get { return GetCollection<ModelWarranty>("ModelWarrantys"); } }
-        [Association(@"ModelPartReferencesX_DictionaryModel", typeof(ModelPart))]
-        public XPCollection<ModelPart> ModelParts { get { return GetCollection<ModelPart>("ModelParts"); } }
-        [Association(@"ContractConditionModelReferencesX_DictionaryModel", typeof(ContractConditionModel))]
-        public XPCollection<ContractConditionModel> ContractConditionModels { get { return GetCollection<ContractConditionModel>("ContractConditionModels"); } }
         [Association(@"SurveyReferencesX_DictionaryModel", typeof(Survey))]
         public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
+        [Association(@"RecallModelReferencesX_DictionaryModel", typeof(RecallModel))]
+        public XPCollection<RecallModel> RecallModels { get { return GetCollection<RecallModel>("RecallModels"); } }
+        [Association(@"ModelScheduleCycleReferencesX_DictionaryModel", typeof(ModelScheduleCycle))]
+        public XPCollection<ModelScheduleCycle> ModelScheduleCycles { get { return GetCollection<ModelScheduleCycle>("ModelScheduleCycles"); } }
+        [Association(@"ModelPartReferencesX_DictionaryModel", typeof(ModelPart))]
+        public XPCollection<ModelPart> ModelParts { get { return GetCollection<ModelPart>("ModelParts"); } }
+        [Association(@"ModelWarrantyReferencesX_DictionaryModel", typeof(ModelWarranty))]
+        public XPCollection<ModelWarranty> ModelWarranties { get { return GetCollection<ModelWarranty>("ModelWarranties"); } }
+        [Association(@"AssetReferencesX_DictionaryModel", typeof(Asset))]
+        public XPCollection<Asset> Assets { get { return GetCollection<Asset>("Assets"); } }
+        [Association(@"ModelProcedureReferencesX_DictionaryModel", typeof(ModelProcedure))]
+        public XPCollection<ModelProcedure> ModelProcedures { get { return GetCollection<ModelProcedure>("ModelProcedures"); } }
+        [Association(@"WarehouseModelReferencesX_DictionaryModel", typeof(WarehouseModel))]
+        public XPCollection<WarehouseModel> WarehouseModels { get { return GetCollection<WarehouseModel>("WarehouseModels"); } }
+        [Association(@"CostEstimateModelReferencesX_DictionaryModel", typeof(CostEstimateModel))]
+        public XPCollection<CostEstimateModel> CostEstimateModels { get { return GetCollection<CostEstimateModel>("CostEstimateModels"); } }
+        [Association(@"DictionaryModelCategoryReferencesX_DictionaryModel", typeof(DictionaryModelCategory))]
+        public XPCollection<DictionaryModelCategory> DictionaryModelCategories { get { return GetCollection<DictionaryModelCategory>("DictionaryModelCategories"); } }
+        [Association(@"ModelCharacteristicReferencesX_DictionaryModel", typeof(ModelCharacteristic))]
+        public XPCollection<ModelCharacteristic> ModelCharacteristics { get { return GetCollection<ModelCharacteristic>("ModelCharacteristics"); } }
+        [Association(@"ProjectPlanTaskModelReferencesX_DictionaryModel", typeof(ProjectPlanTaskModel))]
+        public XPCollection<ProjectPlanTaskModel> ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("ProjectPlanTaskModels"); } }
+        [Association(@"ContractConditionModelReferencesX_DictionaryModel", typeof(ContractConditionModel))]
+        public XPCollection<ContractConditionModel> ContractConditionModels { get { return GetCollection<ContractConditionModel>("ContractConditionModels"); } }
         [Association(@"SupplierModelReferencesX_DictionaryModel", typeof(SupplierModel))]
         public XPCollection<SupplierModel> SupplierModels { get { return GetCollection<SupplierModel>("SupplierModels"); } }
+        [Association(@"DictionaryModelReferencesX_DictionaryModel", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> DictionaryModelCollection { get { return GetCollection<DictionaryModel>("DictionaryModelCollection"); } }
     }
 
 }

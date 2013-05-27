@@ -30,14 +30,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<WarehousePart>("WarehousePartID", ref fWarehousePartID, value); }
         }
         SupplierPart fSupplierPartID;
-        [Association(@"Q_WarehousePartSupplierReferencesSupplierPart")]
+        [Association(@"WarehousePartSupplierReferencesSupplierPart")]
         public SupplierPart SupplierPartID
         {
             get { return fSupplierPartID; }
             set { SetPropertyValue<SupplierPart>("SupplierPartID", ref fSupplierPartID, value); }
         }
         DictionaryUnit fQuantityUnitID;
-        [Association(@"Q_WarehousePartSupplierReferencesDictionaryUnit")]
+        [Association(@"WarehousePartSupplierReferencesDictionaryUnit")]
         public DictionaryUnit QuantityUnitID
         {
             get { return fQuantityUnitID; }

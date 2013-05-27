@@ -49,8 +49,8 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
-        [Association(@"Q_DeliveryAdviceItemReferencesQ_DictionaryDecontaminationStatus", typeof(DeliveryAdviceItem))]
-        public XPCollection<DeliveryAdviceItem> Q_DeliveryAdviceItems { get { return GetCollection<DeliveryAdviceItem>("Q_DeliveryAdviceItems"); } }
+        [Association(@"DeliveryAdviceItemReferencesQ_DictionaryDecontaminationStatus", typeof(DeliveryAdviceItem))]
+        public XPCollection<DeliveryAdviceItem> DeliveryAdviceItems { get { return GetCollection<DeliveryAdviceItem>("DeliveryAdviceItems"); } }
     }
 
 }

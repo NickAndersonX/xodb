@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("AssetID", ref fAssetID, value); }
         }
         Asset fParentAssetID;
-        [Association(@"Q_AssetReferencesQ_Asset")]
+        [Association(@"AssetReferencesQ_Asset")]
         public Asset ParentAssetID
         {
             get { return fParentAssetID; }
@@ -50,7 +50,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DateTime>("Purchased", ref fPurchased, value); }
         }
         PurchaseOrder fPurchaseOrderID;
-        [Association(@"Q_AssetReferencesE_PurchaseOrder")]
+        [Association(@"AssetReferencesE_PurchaseOrder")]
         public PurchaseOrder PurchaseOrderID
         {
             get { return fPurchaseOrderID; }
@@ -63,21 +63,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("ExpenseNotToExceedLifeTimeCost", ref fExpenseNotToExceedLifeTimeCost, value); }
         }
         Account fOwnerAccountID;
-        [Association(@"Q_AssetReferencesQ_Account")]
+        [Association(@"AssetReferencesQ_Account")]
         public Account OwnerAccountID
         {
             get { return fOwnerAccountID; }
             set { SetPropertyValue<Account>("OwnerAccountID", ref fOwnerAccountID, value); }
         }
         Account fBorrowerAccountID;
-        [Association(@"Q_AssetReferencesQ_Account1")]
+        [Association(@"AssetReferencesQ_Account1")]
         public Account BorrowerAccountID
         {
             get { return fBorrowerAccountID; }
             set { SetPropertyValue<Account>("BorrowerAccountID", ref fBorrowerAccountID, value); }
         }
         Account fMaintenanceAccountID;
-        [Association(@"Q_AssetReferencesQ_Account2")]
+        [Association(@"AssetReferencesQ_Account2")]
         public Account MaintenanceAccountID
         {
             get { return fMaintenanceAccountID; }
@@ -91,21 +91,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryModel>("ModelID", ref fModelID, value); }
         }
         Location fLocationID;
-        [Association(@"Q_AssetReferencesLocation")]
+        [Association(@"AssetReferencesLocation")]
         public Location LocationID
         {
             get { return fLocationID; }
             set { SetPropertyValue<Location>("LocationID", ref fLocationID, value); }
         }
         DicitonaryAssetStatus fAssetStatusID;
-        [Association(@"Q_AssetReferencesQ_DicitonaryAssetStatus")]
+        [Association(@"AssetReferencesQ_DicitonaryAssetStatus")]
         public DicitonaryAssetStatus AssetStatusID
         {
             get { return fAssetStatusID; }
             set { SetPropertyValue<DicitonaryAssetStatus>("AssetStatusID", ref fAssetStatusID, value); }
         }
         Experience fExperienceID;
-        [Association(@"Q_AssetReferencesExperience")]
+        [Association(@"AssetReferencesExperience")]
         public Experience ExperienceID
         {
             get { return fExperienceID; }
@@ -172,20 +172,20 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_DeliveryAdviceItemReferencesQ_Asset", typeof(DeliveryAdviceItem))]
-        public XPCollection<DeliveryAdviceItem> Q_DeliveryAdviceItems { get { return GetCollection<DeliveryAdviceItem>("Q_DeliveryAdviceItems"); } }
-        [Association(@"Q_AssetAliasReferencesQ_Asset", typeof(AssetAlias))]
-        public XPCollection<AssetAlias> Q_AssetAliasCollection { get { return GetCollection<AssetAlias>("Q_AssetAliasCollection"); } }
-        [Association(@"Q_AssetMaintenanceReferencesQ_Asset", typeof(AssetMaintenance))]
-        public XPCollection<AssetMaintenance> Q_AssetMaintenances { get { return GetCollection<AssetMaintenance>("Q_AssetMaintenances"); } }
-        [Association(@"Q_AssetReferencesQ_Asset", typeof(Asset))]
-        public XPCollection<Asset> Q_AssetCollection { get { return GetCollection<Asset>("Q_AssetCollection"); } }
-        [Association(@"Q_AssetWarrantyReferencesQ_Asset", typeof(AssetWarranty))]
-        public XPCollection<AssetWarranty> Q_AssetWarrantys { get { return GetCollection<AssetWarranty>("Q_AssetWarrantys"); } }
-        [Association(@"Q_ContractAssetReferencesQ_Asset", typeof(ContractAsset))]
-        public XPCollection<ContractAsset> Q_ContractAssets { get { return GetCollection<ContractAsset>("Q_ContractAssets"); } }
-        [Association(@"Q_RecallModelAssetReferencesAsset", typeof(RecallModelAsset))]
-        public XPCollection<RecallModelAsset> Q_RecallModelAssets { get { return GetCollection<RecallModelAsset>("Q_RecallModelAssets"); } }
+        [Association(@"DeliveryAdviceItemReferencesQ_Asset", typeof(DeliveryAdviceItem))]
+        public XPCollection<DeliveryAdviceItem> DeliveryAdviceItems { get { return GetCollection<DeliveryAdviceItem>("DeliveryAdviceItems"); } }
+        [Association(@"AssetAliasReferencesQ_Asset", typeof(AssetAlias))]
+        public XPCollection<AssetAlias> AssetAliasCollection { get { return GetCollection<AssetAlias>("AssetAliasCollection"); } }
+        [Association(@"AssetMaintenanceReferencesQ_Asset", typeof(AssetMaintenance))]
+        public XPCollection<AssetMaintenance> AssetMaintenances { get { return GetCollection<AssetMaintenance>("AssetMaintenances"); } }
+        [Association(@"AssetReferencesQ_Asset", typeof(Asset))]
+        public XPCollection<Asset> AssetCollection { get { return GetCollection<Asset>("AssetCollection"); } }
+        [Association(@"AssetWarrantyReferencesQ_Asset", typeof(AssetWarranty))]
+        public XPCollection<AssetWarranty> AssetWarranties { get { return GetCollection<AssetWarranty>("AssetWarranties"); } }
+        [Association(@"ContractAssetReferencesQ_Asset", typeof(ContractAsset))]
+        public XPCollection<ContractAsset> ContractAssets { get { return GetCollection<ContractAsset>("ContractAssets"); } }
+        [Association(@"RecallModelAssetReferencesAsset", typeof(RecallModelAsset))]
+        public XPCollection<RecallModelAsset> RecallModelAssets { get { return GetCollection<RecallModelAsset>("RecallModelAssets"); } }
     }
 
 }

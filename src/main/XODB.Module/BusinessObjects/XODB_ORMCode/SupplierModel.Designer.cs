@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SupplierModelID", ref fSupplierModelID, value); }
         }
         Company fSupplierID;
-        [Association(@"Q_SupplierModelReferencesCompany")]
+        [Association(@"SupplierModelReferencesCompany")]
         public Company SupplierID
         {
             get { return fSupplierID; }
@@ -43,7 +43,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<int>("Seqeunce", ref fSeqeunce, value); }
         }
         Contract fSupplierContractID;
-        [Association(@"Q_SupplierModelReferencesContract")]
+        [Association(@"SupplierModelReferencesContract")]
         public Contract SupplierContractID
         {
             get { return fSupplierContractID; }
@@ -68,7 +68,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("PricePerUnit", ref fPricePerUnit, value); }
         }
         DictionaryUnit fPriceUnitID;
-        [Association(@"Q_SupplierModelReferencesDictionaryUnit")]
+        [Association(@"SupplierModelReferencesDictionaryUnit")]
         public DictionaryUnit PriceUnitID
         {
             get { return fPriceUnitID; }
@@ -89,14 +89,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("SupplierModelDescription", ref fSupplierModelDescription, value); }
         }
         FileData fSupplierFileDataID;
-        [Association(@"Q_SupplierModelReferencesFileData")]
+        [Association(@"SupplierModelReferencesFileData")]
         public FileData SupplierFileDataID
         {
             get { return fSupplierFileDataID; }
             set { SetPropertyValue<FileData>("SupplierFileDataID", ref fSupplierFileDataID, value); }
         }
         DictionaryUnit fLeadTimeUnitID;
-        [Association(@"Q_SupplierModelReferencesDictionaryUnit1")]
+        [Association(@"SupplierModelReferencesDictionaryUnit1")]
         public DictionaryUnit LeadTimeUnitID
         {
             get { return fLeadTimeUnitID; }
@@ -162,10 +162,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_WarehouseModelSupplierReferencesQ_SupplierModel", typeof(WarehouseModelSupplier))]
-        public XPCollection<WarehouseModelSupplier> Q_WarehouseModelSuppliers { get { return GetCollection<WarehouseModelSupplier>("Q_WarehouseModelSuppliers"); } }
-        [Association(@"Q_ProjectPlanTaskModelReferencesQ_SupplierModel", typeof(ProjectPlanTaskModel))]
-        public XPCollection<ProjectPlanTaskModel> Q_ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("Q_ProjectPlanTaskModels"); } }
+        [Association(@"WarehouseModelSupplierReferencesQ_SupplierModel", typeof(WarehouseModelSupplier))]
+        public XPCollection<WarehouseModelSupplier> WarehouseModelSuppliers { get { return GetCollection<WarehouseModelSupplier>("WarehouseModelSuppliers"); } }
+        [Association(@"ProjectPlanTaskModelReferencesQ_SupplierModel", typeof(ProjectPlanTaskModel))]
+        public XPCollection<ProjectPlanTaskModel> ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("ProjectPlanTaskModels"); } }
     }
 
 }

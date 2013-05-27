@@ -147,8 +147,8 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"ComplianceWorkTypeReferencesCompliance", typeof(ComplianceWorkType))]
         public XPCollection<ComplianceWorkType> ComplianceWorkTypes { get { return GetCollection<ComplianceWorkType>("ComplianceWorkTypes"); } }
-        [Association(@"X_ComplianceTaskReferencesCompliance", typeof(ComplianceTask))]
-        public XPCollection<ComplianceTask> X_ComplianceTasks { get { return GetCollection<ComplianceTask>("X_ComplianceTasks"); } }
+        [Association(@"ComplianceTaskReferencesCompliance", typeof(ComplianceTask))]
+        public XPCollection<ComplianceTask> ComplianceTasks { get { return GetCollection<ComplianceTask>("ComplianceTasks"); } }
     }
 
 }

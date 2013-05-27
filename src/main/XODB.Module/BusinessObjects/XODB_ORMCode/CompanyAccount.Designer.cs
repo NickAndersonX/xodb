@@ -23,14 +23,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("CompanyAccountID", ref fCompanyAccountID, value); }
         }
         Company fCompanyID;
-        [Association(@"Q_CompanyAccountReferencesCompany")]
+        [Association(@"CompanyAccountReferencesCompany")]
         public Company CompanyID
         {
             get { return fCompanyID; }
             set { SetPropertyValue<Company>("CompanyID", ref fCompanyID, value); }
         }
         Account fAccountID;
-        [Association(@"Q_CompanyAccountReferencesQ_Account")]
+        [Association(@"CompanyAccountReferencesQ_Account")]
         public Account AccountID
         {
             get { return fAccountID; }

@@ -36,7 +36,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("TaxRate", ref fTaxRate, value); }
         }
         DictionaryUnit fTaxRateUnitID;
-        [Association(@"E_DictionaryTaxReferencesDictionaryUnit")]
+        [Association(@"DictionaryTaxReferencesDictionaryUnit")]
         public DictionaryUnit TaxRateUnitID
         {
             get { return fTaxRateUnitID; }
@@ -44,21 +44,21 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         DictionaryCountry fCountryID;
         [Size(2)]
-        [Association(@"E_DictionaryTaxReferencesDictionaryCountry")]
+        [Association(@"DictionaryTaxReferencesDictionaryCountry")]
         public DictionaryCountry CountryID
         {
             get { return fCountryID; }
             set { SetPropertyValue<DictionaryCountry>("CountryID", ref fCountryID, value); }
         }
         DictionaryCountryState fCountryStateID;
-        [Association(@"E_DictionaryTaxReferencesDictionaryCountryState")]
+        [Association(@"DictionaryTaxReferencesDictionaryCountryState")]
         public DictionaryCountryState CountryStateID
         {
             get { return fCountryStateID; }
             set { SetPropertyValue<DictionaryCountryState>("CountryStateID", ref fCountryStateID, value); }
         }
         Province fProvinceID;
-        [Association(@"E_DictionaryTaxReferencesProvince")]
+        [Association(@"DictionaryTaxReferencesProvince")]
         public Province ProvinceID
         {
             get { return fProvinceID; }
@@ -142,10 +142,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fBracketMaximum; }
             set { SetPropertyValue<decimal>("BracketMaximum", ref fBracketMaximum, value); }
         }
-        [Association(@"E_InvoiceLineReferencesE_DictionaryTax", typeof(InvoiceLine))]
-        public XPCollection<InvoiceLine> E_InvoiceLines { get { return GetCollection<InvoiceLine>("E_InvoiceLines"); } }
-        [Association(@"E_SupplyItemTaxReferencesDictionaryTax", typeof(SupplyItemTax))]
-        public XPCollection<SupplyItemTax> E_SupplyItemTaxs { get { return GetCollection<SupplyItemTax>("E_SupplyItemTaxs"); } }
+        [Association(@"InvoiceLineReferencesE_DictionaryTax", typeof(InvoiceLine))]
+        public XPCollection<InvoiceLine> InvoiceLines { get { return GetCollection<InvoiceLine>("InvoiceLines"); } }
+        [Association(@"SupplyItemTaxReferencesDictionaryTax", typeof(SupplyItemTax))]
+        public XPCollection<SupplyItemTax> SupplyItemTaxs { get { return GetCollection<SupplyItemTax>("SupplyItemTaxs"); } }
     }
 
 }

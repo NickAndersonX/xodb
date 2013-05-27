@@ -30,14 +30,14 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("WarehouseName", ref fWarehouseName, value); }
         }
         Company fCompanyID;
-        [Association(@"Q_WarehouseReferencesCompany")]
+        [Association(@"WarehouseReferencesCompany")]
         public Company CompanyID
         {
             get { return fCompanyID; }
             set { SetPropertyValue<Company>("CompanyID", ref fCompanyID, value); }
         }
         Location fPrimaryLocationID;
-        [Association(@"Q_WarehouseReferencesLocation")]
+        [Association(@"WarehouseReferencesLocation")]
         public Location PrimaryLocationID
         {
             get { return fPrimaryLocationID; }
@@ -104,10 +104,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_WarehousePartReferencesWarehouse", typeof(WarehousePart))]
-        public XPCollection<WarehousePart> Q_WarehouseParts { get { return GetCollection<WarehousePart>("Q_WarehouseParts"); } }
-        [Association(@"Q_WarehouseModelReferencesWarehouse", typeof(WarehouseModel))]
-        public XPCollection<WarehouseModel> Q_WarehouseModels { get { return GetCollection<WarehouseModel>("Q_WarehouseModels"); } }
+        [Association(@"WarehouseModelReferencesWarehouse", typeof(WarehouseModel))]
+        public XPCollection<WarehouseModel> WarehouseModels { get { return GetCollection<WarehouseModel>("WarehouseModels"); } }
+        [Association(@"WarehousePartReferencesWarehouse", typeof(WarehousePart))]
+        public XPCollection<WarehousePart> WarehouseParts { get { return GetCollection<WarehousePart>("WarehouseParts"); } }
     }
 
 }
