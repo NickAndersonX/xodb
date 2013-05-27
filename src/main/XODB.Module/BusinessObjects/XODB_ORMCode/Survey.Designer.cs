@@ -72,7 +72,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<decimal>("Gravity", ref fGravity, value); }
         }
         DictionaryModel fInstrumentModelID;
-        [Association(@"X_SurveyReferencesDictionaryModel")]
+        [Association(@"SurveyReferencesX_DictionaryModel")]
         public DictionaryModel InstrumentModelID
         {
             get { return fInstrumentModelID; }

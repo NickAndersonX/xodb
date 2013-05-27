@@ -30,8 +30,6 @@ namespace XODB.Win
         {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule();
-            this.module3 = new XODB.Module.XODBModule();
-            this.module4 = new XODB.Module.Win.XODBWindowsFormsModule();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.authenticationActiveDirectory1 = new DevExpress.ExpressApp.Security.AuthenticationActiveDirectory();
@@ -40,6 +38,8 @@ namespace XODB.Win
             this.reportsModule1 = new DevExpress.ExpressApp.Reports.ReportsModule();
             this.validationWindowsFormsModule1 = new DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule();
             this.validationModule1 = new DevExpress.ExpressApp.Validation.ValidationModule();
+            this.module3 = new XODB.Module.XODBModule();
+            this.module4 = new XODB.Module.Win.XODBWindowsFormsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // sqlConnection1
@@ -82,6 +82,7 @@ namespace XODB.Win
             this.Modules.Add(this.validationModule1);
             this.Modules.Add(this.validationWindowsFormsModule1);
             this.Security = this.securityStrategyComplex1;
+            this.TablePrefixes = "";
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.XODBWindowsFormsApplication_DatabaseVersionMismatch);
             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.XODBWindowsFormsApplication_CustomizeLanguagesList);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

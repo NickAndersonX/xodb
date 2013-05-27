@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<DictionaryPartKit>("PartKitID", ref fPartKitID, value); }
         }
         DictionaryPart fPartID;
-        [Association(@"Q_DictionaryPartKitItemReferencesQ_DictionaryPart")]
+        [Association(@"DictionaryPartKitItemReferencesQ_DictionaryPart")]
         public DictionaryPart PartID
         {
             get { return fPartID; }

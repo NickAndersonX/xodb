@@ -23,21 +23,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("CreditID", ref fCreditID, value); }
         }
         Supply fSupplyID;
-        [Association(@"E_CreditReferencesE_Supply")]
+        [Association(@"E_CreditReferencesSupply")]
         public Supply SupplyID
         {
             get { return fSupplyID; }
             set { SetPropertyValue<Supply>("SupplyID", ref fSupplyID, value); }
         }
         Invoice fInvoiceID;
-        [Association(@"E_CreditReferencesE_Invoice")]
+        [Association(@"E_CreditReferencesInvoice")]
         public Invoice InvoiceID
         {
             get { return fInvoiceID; }
             set { SetPropertyValue<Invoice>("InvoiceID", ref fInvoiceID, value); }
         }
         InvoiceLine fInvoiceLineID;
-        [Association(@"E_CreditReferencesE_InvoiceLine")]
+        [Association(@"E_CreditReferencesInvoiceLine")]
         public InvoiceLine InvoiceLineID
         {
             get { return fInvoiceLineID; }
@@ -55,11 +55,24 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fIsRefund; }
             set { SetPropertyValue<bool>("IsRefund", ref fIsRefund, value); }
         }
-        decimal fCreditTotal;
-        public decimal CreditTotal
+        decimal fOriginalCredit;
+        public decimal OriginalCredit
         {
-            get { return fCreditTotal; }
-            set { SetPropertyValue<decimal>("CreditTotal", ref fCreditTotal, value); }
+            get { return fOriginalCredit; }
+            set { SetPropertyValue<decimal>("OriginalCredit", ref fOriginalCredit, value); }
+        }
+        Currency fCurrencyID;
+        [Association(@"E_CreditReferencesCurrency")]
+        public Currency CurrencyID
+        {
+            get { return fCurrencyID; }
+            set { SetPropertyValue<Currency>("CurrencyID", ref fCurrencyID, value); }
+        }
+        decimal fCreditAmount;
+        public decimal CreditAmount
+        {
+            get { return fCreditAmount; }
+            set { SetPropertyValue<decimal>("CreditAmount", ref fCreditAmount, value); }
         }
         int fVersion;
         public int Version

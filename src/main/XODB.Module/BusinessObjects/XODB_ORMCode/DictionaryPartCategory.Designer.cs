@@ -22,31 +22,20 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fPartCategoryID; }
             set { SetPropertyValue<Guid>("PartCategoryID", ref fPartCategoryID, value); }
         }
-        string fStandardPartCategoryName;
-        [Size(60)]
-        public string StandardPartCategoryName
+        DictionaryPart fPartID;
+        [Association(@"Q_DictionaryPartCategoryReferencesQ_DictionaryPart")]
+        public DictionaryPart PartID
         {
-            get { return fStandardPartCategoryName; }
-            set { SetPropertyValue<string>("StandardPartCategoryName", ref fStandardPartCategoryName, value); }
+            get { return fPartID; }
+            set { SetPropertyValue<DictionaryPart>("PartID", ref fPartID, value); }
         }
-        string fCustomPartCategoryName;
-        [Size(60)]
-        public string CustomPartCategoryName
+        DictionaryDeviceType fCategoryDeviceTypeID;
+        [Association(@"Q_DictionaryPartCategoryReferencesDictionaryDeviceType")]
+        public DictionaryDeviceType CategoryDeviceTypeID
         {
-            get { return fCustomPartCategoryName; }
-            set { SetPropertyValue<string>("CustomPartCategoryName", ref fCustomPartCategoryName, value); }
+            get { return fCategoryDeviceTypeID; }
+            set { SetPropertyValue<DictionaryDeviceType>("CategoryDeviceTypeID", ref fCategoryDeviceTypeID, value); }
         }
-        string fDescription;
-        [Size(255)]
-        public string Description
-        {
-            get { return fDescription; }
-            set { SetPropertyValue<string>("Description", ref fDescription, value); }
-        }
-        [Association(@"Q_AccountDiscountReferencesQ_DictionaryPartCategory", typeof(AccountDiscount))]
-        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
-        [Association(@"Q_DictionaryPartReferencesQ_DictionaryPartCategory", typeof(DictionaryPart))]
-        public XPCollection<DictionaryPart> Q_DictionaryParts { get { return GetCollection<DictionaryPart>("Q_DictionaryParts"); } }
     }
 
 }

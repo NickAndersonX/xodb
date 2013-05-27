@@ -23,14 +23,21 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("SupplyItemID", ref fSupplyItemID, value); }
         }
         Supply fSupplyID;
-        [Association(@"E_SupplyItemReferencesE_Supply")]
+        [Association(@"E_SupplyItemReferencesSupply")]
         public Supply SupplyID
         {
             get { return fSupplyID; }
             set { SetPropertyValue<Supply>("SupplyID", ref fSupplyID, value); }
         }
+        ProjectPlanTaskModel fProjectPlanTaskModelID;
+        [Association(@"E_SupplyItemReferencesProjectPlanTaskModel")]
+        public ProjectPlanTaskModel ProjectPlanTaskModelID
+        {
+            get { return fProjectPlanTaskModelID; }
+            set { SetPropertyValue<ProjectPlanTaskModel>("ProjectPlanTaskModelID", ref fProjectPlanTaskModelID, value); }
+        }
         ProjectPlanTaskPart fProjectPlanTaskPartID;
-        [Association(@"E_SupplyItemReferencesQ_ProjectPlanTaskPart")]
+        [Association(@"E_SupplyItemReferencesProjectPlanTaskPart")]
         public ProjectPlanTaskPart ProjectPlanTaskPartID
         {
             get { return fProjectPlanTaskPartID; }
@@ -44,24 +51,38 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<ProjectPlanTaskResponse>("ProjectPlanTaskResponseID", ref fProjectPlanTaskResponseID, value); }
         }
         Account fCustomerAccountID;
-        [Association(@"E_SupplyItemReferencesQ_Account")]
+        [Association(@"E_SupplyItemReferencesAccount")]
         public Account CustomerAccountID
         {
             get { return fCustomerAccountID; }
             set { SetPropertyValue<Account>("CustomerAccountID", ref fCustomerAccountID, value); }
         }
-        decimal fTax;
-        public decimal Tax
+        DictionaryUnit fModelUnitID;
+        [Association(@"E_SupplyItemReferencesDictionaryUnit2")]
+        public DictionaryUnit ModelUnitID
         {
-            get { return fTax; }
-            set { SetPropertyValue<decimal>("Tax", ref fTax, value); }
+            get { return fModelUnitID; }
+            set { SetPropertyValue<DictionaryUnit>("ModelUnitID", ref fModelUnitID, value); }
         }
-        DictionaryTax fTaxID;
-        [Association(@"E_SupplyItemReferencesE_DictionaryTax")]
-        public DictionaryTax TaxID
+        DictionaryUnit fLabourUnitID;
+        [Association(@"E_SupplyItemReferencesDictionaryUnit1")]
+        public DictionaryUnit LabourUnitID
         {
-            get { return fTaxID; }
-            set { SetPropertyValue<DictionaryTax>("TaxID", ref fTaxID, value); }
+            get { return fLabourUnitID; }
+            set { SetPropertyValue<DictionaryUnit>("LabourUnitID", ref fLabourUnitID, value); }
+        }
+        DictionaryUnit fPartUnitID;
+        [Association(@"E_SupplyItemReferencesDictionaryUnit")]
+        public DictionaryUnit PartUnitID
+        {
+            get { return fPartUnitID; }
+            set { SetPropertyValue<DictionaryUnit>("PartUnitID", ref fPartUnitID, value); }
+        }
+        decimal fCostPerUnitModel;
+        public decimal CostPerUnitModel
+        {
+            get { return fCostPerUnitModel; }
+            set { SetPropertyValue<decimal>("CostPerUnitModel", ref fCostPerUnitModel, value); }
         }
         decimal fCostPerUnitLabour;
         public decimal CostPerUnitLabour
@@ -75,11 +96,96 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fCostPerUnitPart; }
             set { SetPropertyValue<decimal>("CostPerUnitPart", ref fCostPerUnitPart, value); }
         }
-        decimal fCost;
-        public decimal Cost
+        decimal fQuantityModel;
+        public decimal QuantityModel
         {
-            get { return fCost; }
-            set { SetPropertyValue<decimal>("Cost", ref fCost, value); }
+            get { return fQuantityModel; }
+            set { SetPropertyValue<decimal>("QuantityModel", ref fQuantityModel, value); }
+        }
+        decimal fQuantityLabour;
+        public decimal QuantityLabour
+        {
+            get { return fQuantityLabour; }
+            set { SetPropertyValue<decimal>("QuantityLabour", ref fQuantityLabour, value); }
+        }
+        decimal fQuantityPart;
+        public decimal QuantityPart
+        {
+            get { return fQuantityPart; }
+            set { SetPropertyValue<decimal>("QuantityPart", ref fQuantityPart, value); }
+        }
+        decimal fCostModel;
+        public decimal CostModel
+        {
+            get { return fCostModel; }
+            set { SetPropertyValue<decimal>("CostModel", ref fCostModel, value); }
+        }
+        decimal fCostLabour;
+        public decimal CostLabour
+        {
+            get { return fCostLabour; }
+            set { SetPropertyValue<decimal>("CostLabour", ref fCostLabour, value); }
+        }
+        decimal fCostPart;
+        public decimal CostPart
+        {
+            get { return fCostPart; }
+            set { SetPropertyValue<decimal>("CostPart", ref fCostPart, value); }
+        }
+        decimal fSubtotalModel;
+        public decimal SubtotalModel
+        {
+            get { return fSubtotalModel; }
+            set { SetPropertyValue<decimal>("SubtotalModel", ref fSubtotalModel, value); }
+        }
+        decimal fSubtotalLabour;
+        public decimal SubtotalLabour
+        {
+            get { return fSubtotalLabour; }
+            set { SetPropertyValue<decimal>("SubtotalLabour", ref fSubtotalLabour, value); }
+        }
+        decimal fSubtotalPart;
+        public decimal SubtotalPart
+        {
+            get { return fSubtotalPart; }
+            set { SetPropertyValue<decimal>("SubtotalPart", ref fSubtotalPart, value); }
+        }
+        decimal fTaxModel;
+        public decimal TaxModel
+        {
+            get { return fTaxModel; }
+            set { SetPropertyValue<decimal>("TaxModel", ref fTaxModel, value); }
+        }
+        decimal fTaxLabour;
+        public decimal TaxLabour
+        {
+            get { return fTaxLabour; }
+            set { SetPropertyValue<decimal>("TaxLabour", ref fTaxLabour, value); }
+        }
+        decimal fTaxPart;
+        public decimal TaxPart
+        {
+            get { return fTaxPart; }
+            set { SetPropertyValue<decimal>("TaxPart", ref fTaxPart, value); }
+        }
+        decimal fTax;
+        public decimal Tax
+        {
+            get { return fTax; }
+            set { SetPropertyValue<decimal>("Tax", ref fTax, value); }
+        }
+        decimal fOriginalSubtotal;
+        public decimal OriginalSubtotal
+        {
+            get { return fOriginalSubtotal; }
+            set { SetPropertyValue<decimal>("OriginalSubtotal", ref fOriginalSubtotal, value); }
+        }
+        Currency fCurrencyID;
+        [Association(@"E_SupplyItemReferencesCurrency")]
+        public Currency CurrencyID
+        {
+            get { return fCurrencyID; }
+            set { SetPropertyValue<Currency>("CurrencyID", ref fCurrencyID, value); }
         }
         decimal fSubtotal;
         public decimal Subtotal
@@ -93,12 +199,6 @@ namespace XODB.Module.BusinessObjects.XODB
         {
             get { return fNotes; }
             set { SetPropertyValue<string>("Notes", ref fNotes, value); }
-        }
-        Guid fUnitID;
-        public Guid UnitID
-        {
-            get { return fUnitID; }
-            set { SetPropertyValue<Guid>("UnitID", ref fUnitID, value); }
         }
         int fVersion;
         public int Version
@@ -154,8 +254,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"E_InvoiceLineReferencesE_SupplyItem", typeof(InvoiceLine))]
-        public XPCollection<InvoiceLine> E_InvoiceLines { get { return GetCollection<InvoiceLine>("E_InvoiceLines"); } }
+        [Association(@"SupplyItemTaxReferencesE_SupplyItem", typeof(SupplyItemTax))]
+        public XPCollection<SupplyItemTax> SupplyItemTaxs { get { return GetCollection<SupplyItemTax>("SupplyItemTaxs"); } }
+        [Association(@"InvoiceLineReferencesE_SupplyItem", typeof(InvoiceLine))]
+        public XPCollection<InvoiceLine> InvoiceLines { get { return GetCollection<InvoiceLine>("InvoiceLines"); } }
     }
 
 }

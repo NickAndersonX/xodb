@@ -15,12 +15,12 @@ namespace XODB.Module.BusinessObjects.XODB
     [Persistent(@"Q_WarehousePart")]
     public partial class WarehousePart : XPLiteObject
     {
-        Guid fPartWarehouseStockControlID;
+        Guid fWarehousePartID;
         [Key(true)]
-        public Guid PartWarehouseStockControlID
+        public Guid WarehousePartID
         {
-            get { return fPartWarehouseStockControlID; }
-            set { SetPropertyValue<Guid>("PartWarehouseStockControlID", ref fPartWarehouseStockControlID, value); }
+            get { return fWarehousePartID; }
+            set { SetPropertyValue<Guid>("WarehousePartID", ref fWarehousePartID, value); }
         }
         DictionaryPart fPartID;
         [Association(@"Q_WarehousePartReferencesQ_DictionaryPart")]
@@ -29,12 +29,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fPartID; }
             set { SetPropertyValue<DictionaryPart>("PartID", ref fPartID, value); }
         }
-        Warehouse fPartWarehouseID;
-        [Association(@"Q_WarehousePartReferencesQ_Warehouse")]
-        public Warehouse PartWarehouseID
+        Warehouse fWarehouseID;
+        [Association(@"Q_WarehousePartReferencesWarehouse")]
+        public Warehouse WarehouseID
         {
-            get { return fPartWarehouseID; }
-            set { SetPropertyValue<Warehouse>("PartWarehouseID", ref fPartWarehouseID, value); }
+            get { return fWarehouseID; }
+            set { SetPropertyValue<Warehouse>("WarehouseID", ref fWarehouseID, value); }
         }
         decimal fIssueCost;
         public decimal IssueCost
@@ -120,6 +120,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        [Association(@"ProjectPlanTaskPartReferencesQ_WarehousePart", typeof(ProjectPlanTaskPart))]
+        public XPCollection<ProjectPlanTaskPart> ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("ProjectPlanTaskParts"); } }
+        [Association(@"WarehousePartSupplierReferencesQ_WarehousePart", typeof(WarehousePartSupplier))]
+        public XPCollection<WarehousePartSupplier> WarehousePartSuppliers { get { return GetCollection<WarehousePartSupplier>("WarehousePartSuppliers"); } }
     }
 
 }

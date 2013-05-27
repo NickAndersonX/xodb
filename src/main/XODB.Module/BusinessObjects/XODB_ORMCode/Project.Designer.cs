@@ -141,6 +141,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Supply> E_Supplys { get { return GetCollection<Supply>("E_Supplys"); } }
         [Association(@"Q_DeliveryAdviceReferencesProject", typeof(DeliveryAdvice))]
         public XPCollection<DeliveryAdvice> Q_DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices"); } }
+        [Association(@"PurchaseOrderReferencesProject", typeof(PurchaseOrder))]
+        public XPCollection<PurchaseOrder> PurchaseOrders { get { return GetCollection<PurchaseOrder>("PurchaseOrders"); } }
     }
 
 }

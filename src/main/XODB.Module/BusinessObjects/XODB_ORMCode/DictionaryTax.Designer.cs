@@ -130,10 +130,22 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"E_SupplyItemReferencesE_DictionaryTax", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
+        decimal fBracketMinimum;
+        public decimal BracketMinimum
+        {
+            get { return fBracketMinimum; }
+            set { SetPropertyValue<decimal>("BracketMinimum", ref fBracketMinimum, value); }
+        }
+        decimal fBracketMaximum;
+        public decimal BracketMaximum
+        {
+            get { return fBracketMaximum; }
+            set { SetPropertyValue<decimal>("BracketMaximum", ref fBracketMaximum, value); }
+        }
         [Association(@"E_InvoiceLineReferencesE_DictionaryTax", typeof(InvoiceLine))]
         public XPCollection<InvoiceLine> E_InvoiceLines { get { return GetCollection<InvoiceLine>("E_InvoiceLines"); } }
+        [Association(@"E_SupplyItemTaxReferencesDictionaryTax", typeof(SupplyItemTax))]
+        public XPCollection<SupplyItemTax> E_SupplyItemTaxs { get { return GetCollection<SupplyItemTax>("E_SupplyItemTaxs"); } }
     }
 
 }

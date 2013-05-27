@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Recall>("RecallID", ref fRecallID, value); }
         }
         DictionaryModel fModelID;
-        [Association(@"Q_RecallModelReferencesDictionaryModel")]
+        [Association(@"RecallModelReferencesX_DictionaryModel")]
         public DictionaryModel ModelID
         {
             get { return fModelID; }

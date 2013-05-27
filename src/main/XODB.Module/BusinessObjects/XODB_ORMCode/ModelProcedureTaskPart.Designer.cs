@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<ModelProcedureTask>("ModelProcedureTaskID", ref fModelProcedureTaskID, value); }
         }
         DictionaryPart fPartID;
-        [Association(@"Q_ModelProcedureTaskPartReferencesQ_DictionaryPart")]
+        [Association(@"ModelProcedureTaskPartReferencesQ_DictionaryPart")]
         public DictionaryPart PartID
         {
             get { return fPartID; }

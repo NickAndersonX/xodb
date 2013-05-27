@@ -80,6 +80,20 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalFileDataID; }
             set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
         }
+        string fCurrencyCode;
+        [Size(10)]
+        public string CurrencyCode
+        {
+            get { return fCurrencyCode; }
+            set { SetPropertyValue<string>("CurrencyCode", ref fCurrencyCode, value); }
+        }
+        string fCurrencyFormat;
+        [Size(50)]
+        public string CurrencyFormat
+        {
+            get { return fCurrencyFormat; }
+            set { SetPropertyValue<string>("CurrencyFormat", ref fCurrencyFormat, value); }
+        }
         [Association(@"CompanyReferencesDictionaryCountry", typeof(Company))]
         public XPCollection<Company> Companies { get { return GetCollection<Company>("Companies"); } }
         [Association(@"ContactReferencesDictionaryCountry", typeof(Contact))]
@@ -98,6 +112,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Tenement> X_Tenements { get { return GetCollection<Tenement>("X_Tenements"); } }
         [Association(@"E_DictionaryTaxReferencesDictionaryCountry", typeof(DictionaryTax))]
         public XPCollection<DictionaryTax> E_DictionaryTaxs { get { return GetCollection<DictionaryTax>("E_DictionaryTaxs"); } }
+        [Association(@"E_CurrencyReferencesDictionaryCountry", typeof(Currency))]
+        public XPCollection<Currency> E_Currencys { get { return GetCollection<Currency>("E_Currencys"); } }
     }
 
 }

@@ -137,18 +137,18 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Journal> E_Journals { get { return GetCollection<Journal>("E_Journals"); } }
         [Association(@"Q_CompanyAccountReferencesQ_Account", typeof(CompanyAccount))]
         public XPCollection<CompanyAccount> Q_CompanyAccounts { get { return GetCollection<CompanyAccount>("Q_CompanyAccounts"); } }
-        [Association(@"Q_AccountDiscountReferencesQ_Account", typeof(AccountDiscount))]
-        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
         [Association(@"Q_AssetReferencesQ_Account", typeof(Asset))]
         public XPCollection<Asset> Q_Assets { get { return GetCollection<Asset>("Q_Assets"); } }
         [Association(@"Q_AssetReferencesQ_Account1", typeof(Asset))]
         public XPCollection<Asset> Q_Assets1 { get { return GetCollection<Asset>("Q_Assets1"); } }
         [Association(@"Q_AssetReferencesQ_Account2", typeof(Asset))]
         public XPCollection<Asset> Q_Assets2 { get { return GetCollection<Asset>("Q_Assets2"); } }
-        [Association(@"E_SupplyItemReferencesQ_Account", typeof(SupplyItem))]
-        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
         [Association(@"Q_DeliveryAdviceReferencesQ_Account", typeof(DeliveryAdvice))]
         public XPCollection<DeliveryAdvice> Q_DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices"); } }
+        [Association(@"E_SupplyItemReferencesAccount", typeof(SupplyItem))]
+        public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
+        [Association(@"Q_AccountDiscountReferencesAccount", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
     }
 
 }

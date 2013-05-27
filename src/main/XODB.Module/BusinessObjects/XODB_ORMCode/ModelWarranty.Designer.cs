@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("ModelWarrantyID", ref fModelWarrantyID, value); }
         }
         DictionaryModel fModelID;
-        [Association(@"Q_ModelWarrantyReferencesDictionaryModel")]
+        [Association(@"ModelWarrantyReferencesX_DictionaryModel")]
         public DictionaryModel ModelID
         {
             get { return fModelID; }

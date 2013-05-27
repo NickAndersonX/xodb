@@ -104,8 +104,10 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"Q_WarehousePartReferencesQ_Warehouse", typeof(WarehousePart))]
+        [Association(@"Q_WarehousePartReferencesWarehouse", typeof(WarehousePart))]
         public XPCollection<WarehousePart> Q_WarehouseParts { get { return GetCollection<WarehousePart>("Q_WarehouseParts"); } }
+        [Association(@"Q_WarehouseModelReferencesWarehouse", typeof(WarehouseModel))]
+        public XPCollection<WarehouseModel> Q_WarehouseModels { get { return GetCollection<WarehouseModel>("Q_WarehouseModels"); } }
     }
 
 }

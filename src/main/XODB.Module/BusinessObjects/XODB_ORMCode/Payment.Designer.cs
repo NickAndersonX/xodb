@@ -102,6 +102,19 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        decimal fOriginalAmount;
+        public decimal OriginalAmount
+        {
+            get { return fOriginalAmount; }
+            set { SetPropertyValue<decimal>("OriginalAmount", ref fOriginalAmount, value); }
+        }
+        Currency fCurrencyID;
+        [Association(@"PaymentReferencesE_Currency")]
+        public Currency CurrencyID
+        {
+            get { return fCurrencyID; }
+            set { SetPropertyValue<Currency>("CurrencyID", ref fCurrencyID, value); }
+        }
     }
 
 }

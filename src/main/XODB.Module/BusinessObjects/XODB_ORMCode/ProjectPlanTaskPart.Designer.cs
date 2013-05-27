@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<ProjectPlanTask>("ProjectPlanTaskID", ref fProjectPlanTaskID, value); }
         }
         DictionaryPart fPartID;
-        [Association(@"Q_ProjectPlanTaskPartReferencesQ_DictionaryPart")]
+        [Association(@"ProjectPlanTaskPartReferencesQ_DictionaryPart")]
         public DictionaryPart PartID
         {
             get { return fPartID; }
@@ -127,7 +127,28 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"E_SupplyItemReferencesQ_ProjectPlanTaskPart", typeof(SupplyItem))]
+        WarehousePart fWarehousePartID;
+        [Association(@"ProjectPlanTaskPartReferencesQ_WarehousePart")]
+        public WarehousePart WarehousePartID
+        {
+            get { return fWarehousePartID; }
+            set { SetPropertyValue<WarehousePart>("WarehousePartID", ref fWarehousePartID, value); }
+        }
+        SupplierPart fSupplierPartID;
+        [Association(@"ProjectPlanTaskPartReferencesSupplierPart")]
+        public SupplierPart SupplierPartID
+        {
+            get { return fSupplierPartID; }
+            set { SetPropertyValue<SupplierPart>("SupplierPartID", ref fSupplierPartID, value); }
+        }
+        string fNote;
+        [Size(255)]
+        public string Note
+        {
+            get { return fNote; }
+            set { SetPropertyValue<string>("Note", ref fNote, value); }
+        }
+        [Association(@"E_SupplyItemReferencesProjectPlanTaskPart", typeof(SupplyItem))]
         public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
     }
 

@@ -23,7 +23,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Guid>("AccountProductDiscountID", ref fAccountProductDiscountID, value); }
         }
         Account fSourceAccountID;
-        [Association(@"Q_AccountDiscountReferencesQ_Account")]
+        [Association(@"Q_AccountDiscountReferencesAccount")]
         public Account SourceAccountID
         {
             get { return fSourceAccountID; }
@@ -43,12 +43,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fProviderExperienceID; }
             set { SetPropertyValue<Experience>("ProviderExperienceID", ref fProviderExperienceID, value); }
         }
-        DictionaryPartCategory fPartCategoryID;
-        [Association(@"Q_AccountDiscountReferencesQ_DictionaryPartCategory")]
-        public DictionaryPartCategory PartCategoryID
+        DictionaryDeviceType fDeviceTypeID;
+        [Association(@"Q_AccountDiscountReferencesDictionaryDeviceType")]
+        public DictionaryDeviceType DeviceTypeID
         {
-            get { return fPartCategoryID; }
-            set { SetPropertyValue<DictionaryPartCategory>("PartCategoryID", ref fPartCategoryID, value); }
+            get { return fDeviceTypeID; }
+            set { SetPropertyValue<DictionaryDeviceType>("DeviceTypeID", ref fDeviceTypeID, value); }
         }
         DictionaryUnit fLevelUnitID;
         [Association(@"Q_AccountDiscountReferencesDictionaryUnit")]

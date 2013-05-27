@@ -370,8 +370,6 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"X_GeophysicsReferencesHeader", typeof(Geophysics))]
-        public XPCollection<Geophysics> X_GeophysicsCollection { get { return GetCollection<Geophysics>("X_GeophysicsCollection"); } }
         [Association(@"CasingReferencesHeader", typeof(Casing))]
         public XPCollection<Casing> Casings { get { return GetCollection<Casing>("Casings"); } }
         [Association(@"CementingReferencesHeader", typeof(Cementing))]
@@ -400,6 +398,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Sample> Samples { get { return GetCollection<Sample>("Samples"); } }
         [Association(@"X_SurveyReferencesHeader", typeof(Survey))]
         public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
+        [Association(@"X_GeophysicsReferencesHeader", typeof(Geophysics))]
+        public XPCollection<Geophysics> X_GeophysicsCollection { get { return GetCollection<Geophysics>("X_GeophysicsCollection"); } }
     }
 
 }

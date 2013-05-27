@@ -22,12 +22,12 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fPartID; }
             set { SetPropertyValue<Guid>("PartID", ref fPartID, value); }
         }
-        DictionaryPartCategory fPartCategoryID;
-        [Association(@"Q_DictionaryPartReferencesQ_DictionaryPartCategory")]
-        public DictionaryPartCategory PartCategoryID
+        DictionaryPart fParentPartID;
+        [Association(@"Q_DictionaryPartReferencesQ_DictionaryPart")]
+        public DictionaryPart ParentPartID
         {
-            get { return fPartCategoryID; }
-            set { SetPropertyValue<DictionaryPartCategory>("PartCategoryID", ref fPartCategoryID, value); }
+            get { return fParentPartID; }
+            set { SetPropertyValue<DictionaryPart>("ParentPartID", ref fParentPartID, value); }
         }
         string fStandardPartName;
         [Size(60)]
@@ -36,12 +36,78 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fStandardPartName; }
             set { SetPropertyValue<string>("StandardPartName", ref fStandardPartName, value); }
         }
+        string fEcriPartName;
+        [Size(60)]
+        public string EcriPartName
+        {
+            get { return fEcriPartName; }
+            set { SetPropertyValue<string>("EcriPartName", ref fEcriPartName, value); }
+        }
         string fCustomPartName;
         [Size(60)]
         public string CustomPartName
         {
             get { return fCustomPartName; }
             set { SetPropertyValue<string>("CustomPartName", ref fCustomPartName, value); }
+        }
+        Company fCompanyID;
+        [Association(@"Q_DictionaryPartReferencesCompany")]
+        public Company CompanyID
+        {
+            get { return fCompanyID; }
+            set { SetPropertyValue<Company>("CompanyID", ref fCompanyID, value); }
+        }
+        string fOriginalManufacturerName;
+        [Size(255)]
+        public string OriginalManufacturerName
+        {
+            get { return fOriginalManufacturerName; }
+            set { SetPropertyValue<string>("OriginalManufacturerName", ref fOriginalManufacturerName, value); }
+        }
+        DictionaryPartStatus fPartStatusID;
+        [Association(@"Q_DictionaryPartReferencesDictionaryPartStatus")]
+        public DictionaryPartStatus PartStatusID
+        {
+            get { return fPartStatusID; }
+            set { SetPropertyValue<DictionaryPartStatus>("PartStatusID", ref fPartStatusID, value); }
+        }
+        DictionaryDeviceType fDeviceTypeID;
+        [Association(@"Q_DictionaryPartReferencesDictionaryDeviceType")]
+        public DictionaryDeviceType DeviceTypeID
+        {
+            get { return fDeviceTypeID; }
+            set { SetPropertyValue<DictionaryDeviceType>("DeviceTypeID", ref fDeviceTypeID, value); }
+        }
+        DateTime fManufacturedFrom;
+        public DateTime ManufacturedFrom
+        {
+            get { return fManufacturedFrom; }
+            set { SetPropertyValue<DateTime>("ManufacturedFrom", ref fManufacturedFrom, value); }
+        }
+        DateTime fManufacturedUntil;
+        public DateTime ManufacturedUntil
+        {
+            get { return fManufacturedUntil; }
+            set { SetPropertyValue<DateTime>("ManufacturedUntil", ref fManufacturedUntil, value); }
+        }
+        DateTime fSupportedUntil;
+        public DateTime SupportedUntil
+        {
+            get { return fSupportedUntil; }
+            set { SetPropertyValue<DateTime>("SupportedUntil", ref fSupportedUntil, value); }
+        }
+        DictionaryUnit fEstimatedLifetimeUnitID;
+        [Association(@"Q_DictionaryPartReferencesDictionaryUnit")]
+        public DictionaryUnit EstimatedLifetimeUnitID
+        {
+            get { return fEstimatedLifetimeUnitID; }
+            set { SetPropertyValue<DictionaryUnit>("EstimatedLifetimeUnitID", ref fEstimatedLifetimeUnitID, value); }
+        }
+        decimal fEstimatedLifetime;
+        public decimal EstimatedLifetime
+        {
+            get { return fEstimatedLifetime; }
+            set { SetPropertyValue<decimal>("EstimatedLifetime", ref fEstimatedLifetime, value); }
         }
         string fDescription;
         [Size(255)]
@@ -50,27 +116,49 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
-        DictionaryUnit fDefaultUnitID;
-        [Association(@"Q_DictionaryPartReferencesDictionaryUnit")]
-        public DictionaryUnit DefaultUnitID
+        string fFullDescription;
+        [Size(SizeAttribute.Unlimited)]
+        public string FullDescription
         {
-            get { return fDefaultUnitID; }
-            set { SetPropertyValue<DictionaryUnit>("DefaultUnitID", ref fDefaultUnitID, value); }
+            get { return fFullDescription; }
+            set { SetPropertyValue<string>("FullDescription", ref fFullDescription, value); }
         }
-        [Association(@"Q_DeliveryAdviceItemReferencesQ_DictionaryPart", typeof(DeliveryAdviceItem))]
-        public XPCollection<DeliveryAdviceItem> Q_DeliveryAdviceItems { get { return GetCollection<DeliveryAdviceItem>("Q_DeliveryAdviceItems"); } }
-        [Association(@"Q_DictionaryPartKitItemReferencesQ_DictionaryPart", typeof(DictionaryPartKitItem))]
-        public XPCollection<DictionaryPartKitItem> Q_DictionaryPartKitItems { get { return GetCollection<DictionaryPartKitItem>("Q_DictionaryPartKitItems"); } }
+        byte[] fThumbnail;
+        [Size(SizeAttribute.Unlimited)]
+        public byte[] Thumbnail
+        {
+            get { return fThumbnail; }
+            set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
+        }
+        FileData fOriginalFileDataID;
+        [Association(@"Q_DictionaryPartReferencesFileData")]
+        public FileData OriginalFileDataID
+        {
+            get { return fOriginalFileDataID; }
+            set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
+        }
+        [Association(@"ModelProcedureTaskPartReferencesQ_DictionaryPart", typeof(ModelProcedureTaskPart))]
+        public XPCollection<ModelProcedureTaskPart> ModelProcedureTaskParts { get { return GetCollection<ModelProcedureTaskPart>("ModelProcedureTaskParts"); } }
+        [Association(@"DictionaryPartKitItemReferencesQ_DictionaryPart", typeof(DictionaryPartKitItem))]
+        public XPCollection<DictionaryPartKitItem> DictionaryPartKitItems { get { return GetCollection<DictionaryPartKitItem>("DictionaryPartKitItems"); } }
+        [Association(@"DeliveryAdviceItemReferencesQ_DictionaryPart", typeof(DeliveryAdviceItem))]
+        public XPCollection<DeliveryAdviceItem> DeliveryAdviceItems { get { return GetCollection<DeliveryAdviceItem>("DeliveryAdviceItems"); } }
+        [Association(@"ProjectPlanTaskPartReferencesQ_DictionaryPart", typeof(ProjectPlanTaskPart))]
+        public XPCollection<ProjectPlanTaskPart> ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("ProjectPlanTaskParts"); } }
+        [Association(@"SupplierPartReferencesQ_DictionaryPart", typeof(SupplierPart))]
+        public XPCollection<SupplierPart> SupplierParts { get { return GetCollection<SupplierPart>("SupplierParts"); } }
+        [Association(@"ModelPartReferencesQ_DictionaryPart", typeof(ModelPart))]
+        public XPCollection<ModelPart> ModelParts { get { return GetCollection<ModelPart>("ModelParts"); } }
+        [Association(@"Q_DictionaryPartReferencesQ_DictionaryPart", typeof(DictionaryPart))]
+        public XPCollection<DictionaryPart> Q_DictionaryPartCollection { get { return GetCollection<DictionaryPart>("Q_DictionaryPartCollection"); } }
+        [Association(@"ContractConditionPartReferencesQ_DictionaryPart", typeof(ContractConditionPart))]
+        public XPCollection<ContractConditionPart> ContractConditionParts { get { return GetCollection<ContractConditionPart>("ContractConditionParts"); } }
+        [Association(@"Q_DictionaryPartCategoryReferencesQ_DictionaryPart", typeof(DictionaryPartCategory))]
+        public XPCollection<DictionaryPartCategory> Q_DictionaryPartCategorys { get { return GetCollection<DictionaryPartCategory>("Q_DictionaryPartCategorys"); } }
         [Association(@"Q_WarehousePartReferencesQ_DictionaryPart", typeof(WarehousePart))]
         public XPCollection<WarehousePart> Q_WarehouseParts { get { return GetCollection<WarehousePart>("Q_WarehouseParts"); } }
-        [Association(@"Q_ModelProcedureTaskPartReferencesQ_DictionaryPart", typeof(ModelProcedureTaskPart))]
-        public XPCollection<ModelProcedureTaskPart> Q_ModelProcedureTaskParts { get { return GetCollection<ModelProcedureTaskPart>("Q_ModelProcedureTaskParts"); } }
-        [Association(@"Q_ModelPartReferencesQ_DictionaryPart", typeof(ModelPart))]
-        public XPCollection<ModelPart> Q_ModelParts { get { return GetCollection<ModelPart>("Q_ModelParts"); } }
-        [Association(@"Q_SupplierPartReferencesQ_DictionaryPart", typeof(SupplierPart))]
-        public XPCollection<SupplierPart> Q_SupplierParts { get { return GetCollection<SupplierPart>("Q_SupplierParts"); } }
-        [Association(@"Q_ProjectPlanTaskPartReferencesQ_DictionaryPart", typeof(ProjectPlanTaskPart))]
-        public XPCollection<ProjectPlanTaskPart> Q_ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("Q_ProjectPlanTaskParts"); } }
+        [Association(@"PartCharacteristicReferencesQ_DictionaryPart", typeof(PartCharacteristic))]
+        public XPCollection<PartCharacteristic> PartCharacteristics { get { return GetCollection<PartCharacteristic>("PartCharacteristics"); } }
     }
 
 }

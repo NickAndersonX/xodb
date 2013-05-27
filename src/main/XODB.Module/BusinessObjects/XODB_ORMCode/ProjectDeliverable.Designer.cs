@@ -232,6 +232,13 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        Contract fEvidenceContractID;
+        [Association(@"ProjectDeliverableReferencesContract")]
+        public Contract EvidenceContractID
+        {
+            get { return fEvidenceContractID; }
+            set { SetPropertyValue<Contract>("EvidenceContractID", ref fEvidenceContractID, value); }
+        }
         [Association(@"X_ContractReferencesProjectDeliverable", typeof(Contract))]
         public XPCollection<Contract> X_Contracts { get { return GetCollection<Contract>("X_Contracts"); } }
         [Association(@"E_SupplyReferencesProjectDeliverable", typeof(Supply))]

@@ -198,10 +198,71 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        Contract fParentContractID;
+        [Association(@"ContractReferencesContract")]
+        public Contract ParentContractID
+        {
+            get { return fParentContractID; }
+            set { SetPropertyValue<Contract>("ParentContractID", ref fParentContractID, value); }
+        }
+        decimal fRisk;
+        public decimal Risk
+        {
+            get { return fRisk; }
+            set { SetPropertyValue<decimal>("Risk", ref fRisk, value); }
+        }
+        DateTime fRiskStarts;
+        public DateTime RiskStarts
+        {
+            get { return fRiskStarts; }
+            set { SetPropertyValue<DateTime>("RiskStarts", ref fRiskStarts, value); }
+        }
+        DateTime fRiskEnds;
+        public DateTime RiskEnds
+        {
+            get { return fRiskEnds; }
+            set { SetPropertyValue<DateTime>("RiskEnds", ref fRiskEnds, value); }
+        }
+        decimal fRiskCriticality;
+        public decimal RiskCriticality
+        {
+            get { return fRiskCriticality; }
+            set { SetPropertyValue<decimal>("RiskCriticality", ref fRiskCriticality, value); }
+        }
+        decimal fRiskLikelihood;
+        public decimal RiskLikelihood
+        {
+            get { return fRiskLikelihood; }
+            set { SetPropertyValue<decimal>("RiskLikelihood", ref fRiskLikelihood, value); }
+        }
+        decimal fValue;
+        public decimal Value
+        {
+            get { return fValue; }
+            set { SetPropertyValue<decimal>("Value", ref fValue, value); }
+        }
+        decimal fTax;
+        public decimal Tax
+        {
+            get { return fTax; }
+            set { SetPropertyValue<decimal>("Tax", ref fTax, value); }
+        }
         [Association(@"Q_ModelWarrantyReferencesContract", typeof(ModelWarranty))]
         public XPCollection<ModelWarranty> Q_ModelWarrantys { get { return GetCollection<ModelWarranty>("Q_ModelWarrantys"); } }
         [Association(@"Q_ContractAssetReferencesContract", typeof(ContractAsset))]
         public XPCollection<ContractAsset> Q_ContractAssets { get { return GetCollection<ContractAsset>("Q_ContractAssets"); } }
+        [Association(@"ProjectDeliverableReferencesContract", typeof(ProjectDeliverable))]
+        public XPCollection<ProjectDeliverable> ProjectDeliverables { get { return GetCollection<ProjectDeliverable>("ProjectDeliverables"); } }
+        [Association(@"ContractReferencesContract", typeof(Contract))]
+        public XPCollection<Contract> ContractCollection { get { return GetCollection<Contract>("ContractCollection"); } }
+        [Association(@"SupplierPartReferencesContract", typeof(SupplierPart))]
+        public XPCollection<SupplierPart> SupplierParts { get { return GetCollection<SupplierPart>("SupplierParts"); } }
+        [Association(@"X_CostEstimateModelReferencesContract", typeof(CostEstimateModel))]
+        public XPCollection<CostEstimateModel> X_CostEstimateModels { get { return GetCollection<CostEstimateModel>("X_CostEstimateModels"); } }
+        [Association(@"X_ContractConditionReferencesContract", typeof(ContractCondition))]
+        public XPCollection<ContractCondition> X_ContractConditions { get { return GetCollection<ContractCondition>("X_ContractConditions"); } }
+        [Association(@"Q_SupplierModelReferencesContract", typeof(SupplierModel))]
+        public XPCollection<SupplierModel> Q_SupplierModels { get { return GetCollection<SupplierModel>("Q_SupplierModels"); } }
     }
 
 }

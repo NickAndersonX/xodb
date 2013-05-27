@@ -207,11 +207,11 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"E_CreditReferencesE_Supply", typeof(Credit))]
+        [Association(@"E_CreditReferencesSupply", typeof(Credit))]
         public XPCollection<Credit> E_Credits { get { return GetCollection<Credit>("E_Credits"); } }
         [Association(@"E_SupplyReferencesE_Supply", typeof(Supply))]
         public XPCollection<Supply> E_SupplyCollection { get { return GetCollection<Supply>("E_SupplyCollection"); } }
-        [Association(@"E_SupplyItemReferencesE_Supply", typeof(SupplyItem))]
+        [Association(@"E_SupplyItemReferencesSupply", typeof(SupplyItem))]
         public XPCollection<SupplyItem> E_SupplyItems { get { return GetCollection<SupplyItem>("E_SupplyItems"); } }
     }
 

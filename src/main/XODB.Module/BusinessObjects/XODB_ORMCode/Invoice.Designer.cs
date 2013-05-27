@@ -192,7 +192,20 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
-        [Association(@"E_CreditReferencesE_Invoice", typeof(Credit))]
+        decimal fOriginalTotal;
+        public decimal OriginalTotal
+        {
+            get { return fOriginalTotal; }
+            set { SetPropertyValue<decimal>("OriginalTotal", ref fOriginalTotal, value); }
+        }
+        Currency fCurrencyID;
+        [Association(@"InvoiceReferencesE_Currency")]
+        public Currency CurrencyID
+        {
+            get { return fCurrencyID; }
+            set { SetPropertyValue<Currency>("CurrencyID", ref fCurrencyID, value); }
+        }
+        [Association(@"E_CreditReferencesInvoice", typeof(Credit))]
         public XPCollection<Credit> E_Credits { get { return GetCollection<Credit>("E_Credits"); } }
         [Association(@"E_SupplyReferencesE_Invoice", typeof(Supply))]
         public XPCollection<Supply> E_Supplys { get { return GetCollection<Supply>("E_Supplys"); } }

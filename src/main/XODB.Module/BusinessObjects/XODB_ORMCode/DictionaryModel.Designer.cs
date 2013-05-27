@@ -22,12 +22,26 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fModelID; }
             set { SetPropertyValue<Guid>("ModelID", ref fModelID, value); }
         }
+        DictionaryModel fParentModelID;
+        [Association(@"X_DictionaryModelReferencesX_DictionaryModel")]
+        public DictionaryModel ParentModelID
+        {
+            get { return fParentModelID; }
+            set { SetPropertyValue<DictionaryModel>("ParentModelID", ref fParentModelID, value); }
+        }
         string fStandardModelName;
         [Size(60)]
         public string StandardModelName
         {
             get { return fStandardModelName; }
             set { SetPropertyValue<string>("StandardModelName", ref fStandardModelName, value); }
+        }
+        string fEcriModelName;
+        [Size(60)]
+        public string EcriModelName
+        {
+            get { return fEcriModelName; }
+            set { SetPropertyValue<string>("EcriModelName", ref fEcriModelName, value); }
         }
         string fCustomModelName;
         [Size(60)]
@@ -37,7 +51,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<string>("CustomModelName", ref fCustomModelName, value); }
         }
         Company fCompanyID;
-        [Association(@"DictionaryModelReferencesCompany")]
+        [Association(@"X_DictionaryModelReferencesCompany")]
         public Company CompanyID
         {
             get { return fCompanyID; }
@@ -50,60 +64,19 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fOriginalManufacturerName; }
             set { SetPropertyValue<string>("OriginalManufacturerName", ref fOriginalManufacturerName, value); }
         }
-        DictionaryModelStatus fStatusID;
-        [Association(@"DictionaryModelReferencesDictionaryModelStatus")]
-        public DictionaryModelStatus StatusID
+        DictionaryModelStatus fModelStatusID;
+        [Association(@"X_DictionaryModelReferencesDictionaryModelStatus")]
+        public DictionaryModelStatus ModelStatusID
         {
-            get { return fStatusID; }
-            set { SetPropertyValue<DictionaryModelStatus>("StatusID", ref fStatusID, value); }
+            get { return fModelStatusID; }
+            set { SetPropertyValue<DictionaryModelStatus>("ModelStatusID", ref fModelStatusID, value); }
         }
-        string fDescription;
-        [Size(255)]
-        public string Description
-        {
-            get { return fDescription; }
-            set { SetPropertyValue<string>("Description", ref fDescription, value); }
-        }
-        string fFullDescription;
-        [Size(SizeAttribute.Unlimited)]
-        public string FullDescription
-        {
-            get { return fFullDescription; }
-            set { SetPropertyValue<string>("FullDescription", ref fFullDescription, value); }
-        }
-        System.Drawing.Image fThumbnail;
-        [Size(SizeAttribute.Unlimited)]
-        [ValueConverter(typeof(DevExpress.Xpo.Metadata.ImageValueConverter))]
-        public System.Drawing.Image Thumbnail
-        {
-            get { return fThumbnail; }
-            set { SetPropertyValue<System.Drawing.Image>("Thumbnail", ref fThumbnail, value); }
-        }
-        FileData fOriginalFileDataID;
-        [Association(@"DictionaryModelReferencesFileData")]
-        public FileData OriginalFileDataID
-        {
-            get { return fOriginalFileDataID; }
-            set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
-        }
-        Guid fParentModelID;
-        public Guid ParentModelID
-        {
-            get { return fParentModelID; }
-            set { SetPropertyValue<Guid>("ParentModelID", ref fParentModelID, value); }
-        }
-        string fEcriModelName;
-        [Size(60)]
-        public string EcriModelName
-        {
-            get { return fEcriModelName; }
-            set { SetPropertyValue<string>("EcriModelName", ref fEcriModelName, value); }
-        }
-        Guid fDeviceTypeID;
-        public Guid DeviceTypeID
+        DictionaryDeviceType fDeviceTypeID;
+        [Association(@"X_DictionaryModelReferencesDictionaryDeviceType")]
+        public DictionaryDeviceType DeviceTypeID
         {
             get { return fDeviceTypeID; }
-            set { SetPropertyValue<Guid>("DeviceTypeID", ref fDeviceTypeID, value); }
+            set { SetPropertyValue<DictionaryDeviceType>("DeviceTypeID", ref fDeviceTypeID, value); }
         }
         bool fIsMake;
         public bool IsMake
@@ -129,32 +102,131 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fSupportedUntil; }
             set { SetPropertyValue<DateTime>("SupportedUntil", ref fSupportedUntil, value); }
         }
-        Guid fSupportUnitID;
-        public Guid SupportUnitID
+        DictionaryUnit fEstimatedLifetimeUnitID;
+        [Association(@"X_DictionaryModelReferencesDictionaryUnit")]
+        public DictionaryUnit EstimatedLifetimeUnitID
         {
-            get { return fSupportUnitID; }
-            set { SetPropertyValue<Guid>("SupportUnitID", ref fSupportUnitID, value); }
+            get { return fEstimatedLifetimeUnitID; }
+            set { SetPropertyValue<DictionaryUnit>("EstimatedLifetimeUnitID", ref fEstimatedLifetimeUnitID, value); }
         }
-        decimal fSupportQuantity;
-        public decimal SupportQuantity
+        decimal fEstimatedLifetime;
+        public decimal EstimatedLifetime
         {
-            get { return fSupportQuantity; }
-            set { SetPropertyValue<decimal>("SupportQuantity", ref fSupportQuantity, value); }
+            get { return fEstimatedLifetime; }
+            set { SetPropertyValue<decimal>("EstimatedLifetime", ref fEstimatedLifetime, value); }
         }
-        [Association(@"X_SurveyReferencesDictionaryModel", typeof(Survey))]
-        public XPCollection<Survey> X_Surveys { get { return GetCollection<Survey>("X_Surveys"); } }
-        [Association(@"Q_RecallModelReferencesDictionaryModel", typeof(RecallModel))]
-        public XPCollection<RecallModel> Q_RecallModels { get { return GetCollection<RecallModel>("Q_RecallModels"); } }
-        [Association(@"Q_ModelScheduleCycleReferencesDictionaryModel", typeof(ModelScheduleCycle))]
-        public XPCollection<ModelScheduleCycle> Q_ModelScheduleCycles { get { return GetCollection<ModelScheduleCycle>("Q_ModelScheduleCycles"); } }
-        [Association(@"Q_ModelPartReferencesDictionaryModel", typeof(ModelPart))]
-        public XPCollection<ModelPart> Q_ModelParts { get { return GetCollection<ModelPart>("Q_ModelParts"); } }
-        [Association(@"Q_ModelWarrantyReferencesDictionaryModel", typeof(ModelWarranty))]
-        public XPCollection<ModelWarranty> Q_ModelWarrantys { get { return GetCollection<ModelWarranty>("Q_ModelWarrantys"); } }
-        [Association(@"Q_AssetReferencesDictionaryModel", typeof(Asset))]
-        public XPCollection<Asset> Q_Assets { get { return GetCollection<Asset>("Q_Assets"); } }
-        [Association(@"Q_ModelProcedureReferencesDictionaryModel", typeof(ModelProcedure))]
-        public XPCollection<ModelProcedure> Q_ModelProcedures { get { return GetCollection<ModelProcedure>("Q_ModelProcedures"); } }
+        string fDescription;
+        [Size(255)]
+        public string Description
+        {
+            get { return fDescription; }
+            set { SetPropertyValue<string>("Description", ref fDescription, value); }
+        }
+        string fFullDescription;
+        [Size(SizeAttribute.Unlimited)]
+        public string FullDescription
+        {
+            get { return fFullDescription; }
+            set { SetPropertyValue<string>("FullDescription", ref fFullDescription, value); }
+        }
+        byte[] fThumbnail;
+        [Size(SizeAttribute.Unlimited)]
+        public byte[] Thumbnail
+        {
+            get { return fThumbnail; }
+            set { SetPropertyValue<byte[]>("Thumbnail", ref fThumbnail, value); }
+        }
+        FileData fOriginalFileDataID;
+        [Association(@"X_DictionaryModelReferencesFileData")]
+        public FileData OriginalFileDataID
+        {
+            get { return fOriginalFileDataID; }
+            set { SetPropertyValue<FileData>("OriginalFileDataID", ref fOriginalFileDataID, value); }
+        }
+        int fVersion;
+        public int Version
+        {
+            get { return fVersion; }
+            set { SetPropertyValue<int>("Version", ref fVersion, value); }
+        }
+        Guid fVersionAntecedentID;
+        public Guid VersionAntecedentID
+        {
+            get { return fVersionAntecedentID; }
+            set { SetPropertyValue<Guid>("VersionAntecedentID", ref fVersionAntecedentID, value); }
+        }
+        int fVersionCertainty;
+        public int VersionCertainty
+        {
+            get { return fVersionCertainty; }
+            set { SetPropertyValue<int>("VersionCertainty", ref fVersionCertainty, value); }
+        }
+        Guid fVersionWorkflowInstanceID;
+        public Guid VersionWorkflowInstanceID
+        {
+            get { return fVersionWorkflowInstanceID; }
+            set { SetPropertyValue<Guid>("VersionWorkflowInstanceID", ref fVersionWorkflowInstanceID, value); }
+        }
+        Guid fVersionUpdatedBy;
+        public Guid VersionUpdatedBy
+        {
+            get { return fVersionUpdatedBy; }
+            set { SetPropertyValue<Guid>("VersionUpdatedBy", ref fVersionUpdatedBy, value); }
+        }
+        Guid fVersionDeletedBy;
+        public Guid VersionDeletedBy
+        {
+            get { return fVersionDeletedBy; }
+            set { SetPropertyValue<Guid>("VersionDeletedBy", ref fVersionDeletedBy, value); }
+        }
+        Guid fVersionOwnerContactID;
+        public Guid VersionOwnerContactID
+        {
+            get { return fVersionOwnerContactID; }
+            set { SetPropertyValue<Guid>("VersionOwnerContactID", ref fVersionOwnerContactID, value); }
+        }
+        Guid fVersionOwnerCompanyID;
+        public Guid VersionOwnerCompanyID
+        {
+            get { return fVersionOwnerCompanyID; }
+            set { SetPropertyValue<Guid>("VersionOwnerCompanyID", ref fVersionOwnerCompanyID, value); }
+        }
+        DateTime fVersionUpdated;
+        public DateTime VersionUpdated
+        {
+            get { return fVersionUpdated; }
+            set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
+        }
+        [Association(@"ModelScheduleCycleReferencesX_DictionaryModel", typeof(ModelScheduleCycle))]
+        public XPCollection<ModelScheduleCycle> ModelScheduleCycles { get { return GetCollection<ModelScheduleCycle>("ModelScheduleCycles"); } }
+        [Association(@"X_DictionaryModelReferencesX_DictionaryModel", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> X_DictionaryModelCollection { get { return GetCollection<DictionaryModel>("X_DictionaryModelCollection"); } }
+        [Association(@"RecallModelReferencesX_DictionaryModel", typeof(RecallModel))]
+        public XPCollection<RecallModel> RecallModels { get { return GetCollection<RecallModel>("RecallModels"); } }
+        [Association(@"ProjectPlanTaskModelReferencesX_DictionaryModel", typeof(ProjectPlanTaskModel))]
+        public XPCollection<ProjectPlanTaskModel> ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("ProjectPlanTaskModels"); } }
+        [Association(@"ModelCharacteristicReferencesX_DictionaryModel", typeof(ModelCharacteristic))]
+        public XPCollection<ModelCharacteristic> ModelCharacteristics { get { return GetCollection<ModelCharacteristic>("ModelCharacteristics"); } }
+        [Association(@"DictionaryModelCategoryReferencesX_DictionaryModel", typeof(DictionaryModelCategory))]
+        public XPCollection<DictionaryModelCategory> DictionaryModelCategorys { get { return GetCollection<DictionaryModelCategory>("DictionaryModelCategorys"); } }
+        [Association(@"CostEstimateModelReferencesX_DictionaryModel", typeof(CostEstimateModel))]
+        public XPCollection<CostEstimateModel> CostEstimateModels { get { return GetCollection<CostEstimateModel>("CostEstimateModels"); } }
+        [Association(@"WarehouseModelReferencesX_DictionaryModel", typeof(WarehouseModel))]
+        public XPCollection<WarehouseModel> WarehouseModels { get { return GetCollection<WarehouseModel>("WarehouseModels"); } }
+        [Association(@"ModelProcedureReferencesX_DictionaryModel", typeof(ModelProcedure))]
+        public XPCollection<ModelProcedure> ModelProcedures { get { return GetCollection<ModelProcedure>("ModelProcedures"); } }
+        [Association(@"AssetReferencesX_DictionaryModel", typeof(Asset))]
+        public XPCollection<Asset> Assets { get { return GetCollection<Asset>("Assets"); } }
+        [Association(@"ModelWarrantyReferencesX_DictionaryModel", typeof(ModelWarranty))]
+        public XPCollection<ModelWarranty> ModelWarrantys { get { return GetCollection<ModelWarranty>("ModelWarrantys"); } }
+        [Association(@"ModelPartReferencesX_DictionaryModel", typeof(ModelPart))]
+        public XPCollection<ModelPart> ModelParts { get { return GetCollection<ModelPart>("ModelParts"); } }
+        [Association(@"ContractConditionModelReferencesX_DictionaryModel", typeof(ContractConditionModel))]
+        public XPCollection<ContractConditionModel> ContractConditionModels { get { return GetCollection<ContractConditionModel>("ContractConditionModels"); } }
+        [Association(@"SurveyReferencesX_DictionaryModel", typeof(Survey))]
+        public XPCollection<Survey> Surveys { get { return GetCollection<Survey>("Surveys"); } }
+        [Association(@"SupplierModelReferencesX_DictionaryModel", typeof(SupplierModel))]
+        public XPCollection<SupplierModel> SupplierModels { get { return GetCollection<SupplierModel>("SupplierModels"); } }
     }
 
 }

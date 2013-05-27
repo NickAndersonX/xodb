@@ -15,12 +15,12 @@ namespace XODB.Module.BusinessObjects.XODB
     [Persistent(@"Q_DictionaryDeviceType")]
     public partial class DictionaryDeviceType : XPLiteObject
     {
-        int fDeviceTypeID;
+        Guid fDeviceTypeID;
         [Key(true)]
-        public int DeviceTypeID
+        public Guid DeviceTypeID
         {
             get { return fDeviceTypeID; }
-            set { SetPropertyValue<int>("DeviceTypeID", ref fDeviceTypeID, value); }
+            set { SetPropertyValue<Guid>("DeviceTypeID", ref fDeviceTypeID, value); }
         }
         string fStandardDeviceTypeName;
         [Size(60)]
@@ -57,6 +57,43 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fDescription; }
             set { SetPropertyValue<string>("Description", ref fDescription, value); }
         }
+        DictionaryDeviceType fParentDeviceTypeID;
+        [Association(@"DictionaryDeviceTypeReferencesDictionaryDeviceType")]
+        public DictionaryDeviceType ParentDeviceTypeID
+        {
+            get { return fParentDeviceTypeID; }
+            set { SetPropertyValue<DictionaryDeviceType>("ParentDeviceTypeID", ref fParentDeviceTypeID, value); }
+        }
+        bool fIsAttributable;
+        public bool IsAttributable
+        {
+            get { return fIsAttributable; }
+            set { SetPropertyValue<bool>("IsAttributable", ref fIsAttributable, value); }
+        }
+        bool fIsDevice;
+        public bool IsDevice
+        {
+            get { return fIsDevice; }
+            set { SetPropertyValue<bool>("IsDevice", ref fIsDevice, value); }
+        }
+        bool fIsPart;
+        public bool IsPart
+        {
+            get { return fIsPart; }
+            set { SetPropertyValue<bool>("IsPart", ref fIsPart, value); }
+        }
+        [Association(@"Q_AccountDiscountReferencesDictionaryDeviceType", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
+        [Association(@"X_DictionaryModelReferencesDictionaryDeviceType", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> X_DictionaryModels { get { return GetCollection<DictionaryModel>("X_DictionaryModels"); } }
+        [Association(@"Q_DictionaryPartReferencesDictionaryDeviceType", typeof(DictionaryPart))]
+        public XPCollection<DictionaryPart> Q_DictionaryParts { get { return GetCollection<DictionaryPart>("Q_DictionaryParts"); } }
+        [Association(@"Q_DictionaryPartCategoryReferencesDictionaryDeviceType", typeof(DictionaryPartCategory))]
+        public XPCollection<DictionaryPartCategory> Q_DictionaryPartCategorys { get { return GetCollection<DictionaryPartCategory>("Q_DictionaryPartCategorys"); } }
+        [Association(@"DictionaryDeviceTypeReferencesDictionaryDeviceType", typeof(DictionaryDeviceType))]
+        public XPCollection<DictionaryDeviceType> DictionaryDeviceTypeCollection { get { return GetCollection<DictionaryDeviceType>("DictionaryDeviceTypeCollection"); } }
+        [Association(@"X_DictionaryModelCategoryReferencesDictionaryDeviceType", typeof(DictionaryModelCategory))]
+        public XPCollection<DictionaryModelCategory> X_DictionaryModelCategorys { get { return GetCollection<DictionaryModelCategory>("X_DictionaryModelCategorys"); } }
     }
 
 }

@@ -84,7 +84,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Account>("MaintenanceAccountID", ref fMaintenanceAccountID, value); }
         }
         DictionaryModel fModelID;
-        [Association(@"Q_AssetReferencesDictionaryModel")]
+        [Association(@"AssetReferencesX_DictionaryModel")]
         public DictionaryModel ModelID
         {
             get { return fModelID; }
@@ -174,8 +174,6 @@ namespace XODB.Module.BusinessObjects.XODB
         }
         [Association(@"Q_DeliveryAdviceItemReferencesQ_Asset", typeof(DeliveryAdviceItem))]
         public XPCollection<DeliveryAdviceItem> Q_DeliveryAdviceItems { get { return GetCollection<DeliveryAdviceItem>("Q_DeliveryAdviceItems"); } }
-        [Association(@"Q_RecallModelAssetReferencesAsset", typeof(RecallModelAsset))]
-        public XPCollection<RecallModelAsset> Q_RecallModelAssets { get { return GetCollection<RecallModelAsset>("Q_RecallModelAssets"); } }
         [Association(@"Q_AssetAliasReferencesQ_Asset", typeof(AssetAlias))]
         public XPCollection<AssetAlias> Q_AssetAliasCollection { get { return GetCollection<AssetAlias>("Q_AssetAliasCollection"); } }
         [Association(@"Q_AssetMaintenanceReferencesQ_Asset", typeof(AssetMaintenance))]
@@ -186,6 +184,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<AssetWarranty> Q_AssetWarrantys { get { return GetCollection<AssetWarranty>("Q_AssetWarrantys"); } }
         [Association(@"Q_ContractAssetReferencesQ_Asset", typeof(ContractAsset))]
         public XPCollection<ContractAsset> Q_ContractAssets { get { return GetCollection<ContractAsset>("Q_ContractAssets"); } }
+        [Association(@"Q_RecallModelAssetReferencesAsset", typeof(RecallModelAsset))]
+        public XPCollection<RecallModelAsset> Q_RecallModelAssets { get { return GetCollection<RecallModelAsset>("Q_RecallModelAssets"); } }
     }
 
 }

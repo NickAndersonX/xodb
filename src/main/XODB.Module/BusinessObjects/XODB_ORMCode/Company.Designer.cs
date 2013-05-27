@@ -132,8 +132,6 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<SecurityWhitelist> SecurityWhitelists1 { get { return GetCollection<SecurityWhitelist>("SecurityWhitelists1"); } }
         [Association(@"ComplianceReferencesCompany", typeof(Compliance))]
         public XPCollection<Compliance> Compliances { get { return GetCollection<Compliance>("Compliances"); } }
-        [Association(@"DictionaryModelReferencesCompany", typeof(DictionaryModel))]
-        public XPCollection<DictionaryModel> DictionaryModels { get { return GetCollection<DictionaryModel>("DictionaryModels"); } }
         [Association(@"OpportunityReferencesCompany", typeof(Opportunity))]
         public XPCollection<Opportunity> Opportunities { get { return GetCollection<Opportunity>("Opportunities"); } }
         [Association(@"AssayGroupReferencesCompany", typeof(AssayGroup))]
@@ -172,12 +170,18 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<Warehouse> Q_Warehouses { get { return GetCollection<Warehouse>("Q_Warehouses"); } }
         [Association(@"Q_CompanyAccountReferencesCompany", typeof(CompanyAccount))]
         public XPCollection<CompanyAccount> Q_CompanyAccounts { get { return GetCollection<CompanyAccount>("Q_CompanyAccounts"); } }
-        [Association(@"Q_AccountDiscountReferencesCompany", typeof(AccountDiscount))]
-        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
         [Association(@"Q_SupplierPartReferencesCompany", typeof(SupplierPart))]
         public XPCollection<SupplierPart> Q_SupplierParts { get { return GetCollection<SupplierPart>("Q_SupplierParts"); } }
         [Association(@"Q_DeliveryAdviceReferencesCompany", typeof(DeliveryAdvice))]
         public XPCollection<DeliveryAdvice> Q_DeliveryAdvices { get { return GetCollection<DeliveryAdvice>("Q_DeliveryAdvices"); } }
+        [Association(@"Q_SupplierModelReferencesCompany", typeof(SupplierModel))]
+        public XPCollection<SupplierModel> Q_SupplierModels { get { return GetCollection<SupplierModel>("Q_SupplierModels"); } }
+        [Association(@"X_DictionaryModelReferencesCompany", typeof(DictionaryModel))]
+        public XPCollection<DictionaryModel> X_DictionaryModels { get { return GetCollection<DictionaryModel>("X_DictionaryModels"); } }
+        [Association(@"Q_DictionaryPartReferencesCompany", typeof(DictionaryPart))]
+        public XPCollection<DictionaryPart> Q_DictionaryParts { get { return GetCollection<DictionaryPart>("Q_DictionaryParts"); } }
+        [Association(@"Q_AccountDiscountReferencesCompany", typeof(AccountDiscount))]
+        public XPCollection<AccountDiscount> Q_AccountDiscounts { get { return GetCollection<AccountDiscount>("Q_AccountDiscounts"); } }
     }
 
 }

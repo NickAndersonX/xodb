@@ -153,6 +153,8 @@ namespace XODB.Module.BusinessObjects.XODB
         public XPCollection<ProjectPlanTask> X_ProjectPlanTaskCollection { get { return GetCollection<ProjectPlanTask>("X_ProjectPlanTaskCollection"); } }
         [Association(@"Q_ProjectPlanTaskPartReferencesProjectPlanTask", typeof(ProjectPlanTaskPart))]
         public XPCollection<ProjectPlanTaskPart> Q_ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("Q_ProjectPlanTaskParts"); } }
+        [Association(@"Q_ProjectPlanTaskModelReferencesProjectPlanTask", typeof(ProjectPlanTaskModel))]
+        public XPCollection<ProjectPlanTaskModel> Q_ProjectPlanTaskModels { get { return GetCollection<ProjectPlanTaskModel>("Q_ProjectPlanTaskModels"); } }
     }
 
 }

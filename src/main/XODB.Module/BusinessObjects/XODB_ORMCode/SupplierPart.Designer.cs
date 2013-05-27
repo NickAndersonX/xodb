@@ -30,7 +30,7 @@ namespace XODB.Module.BusinessObjects.XODB
             set { SetPropertyValue<Company>("SupplierID", ref fSupplierID, value); }
         }
         DictionaryPart fPartID;
-        [Association(@"Q_SupplierPartReferencesQ_DictionaryPart")]
+        [Association(@"SupplierPartReferencesQ_DictionaryPart")]
         public DictionaryPart PartID
         {
             get { return fPartID; }
@@ -155,6 +155,17 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fVersionUpdated; }
             set { SetPropertyValue<DateTime>("VersionUpdated", ref fVersionUpdated, value); }
         }
+        Contract fSupplierContractID;
+        [Association(@"SupplierPartReferencesContract")]
+        public Contract SupplierContractID
+        {
+            get { return fSupplierContractID; }
+            set { SetPropertyValue<Contract>("SupplierContractID", ref fSupplierContractID, value); }
+        }
+        [Association(@"ProjectPlanTaskPartReferencesSupplierPart", typeof(ProjectPlanTaskPart))]
+        public XPCollection<ProjectPlanTaskPart> ProjectPlanTaskParts { get { return GetCollection<ProjectPlanTaskPart>("ProjectPlanTaskParts"); } }
+        [Association(@"Q_WarehousePartSupplierReferencesSupplierPart", typeof(WarehousePartSupplier))]
+        public XPCollection<WarehousePartSupplier> Q_WarehousePartSuppliers { get { return GetCollection<WarehousePartSupplier>("Q_WarehousePartSuppliers"); } }
     }
 
 }

@@ -162,15 +162,9 @@
     <Content Include="MoveFooter.js" />
     <Content Include="NestedFrameControl.ascx" />
     <Content Include="SessionKeepAliveReconnect.aspx" />
-    <Content Include="UnusableNodes.xml">
-      <DependentUpon>Model.xafml</DependentUpon>
+    <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="UnusableNodes1.xml">
-      <DependentUpon>Model.xafml</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.designer.cs">
@@ -240,7 +234,8 @@
   <ItemGroup>
     <Content Include="Model.xafml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
+      <SubType>
+      </SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
