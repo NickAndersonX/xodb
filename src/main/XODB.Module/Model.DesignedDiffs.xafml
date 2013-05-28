@@ -558,6 +558,25 @@
         <ColumnInfo Id="Description" PropertyName="WorkTypeDescription" Caption="Description" IsNewNode="True" />
       </Columns>
     </ListView>
+    <ListView Id="FileData_ListView">
+      <Columns>
+        <ColumnInfo Id="FileContent" Index="-1" />
+        <ColumnInfo Id="FileDataID" Index="-1" />
+        <ColumnInfo Id="ParentFileID" Index="-1" />
+        <ColumnInfo Id="ReferenceID" Index="-1" />
+        <ColumnInfo Id="TableType" Index="-1" />
+        <ColumnInfo Id="Version" Index="-1" />
+        <ColumnInfo Id="VersionAntecedentID" Index="-1" />
+        <ColumnInfo Id="VersionCertainty" Index="-1" />
+        <ColumnInfo Id="VersionDeletedBy" Index="-1" />
+        <ColumnInfo Id="VersionOwnerCompanyID" Index="-1" />
+        <ColumnInfo Id="VersionOwnerContactID" Index="-1" />
+        <ColumnInfo Id="VersionUpdated" Index="-1" />
+        <ColumnInfo Id="VersionUpdatedBy" Index="-1" />
+        <ColumnInfo Id="VersionWorkflowInstanceID" Index="-1" />
+        <ColumnInfo Id="File" PropertyName="FileBytes" Index="1" Caption="File" IsNewNode="True" />
+      </Columns>
+    </ListView>
     <ListView Id="Geophysics_ListView">
       <Columns>
         <ColumnInfo Id="HeaderID" Index="0" />
