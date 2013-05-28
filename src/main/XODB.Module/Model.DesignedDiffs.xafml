@@ -558,6 +558,22 @@
         <ColumnInfo Id="Description" PropertyName="WorkTypeDescription" Caption="Description" IsNewNode="True" />
       </Columns>
     </ListView>
+    <DetailView Id="FileData_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="FileData">
+              <LayoutGroup Id="FileData_col1">
+                <LayoutItem Id="FileBytes" Index="5" ViewItem="FileBytes" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="FileBytes" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="FileData_ListView">
       <Columns>
         <ColumnInfo Id="FileContent" Index="-1" />

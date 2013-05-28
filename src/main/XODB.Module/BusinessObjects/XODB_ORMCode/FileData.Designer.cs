@@ -70,12 +70,13 @@ namespace XODB.Module.BusinessObjects.XODB
             get { return fAuthor; }
             set { SetPropertyValue<string>("Author", ref fAuthor, value); }
         }
-        byte[] fFileBytes;
+        System.Drawing.Image fFileBytes;
         [Size(SizeAttribute.Unlimited)]
-        public byte[] FileBytes
+        [ValueConverter(typeof(DevExpress.Xpo.Metadata.ImageValueConverter))]
+        public System.Drawing.Image FileBytes
         {
             get { return fFileBytes; }
-            set { SetPropertyValue<byte[]>("FileBytes", ref fFileBytes, value); }
+            set { SetPropertyValue<System.Drawing.Image>("FileBytes", ref fFileBytes, value); }
         }
         string fFileContent;
         [Size(SizeAttribute.Unlimited)]

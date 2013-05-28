@@ -8117,7 +8117,7 @@
             <field Id="deb7a54c-bba6-4616-8503-34b490201a0d" name="Author" persistent="Author" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="50" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="8d92191f-74d0-46ad-8c2f-faa5fe887fdc">
-            <field Id="46aaea67-d525-40e5-8530-bb890c3e4e1f" name="FileBytes" columnType="ByteArray" persistent="FileBytes" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+            <field Id="46aaea67-d525-40e5-8530-bb890c3e4e1f" name="FileBytes" columnType="ByteArray" persistent="FileBytes" valueConverter="ImageValueConverter" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="25cde0de-5db7-43e9-884f-591c7a9616c6">
             <field Id="a88332b9-e4f4-4a81-bd29-08c130360e33" name="FileContent" persistent="FileContent" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />

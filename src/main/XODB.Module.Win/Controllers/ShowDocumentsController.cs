@@ -16,18 +16,25 @@ using DevExpress.ExpressApp.Actions;
 using DevExpress.Persistent.Base;
 using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
-
+using XODB.Module.BusinessObjects.XODB;
+using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.Actions;
+using DevExpress.Persistent.Base;
+using DevExpress.ExpressApp.SystemModule;
+//using DevExpress.Persistent.BaseImpl;
 namespace XODB.Module.Win.Controllers
 {
 
     public partial class ShowDocumentsController : ViewController {
+
         public ShowDocumentsController() {
-            //ParametrizedAction action = new ParametrizedAction(
             PopupWindowShowAction showDocumentsAction = new PopupWindowShowAction(this, "Show Documents", "View");
+            showDocumentsAction.ImageName = "BO_Folder";
             showDocumentsAction.CustomizePopupWindowParams += new CustomizePopupWindowParamsEventHandler(showDocumentsAction_CustomizePopupWindowParams);
             TargetViewType = ViewType.ListView;
             TargetObjectType = typeof(object);
         }
+
 
         void showDocumentsAction_CustomizePopupWindowParams(object sender, CustomizePopupWindowParamsEventArgs e) {
 
@@ -38,7 +45,7 @@ namespace XODB.Module.Win.Controllers
                 var table = o.ClassInfo.TableName;
 
                 IObjectSpace objectSpace = Application.CreateObjectSpace();
-                CollectionSource collectionSource = new CollectionSource(objectSpace, typeof(XODB.Module.BusinessObjects.XODB.FileData));
+                CollectionSource collectionSource = new CollectionSource(objectSpace, typeof(FileData));
                 CriteriaOperator c1 = new BinaryOperator(
                     new OperandProperty("TableType"), table,
                     BinaryOperatorType.Equal
@@ -54,9 +61,9 @@ namespace XODB.Module.Win.Controllers
                 //{
                 //    ((XPBaseCollection)collectionSource.Collection).LoadingEnabled = false;
                 //}
-                ListView view = Application.CreateListView(Application.GetListViewId(typeof(XODB.Module.BusinessObjects.XODB.FileData)), collectionSource, false);
+                ListView view = Application.CreateListView(Application.GetListViewId(typeof(FileData)), collectionSource, false);
                 view.Editor.AllowEdit = true;
-                this.Actions.Clear();
+                view.AllowNew.Clear();                
                 e.View = view;
                 e.DialogController.SaveOnAccept = false;
             }
