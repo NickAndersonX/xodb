@@ -28,6 +28,7 @@ namespace XODB.Controllers {
         public IOrchardServices Services { get; set; }
         public IBlockModelService BlockModelService { get; set; }
         public IAssayService AssayService { get; set; }
+        public IGeophysicsService GeophysicsService { get; set; }
         public IProjectsService ProjectService { get; set; }
         public IParametersService ParameterService { get; set; }
         public IUsersService UserService { get; set; }
@@ -41,6 +42,7 @@ namespace XODB.Controllers {
             IOrchardServices services, 
             IBlockModelService blockModelService, 
             IAssayService assayService,
+            IGeophysicsService geophysicsService,
             IProjectsService projectService, 
             IParametersService parameterService,
             IUsersService userService,
@@ -51,6 +53,7 @@ namespace XODB.Controllers {
             UserService = userService;
             BlockModelService = blockModelService;
             AssayService = assayService;
+            GeophysicsService = geophysicsService;
             ParameterService = parameterService;
             ProjectService = projectService;
             PrivateService = privateService;
@@ -247,6 +250,34 @@ namespace XODB.Controllers {
             m.Report = r.Report;
             //m.ReportID = r.ReportID;
             m.ParametersView  = r.ParametersView;
+            m.ReportName = r.ReportName;
+            m.SerializedChild = r.SerializedChild;
+            m.FilterString = r.FilterString;
+            return new XODB.Handlers.FileGeneratingResult(string.Format("{0}-{1}-{2}.csv", m.Project, m.ProjectID, DateHelper.NowInOnlineFormat).Trim(), "text/csv", stream => m.Report.ExportToCsv(stream));
+        }
+
+        [HttpGet]
+        public ActionResult ReportGeophysics()
+        {
+            var model = new GeophysicsReportViewModel
+            {
+                Report = AllReports.GetReport(AllReports.ReportType.GeophysicsReport),
+                Projects = ProjectService.GetProjectList()
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult ReportGeophysics(GeophysicsReportViewModel m)
+        {
+            if (!ModelState.IsValid)
+                return ReportGeophysics();
+            m.ReportID = (uint)AllReports.ReportType.GeophysicsReport;
+            m.ReportExecutedByUserName = Services.WorkContext.CurrentUser.UserName;
+            IReport r = GeophysicsService.ReportGeophysics(m);
+            m.Report = r.Report;
+            //m.ReportID = r.ReportID;
+            m.ParametersView = r.ParametersView;
             m.ReportName = r.ReportName;
             m.SerializedChild = r.SerializedChild;
             m.FilterString = r.FilterString;

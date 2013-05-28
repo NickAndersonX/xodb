@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Assays">
+  <DataContextMoniker Name="/GeophysicsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="12848499-2001-4239-8f4d-be44c52fe957" absoluteBounds="0.75, 1, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/GeophysicsDataContext/X_Geophysics" />
+      <nestedChildShapes>
+        <elementListCompartment Id="859ce561-9b74-4f1f-ac78-627e23a6db29" absoluteBounds="0.765, 1.46, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf2af77b-7fe2-4853-b520-27bf25020688" absoluteBounds="3.5, 1.125, 2, 4.2708154296874987">
+      <DataClassMoniker Name="/GeophysicsDataContext/X_GeophysicsMetadata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="022dbde0-6b9b-4d02-b234-f61acf7bcddf" absoluteBounds="3.515, 1.585, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="32c4c013-e7d4-4888-a633-cb8f11307653" absoluteBounds="6.25, 1.5, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/GeophysicsDataContext/X_GeophysicsData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="378398d3-751b-4cb0-8b5c-20ad0b51579e" absoluteBounds="6.265, 1.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.26040771484375); (3.5 : 3.26040771484375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GeophysicsDataContext/X_Geophysics/X_Geophysic_X_GeophysicsMetadata" />
+      <nodes>
+        <classShapeMoniker Id="12848499-2001-4239-8f4d-be44c52fe957" />
+        <classShapeMoniker Id="bf2af77b-7fe2-4853-b520-27bf25020688" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.25080485026042); (6.25 : 3.25080485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GeophysicsDataContext/X_GeophysicsMetadata/X_GeophysicsMetadata_X_GeophysicsData" />
+      <nodes>
+        <classShapeMoniker Id="bf2af77b-7fe2-4853-b520-27bf25020688" />
+        <classShapeMoniker Id="32c4c013-e7d4-4888-a633-cb8f11307653" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

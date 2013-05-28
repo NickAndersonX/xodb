@@ -18,7 +18,8 @@ namespace XODB.Reports
         public enum ReportType : uint
         {
              CompareModel = 0,
-             AssayReport = 1
+             AssayReport = 1,
+             GeophysicsReport = 2
         }
 
         static readonly Dictionary<ReportType, ReportHelper.ReportRegistrationItem> reports = new Dictionary<ReportType, ReportHelper.ReportRegistrationItem> {
@@ -30,6 +31,11 @@ namespace XODB.Reports
             {ReportType.AssayReport, new ReportHelper.ReportRegistrationItem() {
                 ReportBuilder = (r) => new AssaysReport(new AssaysReport.DataProvider(r)) { DataAdapter = null },
                 ParametersView = "AssayReportParametersPartial"
+                }
+            },
+            {ReportType.GeophysicsReport, new ReportHelper.ReportRegistrationItem() {
+                ReportBuilder = (r) => new GeophysicsReport(new GeophysicsReport.DataProvider(r)) { DataAdapter = null },
+                ParametersView = "GeophysicsReportParametersPartial"
                 }
             }
         };

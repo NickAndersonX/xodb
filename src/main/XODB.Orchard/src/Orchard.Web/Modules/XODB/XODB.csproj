@@ -393,6 +393,11 @@
       <DependentUpon>Assays.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\BlockModelPart.cs" />
+    <Compile Include="Models\Geophysics.designer.cs">
+      <DependentUpon>Geophysics.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="Models\EmailPart.cs" />
     <Compile Include="Models\IMessage.cs" />
     <Compile Include="Models\ShellTask.cs" />
@@ -402,14 +407,23 @@
     <Compile Include="Reports\AssaysReport.Designer.cs">
       <DependentUpon>AssaysReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\GeophysicsReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\GeophysicsReport.Designer.cs">
+      <DependentUpon>GeophysicsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services\AppendModelScheduledTaskHandler.cs" />
     <Compile Include="Services\ConcurrentTaskService.cs" />
     <Compile Include="Services\AssayService.cs" />
+    <Compile Include="Services\IGeophysicsService.cs" />
+    <Compile Include="Services\GeophysicsService.cs" />
     <Compile Include="Services\IAssayService.cs" />
     <Compile Include="Services\IConcurrentTaskService.cs" />
     <Compile Include="Services\EmailScheduledTaskHandler.cs" />
     <Compile Include="Services\ProcessModelScheduledTaskHandler.cs" />
     <Compile Include="ViewModels\AssayReportViewModel.cs" />
+    <Compile Include="ViewModels\GeophysicsReportViewModel.cs" />
     <Compile Include="XODBModule.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -516,9 +530,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Models\Geophysics.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Geophysics.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Models\Projects.dbml.layout">
       <DependentUpon>Projects.dbml</DependentUpon>
     </None>
+    <Content Include="Views\User\ReportGeophysics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Models\Models.dbml.layout">
@@ -531,6 +551,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Models\Geophysics.dbml.layout">
+      <DependentUpon>Geophysics.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Reports\GeophysicsReport.resx">
+      <DependentUpon>GeophysicsReport.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Models\Assays.dbml.layout">
       <DependentUpon>Assays.dbml</DependentUpon>
     </None>
