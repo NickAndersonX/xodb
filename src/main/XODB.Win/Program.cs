@@ -38,6 +38,12 @@ namespace XODB.Win
             try
             {
                 winApplication.Setup();
+                if (System.Diagnostics.Debugger.IsAttached || System.Deployment.Application.ApplicationDeployment.CurrentDeployment.IsFirstRun)
+                {
+
+                    var f = new XODB.Module.Win.Controllers.UpdateConfig();
+                    //f.ShowDialog();
+                }
                 winApplication.Start();
             }
             catch (Exception e)

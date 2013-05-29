@@ -113,6 +113,12 @@
     <Compile Include="Controllers\ShowDocumentsController.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controllers\UpdateConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controllers\UpdateConfig.Designer.cs">
+      <DependentUpon>UpdateConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editors\CustomFileOperationEventArgs.cs" />
     <Compile Include="Editors\DocGridListEditor.cs" />
     <Compile Include="Editors\FileDataEdit.cs">
@@ -138,6 +144,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\UpdateConfig.resx">
+      <DependentUpon>UpdateConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="WinModule.resx">
