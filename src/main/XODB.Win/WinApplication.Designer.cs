@@ -40,6 +40,7 @@ namespace XODB.Win
             this.validationModule1 = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.module3 = new XODB.Module.XODBModule();
             this.module4 = new XODB.Module.Win.XODBWindowsFormsModule();
+            this.fileAttachmentsWindowsFormsModule1 = new DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // sqlConnection1
@@ -81,6 +82,7 @@ namespace XODB.Win
             this.Modules.Add(this.reportsWindowsFormsModule1);
             this.Modules.Add(this.validationModule1);
             this.Modules.Add(this.validationWindowsFormsModule1);
+            this.Modules.Add(this.fileAttachmentsWindowsFormsModule1);
             this.Security = this.securityStrategyComplex1;
             this.TablePrefixes = "";
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.XODBWindowsFormsApplication_DatabaseVersionMismatch);
@@ -103,5 +105,6 @@ namespace XODB.Win
         private DevExpress.ExpressApp.Reports.ReportsModule reportsModule1;
         private DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule validationWindowsFormsModule1;
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule1;
+        private DevExpress.ExpressApp.FileAttachments.Win.FileAttachmentsWindowsFormsModule fileAttachmentsWindowsFormsModule1;
     }
 }

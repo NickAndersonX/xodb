@@ -1,2 +1,14 @@
-﻿<?xml version="1.0" ?>
-<Application />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="XODB.Module.BusinessObjects.XODB.FileData">
+      <OwnMembers>
+        <Member Name="FileBytes" Type="XODB.Module.BusinessObjects.XODB.File" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="12.1.8.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="12.1.8.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>

@@ -38,6 +38,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.ExpressApp.FileAttachment.Win.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v12.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -112,8 +113,16 @@
     <Compile Include="Controllers\ShowDocumentsController.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Editors\CustomFileOperationEventArgs.cs" />
     <Compile Include="Editors\DocGridListEditor.cs" />
+    <Compile Include="Editors\FileDataEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\FileEditor.cs" />
     <Compile Include="Editors\GeoDecimalEditor.cs" />
+    <Compile Include="Editors\RepositoryFileEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GridControlViewController.cs">
       <SubType>Component</SubType>
     </Compile>
