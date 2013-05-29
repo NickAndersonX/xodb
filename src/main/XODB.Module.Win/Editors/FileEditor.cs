@@ -15,8 +15,6 @@ using DevExpress.XtraEditors.Repository;
 using DevExpress.Data;
 using DevExpress.ExpressApp;
 
-//using DevExpress.ExpressApp.FileAttachments.Win;
-
 namespace XODB.Module.Win.Editors
 {
     public class CreateCustomFileDataObjectEventArgs : EventArgs

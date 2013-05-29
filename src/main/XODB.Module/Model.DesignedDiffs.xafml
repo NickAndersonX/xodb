@@ -558,12 +558,137 @@
         <ColumnInfo Id="Description" PropertyName="WorkTypeDescription" Caption="Description" IsNewNode="True" />
       </Columns>
     </ListView>
+    <DetailView Id="FileData_DetailView">
+      <Items>
+        <PropertyEditor Id="TableType" AllowEdit="False" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="FileData">
+              <LayoutGroup Id="FileData_col1">
+                <LayoutItem Id="FilePreview" Index="-1" Removed="True" />
+                <LayoutItem Id="ParentFileID" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Removed="True">
+            <LayoutGroup Id="Contracts" Removed="True" />
+            <LayoutGroup Id="DictionaryAdjectives" Removed="True" />
+            <LayoutGroup Id="DictionaryAlterations" Removed="True" />
+            <LayoutGroup Id="DictionaryAssayMethods" Removed="True" />
+            <LayoutGroup Id="DictionaryAssayStandards" Removed="True" />
+            <LayoutGroup Id="DictionaryAssayTests" Removed="True" />
+            <LayoutGroup Id="DictionaryAssayTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryBasalContacts" Removed="True" />
+            <LayoutGroup Id="DictionaryBedSpacings" Removed="True" />
+            <LayoutGroup Id="DictionaryCharacteristics" Removed="True" />
+            <LayoutGroup Id="DictionaryCharacteristicTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryColours" Removed="True" />
+            <LayoutGroup Id="DictionaryCommodities" Removed="True" />
+            <LayoutGroup Id="DictionaryContractConditionTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryCoreStates" Removed="True" />
+            <LayoutGroup Id="DictionaryCountries" Removed="True" />
+            <LayoutGroup Id="DictionaryCountryStates" Removed="True" />
+            <LayoutGroup Id="DictionaryDataStatusCollection" Removed="True" />
+            <LayoutGroup Id="DictionaryDefectCompletenessCollection" Removed="True" />
+            <LayoutGroup Id="DictionaryDefectContinuities" Removed="True" />
+            <LayoutGroup Id="DictionaryDefectSpacings" Removed="True" />
+            <LayoutGroup Id="DictionaryDefectTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryDesurveyAlgorithmTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryDimensions" Removed="True" />
+            <LayoutGroup Id="DictionaryDipOrientationMethods" Removed="True" />
+            <LayoutGroup Id="DictionaryDomainAliasCollection" Removed="True" />
+            <LayoutGroup Id="DictionaryDomains" Removed="True" />
+            <LayoutGroup Id="DictionaryDrillBitTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryDrillCasingTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryDrillFluids" Removed="True" />
+            <LayoutGroup Id="DictionaryDrillRigTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryDrillSizes" Removed="True" />
+            <LayoutGroup Id="DictionaryEstimatedStrengths" Removed="True" />
+            <LayoutGroup Id="DictionaryFailureModes" Removed="True" />
+            <LayoutGroup Id="DictionaryFlowTestTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryGasDetecteds" Removed="True" />
+            <LayoutGroup Id="DictionaryGeodeticDatums" Removed="True" />
+            <LayoutGroup Id="DictionaryGeophysicalLogTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryGroupMemberships" Removed="True" />
+            <LayoutGroup Id="DictionaryGroups" Removed="True" />
+            <LayoutGroup Id="DictionaryHeightDatums" Removed="True" />
+            <LayoutGroup Id="DictionaryHolePurposes" Removed="True" />
+            <LayoutGroup Id="DictionaryHoleStatusCollection" Removed="True" />
+            <LayoutGroup Id="DictionaryHoleTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryHorizons" Removed="True" />
+            <LayoutGroup Id="DictionaryHues" Removed="True" />
+            <LayoutGroup Id="DictionaryInfillModes" Removed="True" />
+            <LayoutGroup Id="DictionaryInfillTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryIntervalStatusCollection" Removed="True" />
+            <LayoutGroup Id="DictionaryLeaseApplicationTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryLithologyInterrelations" Removed="True" />
+            <LayoutGroup Id="DictionaryLithologyQualifiers" Removed="True" />
+            <LayoutGroup Id="DictionaryLithologyTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryLocationTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryMechanicalStates" Removed="True" />
+            <LayoutGroup Id="DictionaryMineralAbundances" Removed="True" />
+            <LayoutGroup Id="DictionaryMineralAndFossilAbundances" Removed="True" />
+            <LayoutGroup Id="DictionaryMineralAndFossilAssociations" Removed="True" />
+            <LayoutGroup Id="DictionaryMineralAndFossilTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryMineralForms" Removed="True" />
+            <LayoutGroup Id="DictionaryMineralStyles" Removed="True" />
+            <LayoutGroup Id="DictionaryMineralTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryModels" Removed="True" />
+            <LayoutGroup Id="DictionaryModelStatusCollection" Removed="True" />
+            <LayoutGroup Id="DictionaryMoistureSensitivities" Removed="True" />
+            <LayoutGroup Id="DictionaryParts" Removed="True" />
+            <LayoutGroup Id="DictionaryPartStatusCollection" Removed="True" />
+            <LayoutGroup Id="DictionaryPlasticities" Removed="True" />
+            <LayoutGroup Id="DictionaryPlies" Removed="True" />
+            <LayoutGroup Id="DictionaryPlyAliasCollection" Removed="True" />
+            <LayoutGroup Id="DictionaryPointLoadTestTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryPositions" Removed="True" />
+            <LayoutGroup Id="DictionaryProfessions" Removed="True" />
+            <LayoutGroup Id="DictionaryProvinceGroups" Removed="True" />
+            <LayoutGroup Id="DictionaryProvinceTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryRelationTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryRockMassUnitTypes" Removed="True" />
+            <LayoutGroup Id="DictionarySampleCategories" Removed="True" />
+            <LayoutGroup Id="DictionarySampleStates" Removed="True" />
+            <LayoutGroup Id="DictionarySampleTypes" Removed="True" />
+            <LayoutGroup Id="DictionarySeamAliasCollection" Removed="True" />
+            <LayoutGroup Id="DictionarySeams" Removed="True" />
+            <LayoutGroup Id="DictionarySedimentaryFeatures" Removed="True" />
+            <LayoutGroup Id="DictionaryShades" Removed="True" />
+            <LayoutGroup Id="DictionaryShapes" Removed="True" />
+            <LayoutGroup Id="DictionaryStratigraphies" Removed="True" />
+            <LayoutGroup Id="DictionarySurfaceRoughnessCollection" Removed="True" />
+            <LayoutGroup Id="DictionarySurveyAccuracies" Removed="True" />
+            <LayoutGroup Id="DictionaryTextures" Removed="True" />
+            <LayoutGroup Id="DictionaryUnits" Removed="True" />
+            <LayoutGroup Id="DictionaryUnitTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryUsageAuditTypes" Removed="True" />
+            <LayoutGroup Id="DictionaryWeatherings" Removed="True" />
+            <LayoutGroup Id="DictionaryWorkTypeClassCollection" Removed="True" />
+            <LayoutGroup Id="DictionaryWorkTypes" Removed="True" />
+            <LayoutGroup Id="FileBytes" Removed="True" />
+            <LayoutGroup Id="FileDataCollection" Removed="True" />
+            <LayoutGroup Id="GeophysicsCollection" Removed="True" />
+            <LayoutGroup Id="ModelProcedureTasks" Removed="True" />
+            <LayoutGroup Id="Opportunities" Removed="True" />
+            <LayoutGroup Id="ProjectDeliverables" Removed="True" />
+            <LayoutGroup Id="SupplierModels" Removed="True" />
+            <LayoutGroup Id="SupplierParts" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="FileData_ListView">
       <Columns>
+        <ColumnInfo Id="FileBytes" PropertyName="FileBytes" Index="-1" Caption="FileBytes" IsNewNode="True" />
         <ColumnInfo Id="FileContent" Index="-1" />
         <ColumnInfo Id="FileDataID" Index="-1" />
+        <ColumnInfo Id="FileName" Index="-1" />
         <ColumnInfo Id="ParentFileID" Index="-1" />
         <ColumnInfo Id="ReferenceID" Index="-1" />
+        <ColumnInfo Id="Size" Index="-1" />
         <ColumnInfo Id="TableType" Index="-1" />
         <ColumnInfo Id="Version" Index="-1" />
         <ColumnInfo Id="VersionAntecedentID" Index="-1" />
@@ -574,7 +699,6 @@
         <ColumnInfo Id="VersionUpdated" Index="-1" />
         <ColumnInfo Id="VersionUpdatedBy" Index="-1" />
         <ColumnInfo Id="VersionWorkflowInstanceID" Index="-1" />
-        <ColumnInfo Id="File" PropertyName="FileBytes" Index="1" Caption="File" IsNewNode="True" />
       </Columns>
     </ListView>
     <ListView Id="Geophysics_ListView">

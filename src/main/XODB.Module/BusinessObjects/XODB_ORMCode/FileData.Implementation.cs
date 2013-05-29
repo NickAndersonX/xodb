@@ -41,7 +41,7 @@ namespace XODB.Module.BusinessObjects.XODB
         }
     }
 
-    [FileAttachmentAttribute("FileBytes")]
+    [FileAttachmentAttribute("FileInfo")]
     public partial class FileData : IFileData
     {
         File fFile;
@@ -53,6 +53,25 @@ namespace XODB.Module.BusinessObjects.XODB
             get { if (fFile == null) fFile = new File(ref fFileBytes, ref fFileName, this); return fFile; }
             set { if (fFile == null) fFile = value; FileBytes = value.FileBytes; FileName = value.FileName; }
         }
+
+        [Size(SizeAttribute.Unlimited)]
+        [ValueConverter(typeof(ImageValueConverter))]
+        [NonPersistent()]
+        public System.Drawing.Image FilePreview
+        {            
+            get 
+            {
+                if (FileBytes == null)
+                    return null;
+                try
+                {
+                    System.Drawing.ImageConverter cv = new System.Drawing.ImageConverter();
+                    return cv.ConvertFrom(FileBytes) as System.Drawing.Image;
+                }
+                catch { return null; }
+            }
+        }
+
 
         public int Size { get { return File.Length(FileBytes); } }
         public void Clear() { FileBytes = null; }

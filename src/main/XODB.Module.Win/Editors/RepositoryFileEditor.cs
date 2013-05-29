@@ -12,7 +12,6 @@ using System;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Runtime.CompilerServices;
-//using DevExpress.ExpressApp.FileAttachments.Win;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.ExpressApp;
 using System.IO;

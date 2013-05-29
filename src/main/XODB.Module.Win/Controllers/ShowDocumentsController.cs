@@ -63,9 +63,18 @@ namespace XODB.Module.Win.Controllers
                 //}
                 ListView view = Application.CreateListView(Application.GetListViewId(typeof(FileData)), collectionSource, false);
                 view.Editor.AllowEdit = true;
-                view.AllowNew.Clear();                
+                foreach (var k in view.AllowNew.GetKeys())
+                    view.AllowNew[k] = false;
+                foreach (var k in view.AllowDelete.GetKeys())
+                    view.AllowDelete[k] = false;
+                foreach (var k in view.AllowEdit.GetKeys())
+                    view.AllowEdit[k] = false;
+                foreach (var k in e.DialogController.AcceptAction.Enabled.GetKeys())
+                    e.DialogController.AcceptAction.Enabled[k] = false;
+                e.DialogController.AcceptAction.Enabled.SetItemValue("Item.Enabled", false);
                 e.View = view;
                 e.DialogController.SaveOnAccept = false;
+                
             }
             catch (Exception ex)
             { }
