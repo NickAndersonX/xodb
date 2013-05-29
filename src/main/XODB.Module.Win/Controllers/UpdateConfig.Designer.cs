@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateConfig));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnFileUpdate = new DevExpress.XtraEditors.ButtonEdit();
+            this.gcFiles = new DevExpress.XtraGrid.GridControl();
+            this.gvFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.buttonEdit1 = new DevExpress.XtraEditors.ButtonEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -44,11 +44,11 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFileUpdate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -59,9 +59,9 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.buttonEdit1);
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.btnCancel);
+            this.layoutControl1.Controls.Add(this.btnFileUpdate);
+            this.layoutControl1.Controls.Add(this.gcFiles);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -70,6 +70,41 @@
             this.layoutControl1.Size = new System.Drawing.Size(684, 353);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(558, 322);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(117, 22);
+            this.btnCancel.StyleController = this.layoutControl1;
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancel";
+            // 
+            // btnFileUpdate
+            // 
+            this.btnFileUpdate.Location = new System.Drawing.Point(469, 274);
+            this.btnFileUpdate.Name = "btnFileUpdate";
+            this.btnFileUpdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.btnFileUpdate.Size = new System.Drawing.Size(206, 20);
+            this.btnFileUpdate.StyleController = this.layoutControl1;
+            this.btnFileUpdate.TabIndex = 5;
+            // 
+            // gcFiles
+            // 
+            this.gcFiles.Location = new System.Drawing.Point(9, 25);
+            this.gcFiles.MainView = this.gvFiles;
+            this.gcFiles.Name = "gcFiles";
+            this.gcFiles.Size = new System.Drawing.Size(666, 228);
+            this.gcFiles.TabIndex = 4;
+            this.gcFiles.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvFiles});
+            // 
+            // gvFiles
+            // 
+            this.gvFiles.GridControl = this.gcFiles;
+            this.gvFiles.Name = "gvFiles";
+            this.gvFiles.OptionsView.ShowGroupPanel = false;
             // 
             // layoutControlGroup1
             // 
@@ -91,25 +126,9 @@
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(9, 25);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(666, 228);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Control = this.gcFiles;
             this.layoutControlItem1.CustomizationFormText = "Select Old Configuration:";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
@@ -118,19 +137,9 @@
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(120, 13);
             // 
-            // buttonEdit1
-            // 
-            this.buttonEdit1.Location = new System.Drawing.Point(470, 274);
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit1.Size = new System.Drawing.Size(205, 20);
-            this.buttonEdit1.StyleController = this.layoutControl1;
-            this.buttonEdit1.TabIndex = 5;
-            // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.buttonEdit1;
+            this.layoutControlItem2.Control = this.btnFileUpdate;
             this.layoutControlItem2.CustomizationFormText = "Select File: ";
             this.layoutControlItem2.Location = new System.Drawing.Point(337, 265);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -138,18 +147,9 @@
             this.layoutControlItem2.Text = "Select File: ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(120, 13);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(558, 322);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(117, 22);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "Cancel";
-            // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.simpleButton1;
+            this.layoutControlItem3.Control = this.btnCancel;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem3.Location = new System.Drawing.Point(549, 313);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -210,11 +210,11 @@
             this.Text = "Update Config";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnFileUpdate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -229,10 +229,10 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.ButtonEdit btnFileUpdate;
+        private DevExpress.XtraGrid.GridControl gcFiles;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvFiles;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;

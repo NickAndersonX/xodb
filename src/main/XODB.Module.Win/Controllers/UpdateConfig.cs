@@ -15,5 +15,6 @@ namespace XODB.Module.Win.Controllers
         {
             InitializeComponent();
         }
+
     }
 }
