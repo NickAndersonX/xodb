@@ -1,12 +1,13 @@
 using System;
 using System.Configuration;
 using System.Windows.Forms;
-
+using System.IO;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Win;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
+using XODB.Module;
 
 namespace XODB.Win
 {
@@ -38,12 +39,27 @@ namespace XODB.Win
             try
             {
                 winApplication.Setup();
-                if (System.Diagnostics.Debugger.IsAttached || System.Deployment.Application.ApplicationDeployment.CurrentDeployment.IsFirstRun)
+                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed && System.Deployment.Application.ApplicationDeployment.CurrentDeployment.IsFirstRun && System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion != System.Deployment.Application.ApplicationDeployment.CurrentDeployment.UpdatedVersion)
                 {
-
-                    var f = new XODB.Module.Win.Controllers.UpdateConfig();
-                    //f.ShowDialog();
+                    using (var f = new XODB.Module.Win.Controllers.UpdateConfig())
+                    {
+                        f.ShowDialog();
+                    }
                 }
+                if (AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData != null && AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData.Length > 0)
+                {
+                    using (var f = File.Open(AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0], FileMode.Open, FileAccess.Read))
+                    {
+                        using (var z = f.ReadConfigFromPackage())
+                        {
+                            var path = Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf("\\"));
+                            path.WriteUserConfigFile(z);
+                            z.Close();
+                        }
+                        f.Close();
+                    }
+                }
+
                 winApplication.Start();
             }
             catch (Exception e)

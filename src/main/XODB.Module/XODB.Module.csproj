@@ -61,6 +61,9 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\XODB.Orchard\src\Orchard.Web\Modules\XODB\bin\Ionic.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
       <Private>False</Private>
@@ -1007,6 +1010,7 @@
     <Compile Include="BusinessObjects\XODB_ORMCode\WorkflowSchedule.Designer.cs">
       <DependentUpon>WorkflowSchedule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Package.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1020,6 +1024,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="MAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Module.resx">

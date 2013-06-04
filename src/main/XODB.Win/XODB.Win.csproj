@@ -263,6 +263,7 @@
     </None>
     <EmbeddedResource Include="Images\LogoCMYK.ico" />
     <EmbeddedResource Include="Images\LogoCMYK.png" />
+    <Content Include="LogoCMYK.ico" />
     <Content Include="Model.xafml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -685,6 +686,14 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".xodb">
+      <Visible>False</Visible>
+      <Description>XODB Package</Description>
+      <Progid>XODB.xodb</Progid>
+      <DefaultIcon>LogoCMYK.ico</DefaultIcon>
+    </FileAssociation>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
