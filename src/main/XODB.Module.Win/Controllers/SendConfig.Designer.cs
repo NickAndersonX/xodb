@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendConfig));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.btnSend = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtRecipients = new DevExpress.XtraEditors.TextEdit();
+            this.btnSend = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecipients.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecipients.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -59,6 +60,24 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtRecipients
+            // 
+            this.txtRecipients.Location = new System.Drawing.Point(98, 12);
+            this.txtRecipients.Name = "txtRecipients";
+            this.txtRecipients.Size = new System.Drawing.Size(347, 20);
+            this.txtRecipients.StyleController = this.layoutControl1;
+            this.txtRecipients.TabIndex = 5;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(298, 47);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(147, 22);
+            this.btnSend.StyleController = this.layoutControl1;
+            this.btnSend.TabIndex = 4;
+            this.btnSend.Text = "Send";
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
@@ -75,16 +94,6 @@
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // btnSend
-            // 
-            this.btnSend.Location = new System.Drawing.Point(298, 47);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(147, 22);
-            this.btnSend.StyleController = this.layoutControl1;
-            this.btnSend.TabIndex = 4;
-            this.btnSend.Text = "Send";
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.btnSend;
@@ -96,14 +105,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // txtRecipients
-            // 
-            this.txtRecipients.Location = new System.Drawing.Point(99, 12);
-            this.txtRecipients.Name = "txtRecipients";
-            this.txtRecipients.Size = new System.Drawing.Size(346, 20);
-            this.txtRecipients.StyleController = this.layoutControl1;
-            this.txtRecipients.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
@@ -141,13 +142,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 81);
             this.Controls.Add(this.layoutControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SendConfig";
             this.Text = "Share My Configuration";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtRecipients.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRecipients.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
