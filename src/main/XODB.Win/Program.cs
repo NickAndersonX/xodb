@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Configuration;
 using System.Windows.Forms;
 using System.IO;
@@ -46,8 +47,17 @@ namespace XODB.Win
                         f.ShowDialog();
                     }
                 }
-                if (AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData != null && AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData.Length > 0)
+                if (AppDomain.CurrentDomain.SetupInformation.ActivationArguments != null && AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData != null && AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData.Length > 0)
                 {
+                    //Kill other processes
+                    var p = Process.GetCurrentProcess();
+                    Process[] ps = Process.GetProcessesByName(p.ProcessName);
+                    foreach (var e in ps)
+                    {
+                        if (e.Id != p.Id)
+                            e.Kill();
+                    }
+                    //Now update file and start
                     using (var f = File.Open(AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0], FileMode.Open, FileAccess.Read))
                     {
                         using (var z = f.ReadConfigFromPackage())
