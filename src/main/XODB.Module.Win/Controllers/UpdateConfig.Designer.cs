@@ -39,6 +39,10 @@
             this.btnFileUpdate = new DevExpress.XtraEditors.ButtonEdit();
             this.gcFiles = new DevExpress.XtraGrid.GridControl();
             this.gvFiles = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -48,15 +52,12 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUpdate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnFileUpdate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFiles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -66,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -138,7 +138,59 @@
             this.gvFiles.GridControl = this.gcFiles;
             this.gvFiles.Name = "gvFiles";
             this.gvFiles.OptionsView.ShowGroupPanel = false;
+            this.gvFiles.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gvFiles.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gvFiles_CustomUnboundColumnData);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "File";
+            this.gridColumn1.FieldName = "item1";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 470;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Modified";
+            this.gridColumn2.DisplayFormat.FormatString = "s";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn2.FieldName = "item2";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
+            this.gridColumn2.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 178;
+            // 
+            // colUpdate
+            // 
+            this.colUpdate.Caption = "#";
+            this.colUpdate.ColumnEdit = this.repositoryItemButtonEdit1;
+            this.colUpdate.FieldName = "#";
+            this.colUpdate.Name = "colUpdate";
+            this.colUpdate.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.colUpdate.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.colUpdate.Visible = true;
+            this.colUpdate.VisibleIndex = 2;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            toolTipTitleItem1.Text = "Update Config File";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Use this previous configuration file to replace the current one.";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "Update Config", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true)});
+            this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.Tag = "<Null>";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
             // 
             // layoutControlGroup1
             // 
@@ -247,53 +299,6 @@
             this.layoutControlItem4.TextToControlDistance = 0;
             this.layoutControlItem4.TextVisible = false;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "File";
-            this.gridColumn1.FieldName = "item1";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 470;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Modified";
-            this.gridColumn2.FieldName = "item2";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 178;
-            // 
-            // colUpdate
-            // 
-            this.colUpdate.Caption = "#";
-            this.colUpdate.ColumnEdit = this.repositoryItemButtonEdit1;
-            this.colUpdate.FieldName = "#";
-            this.colUpdate.Name = "colUpdate";
-            this.colUpdate.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.colUpdate.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.colUpdate.Visible = true;
-            this.colUpdate.VisibleIndex = 2;
-            // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            toolTipTitleItem1.Text = "Update Config File";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Use this previous configuration file to replace the current one.";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "Update Config", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true)});
-            this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.Tag = "<Null>";
-            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEdit1.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEdit1_ButtonClick);
-            // 
             // UpdateConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,6 +313,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnFileUpdate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvFiles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -317,7 +323,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }

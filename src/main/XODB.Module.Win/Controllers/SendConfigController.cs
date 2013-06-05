@@ -40,7 +40,7 @@ namespace XODB.Module.Win.Controllers
 
         void myAction_Execute(object sender, DevExpress.ExpressApp.Actions.SimpleActionExecuteEventArgs e)
         {
-            var f = new XODB.Module.Win.Controllers.SendConfig();
+            var f = new XODB.Module.Win.Controllers.SendConfig(Application);
             f.ShowDialog();
         }
     }

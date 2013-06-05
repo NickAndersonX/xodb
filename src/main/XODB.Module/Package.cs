@@ -69,7 +69,10 @@ namespace XODB.Module
             var tmpFile = Path.GetTempFileName() + ".xodb";
             using (ZipFile zip = new ZipFile())
             {
-                zip.AddFile(Path.Combine(xodbPath, Package.CONFIG_USER_FILE));
+                var p = Path.Combine(xodbPath, Package.CONFIG_USER_FILE);
+                if (!File.Exists(p))
+                    return null;
+                zip.AddFile(p);
                 zip.Save(tmpFile);
             }
             return tmpFile;
@@ -80,7 +83,10 @@ namespace XODB.Module
             if (emailRecipients == null || emailRecipients.Length < 1)
                 return;
             MAPI mapi = new MAPI();
-            mapi.AddAttachment(xodbPath.CreatePackageFromUserConfigFile());
+            var f = xodbPath.CreatePackageFromUserConfigFile();
+            if (f == null)
+                return;
+            mapi.AddAttachment(f);
             foreach (var r in emailRecipients)
                 mapi.AddRecipientTo(r);
             mapi.SendMailPopup("Updated XODB Configuration File", "Please install the attached configuration file for XODB.");

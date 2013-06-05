@@ -9,6 +9,7 @@ using DevExpress.ExpressApp.Win;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using XODB.Module;
+using System.Linq;
 
 namespace XODB.Win
 {
@@ -40,7 +41,7 @@ namespace XODB.Win
             try
             {
                 winApplication.Setup();
-                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed && System.Deployment.Application.ApplicationDeployment.CurrentDeployment.IsFirstRun && System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion != System.Deployment.Application.ApplicationDeployment.CurrentDeployment.UpdatedVersion)
+                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed && System.Deployment.Application.ApplicationDeployment.CurrentDeployment.IsFirstRun)
                 {
                     using (var f = new XODB.Module.Win.Controllers.UpdateConfig())
                     {
@@ -57,19 +58,23 @@ namespace XODB.Win
                         if (e.Id != p.Id)
                             e.Kill();
                     }
-                    //Now update file and start
-                    using (var f = File.Open(AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0], FileMode.Open, FileAccess.Read))
+                    var uriString = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData.FirstOrDefault(f=>f.EndsWith(Package.FILE_EXTENSION));
+                    if (Uri.IsWellFormedUriString(uriString, UriKind.Absolute))
                     {
-                        using (var z = f.ReadConfigFromPackage())
+                        Uri uri = new Uri(uriString);
+                        //Now update file and start
+                        using (var f = File.Open(uri.LocalPath, FileMode.Open, FileAccess.Read))
                         {
-                            var path = Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf("\\"));
-                            path.WriteUserConfigFile(z);
-                            z.Close();
+                            using (var z = f.ReadConfigFromPackage())
+                            {
+                                var path = Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf("\\"));
+                                path.WriteUserConfigFile(z);
+                                z.Close();
+                            }
+                            f.Close();
                         }
-                        f.Close();
                     }
-                }
-
+                }                
                 winApplication.Start();
             }
             catch (Exception e)
