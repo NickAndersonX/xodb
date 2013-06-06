@@ -61,6 +61,35 @@ namespace XODB.Module.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BACKUP DATABASE [XODB] TO  DISK = N&apos;{0}&apos; WITH NOFORMAT, NOINIT,  NAME = N&apos;XODB-Full Database Backup&apos;, SKIP, NOREWIND, NOUNLOAD,  STATS = 10
+        ///GO.
+        /// </summary>
+        internal static string XODBBackup {
+            get {
+                return ResourceManager.GetString("XODBBackup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to USE master
+        /// GO
+        ///
+        /// ALTER DATABASE XODB
+        /// SET OFFLINE WITH ROLLBACK IMMEDIATE
+        /// ALTER DATABASE XODB
+        /// SET ONLINE
+        /// GO
+        ///
+        /// USE XODB
+        /// GO.
+        /// </summary>
+        internal static string XODBClose {
+            get {
+                return ResourceManager.GetString("XODBClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to --This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
         ///-- =============================================
         ///-- Author:		Andrew Grosser
@@ -103,11 +132,19 @@ namespace XODB.Module.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 
-        ///EXECUTE sp_rename N&apos;dbo.X_BlockModelBlock.LegthX&apos;, N&apos;LengthX&apos;, &apos;COLUMN&apos; 
+        ///   Looks up a localized string similar to --  
+        ///-- Script to Create xodb_user1 in AU-BNE-SQ-007.XODBLOCAL 
+        ///-- Generated Wednesday, June 5, 2013, at 03:04 PM 
+        ///--  
+        ///-- Please backup AU-BNE-SQ-007.XODBLOCAL before executing this script
+        ///--  
+        ///-- ** Script Begin **
+        ///PRINT &apos;Creating xodb_user1 User&apos;
         ///GO
         ///
-        ///.
+        ///if not exists (select * from sys.server_principals where name = N&apos;xodb_user1&apos;)
+        ///   /* For security reasons the login is created with a random password. */
+        ///   CREATE LOGIN [xodb_user1] WITH PASSWORD = N&apos;-QTD.C!$M#&apos;, DEFAULT_LANGUAGE = [us_english], [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string XODBSchema3 {
             get {

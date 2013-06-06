@@ -1019,12 +1019,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
+    <Compile Include="MAPI.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="MAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Module.resx">
@@ -1034,6 +1034,7 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
@@ -1061,6 +1062,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FunctionalTests\Config.xml" />
+    <Content Include="Resources\close.sql" />
+    <Content Include="Resources\backup.sql" />
     <None Include="UnusableNodes.xml">
       <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
       <SubType>Designer</SubType>
