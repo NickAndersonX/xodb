@@ -3,8 +3,9 @@
         xmlns:local="clr-namespace:XODB.Import.Client.UICommands;assembly="
         x:Name="myWin"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:UI="clr-namespace:XODB.Import.Client.UI" xmlns:UI1="clr-namespace:FileHandler.UI" x:Class="XODB.Import.Client.MainWindow"
-        Title="XODB Import - Xstract Mining Consultants" Height="1000" Width="1000" Icon="images/xicon4.ico" Loaded="myWin_Loaded">
+        xmlns:UI="clr-namespace:XODB.Import.Client.UI" 
+        x:Class="XODB.Import.Client.MainWindow"
+        Title="XODB Importer - Xstract Mining Consultants" Height="1000" Width="1000" Icon="images/xicon4.ico" Loaded="myWin_Loaded">
 
     <Window.CommandBindings>
         
@@ -14,7 +15,8 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="933*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
@@ -26,22 +28,22 @@
         </Grid.RowDefinitions>
 
 
-        <Ribbon Margin="0,0,0,0" IsDropDownOpen="False" WindowIconVisibility="Hidden" Name="AppRibbon"  SelectionChanged="RibbonSelectionChanged" RequestBringIntoView="AppRibbon_RequestBringIntoView" MouseUp="AppRibbon_MouseUp" >
+        <Ribbon Margin="0,0,0,0" IsDropDownOpen="False" WindowIconVisibility="Hidden" Name="AppRibbon"  SelectionChanged="RibbonSelectionChanged" RequestBringIntoView="AppRibbon_RequestBringIntoView" MouseUp="AppRibbon_MouseUp" Grid.ColumnSpan="2" >
             <Ribbon.ApplicationMenu>
-                <RibbonApplicationMenu SmallImageSource="/ImportCSV;component/images/copy_32.png">
+                <RibbonApplicationMenu SmallImageSource="/XODB Importer;component/images/copy_32.png">
                     <RibbonApplicationMenuItem Header="Help"
                                               x:Name="MenuItemHelp"
-                                              ImageSource="/ImportCSV;component/images/open_32.png" Click="MenuItemHelp_Click"/>
+                                              ImageSource="/XODB Importer;component/images/open_32.png" Click="MenuItemHelp_Click"/>
                     <RibbonApplicationMenuItem Header="About"
                                               x:Name="MenuItemAbout"
-                                              ImageSource="/ImportCSV;component/images/save_32.png" Click="MenuItemAbout_Click"/>
+                                              ImageSource="/XODB Importer;component/images/save_32.png" Click="MenuItemAbout_Click"/>
 
                     <RibbonApplicationMenuItem Header="Clean"
                                               x:Name="MenuItemClean"
-                                              ImageSource="/ImportCSV;component/images/save_32.png" Click="MenuItemClean_Click"/>
+                                              ImageSource="/XODB Importer;component/images/save_32.png" Click="MenuItemClean_Click"/>
                     <RibbonApplicationMenuItem Header="ResetMapping"
                                               x:Name="MenuItemResetMapping"
-                                              ImageSource="/ImportCSV;component/images/save_32.png" Click="MenuItemResetMapping_Click"/>
+                                              ImageSource="/XODB Importer;component/images/save_32.png" Click="MenuItemResetMapping_Click"/>
                    
 
                 </RibbonApplicationMenu>
@@ -50,41 +52,41 @@
 
             <RibbonTab Header="Collar" Name="RibbonTabCollarFile">
                 <RibbonGroup Header="Data file">
-                    <RibbonButton x:Name="ButtonOpenCollar" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenCollar" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Format map">
-                    <RibbonButton x:Name="ButtonOpenCollarFormat" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
-                    <RibbonButton x:Name="ButtonSaveCollarFormat"  Label="Save" LargeImageSource="/ImportCSV;component/images/save_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenCollarFormat" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonSaveCollarFormat"  Label="Save" LargeImageSource="/XODB Importer;component/images/save_32.png"/>
                     <RibbonButton/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Tools">
 
-                    <RibbonButton x:Name="ButtonImportCollar" Label="Import" LargeImageSource="/ImportCSV;component/images/refresh_32.png"/>
+                    <RibbonButton x:Name="ButtonImportCollar" Label="Import" LargeImageSource="/XODB Importer;component/images/refresh_32.png"/>
                     
                 </RibbonGroup>
 
                 <RibbonGroup Header="Viewer">
-                    <RibbonButton x:Name="ButtonCollarPreview" Label="Project holes" LargeImageSource="/ImportCSV;component/images/Search_32x32.png"/>
+                    <RibbonButton x:Name="ButtonCollarPreview" Label="Project holes" LargeImageSource="/XODB Importer;component/images/Search_32x32.png"/>
                 </RibbonGroup>
 
             </RibbonTab>
 
             <RibbonTab Header="Survey" Name="RibbonTabSurveyFile">
                 <RibbonGroup Header="Data file">
-                    <RibbonButton x:Name="ButtonOpenSurvey" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenSurvey" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Format map">
-                    <RibbonButton x:Name="ButtonOpenSurveyFormat" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
-                    <RibbonButton x:Name="ButtonSaveSurveyFormat"  Label="Save" LargeImageSource="/ImportCSV;component/images/save_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenSurveyFormat" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonSaveSurveyFormat"  Label="Save" LargeImageSource="/XODB Importer;component/images/save_32.png"/>
                     <RibbonButton/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Tools">
 
-                    <RibbonButton x:Name="ButtonImportSurvey" Label="Import" LargeImageSource="/ImportCSV;component/images/refresh_32.png"/>
+                    <RibbonButton x:Name="ButtonImportSurvey" Label="Import" LargeImageSource="/XODB Importer;component/images/refresh_32.png"/>
 
                 </RibbonGroup>
 
@@ -92,18 +94,18 @@
 
             <RibbonTab Header="Assay" Name="RibbonTabAssayFile" Visibility="Visible">
                 <RibbonGroup Header="Data file">
-                    <RibbonButton x:Name="ButtonOpenAssay" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenAssay" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Format map">
-                    <RibbonButton x:Name="ButtonOpenAssayFormat" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
-                    <RibbonButton x:Name="ButtonSaveAssayFormat"  Label="Save" LargeImageSource="/ImportCSV;component/images/save_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenAssayFormat" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonSaveAssayFormat"  Label="Save" LargeImageSource="/XODB Importer;component/images/save_32.png"/>
                     <RibbonButton/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Tools">
 
-                    <RibbonButton x:Name="ButtonImportAssay" Label="Import" LargeImageSource="/ImportCSV;component/images/refresh_32.png"/>
+                    <RibbonButton x:Name="ButtonImportAssay" Label="Import" LargeImageSource="/XODB Importer;component/images/refresh_32.png"/>
 
                 </RibbonGroup>
 
@@ -111,37 +113,47 @@
 
             <RibbonTab Header="Lithology" Name="RibbonTabLithoFile" Visibility="Visible">
                 <RibbonGroup Header="Data file">
-                    <RibbonButton x:Name="ButtonOpenLitho" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenLitho" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Format map">
-                    <RibbonButton x:Name="ButtonOpenLithoFormat" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
-                    <RibbonButton x:Name="ButtonSaveLithoFormat"  Label="Save" LargeImageSource="/ImportCSV;component/images/save_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenLithoFormat" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonSaveLithoFormat"  Label="Save" LargeImageSource="/XODB Importer;component/images/save_32.png"/>
                     <RibbonButton/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Tools">
 
-                    <RibbonButton x:Name="ButtonImportLitho" Label="Import" LargeImageSource="/ImportCSV;component/images/refresh_32.png"/>
+                    <RibbonButton x:Name="ButtonImportLitho" Label="Import" LargeImageSource="/XODB Importer;component/images/refresh_32.png"/>
 
                 </RibbonGroup>
 
             </RibbonTab>
 
-            <RibbonTab Header="Geophysics (LAS)" Name="RibbonTabLASFile" Visibility="Visible">
+            <RibbonTab Header="Geophysics (LAS)" Name="RibbonTabLASFile" Visibility="Hidden">
                 <RibbonGroup Header="Data file">
-                    <RibbonButton x:Name="ButtonOpenLAS" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenLAS" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Format map">
-                    <RibbonButton x:Name="ButtonOpenLASFormat" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
-                    <RibbonButton x:Name="ButtonSaveLASFormat"  Label="Save" LargeImageSource="/ImportCSV;component/images/save_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenLASFormat" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonSaveLASFormat"  Label="Save" LargeImageSource="/XODB Importer;component/images/save_32.png"/>
                     <RibbonButton/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Tools">
 
-                    <RibbonButton x:Name="ButtonImportLAS" Label="Import" LargeImageSource="/ImportCSV;component/images/refresh_32.png"/>
+                    <RibbonButton x:Name="ButtonImportLAS" Label="Import" LargeImageSource="/XODB Importer;component/images/refresh_32.png"/>
+
+                </RibbonGroup>
+
+            </RibbonTab>
+
+            <RibbonTab Header="LAS batch import" Name="RibbonTabMultiLAS" Visibility="Visible">
+                
+                <RibbonGroup Header="Tools">
+
+                    <RibbonButton x:Name="ButtonImportBatchLAS" Label="Import" LargeImageSource="/XODB Importer;component/images/refresh_32.png"/>
 
                 </RibbonGroup>
 
@@ -149,18 +161,18 @@
             
             <RibbonTab Header="Block model" Name="RibbonTabBlockModel" RequestBringIntoView="RibbonTabBlockModel_RequestBringIntoView"  >
                 <RibbonGroup Header="Data file">
-                    <RibbonButton x:Name="ButtonOpenBM" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenBM" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Format map">
-                    <RibbonButton x:Name="ButtonOpenFormat" Label="Open" LargeImageSource="/ImportCSV;component/images/open_32.png"/>
-                    <RibbonButton x:Name="ButtonSaveFormat"  Label="Save" LargeImageSource="/ImportCSV;component/images/save_32.png"/>
+                    <RibbonButton x:Name="ButtonOpenFormat" Label="Open" LargeImageSource="/XODB Importer;component/images/open_32.png"/>
+                    <RibbonButton x:Name="ButtonSaveFormat"  Label="Save" LargeImageSource="/XODB Importer;component/images/save_32.png"/>
                     <RibbonButton/>
                 </RibbonGroup>
 
                 <RibbonGroup Header="Tools">
                     
-                    <RibbonButton x:Name="ButtonImportBM" Label="Import" LargeImageSource="/ImportCSV;component/images/refresh_32.png"/>
+                    <RibbonButton x:Name="ButtonImportBM" Label="Import" LargeImageSource="/XODB Importer;component/images/refresh_32.png"/>
                     
                     
                 </RibbonGroup>
@@ -171,8 +183,11 @@
 
             
         </Ribbon>
+        <GroupBox x:Name="groupBoxBatchLas" Header="LAS File selection" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Visibility="Hidden" Grid.ColumnSpan="2">
 
-        <GroupBox Header="Input" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Stretch" >
+            <UI:FileListUIControl x:Name="fileListUIControlLAS"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        </GroupBox>
+        <GroupBox x:Name="groupBoxInput" Header="Input" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Stretch" Grid.ColumnSpan="2" >
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
@@ -198,8 +213,8 @@
 
 
         
-        <UI1:ImportPreview x:Name="ImportDataPreview" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" VerticalAlignment="Stretch" ColumnsMapped="BlockModelPreview_ColumnsMapped"/>
-        <Grid HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Stretch" >
+        <UI:ImportPreview x:Name="ImportDataPreview" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="2" VerticalAlignment="Stretch" ColumnsMapped="BlockModelPreview_ColumnsMapped" Grid.ColumnSpan="2"/>
+        <Grid HorizontalAlignment="Stretch"  Grid.Row="4" VerticalAlignment="Stretch" Grid.ColumnSpan="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="50*"/>
@@ -208,7 +223,7 @@
             <Label Name="StatusLabel"  Content="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
         </Grid>
 
-        <Grid Grid.Row="3" >
+        <Grid Grid.Row="3" Grid.ColumnSpan="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*"></ColumnDefinition>
                 <ColumnDefinition Width="50*"></ColumnDefinition>
@@ -218,7 +233,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <GroupBox Grid.Row="0"  Grid.RowSpan="2" Header="Mapped columns" HorizontalAlignment="Stretch" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Stretch">
+            <GroupBox x:Name="groupBoxMapConfigTable" Grid.Row="0"  Grid.RowSpan="2" Header="Mapped columns" HorizontalAlignment="Stretch" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Stretch">
                 <UI:MapTable x:Name="MapConfigTable" HorizontalAlignment="Stretch" Margin="0,0,0,0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Stretch"/>
             </GroupBox>
             

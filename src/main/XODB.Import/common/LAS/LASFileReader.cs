@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Xstract.Import.LAS
 {
-    class LASFileReader
+    public class LASFileReader
     {
 
         double supportedLasVersion = 2.0;

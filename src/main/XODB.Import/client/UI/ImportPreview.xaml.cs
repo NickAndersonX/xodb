@@ -11,14 +11,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FileHandler.DataRecords;
-using FileHandler.Definitions;
 using XODB.Import.FormatSpecification;
 using XODB.Import.ColumnSpecs;
 using XODB.Import.Client.IO;
+using XODB.Import.Client.DataRecords;
 
-
-namespace FileHandler.UI
+namespace XODB.Import.Client.UI
 {
     /// <summary>
     /// Interaction logic for ImportPreview.xaml

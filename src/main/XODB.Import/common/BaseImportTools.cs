@@ -14,6 +14,7 @@ using XODB.Import.DataModels;
 using XODB.Import.DataWrappers;
 using XODB.Import.FormatSpecification;
 using XODB.Import.ImportUtils;
+using Xstract.Import.LAS;
 
 namespace XODB.Import
 {
@@ -60,7 +61,21 @@ namespace XODB.Import
 
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bmDataFile"></param>
+        /// <param name="selectedFormatBMFile"></param>
+        /// <param name="importMap"></param>
+        /// <param name="xOrigin"></param>
+        /// <param name="yOrigin"></param>
+        /// <param name="zOrigin"></param>
+        /// <param name="worker"></param>
+        /// <param name="approxNumLines"></param>
+        /// <param name="XODBProjectID"></param>
+        /// <param name="units"></param>
+        /// <param name="connString"></param>
+        /// <returns></returns>
         public string PerformBMImport(string bmDataFile, string selectedFormatBMFile, ImportDataMap importMap, double xOrigin, double yOrigin, double zOrigin, System.ComponentModel.BackgroundWorker worker, int approxNumLines, string XODBProjectID, string units, string connString)
         {
             this.currentWorker = worker;
@@ -70,10 +85,8 @@ namespace XODB.Import
             // talk to the import lib to do the import
             DbSet<X_BlockModel> models = resourceModels.X_BlockModel;
             var query = from X_BlockModel in models select new { X_BlockModel.BlockModelID, X_BlockModel.OriginX, X_BlockModel.OriginY, X_BlockModel.OriginZ, X_BlockModel.ProjectID };
-
           
             List<string> cn = new List<string>();
-
             //For each field in the database (or property in Linq object)
             X_BlockModel ob = new X_BlockModel();
             foreach (PropertyInfo pi in ob.GetType().GetProperties())
@@ -251,6 +264,7 @@ namespace XODB.Import
             //UpdateStatus("Creating new XODB block model", 20.0);
             ImportUtils.SurveyImport surImp = null;
             surImp = new ImportUtils.SurveyImport();
+            
             surImp.AddSurveyData(mos, bmFileStream, importMap, batchSize, UpdateStatus, numLines, connectionString, XODBProjectID, doOverwrite, checkForDuplicates);
 
 
@@ -733,6 +747,19 @@ namespace XODB.Import
 
             List<CollarInfo> collars = CollarQueries.FindCollarsForProject(currentSelectedProject);
             return collars;
+        }
+
+        public void ImportLasFile(Xstract.Import.LAS.LASFile lasFile, string origFilename, ModelImportStatus mos, Guid currentProjectID, System.ComponentModel.BackgroundWorker backgroundWorker)
+        {
+
+            string res = null;
+            this.currentWorker = backgroundWorker;
+            
+            // get the pre holeID from the filename
+            LasImportUtils liu = new LasImportUtils();
+            liu.ImportLASFile(lasFile, origFilename, mos, currentProjectID, UpdateStatus);
+
+          
         }
     }
 

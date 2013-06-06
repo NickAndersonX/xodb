@@ -20,6 +20,7 @@ namespace XODB.Import.DataModels
             this.X_HeaderRelation1 = new HashSet<X_HeaderRelation>();
             this.X_Survey = new HashSet<X_Survey>();
             this.X_Lithology = new HashSet<X_Lithology>();
+            this.X_Geophysics = new HashSet<X_Geophysics>();
         }
     
         public System.Guid HeaderID { get; set; }
@@ -84,5 +85,6 @@ namespace XODB.Import.DataModels
         public virtual ICollection<X_HeaderRelation> X_HeaderRelation1 { get; set; }
         public virtual ICollection<X_Survey> X_Survey { get; set; }
         public virtual ICollection<X_Lithology> X_Lithology { get; set; }
+        public virtual ICollection<X_Geophysics> X_Geophysics { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿// Default code generation is disabled for model 'C:\XODB\src\main\XODB.Import\common\DataModels\XODBImportAssayEntity.edmx'. 
+﻿// Default code generation is disabled for model 'C:\source\XODBIMPORTER\ImportCSV\IMPORTLIB\xodbimport\src\DataModels\XODBImportAssayEntity.edmx'. 
 // To enable default code generation, change the value of the 'Code Generation Strategy' designer
 // property to an alternate value. This property is available in the Properties Window when the model is
 // open in the designer.

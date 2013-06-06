@@ -8,11 +8,27 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XODB.Import.Client</RootNamespace>
-    <AssemblyName>XODB.Import.Client</AssemblyName>
+    <AssemblyName>XODB Importer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>H:\importer_test\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,9 +52,22 @@
   <PropertyGroup>
     <ApplicationIcon>images\xicon4.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1F4A4A2571031F0E711153492269D18B9B3D9210</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>XODB.Import.Client_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\..\..\deps\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -80,14 +109,10 @@
     <Compile Include="IO\FormatLoadStatus.cs" />
     <Compile Include="IO\GeneralFileInfo.cs" />
     <Compile Include="IO\IOResults.cs" />
-    <Compile Include="IO\LAS\LASDataRow.cs" />
-    <Compile Include="IO\LAS\LASErrorCodes.cs" />
-    <Compile Include="IO\LAS\LASFile.cs" />
-    <Compile Include="IO\LAS\LASFileReader.cs" />
     <Compile Include="IO\RawFileReader.cs" />
     <Compile Include="Processing\ColumnStats.cs" />
     <Compile Include="Processing\CreateArraysForCharts.cs" />
-    <Compile Include="Processing\LAS2CSV.cs" />
+    <Compile Include="Processing\LASBatchImportTools.cs" />
     <Compile Include="Processing\LASImport.cs" />
     <Compile Include="Processing\RowProcessing.cs" />
     <Compile Include="Processing\SliceData.cs" />
@@ -109,8 +134,15 @@
     <Compile Include="UI\CollarPlanView.xaml.cs">
       <DependentUpon>CollarPlanView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\FileListUIControl.xaml.cs">
+      <DependentUpon>FileListUIControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImportPreview.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>ImportPreview.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\ImportStatusWindow.xaml.cs">
       <DependentUpon>ImportStatusWindow.xaml</DependentUpon>
@@ -120,7 +152,6 @@
     <Compile Include="UI\FileSelector1.xaml.cs">
       <DependentUpon>FileSelector1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\ImportPreview.xaml.cs" />
     <Compile Include="UI\MapTable.xaml.cs">
       <DependentUpon>MapTable.xaml</DependentUpon>
     </Compile>
@@ -154,6 +185,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\FileListUIControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\FileSelector1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,8 +198,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\ImportPreview.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\ImportStatusWindow.xaml">
       <SubType>Designer</SubType>
@@ -218,7 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Help\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\Search_32x32.png" />
@@ -231,6 +265,23 @@
       <Project>{4814c95d-0008-495a-b627-e3feda2fb1a4}</Project>
       <Name>XODB.Import</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

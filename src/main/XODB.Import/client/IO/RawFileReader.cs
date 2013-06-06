@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FileHandler.DataRecords;
+using XODB.Import.Client.DataRecords;
 using System.IO;
-using FileHandler.Processing;
+using XODB.Import.Client.Processing;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
 
-namespace FileHandler.IO
+namespace XODB.Import.Client.IO
 {
     public class RawFileReader
     {

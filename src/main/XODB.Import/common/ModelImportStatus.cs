@@ -23,9 +23,11 @@ namespace XODB.Import
         public static int ERROR_CONNECTING_TO_DB = 3;
         public static int ERROR_WRITING_TO_DB = 4;
         public static int DATA_CONSISTENCY_ERROR = 5;
+        public static int GENERAL_LOAD_ERROR = 6; 
         public static int displayMaxRecords = 50;
 
         private int _recordsImported = 0;
+        
         public int RecordsImported { get { return _recordsImported; } set { _recordsImported = value; } }
 
         public ModelImportStatus()

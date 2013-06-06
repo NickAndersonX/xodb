@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FileHandler.DataRecords;
+using XODB.Import.Client.DataRecords;
 
-namespace FileHandler.Processing
+namespace XODB.Import.Client.Processing
 {
     class RowProcessing
     {

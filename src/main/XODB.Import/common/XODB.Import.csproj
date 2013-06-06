@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\..\wwwroot\src\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\..\..\deps\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -51,6 +51,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseImportTools.cs" />
+    <Compile Include="DataModels\X_Geophysics.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_GeophysicsData.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_GeophysicsMetadata.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\X_Geophysics_Parameter.cs">
+      <DependentUpon>XODBImportCollarsEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="ImportUtils\BlockImport.cs" />
     <Compile Include="ColumnSpecs\ColumnMetaInfo.cs" />
     <Compile Include="ColumnSpecs\FKSpecification.cs" />
@@ -191,6 +203,12 @@
     <Compile Include="FormatSpecificationIO\ImportDataMapIO.cs" />
     <Compile Include="FormatSpecification\ColumnMap.cs" />
     <Compile Include="FormatSpecification\ImportDataMap.cs" />
+    <Compile Include="ImportUtils\LasImportUtils.cs" />
+    <Compile Include="ImportUtils\UnitQueries.cs" />
+    <Compile Include="LAS\LASDataRow.cs" />
+    <Compile Include="LAS\LASErrorCodes.cs" />
+    <Compile Include="LAS\LASFile.cs" />
+    <Compile Include="LAS\LASFileReader.cs" />
     <Compile Include="ModelImportStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ImportUtils\AssayImport.cs" />

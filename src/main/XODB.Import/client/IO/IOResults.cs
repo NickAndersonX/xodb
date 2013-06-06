@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FileHandler.IO
+namespace XODB.Import.Client.IO
 {
     public class IOResults
     {

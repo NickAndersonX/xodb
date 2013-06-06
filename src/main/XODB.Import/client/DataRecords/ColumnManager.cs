@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
-using FileHandler.Processing;
-using FileHandler.Definitions;
+using XODB.Import.Client.Processing;
+using XODB.Import.Client.Definitions;
 using System.ComponentModel;
 using System.IO;
 using XODB.Import.FormatSpecification;
 
-namespace FileHandler.DataRecords
+namespace XODB.Import.Client.DataRecords
 {
     public class ColumnManager
     {

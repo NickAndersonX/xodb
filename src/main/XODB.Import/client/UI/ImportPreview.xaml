@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="FileHandler.UI.ImportPreview"
+﻿<UserControl x:Class="XODB.Import.Client.UI.ImportPreview"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 

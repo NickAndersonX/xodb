@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FileHandler.Definitions
+namespace XODB.Import.Client.Definitions
 {
     public class ModelColumnDefinitions
     {

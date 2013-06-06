@@ -9,10 +9,30 @@
           <EntitySet Name="X_DictionaryDataStatus" EntityType="XODBImportCollarModel.Store.X_DictionaryDataStatus" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="X_DictionaryHoleStatus" EntityType="XODBImportCollarModel.Store.X_DictionaryHoleStatus" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="X_DictionaryHoleType" EntityType="XODBImportCollarModel.Store.X_DictionaryHoleType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_Geophysics" EntityType="XODBImportCollarModel.Store.X_Geophysics" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_GeophysicsData" EntityType="XODBImportCollarModel.Store.X_GeophysicsData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_GeophysicsMetadata" EntityType="XODBImportCollarModel.Store.X_GeophysicsMetadata" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="X_Header" EntityType="XODBImportCollarModel.Store.X_Header" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="X_HeaderRelation" EntityType="XODBImportCollarModel.Store.X_HeaderRelation" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="X_Lithology" EntityType="XODBImportCollarModel.Store.X_Lithology" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X_Parameter" EntityType="XODBImportCollarModel.Store.X_Parameter" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="X_Survey" EntityType="XODBImportCollarModel.Store.X_Survey" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_X_GeophyicsData_X_GeophysicsMetadata" Association="XODBImportCollarModel.Store.FK_X_GeophyicsData_X_GeophysicsMetadata">
+            <End Role="X_GeophysicsMetadata" EntitySet="X_GeophysicsMetadata" />
+            <End Role="X_GeophysicsData" EntitySet="X_GeophysicsData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_Geophysics_X_Header" Association="XODBImportCollarModel.Store.FK_X_Geophysics_X_Header">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_Geophysics" EntitySet="X_Geophysics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_GeophysicsMetadata_X_Geophysics" Association="XODBImportCollarModel.Store.FK_X_GeophysicsMetadata_X_Geophysics">
+            <End Role="X_Geophysics" EntitySet="X_Geophysics" />
+            <End Role="X_GeophysicsMetadata" EntitySet="X_GeophysicsMetadata" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_GeophysicsMetadata_X_Parameter" Association="XODBImportCollarModel.Store.FK_X_GeophysicsMetadata_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Parameter" />
+            <End Role="X_GeophysicsMetadata" EntitySet="X_GeophysicsMetadata" />
+          </AssociationSet>
           <AssociationSet Name="FK_X_Header_X_DictionaryData_Status" Association="XODBImportCollarModel.Store.FK_X_Header_X_DictionaryData_Status">
             <End Role="X_DictionaryDataStatus" EntitySet="X_DictionaryDataStatus" />
             <End Role="X_Header" EntitySet="X_Header" />
@@ -83,6 +103,72 @@
           <Property Name="FullDescription" Type="nvarchar(max)" />
           <Property Name="Thumbnail" Type="varbinary(max)" />
           <Property Name="OriginalFileDataID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="X_Geophysics">
+          <Key>
+            <PropertyRef Name="GeophysicsID" />
+          </Key>
+          <Property Name="GeophysicsID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="OriginalFileDataID" Type="uniqueidentifier" />
+          <Property Name="HeaderID" Type="uniqueidentifier" />
+          <Property Name="DimensionUnitID" Type="uniqueidentifier" />
+          <Property Name="LasVersion" Type="nvarchar" MaxLength="16" />
+          <Property Name="LasFormat" Type="nvarchar" MaxLength="16" />
+          <Property Name="LasWrap" Type="nvarchar" MaxLength="16" />
+          <Property Name="LasDelimiter" Type="nvarchar" MaxLength="16" />
+          <Property Name="LasNullValue" Type="nvarchar" MaxLength="16" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_GeophysicsData">
+          <Key>
+            <PropertyRef Name="GeophysicsDataID" />
+          </Key>
+          <Property Name="GeophysicsDataID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GeophysicsMetadataID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Dimension" Type="numeric" Nullable="false" Precision="38" Scale="20" />
+          <Property Name="MeasurementValue" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="MeasurementText" Type="nvarchar(max)" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="X_GeophysicsMetadata">
+          <Key>
+            <PropertyRef Name="GeophysicsMetadataID" />
+          </Key>
+          <Property Name="GeophysicsMetadataID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GeophysicsID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParameterID" Type="uniqueidentifier" />
+          <Property Name="Mnemonic" Type="nvarchar" MaxLength="16" />
+          <Property Name="Unit" Type="nvarchar(max)" />
+          <Property Name="Data" Type="nvarchar(max)" />
+          <Property Name="Code" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Format" Type="nvarchar(max)" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
         </EntityType>
         <EntityType Name="X_Header">
           <Key>
@@ -220,6 +306,29 @@
           <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
           <Property Name="VersionUpdated" Type="datetime" />
         </EntityType>
+        <EntityType Name="X_Parameter">
+          <Key>
+            <PropertyRef Name="ParameterID" />
+          </Key>
+          <Property Name="ParameterID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParameterType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParameterName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DefaultParameterValue" Type="numeric" Precision="38" Scale="20" />
+          <Property Name="DefaultParameterText" Type="nvarchar" MaxLength="255" />
+          <Property Name="UnitID" Type="uniqueidentifier" />
+          <Property Name="Format" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Locale" Type="nvarchar" MaxLength="16" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="VersionAntecedentID" Type="uniqueidentifier" />
+          <Property Name="VersionCertainty" Type="int" />
+          <Property Name="VersionWorkflowInstanceID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdatedBy" Type="uniqueidentifier" />
+          <Property Name="VersionDeletedBy" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerContactID" Type="uniqueidentifier" />
+          <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
+          <Property Name="VersionUpdated" Type="datetime" />
+        </EntityType>
         <EntityType Name="X_Survey">
           <Key>
             <PropertyRef Name="SurveyID" />
@@ -248,6 +357,54 @@
           <Property Name="VersionOwnerCompanyID" Type="uniqueidentifier" />
           <Property Name="VersionUpdated" Type="datetime" />
         </EntityType>
+        <Association Name="FK_X_GeophyicsData_X_GeophysicsMetadata">
+          <End Role="X_GeophysicsMetadata" Type="XODBImportCollarModel.Store.X_GeophysicsMetadata" Multiplicity="1" />
+          <End Role="X_GeophysicsData" Type="XODBImportCollarModel.Store.X_GeophysicsData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_GeophysicsMetadata">
+              <PropertyRef Name="GeophysicsMetadataID" />
+            </Principal>
+            <Dependent Role="X_GeophysicsData">
+              <PropertyRef Name="GeophysicsMetadataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_Geophysics_X_Header">
+          <End Role="X_Header" Type="XODBImportCollarModel.Store.X_Header" Multiplicity="0..1" />
+          <End Role="X_Geophysics" Type="XODBImportCollarModel.Store.X_Geophysics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_Geophysics">
+              <PropertyRef Name="HeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_GeophysicsMetadata_X_Geophysics">
+          <End Role="X_Geophysics" Type="XODBImportCollarModel.Store.X_Geophysics" Multiplicity="1" />
+          <End Role="X_GeophysicsMetadata" Type="XODBImportCollarModel.Store.X_GeophysicsMetadata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Geophysics">
+              <PropertyRef Name="GeophysicsID" />
+            </Principal>
+            <Dependent Role="X_GeophysicsMetadata">
+              <PropertyRef Name="GeophysicsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_GeophysicsMetadata_X_Parameter">
+          <End Role="X_Parameter" Type="XODBImportCollarModel.Store.X_Parameter" Multiplicity="0..1" />
+          <End Role="X_GeophysicsMetadata" Type="XODBImportCollarModel.Store.X_GeophysicsMetadata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_GeophysicsMetadata">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_X_Header_X_DictionaryData_Status">
           <End Role="X_DictionaryDataStatus" Type="XODBImportCollarModel.Store.X_DictionaryDataStatus" Multiplicity="0..1" />
           <End Role="X_Header" Type="XODBImportCollarModel.Store.X_Header" Multiplicity="*" />
@@ -372,6 +529,26 @@
             <End Role="X_Header" EntitySet="X_Header" />
             <End Role="X_Lithology" EntitySet="X_Lithology" />
           </AssociationSet>
+          <EntitySet Name="X_Geophysics" EntityType="XODBImportCollarModel.X_Geophysics" />
+          <EntitySet Name="X_GeophysicsData" EntityType="XODBImportCollarModel.X_GeophysicsData" />
+          <EntitySet Name="X_GeophysicsMetadata" EntityType="XODBImportCollarModel.X_GeophysicsMetadata" />
+          <AssociationSet Name="FK_X_Geophysics_X_Header" Association="XODBImportCollarModel.FK_X_Geophysics_X_Header">
+            <End Role="X_Header" EntitySet="X_Header" />
+            <End Role="X_Geophysics" EntitySet="X_Geophysics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_GeophysicsMetadata_X_Geophysics" Association="XODBImportCollarModel.FK_X_GeophysicsMetadata_X_Geophysics">
+            <End Role="X_Geophysics" EntitySet="X_Geophysics" />
+            <End Role="X_GeophysicsMetadata" EntitySet="X_GeophysicsMetadata" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_GeophyicsData_X_GeophysicsMetadata" Association="XODBImportCollarModel.FK_X_GeophyicsData_X_GeophysicsMetadata">
+            <End Role="X_GeophysicsMetadata" EntitySet="X_GeophysicsMetadata" />
+            <End Role="X_GeophysicsData" EntitySet="X_GeophysicsData" />
+          </AssociationSet>
+          <EntitySet Name="X_Geophysics_Parameter" EntityType="XODBImportCollarModel.X_Geophysics_Parameter" />
+          <AssociationSet Name="FK_X_GeophysicsMetadata_X_Parameter" Association="XODBImportCollarModel.FK_X_GeophysicsMetadata_X_Parameter">
+            <End Role="X_Parameter" EntitySet="X_Geophysics_Parameter" />
+            <End Role="X_GeophysicsMetadata" EntitySet="X_GeophysicsMetadata" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="X_DictionaryDataStatus">
           <Key>
@@ -483,6 +660,7 @@
           <Property Type="Guid" Name="LocationID" />
           <NavigationProperty Name="X_Survey" Relationship="XODBImportCollarModel.FK_X_Survey_X_Header" FromRole="X_Header" ToRole="X_Survey" />
           <NavigationProperty Name="X_Lithology" Relationship="XODBImportCollarModel.FK_X_LithologyData_X_Header" FromRole="X_Header" ToRole="X_Lithology" />
+          <NavigationProperty Name="X_Geophysics" Relationship="XODBImportCollarModel.FK_X_Geophysics_X_Header" FromRole="X_Header" ToRole="X_Geophysics" />
         </EntityType>
         <EntityType Name="X_HeaderRelation">
           <Key>
@@ -674,6 +852,150 @@
             </Principal>
             <Dependent Role="X_Lithology">
               <PropertyRef Name="HeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="X_Geophysics">
+          <Key>
+            <PropertyRef Name="GeophysicsID" />
+          </Key>
+          <Property Type="Guid" Name="GeophysicsID" Nullable="false" />
+          <Property Type="String" Name="FileName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="OriginalFileDataID" />
+          <Property Type="Guid" Name="HeaderID" />
+          <Property Type="Guid" Name="DimensionUnitID" />
+          <Property Type="String" Name="LasVersion" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LasFormat" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LasWrap" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LasDelimiter" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LasNullValue" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_Header" Relationship="XODBImportCollarModel.FK_X_Geophysics_X_Header" FromRole="X_Geophysics" ToRole="X_Header" />
+          <NavigationProperty Name="X_GeophysicsMetadata" Relationship="XODBImportCollarModel.FK_X_GeophysicsMetadata_X_Geophysics" FromRole="X_Geophysics" ToRole="X_GeophysicsMetadata" />
+        </EntityType>
+        <EntityType Name="X_GeophysicsData">
+          <Key>
+            <PropertyRef Name="GeophysicsDataID" />
+          </Key>
+          <Property Type="Guid" Name="GeophysicsDataID" Nullable="false" />
+          <Property Type="Guid" Name="GeophysicsMetadataID" Nullable="false" />
+          <Property Type="Decimal" Name="Dimension" Nullable="false" Precision="38" Scale="20" />
+          <Property Type="Decimal" Name="MeasurementValue" Precision="38" Scale="20" />
+          <Property Type="String" Name="MeasurementText" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_GeophysicsMetadata" Relationship="XODBImportCollarModel.FK_X_GeophyicsData_X_GeophysicsMetadata" FromRole="X_GeophysicsData" ToRole="X_GeophysicsMetadata" />
+        </EntityType>
+        <EntityType Name="X_GeophysicsMetadata">
+          <Key>
+            <PropertyRef Name="GeophysicsMetadataID" />
+          </Key>
+          <Property Type="Guid" Name="GeophysicsMetadataID" Nullable="false" />
+          <Property Type="Guid" Name="GeophysicsID" Nullable="false" />
+          <Property Type="Guid" Name="ParameterID" />
+          <Property Type="String" Name="Mnemonic" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Data" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Format" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_Geophysics" Relationship="XODBImportCollarModel.FK_X_GeophysicsMetadata_X_Geophysics" FromRole="X_GeophysicsMetadata" ToRole="X_Geophysics" />
+          <NavigationProperty Name="X_GeophysicsData" Relationship="XODBImportCollarModel.FK_X_GeophyicsData_X_GeophysicsMetadata" FromRole="X_GeophysicsMetadata" ToRole="X_GeophysicsData" />
+          <NavigationProperty Name="X_Parameter" Relationship="XODBImportCollarModel.FK_X_GeophysicsMetadata_X_Parameter" FromRole="X_GeophysicsMetadata" ToRole="X_Parameter" />
+        </EntityType>
+        <Association Name="FK_X_Geophysics_X_Header">
+          <End Type="XODBImportCollarModel.X_Header" Role="X_Header" Multiplicity="0..1" />
+          <End Type="XODBImportCollarModel.X_Geophysics" Role="X_Geophysics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Header">
+              <PropertyRef Name="HeaderID" />
+            </Principal>
+            <Dependent Role="X_Geophysics">
+              <PropertyRef Name="HeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_GeophysicsMetadata_X_Geophysics">
+          <End Type="XODBImportCollarModel.X_Geophysics" Role="X_Geophysics" Multiplicity="1" />
+          <End Type="XODBImportCollarModel.X_GeophysicsMetadata" Role="X_GeophysicsMetadata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Geophysics">
+              <PropertyRef Name="GeophysicsID" />
+            </Principal>
+            <Dependent Role="X_GeophysicsMetadata">
+              <PropertyRef Name="GeophysicsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_GeophyicsData_X_GeophysicsMetadata">
+          <End Type="XODBImportCollarModel.X_GeophysicsMetadata" Role="X_GeophysicsMetadata" Multiplicity="1" />
+          <End Type="XODBImportCollarModel.X_GeophysicsData" Role="X_GeophysicsData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_GeophysicsMetadata">
+              <PropertyRef Name="GeophysicsMetadataID" />
+            </Principal>
+            <Dependent Role="X_GeophysicsData">
+              <PropertyRef Name="GeophysicsMetadataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="X_Geophysics_Parameter">
+          <Key>
+            <PropertyRef Name="ParameterID" />
+          </Key>
+          <Property Type="Guid" Name="ParameterID" Nullable="false" />
+          <Property Type="String" Name="ParameterType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ParameterName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="DefaultParameterValue" Precision="38" Scale="20" />
+          <Property Type="String" Name="DefaultParameterText" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="UnitID" />
+          <Property Type="String" Name="Format" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Locale" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Version" Nullable="false" />
+          <Property Type="Guid" Name="VersionAntecedentID" />
+          <Property Type="Int32" Name="VersionCertainty" />
+          <Property Type="Guid" Name="VersionWorkflowInstanceID" />
+          <Property Type="Guid" Name="VersionUpdatedBy" />
+          <Property Type="Guid" Name="VersionDeletedBy" />
+          <Property Type="Guid" Name="VersionOwnerContactID" />
+          <Property Type="Guid" Name="VersionOwnerCompanyID" />
+          <Property Type="DateTime" Name="VersionUpdated" Precision="3" />
+          <NavigationProperty Name="X_GeophysicsMetadata" Relationship="XODBImportCollarModel.FK_X_GeophysicsMetadata_X_Parameter" FromRole="X_Parameter" ToRole="X_GeophysicsMetadata" />
+        </EntityType>
+        <Association Name="FK_X_GeophysicsMetadata_X_Parameter">
+          <End Type="XODBImportCollarModel.X_Geophysics_Parameter" Role="X_Parameter" Multiplicity="0..1" />
+          <End Type="XODBImportCollarModel.X_GeophysicsMetadata" Role="X_GeophysicsMetadata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="X_Parameter">
+              <PropertyRef Name="ParameterID" />
+            </Principal>
+            <Dependent Role="X_GeophysicsMetadata">
+              <PropertyRef Name="ParameterID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -893,6 +1215,99 @@
                 <ScalarProperty Name="FromDepth" ColumnName="FromDepth" />
                 <ScalarProperty Name="HeaderID" ColumnName="HeaderID" />
                 <ScalarProperty Name="LithologyID" ColumnName="LithologyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_Geophysics">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_Geophysics">
+              <MappingFragment StoreEntitySet="X_Geophysics">
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="LasNullValue" ColumnName="LasNullValue" />
+                <ScalarProperty Name="LasDelimiter" ColumnName="LasDelimiter" />
+                <ScalarProperty Name="LasWrap" ColumnName="LasWrap" />
+                <ScalarProperty Name="LasFormat" ColumnName="LasFormat" />
+                <ScalarProperty Name="LasVersion" ColumnName="LasVersion" />
+                <ScalarProperty Name="DimensionUnitID" ColumnName="DimensionUnitID" />
+                <ScalarProperty Name="HeaderID" ColumnName="HeaderID" />
+                <ScalarProperty Name="OriginalFileDataID" ColumnName="OriginalFileDataID" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="GeophysicsID" ColumnName="GeophysicsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_GeophysicsData">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_GeophysicsData">
+              <MappingFragment StoreEntitySet="X_GeophysicsData">
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="MeasurementText" ColumnName="MeasurementText" />
+                <ScalarProperty Name="MeasurementValue" ColumnName="MeasurementValue" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="GeophysicsMetadataID" ColumnName="GeophysicsMetadataID" />
+                <ScalarProperty Name="GeophysicsDataID" ColumnName="GeophysicsDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_GeophysicsMetadata">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_GeophysicsMetadata">
+              <MappingFragment StoreEntitySet="X_GeophysicsMetadata">
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Format" ColumnName="Format" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Mnemonic" ColumnName="Mnemonic" />
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+                <ScalarProperty Name="GeophysicsID" ColumnName="GeophysicsID" />
+                <ScalarProperty Name="GeophysicsMetadataID" ColumnName="GeophysicsMetadataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_Geophysics_Parameter">
+            <EntityTypeMapping TypeName="XODBImportCollarModel.X_Geophysics_Parameter">
+              <MappingFragment StoreEntitySet="X_Parameter">
+                <ScalarProperty Name="VersionUpdated" ColumnName="VersionUpdated" />
+                <ScalarProperty Name="VersionOwnerCompanyID" ColumnName="VersionOwnerCompanyID" />
+                <ScalarProperty Name="VersionOwnerContactID" ColumnName="VersionOwnerContactID" />
+                <ScalarProperty Name="VersionDeletedBy" ColumnName="VersionDeletedBy" />
+                <ScalarProperty Name="VersionUpdatedBy" ColumnName="VersionUpdatedBy" />
+                <ScalarProperty Name="VersionWorkflowInstanceID" ColumnName="VersionWorkflowInstanceID" />
+                <ScalarProperty Name="VersionCertainty" ColumnName="VersionCertainty" />
+                <ScalarProperty Name="VersionAntecedentID" ColumnName="VersionAntecedentID" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Locale" ColumnName="Locale" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Format" ColumnName="Format" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="DefaultParameterText" ColumnName="DefaultParameterText" />
+                <ScalarProperty Name="DefaultParameterValue" ColumnName="DefaultParameterValue" />
+                <ScalarProperty Name="ParameterName" ColumnName="ParameterName" />
+                <ScalarProperty Name="ParameterType" ColumnName="ParameterType" />
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

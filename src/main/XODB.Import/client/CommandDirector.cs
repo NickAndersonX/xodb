@@ -1,5 +1,5 @@
-﻿using FileHandler.IO;
-using FileHandler.Processing;
+﻿using XODB.Import.Client.IO;
+using XODB.Import.Client.Processing;
 using XODB.Import.Client.IO;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using XODB.Import;
 using XODB.Import.DataWrappers;
 using XODB.Import.FormatSpecification;
+using XODB.Import.Client.Processing;
+using Xstract.Import.LAS;
 
 namespace XODB.Import.Client
 {
@@ -145,6 +147,100 @@ namespace XODB.Import.Client
             Stream fileStream = new FileStream(SelectedFile, FileMode.Open, FileAccess.Read , FileShare.ReadWrite);
             bit.PerformLithoImport(mos, fileStream, null, importMap, this.backgroundWorker, XODBProjectID, ConnectionString, numLines, doOverwrite, checkForDuplicates);
             return mos;
+        }
+
+        internal ModelImportStatus BatchImportLasFiles(string[] filePaths, Guid currentProjectID)
+        {
+
+            ModelImportStatus finalStatus = new ModelImportStatus();
+
+            LASBatchImportTools ll = new LASBatchImportTools();
+            List<string> messages = new List<string>();
+            int importCount = 0;
+            int failCount = 0;
+            string report = "";
+            Dictionary<string, ModelImportStatus> mosList = new Dictionary<string, ModelImportStatus>();
+            bool reportStatus = false;
+            if (this.backgroundWorker != null)
+            {
+                reportStatus = true;
+            }
+            
+
+            int fileCount = filePaths.Length;
+            int thisFileNum = 0;
+
+            foreach (string file in filePaths)
+            { 
+                double pct = ((double)thisFileNum / (double)fileCount) * 100.0;
+                thisFileNum++; 
+               
+                
+                if (reportStatus)
+                {
+                    backgroundWorker.ReportProgress((int)pct, "Processing las file "+thisFileNum+" of "+fileCount+", "+file);
+                }
+
+                ModelImportStatus mis = new ModelImportStatus();
+
+                XODB.Import.Client.Processing.LASImport li = new XODB.Import.Client.Processing.LASImport();
+                LASFile lf = li.GetLASFile(file, mis);
+                if (lf == null)
+                {
+                    
+                    mis.errorMessages.Add("Failed to load LAS file " + file);
+                    mosList.Add(file, mis);
+                    continue;
+                }
+
+                string msg = ll.ProcessLASFile(lf, file, mis, currentProjectID, this.backgroundWorker);
+                if (msg != null)
+                {
+                    messages.Add(msg);
+                    report += msg + "\n";
+                    failCount++;
+
+                }
+                else
+                {
+                    importCount++;
+                }
+
+                mosList.Add(file, mis);
+
+            }
+
+            string finalReport = "Immport status:\nFiles imported:" + importCount + "\nFailed files:" + failCount + "\n\nMessages:\n";
+
+            finalReport += report;
+            int totRecordsAddedCount = 0;
+            int totLinesReadCount = 0;
+            foreach (KeyValuePair<string, ModelImportStatus> kvp in mosList) {
+                string lfName = kvp.Key;
+                ModelImportStatus ms = kvp.Value;
+                totRecordsAddedCount += ms.recordsAdded;
+                totLinesReadCount += ms.linesReadFromSource;
+                if (ms.finalErrorCode != ModelImportStatus.OK) {
+                    finalStatus.finalErrorCode = ModelImportStatus.GENERAL_LOAD_ERROR;
+
+                }
+
+                foreach (string m in ms.warningMessages) {
+                    finalStatus.warningMessages.Add(m);
+                }
+                foreach (string m in ms.errorMessages)
+                {
+                    finalStatus.errorMessages.Add(m);
+                }
+
+            
+            }
+
+            finalStatus.linesReadFromSource = totLinesReadCount;
+            finalStatus.recordsAdded = totRecordsAddedCount;
+
+            return finalStatus;
+
         }
     }
 }

@@ -19,6 +19,14 @@
         <AssociationConnector Association="XODBImportCollarModel.FK_X_Survey_X_Header" />
         <EntityTypeShape EntityType="XODBImportCollarModel.X_Lithology" Width="1.5" PointX="5.875" PointY="11.5" />
         <AssociationConnector Association="XODBImportCollarModel.FK_X_LithologyData_X_Header" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_Geophysics" Width="1.5" PointX="8.875" PointY="10.25" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_GeophysicsData" Width="1.5" PointX="11.375" PointY="11.75" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_GeophysicsMetadata" Width="1.5" PointX="14.375" PointY="13.25" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_Geophysics_X_Header" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_GeophysicsMetadata_X_Geophysics" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_GeophyicsData_X_GeophysicsMetadata" />
+        <EntityTypeShape EntityType="XODBImportCollarModel.X_Geophysics_Parameter" Width="1.5" PointX="16.125" PointY="13.625" />
+        <AssociationConnector Association="XODBImportCollarModel.FK_X_GeophysicsMetadata_X_Parameter" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

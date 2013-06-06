@@ -12,7 +12,7 @@ namespace XODB.Import.Client.Processing
 
         public LASImport() { }
 
-        public LASFile ImportLASFile(string inputFilename, string outputCSV) {
+        public LASFile GetLASFile(string inputFilename,ModelImportStatus mis ) {
             LASFile lf = null;
             try
             {
@@ -23,23 +23,26 @@ namespace XODB.Import.Client.Processing
                 
                 if (errorCode == 0)
                 {
+                    mis.finalErrorCode = ModelImportStatus.OK;
                     string res = "";
                     foreach (string nc in lf.columnHeaders)
                     {
                         res += nc + ", ";
                     }
-
+                    mis.linesReadFromSource = lf.dataRows.Count;
   
                     // Display error mesasges if required
                     if (lf.errorDetails != null && lf.errorDetails.Count > 0)
                     {
                         string messageBoxText = "The file selected was loaded, but issues were noted as follows:";
-
+                        mis.AddWarningMessage(messageBoxText);
                         foreach (string ed in lf.errorDetails)
                         {
-                            messageBoxText += "\n" + ed;
+                            string ss = "\n" + ed;
+                            mis.AddWarningMessage(ss);
                         }
-
+                        
+                        
                        
 
                     }
@@ -50,14 +53,18 @@ namespace XODB.Import.Client.Processing
 
                     string messageBoxText = "The file selected could not be loaded.  Please check that the selected file is " +
                                             "accessible, is not open in another application and is in the correct format.";
+                    mis.AddErrorMessage(messageBoxText);
                     string errorCodeDetails = LASErrorCodes.LookupCode(errorCode);
                     if (lf != null && lf.errorDetails != null)
                     {
                         foreach (string ed in lf.errorDetails)
                         {
-                            messageBoxText += "\n" + ed;
+                            string ss = "\n" + ed;
+                            mis.AddErrorMessage(ss);
                         }
                     }
+                    
+                    mis.finalErrorCode = ModelImportStatus.ERROR_LOADING_FILE;
                     string caption = "Error loading file";
                     
                 }

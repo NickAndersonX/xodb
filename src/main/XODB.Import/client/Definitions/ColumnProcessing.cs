@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FileHandler.Definitions;
+using XODB.Import.Client.Definitions;
 using System.ComponentModel;
 
-namespace FileHandler.Processing
+namespace XODB.Import.Client.Processing
 {
     class ColumnProcessing
     {

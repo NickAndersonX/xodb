@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="93a3fe84a99a4680ac0b70c5ce4791b3" Name="Diagram1" ZoomLevel="42">
+      <Diagram DiagramId="93a3fe84a99a4680ac0b70c5ce4791b3" Name="Diagram1" ZoomLevel="77">
         <EntityTypeShape EntityType="XODBImportModel.X_BlockModel" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="XODBImportModel.X_BlockModelBlockData" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="XODBImportModel.X_BlockModelMetadata" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />

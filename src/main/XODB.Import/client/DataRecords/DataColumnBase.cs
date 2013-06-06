@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FileHandler.DataRecords
+namespace XODB.Import.Client.DataRecords
 {
     public abstract class DataColumnBase
     {

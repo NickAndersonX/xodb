@@ -1,7 +1,7 @@
-﻿using FileHandler.DataRecords;
-using FileHandler.Definitions;
-using FileHandler.IO;
-using FileHandler.Processing;
+﻿using XODB.Import.Client.DataRecords;
+using XODB.Import.Client.Definitions;
+using XODB.Import.Client.IO;
+using XODB.Import.Client.Processing;
 using XODB.Import.Client.IO;
 using XODB.Import.Client.Processing;
 using XODB.Import.Client.UI;
@@ -50,6 +50,7 @@ namespace XODB.Import.Client
         BackgroundWorker workerAssayDataImport;
         BackgroundWorker workerSurveyDataImport;
         BackgroundWorker workerLithoDataImport;
+        BackgroundWorker workerLASBatchDataImport;
 
         RawFileReader blockRawFileReader = new RawFileReader();
         ModelColumnDefinitions columnDefs;
@@ -96,6 +97,8 @@ namespace XODB.Import.Client
         public static RoutedCommand LithoImport = new RoutedCommand();
 
         public static RoutedCommand CollarPreview = new RoutedCommand();
+
+        public static RoutedCommand BatchImportLAS= new RoutedCommand();
 
         
         private string FileDescription  = "Data files (.csv, .txt)|*.csv;*.txt|All files (*.*)|*.*"; 
@@ -149,7 +152,9 @@ namespace XODB.Import.Client
             CommandBinding cb24 = new CommandBinding(SaveLithoFormat, SaveLithoFormatExecuted, SaveLithoFormatCanExecute);
             CommandBinding cb25 = new CommandBinding(LithoImport, LithoImportExecuted, LithoImportCanExecute);
 
+            CommandBinding cb26 = new CommandBinding(BatchImportLAS, BatchImportLASExecuted, BatchImportLASCanExecute);
 
+            
             
             this.CommandBindings.Add(cb1);
             this.CommandBindings.Add(cb2);
@@ -180,7 +185,8 @@ namespace XODB.Import.Client
             this.CommandBindings.Add(cb23);
             this.CommandBindings.Add(cb24);
             this.CommandBindings.Add(cb25);
-
+            
+            this.CommandBindings.Add(cb26);
             InitializeComponent();
 
             Dictionary<RibbonButton, RoutedCommand> commandMapping = new Dictionary<RibbonButton, RoutedCommand>();
@@ -212,7 +218,8 @@ namespace XODB.Import.Client
             commandMapping.Add(ButtonOpenLithoFormat, OpenLithoFormat);
             commandMapping.Add(ButtonSaveLithoFormat, SaveLithoFormat);
             commandMapping.Add(ButtonImportLitho, LithoImport);
-            
+            commandMapping.Add(ButtonImportBatchLAS, BatchImportLAS);
+
             AssignEventsToButtons(commandMapping);            
 
             ImportDataPreview.targetMainDataType = MapConfigTable.collarPrimaryTableName;
@@ -221,6 +228,8 @@ namespace XODB.Import.Client
             SelectedImportType = -1;
            // LocateSqlInstances();
         }
+
+        
 
 
         /// <summary>
@@ -815,8 +824,7 @@ namespace XODB.Import.Client
         private List<ColumnMetaInfo> GetAssayFieldsFromXODB()
         {
             BaseImportTools bit = new BaseImportTools();
-            string connectionString = CommandDirector.ConnectionString;
-            List<ColumnMetaInfo> ls = bit.GetAssayColumns(connectionString);
+            List<ColumnMetaInfo> ls = bit.GetAssayColumns( CommandDirector.ConnectionString);
 
             return ls;
         }
@@ -1301,44 +1309,108 @@ namespace XODB.Import.Client
             e.Handled = true;
         }
 
+        private void BatchImportLASCanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {   e.CanExecute = true;
+            e.Handled = true;
+        }
+
+        private void BatchImportLASExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+
+            string[] ss = fileListUIControlLAS.RetrieveFileList();
+            if (ComboBoxProjectList.SelectedValue == null)
+            {
+                ComboBoxProjectList.BorderBrush = Brushes.Red;
+                MessageBox.Show("You must select a project before importing");
+                return;
+            }
+            if (ss == null || ss.Length == 0) {
+                fileListUIControlLAS.BorderBrush = Brushes.Red;
+                MessageBox.Show("You must select some LAS files before importing");
+                return;
+                
+            }
+            fileListUIControlLAS.BorderBrush = Brushes.Black;
+            Guid gg = (Guid)ComboBoxProjectList.SelectedValue;
+            // get the selected project ID
+            XODBProjectID = gg;
+            
+            
+            workerLASBatchDataImport = new BackgroundWorker();
+            workerLASBatchDataImport.WorkerReportsProgress = true;
+            workerLASBatchDataImport.WorkerSupportsCancellation = false;
+            workerLASBatchDataImport.DoWork += bw_DoLASBatchImportWork;
+            // Method to call when Progress has changed
+            workerLASBatchDataImport.ProgressChanged += bw_ProgressChanged;
+            // Method to run after BackgroundWorker has completed?
+            workerLASBatchDataImport.RunWorkerCompleted += bw_LASBatchImportRunWorkerCompleted;
+
+
+            workerLASBatchDataImport.RunWorkerAsync(ss);
+            e.Handled = true;
+        }
+
+        private void bw_LASBatchImportRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            ImportStatusWindow ii = new ImportStatusWindow();
+            ii.SetData(lastestImportUpdateStatus);
+            ii.ShowDialog();
+        }
+
+        private void bw_DoLASBatchImportWork(object sender, DoWorkEventArgs e)
+        {
+            string[] ss = (string[])e.Argument;
+            commandDirector.SetCurrentWorkerThread(workerLASBatchDataImport);
+            ModelImportStatus status = commandDirector.BatchImportLasFiles(ss, XODBProjectID);
+            lastestImportUpdateStatus = status;
+            workerLASBatchDataImport.ReportProgress((int)0, "");
+        }
+
+
+
+       
+
+
+            
+    
 
         private void LASImportExecuted(object sender, ExecutedRoutedEventArgs e)
         {
 
-            string pathValue = "";
-            string[] filePaths = Directory.GetFiles(@pathValue, "*.LAS");
+            //string pathValue = "";
+            //string[] filePaths = Directory.GetFiles(@pathValue, "*.LAS");
 
 
-            string outFile = "";
+            //string outFile = "";
 
-            LAS2CSV ll = new LAS2CSV(outFile);
-            List<string> messages = new List<string>();
-            int importCount = 0;
-            int failCount = 0;
-            string report = "";
-            foreach (string file in filePaths) {
+            //LASBatchImportTools ll = new LASBatchImportTools();
+            //List<string> messages = new List<string>();
+            //int importCount = 0;
+            //int failCount = 0;
+            //string report = "";
+            //foreach (string file in filePaths) {
                 
-                XODB.Import.Client.Processing.LASImport li = new XODB.Import.Client.Processing.LASImport();
-                LASFile lf = li.ImportLASFile(file, file + ".csv");
+            //    XODB.Import.Client.Processing.LASImport li = new XODB.Import.Client.Processing.LASImport();
+            //    LASFile lf = li.GetLASFile(file);
 
                 
-                string msg = ll.AddLasFileToFile(lf, file);
-                if (msg != null)
-                {
-                    messages.Add(msg);
-                    report += msg + "\n";
-                    failCount++;
+            //    string msg = ll.ProcessLASFile(lf, file);
+            //    if (msg != null)
+            //    {
+            //        messages.Add(msg);
+            //        report += msg + "\n";
+            //        failCount++;
 
-                }
-                else {
-                    importCount++;
-                }
+            //    }
+            //    else {
+            //        importCount++;
+            //    }
 
-            }
+            //}
 
-            string finalReport = "Immport status:\nFiles imported:" + importCount + "\nFailed files:" + failCount + "\n\nMessages:\n";
+            //string finalReport = "Immport status:\nFiles imported:" + importCount + "\nFailed files:" + failCount + "\n\nMessages:\n";
 
-            finalReport += report; 
+            //finalReport += report; 
 
             int x = 0;
 
@@ -1688,8 +1760,11 @@ namespace XODB.Import.Client
 
         private void RibbonSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
-            
+            groupBoxInput.Visibility = Visibility.Visible;
+            ImportDataPreview.Visibility = Visibility.Visible;
+            MapConfigTable.Visibility = Visibility.Visible;
+            groupBoxMapConfigTable.Visibility = Visibility.Visible;
+            groupBoxBatchLas.Visibility = Visibility.Hidden;
             if (ButtonOpenBM.IsVisible)
             {
                 ModelDefGroupBox.Visibility = Visibility.Visible;
@@ -1721,6 +1796,19 @@ namespace XODB.Import.Client
             {
                 ImportDataPreview.targetMainDataType = MapConfigTable.lithoPrimaryTableName;
             }
+
+            if (ButtonImportBatchLAS.IsVisible)
+            {
+                ImportDataPreview.targetMainDataType = MapConfigTable.geophyiscsPrimaryTableName;
+
+                //groupBoxInput.Visibility = Visibility.Hidden;
+                ImportDataPreview.Visibility = Visibility.Hidden;
+                MapConfigTable.Visibility = Visibility.Hidden;
+                groupBoxMapConfigTable.Visibility = Visibility.Hidden;
+
+                groupBoxBatchLas.Visibility = Visibility.Visible;
+            }
+
 
             return;
         }

@@ -9,7 +9,7 @@ namespace Xstract.Import.LAS
     /// A list of error codes and descitpions associated with this application
     /// @Author Nick Anderson
     /// </summary>
-    class LASErrorCodes
+    public class LASErrorCodes
     {
         // i/o errors
         public static int STREAM_OPEN_FAILED                = -1;
@@ -50,7 +50,7 @@ namespace Xstract.Import.LAS
         }
 
 
-        internal static string LookupCode(int errorCode)
+        public static string LookupCode(int errorCode)
         {
             string res = "";
             descriptions.TryGetValue(errorCode, out res) ;
