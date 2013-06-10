@@ -21,9 +21,29 @@ namespace XODB.Import.Client
 
         private BackgroundWorker backgroundWorker = null;
 
-        private static string connectionString = "Data Source=XODBDB;Initial Catalog=XODB;Integrated Security=True";
+        private static string defaultConnectionString = "Data Source=XODBDB;Initial Catalog=XODB;Integrated Security=True";
+        private static string connectionString = null;
         //TODO: Override in interface if we need to support > 1 DB
-        public static string ConnectionString { get { return connectionString; } set { connectionString = value; } }
+        public static string ConnectionString
+        {
+            get
+            {
+                if (connectionString == null)
+                {
+                    try
+                    {
+                        var cs = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                        connectionString = cs;
+                    }
+                    catch
+                    {
+                        connectionString = defaultConnectionString;
+                    }
+                }
+                return connectionString;
+            }
+            set { connectionString = value; }
+        }
 
         public CommandDirector() { }
 
