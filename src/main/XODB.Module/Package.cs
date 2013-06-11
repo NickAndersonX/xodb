@@ -59,7 +59,6 @@ namespace XODB.Module
             using (Stream file = File.OpenWrite(f))
             {
                 CopyStream(configStream, file);
-                file.Close();
             }
 
         }

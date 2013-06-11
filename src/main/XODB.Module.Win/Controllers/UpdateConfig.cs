@@ -72,9 +72,7 @@ namespace XODB.Module.Win.Controllers
                     {
                         var path = Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf("\\"));
                         path.WriteUserConfigFile(z);
-                        z.Close();
                     }
-                    f.Close();
                 }
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 this.Close();
@@ -108,7 +106,6 @@ namespace XODB.Module.Win.Controllers
             {
                 var path = Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf("\\"));
                 path.WriteUserConfigFile(f);
-                f.Close();
             }
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();

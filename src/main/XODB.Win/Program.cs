@@ -69,9 +69,7 @@ namespace XODB.Win
                             {
                                 var path = Application.ExecutablePath.Substring(0, Application.ExecutablePath.LastIndexOf("\\"));
                                 path.WriteUserConfigFile(z);
-                                z.Close();
-                            }
-                            f.Close();
+                            }                       
                         }
                     }
                 }                

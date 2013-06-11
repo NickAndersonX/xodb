@@ -5,7 +5,7 @@ using DevExpress.ExpressApp.Win;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Xpo;
-
+using System.Data.SqlClient;
 namespace XODB.Win
 {
     public partial class XODBWindowsFormsApplication : WinApplication
@@ -28,6 +28,22 @@ namespace XODB.Win
 #else
             if (true || System.Diagnostics.Debugger.IsAttached)
             {
+                var ex = e.Updater.CheckCompatibility();
+                if (ex is CompatibilityUnableToOpenDatabaseError && ex.Exception is SqlException)
+                {
+                    using (SqlConnection sql = new SqlConnection())
+                    {
+                        sql.ConnectionString = this.ConnectionString;
+                        sql.ConnectionString = sql.ConnectionString.Replace("Initial Catalog=XODB", "Initial Catalog=master");
+                        sql.Open();
+                        var cmd = new SqlCommand("CREATE DATABASE XODB", sql);
+                        cmd.ExecuteNonQuery();
+                        cmd.Connection.Close();
+                    }
+                }
+                SqlConnection.ClearAllPools();
+                e.Updater.ForceUpdateDatabase = true;
+                this.DatabaseUpdateMode = DevExpress.ExpressApp.DatabaseUpdateMode.UpdateDatabaseAlways;
                 e.Updater.Update();
                 e.Handled = true;
             }
