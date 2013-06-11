@@ -22,7 +22,7 @@ namespace XODB.Import.Client
 
         public void OnDispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            string errorMessage = string.Format("An error occurred: {0}", e.Exception.Message);
+            string errorMessage = string.Format("An error occurred: {0} {1}", e.Exception.InnerException, e.Exception.Message);
             MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             e.Handled = true;
         }

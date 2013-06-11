@@ -223,10 +223,10 @@ namespace XODB.Import.Client
             AssignEventsToButtons(commandMapping);            
 
             ImportDataPreview.targetMainDataType = MapConfigTable.collarPrimaryTableName;
+            LocateSqlInstances();
             InitialiseDatabaseColumnHeadings();
 
             SelectedImportType = -1;
-           // LocateSqlInstances();
         }
 
         
@@ -237,6 +237,20 @@ namespace XODB.Import.Client
         /// </summary>
         public static void LocateSqlInstances()
         {
+            //For now let's shutdown if can't connect
+            try
+            {
+                var connection = new System.Data.SqlClient.SqlConnection(CommandDirector.ConnectionString);
+                connection.Open();
+                connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Download and install XODB client if not already installed.", "Couldn't connect to data source.");
+                System.Diagnostics.Process.GetCurrentProcess().Kill();
+            }
+            
+            //TODO:
             using (DataTable sqlSources = SqlDataSourceEnumerator.Instance.GetDataSources())
             {
                 foreach (DataRow source in sqlSources.Rows)
