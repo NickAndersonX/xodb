@@ -13,7 +13,7 @@
     <ApplicationIcon>Images\xicon4.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>http://xodb/</PublishUrl>
+    <PublishUrl>http://xodb.xstractgroup.com/publish/xodb/13/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://xodb/</InstallUrl>
+    <InstallUrl>http://xodb.xstractgroup.com/publish/xodb/13/</InstallUrl>
     <SupportUrl>http://xodb.xstractgroup.com</SupportUrl>
     <ErrorReportUrl>https://github.com/xstract/xodb/issues</ErrorReportUrl>
     <ProductName>XODB Windows</ProductName>
@@ -33,7 +33,7 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>45</ApplicationRevision>
+    <ApplicationRevision>47</ApplicationRevision>
     <ApplicationVersion>1.3.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
